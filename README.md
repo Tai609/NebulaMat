@@ -512,8 +512,10 @@ Download a package from [NebulaMat GitHub Releases](https://github.com/Tai609/Ne
 | Platform | Current project status |
 | --- | --- |
 | Windows 10/11 x64 | Primary verified NebulaMat build target. The NSIS installer is currently unsigned, so SmartScreen may require **More info -> Run anyway**. |
-| macOS 13+ | Tauri packaging is configured for Apple Silicon and Intel. Check the release notes for the validation and signing status of a specific package. |
 | Linux x86_64 | `.deb` and `.rpm` targets are configured. Check the release notes for the validation status of a specific package. |
+
+macOS installers are not published at this time. macOS remains available as a local
+development target in the source tree.
 
 You will need credentials for at least one supported model provider. They are stored in
 the application-private runtime configuration rather than in a workspace or Git repo.

@@ -8,7 +8,9 @@ Responsibilities:
   access for API keys, etc.).
 - Spawning and supervising the bundled Node.js + `dsh --profile web` runtime on
   Windows, plus app-managed connector sidecars.
-- Packaging configuration — targets: `dmg` / `app` (macOS), `nsis` / `msi` (Windows).
+- Packaging configuration — local targets include `dmg` / `app` (macOS) and
+  `nsis` / `msi` (Windows); the public release workflow publishes Windows and
+  Linux installers only.
 - Auto-update wiring (Tauri updater, GitHub Releases + signed `latest.json`) — later.
 
 Keep this thin: system capabilities only, no heavy computation. DeepSeek Harness

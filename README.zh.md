@@ -461,8 +461,9 @@ flowchart TB
 | 平台 | 当前项目状态 |
 | --- | --- |
 | Windows 10/11 x64 | 当前 NebulaMat 最主要、验证最频繁的构建目标。NSIS 安装包尚未签名；若 SmartScreen 拦截，需要选择 **更多信息 -> 仍要运行**。 |
-| macOS 13+ | 已配置 Apple Silicon 和 Intel 的 Tauri 打包；具体包的验证与签名状态以对应 Release Notes 为准。 |
 | Linux x86_64 | 已配置 `.deb` 和 `.rpm` 目标；具体包的验证状态以对应 Release Notes 为准。 |
+
+目前不发布 macOS 安装包。源码仍保留 macOS 本地开发目标。
 
 至少需要配置一个受支持模型提供方的凭据。凭据保存在应用私有运行时配置中，不写入
 科研工作区或 Git 仓库。
