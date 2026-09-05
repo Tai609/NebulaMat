@@ -16,7 +16,7 @@ materials workflows, compute runs, and provenance into one inspectable desktop w
 <p>
   <a href="https://github.com/Tai609/NebulaMat/releases/latest"><img src="https://img.shields.io/github/v/release/Tai609/NebulaMat?display_name=tag&sort=semver" alt="Latest release"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-2f6f4e" alt="MIT license"></a>
-  <img src="https://img.shields.io/badge/source-v1.0.7-1f6feb" alt="Source version 1.0.7">
+  <img src="https://img.shields.io/badge/source-v1.0.9-1f6feb" alt="Source version 1.0.9">
   <img src="https://img.shields.io/badge/desktop-Tauri%202%20%2B%20React-24c8db" alt="Tauri 2 and React">
   <img src="https://img.shields.io/badge/runtime-DeepSeek%20Harness-6b4eff" alt="DeepSeek Harness">
 </p>
@@ -611,7 +611,7 @@ NebulaMat is under active development. Windows x64 is the most frequently exerci
 release path in the current source tree. Cross-platform manifests exist, but every
 published package should be judged by its own release notes and validation evidence.
 
-The source manifests currently identify version `1.0.7`. Release tags and translations
+The source manifests currently identify version `1.0.9`. Release tags and translations
 may lag behind the active development tree.
 
 ## Contributing

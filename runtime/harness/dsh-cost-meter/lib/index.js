@@ -232,16 +232,34 @@ function findGoKeyInAuthJson() {
 async function resolveGoKey(ctx, config) {
   const explicit = String(config?.goQuota?.apiKey ?? '').trim()
   if (explicit.length > 0) return explicit
+  // The desktop model settings use an app-owned credential reference (for
+  // example NEBULAMAT_OPENCODE_GO_API_KEY), rather than the upstream CLI name.
+  // Read that reference from the active llm-pi-ai profile before falling back
+  // to the conventional environment variables so a key entered under
+  // Settings -> Models also powers the Go quota card.
+  const refs = []
+  const settings = ctx.get('settings')
+  const profile = typeof settings?.get === 'function' ? settings.get('llm-pi-ai') : undefined
+  const providers = profile?.providers
+  for (const provider of ['opencode-go', 'opencode-go--anthropic-messages']) {
+    const ref = providers?.[provider]?.apiKeyEnv
+    if (typeof ref === 'string' && CREDENTIAL_REF_PATTERN.test(ref) && !refs.includes(ref)) refs.push(ref)
+  }
+  for (const ref of ['NEBULAMAT_OPENCODE_GO_API_KEY', 'OPENCODE_GO_API_KEY', 'OPENCODE_API_KEY']) {
+    if (!refs.includes(ref)) refs.push(ref)
+  }
   const credentials = ctx.get('credentials')
   if (credentials !== undefined) {
-    try {
-      const hit = await credentials.resolve(credentialRef('OPENCODE_GO_API_KEY'))
-      if (typeof hit?.value === 'string' && hit.value.length > 0) return hit.value
-    } catch {
-      // 凭证解析失败时回退到环境变量。
+    for (const ref of refs) {
+      try {
+        const hit = await credentials.resolve(credentialRef(ref))
+        if (typeof hit?.value === 'string' && hit.value.length > 0) return hit.value
+      } catch {
+        // 凭证解析失败时继续尝试下一个引用。
+      }
     }
   }
-  for (const name of ['OPENCODE_GO_API_KEY', 'OPENCODE_API_KEY']) {
+  for (const name of refs) {
     const value = String(process.env[name] ?? '').trim()
     if (value.length > 0) return value
   }

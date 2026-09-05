@@ -148,6 +148,9 @@ export function SessionView({
   const replyPermission = useRuntimeStore((s) => s.replyPermission);
   const interrupt = useRuntimeStore((s) => s.interrupt);
   const steerSession = useRuntimeStore((s) => s.steerSession);
+  const contextUsage = useRuntimeStore((s) => (eid ? s.contextUsage[eid] : null));
+  const compacting = useRuntimeStore((s) => !!(eid && s.compactingSessions[eid]));
+  const compactSession = useRuntimeStore((s) => s.compactSession);
   const editMessage = useRuntimeStore((s) => s.editMessage);
   const revertMessage = useRuntimeStore((s) => s.revertMessage);
   const setComposerDraft = useUiStore((s) => s.setComposerDraft);
@@ -898,6 +901,9 @@ export function SessionView({
               showWorkspaceChip={eid === null}
               sessionDir={sessionDir ?? undefined}
               currentSessionId={eid}
+              contextUsage={contextUsage}
+              compacting={compacting}
+              onCompact={eid ? () => void compactSession(eid) : undefined}
             />
           </div>
         </div>

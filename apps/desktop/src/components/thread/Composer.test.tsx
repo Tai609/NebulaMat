@@ -138,6 +138,41 @@ describe("Composer", () => {
     expect(actions?.lastElementChild).toBe(modelActions);
     expect(modelActions).toContainElement(screen.getByLabelText("Send"));
   });
+
+  it("shows estimated context usage and offers manual compaction", () => {
+    const onCompact = vi.fn();
+    render(
+      <Composer
+        onSend={vi.fn()}
+        contextUsage={{
+          usedTokens: 1500,
+          contextWindow: 8000,
+          systemTokens: 120,
+          toolsTokens: 340,
+          messageTokens: 1040,
+          estimated: true,
+        }}
+        onCompact={onCompact}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "19% of context used" }));
+    expect(screen.getByText("Context usage")).toBeInTheDocument();
+    expect(screen.getByText("~1.5k / 8k")).toBeInTheDocument();
+    expect(screen.getByText("Usage is estimated by DSH token-meter and is not a billing value.")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Compact now" }));
+    expect(onCompact).toHaveBeenCalledTimes(1);
+  });
+
+  it("keeps manual compaction available before the first token sample", () => {
+    const onCompact = vi.fn();
+    render(<Composer onSend={vi.fn()} onCompact={onCompact} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "0% of context used" }));
+    expect(screen.getByText("~— / —")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Compact now" }));
+    expect(onCompact).toHaveBeenCalledTimes(1);
+  });
 });
 
 const COMMANDS = [

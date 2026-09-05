@@ -160,6 +160,29 @@ describe("CostMeterCard", () => {
     expect(await screen.findByText(/of \$10\.00/)).toBeInTheDocument();
   });
 
+  it("refreshes the ledger when a runtime turn becomes idle", async () => {
+    const getCostMeterState = vi.fn().mockResolvedValue(baseState);
+    let notifyIdle: (() => void) | undefined;
+    vi.spyOn(runtime, "getClient").mockReturnValue({
+      getCostMeterState,
+      onRuntimeEvent: vi.fn((listener) => {
+        notifyIdle = () => listener({ type: "session.idle", sessionId: "session-1" });
+        return () => undefined;
+      }),
+    } as unknown as NonNullable<ReturnType<typeof runtime.getClient>>);
+
+    await act(async () => {
+      view = render(<CostMeterCard />);
+    });
+    await screen.findByText("Cost trend");
+    expect(getCostMeterState).toHaveBeenCalledTimes(1);
+
+    await act(async () => {
+      notifyIdle?.();
+    });
+    await waitFor(() => expect(getCostMeterState).toHaveBeenCalledTimes(2));
+  });
+
   it("refreshes uncontrolled price and currency inputs from returned state", async () => {
     const syncedState: CostMeterState = {
       ...baseState,

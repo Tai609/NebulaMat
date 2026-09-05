@@ -218,6 +218,90 @@ describe("DeepSeekHarnessClient", () => {
     expect(calls[1]?.body.payload).toEqual({ sessionId: "session-1" });
   });
 
+  it("reads DSH token-meter projections as estimated context usage", async () => {
+    const { fetchImpl: baseFetch } = rpcFetch();
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const body = init?.body ? JSON.parse(String(init.body)) as Record<string, unknown> : {};
+      if (body.method === "session.history") {
+        return Response.json({
+          type: "server-response",
+          rpcId: body.rpcId,
+          result: {
+            ok: true,
+            value: {
+              events: [],
+              hasMore: false,
+              projections: {
+                asOfSeq: 42,
+                values: {
+                  contextPressure: { pressureTokens: 1200, projectedTokens: 1500, contextWindow: 8000 },
+                  contextBreakdown: { systemTokens: 120, toolsTokens: 340, messageTokens: 1040 },
+                  tokenUsage: { uncachedInputTokens: 900, outputTokens: 250, cacheReadTokens: 300, cacheWriteTokens: 0 },
+                },
+              },
+            },
+          },
+        });
+      }
+      return baseFetch(input, init);
+    });
+    const client = makeClient(fetchImpl as unknown as typeof fetch);
+
+    await expect(client.getContextUsage("session-1")).resolves.toEqual({
+      usedTokens: 1500,
+      contextWindow: 8000,
+      pressureTokens: 1200,
+      projectedTokens: 1500,
+      systemTokens: 120,
+      toolsTokens: 340,
+      messageTokens: 1040,
+      tokenUsage: { uncachedInputTokens: 900, outputTokens: 250, cacheReadTokens: 300, cacheWriteTokens: 0 },
+      estimated: true,
+      asOfSeq: 42,
+    });
+  });
+
+  it("uses the DSH command Remote for discovery and execution", async () => {
+    const { calls, fetchImpl: baseFetch } = rpcFetch();
+    const remoteCalls: Array<{ url: string; init?: RequestInit; body: Record<string, unknown> }> = [];
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const body = init?.body ? JSON.parse(String(init.body)) as Record<string, unknown> : {};
+      if (body.method === "commands/list") {
+        remoteCalls.push({ url: String(input), init, body });
+        return Response.json({
+          type: "server-response",
+          rpcId: body.rpcId,
+          result: { ok: true, value: [{ name: "compact", description: "Compact context", input: { hint: "" } }] },
+        });
+      }
+      if (body.method === "commands/execute") {
+        remoteCalls.push({ url: String(input), init, body });
+        return Response.json({
+          type: "server-response",
+          rpcId: body.rpcId,
+          result: { ok: true, value: { commandId: "command-1", result: { kind: "success", sourceEventSeq: 9 } } },
+        });
+      }
+      return baseFetch(input, init);
+    });
+    const client = makeClient(fetchImpl as unknown as typeof fetch);
+    const connecting = client.connect();
+    await vi.waitFor(() => expect(FakeWebSocket.instances).toHaveLength(2));
+    FakeWebSocket.instances.forEach((socket) => socket.open());
+    await connecting;
+
+    await expect(client.listCommands()).resolves.toEqual([
+      { name: "compact", description: "Compact context", source: "command", template: "" },
+    ]);
+    await expect(client.runCommand("session-1", "compact")).resolves.toBeUndefined();
+    expect(remoteCalls.map((call) => call.body)).toEqual([
+      expect.objectContaining({ method: "commands/list", payload: { args: { agentId: "session-1" } } }),
+      expect.objectContaining({ method: "commands/execute", payload: { args: { agentId: "session-1", line: "/compact" } } }),
+    ]);
+    expect(calls.some((call) => call.body.method === "session.prompt")).toBe(false);
+    client.close();
+  });
+
   it("coalesces concurrent catalog discovery onto one carrier session", async () => {
     const { calls, fetchImpl } = rpcFetch(undefined, []);
     const client = makeClient(fetchImpl);
@@ -379,6 +463,29 @@ describe("DeepSeekHarnessClient", () => {
       expect.objectContaining({ role: "user", id: "u1", parts: [{ type: "text", text: "我的问题" }] }),
       expect.objectContaining({ role: "assistant", id: "a1" }),
     ]);
+  });
+
+  it("hides the compaction checkpoint while retaining its auditable marker", async () => {
+    const { fetchImpl } = rpcFetch([
+      { event: { type: "user/message", seq: 1, data: { id: "u1", content: [{ type: "text", text: "hello" }], source: { kind: "user" } } } },
+      { event: { type: "assistant/message", seq: 2, data: { message: { id: "a1", content: [{ type: "text", text: "answer" }] } } } },
+      { event: { type: "turn/end", seq: 3, data: { reason: { kind: "completed" } } } },
+      { event: { type: "compaction/summary", seq: 4, data: { compactionId: "compact-1", summary: [{ type: "text", text: "summary" }], shadowedTokenCount: 900 } } },
+      { event: { type: "user/message", seq: 5, data: { id: "checkpoint-1", content: [{ type: "text", text: "This is an automatically generated checkpoint." }], source: { kind: "plugin", plugin: "compact", compactionId: "compact-1" } } } },
+    ]);
+    const client = makeClient(fetchImpl);
+
+    const messages = await client.getMessages("session-1");
+    expect(messages).toHaveLength(2);
+    expect(messages[0]).toEqual(expect.objectContaining({ role: "user", id: "u1" }));
+    expect(messages[1]).toEqual(expect.objectContaining({
+      role: "assistant",
+      id: "a1",
+      parts: [
+        { type: "text", text: "answer" },
+        { type: "compaction", compactionId: "compact-1", auto: true, shadowedTokenCount: 900 },
+      ],
+    }));
   });
 
   it("keeps an assistant message incomplete when history has no terminal event", async () => {
@@ -770,6 +877,87 @@ describe("DeepSeekHarnessClient", () => {
       payload: { type: "question/requested", sessionId: "session-1", questions: [{ id: "choice", question: "Continue?", options: [{ label: "Yes" }] }] },
     });
     expect(events).toContainEqual(expect.objectContaining({ type: "question.asked", requestId: "question-rpc" }));
+
+    const mux = FakeWebSocket.instances.find((socket) => socket.url.includes("events.mux"));
+    mux?.message({
+      type: "server-request",
+      rpcId: "projection-rpc",
+      method: "session/event",
+      payload: {
+        type: "session/event",
+        sessionId: "session-1",
+        event: {
+          type: "session/projection",
+          seq: 10,
+          key: "contextPressure",
+          value: { pressureTokens: 700, projectedTokens: 760, contextWindow: 4096 },
+        },
+      },
+    });
+    mux?.message({
+      type: "server-request",
+      rpcId: "breakdown-rpc",
+      method: "session/event",
+      payload: {
+        type: "session/event",
+        sessionId: "session-1",
+        event: {
+          type: "session/projection",
+          seq: 11,
+          key: "contextBreakdown",
+          value: { systemTokens: 100, toolsTokens: 200, messageTokens: 460 },
+        },
+      },
+    });
+    // The real DSH mux emits projection changes as a top-level payload frame,
+    // rather than wrapping them in session/event.
+    mux?.message({
+      type: "server-request",
+      rpcId: "direct-projection-rpc",
+      method: "session/projection",
+      payload: {
+        type: "session/projection",
+        sessionId: "session-1",
+        key: "tokenUsage",
+        value: { uncachedInputTokens: 900, outputTokens: 120 },
+        seq: 12,
+      },
+    });
+    expect(events).toContainEqual(expect.objectContaining({
+      type: "context.updated",
+      sessionId: "session-1",
+      usage: expect.objectContaining({ usedTokens: 760, contextWindow: 4096, asOfSeq: 10 }),
+    }));
+    expect(events).toContainEqual(expect.objectContaining({
+      type: "context.updated",
+      sessionId: "session-1",
+      usage: expect.objectContaining({ systemTokens: 100, toolsTokens: 200, messageTokens: 460, asOfSeq: 11 }),
+    }));
+
+    const compactionFrame = {
+      type: "server-request",
+      rpcId: "compaction-rpc",
+      method: "session/event",
+      payload: {
+        type: "session/event",
+        sessionId: "session-1",
+        event: {
+          type: "compaction/summary",
+          seq: 12,
+          data: { compactionId: "compact-1", shadowedTokenCount: 500 },
+        },
+      },
+    };
+    mux?.message(compactionFrame);
+    mux?.message({ ...compactionFrame, rpcId: "compaction-rpc-duplicate" });
+    expect(events.filter((event) => (event as { type?: string }).type === "session.compacted")).toHaveLength(1);
+    expect(events).toContainEqual(expect.objectContaining({
+      type: "session.compacted",
+      sessionId: "session-1",
+      auto: true,
+      compactionId: "compact-1",
+      shadowedTokenCount: 500,
+    }));
 
     FakeWebSocket.instances.find((socket) => socket.url.includes("events.mux"))?.message({
       type: "server-request",

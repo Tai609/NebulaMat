@@ -17,6 +17,7 @@ import type {
   RuntimeCapabilities,
   CostMeterActionResult,
   CostMeterState,
+  ContextUsage,
 } from "./types";
 
 /**
@@ -69,6 +70,10 @@ export interface AgentRuntime {
   refreshCostMeterBalance?: () => Promise<CostMeterActionResult>;
   refreshCostMeterGoQuota?: () => Promise<CostMeterActionResult>;
   resetCostMeterHistory?: () => Promise<CostMeterState>;
+  /** Optional context-meter projection exposed by DSH's token-meter plugin. */
+  getContextUsage?: (sessionId: string) => Promise<ContextUsage | null>;
+  /** Execute the mounted DSH compaction command without creating a model turn. */
+  compactSession?: (sessionId: string) => Promise<void>;
   /** One page of conversation history, searched and paged on the server. */
   querySessions(query?: SessionQuery): Promise<SessionPage>;
   /** Archive a conversation. Restore is capability-gated because DSH core does

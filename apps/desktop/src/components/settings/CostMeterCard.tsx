@@ -63,7 +63,7 @@ export function CostMeterCard() {
     return rangeDays === 0 ? rows : rows.slice(-rangeDays);
   }, [rangeDays, state?.history]);
 
-  const load = useCallback(async () => {
+  const load = useCallback(async (silent = false) => {
     const client = getClient();
     if (!client?.getCostMeterState) {
       setLoading(false);
@@ -71,7 +71,7 @@ export function CostMeterCard() {
       setError(t("cost.unavailable"));
       return;
     }
-    setLoading(true);
+    if (!silent) setLoading(true);
     setError(null);
     try {
       setState(await client.getCostMeterState());
@@ -88,6 +88,18 @@ export function CostMeterCard() {
       setLoading(false);
       setState(null);
     }
+  }, [load, status]);
+
+  // The ledger is updated when a model stream settles, not when the Settings
+  // page is opened. Refresh a mounted card after each completed turn so
+  // subscription-backed calls appear without requiring a manual click.
+  useEffect(() => {
+    if (status !== "ready") return undefined;
+    const client = getClient();
+    if (!client?.onRuntimeEvent) return undefined;
+    return client.onRuntimeEvent((event) => {
+      if (event.type === "session.idle") void load(true);
+    });
   }, [load, status]);
 
   const update = async (patch: ConfigPatch, operation = "save") => {
@@ -166,6 +178,10 @@ export function CostMeterCard() {
   const client = getClient();
   const rangeUsage = aggregateDays(rangeHistory);
   const tokens = rangeUsage.input + rangeUsage.output + rangeUsage.cacheRead + rangeUsage.cacheWrite;
+  const todayTokens = totalTokens(state.today);
+  const monthTokens = totalTokens(state.month);
+  const todayCovered = billedCost(state.today) === 0 && todayTokens > 0;
+  const monthCovered = billedCost(state.month) === 0 && monthTokens > 0;
   const cacheHitRate = rangeUsage.input + rangeUsage.cacheRead > 0
     ? rangeUsage.cacheRead / (rangeUsage.input + rangeUsage.cacheRead)
     : 0;
@@ -225,17 +241,21 @@ export function CostMeterCard() {
         <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-5">
           <Metric
             label={t("cost.today")}
-            value={money(billedCost(state.today), config)}
-            detail={todayDelta === null
-              ? String(t("cost.calls", { count: state.today.calls }))
-              : t("cost.delta", { value: `${todayDelta >= 0 ? "+" : ""}${todayDelta.toFixed(1)}%` })}
+            value={todayCovered ? formatTokens(todayTokens) : money(billedCost(state.today), config)}
+            detail={todayCovered
+              ? (todayDelta === null
+                ? String(t("cost.calls", { count: state.today.calls }))
+                : t("cost.delta", { value: `${todayDelta >= 0 ? "+" : ""}${todayDelta.toFixed(1)}%` }))
+              : t("cost.coveredUsage", { calls: state.today.calls, tokens: formatTokens(todayTokens) })}
           />
           <Metric
             label={t("cost.month")}
-            value={money(billedCost(state.month), config)}
-            detail={config.budget.enabled
-              ? t("cost.budget.percent", { value: budgetPercent.toFixed(1) })
-              : String(t("cost.calls", { count: state.month.calls }))}
+            value={monthCovered ? formatTokens(monthTokens) : money(billedCost(state.month), config)}
+            detail={monthCovered
+              ? (config.budget.enabled
+                ? t("cost.budget.percent", { value: budgetPercent.toFixed(1) })
+                : String(t("cost.calls", { count: state.month.calls })))
+              : t("cost.coveredUsage", { calls: state.month.calls, tokens: formatTokens(monthTokens) })}
           />
           <Metric label={t("cost.listValue")} value={money(state.month.cost, config)} detail={t("cost.month")} />
           <Metric label={t("cost.savings")} value={money(state.month.savings, config)} detail={t("cost.billingModes.covered")} />
@@ -816,6 +836,9 @@ function BreakdownList({
                 <span className="min-w-0 flex-1 truncate font-mono text-xs text-text" title={row.id}>{row.id}</span>
                 <span className="shrink-0 font-mono text-xs tabular-nums text-text">{money(row.billedCost, config)}</span>
               </div>
+              <div className="mt-1 text-[10px] text-muted">
+                {t("cost.breakdown.tokens", { value: formatTokens(totalTokens(row)) })}
+              </div>
               <div className="mt-1.5 h-1 overflow-hidden rounded-full bg-surface-2">
                 <div className="h-full rounded-full bg-accent" style={{ width: `${max > 0 ? Math.max(2, row.cost / max * 100) : 0}%` }} />
               </div>
@@ -852,6 +875,10 @@ function ModeBadge({ mode }: { mode: CostMeterProviderMode }) {
 
 function billedCost(row: Pick<CostMeterDayUsage, "cost" | "billedCost">): number {
   return Number.isFinite(Number(row.billedCost)) ? Number(row.billedCost) : Number(row.cost) || 0;
+}
+
+function totalTokens(row: Pick<CostMeterDayUsage, "input" | "output" | "cacheRead" | "cacheWrite">): number {
+  return row.input + row.output + row.cacheRead + row.cacheWrite;
 }
 
 function aggregateBreakdowns(target: CostMeterBreakdown[], source: CostMeterBreakdown[]) {

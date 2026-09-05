@@ -83,6 +83,7 @@ export {
   type CostMeterQuotaWindow,
   type CostMeterSessionUsage,
   type CostMeterState,
+  type ContextUsage,
   type SessionQuery,
   type SessionPage,
   type SkillInfo,

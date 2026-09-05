@@ -17,6 +17,7 @@ import {
   type SessionMeta,
   type SkillInfo,
   type ToolCallStatus,
+  type ContextUsage,
 } from "@ai4s/sdk";
 import type { ArtifactBlock, RuntimeStatus, ThreadBlock } from "@ai4s/shared";
 import {
@@ -431,6 +432,11 @@ interface RuntimeState {
    *  provider from looking like a silent "Working…" forever. Cleared by the
    *  session's next sign of life (stream events, idle, error). */
   retryNotices: Record<string, { attempt: number; message: string }>;
+  /** DSH token-meter projection, keyed by session. */
+  contextUsage: Record<string, ContextUsage | null>;
+  refreshContextUsage: (sessionId: string) => Promise<void>;
+  compactSession: (sessionId?: string) => Promise<boolean>;
+  compactingSessions: Record<string, true>;
   /** Switch to an existing folder, or (with `dated`) create a new dated one.
    *  `key` is the draft slot the switch was made for — the folder becomes that
    *  draft's destination. Defaults to the global slot. */
@@ -2007,6 +2013,8 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
   stepCounts: {},
   shellTurns: {},
   retryNotices: {},
+  contextUsage: {},
+  compactingSessions: {},
 
   // These write the CURRENT session's pane (DRAFT_KEY on a draft), keeping the
   // artifact inspector, the Files browser, and the Runs pane mutually exclusive
@@ -2490,6 +2498,18 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
       }
       // Interactive requests live outside the thread blocks (transient UI).
       switch (event.type) {
+        case "context.updated":
+          set((s) => ({ contextUsage: { ...s.contextUsage, [event.sessionId]: event.usage } }));
+          return;
+        case "session.compacted":
+          set((s) => {
+            if (!s.compactingSessions[event.sessionId]) return {};
+            const compactingSessions = { ...s.compactingSessions };
+            delete compactingSessions[event.sessionId];
+            return { compactingSessions };
+          });
+          void get().refreshContextUsage(event.sessionId);
+          break;
         case "question.asked":
           set((s) => ({
             questions: [...s.questions.filter((q) => q.requestId !== event.requestId), event],
@@ -2864,6 +2884,7 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
         recordRuntimeToolArtifacts(event, sid, get().defaultModel);
       }
       if (event.type === "session.idle") {
+        void get().refreshContextUsage(sid);
         void get().refreshSessions();
         // Name the session in the snapshot: a project folder is shared by many
         // sessions, and its git history must say which one made each change.
@@ -3455,6 +3476,7 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
         // re-lock it either (#59).
         runningSessions: runningStateAfterHistory(s.runningSessions, id, streaming),
       }));
+      void get().refreshContextUsage(id);
       if (streaming) startProgressHeartbeat(id, get);
       else clearProgressHeartbeat(id);
     } catch (err) {
@@ -3507,10 +3529,57 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
         // adopt a still-running session as idle (#59).
         runningSessions: runningStateAfterHistory(s.runningSessions, id, streaming),
       }));
+      void get().refreshContextUsage(id);
       if (streaming) startProgressHeartbeat(id, get);
       else clearProgressHeartbeat(id);
     } catch {
       /* best-effort; the pane keeps its skeleton and loads on focus */
+    }
+  },
+
+  refreshContextUsage: async (id) => {
+    const c = clientForSession(get, id);
+    if (!c?.getContextUsage) return;
+    try {
+      const usage = await c.getContextUsage(id);
+      set((s) => ({ contextUsage: { ...s.contextUsage, [id]: usage } }));
+    } catch {
+      /* best-effort; the projection may not exist on older profiles */
+    }
+  },
+
+  compactSession: async (sessionId) => {
+    const sid = sessionId ?? get().currentId;
+    const c = sid ? clientForSession(get, sid) : null;
+    if (!sid || !c?.compactSession) return false;
+    if (get().runningSessions[sid] || get().sendingSessions[sid] || get().compactingSessions[sid]) return false;
+    set((s) => ({ compactingSessions: { ...s.compactingSessions, [sid]: true } }));
+    try {
+      await c.compactSession(sid);
+      const messages = await c.getMessages(sid);
+      set((s) => ({
+        threads: { ...s.threads, [sid]: { ...historyToThread(projectDeepResearchHistory(messages, getDeepResearchRun(sid)), s.commands), loaded: true } },
+        sessionAgents: { ...s.sessionAgents, [sid]: lastAgentMode(messages) },
+      }));
+      await get().refreshContextUsage(sid);
+      return true;
+    } catch (error) {
+      set((s) => {
+        const compactingSessions = { ...s.compactingSessions };
+        delete compactingSessions[sid];
+        return {
+          compactingSessions,
+          error: error instanceof Error ? error.message : String(error),
+        };
+      });
+      return false;
+    } finally {
+      set((s) => {
+        if (!s.compactingSessions[sid]) return {};
+        const compactingSessions = { ...s.compactingSessions };
+        delete compactingSessions[sid];
+        return { compactingSessions };
+      });
     }
   },
 
@@ -3731,6 +3800,7 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
             sessionAgents: { ...s.sessionAgents, [sid]: lastAgentMode(messages) },
           };
         });
+        void get().refreshContextUsage(sid);
       } catch {
         /* best-effort — the next reconnect or poll tries again */
       }
@@ -3766,6 +3836,10 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
       delete sessionAgents[id];
       const deepResearchSessions = { ...s.deepResearchSessions };
       delete deepResearchSessions[id];
+      const contextUsage = { ...s.contextUsage };
+      delete contextUsage[id];
+      const compactingSessions = { ...s.compactingSessions };
+      delete compactingSessions[id];
       return {
         sessions: s.sessions.filter((x) => x.id !== id),
         threads,
@@ -3773,6 +3847,8 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
         panes,
         sessionAgents,
         deepResearchSessions,
+        contextUsage,
+        compactingSessions,
         currentId: s.currentId === id ? null : s.currentId,
       };
     });

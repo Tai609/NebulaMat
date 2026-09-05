@@ -16,7 +16,7 @@ NebulaMat 把智能体对话、科研文件、Notebook、知识图谱、材料�
 <p>
   <a href="https://github.com/Tai609/NebulaMat/releases/latest"><img src="https://img.shields.io/github/v/release/Tai609/NebulaMat?display_name=tag&sort=semver" alt="最新版本"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-2f6f4e" alt="MIT 许可证"></a>
-  <img src="https://img.shields.io/badge/source-v1.0.7-1f6feb" alt="源码版本 1.0.7">
+  <img src="https://img.shields.io/badge/source-v1.0.9-1f6feb" alt="源码版本 1.0.9">
   <img src="https://img.shields.io/badge/desktop-Tauri%202%20%2B%20React-24c8db" alt="Tauri 2 和 React">
   <img src="https://img.shields.io/badge/runtime-DeepSeek%20Harness-6b4eff" alt="DeepSeek Harness">
 </p>
@@ -549,7 +549,7 @@ pnpm --filter @ai4s/desktop tauri build
 NebulaMat 正在积极开发。当前源码树中，Windows x64 是验证最频繁的发布路径。项目已经有
 跨平台打包配置，但每一个公开安装包都应以自己的 Release Notes 和验证证据为准。
 
-当前源码清单版本为 `1.0.7`。Release tag 和翻译可能暂时落后于活跃开发分支。
+当前源码清单版本为 `1.0.9`。Release tag 和翻译可能暂时落后于活跃开发分支。
 
 ## 参与贡献
 

@@ -19,6 +19,7 @@ import type {
   SubagentInfo,
   CostMeterActionResult,
   CostMeterState,
+  ContextUsage,
   SessionPage,
   SessionQuery,
   SkillInfo,
@@ -149,6 +150,8 @@ export class DeepSeekHarnessClient extends BaseAgentRuntime implements AgentRunt
    * session summary itself. Cache the authoritative ids so the generic
    * session query contract can still filter active and archived rows. */
   private archivedSessions = new Set<string>();
+  private readonly contextUsage = new Map<string, ContextUsage>();
+  private readonly compactedIds = new Set<string>();
 
   constructor(options: DeepSeekHarnessClientOptions = {}) {
     super();
@@ -408,6 +411,7 @@ export class DeepSeekHarnessClient extends BaseAgentRuntime implements AgentRunt
   async getMessages(sessionId: string): Promise<HistoryMessage[]> {
     this.activeSessionId = sessionId;
     const value = asRecord(await this.call("session.history", { sessionId, maxMessages: 200 }));
+    this.cacheContextUsage(sessionId, value);
     const entries = Array.isArray(value.events) ? value.events : [];
     // Some DSH deployments put the sequence on the history row wrapper while
     // others put it on the nested event. Preserve either shape: revert needs a
@@ -430,6 +434,50 @@ export class DeepSeekHarnessClient extends BaseAgentRuntime implements AgentRunt
       }
     }
     return messages;
+  }
+
+  async getContextUsage(sessionId: string): Promise<ContextUsage | null> {
+    const value = asRecord(await this.call("session.history", { sessionId, maxMessages: 200 }));
+    return this.cacheContextUsage(sessionId, value);
+  }
+
+  private cacheContextUsage(sessionId: string, value: RecordValue): ContextUsage | null {
+    const projections = asRecord(value.projections);
+    const values = asRecord(projections.values);
+    const pressure = asRecord(values.contextPressure);
+    const breakdown = asRecord(values.contextBreakdown);
+    const rawUsage = asRecord(values.tokenUsage);
+    const numberAt = (record: RecordValue, key: string): number | undefined =>
+      typeof record[key] === "number" && Number.isFinite(record[key]) ? record[key] as number : undefined;
+    const projectedTokens = numberAt(pressure, "projectedTokens");
+    const pressureTokens = numberAt(pressure, "pressureTokens");
+    const contextWindow = numberAt(pressure, "contextWindow");
+    const systemTokens = numberAt(breakdown, "systemTokens");
+    const toolsTokens = numberAt(breakdown, "toolsTokens");
+    const messageTokens = numberAt(breakdown, "messageTokens");
+    const tokenUsage = Object.fromEntries(Object.entries(rawUsage).filter(([, raw]) => typeof raw === "number" && Number.isFinite(raw))) as Record<string, number>;
+    const hasData = [projectedTokens, pressureTokens, contextWindow, systemTokens, toolsTokens, messageTokens].some((item) => item !== undefined)
+      || Object.keys(tokenUsage).length > 0;
+    if (!hasData) {
+      this.contextUsage.delete(sessionId);
+      return null;
+    }
+    const usage: ContextUsage = {
+      ...(projectedTokens !== undefined || pressureTokens !== undefined
+        ? { usedTokens: projectedTokens ?? pressureTokens }
+        : {}),
+      ...(contextWindow !== undefined ? { contextWindow } : {}),
+      ...(pressureTokens !== undefined ? { pressureTokens } : {}),
+      ...(projectedTokens !== undefined ? { projectedTokens } : {}),
+      ...(systemTokens !== undefined ? { systemTokens } : {}),
+      ...(toolsTokens !== undefined ? { toolsTokens } : {}),
+      ...(messageTokens !== undefined ? { messageTokens } : {}),
+      ...(Object.keys(tokenUsage).length > 0 ? { tokenUsage } : {}),
+      estimated: true,
+      ...(typeof projections.asOfSeq === "number" ? { asOfSeq: projections.asOfSeq } : {}),
+    };
+    this.contextUsage.set(sessionId, usage);
+    return usage;
   }
 
   async sendPrompt(
@@ -549,7 +597,30 @@ export class DeepSeekHarnessClient extends BaseAgentRuntime implements AgentRunt
       : presets;
   }
 
-  async listCommands(): Promise<CommandInfo[]> { return []; }
+  async listCommands(): Promise<CommandInfo[]> {
+    const sessionId = await this.ensureSkillSession();
+    let value: unknown;
+    try {
+      value = await this.remoteCall("commands/list", { agentId: sessionId });
+    } catch {
+      return [];
+    }
+    const rows: unknown[] = Array.isArray(value)
+      ? value
+      : Array.isArray(asRecord(value).commands)
+        ? asRecord(value).commands as unknown[]
+        : [];
+    return rows.map((entry) => {
+      const item = asRecord(entry);
+      const input = asRecord(item.input);
+      return {
+        name: String(item.name ?? "").replace(/^\//, ""),
+        description: typeof item.description === "string" ? item.description : undefined,
+        source: "command",
+        ...(typeof input.hint === "string" ? { template: input.hint } : {}),
+      };
+    }).filter((item) => item.name);
+  }
 
   async getDefaultModel(): Promise<string | null> {
     if (this.defaultModel) return this.defaultModel;
@@ -581,7 +652,36 @@ export class DeepSeekHarnessClient extends BaseAgentRuntime implements AgentRunt
 
   async runShell(sessionId: string, command: string): Promise<void> { return this.sendPrompt(sessionId, `! ${command}`); }
   async runCommand(sessionId: string, command: string, args?: string, language?: string | null): Promise<void> {
-    return this.sendPrompt(sessionId, `/${command}${args ? ` ${args}` : ""}`, undefined, undefined, undefined, language);
+    void language;
+    await this.connect();
+    this.activeSessionId = sessionId;
+    const line = `/${command}${args ? ` ${args}` : ""}`;
+    let raw: unknown;
+    try {
+      raw = await this.remoteCall("commands/execute", { agentId: sessionId, line });
+    } catch (error) {
+      // A bridge that does not implement generic Remotes is an older DSH
+      // deployment. Its command semantics remain the prompt shortcut.
+      if (error instanceof Error && /HTTP (?:404|405)|unavailable|unknown/i.test(error.message)) {
+        return this.sendPrompt(sessionId, line, undefined, undefined, undefined, language);
+      }
+      throw error;
+    }
+    // Older remote bridges (and compatibility mocks) do not expose the generic
+    // command endpoint and answer with an empty object. Preserve their legacy
+    // prompt path; a real DSH command Remote always returns CommandExecution or
+    // an explicit undefined admission miss.
+    if (raw && typeof raw === "object" && Object.keys(asRecord(raw)).length === 0) {
+      return this.sendPrompt(sessionId, line, undefined, undefined, undefined, language);
+    }
+    if (raw === undefined) throw new Error(`DSH command rejected: ${line}`);
+    const execution = asRecord(raw);
+    const result = asRecord(execution.result);
+    if (result.kind === "error") throw new Error(String(result.text ?? `DSH command rejected: ${line}`));
+  }
+
+  async compactSession(sessionId: string): Promise<void> {
+    await this.runCommand(sessionId, "compact");
   }
 
   async listQuestions(sessionId?: string): Promise<QuestionAskedEvent[]> {
@@ -961,6 +1061,32 @@ export class DeepSeekHarnessClient extends BaseAgentRuntime implements AgentRunt
     }
   }
 
+  /** Generic DSH Connection Remote transport used by host-side command modules.
+   * Unlike the host API map, command remotes are intercepted before the API
+   * fallback and therefore carry their arguments under `payload.args`. */
+  private async remoteCall(endpoint: string, args: RecordValue, signal?: AbortSignal): Promise<unknown> {
+    const rpcId = `dsh-remote-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), this.requestTimeoutMs);
+    const combined = signal ? combineAbortSignals([controller.signal, signal]) : null;
+    try {
+      const response = await this.fetchImpl(`${this.baseUrl}/api/${endpoint}`, {
+        method: "POST",
+        headers: this.requestHeaders({ "content-type": "application/json" }),
+        body: JSON.stringify({ type: "client-request", rpcId, method: endpoint, payload: { args } }),
+        signal: combined?.signal ?? controller.signal,
+      });
+      if (!response.ok) throw new Error(`DSH /api/${endpoint} returned HTTP ${response.status}`);
+      const envelope = await response.json() as RpcResponse;
+      if (envelope.rpcId !== rpcId) throw new Error(`DSH rpcId mismatch for ${endpoint}`);
+      if (!envelope.result?.ok) throw new Error(envelope.result?.error?.message ?? `DSH ${endpoint} failed`);
+      return envelope.result.value;
+    } finally {
+      clearTimeout(timer);
+      combined?.dispose();
+    }
+  }
+
   private async respond(rpcId: string, value: RecordValue): Promise<void> {
     const response = await this.fetchImpl(`${this.baseUrl}/api/respond`, {
       method: "POST",
@@ -1114,6 +1240,15 @@ export class DeepSeekHarnessClient extends BaseAgentRuntime implements AgentRunt
       this.emit({ type: payload.type === "approval/resolved" ? "permission.resolved" : "question.resolved", sessionId, requestId } as RuntimeMessageEvent);
       return;
     }
+    // The mux protocol sends projection changes as their own top-level frame;
+    // unlike session/event, they are not wrapped in a durable event envelope.
+    // Keep this branch before session/event so live token-meter updates are not
+    // silently dropped on the real DSH sidecar.
+    if (payload.type === "session/projection") {
+      const sessionId = String(payload.sessionId ?? "");
+      this.normalizeSessionEvent(sessionId, payload);
+      return;
+    }
     if (payload.type === "session/event") {
       const sessionId = String(payload.sessionId ?? "");
       this.normalizeSessionEvent(sessionId, asRecord(payload.event));
@@ -1131,6 +1266,52 @@ export class DeepSeekHarnessClient extends BaseAgentRuntime implements AgentRunt
     const type = String(event.type ?? "");
     const data = asRecord(event.data);
     const eventId = stableEventId("dsh-event", { sessionId, seq: event.seq ?? null, type });
+    if (type === "session/projection") {
+      const key = String(event.key ?? "");
+      if (key === "contextPressure" || key === "contextBreakdown" || key === "tokenUsage") {
+        const current = this.contextUsage.get(sessionId) ?? { estimated: true };
+        const value = asRecord(event.value);
+        const next: ContextUsage = { ...current };
+        const numberAt = (record: RecordValue, keyName: string) =>
+          typeof record[keyName] === "number" && Number.isFinite(record[keyName]) ? record[keyName] as number : undefined;
+        if (key === "contextPressure") {
+          const projectedTokens = numberAt(value, "projectedTokens");
+          const pressureTokens = numberAt(value, "pressureTokens");
+          const contextWindow = numberAt(value, "contextWindow");
+          if (projectedTokens !== undefined) { next.projectedTokens = projectedTokens; next.usedTokens = projectedTokens; }
+          if (pressureTokens !== undefined) { next.pressureTokens = pressureTokens; next.usedTokens ??= pressureTokens; }
+          if (contextWindow !== undefined) next.contextWindow = contextWindow;
+        } else if (key === "contextBreakdown") {
+          for (const name of ["systemTokens", "toolsTokens", "messageTokens"] as const) {
+            const tokenCount = numberAt(value, name);
+            if (tokenCount !== undefined) next[name] = tokenCount;
+          }
+        } else {
+          const usage = Object.fromEntries(Object.entries(value).filter(([, raw]) => typeof raw === "number" && Number.isFinite(raw))) as Record<string, number>;
+          if (Object.keys(usage).length) next.tokenUsage = usage;
+        }
+        if (typeof event.seq === "number") next.asOfSeq = event.seq;
+        this.contextUsage.set(sessionId, next);
+        this.emit({ type: "context.updated", eventId, sessionId, usage: next });
+      }
+      return;
+    }
+    if (type === "compaction/summary") {
+      const compactionId = stringAt(data, "compactionId") ?? stringAt(event, "compactionId") ?? `seq:${String(event.seq ?? Date.now())}`;
+      if (this.compactedIds.has(`${sessionId}:${compactionId}`)) return;
+      this.compactedIds.add(`${sessionId}:${compactionId}`);
+      const sourceCommandId = stringAt(data, "sourceCommandId") ?? stringAt(event, "sourceCommandId");
+      this.emit({
+        type: "session.compacted",
+        eventId,
+        sessionId,
+        compactionId,
+        auto: !sourceCommandId,
+        ...(typeof data.overflow === "boolean" ? { overflow: data.overflow } : {}),
+        ...(typeof data.shadowedTokenCount === "number" ? { shadowedTokenCount: data.shadowedTokenCount } : {}),
+      });
+      return;
+    }
     if (type === "turn/start") { this.emit({ type: "turn.started", eventId, sessionId }); return; }
     if (type === "user/message") {
       // The optimistic desktop echo is tagged from this durable event. DSH
@@ -1710,6 +1891,21 @@ function historyMessages(events: unknown[]): HistoryMessage[] {
       part.state = { ...part.state, status: result.failed ? "error" : "completed", ...(result.output ? { output: result.output } : {}) };
       if (!existingPart) currentAssistant.parts.push(part);
       if (callId) toolParts.delete(callId);
+    } else if (type === "compaction/summary") {
+      const compactionId = stringAt(data, "compactionId");
+      const sourceCommandId = stringAt(data, "sourceCommandId");
+      const auto = !sourceCommandId;
+      if (!currentAssistant) {
+        currentAssistant = { role: "assistant", parts: [] };
+        messages.push(currentAssistant);
+      }
+      currentAssistant.parts.push({
+        type: "compaction",
+        ...(compactionId ? { compactionId } : {}),
+        auto,
+        ...(typeof data.overflow === "boolean" ? { overflow: data.overflow } : {}),
+        ...(typeof data.shadowedTokenCount === "number" ? { shadowedTokenCount: data.shadowedTokenCount } : {}),
+      });
     } else if (type === "turn/end" || type === "session/idle" || type === "host/session-status") {
       const reason = asRecord(data.reason);
       const kind = String(reason.kind ?? data.status ?? "completed");
@@ -1850,6 +2046,11 @@ function isSystemReminder(text: string, source: RecordValue): boolean {
   // by the system-prompt plugin. They are model instructions, not user turns,
   // and must stay out of the restored conversation transcript.
   if (kind === "plugin" && /system-prompt|runtime-context/.test(plugin)) return true;
+  // Compaction's replacement user message is a model-visible checkpoint, not
+  // a user-authored turn. The preceding compaction/summary event becomes the
+  // auditable transcript marker; rendering this framed checkpoint as a user
+  // bubble would duplicate the whole summarized context.
+  if (kind === "plugin" && plugin === "compact") return true;
   if (form === "snapshot" && /^\s*Current runtime context\.\s+This snapshot supersedes earlier runtime-context snapshots\./i.test(text)) {
     return true;
   }

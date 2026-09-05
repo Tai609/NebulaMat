@@ -6,6 +6,7 @@ import {
   ChevronDown,
   ClipboardList,
   FlaskConical,
+  Gauge,
   Hammer,
   Hand,
   Loader2,
@@ -28,6 +29,7 @@ import {
   type ApprovalMode,
 } from "@/lib/tauri";
 import { DRAFT_KEY, getClient, useRuntimeStore, type AgentMode } from "@/lib/runtime";
+import type { ContextUsage } from "@ai4s/sdk";
 import {
   applyRef,
   condenseTranscript,
@@ -112,6 +114,84 @@ export interface ComposerCommand {
   source?: string;
 }
 
+function formatTokens(value: number | undefined): string {
+  if (value === undefined || !Number.isFinite(value)) return "—";
+  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
+  if (value >= 1_000) {
+    const decimals = value >= 10_000 ? 0 : 1;
+    return `${Number((value / 1_000).toFixed(decimals))}k`;
+  }
+  return String(Math.round(value));
+}
+
+function ContextMeter({ usage, disabled, compacting, onCompact }: {
+  usage: ContextUsage | null;
+  disabled?: boolean;
+  compacting?: boolean;
+  onCompact?: () => void;
+}) {
+  const { t } = useTranslation("session");
+  const [open, setOpen] = useState(false);
+  const hasUsage = !!usage?.contextWindow && usage.usedTokens !== undefined;
+  if (!hasUsage && !onCompact) return null;
+  const percent = hasUsage
+    ? Math.min(100, Math.max(0, (usage!.usedTokens! / usage!.contextWindow!) * 100))
+    : 0;
+  const breakdown = [
+    [t("contextMeter.system"), usage?.systemTokens],
+    [t("contextMeter.tools"), usage?.toolsTokens],
+    [t("contextMeter.messages"), usage?.messageTokens],
+  ] as const;
+  return (
+    <div className="relative shrink-0" data-context-meter>
+      <button
+        type="button"
+        className="relative flex h-7 w-7 items-center justify-center rounded-input text-muted hover:bg-surface-2 hover:text-text"
+        aria-label={t("contextMeter.aria", { percent: Math.round(percent) })}
+        title={t("contextMeter.title", { percent: Math.round(percent) })}
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeOpacity=".2" strokeWidth="3" />
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray={`${56.55 * percent / 100} 56.55`} transform="rotate(-90 12 12)" />
+        </svg>
+        {!hasUsage && <Gauge size={14} className="absolute inset-0 m-auto" aria-hidden="true" />}
+      </button>
+      {open && (
+        <div className="absolute bottom-full right-0 z-30 mb-2 w-72 rounded-card border border-border bg-surface p-3 text-xs shadow-card">
+          <div className="flex items-center justify-between gap-3">
+            <span className="font-medium text-text">{t("contextMeter.heading")}</span>
+            <span className="font-mono tabular-nums text-text">~{formatTokens(usage?.usedTokens)} / {formatTokens(usage?.contextWindow)}</span>
+          </div>
+          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-surface-2">
+            <div className="h-full rounded-full bg-accent" style={{ width: `${percent}%` }} />
+          </div>
+          <div className="mt-3 space-y-1.5">
+            {breakdown.map(([label, value]) => (
+              <div key={label} className="flex items-center justify-between gap-3 text-muted">
+                <span>{label}</span><span className="font-mono tabular-nums">~{formatTokens(value)}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-[11px] leading-4 text-muted">{t("contextMeter.approximate")}</p>
+          {onCompact && (
+            <button
+              type="button"
+              className="mt-3 flex h-8 w-full items-center justify-center gap-1.5 rounded-input bg-accent px-2 text-xs font-medium text-accent-fg hover:opacity-90 disabled:opacity-50"
+              disabled={disabled || compacting}
+              onClick={() => { setOpen(false); onCompact(); }}
+            >
+              {compacting && <Loader2 size={12} className="animate-spin" />}
+              {t("contextMeter.compact")}
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /** The two approval modes the composer can switch between (Codex-style). Copy
  *  (label/description) is translated at render time — see `approvalCopy`. */
 const APPROVAL_OPTIONS: { mode: ApprovalMode; icon: typeof Hand }[] = [
@@ -163,6 +243,9 @@ export function Composer({
   sessionDir,
   currentSessionId,
   onInteract,
+  contextUsage,
+  onCompact,
+  compacting,
 }: {
   onSend?: (text: string) => void;
   /** Send a direction to the next step of an already-running model. */
@@ -209,6 +292,9 @@ export function Composer({
   /** Fired when the user edits the input — used to pin a tentative screen (#3)
    *  the moment they start typing, so it isn't reused/lost on the next click. */
   onInteract?: () => void;
+  contextUsage?: ContextUsage | null;
+  onCompact?: () => void;
+  compacting?: boolean;
 }) {
   const { t } = useTranslation(["session", "common"]);
   const resolvedPlaceholder = placeholder ?? t("composer.placeholder.default");
@@ -1287,6 +1373,7 @@ export function Composer({
         {/* Model picker + send stay together in the fixed right-hand cell. */}
         <div data-composer-model-actions className="flex min-w-0 shrink-0 items-center gap-1.5">
           {showModelPicker && <ModelPicker sessionId={modelSessionId} />}
+          <ContextMeter usage={contextUsage ?? null} disabled={working || disabled} compacting={compacting} onCompact={onCompact} />
           {working && onStop && (
             <button
               className={cn(

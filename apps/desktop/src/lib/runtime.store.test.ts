@@ -1781,8 +1781,15 @@ describe("per-session right pane", () => {
   it("deleteSession forgets the session's pane", async () => {
     useRuntimeStore.setState({ currentId: "ses_1" });
     useRuntimeStore.getState().openArtifact(artifact("report.pdf"));
+    useRuntimeStore.setState({
+      contextUsage: { ses_1: { usedTokens: 10, contextWindow: 100, estimated: true } },
+      compactingSessions: { ses_1: true },
+    });
     await useRuntimeStore.getState().deleteSession("ses_1");
-    expect(useRuntimeStore.getState().panes["ses_1"]).toBeUndefined();
+    const state = useRuntimeStore.getState();
+    expect(state.panes["ses_1"]).toBeUndefined();
+    expect(state.contextUsage["ses_1"]).toBeUndefined();
+    expect(state.compactingSessions["ses_1"]).toBeUndefined();
   });
 });
 

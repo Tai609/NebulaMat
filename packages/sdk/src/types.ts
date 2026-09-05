@@ -225,6 +225,31 @@ export interface CompactedEvent {
   auto: boolean;
   /** The context had already overflowed rather than merely neared the limit. */
   overflow?: boolean;
+  compactionId?: string;
+  shadowedTokenCount?: number;
+}
+
+/** Provider-anchored context pressure and the token-meter's heuristic composition. */
+export interface ContextUsage {
+  /** The next request's estimated prompt usage (projectedTokens when present). */
+  usedTokens?: number;
+  contextWindow?: number;
+  pressureTokens?: number;
+  projectedTokens?: number;
+  systemTokens?: number;
+  toolsTokens?: number;
+  messageTokens?: number;
+  tokenUsage?: Record<string, number>;
+  /** True because projected/breakdown fields are estimates, not billing values. */
+  estimated: boolean;
+  asOfSeq?: number;
+}
+
+export interface ContextUpdatedEvent {
+  type: "context.updated";
+  eventId?: string;
+  sessionId: string;
+  usage: ContextUsage;
 }
 
 export type RuntimeMessageEvent =
@@ -232,6 +257,7 @@ export type RuntimeMessageEvent =
   | ReasoningUpdatedEvent
   | ProgressUpdatedEvent
   | CompactedEvent
+  | ContextUpdatedEvent
   | StepUpdatedEvent
   | ToolUpdatedEvent
   | SessionIdleEvent
@@ -563,6 +589,10 @@ export interface HistoryPart {
    *  marker a "!" shell run leaves in history) — not something the user typed. */
   synthetic?: boolean;
   tool?: string;
+  auto?: boolean;
+  overflow?: boolean;
+  compactionId?: string;
+  shadowedTokenCount?: number;
   state?: {
     status?: string;
     title?: string;
