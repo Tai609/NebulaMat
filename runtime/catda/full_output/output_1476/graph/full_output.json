@@ -1,0 +1,4706 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_RuCl3",
+        "type": "chemical",
+        "name": "RuCl3",
+        "aliases": [
+          "Ru³⁺"
+        ],
+        "formula": "RuCl3",
+        "properties": {}
+      },
+      {
+        "id": "chem_Co(NO3)2_6H2O",
+        "type": "chemical",
+        "name": "cobalt nitrate hexahydrate",
+        "aliases": [
+          "Co(NO3)2·6H2O"
+        ],
+        "formula": "Co(NO3)2·6H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_CTAB",
+        "type": "chemical",
+        "name": "cetyltrimethylammonium bromide",
+        "aliases": [
+          "CTAB"
+        ],
+        "formula": "CTAB",
+        "properties": {}
+      },
+      {
+        "id": "chem_methanol",
+        "type": "chemical",
+        "name": "methanol",
+        "formula": "CH3OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_ultrapure_water",
+        "type": "chemical",
+        "name": "ultrapure water",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_Ru_NF",
+        "type": "chemical",
+        "name": "Ru@NF",
+        "aliases": [
+          "Ru@NF"
+        ],
+        "formula": "Ru"
+      },
+      {
+        "id": "chem_Ni_Co(OH)2_Ru_NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂-Ru@NF",
+        "aliases": [
+          "Ni/Co(OH)₂-Ru@NF",
+          "Ni/Co(OH)₂-Ru@NF",
+          "Ni/Co(OH)₂-Ru₁.₀@NF",
+          "Ni/Co(OH)₂-Ru₂.₀@NF"
+        ],
+        "properties": {
+          "double_layer_capacitance_HER": {
+            "value": null,
+            "unit": "from CV (largest among comparators)"
+          },
+          "double_layer_capacitance_OER": {
+            "value": null,
+            "unit": "from CV (largest among comparators)"
+          },
+          "charge_transfer_resistance_HER": {
+            "value": 4.25,
+            "unit": "Ω"
+          },
+          "charge_transfer_resistance_OER": {
+            "value": 3.55,
+            "unit": "Ω"
+          },
+          "charge_transfer_resistance_HER_seawater": {
+            "value": 5.32,
+            "unit": "Ω"
+          },
+          "charge_transfer_resistance_OER_seawater": {
+            "value": 4.32,
+            "unit": "Ω"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Room temperature Ru deposition",
+        "procedure": "RuCl3 (1.0, 1.5, and 2.0 mg mL⁻¹) solution was prepared by submerging the pure NF (50 × 3 × 1.5 mm) in it and recovered after 24 h to form the Ru@NF, Ru₁.₀@NF and Ru₂.₀@NF.",
+        "method": "Room temperature immersion",
+        "conditions": {
+          "time": {
+            "value": 24,
+            "unit": "h"
+          },
+          "temperature": {
+            "value": "room",
+            "unit": "temperature"
+          }
+        },
+        "source_text": "First, RuCl3 (1.0, 1.5, and 2.0 mg mL⁻¹) solution was prepared by submerging the pure NF (50 × 3 × 1.5 mm) in it and recovered after 24 h to form the Ru@NF..."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Solvothermal Ni/Co(OH)₂ growth on Ru@NF",
+        "procedure": "Cobalt nitrate hexahydrate (Co(NO₃)₂·6H₂O, 1.51 mmol) and cetyltrimethylammonium bromide (CTAB, 1.37 mmol) were dissolved in a solution involving methanol (30 mL) and ultrapure water (6 mL), and ultrasonicated for 5 min. Afterward, the solution and Ru@NF were added to a Teflon-lined autoclave (50 mL) and then placed in an oven set to 160°C for a period of 20 h. Following a cooling period to 25°C, the Ni/Co(OH)₂-Ru@NF material was prepared.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Dissolution and ultrasonication",
+            "method": "Ultrasonication",
+            "conditions": {
+              "time": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "dissolved in a solution involving methanol (30 mL) and ultrapure water (6 mL), and ultrasonicated for 5 min"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Solvothermal treatment",
+            "method": "Autoclave heating",
+            "conditions": {
+              "temperature": {
+                "value": 160,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 20,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "added to a Teflon-lined autoclave (50 mL) and then placed in an oven set to 160°C for a period of 20 h"
+          },
+          {
+            "id": "unit_op_2.3",
+            "name": "Cooling",
+            "method": "Natural cooling",
+            "conditions": {
+              "final_temperature": {
+                "value": 25,
+                "unit": "°C"
+              }
+            },
+            "procedure_snippet": "Following a cooling period to 25°C"
+          }
+        ],
+        "method": "Solvothermal synthesis",
+        "conditions": {
+          "Co(NO3)2·6H2O": {
+            "value": 1.51,
+            "unit": "mmol"
+          },
+          "CTAB": {
+            "value": 1.37,
+            "unit": "mmol"
+          },
+          "methanol": {
+            "value": 30,
+            "unit": "mL"
+          },
+          "ultrapure_water": {
+            "value": 6,
+            "unit": "mL"
+          },
+          "ultrasonication_time": {
+            "value": 5,
+            "unit": "min"
+          },
+          "temperature": {
+            "value": 160,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 20,
+            "unit": "h"
+          },
+          "cooling_temperature": {
+            "value": 25,
+            "unit": "°C"
+          }
+        },
+        "source_text": "In the next step, cobalt nitrate hexahydrate (Co(NO₃)₂·6H₂O, 1.51 mmol) and cetyltrimethylammonium bromide (CTAB, 1.37 mmol) were dissolved... Following a cooling period to 25°C, the Ni/Co(OH)₂-Ru@NF material was prepared."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Solvothermal Ni/Co(OH)₂ growth on bare NF",
+        "procedure": "Co(NO₃)₂·6H₂O (1.51 mmol) and CTAB (1.37 mmol) were dissolved in a solution involving methanol (30 mL) and ultrapure water (6 mL) and ultrasonicated for 5 min. Subsequently, the mixture was added to a Teflon autoclave (50 mL) containing NF and then placed in an oven set to 160°C for a period of 20 h, the Ni/Co(OH)₂ was grown on the NF after cooling down to 25°C.",
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Dissolution and ultrasonication",
+            "method": "Ultrasonication",
+            "conditions": {
+              "time": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "dissolved in a solution involving methanol (30 mL) and ultrapure water (6 mL) and ultrasonicated for 5 min"
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Solvothermal treatment",
+            "method": "Autoclave heating",
+            "conditions": {
+              "temperature": {
+                "value": 160,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 20,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "added to a Teflon autoclave (50 mL) containing NF and then placed in an oven set to 160°C for a period of 20 h"
+          }
+        ],
+        "method": "Solvothermal synthesis",
+        "conditions": {
+          "Co(NO3)2·6H2O": {
+            "value": 1.51,
+            "unit": "mmol"
+          },
+          "CTAB": {
+            "value": 1.37,
+            "unit": "mmol"
+          },
+          "methanol": {
+            "value": 30,
+            "unit": "mL"
+          },
+          "ultrapure_water": {
+            "value": 6,
+            "unit": "mL"
+          },
+          "ultrasonication_time": {
+            "value": 5,
+            "unit": "min"
+          },
+          "temperature": {
+            "value": 160,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 20,
+            "unit": "h"
+          }
+        },
+        "source_text": "The Construction of Ni/Co(OH)₂@NF: Co(NO₃)₂·6H₂O (1.51 mmol) and CTAB (1.37 mmol) were dissolved... the Ni/Co(OH)₂ was grown on the NF after cooling down to 25°C."
+      },
+      {
+        "id": "chem_Ni_Co(OH)2-Ru_NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂-Ru@NF",
+        "aliases": [
+          "Ni/Co(OH)₂-Ru@NF",
+          "Ni / Co(OH)_2 -Ru@NF"
+        ],
+        "formula": "Ni/Co(OH)₂-Ru"
+      },
+      {
+        "id": "chem_Ni_Co(OH)2_NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂@NF",
+        "aliases": [
+          "Ni/Co(OH)₂@NF",
+          "Ni / Co(OH)_2 @NF"
+        ],
+        "formula": "Ni/Co(OH)₂"
+      },
+      {
+        "id": "chem_PtC_NF",
+        "type": "chemical",
+        "name": "Pt/C@NF",
+        "aliases": [
+          "Pt/C@NF"
+        ],
+        "formula": "Pt/C"
+      },
+      {
+        "id": "chem_RuO2_NF",
+        "type": "chemical",
+        "name": "RuO₂@NF",
+        "aliases": [
+          "RuO₂@NF"
+        ],
+        "formula": "RuO₂"
+      },
+      {
+        "id": "chem_Ni_Co(OH)2-Ru@NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂-Ru@NF",
+        "aliases": [
+          "Ni/Co(OH)₂-Ru@NF"
+        ],
+        "formula": "Ni/Co(OH)₂-Ru@NF",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ru@NF",
+        "type": "chemical",
+        "name": "Ru@NF",
+        "aliases": [
+          "Ru@NF"
+        ],
+        "formula": "Ru@NF",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni_Co(OH)2@NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂@NF",
+        "aliases": [
+          "Ni/Co(OH)₂@NF"
+        ],
+        "formula": "Ni/Co(OH)₂@NF",
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_NF_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_NF",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support",
+          "size": "50 × 3 × 1.5 mm"
+        }
+      },
+      {
+        "id": "edge_input_chem_RuCl3_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_RuCl3",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "concentration_options": [
+            1.0,
+            1.5,
+            2.0
+          ],
+          "unit": "mg mL⁻¹"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Ru_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Ru_NF",
+        "properties": {
+          "form": "Ru⁰ nanoparticles on NF"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ru_NF_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Ru_NF",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_Co(NO3)2_6H2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Co(NO3)2_6H2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "amount": {
+            "value": 1.51,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_CTAB_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_CTAB",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "template",
+          "amount": {
+            "value": 1.37,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_methanol_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_methanol",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 30,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_ultrapure_water_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ultrapure_water",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 6,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Ni_Co(OH)2_Ru_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Ni_Co(OH)2_Ru_NF",
+        "properties": {
+          "form": "microspheres attached to sheets on NF"
+        }
+      },
+      {
+        "id": "edge_input_chem_NF_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_NF",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_Co(NO3)2_6H2O_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Co(NO3)2_6H2O",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor",
+          "amount": {
+            "value": 1.51,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_CTAB_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_CTAB",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "template",
+          "amount": {
+            "value": 1.37,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_methanol_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_methanol",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 30,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_ultrapure_water_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_ultrapure_water",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 6,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_Ni_Co(OH)2_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_Ni_Co(OH)2_NF",
+        "properties": {
+          "form": "Ni/Co(OH)₂ grown on NF"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Ni_Co(OH)2-Ru_NF",
+      "chem_PtC_NF",
+      "chem_Ni_Co(OH)2_NF",
+      "chem_RuO2_NF"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Ni_Co(OH)2-Ru_NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂-Ru@NF",
+        "aliases": [
+          "Ni/Co(OH)₂-Ru@NF",
+          "Ni / Co(OH)_2 -Ru@NF"
+        ],
+        "formula": "Ni/Co(OH)₂-Ru"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "N2_saturated": {
+            "value": true,
+            "unit": "gas"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "mercury/mercuric oxide",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 0.09,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "80%",
+            "unit": "iR-compensation"
+          },
+          "LSV_voltage_range": {
+            "value": "-0.924 to -1.124",
+            "unit": "V vs Hg/HgO"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 28,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 23.81,
+            "unit": "mV/dec"
+          },
+          "charge_transfer_resistance": {
+            "value": 4.25,
+            "unit": "Ω"
+          },
+          "TOF_at_120mV_overpotential": {
+            "value": 0.487,
+            "unit": "s⁻¹"
+          },
+          "Cdl": {
+            "value": "largest among compared electrodes",
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "The electrocatalytic HER activity was evaluated in 1 M KOH and alkaline seawater (N₂ saturated)... All electrochemical tests were carried out in 1M KOH solution saturated with N₂... at 25°C. A conventional three-electrode system was utilized, comprising a mercury/mercuric oxide electrode (reference electrode), carbon rod (counter electrode)... area of 0.09 cm⁻². The voltage range of the LSV curve was (-0.924V)-(-1.124V)... scan rate was 1mVs⁻¹ (80% iR compensation)... overpotential of 28mV@10mAcm⁻²... Tafel slope of 23.81mVdec⁻¹... charge transfer resistance of only 4.25... highest turnover frequency (TOF) value (0.487 s⁻¹)"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "HER performance in alkaline seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline seawater",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 0.09,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "80%",
+            "unit": "iR-compensation"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 33,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA/cm²": {
+            "value": 125,
+            "unit": "mV"
+          },
+          "charge_transfer_resistance": {
+            "value": 5.32,
+            "unit": "Ω"
+          }
+        },
+        "source_text": "Ni/Co(OH)₂-Ru@NF also indicates the most excellent overpotential values of 33 and 125 mV in alkaline seawater, corresponding to current densities of 10 and 100mAcm⁻²... Ni/Co(OH)₂-Ru@NF in both alkaline electrolyte and alkaline seawater possess smaller charge transfer resistance of only... 5.32Ω"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "OER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "N2_saturated": {
+            "value": true,
+            "unit": "gas"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "mercury/mercuric oxide",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 0.09,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "80%",
+            "unit": "iR-compensation"
+          },
+          "LSV_voltage_range": {
+            "value": "0.306 to 0.806",
+            "unit": "V vs Hg/HgO"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 177,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA/cm²": {
+            "value": 310,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 38.98,
+            "unit": "mV/dec"
+          },
+          "charge_transfer_resistance": {
+            "value": 3.55,
+            "unit": "Ω"
+          },
+          "TOF_at_310mV_overpotential": {
+            "value": 0.243,
+            "unit": "s⁻¹"
+          },
+          "Cdl": {
+            "value": "largest among compared electrodes",
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "The OER activity of the prepared catalysts was tested in the same situations as HER... voltage range of the LSV curve was (0.306V)-(0.806V), and the scan rate was 1mV s⁻¹ (80% iR compensation)... overpotentials of 177 and 310 mV at 10 and 100 mA cm⁻² respectively... Tafel slope of 38.98mV dec⁻¹... charge transfer resistance of only 3.55... TOF value of 0.243s⁻¹ at the overpotential of 310mV"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "OER performance in alkaline seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline seawater",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 0.09,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "80%",
+            "unit": "iR-compensation"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 203,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA/cm²": {
+            "value": 324,
+            "unit": "mV"
+          },
+          "charge_transfer_resistance": {
+            "value": 4.32,
+            "unit": "Ω"
+          }
+        },
+        "source_text": "with the alkaline seawater as the electrolyte, the OER overpotentials of Ni/Co(OH)₂-Ru@NF at current densities of 10 and 100mAcm⁻² are merely 203 and 324mV... Ni/Co(OH)₂-Ru@NF in both alkaline electrolyte and alkaline seawater possess smaller charge transfer resistance of only... 4.32Ω"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "Overall water splitting in 1 M KOH (two-electrode)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "catalyst_configuration": {
+            "value": "Ni/Co(OH)₂-Ru@NF || Ni/Co(OH)₂-Ru@NF",
+            "unit": "both electrodes"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_10_mA/cm²": {
+            "value": 1.36,
+            "unit": "V"
+          },
+          "Faradaic_efficiency": {
+            "value": "nearly 100%",
+            "unit": "%"
+          }
+        },
+        "source_text": "the assembled Ni/Co(OH)₂-Ru@NF∥Ni/Co(OH)₂-Ru@NF system can drive a current density of 10mAcm⁻² at the voltage of only 1.36V... the Faraday efficiency of the Ni/Co(OH)₂-Ru@NF was quantified... nearly 100%"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "Overall seawater splitting in alkaline seawater (two-electrode)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall seawater splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline seawater",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "catalyst_configuration": {
+            "value": "Ni/Co(OH)₂-Ru@NF || Ni/Co(OH)₂-Ru@NF",
+            "unit": "both electrodes"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_10_mA/cm²": {
+            "value": 1.41,
+            "unit": "V"
+          }
+        },
+        "source_text": "tests on overall alkaline seawater splitting were conducted, and its voltage is 1.41V at 10mAcm⁻²"
+      },
+      {
+        "id": "chem_Ru_NF",
+        "type": "chemical",
+        "name": "Ru@NF",
+        "aliases": [
+          "Ru@NF"
+        ],
+        "formula": "Ru"
+      },
+      {
+        "id": "chem_Ni_Co(OH)2_NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂@NF",
+        "aliases": [
+          "Ni/Co(OH)₂@NF",
+          "Ni / Co(OH)_2 @NF"
+        ],
+        "formula": "Ni/Co(OH)₂"
+      },
+      {
+        "id": "chem_PtC_NF",
+        "type": "chemical",
+        "name": "Pt/C@NF",
+        "aliases": [
+          "Pt/C@NF"
+        ],
+        "formula": "Pt/C"
+      },
+      {
+        "id": "chem_RuO2_NF",
+        "type": "chemical",
+        "name": "RuO₂@NF",
+        "aliases": [
+          "RuO₂@NF"
+        ],
+        "formula": "RuO₂"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "HER stability tests in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "stability_multistep_chronopotentiometry": {
+            "value": "excellent responsiveness and stability",
+            "unit": "4000s at 10-200 mA/cm²"
+          },
+          "stability_CV_cycles": {
+            "value": "no significant change",
+            "unit": "2000 cycles"
+          },
+          "stability_chronopotentiometry": {
+            "value": "no significant change",
+            "unit": "40h at 10 mA/cm²"
+          }
+        },
+        "source_text": "chronopotentiometric curve at multiple current densities between 10 and 200mAcm⁻² for 4000 s exhibits excellent responsiveness and stability... LSV curves are very similar before and after 2000 CV cycles... performance does not change significantly within a continuous 40h reaction"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "OER stability tests in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "stability_multistep_chronopotentiometry": {
+            "value": "excellent responsiveness and stability",
+            "unit": "4000s at 10-200 mA/cm²"
+          },
+          "stability_CV_cycles": {
+            "value": "very similar LSV curves",
+            "unit": "2000 cycles"
+          },
+          "stability_chronopotentiometry": {
+            "value": "no significant change",
+            "unit": "40h at 10 mA/cm²"
+          }
+        },
+        "source_text": "With running at multiple current densities between 10 and 200mAcm⁻² for 4000s Ni/Co(OH)₂-Ru@NF exhibits excellent responsiveness and stability... LSV curves are very similar before and after 2000 CV cycles... performance shows no significant change within 40h"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "description": "Overall water splitting stability in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "stability_chronopotentiometry": {
+            "value": "virtually unchanged",
+            "unit": "50h at 10 and 100 mA/cm²"
+          }
+        },
+        "source_text": "the overall water splitting chronopotentiometry curves were measured at constant current densities of 10 and 100mAcm⁻², which remained virtually unchanged over 50h"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_3",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_4",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_5",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_6",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ru_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ru_NF",
+        "target_id": "test_1",
+        "properties": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 36,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2_NF",
+        "target_id": "test_1",
+        "properties": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 171,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "edge_tested_chem_PtC_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_PtC_NF",
+        "target_id": "test_1",
+        "properties": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 120,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_7",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_8",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni_Co(OH)2-Ru_NF_test_9",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru_NF",
+        "target_id": "test_9",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Ni_Co(OH)2-Ru@NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂-Ru@NF",
+        "aliases": [
+          "Ni/Co(OH)₂-Ru@NF"
+        ],
+        "formula": "Ni/Co(OH)₂-Ru@NF",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ru@NF",
+        "type": "chemical",
+        "name": "Ru@NF",
+        "aliases": [
+          "Ru@NF"
+        ],
+        "formula": "Ru@NF",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni_Co(OH)2@NF",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂@NF",
+        "aliases": [
+          "Ni/Co(OH)₂@NF"
+        ],
+        "formula": "Ni/Co(OH)₂@NF",
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "Ni/Co(OH)₂-Ru@NF shows the morphology of microspheres attached to sheets.",
+        "evidence_snippet": "Scanning electron microscopy (SEM) characterizations indicate that Ru species grew as separated blocks on the NF surface ... Notably, with the fabrication of Ni/Co(OH)₂, Ni/Co(OH)₂-Ru@NF shows the morphology of microspheres attached to sheets (Figure 1c1-c3; Figure S2, Supporting Information).",
+        "related_images": [
+          "02f6b71172dc921d5ce397c01c0e56d5ebed79bdc93b7d7960e1ce27527295cc.jpg",
+          "71281da57baa6e325413497b9811e939d42673f88d1256527e138fea5c975f7d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SEM Image (c2)",
+            "properties": {
+              "description": "Scanning Electron Microscopy image labeled (c2)",
+              "scale_bar": "50 μm",
+              "visual_features": "Flaky, sheet-like morphology with layered structures, green tint",
+              "extracted_from_image": "02f6b71172dc921d5ce397c01c0e56d5ebed79bdc93b7d7960e1ce27527295cc.jpg"
+            },
+            "source_image_file": "02f6b71172dc921d5ce397c01c0e56d5ebed79bdc93b7d7960e1ce27527295cc.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanostructured Material",
+            "properties": {
+              "description": "Material depicted in SEM image (c2), exhibiting flaky and porous morphology",
+              "extracted_from_image": "02f6b71172dc921d5ce397c01c0e56d5ebed79bdc93b7d7960e1ce27527295cc.jpg"
+            },
+            "source_image_file": "02f6b71172dc921d5ce397c01c0e56d5ebed79bdc93b7d7960e1ce27527295cc.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nanoparticles",
+            "properties": {
+              "morphology": "irregular, rough surface, agglomerated",
+              "size_scale": "micrometer range",
+              "extracted_from_image": "71281da57baa6e325413497b9811e939d42673f88d1256527e138fea5c975f7d.jpg"
+            },
+            "source_image_file": "71281da57baa6e325413497b9811e939d42673f88d1256527e138fea5c975f7d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "EDS",
+        "data_reported": true,
+        "characterization_summary": "Uniform distribution of Co, Ru, Ni, O, and C elements on Ni/Co(OH)₂-Ru@NF surface.",
+        "evidence_snippet": "Figure 1d and Figure S4 (Supporting Information) illustrate the uniform distribution of Co, Ru, Ni, O, and C on the Ni/Co(OH)₂-Ru@NF surface."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "Catalyst formed by large number of microparticles and sheets.",
+        "evidence_snippet": "Transmission electron microscopy (TEM) images show that the catalyst is formed by a large number of microparticles and sheets, as displayed in Figure 2a,b."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "data_reported": true,
+        "characterization_summary": "Heterointerfaces observed with lattice fringes of 0.232 nm (Co(OH)₂ (002)), 0.175 nm (Ni(OH)₂ (012)), and 0.205 nm (Ru (101)).",
+        "evidence_snippet": "In Figure 2c, the heterointerfaces for Co(OH)₂ Ni(OH)₂-Ru can be clearly determined. The lattice fringe spacing of 0.232 and 0.175 nm is assigned to the (002) facet of Co(OH)₂ and the (012) facet of Ni(OH)₂, respectively (PDF#74-1057 and PDF#73-1520). Meanwhile, the (101) facet of Ru (0.205 nm) was also observed in high-resolution mode."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "FTIR",
+        "data_reported": true,
+        "characterization_summary": "Peaks at 3530 and 1625 cm⁻¹ for O-H bonds; peaks at 580-660 and 1058 cm⁻¹ for M-O and M-O-H bonds (M = Co or Ni).",
+        "evidence_snippet": "For Fourier transform infrared spectroscopy (FT-IR), the peaks observed at 3530 and 1625 cm⁻¹ for Ru@NF and Ni/Co(OH)₂-Ru@NF attribute to the O-H bonds assigned to adsorbed water molecules (Figure 2d). The peaks at 580-660 and 1058 cm⁻¹ of Ni/Co(OH)₂-Ru@NF are corresponded to the M-O bonds and the M-O-H bonds, respectively, proving the existence of metal hydroxides (M = Co or Ni)."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "Diffraction characteristic peaks associated with Co(OH)₂, Ni(OH)₂ and Ru observed.",
+        "evidence_snippet": "The diffraction characteristic peaks associated with Co(OH)₂, Ni(OH)₂ and Ru can be clearly attributed in Figure 2e."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "Raman",
+        "data_reported": true,
+        "characterization_summary": "Peaks at 510 and 650 cm⁻¹ correspond to Co(OH)₂; Ni-OH at 318 cm⁻¹ and Ni-O at 456 cm⁻¹.",
+        "evidence_snippet": "The co-existence of Co(OH)₂ and Ni(OH)₂ was additionally corroborated through Raman spectroscopy. Raman image displays that the peaks at 510 and 650 cm⁻¹ correspond to Co(OH)₂, and the peaks of the Ni-OH bond and the Ni-O bond are detected at 318 and 456 cm⁻¹, respectively (Figure 2f)."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "Ru 3p peaks at 463.1 and 485.4 eV (Ru⁰) and high-valent Ru⁸⁺; Co 2p peaks at 784.4/800.3 eV (Co²⁺) and 780.5/795.5 eV (Co³⁺); Ni 2p peaks at 860.3/879.6 eV (Ni²⁺) and 855.5/873.3 eV (Ni³⁺); O 1s peaks at 529.7 eV (M-OH) and 531.6 eV (oxygen vacancy).",
+        "evidence_snippet": "The surface chemical states and valence state for the Ni/Co(OH)₂-Ru@NF were in-depth measured by X-ray photoelectron spectroscopy (XPS). ... From the high-resolution XPS spectrum of Ru 3p, the characteristic peaks of Ru⁰ are attributed at 463.1 and 485.4 eV. ... the Co 2p XPS spectrum can be observed in two sets of peaks corresponding to the Co²⁺ 2p₃/₂ (784.4 eV) and 2p₁/₂ (800.3 eV), and peaks at Co³⁺ 2p₃/₂ (780.5 eV) and 2p₁/₂ (795.5 eV). The Ni 2p XPS spectrum can be deconvolved as Ni²⁺ and Ni³⁺ peaks: 860.3 and 879.6 eV (Ni²⁺ 2p₃/₂ and 2p₁/₂) and 855.5 and 873.3 eV (Ni³⁺ 2p₃/₂ and 2p₁/₂). ... characteristic peaks of M-OH and oxygen vacancy are observed at 529.7 and 531.6 eV in the O 1s spectrum, respectively.",
+        "related_images": [
+          "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg",
+          "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Co 2p",
+            "properties": {
+              "description": "Cobalt 2p orbital",
+              "extracted_from_image": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+            },
+            "source_image_file": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co²⁺",
+            "properties": {
+              "description": "Cobalt(II) ion",
+              "extracted_from_image": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+            },
+            "source_image_file": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co³⁺",
+            "properties": {
+              "description": "Cobalt(III) ion",
+              "extracted_from_image": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+            },
+            "source_image_file": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co 2p₁/₂",
+            "properties": {
+              "description": "Cobalt 2p₁/₂ spin-orbit split peak",
+              "extracted_from_image": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+            },
+            "source_image_file": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co 2p₃/₂",
+            "properties": {
+              "description": "Cobalt 2p₃/₂ spin-orbit split peak",
+              "extracted_from_image": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+            },
+            "source_image_file": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "type": "X-ray Photoelectron Spectroscopy",
+              "axis_x": "Binding energy (eV)",
+              "axis_y": "Intensity (a.u.)",
+              "range_x": "775-810 eV",
+              "extracted_from_image": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+            },
+            "source_image_file": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru3p",
+            "properties": {
+              "description": "Ru 3p X-ray photoelectron spectroscopy (XPS) peak",
+              "extracted_from_image": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+            },
+            "source_image_file": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru3p1/2",
+            "properties": {
+              "description": "Ru 3p1/2 spin-orbit split peak",
+              "extracted_from_image": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+            },
+            "source_image_file": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru3p3/2",
+            "properties": {
+              "description": "Ru 3p3/2 spin-orbit split peak",
+              "extracted_from_image": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+            },
+            "source_image_file": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ruδ+",
+            "properties": {
+              "description": "Partially oxidized ruthenium species",
+              "extracted_from_image": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+            },
+            "source_image_file": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru0",
+            "properties": {
+              "description": "Metallic ruthenium (zero oxidation state)",
+              "extracted_from_image": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+            },
+            "source_image_file": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru4+",
+            "properties": {
+              "description": "Ru(IV) oxidation state",
+              "extracted_from_image": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+            },
+            "source_image_file": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy",
+              "region": "Ru 3p",
+              "x_axis": "Binding energy / eV",
+              "x_range": [
+                455,
+                495
+              ],
+              "y_axis": "Intensity (arb. units)",
+              "extracted_from_image": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+            },
+            "source_image_file": "66e4d57cb17deb9f1e8c79d952454b172e6cbcf46141c4240dfd4d221b9a441d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "EPR",
+        "data_reported": true,
+        "characterization_summary": "Prominent peaks at g = 2.003 indicating increased oxygen vacancies and higher electron density.",
+        "evidence_snippet": "To demonstrate the existence of rich oxygen vacancy, electron paramagnetic resonance (EPR) was conducted ... The EPR spectrum of Ni/Co(OH)₂-Ru@NF exhibits prominent peaks at g = 2.003 compared to Ru@NF, suggesting an increased oxygen vacancies and higher electron density."
+      },
+      {
+        "id": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762_node4",
+        "type": "chemical",
+        "name": "Co⁴⁺",
+        "properties": {
+          "description": "Cobalt(IV) ion",
+          "extracted_from_image": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+        },
+        "source_image_file": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+      },
+      {
+        "id": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762_node8",
+        "type": "peak",
+        "name": "Satellite peaks",
+        "properties": {
+          "description": "Shake-up satellite peaks associated with Co 2p transitions",
+          "extracted_from_image": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+        },
+        "source_image_file": "0425abdeb0d08a00f65c20e652bc8907f2c8195187003b6b20283b92e0bb1762.jpg"
+      },
+      {
+        "id": "ru",
+        "type": "chemical",
+        "name": "Ru",
+        "properties": {
+          "description": "Ruthenium element, depicted as atomic symbol in large font",
+          "visual": "prominently labeled in white text on black background",
+          "extracted_from_image": "098e6dad4a0a53b9af869bb08379297c2e6030d51472dabfbdcfddde31184e66.jpg"
+        },
+        "source_image_file": "098e6dad4a0a53b9af869bb08379297c2e6030d51472dabfbdcfddde31184e66.jpg"
+      },
+      {
+        "id": "orange-particles",
+        "type": "characterization",
+        "name": "Orange Particles",
+        "properties": {
+          "description": "Cluster of small orange-colored particles scattered across dark background",
+          "visual": "likely SEM or TEM image showing nanoparticle morphology",
+          "color": "orange",
+          "shape": "spherical/granular particles",
+          "extracted_from_image": "098e6dad4a0a53b9af869bb08379297c2e6030d51472dabfbdcfddde31184e66.jpg"
+        },
+        "source_image_file": "098e6dad4a0a53b9af869bb08379297c2e6030d51472dabfbdcfddde31184e66.jpg"
+      },
+      {
+        "id": "ni",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "description": "Nickel element or nickel-based material",
+          "extracted_from_image": "0c9344ebfbb732dcf8c841c6def51de6efd5a1d791c97b20253aec6d872900f6.jpg"
+        },
+        "source_image_file": "0c9344ebfbb732dcf8c841c6def51de6efd5a1d791c97b20253aec6d872900f6.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "HRTEM image",
+        "properties": {
+          "label": "(c)",
+          "scale": "1 nm",
+          "extracted_from_image": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+        },
+        "source_image_file": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "characterization",
+        "name": "LSV plot at 10 mA/cm²",
+        "properties": {
+          "description": "Orange line showing potential vs time",
+          "current_density": "10 mA/cm²",
+          "color": "orange",
+          "extracted_from_image": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+        },
+        "source_image_file": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "characterization",
+        "name": "LSV plot at 100 mA/cm²",
+        "properties": {
+          "description": "Purple line showing potential vs time",
+          "current_density": "100 mA/cm²",
+          "color": "purple",
+          "extracted_from_image": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+        },
+        "source_image_file": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "axis",
+        "name": "Potential (V)",
+        "properties": {
+          "range": "0 to 3.0 V",
+          "extracted_from_image": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+        },
+        "source_image_file": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "axis",
+        "name": "Time",
+        "properties": {
+          "range": "0 to 50 h",
+          "unit": "hours",
+          "extracted_from_image": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+        },
+        "source_image_file": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "chart",
+        "name": "Stability Test Plot",
+        "properties": {
+          "type": "Potential vs Time",
+          "context": "Electrocatalysis stability at different current densities",
+          "extracted_from_image": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+        },
+        "source_image_file": "e91593227252e672cceb1313fb2f64b2d04fb6df418edb96a5eca67be3e70d47.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "process",
+        "name": "HER",
+        "properties": {
+          "description": "Hydrogen Evolution Reaction",
+          "extracted_from_image": "e6b508da217959e866b0b6196f477ca2c9146e5bc729b7eea4dadb20f948bede.jpg"
+        },
+        "source_image_file": "e6b508da217959e866b0b6196f477ca2c9146e5bc729b7eea4dadb20f948bede.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "process",
+        "name": "OER",
+        "properties": {
+          "description": "Oxygen Evolution Reaction",
+          "extracted_from_image": "e6b508da217959e866b0b6196f477ca2c9146e5bc729b7eea4dadb20f948bede.jpg"
+        },
+        "source_image_file": "e6b508da217959e866b0b6196f477ca2c9146e5bc729b7eea4dadb20f948bede.jpg"
+      },
+      {
+        "id": "NiCo(OH)2-RuO2@NF",
+        "type": "chemical",
+        "name": "NiCo(OH)2-RuO2@NF",
+        "properties": {
+          "description": "Nickel cobalt hydroxide - ruthenium dioxide on nickel foam",
+          "capacitance_values": [
+            "163.65 mF cm⁻²",
+            "88.72 mF cm⁻²"
+          ],
+          "extracted_from_image": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+        },
+        "source_image_file": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+      },
+      {
+        "id": "NiCo(OH)2@NF",
+        "type": "chemical",
+        "name": "NiCo(OH)2@NF",
+        "properties": {
+          "description": "Nickel cobalt hydroxide on nickel foam",
+          "capacitance_values": [
+            "166.35 mF cm⁻²"
+          ],
+          "extracted_from_image": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+        },
+        "source_image_file": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+      },
+      {
+        "id": "RuO2@NF",
+        "type": "chemical",
+        "name": "RuO2@NF",
+        "properties": {
+          "description": "Ruthenium dioxide on nickel foam",
+          "capacitance_value": "25.5 mF cm⁻²",
+          "extracted_from_image": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+        },
+        "source_image_file": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+      },
+      {
+        "id": "Pt@NF",
+        "type": "chemical",
+        "name": "Pt@NF",
+        "properties": {
+          "description": "Platinum on Nickel Foam",
+          "extracted_from_image": "17fc26b4e5ad686033c49579dd3be6281441814b1ce501cd4f078e0d0769ba17.jpg"
+        },
+        "source_image_file": "17fc26b4e5ad686033c49579dd3be6281441814b1ce501cd4f078e0d0769ba17.jpg"
+      },
+      {
+        "id": "NF",
+        "type": "chemical",
+        "name": "NF",
+        "properties": {
+          "description": "Nickel foam substrate",
+          "extracted_from_image": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+        },
+        "source_image_file": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+      },
+      {
+        "id": "LSV_plot",
+        "type": "characterization",
+        "name": "Linear Sweep Voltammetry Plot",
+        "properties": {
+          "x_axis": "Potential / V vs. RHE",
+          "y_axis": "Current Density / A cm⁻²",
+          "conditions": "Alkaline seawater",
+          "extracted_from_image": "17fc26b4e5ad686033c49579dd3be6281441814b1ce501cd4f078e0d0769ba17.jpg"
+        },
+        "source_image_file": "17fc26b4e5ad686033c49579dd3be6281441814b1ce501cd4f078e0d0769ba17.jpg"
+      },
+      {
+        "id": "alkaline_seawater",
+        "type": "chemical",
+        "name": "Alkaline seawater",
+        "properties": {
+          "description": "Electrolyte: alkaline seawater",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "co_element",
+        "type": "chemical",
+        "name": "Cobalt",
+        "properties": {
+          "symbol": "Co",
+          "description": "Chemical element Cobalt indicated in the image",
+          "extracted_from_image": "1d6648fb492114f0e08752864d5e0d90282fcb07d475779f7f99eb1809f410ec.jpg"
+        },
+        "source_image_file": "1d6648fb492114f0e08752864d5e0d90282fcb07d475779f7f99eb1809f410ec.jpg"
+      },
+      {
+        "id": "Ni(OH)2/Ru_site",
+        "type": "chemical",
+        "name": "Ni(OH)₂/Ru site",
+        "properties": {
+          "description": "Nickel hydroxide with Ruthenium site",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "Ni(OH)2/Ni(OH)2_site",
+        "type": "chemical",
+        "name": "Ni(OH)₂/Ni(OH)₂ site",
+        "properties": {
+          "description": "Nickel hydroxide site",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "Ni(OH)2/Ru",
+        "type": "chemical",
+        "name": "Ni(OH)₂/Ru",
+        "properties": {
+          "description": "Nickel hydroxide on Ruthenium",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "description": "Water molecule",
+          "extracted_from_image": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+        },
+        "source_image_file": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+      },
+      {
+        "id": "OH-H",
+        "type": "chemical",
+        "name": "*OH-H",
+        "properties": {
+          "description": "Hydroxyl-hydrogen intermediate",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "OH+H",
+        "type": "chemical",
+        "name": "*OH+H",
+        "properties": {
+          "description": "Hydroxyl plus hydrogen",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "OHe",
+        "type": "chemical",
+        "name": "*OH*",
+        "properties": {
+          "description": "Hydroxyl radical",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "energy_0.94eV",
+        "type": "characterization",
+        "name": "0.94 eV",
+        "properties": {
+          "description": "Energy barrier",
+          "value": "0.94 eV",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "energy_0.61eV_blue",
+        "type": "characterization",
+        "name": "0.61 eV (blue)",
+        "properties": {
+          "description": "Energy barrier on Ni(OH)₂/Ni(OH)₂ site",
+          "value": "0.61 eV",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "energy_0.61eV_orange",
+        "type": "characterization",
+        "name": "0.61 eV (orange)",
+        "properties": {
+          "description": "Energy barrier on Ni(OH)₂/Ru",
+          "value": "0.61 eV",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "energy_0.42eV",
+        "type": "characterization",
+        "name": "0.42 eV",
+        "properties": {
+          "description": "Energy barrier",
+          "value": "0.42 eV",
+          "extracted_from_image": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+        },
+        "source_image_file": "222fd0514118927aef8ecdba17a15b6c0e4081187f07f6c4a1f1b6053ab870cb.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "LSV Polarization Curves",
+        "properties": {
+          "x_axis": "Potential / V vs RHE (1.3-1.7 V)",
+          "y_axis": "Current Density (mA/cm², 0-600)",
+          "measurement": "Linear Sweep Voltammetry",
+          "extracted_from_image": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+        },
+        "source_image_file": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+      },
+      {
+        "id": "RuNF",
+        "type": "chemical",
+        "name": "RuNF",
+        "properties": {
+          "description": "Ruthenium nanoflake",
+          "extracted_from_image": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+        },
+        "source_image_file": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+      },
+      {
+        "id": "RuO_NF",
+        "type": "chemical",
+        "name": "RuO/NF",
+        "properties": {
+          "description": "Ruthenium oxide on nickel foam",
+          "extracted_from_image": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+        },
+        "source_image_file": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+      },
+      {
+        "id": "NiRuOH_NF",
+        "type": "chemical",
+        "name": "NiCo(OH)x-Ru/NF",
+        "properties": {
+          "description": "Nickel cobalt hydroxide with ruthenium on nickel foam",
+          "extracted_from_image": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+        },
+        "source_image_file": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+      },
+      {
+        "id": "NiCoOH_NF",
+        "type": "chemical",
+        "name": "NiCo(OH)x/NF",
+        "properties": {
+          "description": "Nickel cobalt hydroxide on nickel foam",
+          "extracted_from_image": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+        },
+        "source_image_file": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+      },
+      {
+        "id": "NiOH_NF",
+        "type": "chemical",
+        "name": "Ni(OH)x/NF",
+        "properties": {
+          "description": "Nickel hydroxide on nickel foam",
+          "extracted_from_image": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+        },
+        "source_image_file": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+      },
+      {
+        "id": "1M_KOH",
+        "type": "chemical",
+        "name": "1M KOH",
+        "properties": {
+          "description": "Electrolyte: 1M potassium hydroxide",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "2M_KOH",
+        "type": "condition",
+        "name": "2M KOH",
+        "properties": {
+          "extracted_from_image": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+        },
+        "source_image_file": "264176357b81f0072bc4dcd2ba23bb8019f5c7e681551f11660203a42639313c.jpg"
+      },
+      {
+        "id": "Co",
+        "type": "chemical",
+        "name": "Co",
+        "properties": {
+          "label": "Co",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "RuCo-LDH",
+        "type": "chemical",
+        "name": "RuCo-LDH",
+        "properties": {
+          "label": "RuCo-LDH",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "RuCoP-NS",
+        "type": "chemical",
+        "name": "RuCoP-NS",
+        "properties": {
+          "label": "RuCoP-NS",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "RuCoP-NW",
+        "type": "chemical",
+        "name": "RuCoP-NW",
+        "properties": {
+          "label": "RuCoP-NW",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "RuCoP-NC",
+        "type": "chemical",
+        "name": "RuCoP-NC",
+        "properties": {
+          "label": "RuCoP-NC",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "RuCoP-NF",
+        "type": "chemical",
+        "name": "RuCoP-NF",
+        "properties": {
+          "label": "RuCoP-NF",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "CoP",
+        "type": "chemical",
+        "name": "CoP",
+        "properties": {
+          "label": "CoP",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "RuP",
+        "type": "chemical",
+        "name": "RuP",
+        "properties": {
+          "label": "RuP",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "RuP-NS",
+        "type": "chemical",
+        "name": "RuP-NS",
+        "properties": {
+          "label": "RuP-NS",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "RuP-NF",
+        "type": "chemical",
+        "name": "RuP-NF",
+        "properties": {
+          "label": "RuP-NF",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "VF2",
+        "type": "chemical",
+        "name": "VF2",
+        "properties": {
+          "label": "VF2",
+          "extracted_from_image": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+        },
+        "source_image_file": "304258a78dfae301d0f7ff2f4ae59ad5c9b4674d8c1c7728f6d0d9d955bb130c.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "LSV Curve",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Potential / V vs. RHE (1.3 to 1.7 V)",
+          "y_axis": "Current Density / A cm⁻² (0 to 500)",
+          "conditions": "1M KOH electrolyte",
+          "extracted_from_image": "7d36b8c019eb7b622bb4f6317a00ba2c9079181295238463cec1d110c49ce2df.jpg"
+        },
+        "source_image_file": "7d36b8c019eb7b622bb4f6317a00ba2c9079181295238463cec1d110c49ce2df.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "LSV Curve NiCo(OH)2 NF",
+        "properties": {
+          "color": "green",
+          "x_axis": "Potential / V vs. RHE",
+          "y_axis": "Current density / mA cm⁻²",
+          "extracted_from_image": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+        },
+        "source_image_file": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "LSV Curve RuO2@NF",
+        "properties": {
+          "color": "blue",
+          "x_axis": "Potential / V vs. RHE",
+          "y_axis": "Current density / mA cm⁻²",
+          "extracted_from_image": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+        },
+        "source_image_file": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+      },
+      {
+        "id": "c4",
+        "type": "characterization",
+        "name": "LSV Curve Pt@NF",
+        "properties": {
+          "color": "cyan",
+          "x_axis": "Potential / V vs. RHE",
+          "y_axis": "Current density / mA cm⁻²",
+          "extracted_from_image": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+        },
+        "source_image_file": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+      },
+      {
+        "id": "c5",
+        "type": "characterization",
+        "name": "LSV Curve Pt/C@NF",
+        "properties": {
+          "color": "magenta",
+          "x_axis": "Potential / V vs. RHE",
+          "y_axis": "Current density / mA cm⁻²",
+          "extracted_from_image": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+        },
+        "source_image_file": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+      },
+      {
+        "id": "exp1",
+        "type": "experiment",
+        "name": "Linear Sweep Voltammetry",
+        "properties": {
+          "reference": "RHE",
+          "electrolyte": "1M KOH",
+          "extracted_from_image": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+        },
+        "source_image_file": "4048623300bd08548788f69b1a57c84b2786b5251aae050f67af7fbc7147ba47.jpg"
+      },
+      {
+        "id": "chart_xps_ni",
+        "type": "characterization",
+        "name": "Ni 2p XPS Spectrum",
+        "properties": {
+          "type": "XPS",
+          "label": "(j)",
+          "x_axis": "Binding energy / eV",
+          "x_range": [
+            850,
+            890
+          ],
+          "y_axis": "Intensity / a.u.",
+          "extracted_from_image": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+        },
+        "source_image_file": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+      },
+      {
+        "id": "ni_2p3_2",
+        "type": "chemical",
+        "name": "Ni 2p3/2",
+        "properties": {
+          "spin_orbit": "2p3/2",
+          "peaks": [
+            "Sat",
+            "Ni⁺",
+            "Ni²⁺",
+            "Sat"
+          ],
+          "colors": [
+            "purple",
+            "green",
+            "orange",
+            "purple"
+          ],
+          "extracted_from_image": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+        },
+        "source_image_file": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+      },
+      {
+        "id": "ni_2p1_2",
+        "type": "chemical",
+        "name": "Ni 2p1/2",
+        "properties": {
+          "spin_orbit": "2p1/2",
+          "peaks": [
+            "Sat",
+            "Ni⁺",
+            "Ni²⁺",
+            "Sat"
+          ],
+          "colors": [
+            "light blue",
+            "light green",
+            "light purple",
+            "light blue"
+          ],
+          "extracted_from_image": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+        },
+        "source_image_file": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+      },
+      {
+        "id": "ni2_plus",
+        "type": "chemical",
+        "name": "Ni²⁺",
+        "properties": {
+          "oxidation_state": "+2",
+          "description": "Nickel(II) species",
+          "extracted_from_image": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+        },
+        "source_image_file": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+      },
+      {
+        "id": "ni1_plus",
+        "type": "chemical",
+        "name": "Ni⁺",
+        "properties": {
+          "oxidation_state": "+1",
+          "description": "Nickel(I) species",
+          "extracted_from_image": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+        },
+        "source_image_file": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+      },
+      {
+        "id": "ni3_plus",
+        "type": "chemical",
+        "name": "Ni³⁺",
+        "properties": {
+          "oxidation_state": "+3",
+          "description": "Nickel(III) species",
+          "extracted_from_image": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+        },
+        "source_image_file": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+      },
+      {
+        "id": "sat_peaks",
+        "type": "chemical",
+        "name": "Satellite Peaks",
+        "properties": {
+          "description": "Shake-up satellite peaks for Ni 2p",
+          "extracted_from_image": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+        },
+        "source_image_file": "56f33a064e120e3833636901fc54ad8108ab288188e2c27615956715424712f0.jpg"
+      },
+      {
+        "id": "NiCoOH@NF",
+        "type": "chemical",
+        "name": "NiCo(OH)₂@NF",
+        "properties": {
+          "description": "Nickel-Cobalt Hydroxide on Nickel Foam",
+          "extracted_from_image": "5866ea57eedf09450782e3fca891381e763878f88bf7369aaf3d0acc15aa1d36.jpg"
+        },
+        "source_image_file": "5866ea57eedf09450782e3fca891381e763878f88bf7369aaf3d0acc15aa1d36.jpg"
+      },
+      {
+        "id": "PtCANF",
+        "type": "chemical",
+        "name": "Pt/C@NF",
+        "properties": {
+          "description": "Platinum on Carbon supported on Nickel Foam",
+          "extracted_from_image": "5866ea57eedf09450782e3fca891381e763878f88bf7369aaf3d0acc15aa1d36.jpg"
+        },
+        "source_image_file": "5866ea57eedf09450782e3fca891381e763878f88bf7369aaf3d0acc15aa1d36.jpg"
+      },
+      {
+        "id": "RuANF",
+        "type": "chemical",
+        "name": "Ru@NF",
+        "properties": {
+          "description": "Ruthenium on Nickel Foam",
+          "extracted_from_image": "5866ea57eedf09450782e3fca891381e763878f88bf7369aaf3d0acc15aa1d36.jpg"
+        },
+        "source_image_file": "5866ea57eedf09450782e3fca891381e763878f88bf7369aaf3d0acc15aa1d36.jpg"
+      },
+      {
+        "id": "RuNiCoNF",
+        "type": "chemical",
+        "name": "Ru@(Ni,Co)OH@NF",
+        "properties": {
+          "description": "Ruthenium on Nickel-Cobalt Hydroxide on Nickel Foam",
+          "extracted_from_image": "5866ea57eedf09450782e3fca891381e763878f88bf7369aaf3d0acc15aa1d36.jpg"
+        },
+        "source_image_file": "5866ea57eedf09450782e3fca891381e763878f88bf7369aaf3d0acc15aa1d36.jpg"
+      },
+      {
+        "id": "NiCo(OH)2-RuNF",
+        "type": "chemical",
+        "name": "NiCo(OH)2-RuNF",
+        "properties": {
+          "capacitance_values": [
+            "181.42 mF cm⁻²"
+          ],
+          "extracted_from_image": "643757ba5f6f3e03afa6c55501293b10ebb20dd59dbf13dc3d556940a78df6fa.jpg"
+        },
+        "source_image_file": "643757ba5f6f3e03afa6c55501293b10ebb20dd59dbf13dc3d556940a78df6fa.jpg"
+      },
+      {
+        "id": "NiCo(OH)2@RuNF",
+        "type": "chemical",
+        "name": "NiCo(OH)2@RuNF",
+        "properties": {
+          "description": "Nickel cobalt hydroxide core-shell with ruthenium nanoflake",
+          "extracted_from_image": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+        },
+        "source_image_file": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+      },
+      {
+        "id": "PtCo(OH)2@RuNF",
+        "type": "chemical",
+        "name": "PtCo(OH)2@RuNF",
+        "properties": {
+          "capacitance_values": [
+            "99.63 mF cm⁻²"
+          ],
+          "extracted_from_image": "643757ba5f6f3e03afa6c55501293b10ebb20dd59dbf13dc3d556940a78df6fa.jpg"
+        },
+        "source_image_file": "643757ba5f6f3e03afa6c55501293b10ebb20dd59dbf13dc3d556940a78df6fa.jpg"
+      },
+      {
+        "id": "PtCNF",
+        "type": "chemical",
+        "name": "PtCNF",
+        "properties": {
+          "extracted_from_image": "643757ba5f6f3e03afa6c55501293b10ebb20dd59dbf13dc3d556940a78df6fa.jpg"
+        },
+        "source_image_file": "643757ba5f6f3e03afa6c55501293b10ebb20dd59dbf13dc3d556940a78df6fa.jpg"
+      },
+      {
+        "id": "PtC(OH)2@RuNF",
+        "type": "chemical",
+        "name": "PtC(OH)2@RuNF",
+        "properties": {
+          "capacitance_values": [
+            "21.82 mF cm⁻²"
+          ],
+          "extracted_from_image": "643757ba5f6f3e03afa6c55501293b10ebb20dd59dbf13dc3d556940a78df6fa.jpg"
+        },
+        "source_image_file": "643757ba5f6f3e03afa6c55501293b10ebb20dd59dbf13dc3d556940a78df6fa.jpg"
+      },
+      {
+        "id": "CV_plot",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry Plot",
+        "properties": {
+          "x_axis": "Scan rate / mV s⁻¹",
+          "y_axis": "j / mA cm⁻²",
+          "electrolyte": "1 M KOH",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "d1",
+        "type": "data_point",
+        "name": "10 mA cm⁻²",
+        "properties": {
+          "current_density": "10 mA cm⁻²",
+          "overpotential_stability": "shown in plot",
+          "extracted_from_image": "6b9685d9e526f991ac12de3614e59c9d63837828ee46e9b37440f28a0a7bfa05.jpg"
+        },
+        "source_image_file": "6b9685d9e526f991ac12de3614e59c9d63837828ee46e9b37440f28a0a7bfa05.jpg"
+      },
+      {
+        "id": "d2",
+        "type": "data_point",
+        "name": "200 mA cm⁻²",
+        "properties": {
+          "current_density": "200 mA cm⁻²",
+          "overpotential_stability": "shown in plot",
+          "extracted_from_image": "6b9685d9e526f991ac12de3614e59c9d63837828ee46e9b37440f28a0a7bfa05.jpg"
+        },
+        "source_image_file": "6b9685d9e526f991ac12de3614e59c9d63837828ee46e9b37440f28a0a7bfa05.jpg"
+      },
+      {
+        "id": "RuO2-NF",
+        "type": "chemical",
+        "name": "RuO2-NF",
+        "properties": {
+          "description": "Ruthenium Dioxide on Nickel Foam",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "Pt-C-NF",
+        "type": "chemical",
+        "name": "Pt/C-NF",
+        "properties": {
+          "description": "Platinum on carbon supported on nickel foam",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "NiCO3-Ru-NF",
+        "type": "chemical",
+        "name": "NiCO3-Ru@NF",
+        "properties": {
+          "description": "Nickel carbonate with ruthenium on nickel foam",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "NiCO3-Ru-Ni(OH)2-Ru-NF",
+        "type": "chemical",
+        "name": "NiCO3-Ru@NF/Ni(OH)2-Ru@NF",
+        "properties": {
+          "description": "Layered structure of nickel carbonate-ruthenium and nickel hydroxide-ruthenium on nickel foam",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "NiCO3-NF",
+        "type": "chemical",
+        "name": "NiCO3-NF",
+        "properties": {
+          "description": "Nickel carbonate on nickel foam",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "HER",
+        "type": "process",
+        "name": "HER",
+        "properties": {
+          "description": "Hydrogen Evolution Reaction",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "OER",
+        "type": "process",
+        "name": "OER",
+        "properties": {
+          "description": "Oxygen Evolution Reaction",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "lsv_plot",
+        "type": "characterization",
+        "name": "LSV Plot",
+        "properties": {
+          "description": "Linear Sweep Voltammetry current density vs overpotential",
+          "x_axis": "Overpotential (V)",
+          "y_axis": "Current density (mA/cm²)",
+          "range": "50-250 mA/cm², 1.3-1.7 V",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "nf_structure",
+        "type": "characterization",
+        "name": "NF Structure",
+        "properties": {
+          "description": "Schematic of nickel foam substrate with catalyst",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "NiFOAM",
+        "type": "material",
+        "name": "Nickel Foam (NF)",
+        "properties": {
+          "description": "Conductive substrate",
+          "extracted_from_image": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+        },
+        "source_image_file": "709419e3f2eb7d7959e26ea8c470aa48b2d6568541e6099b4f34fbc2f5e19bd1.jpg"
+      },
+      {
+        "id": "image_d",
+        "type": "image",
+        "name": "Figure (d)",
+        "properties": {
+          "label": "(d)",
+          "scale_bar": "20 μm",
+          "extracted_from_image": "71281da57baa6e325413497b9811e939d42673f88d1256527e138fea5c975f7d.jpg"
+        },
+        "source_image_file": "71281da57baa6e325413497b9811e939d42673f88d1256527e138fea5c975f7d.jpg"
+      },
+      {
+        "id": "microscopy_image",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "description": "Grayscale micrograph showing irregular particles with rough surfaces and some agglomeration",
+          "scale": "20 μm",
+          "extracted_from_image": "71281da57baa6e325413497b9811e939d42673f88d1256527e138fea5c975f7d.jpg"
+        },
+        "source_image_file": "71281da57baa6e325413497b9811e939d42673f88d1256527e138fea5c975f7d.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "condition",
+        "name": "ΔV=1.370 V",
+        "properties": {
+          "description": "Cell voltage difference",
+          "extracted_from_image": "e6b508da217959e866b0b6196f477ca2c9146e5bc729b7eea4dadb20f948bede.jpg"
+        },
+        "source_image_file": "e6b508da217959e866b0b6196f477ca2c9146e5bc729b7eea4dadb20f948bede.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "condition",
+        "name": "@10 mA/cm²",
+        "properties": {
+          "description": "Current density condition",
+          "extracted_from_image": "e6b508da217959e866b0b6196f477ca2c9146e5bc729b7eea4dadb20f948bede.jpg"
+        },
+        "source_image_file": "e6b508da217959e866b0b6196f477ca2c9146e5bc729b7eea4dadb20f948bede.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "peak",
+        "name": "O-H (H2O)",
+        "properties": {
+          "position": "Multiple regions",
+          "assignment": "O-H stretching in water",
+          "extracted_from_image": "757b9f6da2988958e298a28eb41447bd8d635fafc410c94846db8be6b1b6dddd.jpg"
+        },
+        "source_image_file": "757b9f6da2988958e298a28eb41447bd8d635fafc410c94846db8be6b1b6dddd.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "peak",
+        "name": "M-O",
+        "properties": {
+          "position": "Low wavenumber region",
+          "assignment": "Metal-Oxygen bond",
+          "extracted_from_image": "757b9f6da2988958e298a28eb41447bd8d635fafc410c94846db8be6b1b6dddd.jpg"
+        },
+        "source_image_file": "757b9f6da2988958e298a28eb41447bd8d635fafc410c94846db8be6b1b6dddd.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "peak",
+        "name": "M-O-H",
+        "properties": {
+          "position": "Low wavenumber region",
+          "assignment": "Metal-Hydroxide bond",
+          "extracted_from_image": "757b9f6da2988958e298a28eb41447bd8d635fafc410c94846db8be6b1b6dddd.jpg"
+        },
+        "source_image_file": "757b9f6da2988958e298a28eb41447bd8d635fafc410c94846db8be6b1b6dddd.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "image",
+        "name": "Figure (b)",
+        "properties": {
+          "description": "High-resolution transmission electron microscopy (HRTEM) image",
+          "scale_bar": "50 nm",
+          "extracted_from_image": "7dfbe62773c0c45c21300896fc946dddd67a9959b8478b53bda3aa04e90b7ee0.jpg"
+        },
+        "source_image_file": "7dfbe62773c0c45c21300896fc946dddd67a9959b8478b53bda3aa04e90b7ee0.jpg"
+      },
+      {
+        "id": "hrtem",
+        "type": "characterization",
+        "name": "HRTEM",
+        "properties": {
+          "technique": "High-Resolution Transmission Electron Microscopy",
+          "scale": "50 nm",
+          "features": "nanoparticles with lattice fringes, dark granular regions on lighter substrate",
+          "extracted_from_image": "7dfbe62773c0c45c21300896fc946dddd67a9959b8478b53bda3aa04e90b7ee0.jpg"
+        },
+        "source_image_file": "7dfbe62773c0c45c21300896fc946dddd67a9959b8478b53bda3aa04e90b7ee0.jpg"
+      },
+      {
+        "id": "nanoparticles",
+        "type": "material",
+        "name": "Nanoparticles",
+        "properties": {
+          "size_scale": "50 nm",
+          "morphology": "crystalline, aggregated, lattice fringes visible",
+          "extracted_from_image": "7dfbe62773c0c45c21300896fc946dddd67a9959b8478b53bda3aa04e90b7ee0.jpg"
+        },
+        "source_image_file": "7dfbe62773c0c45c21300896fc946dddd67a9959b8478b53bda3aa04e90b7ee0.jpg"
+      },
+      {
+        "id": "substrate",
+        "type": "material",
+        "name": "Substrate",
+        "properties": {
+          "appearance": "lighter amorphous/granular background",
+          "extracted_from_image": "7dfbe62773c0c45c21300896fc946dddd67a9959b8478b53bda3aa04e90b7ee0.jpg"
+        },
+        "source_image_file": "7dfbe62773c0c45c21300896fc946dddd67a9959b8478b53bda3aa04e90b7ee0.jpg"
+      },
+      {
+        "id": "catalyst1",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂-RuO₂ NF",
+        "properties": {
+          "description": "Nickel cobalt hydroxide with ruthenium dioxide nanoflake",
+          "extracted_from_image": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+        },
+        "source_image_file": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+      },
+      {
+        "id": "catalyst2",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂ NF",
+        "properties": {
+          "description": "Nickel cobalt hydroxide nanoflake",
+          "extracted_from_image": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+        },
+        "source_image_file": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+      },
+      {
+        "id": "catalyst3",
+        "type": "chemical",
+        "name": "RuO₂ NF",
+        "properties": {
+          "description": "Ruthenium dioxide nanoflake",
+          "extracted_from_image": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+        },
+        "source_image_file": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+      },
+      {
+        "id": "electrolyte1",
+        "type": "chemical",
+        "name": "Alkaline Seawater",
+        "properties": {
+          "description": "Electrolyte medium",
+          "extracted_from_image": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+        },
+        "source_image_file": "b2d06438238f40d393dded02912b80fe0232f7ca14b8778fa439589894889f86.jpg"
+      },
+      {
+        "id": "XRD",
+        "type": "characterization",
+        "name": "XRD Pattern",
+        "properties": {
+          "type": "X-ray Diffraction",
+          "x_axis": "2-Theta / degree",
+          "y_axis": "Intensity (a.u.)",
+          "range": "10-80 degrees",
+          "extracted_from_image": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+        },
+        "source_image_file": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+      },
+      {
+        "id": "sample",
+        "type": "chemical",
+        "name": "Ni/Co(OH)₂-Ru@NF",
+        "properties": {
+          "description": "Main sample, likely nickel cobalt hydroxide with ruthenium on nickel foam",
+          "extracted_from_image": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+        },
+        "source_image_file": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+      },
+      {
+        "id": "Ru_PDF",
+        "type": "reference",
+        "name": "Ru PDF 06-0663",
+        "properties": {
+          "database": "PDF",
+          "code": "06-0663",
+          "extracted_from_image": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+        },
+        "source_image_file": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+      },
+      {
+        "id": "NiOH2_PDF",
+        "type": "reference",
+        "name": "Ni(OH)₂ PDF 74-2075",
+        "properties": {
+          "database": "PDF",
+          "code": "74-2075",
+          "compound": "Ni(OH)₂",
+          "extracted_from_image": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+        },
+        "source_image_file": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+      },
+      {
+        "id": "Ni_PDF",
+        "type": "reference",
+        "name": "Ni PDF 45-1027",
+        "properties": {
+          "database": "PDF",
+          "code": "45-1027",
+          "compound": "Ni",
+          "extracted_from_image": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+        },
+        "source_image_file": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+      },
+      {
+        "id": "CoOH2_PDF",
+        "type": "reference",
+        "name": "Co(OH)₂ PDF 51-1731",
+        "properties": {
+          "database": "PDF",
+          "code": "51-1731",
+          "compound": "Co(OH)₂",
+          "extracted_from_image": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+        },
+        "source_image_file": "b3c56233d88cb80ecfa9cb8d1fce86298904b4414e99fe1ba228a242472e3d59.jpg"
+      },
+      {
+        "id": "Ru(OH)2@RuNF",
+        "type": "chemical",
+        "name": "Ru(OH)2@RuNF",
+        "properties": {
+          "description": "Ruthenium hydroxide on ruthenium nanoflake",
+          "extracted_from_image": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+        },
+        "source_image_file": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+      },
+      {
+        "id": "XPS_spectrum",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "technique": "X-ray Photoelectron Spectroscopy",
+          "x_axis": "Binding energy / eV",
+          "y_axis": "Intensity / a.u.",
+          "peak_position": "g=2.003",
+          "extracted_from_image": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+        },
+        "source_image_file": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+      },
+      {
+        "id": "peak_3480-3560",
+        "type": "characterization",
+        "name": "Peak region 3480-3560 eV",
+        "properties": {
+          "binding_energy_range": "3480-3560 eV",
+          "notable_feature": "g=2.003 peak",
+          "extracted_from_image": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+        },
+        "source_image_file": "b4563132f48c7fe1d8989f40f9d654dd4f28fafd5ec44a096c8ed6baeef4795c.jpg"
+      },
+      {
+        "id": "Ni(OH)2-Ru(OH)3",
+        "type": "chemical",
+        "name": "Ni(OH)₂-Ru(OH)₃",
+        "properties": {
+          "description": "Bimetallic hydroxide catalyst",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "Ni(OH)2-Ru(OH)3_Ni_site",
+        "type": "chemical",
+        "name": "Ni(OH)₂-Ru(OH)₃ Ni site",
+        "properties": {
+          "site": "Ni",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "NiCo(OH)2-Ru/Ni(OH)2_site",
+        "type": "chemical",
+        "name": "NiCo(OH)₂-Ru / Ni(OH)₂ site",
+        "properties": {
+          "site": "Ni(OH)₂",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "NiCo(OH)2-Ru/N(OH)2_site",
+        "type": "chemical",
+        "name": "NiCo(OH)₂-Ru / N(OH)₂ site",
+        "properties": {
+          "site": "Co(OH)₂",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "NiCo(OH)2-Ru/Ru_site",
+        "type": "chemical",
+        "name": "NiCo(OH)₂-Ru / Ru site",
+        "properties": {
+          "site": "Ru",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "Ru(OH)3",
+        "type": "chemical",
+        "name": "Ru(OH)₃",
+        "properties": {
+          "description": "Ruthenium hydroxide",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "H",
+        "type": "chemical",
+        "name": "*H",
+        "properties": {
+          "description": "Adsorbed hydrogen",
+          "extracted_from_image": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+        },
+        "source_image_file": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+      },
+      {
+        "id": "H-",
+        "type": "chemical",
+        "name": "H⁻",
+        "properties": {
+          "description": "Hydride",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "H2",
+        "type": "chemical",
+        "name": "1/2 H₂",
+        "properties": {
+          "description": "Hydrogen gas",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "HER_diagram",
+        "type": "characterization",
+        "name": "HER Free Energy Diagram",
+        "properties": {
+          "type": "energy_diagram",
+          "x_label": "Reaction Coordinate",
+          "y_label": "Free Energy (eV)",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "Ni_site_0.43eV",
+        "type": "energy_state",
+        "name": "Ni site ΔG = 0.43 eV",
+        "properties": {
+          "energy": "0.43 eV",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "Ru_site_0.30eV",
+        "type": "energy_state",
+        "name": "Ru site ΔG = 0.30 eV",
+        "properties": {
+          "energy": "0.30 eV",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "Ru_site_-0.17eV",
+        "type": "energy_state",
+        "name": "Ru(OH) ΔG = -0.17 eV",
+        "properties": {
+          "energy": "-0.17 eV",
+          "extracted_from_image": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+        },
+        "source_image_file": "b7b3e6b6e1f7895c726366f206ee3965295e2f03a6b3dc0d8296f2c1e56fbcf2.jpg"
+      },
+      {
+        "id": "Ni(OH)2(012)",
+        "type": "chemical",
+        "name": "Ni(OH)₂",
+        "properties": {
+          "plane": "(012)",
+          "d-spacing": "0.175 nm",
+          "extracted_from_image": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+        },
+        "source_image_file": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+      },
+      {
+        "id": "Co(OH)2(002)",
+        "type": "chemical",
+        "name": "Co(OH)₂",
+        "properties": {
+          "plane": "(002)",
+          "d-spacing": "0.232 nm",
+          "extracted_from_image": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+        },
+        "source_image_file": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+      },
+      {
+        "id": "lattice-fringe-0.175nm",
+        "type": "characterization",
+        "name": "Lattice fringe",
+        "properties": {
+          "d-spacing": "0.175 nm",
+          "associated": "Ni(OH)₂(012)",
+          "extracted_from_image": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+        },
+        "source_image_file": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+      },
+      {
+        "id": "lattice-fringe-0.232nm",
+        "type": "characterization",
+        "name": "Lattice fringe",
+        "properties": {
+          "d-spacing": "0.232 nm",
+          "associated": "Co(OH)₂(002)",
+          "extracted_from_image": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+        },
+        "source_image_file": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+      },
+      {
+        "id": "lattice-fringe-0.205nm",
+        "type": "characterization",
+        "name": "Lattice fringe",
+        "properties": {
+          "d-spacing": "0.205 nm",
+          "label": "b",
+          "extracted_from_image": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+        },
+        "source_image_file": "bc9c3b165819cb2070b43a5f0f2593cc69e79f5e7ad677512a3d5e73848cdb99.jpg"
+      },
+      {
+        "id": "Ru@NF",
+        "type": "chemical",
+        "name": "Ru@NF",
+        "properties": {
+          "description": "Ruthenium on nickel foam",
+          "capacitance_value": "3.63 mF cm⁻²",
+          "extracted_from_image": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+        },
+        "source_image_file": "d6eb5444a7c1a78591180b62ddf2f3e3028c7d606a7802925bd3dadb6a4bbe32.jpg"
+      },
+      {
+        "id": "NiCoOH-NF",
+        "type": "chemical",
+        "name": "NiCo(OH)-NF",
+        "properties": {
+          "description": "Nickel-Cobalt Hydroxide on Nickel Foam",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "Ru-NF",
+        "type": "chemical",
+        "name": "Ru-NF",
+        "properties": {
+          "description": "Ruthenium on Nickel Foam",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "NiCoOH-Ru-NF",
+        "type": "chemical",
+        "name": "NiCo(OH)-Ru-NF",
+        "properties": {
+          "description": "Nickel-Cobalt Hydroxide Ruthenium on Nickel Foam",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "NiCoOH-NF_3.96",
+        "type": "performance",
+        "name": "NiCo(OH)-NF at 3.96 mF cm⁻²",
+        "properties": {
+          "capacitance": "3.96 mF cm⁻²",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "RuO2-NF_18.21",
+        "type": "performance",
+        "name": "RuO2-NF at 18.21 mF cm⁻²",
+        "properties": {
+          "capacitance": "18.21 mF cm⁻²",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "Ru-NF_25.78",
+        "type": "performance",
+        "name": "Ru-NF at 25.78 mF cm⁻²",
+        "properties": {
+          "capacitance": "25.78 mF cm⁻²",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "NiCoOH-Ru-NF_73.81",
+        "type": "performance",
+        "name": "NiCo(OH)-Ru-NF at 73.81 mF cm⁻²",
+        "properties": {
+          "capacitance": "73.81 mF cm⁻²",
+          "extracted_from_image": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+        },
+        "source_image_file": "df02af2d6983ae9887084b90ce718d9ea042c48450e3da36f8b20878daaed8a5.jpg"
+      },
+      {
+        "id": "figure_c",
+        "type": "figure",
+        "name": "Figure C",
+        "properties": {
+          "label": "C",
+          "description": "Microscopy image showing bright green fluorescent particles on dark background",
+          "extracted_from_image": "e78423197a5e2227cd94082bd89f47ab1953e3492fe18b71b1364efdb503ad26.jpg"
+        },
+        "source_image_file": "e78423197a5e2227cd94082bd89f47ab1953e3492fe18b71b1364efdb503ad26.jpg"
+      },
+      {
+        "id": "green_particles",
+        "type": "chemical",
+        "name": "Green Fluorescent Particles",
+        "properties": {
+          "description": "Nanoparticles or microparticles exhibiting bright green fluorescence",
+          "appearance": "green dots on black background",
+          "likely_technique": "Fluorescence microscopy or confocal microscopy",
+          "extracted_from_image": "e78423197a5e2227cd94082bd89f47ab1953e3492fe18b71b1364efdb503ad26.jpg"
+        },
+        "source_image_file": "e78423197a5e2227cd94082bd89f47ab1953e3492fe18b71b1364efdb503ad26.jpg"
+      },
+      {
+        "id": "fluorescence_microscopy",
+        "type": "characterization",
+        "name": "Fluorescence Microscopy",
+        "properties": {
+          "technique": "fluorescence imaging",
+          "features": "bright green emission from dispersed particles",
+          "scale": "unknown (appears nanoscale to microscale)",
+          "extracted_from_image": "e78423197a5e2227cd94082bd89f47ab1953e3492fe18b71b1364efdb503ad26.jpg"
+        },
+        "source_image_file": "e78423197a5e2227cd94082bd89f47ab1953e3492fe18b71b1364efdb503ad26.jpg"
+      },
+      {
+        "id": "Ru_site",
+        "type": "chemical",
+        "name": "Ru site",
+        "properties": {
+          "description": "Ruthenium active site",
+          "extracted_from_image": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+        },
+        "source_image_file": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+      },
+      {
+        "id": "NiOH_site",
+        "type": "chemical",
+        "name": "NiOH site",
+        "properties": {
+          "description": "Nickel hydroxide site",
+          "extracted_from_image": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+        },
+        "source_image_file": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+      },
+      {
+        "id": "CoOH_site",
+        "type": "chemical",
+        "name": "CoOH site",
+        "properties": {
+          "description": "Cobalt hydroxide site",
+          "extracted_from_image": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+        },
+        "source_image_file": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+      },
+      {
+        "id": "OH",
+        "type": "chemical",
+        "name": "*OH",
+        "properties": {
+          "description": "Hydroxyl radical or adsorbed OH",
+          "extracted_from_image": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+        },
+        "source_image_file": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+      },
+      {
+        "id": "OHp",
+        "type": "chemical",
+        "name": "*OH+",
+        "properties": {
+          "description": "Protonated hydroxyl species",
+          "extracted_from_image": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+        },
+        "source_image_file": "fb641145bb4d37d527c40434faa6874df376236b62bbfa8b4aaa3099185bba82.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Ru@NF_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ru@NF",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru@NF_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ru@NF",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru@NF_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Ru@NF",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru@NF_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Ru@NF",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru@NF_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_Ru@NF",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru@NF_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_Ru@NF",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_Co(OH)2-Ru@NF_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_Ni_Co(OH)2-Ru@NF",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node7",
+        "type": "detected_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node7",
+        "type": "detected_in"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node7",
+        "type": "detected_in"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node1",
+        "type": "subpeak_of"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node1",
+        "type": "subpeak_of"
+      },
+      {
+        "source_id": "node8",
+        "target_id": "node7",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node8",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node8",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "ru",
+        "target_id": "orange-particles",
+        "type": "labels"
+      },
+      {
+        "source_id": "orange-particles",
+        "target_id": "ru",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "ni",
+        "target_id": "image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "ni",
+        "type": "labels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "measures"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "vs"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "measures"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "vs"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "condition"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "NiCo(OH)2-RuO2@NF",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCo(OH)2@NF",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "RuO2@NF",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Pt@NF",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "LSV_plot",
+        "target_id": "alkaline_seawater",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiCo(OH)2-RuO2@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "NiCo(OH)2@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "RuO2@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "Pt@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "co_element",
+        "target_id": "image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "co_element",
+        "type": "labels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "Ni(OH)2/Ru_site",
+        "target_id": "H2O",
+        "type": "initial_state"
+      },
+      {
+        "source_id": "H2O",
+        "target_id": "OH-H",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "OH-H",
+        "target_id": "OH+H",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "Ni(OH)2/Ru_site",
+        "target_id": "energy_0.94eV",
+        "type": "energy_barrier"
+      },
+      {
+        "source_id": "Ni(OH)2/Ni(OH)2_site",
+        "target_id": "energy_0.61eV_blue",
+        "type": "energy_barrier"
+      },
+      {
+        "source_id": "Ni(OH)2/Ru",
+        "target_id": "energy_0.61eV_orange",
+        "type": "energy_barrier"
+      },
+      {
+        "source_id": "Ni(OH)2/Ru_site",
+        "target_id": "energy_0.42eV",
+        "type": "energy_barrier"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni(OH)2/Ru_site",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni(OH)2/Ni(OH)2_site",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni(OH)2/Ru",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "H2O",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "OH-H",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "OH+H",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "RuNF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "RuO_NF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiRuOH_NF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiCoOH_NF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiOH_NF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "RuNF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "RuO_NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "NiRuOH_NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "NiCoOH_NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "NiOH_NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "1M_KOH",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "2M_KOH",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "component"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Co",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "RuCo-LDH",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "RuCoP-NS",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "RuCoP-NW",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "RuCoP-NC",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "RuCoP-NF",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "CoP",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "RuP",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "RuP-NS",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "RuP-NF",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "VF2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n1",
+        "type": "features_peak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "features_peak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "features_peak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "features_peak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "c5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "exp1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "exp1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "exp1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "c4",
+        "target_id": "exp1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "c5",
+        "target_id": "exp1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "exp1",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart_xps_ni",
+        "target_id": "ni_2p3_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart_xps_ni",
+        "target_id": "ni_2p1_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "ni_2p3_2",
+        "target_id": "ni2_plus",
+        "type": "features"
+      },
+      {
+        "source_id": "ni_2p3_2",
+        "target_id": "ni1_plus",
+        "type": "features"
+      },
+      {
+        "source_id": "ni_2p3_2",
+        "target_id": "ni3_plus",
+        "type": "features"
+      },
+      {
+        "source_id": "ni_2p3_2",
+        "target_id": "sat_peaks",
+        "type": "includes"
+      },
+      {
+        "source_id": "ni_2p1_2",
+        "target_id": "ni2_plus",
+        "type": "features"
+      },
+      {
+        "source_id": "ni_2p1_2",
+        "target_id": "ni1_plus",
+        "type": "features"
+      },
+      {
+        "source_id": "ni_2p1_2",
+        "target_id": "ni3_plus",
+        "type": "features"
+      },
+      {
+        "source_id": "ni_2p1_2",
+        "target_id": "sat_peaks",
+        "type": "includes"
+      },
+      {
+        "source_id": "NiCoOH@NF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "PtCANF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "RuANF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "RuNiCoNF",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiCoOH@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "PtCANF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "RuANF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "RuNiCoNF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "achieves"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "achieves"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "achieves"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "NiCo(OH)2-RuNF",
+        "target_id": "CV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "RuNF",
+        "target_id": "CV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiCo(OH)2@RuNF",
+        "target_id": "CV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "PtCo(OH)2@RuNF",
+        "target_id": "CV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "PtCNF",
+        "target_id": "CV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "PtC(OH)2@RuNF",
+        "target_id": "CV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "CV_plot",
+        "target_id": "alkaline_seawater",
+        "type": "performed_in"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node1",
+        "type": "FEATURES"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node2",
+        "type": "FEATURES"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node3",
+        "type": "FEATURES"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node4",
+        "type": "FEATURES"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node5",
+        "type": "FEATURES"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node6",
+        "type": "FEATURES"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node1",
+        "type": "SPIN_ORBIT_SPLIT"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node1",
+        "type": "SPIN_ORBIT_SPLIT"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "d1",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "d2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "RuO2-NF",
+        "target_id": "alkaline_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "Pt-C-NF",
+        "target_id": "alkaline_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "RuO2-NF",
+        "target_id": "1M_KOH",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "Pt-C-NF",
+        "target_id": "1M_KOH",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "NiCO3-Ru-NF",
+        "target_id": "alkaline_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "NiCO3-Ru-Ni(OH)2-Ru-NF",
+        "target_id": "alkaline_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "NiCO3-NF",
+        "target_id": "alkaline_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "HER",
+        "target_id": "1M_KOH",
+        "type": "occurs_in"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "1M_KOH",
+        "type": "occurs_in"
+      },
+      {
+        "source_id": "RuO2-NF",
+        "target_id": "lsv_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Pt-C-NF",
+        "target_id": "lsv_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCO3-Ru-NF",
+        "target_id": "lsv_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCO3-Ru-Ni(OH)2-Ru-NF",
+        "target_id": "lsv_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCO3-NF",
+        "target_id": "lsv_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCO3-Ru-NF",
+        "target_id": "nf_structure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "all_chemicals",
+        "target_id": "NiFOAM",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "microscopy_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "microscopy_image",
+        "target_id": "char_1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "involves_RDS"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "cycles_back"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "transfers_to"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n2",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "reactant"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "reactant"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "product"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "reactant"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "reactant"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "reactant"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n6",
+        "type": "product"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p1",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p2",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p3",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "p1",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p1",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "c1",
+        "type": "used_in"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "hrtem",
+        "type": "depicts"
+      },
+      {
+        "source_id": "hrtem",
+        "target_id": "nanoparticles",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "hrtem",
+        "target_id": "substrate",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "nanoparticles",
+        "target_id": "substrate",
+        "type": "on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "catalyst_for"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "measures"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "measures"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "stability_comparison"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "labels"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "catalyst2",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "catalyst3",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte1",
+        "target_id": "chart",
+        "type": "used_in"
+      },
+      {
+        "source_id": "electrolyte1",
+        "target_id": "catalyst1",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "electrolyte1",
+        "target_id": "catalyst2",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "electrolyte1",
+        "target_id": "catalyst3",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "achieves"
+      },
+      {
+        "source_id": "sample",
+        "target_id": "XRD",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample",
+        "target_id": "Ru_PDF",
+        "type": "matches"
+      },
+      {
+        "source_id": "sample",
+        "target_id": "NiOH2_PDF",
+        "type": "matches"
+      },
+      {
+        "source_id": "sample",
+        "target_id": "Ni_PDF",
+        "type": "matches"
+      },
+      {
+        "source_id": "sample",
+        "target_id": "CoOH2_PDF",
+        "type": "matches"
+      },
+      {
+        "source_id": "Ru_PDF",
+        "target_id": "XRD",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "NiOH2_PDF",
+        "target_id": "XRD",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "Ni_PDF",
+        "target_id": "XRD",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "CoOH2_PDF",
+        "target_id": "XRD",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "reactant_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "intermediate_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "intermediate_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "intermediate_in"
+      },
+      {
+        "source_id": "NiCo(OH)2@RuNF",
+        "target_id": "XPS_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ru(OH)2@RuNF",
+        "target_id": "XPS_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "RuNF",
+        "target_id": "XPS_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCo(OH)2@RuNF",
+        "target_id": "peak_3480-3560",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "Ru(OH)2@RuNF",
+        "target_id": "peak_3480-3560",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "RuNF",
+        "target_id": "peak_3480-3560",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "RuNF",
+        "target_id": "NiCo(OH)2@RuNF",
+        "type": "substructure"
+      },
+      {
+        "source_id": "RuNF",
+        "target_id": "Ru(OH)2@RuNF",
+        "type": "substructure"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "Ni(OH)2-Ru(OH)3",
+        "target_id": "Ni(OH)2-Ru(OH)3_Ni_site",
+        "type": "contains_site"
+      },
+      {
+        "source_id": "Ni(OH)2-Ru(OH)3",
+        "target_id": "Ru(OH)3",
+        "type": "composite"
+      },
+      {
+        "source_id": "NiCo(OH)2-Ru/Ni(OH)2_site",
+        "target_id": "Ni(OH)2-Ru(OH)3_Ni_site",
+        "type": "equivalent_site"
+      },
+      {
+        "source_id": "NiCo(OH)2-Ru/N(OH)2_site",
+        "target_id": "Ni(OH)2-Ru(OH)3_Ni_site",
+        "type": "equivalent_site"
+      },
+      {
+        "source_id": "NiCo(OH)2-Ru/Ru_site",
+        "target_id": "Ru(OH)3",
+        "type": "equivalent_site"
+      },
+      {
+        "source_id": "HER_diagram",
+        "target_id": "Ni_site_0.43eV",
+        "type": "depicts"
+      },
+      {
+        "source_id": "HER_diagram",
+        "target_id": "Ru_site_0.30eV",
+        "type": "depicts"
+      },
+      {
+        "source_id": "HER_diagram",
+        "target_id": "Ru_site_-0.17eV",
+        "type": "depicts"
+      },
+      {
+        "source_id": "Ni(OH)2-Ru(OH)3_Ni_site",
+        "target_id": "Ni_site_0.43eV",
+        "type": "has_energy"
+      },
+      {
+        "source_id": "Ru(OH)3",
+        "target_id": "Ru_site_0.30eV",
+        "type": "has_energy"
+      },
+      {
+        "source_id": "Ru(OH)3",
+        "target_id": "Ru_site_-0.17eV",
+        "type": "has_energy"
+      },
+      {
+        "source_id": "H",
+        "target_id": "HER_diagram",
+        "type": "reactant"
+      },
+      {
+        "source_id": "H-",
+        "target_id": "HER_diagram",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "H2",
+        "target_id": "HER_diagram",
+        "type": "product"
+      },
+      {
+        "source_id": "image",
+        "target_id": "Ni(OH)2(012)",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "Co(OH)2(002)",
+        "type": "depicts"
+      },
+      {
+        "source_id": "Ni(OH)2(012)",
+        "target_id": "lattice-fringe-0.175nm",
+        "type": "has-fringe"
+      },
+      {
+        "source_id": "Co(OH)2(002)",
+        "target_id": "lattice-fringe-0.232nm",
+        "type": "has-fringe"
+      },
+      {
+        "source_id": "image",
+        "target_id": "lattice-fringe-0.205nm",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "NiCo(OH)2-RuO2@NF",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCo(OH)2@NF",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "RuO2@NF",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ru@NF",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCo(OH)2-RuO2@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "NiCo(OH)2@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "RuO2@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "Ru@NF",
+        "target_id": "NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "NiCoOH-NF",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ru-NF",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "RuO2-NF",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCoOH-Ru-NF",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiCoOH-NF",
+        "target_id": "NiCoOH-NF_3.96",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "RuO2-NF",
+        "target_id": "RuO2-NF_18.21",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "Ru-NF",
+        "target_id": "Ru-NF_25.78",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "NiCoOH-Ru-NF",
+        "target_id": "NiCoOH-Ru-NF_73.81",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "measures"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "measures"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n5",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "figure_c",
+        "target_id": "fluorescence_microscopy",
+        "type": "depicts"
+      },
+      {
+        "source_id": "fluorescence_microscopy",
+        "target_id": "green_particles",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "figure_c",
+        "target_id": "green_particles",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "uses_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "uses_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "uses_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "uses_axis"
+      },
+      {
+        "source_id": "Ru_site",
+        "target_id": "H2O",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "Ru_site",
+        "target_id": "OH",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "NiOH_site",
+        "target_id": "OHp",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "NiOH_site",
+        "target_id": "H",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "CoOH_site",
+        "target_id": "OH",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "CoOH_site",
+        "target_id": "H",
+        "type": "transforms_to"
+      }
+    ]
+  }
+}

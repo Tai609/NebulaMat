@@ -1,0 +1,1095 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_Pt100",
+        "type": "chemical",
+        "name": "Pt(100)",
+        "aliases": [
+          "Pt(100)"
+        ],
+        "formula": "Pt(100)",
+        "properties": {}
+      },
+      {
+        "id": "chem_H2O",
+        "type": "chemical",
+        "name": "water",
+        "aliases": [
+          "H2O",
+          "water molecules"
+        ],
+        "formula": "H2O",
+        "properties": {},
+        "related_images": [
+          "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg",
+          "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg",
+          "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Water Molecules",
+            "properties": {
+              "color": "red",
+              "description": "Multiple red stick models of H2O molecules",
+              "extracted_from_image": "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg"
+            },
+            "source_image_file": "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "H2O",
+            "properties": {
+              "description": "Red oxygen and white hydrogen atoms forming water molecules",
+              "count": "multiple",
+              "extracted_from_image": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+            },
+            "source_image_file": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "H₂O",
+            "properties": {
+              "description": "Water molecules",
+              "count": "multiple",
+              "color": "red",
+              "extracted_from_image": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+            },
+            "source_image_file": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Na",
+        "type": "chemical",
+        "name": "sodium",
+        "aliases": [
+          "Na",
+          "Na⁺"
+        ],
+        "formula": "Na",
+        "properties": {},
+        "related_images": [
+          "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Na⁺",
+            "properties": {
+              "description": "Sodium ion",
+              "extracted_from_image": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+            },
+            "source_image_file": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "QMMD simulation of water/Pt(100) interface",
+        "procedure": "QMMD with explicit solvent to directly simulate water/Pt(100) interface. Considered U between +0.29 and -0.46 V to cover the range of experimental condition from pH 0.2 to 12.8 at U = +0.3 V (RHE). Explicit model (~6 water layers). Explicit + Na⁺ model (~6 water layers +1 Na). Explicit + Implicit model (~3 water layers + Implicit solvation model). Extra electrons introduced to simulate more negative U, either explicitly introducing sodium (Na) or combining implicit solvation model.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Explicit solvent model",
+            "method": "Explicit solvent",
+            "conditions": {},
+            "procedure_snippet": "Explicit model (~6 water layers)"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Explicit + Na model",
+            "method": "Explicit + counterion",
+            "conditions": {},
+            "procedure_snippet": "Explicit + Na⁺ model (~6 water layers +1 Na)"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Hybrid explicit-implicit model",
+            "method": "Hybrid solvation",
+            "conditions": {
+              "work_function": {
+                "value": 4.73,
+                "unit": "eV"
+              },
+              "extra_charge": {
+                "value": 0.97,
+                "unit": "e-"
+              }
+            },
+            "procedure_snippet": "Explicit + Implicit model (~3 water layers + Implicit solvation model). Work function of 4.73, 4.34, 4.11 and 3.98 eV by introducing extra charges of 0.97 e-, 1.94 e-, 3.06 e- and 3.48 e-, resulting in U = +0.29, -0.10, -0.33 and -0.46 V."
+          }
+        ],
+        "method": "QMMD simulation",
+        "conditions": {
+          "potential_range": {
+            "value": "+0.29 to -0.46",
+            "unit": "V"
+          },
+          "pH_range": {
+            "value": "0.2 to 12.8",
+            "unit": "pH"
+          },
+          "work_function": {
+            "value": -5.06,
+            "unit": "eV"
+          }
+        },
+        "source_text": "we carried out QMMD with explicit solvent to directly simulate water/Pt(100) interface. We considered U between +0.29 and -0.46 V to cover the range of experimental condition from pH 0.2 to 12.8 at U = +0.3 V (RHE)."
+      },
+      {
+        "id": "chem_Pt(100)",
+        "type": "chemical",
+        "name": "Pt(100)",
+        "aliases": [
+          "Pt(100) electrode",
+          "Pt(100) surface"
+        ],
+        "formula": "Pt",
+        "properties": {
+          "work function": {
+            "value": -5.06,
+            "unit": "eV"
+          },
+          "Pt-O distance": {
+            "value": 2.15,
+            "unit": "Å"
+          }
+        },
+        "related_images": [
+          "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg",
+          "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg",
+          "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "material",
+            "name": "Substrate",
+            "properties": {
+              "color": "gray",
+              "description": "Gray surface with spherical atoms, likely a solid substrate",
+              "extracted_from_image": "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg"
+            },
+            "source_image_file": "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Electrode Surface",
+            "properties": {
+              "description": "Gray spherical atoms representing the electrode surface",
+              "extracted_from_image": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+            },
+            "source_image_file": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Surface",
+            "properties": {
+              "description": "Gray spherical particle surface or nanoparticle chain",
+              "color": "gray",
+              "extracted_from_image": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+            },
+            "source_image_file": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_Pt100_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Pt100",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_Na_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Na",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "counterion"
+        }
+      }
+    ],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [],
+    "edges": []
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Pt(100)",
+        "type": "chemical",
+        "name": "Pt(100)",
+        "aliases": [
+          "Pt(100) electrode",
+          "Pt(100) surface"
+        ],
+        "formula": "Pt",
+        "properties": {
+          "work function": {
+            "value": -5.06,
+            "unit": "eV"
+          },
+          "Pt-O distance": {
+            "value": 2.15,
+            "unit": "Å"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "QMMD",
+        "is_reported": true,
+        "characterization_summary": "QMMD simulations show Pt(100) work function of -5.06 eV corresponding to U = 0.62 V (close to experimental PZC of 0.41 V) and Pt-O first peak at 2.15 Å that decreases as U decreases from +0.29 to -0.46 V, weakening water adsorption.",
+        "evidence_snippet": "The work function of water/Pt(100) predicted from QM-MD is -5.06 eV, which corresponding to U = 0.62 V ... close to the experimental potential of zero charge (PZC) on Pt(100) of 0.41 V ... Figure 2a shows the distribution of water perpendicular to the surface along the z-axis (ZDF), in which the first peak of Pt-O is 2.15 Å ... As U decreases, the height of the first peak of Pt-O decreases."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "QMMD",
+        "is_reported": true,
+        "characterization_summary": "QMMD shows water reorientation on Pt(100): 3 H₂O∥ (parallel, θ<30° or >150°) at U = +0.29 V reducing to 1 H₂O∥ at U = -0.46 V (pH 12.8), making surface more hydrophobic.",
+        "evidence_snippet": "At U = 0.29 V, we find 3H₂O∥ as shown in Figure 2d,f ... Figure 2g shows the snapshot of water/Pt(100) interface at U = -0.46 V (pH = 12.8). In this case, only one H₂O∥ is observed."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "Widom insertion",
+        "is_reported": true,
+        "characterization_summary": "Widom insertion method predicts 0.13 eV increase in apparent hydrogen binding energy (HBE*) from pH 0.2 to 12.8 with slope of 10 meV/pH on Pt(100), matching experimental 8-12 meV/pH.",
+        "evidence_snippet": "We predicted a 0.13 eV increase in hydrogen binding from pH = 0.2 to pH = 12.8 with a slope of 10 meV/pH ... The slope predicted from QMMD is 10 meV/pH, very close to 8 to 12 meV/pH as measured experimentally."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "Predicted O 1s chemical shift for chemisorbed H₂O⊖ on Pt(100) is -0.18 to -0.88 eV relative to bulk water (506.66-507.36 eV), with H₂O⊖ at 507.54 eV.",
+        "evidence_snippet": "We have calculated the O 1s chemical shifts of various H₂O molecules near the surface and found that the bulk water has O 1s from 506.66 to 507.36 eV, whereas the O 1s for H₂O⊖ is 507.54 eV. Thus, we predicted -0.18 to -0.88 eV chemical shift of O 1s."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "2PT",
+        "is_reported": true,
+        "characterization_summary": "Two-phase Thermodynamic (2PT) analysis shows H₂O⊖ on Pt(100) has ~300 cm⁻¹ blue shift in H-O-H bending mode and 25% lower entropy (38.06 J/K/mol) than bulk water.",
+        "evidence_snippet": "We employed Two-phase Thermodynamic (2PT) model to predict the density of state (DOS) of water from QMMD ... we predict ~300 wavenumbers blue shift of H-O-H bending mode. The entropy of H₂O⊖ from the 2PT calculation is 38.06 J/K, about 25% decrease than that of bulk water."
+      },
+      {
+        "id": "n1",
+        "type": "characterization",
+        "name": "Pourbaix Diagram",
+        "properties": {
+          "x_axis": "pH",
+          "y_axis": "E (V vs SHE)",
+          "range_x": [
+            0,
+            14
+          ],
+          "range_y": [
+            -0.4,
+            0.2
+          ],
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "AIMD",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "chemical",
+        "name": "Sulfuric acids",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "chemical",
+        "name": "HClO4",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "chemical",
+        "name": "Phosphate",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "chemical",
+        "name": "Citrate",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "chemical",
+        "name": "Borate",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chemical",
+        "name": "Carbonate",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "chemical",
+        "name": "Acetate",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "KOH",
+        "properties": {
+          "extracted_from_image": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+        },
+        "source_image_file": "f06317460c92c8d44a27f0a2cf0d998c66569d986d55e73c0885783681d911ad.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "distance",
+        "name": "2.58 Å",
+        "properties": {
+          "d_spacing": "2.58",
+          "extracted_from_image": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+        },
+        "source_image_file": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "distance",
+        "name": "2.55 Å",
+        "properties": {
+          "d_spacing": "2.55",
+          "extracted_from_image": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+        },
+        "source_image_file": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "distance",
+        "name": "2.38 Å",
+        "properties": {
+          "d_spacing": "2.38",
+          "extracted_from_image": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+        },
+        "source_image_file": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "distance",
+        "name": "2.35 Å",
+        "properties": {
+          "d_spacing": "2.35",
+          "extracted_from_image": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+        },
+        "source_image_file": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "distance",
+        "name": "2.25 Å",
+        "properties": {
+          "d_spacing": "2.25",
+          "extracted_from_image": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+        },
+        "source_image_file": "36d894644f41308e97666da8bdc65882faf671a045cd14056909d9eced1d7c33.jpg"
+      },
+      {
+        "id": "e1",
+        "type": "characterization",
+        "name": "LSV Plot",
+        "properties": {
+          "description": "Linear Sweep Voltammetry plot",
+          "x_axis": "Time (likely seconds)",
+          "y_axis": "Current density (g/cm²)",
+          "unit": "g/cm²",
+          "extracted_from_image": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+        },
+        "source_image_file": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "condition",
+        "name": "U = 0.29 V",
+        "properties": {
+          "voltage": "0.29 V",
+          "color": "black",
+          "extracted_from_image": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+        },
+        "source_image_file": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "condition",
+        "name": "U = 0.29 V",
+        "properties": {
+          "voltage": "0.29 V",
+          "color": "red",
+          "extracted_from_image": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+        },
+        "source_image_file": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "condition",
+        "name": "U = -0.10 V",
+        "properties": {
+          "voltage": "-0.10 V",
+          "color": "blue",
+          "extracted_from_image": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+        },
+        "source_image_file": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+      },
+      {
+        "id": "c4",
+        "type": "condition",
+        "name": "U = -0.46 V",
+        "properties": {
+          "voltage": "-0.46 V",
+          "color": "magenta",
+          "extracted_from_image": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+        },
+        "source_image_file": "4601fdb2318656b70a85c6b5c877d8dc385cb425c965e2f47e0f6640b6caad25.jpg"
+      },
+      {
+        "id": "explicit",
+        "type": "chemical",
+        "name": "Explicit",
+        "properties": {
+          "description": "Explicit molecule or ligand",
+          "extracted_from_image": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+        },
+        "source_image_file": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+      },
+      {
+        "id": "graphene",
+        "type": "chemical",
+        "name": "Graphene",
+        "properties": {
+          "description": "Graphene surface depicted as gray spheres in a hexagonal lattice at the bottom",
+          "extracted_from_image": "9948bf09b7137fc085c4c9984b7f0083f7b296cd05ad43f9db69304c2fdab29c.jpg"
+        },
+        "source_image_file": "9948bf09b7137fc085c4c9984b7f0083f7b296cd05ad43f9db69304c2fdab29c.jpg"
+      },
+      {
+        "id": "image_a",
+        "type": "figure",
+        "name": "Figure a",
+        "properties": {
+          "label": "a",
+          "type": "molecular model",
+          "visualization": "3D ball-and-stick representation with explicit molecules adsorbed on graphene surface",
+          "extracted_from_image": "9948bf09b7137fc085c4c9984b7f0083f7b296cd05ad43f9db69304c2fdab29c.jpg"
+        },
+        "source_image_file": "9948bf09b7137fc085c4c9984b7f0083f7b296cd05ad43f9db69304c2fdab29c.jpg"
+      },
+      {
+        "id": "adsorption_layer",
+        "type": "structure",
+        "name": "Adsorption Layer",
+        "properties": {
+          "description": "Layer of explicit molecules physisorbed or chemisorbed on graphene surface",
+          "extracted_from_image": "9948bf09b7137fc085c4c9984b7f0083f7b296cd05ad43f9db69304c2fdab29c.jpg"
+        },
+        "source_image_file": "9948bf09b7137fc085c4c9984b7f0083f7b296cd05ad43f9db69304c2fdab29c.jpg"
+      },
+      {
+        "id": "implicit_ion",
+        "type": "chemical",
+        "name": "Implicit Ion",
+        "properties": {
+          "representation": "implicit",
+          "color": "green",
+          "description": "Green wavy line indicating implicit ion representation",
+          "extracted_from_image": "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg"
+        },
+        "source_image_file": "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg"
+      },
+      {
+        "id": "explicit_ion",
+        "type": "chemical",
+        "name": "Explicit Ion",
+        "properties": {
+          "representation": "explicit",
+          "color": "red",
+          "description": "Red polyhedral structures representing explicit ions",
+          "extracted_from_image": "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg"
+        },
+        "source_image_file": "e2f6c741d1221a125f3986c6ada718d34ce5a0fda55861ca42b2efaaa2c45451.jpg"
+      },
+      {
+        "id": "figure_label",
+        "type": "label",
+        "name": "f",
+        "properties": {
+          "description": "Figure panel label",
+          "extracted_from_image": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+        },
+        "source_image_file": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+      },
+      {
+        "id": "interface",
+        "type": "chemical",
+        "name": "Electrode-Water Interface",
+        "properties": {
+          "description": "Region between electrode surface and water layer",
+          "extracted_from_image": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+        },
+        "source_image_file": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+      },
+      {
+        "id": "asterisk",
+        "type": "chemical",
+        "name": "Species *",
+        "properties": {
+          "description": "Highlighted species marked with asterisk near interface",
+          "extracted_from_image": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+        },
+        "source_image_file": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+      },
+      {
+        "id": "star",
+        "type": "chemical",
+        "name": "Species ★",
+        "properties": {
+          "description": "Highlighted species marked with star in solution",
+          "extracted_from_image": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+        },
+        "source_image_file": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+      },
+      {
+        "id": "condition_pH",
+        "type": "condition",
+        "name": "pH = 0.2",
+        "properties": {
+          "value": "0.2",
+          "extracted_from_image": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+        },
+        "source_image_file": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+      },
+      {
+        "id": "condition_U",
+        "type": "condition",
+        "name": "U = 0.29 V",
+        "properties": {
+          "value": "0.29 V",
+          "extracted_from_image": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+        },
+        "source_image_file": "e786bed24f46d2935b7e22d2fec60b7f1343f80567a319ce87108b3dc757506c.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "Molecular Simulation Image",
+        "properties": {
+          "label": "b",
+          "title": "Explicit + Na⁺",
+          "description": "Visualization of Explicit, Na⁺, water molecules, and surface",
+          "extracted_from_image": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+        },
+        "source_image_file": "f43231964a838bd19588743453e8ec022aa1df91c981a798c3335fb1224bb028.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Pt(100)_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Pt(100)",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt(100)_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Pt(100)",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt(100)_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Pt(100)",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt(100)_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Pt(100)",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt(100)_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Pt(100)",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "marked_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "corresponds_to_d_spacing"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "corresponds_to_d_spacing"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "corresponds_to_d_spacing"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "shows_d_spacing"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n11",
+        "type": "shows_d_spacing"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n12",
+        "type": "shows_d_spacing"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n13",
+        "type": "shows_d_spacing"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n14",
+        "type": "shows_d_spacing"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n15",
+        "type": "shows_d_spacing"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "e1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "e1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "e1",
+        "type": "in_medium"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "e1",
+        "type": "measurement_condition"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "e1",
+        "type": "measurement_condition"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "e1",
+        "type": "measurement_condition"
+      },
+      {
+        "source_id": "c4",
+        "target_id": "e1",
+        "type": "measurement_condition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "explicit",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "graphene",
+        "type": "depicts"
+      },
+      {
+        "source_id": "explicit",
+        "target_id": "graphene",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "explicit",
+        "target_id": "adsorption_layer",
+        "type": "forms"
+      },
+      {
+        "source_id": "graphene",
+        "target_id": "adsorption_layer",
+        "type": "supports"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "coordinates"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "coordinates"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n2",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "figure_label",
+        "target_id": "implicit_ion",
+        "type": "labels"
+      },
+      {
+        "source_id": "figure_label",
+        "target_id": "explicit_ion",
+        "type": "labels"
+      },
+      {
+        "source_id": "implicit_ion",
+        "target_id": "chem_Pt(100)",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "explicit_ion",
+        "target_id": "chem_Pt(100)",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "explicit_ion",
+        "target_id": "chem_H2O",
+        "type": "surrounded_by"
+      },
+      {
+        "source_id": "chem_H2O",
+        "target_id": "chem_Pt(100)",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "chem_Pt(100)",
+        "target_id": "interface",
+        "type": "interface_with"
+      },
+      {
+        "source_id": "interface",
+        "target_id": "chem_H2O",
+        "type": "borders"
+      },
+      {
+        "source_id": "interface",
+        "target_id": "asterisk",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_H2O",
+        "target_id": "star",
+        "type": "contains"
+      },
+      {
+        "source_id": "condition_pH",
+        "target_id": "chem_H2O",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "condition_U",
+        "target_id": "chem_Pt(100)",
+        "type": "applied_potential"
+      },
+      {
+        "source_id": "condition_pH",
+        "target_id": "interface",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "condition_U",
+        "target_id": "interface",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "figure_label",
+        "target_id": "interface",
+        "type": "labels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "explicit",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "chem_Na",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "chem_H2O",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "chem_Pt(100)",
+        "type": "depicts"
+      },
+      {
+        "source_id": "explicit",
+        "target_id": "chem_Na",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "explicit",
+        "target_id": "chem_H2O",
+        "type": "solvated_by"
+      },
+      {
+        "source_id": "chem_Na",
+        "target_id": "chem_H2O",
+        "type": "solvated_by"
+      },
+      {
+        "source_id": "explicit",
+        "target_id": "chem_Pt(100)",
+        "type": "adsorbed_on"
+      },
+      {
+        "source_id": "chem_Na",
+        "target_id": "chem_Pt(100)",
+        "type": "interacts_with"
+      }
+    ]
+  }
+}

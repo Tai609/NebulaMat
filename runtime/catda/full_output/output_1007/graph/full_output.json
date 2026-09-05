@@ -1,0 +1,2535 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_BDD",
+        "type": "chemical",
+        "name": "BDD",
+        "aliases": [
+          "Boron-doped diamond",
+          "BDD catalyst"
+        ],
+        "formula": "B-doped C",
+        "properties": {
+          "electrical conductivity": {
+            "value": "excellent",
+            "unit": ""
+          },
+          "chemical stability": {
+            "value": "robust",
+            "unit": ""
+          },
+          "electrochemical window": {
+            "value": "wide",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_BDD_CR",
+        "type": "chemical",
+        "name": "Cathodic Reduction treated BDD",
+        "aliases": [
+          "CR treated BDD"
+        ],
+        "formula": "B-doped C (H-terminated)",
+        "properties": {
+          "C-H_bonds": {
+            "value": 20.3,
+            "unit": "%"
+          },
+          "C-O_bonds": {
+            "value": 15.5,
+            "unit": "%"
+          }
+        },
+        "related_images": [
+          "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "sample",
+            "name": "PPE 5h-CR",
+            "properties": {
+              "C-H": 20.3,
+              "C-O": 15.5,
+              "extracted_from_image": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+            },
+            "source_image_file": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_acidic_electrolyte",
+        "type": "chemical",
+        "name": "acidic electrolyte",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_H2O2",
+        "type": "chemical",
+        "name": "Hydrogen peroxide",
+        "aliases": [
+          "H₂O₂"
+        ],
+        "formula": "H₂O₂",
+        "properties": {}
+      },
+      {
+        "id": "chem_DMSO",
+        "type": "chemical",
+        "name": "dimethyl sulfoxide",
+        "aliases": [
+          "DMSO"
+        ],
+        "formula": "(CH₃)₂SO",
+        "properties": {},
+        "related_images": [
+          "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "DMSO",
+            "properties": {
+              "description": "Dimethyl sulfoxide, solvent",
+              "extracted_from_image": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+            },
+            "source_image_file": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_DMPO",
+        "type": "chemical",
+        "name": "dimethyl pyrroline N-oxide",
+        "aliases": [
+          "DMPO"
+        ],
+        "formula": "C₆H₁₁NO",
+        "properties": {},
+        "related_images": [
+          "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "DMPPO",
+            "properties": {
+              "description": "5,5-Dimethyl-1-pyrroline N-oxide, spin trap",
+              "extracted_from_image": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+            },
+            "source_image_file": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "BDD Catalyst Selection",
+        "procedure": "Boron-doped diamond (BDD), known for its excellent electrical conductivity, chemical stability, and robust performance in wide electrochemical window, was selected as the catalyst for acidic WOR H₂O₂ production. The characterization of BDD is shown in Figures S1 and S2.",
+        "method": "Catalyst selection",
+        "conditions": {},
+        "source_text": "BDD, known for its excellent electrical conductivity, chemical stability, and robust in wide electrochemical window, was employed as a catalyst in acidic WOR for H₂O₂ production. The characterization of BDD is shown in Figures S1 and S2."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "PPE Cathodic Reduction Surface Modification",
+        "procedure": "During 5h PPE operation (same anodic duration as CPE), cathodic reduction phase maintains C-H bonds at 14.9% (vs 8.6% after CPE). Subsequent dedicated 30-min cathodic reduction (CR) treatment further increases C-H bonds to 20.3% and reduces C-O bonds to 15.5%. Contact angle analysis and electrochemical characterization confirm H-termination restoration.",
+        "method": "Pulsed cathodic reduction",
+        "conditions": {
+          "total_anodic_time": {
+            "value": 5,
+            "unit": "h"
+          },
+          "final_CR_time": {
+            "value": 30,
+            "unit": "min"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "PPE Cathodic Phase",
+            "method": "Periodic cathodic pulsing",
+            "conditions": {
+              "total_anodic_equivalent_time": {
+                "value": 5,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "During PPE mode with same anodic duration as CPE"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Dedicated CR Treatment",
+            "method": "Cathodic reduction",
+            "conditions": {
+              "time": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "Subsequent 30-min CR treatment"
+          }
+        ],
+        "source_text": "after 5h of CPE treatment, the concentration of C-H bonds... decreased from 21.4% to 8.6%... In contrast, during the same anodic duration in PPE mode, C-H bonds remained relatively high at 14.9%... A subsequent 30-min CR treatment further raised the C-H bond content from 14.9% to 20.3%"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_BDD_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_BDD",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "product"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_BDD",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_BDD",
+        "properties": {
+          "form": "commercial catalyst"
+        }
+      },
+      {
+        "id": "edge_input_chem_BDD_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_BDD",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_BDD_CR",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_BDD_CR",
+        "properties": {
+          "form": "hydrogen-terminated BDD",
+          "C-H_content": "20.3%"
+        }
+      }
+    ],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_BDD",
+        "type": "chemical",
+        "name": "Boron-doped diamond",
+        "aliases": [
+          "BDD",
+          "BDD catalyst"
+        ],
+        "formula": "B-doped C"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_BDD",
+        "description": "WOR performance under constant potential electrolysis (CPE) at optimal potential",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "2e- water oxidation reaction",
+            "unit": "WOR for H2O2 production"
+          },
+          "electrolyte": {
+            "value": "acidic",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-compartment three-electrode",
+            "unit": "setup"
+          },
+          "applied_potential": {
+            "value": 3.1,
+            "unit": "V vs RHE"
+          },
+          "electrolysis_mode": {
+            "value": "CPE",
+            "unit": "constant potential electrolysis"
+          },
+          "reaction_time": {
+            "value": 10,
+            "unit": "min"
+          },
+          "H2O2_production_rate": {
+            "value": 0.5,
+            "unit": "μmol cm^-2 min^-1"
+          }
+        },
+        "results_json": {
+          "Faradaic_efficiency": {
+            "value": 2.22,
+            "unit": "%"
+          },
+          "H2O2_concentration": {
+            "value": 0.33,
+            "unit": "mmol L^-1"
+          },
+          "overpotential": {
+            "value": 270,
+            "unit": "mV at 0.2 mA cm^-2"
+          }
+        },
+        "source_text": "As the applied potential increased, the FE reached the maximum of 2.22% at 3.1 V versus RHE... with a H2O2 concentration (CH2O2) of 0.33 mmol L^-1 after 10 min of reaction... BDD in CPE with an overpotential of 270 mV (at 0.2 mA cm^-2, vs. RHE)"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_BDD",
+        "description": "WOR performance under ML-guided optimal PPE conditions (5 min reaction)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "2e- water oxidation reaction",
+            "unit": "WOR for H2O2 production"
+          },
+          "electrolyte": {
+            "value": "acidic",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-compartment three-electrode",
+            "unit": "setup"
+          },
+          "electrolysis_mode": {
+            "value": "PPE",
+            "unit": "pulsed potential electrolysis"
+          },
+          "anodic_potential_Ea": {
+            "value": 3.3,
+            "unit": "V vs RHE"
+          },
+          "cathodic_potential_Ec": {
+            "value": -1.55,
+            "unit": "V vs RHE"
+          },
+          "anodic_duration_ta": {
+            "value": 0.1,
+            "unit": "s"
+          },
+          "cathodic_duration_tc": {
+            "value": 0.75,
+            "unit": "s"
+          },
+          "reaction_time": {
+            "value": 5,
+            "unit": "min"
+          }
+        },
+        "results_json": {
+          "Faradaic_efficiency": {
+            "value": 64.16,
+            "unit": "%"
+          },
+          "H2O2_concentration": {
+            "value": 17.08,
+            "unit": "mmol L^-1"
+          },
+          "H2O2_production_rate": {
+            "value": 25.62,
+            "unit": "μmol cm^-2 min^-1"
+          }
+        },
+        "source_text": "Based on the optimized pulse parameters predicted by ML (Ec = -1.55 V, Ea = 3.3 V, tc = 0.75 s, ta = 0.1 s) we experimentally assessed... the CH2O2 reached 17.08 mmol L^-1, with a FE of 64.16% and the production rate reached... 25.62 μmol cm^-2 min^-1"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_BDD",
+        "description": "Long-term stability evaluation under ML-guided PPE conditions",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "2e- water oxidation reaction",
+            "unit": "WOR for H2O2 production"
+          },
+          "electrolyte": {
+            "value": "acidic",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-compartment three-electrode",
+            "unit": "setup"
+          },
+          "electrolysis_mode": {
+            "value": "PPE",
+            "unit": "pulsed potential electrolysis"
+          },
+          "anodic_potential_Ea": {
+            "value": 3.3,
+            "unit": "V vs RHE"
+          },
+          "cathodic_potential_Ec": {
+            "value": -1.55,
+            "unit": "V vs RHE"
+          },
+          "anodic_duration_ta": {
+            "value": 0.1,
+            "unit": "s"
+          },
+          "cathodic_duration_tc": {
+            "value": 0.75,
+            "unit": "s"
+          },
+          "test_duration": {
+            "value": 40,
+            "unit": "h"
+          },
+          "electrolyte_refresh": {
+            "value": "performed",
+            "unit": "for each H2O2 measurement"
+          },
+          "measurement_basis": {
+            "value": "5 min anodic reaction",
+            "unit": "per measurement"
+          }
+        },
+        "results_json": {
+          "stability_current": {
+            "value": "stable",
+            "unit": "no significant decay"
+          },
+          "stability_H2O2_yield_rate": {
+            "value": "stable",
+            "unit": "no significant decay"
+          },
+          "surface_morphology": {
+            "value": "minimal changes",
+            "unit": "SEM analysis"
+          },
+          "grain_orientation": {
+            "value": "no notable changes",
+            "unit": "EBSD analysis"
+          }
+        },
+        "source_text": "BDD catalysts were subjected to a 40-h durability test under PPE conditions. Throughout the test, both current and H2O2 yield rate remained stable, with no significant decay... SEM analysis reveals minimal changes to the BDD surface... EBSD pattern comparisons... revealed no notable changes"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_BDD",
+        "description": "Parameter optimization: effect of cathodic potential Ec",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "WOR",
+            "unit": "2e- H2O2 production"
+          },
+          "electrolyte": {
+            "value": "acidic",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-compartment three-electrode",
+            "unit": "setup"
+          },
+          "electrolysis_mode": {
+            "value": "PPE",
+            "unit": "pulsed potential"
+          },
+          "anodic_potential_Ea": {
+            "value": 2.7,
+            "unit": "V vs RHE"
+          },
+          "anodic_current": {
+            "value": 5,
+            "unit": "mA"
+          },
+          "cathodic_potential_Ec": {
+            "value": -1.3,
+            "unit": "V vs RHE"
+          },
+          "reaction_time": {
+            "value": 5,
+            "unit": "min"
+          }
+        },
+        "results_json": {
+          "H2O2_concentration": {
+            "value": 0.83,
+            "unit": "mmol L^-1"
+          },
+          "Faradaic_efficiency": {
+            "value": 9.46,
+            "unit": "%"
+          }
+        },
+        "source_text": "A potential of Ea = 2.7 V was chosen for the PPE... the CH2O2 and the FE are 0.83 mmol L^-1 and 9.46%, respectively, which reach the maximum values at Ec = -1.3 V"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_BDD",
+        "description": "Parameter optimization: effect of anodic duration ta (fixed total anode time)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "WOR",
+            "unit": "2e- H2O2 production"
+          },
+          "electrolyte": {
+            "value": "acidic",
+            "unit": "solution"
+          },
+          "electrolysis_mode": {
+            "value": "PPE",
+            "unit": "pulsed potential"
+          },
+          "total_anode_pulse_duration": {
+            "value": 600,
+            "unit": "s"
+          },
+          "anodic_duration_ta": {
+            "value": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "unit": "s"
+          }
+        },
+        "results_json": {
+          "H2O2_concentration_trend": {
+            "value": "decreases with increasing ta",
+            "unit": "mmol L^-1"
+          }
+        },
+        "source_text": "the control experiments were conducted with a total anode pulse duration (Σta) of 600 s, while ta was set to 0.2, 0.4, 0.6, and 0.8 s respectively... an increase in ta resulted in a decreased CH2O2"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_BDD",
+        "description": "OH radical detection and quenching experiment",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "WOR",
+            "unit": "2e- H2O2 production"
+          },
+          "electrolyte": {
+            "value": "acidic + DMPO",
+            "unit": "solution"
+          },
+          "electrolysis_mode": {
+            "value": "PPE",
+            "unit": "pulsed potential"
+          },
+          "electrolysis_time": {
+            "value": [
+              2,
+              4
+            ],
+            "unit": "min"
+          },
+          "quencher": {
+            "value": "DMSO",
+            "unit": "OH scavenger"
+          }
+        },
+        "results_json": {
+          "H2O2_concentration_with_DMSO": {
+            "value": 0.02,
+            "unit": "mmol L^-1"
+          },
+          "H2O2_concentration_without_DMSO": {
+            "value": 1.99,
+            "unit": "mmol L^-1"
+          },
+          "suppression": {
+            "value": 99,
+            "unit": "%"
+          }
+        },
+        "source_text": "after 4 minutes of PPE with DMSO... H2O2 production significantly decreased from 1.99 mmol L^-1 to 0.02 mmol L^-1, representing... reduction of approximately 99%"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_BDD_test_1",
+        "type": "tested_in",
+        "source_id": "chem_BDD",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_BDD_test_2",
+        "type": "tested_in",
+        "source_id": "chem_BDD",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_BDD_test_3",
+        "type": "tested_in",
+        "source_id": "chem_BDD",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_BDD_test_4",
+        "type": "tested_in",
+        "source_id": "chem_BDD",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_BDD_test_5",
+        "type": "tested_in",
+        "source_id": "chem_BDD",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_BDD_test_6",
+        "type": "tested_in",
+        "source_id": "chem_BDD",
+        "target_id": "test_6",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_BDD",
+        "type": "chemical",
+        "name": "BDD",
+        "aliases": [
+          "Boron-doped diamond",
+          "BDD catalyst"
+        ],
+        "formula": "B-doped C",
+        "properties": {
+          "electrical conductivity": {
+            "value": "excellent",
+            "unit": ""
+          },
+          "chemical stability": {
+            "value": "robust",
+            "unit": ""
+          },
+          "electrochemical window": {
+            "value": "wide",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM analysis reveals minimal changes to the BDD surface after 40-h durability test, highlighting its stability.",
+        "evidence_snippet": "The scanning electron microscopy (SEM) analysis reveals minimal changes to the BDD surface, highlighting its stability."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "EBSD",
+        "is_reported": true,
+        "characterization_summary": "EBSD pattern comparisons before and after durability test revealed no notable changes in grain orientation of BDD catalysts.",
+        "evidence_snippet": "Additionally, electron backscatter diffraction (EBSD) pattern comparisons before and after the durability test also revealed no notable changes in the grain orientation of the BDD catalysts."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "XPS analysis of C 1s on BDD: after 5h CPE, C-H decreased from 21.4% to 8.6%, C-O increased from 8.1% to 23.7%; under PPE C-H at 14.9%, CR treatment to 20.3%.",
+        "evidence_snippet": "XPS analysis revealed that after 5h of CPE treatment, the concentration of C-H bonds on the BDD surface decreased from 21.4% to 8.6%, while C-O bonds increased from 8.1% to 23.7% (Figures 4d and S14; Table S12).",
+        "related_images": [
+          "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "sample",
+            "name": "Initial",
+            "properties": {
+              "C-H": 21.4,
+              "C-O": 8.1,
+              "extracted_from_image": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+            },
+            "source_image_file": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "CPE 5h",
+            "properties": {
+              "C-H": 8.6,
+              "C-O": 23.7,
+              "extracted_from_image": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+            },
+            "source_image_file": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-H",
+            "properties": {
+              "extracted_from_image": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+            },
+            "source_image_file": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-O",
+            "properties": {
+              "extracted_from_image": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+            },
+            "source_image_file": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "EPR",
+        "is_reported": true,
+        "characterization_summary": "EPR spectroscopy detected •OH radical signals after 2 and 4 minutes of PPE electrolysis, confirmed by DMPO trapping and DMSO quenching.",
+        "evidence_snippet": "EPR testing of in situ trapped electrolytes under different conditions ... significant radical signals emerged after 2 and 4 minutes of electrolysis."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "contact angle",
+        "is_reported": true,
+        "characterization_summary": "Contact angle analysis showed AO converted BDD surfaces from hydrophobic to hydrophilic, while CR partially restored hydrophobicity.",
+        "evidence_snippet": "Contact angle analysis showed that AO converted BDD surfaces from hydrophobic to hydrophilic, while CR partially restored hydrophobicity, consistent with reversible switching between O- and H-termination."
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "C₆H₂O₂",
+        "properties": {
+          "formula": "C₆H₂O₂",
+          "description": "Target chemical entity",
+          "extracted_from_image": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+        },
+        "source_image_file": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "characterization",
+        "name": "Scatter Plot",
+        "properties": {
+          "type": "regression plot",
+          "x_axis": "Experimental values (mmol L⁻¹)",
+          "y_axis": "Predicted values (mmol L⁻¹)",
+          "description": "Model performance visualization",
+          "extracted_from_image": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+        },
+        "source_image_file": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "dataset",
+        "name": "Training set",
+        "properties": {
+          "R²": 0.916,
+          "symbol": "orange circles",
+          "extracted_from_image": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+        },
+        "source_image_file": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "dataset",
+        "name": "Test set",
+        "properties": {
+          "R²": 0.917,
+          "symbol": "green triangles",
+          "extracted_from_image": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+        },
+        "source_image_file": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "dataset",
+        "name": "Validation set",
+        "properties": {
+          "R²": 0.93,
+          "symbol": "purple diamonds",
+          "extracted_from_image": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+        },
+        "source_image_file": "fd4b470508a737e52312d5f13386851fb8fd87656055595fc373fea4c354aed9.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "figure",
+        "name": "Figure b",
+        "properties": {
+          "type": "chronoamperometry_plot",
+          "x_axis": "t_a (s)",
+          "y_axis": "i (A/cm²)",
+          "time_range": "0 to 0.8 s",
+          "extracted_from_image": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+        },
+        "source_image_file": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+      },
+      {
+        "id": "PPE",
+        "type": "sample",
+        "name": "PPE 5h",
+        "properties": {
+          "C-H": 14.9,
+          "C-O": 23.1,
+          "extracted_from_image": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+        },
+        "source_image_file": "1734325d2f0ab635b964ac9426ac4bd75a90c58a5bb7c0fdafa1c5cbe296235f.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Volcano Plot",
+        "properties": {
+          "x_axis": "FE (%)",
+          "y_axis": "Rate (μmol cm⁻² min⁻¹)",
+          "title": "Acidic Production",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "time_point",
+        "name": "0.2 s",
+        "properties": {
+          "extracted_from_image": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+        },
+        "source_image_file": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+      },
+      {
+        "id": "data1",
+        "type": "data_point",
+        "name": "CPEE Ch2O2",
+        "properties": {
+          "value": 0.33,
+          "extracted_from_image": "37e0cd3108f36864361081a146d23e228c8c91dce3fd9b5cf66bc4e7db2b6f83.jpg"
+        },
+        "source_image_file": "37e0cd3108f36864361081a146d23e228c8c91dce3fd9b5cf66bc4e7db2b6f83.jpg"
+      },
+      {
+        "id": "data2",
+        "type": "data_point",
+        "name": "CPEE Fe",
+        "properties": {
+          "value": 2.22,
+          "extracted_from_image": "37e0cd3108f36864361081a146d23e228c8c91dce3fd9b5cf66bc4e7db2b6f83.jpg"
+        },
+        "source_image_file": "37e0cd3108f36864361081a146d23e228c8c91dce3fd9b5cf66bc4e7db2b6f83.jpg"
+      },
+      {
+        "id": "data3",
+        "type": "data_point",
+        "name": "ML guided PPE Ch2O2",
+        "properties": {
+          "value": 17.08,
+          "extracted_from_image": "37e0cd3108f36864361081a146d23e228c8c91dce3fd9b5cf66bc4e7db2b6f83.jpg"
+        },
+        "source_image_file": "37e0cd3108f36864361081a146d23e228c8c91dce3fd9b5cf66bc4e7db2b6f83.jpg"
+      },
+      {
+        "id": "data4",
+        "type": "data_point",
+        "name": "ML guided PPE Fe",
+        "properties": {
+          "value": 64.16,
+          "extracted_from_image": "37e0cd3108f36864361081a146d23e228c8c91dce3fd9b5cf66bc4e7db2b6f83.jpg"
+        },
+        "source_image_file": "37e0cd3108f36864361081a146d23e228c8c91dce3fd9b5cf66bc4e7db2b6f83.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "time_point",
+        "name": "0.4 s",
+        "properties": {
+          "extracted_from_image": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+        },
+        "source_image_file": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "time_point",
+        "name": "0.6 s",
+        "properties": {
+          "extracted_from_image": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+        },
+        "source_image_file": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "time_point",
+        "name": "0.8 s",
+        "properties": {
+          "extracted_from_image": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+        },
+        "source_image_file": "fd3353497da6c6001b88cfb2c8244409f6b34cbeb1e5c79ccc4754e29bd6028c.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "BiVO₄",
+        "properties": {
+          "shape": "orange square",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "figure",
+        "type": "characterization",
+        "name": "Potential vs Time Diagram",
+        "properties": {
+          "type": "schematic",
+          "description": "Comparison of CPE and PPE electrolysis methods",
+          "extracted_from_image": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+        },
+        "source_image_file": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+      },
+      {
+        "id": "Ec",
+        "type": "parameter",
+        "name": "Ec",
+        "properties": {
+          "extracted_from_image": "742eb231bd550a128f79eabe39378b91161d3ea2be7ab7914962e48dcbc3a293.jpg"
+        },
+        "source_image_file": "742eb231bd550a128f79eabe39378b91161d3ea2be7ab7914962e48dcbc3a293.jpg"
+      },
+      {
+        "id": "Ea",
+        "type": "parameter",
+        "name": "Ea",
+        "properties": {
+          "extracted_from_image": "742eb231bd550a128f79eabe39378b91161d3ea2be7ab7914962e48dcbc3a293.jpg"
+        },
+        "source_image_file": "742eb231bd550a128f79eabe39378b91161d3ea2be7ab7914962e48dcbc3a293.jpg"
+      },
+      {
+        "id": "tc",
+        "type": "time",
+        "name": "t_C",
+        "properties": {
+          "description": "Duration at E_C",
+          "color": "red",
+          "extracted_from_image": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+        },
+        "source_image_file": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+      },
+      {
+        "id": "ta",
+        "type": "time",
+        "name": "t_a",
+        "properties": {
+          "description": "Duration at E_a",
+          "color": "blue",
+          "extracted_from_image": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+        },
+        "source_image_file": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+      },
+      {
+        "id": "text_programmable_parameters",
+        "type": "text",
+        "name": "Programmable parameters",
+        "properties": {
+          "extracted_from_image": "742eb231bd550a128f79eabe39378b91161d3ea2be7ab7914962e48dcbc3a293.jpg"
+        },
+        "source_image_file": "742eb231bd550a128f79eabe39378b91161d3ea2be7ab7914962e48dcbc3a293.jpg"
+      },
+      {
+        "id": "cpe",
+        "type": "electrochemical_method",
+        "name": "Constant Potential Electrolysis (CPE)",
+        "properties": {
+          "description": "Method with constant applied potential",
+          "extracted_from_image": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+        },
+        "source_image_file": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+      },
+      {
+        "id": "ppe",
+        "type": "electrochemical_method",
+        "name": "Pulse Potential Electrolysis (PPE)",
+        "properties": {
+          "description": "Method with pulsed applied potential",
+          "extracted_from_image": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+        },
+        "source_image_file": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+      },
+      {
+        "id": "ec",
+        "type": "potential",
+        "name": "E_C",
+        "properties": {
+          "value": "Cathodic potential",
+          "color": "red",
+          "extracted_from_image": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+        },
+        "source_image_file": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+      },
+      {
+        "id": "ea",
+        "type": "potential",
+        "name": "E_a",
+        "properties": {
+          "value": "Anodic potential",
+          "color": "blue",
+          "extracted_from_image": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+        },
+        "source_image_file": "7798191ef6e45d3c6d91d2a6a8251496d62276ebc5dec14ace3410f7ba5df4cc.jpg"
+      },
+      {
+        "id": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8_node1",
+        "type": "chemical",
+        "name": "PHE",
+        "properties": {
+          "extracted_from_image": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+        },
+        "source_image_file": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+      },
+      {
+        "id": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8_node2",
+        "type": "chemical",
+        "name": "CPE",
+        "properties": {
+          "extracted_from_image": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+        },
+        "source_image_file": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+      },
+      {
+        "id": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8_node3",
+        "type": "characterization",
+        "name": "CH2O2 Production Rate Plot",
+        "properties": {
+          "x_axis": "E (V vs. RHE)",
+          "x_range": [
+            2.7,
+            2.9,
+            3.1,
+            3.3
+          ],
+          "y_axis": "CH2O2 (μmol L⁻¹ 18h⁻¹)",
+          "y_range": [
+            0,
+            6
+          ],
+          "extracted_from_image": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+        },
+        "source_image_file": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+      },
+      {
+        "id": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8_node4",
+        "type": "condition",
+        "name": "PHE Condition",
+        "properties": {
+          "Ec": "-1.5 V",
+          "tc": "ta",
+          "t": "1 s",
+          "extracted_from_image": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+        },
+        "source_image_file": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+      },
+      {
+        "id": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8_node5",
+        "type": "condition",
+        "name": "CPE Condition",
+        "properties": {
+          "Ec": "-1.5 V",
+          "tc": "ta",
+          "t": "1 s",
+          "extracted_from_image": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+        },
+        "source_image_file": "939e8535c082d86a2cee6cb412dafaa3680f108f90a11488ff49c352b22d80e8.jpg"
+      },
+      {
+        "id": "OH-",
+        "type": "chemical",
+        "name": "Hydroxide ion",
+        "properties": {
+          "formula": "OH⁻",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "O2-",
+        "type": "chemical",
+        "name": "Oxide ion",
+        "properties": {
+          "formula": "O²⁻",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "Water",
+        "properties": {
+          "formula": "H₂O",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "H+",
+        "type": "chemical",
+        "name": "Proton",
+        "properties": {
+          "formula": "H⁺",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "O",
+        "type": "chemical",
+        "name": "Oxygen atom",
+        "properties": {
+          "formula": "O",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "H",
+        "type": "chemical",
+        "name": "Hydrogen atom",
+        "properties": {
+          "formula": "H",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "HOOH",
+        "type": "chemical",
+        "name": "Hydrogen peroxide",
+        "properties": {
+          "formula": "HOOH",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "catalyst",
+        "type": "chemical",
+        "name": "Catalyst surface",
+        "properties": {
+          "description": "Gray spheres representing catalyst surface",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "rxn1",
+        "type": "reaction",
+        "name": "Water oxidation reaction",
+        "properties": {
+          "equation": "2OH⁻ → O₂ + H₂O + 2H⁺",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "rxn2",
+        "type": "reaction",
+        "name": "Peroxide formation",
+        "properties": {
+          "equation": "OH⁻ + OH⁻ → HOOH",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "mech",
+        "type": "mechanism",
+        "name": "Single-electron transfer mechanism",
+        "properties": {
+          "description": "Single-electron transfer mechanism",
+          "extracted_from_image": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+        },
+        "source_image_file": "acd08bc722c43f95b3e1199a5cef2a51fb97e2c4cc0762cf53e85c9c35e85c67.jpg"
+      },
+      {
+        "id": "Qa",
+        "type": "chemical",
+        "name": "Qa",
+        "properties": {
+          "description": "Anodic species Qa",
+          "extracted_from_image": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+        },
+        "source_image_file": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+      },
+      {
+        "id": "Qc",
+        "type": "chemical",
+        "name": "Qc",
+        "properties": {
+          "description": "Cathodic species Qc",
+          "extracted_from_image": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+        },
+        "source_image_file": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+      },
+      {
+        "id": "E_vs_RHE",
+        "type": "parameter",
+        "name": "E_a (V vs RHE)",
+        "properties": {
+          "description": "Anodic potential vs Reversible Hydrogen Electrode",
+          "range": [
+            2.7,
+            3.3
+          ],
+          "extracted_from_image": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+        },
+        "source_image_file": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+      },
+      {
+        "id": "charge",
+        "type": "parameter",
+        "name": "Charge (mC mg⁻¹)",
+        "properties": {
+          "description": "Specific charge capacity",
+          "max": 200,
+          "extracted_from_image": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+        },
+        "source_image_file": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+      },
+      {
+        "id": "condition",
+        "type": "experimental_condition",
+        "name": "E_c = -1.3 V, t = t_a = 1 s",
+        "properties": {
+          "description": "Cathodic potential and time condition",
+          "extracted_from_image": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+        },
+        "source_image_file": "b749d23fd6bcdb6746e3ee68f5318a6722a6d7db48e81551e452f2a3cd8e69a9.jpg"
+      },
+      {
+        "id": "before-electrolysis",
+        "type": "sample",
+        "name": "DMPPO + before-electrolysis solution",
+        "properties": {
+          "description": "Reference sample before electrolysis",
+          "extracted_from_image": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+        },
+        "source_image_file": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+      },
+      {
+        "id": "PPE_2min",
+        "type": "sample",
+        "name": "DMPPO + PPE 2 min",
+        "properties": {
+          "description": "Sample after 2 minutes plasma plasma electrolytic oxidation",
+          "extracted_from_image": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+        },
+        "source_image_file": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+      },
+      {
+        "id": "PPE_4min",
+        "type": "sample",
+        "name": "DMPPO + PPE 4 min",
+        "properties": {
+          "description": "Sample after 4 minutes plasma plasma electrolytic oxidation",
+          "extracted_from_image": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+        },
+        "source_image_file": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+      },
+      {
+        "id": "DMSO_PPE_4min",
+        "type": "sample",
+        "name": "DMSO + DMPPO + PPE 4 min",
+        "properties": {
+          "description": "Control sample with DMSO solvent after 4 minutes PPE",
+          "extracted_from_image": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+        },
+        "source_image_file": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+      },
+      {
+        "id": "EPR_spectrum",
+        "type": "characterization",
+        "name": "EPR Spectrum",
+        "properties": {
+          "description": "Electron Paramagnetic Resonance spectrum",
+          "x_axis": "Magnetic field (G)",
+          "x_range": [
+            3460,
+            3560
+          ],
+          "y_axis": "Intensity (a.u.)",
+          "extracted_from_image": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+        },
+        "source_image_file": "d956dfa11a11f6026ccc418ec4b77fbf0bfd8fa0043591cc230b330aeb65b81d.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "Bi₂WO₆",
+        "properties": {
+          "shape": "yellow circle",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chemical",
+        "name": "WO₃",
+        "properties": {
+          "shape": "pink circle",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "chemical",
+        "name": "SnO₂",
+        "properties": {
+          "shape": "orange diamond",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "chemical",
+        "name": "CaSnO₃",
+        "properties": {
+          "shape": "green triangle",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "chemical",
+        "name": "ZnO",
+        "properties": {
+          "shape": "dark green circle",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "chemical",
+        "name": "C,N-TiO₂",
+        "properties": {
+          "shape": "dark cyan circle",
+          "position": "low FE, low rate",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n18",
+        "type": "chemical",
+        "name": "Sb₂O₃",
+        "properties": {
+          "shape": "dark red circle",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n19",
+        "type": "chemical",
+        "name": "Cu(OH)₂",
+        "properties": {
+          "shape": "green diamond",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n20",
+        "type": "chemical",
+        "name": "SnOₓ",
+        "properties": {
+          "shape": "dark blue circle",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      },
+      {
+        "id": "n21",
+        "type": "chemical",
+        "name": "Bi₂O₄",
+        "properties": {
+          "shape": "light blue circle",
+          "position": "low FE",
+          "extracted_from_image": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+        },
+        "source_image_file": "f486fc8371effece79d4c6926e2bf471bbe4f3fb7c58601fd12f2491397a74e3.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_BDD_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_BDD",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_BDD_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_BDD",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_BDD_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_BDD",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_BDD_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_BDD",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_BDD_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_BDD",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "measures"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "uses_condition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "uses_condition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "shows"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "measures"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "condition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "condition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "condition"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "PPE",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_BDD_CR",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "PPE",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "PPE",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_BDD_CR",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_BDD_CR",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "position_on"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "position_on"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "position_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "measured_quantity"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "added_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "in_condition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "in_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "data1",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "data2",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "data3",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "data4",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "data1",
+        "type": "measured_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "data3",
+        "type": "measured_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "data2",
+        "type": "measured_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "data4",
+        "type": "measured_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "data1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "data2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "data3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "data4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "substituted"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n8",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n9",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "energy_barrier"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "figure",
+        "target_id": "text_programmable_parameters",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure",
+        "target_id": "Ec",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure",
+        "target_id": "Ea",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure",
+        "target_id": "tc",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure",
+        "target_id": "ta",
+        "type": "contains"
+      },
+      {
+        "source_id": "text_programmable_parameters",
+        "target_id": "Ec",
+        "type": "describes"
+      },
+      {
+        "source_id": "text_programmable_parameters",
+        "target_id": "Ea",
+        "type": "describes"
+      },
+      {
+        "source_id": "text_programmable_parameters",
+        "target_id": "tc",
+        "type": "describes"
+      },
+      {
+        "source_id": "text_programmable_parameters",
+        "target_id": "ta",
+        "type": "describes"
+      },
+      {
+        "source_id": "cpe",
+        "target_id": "figure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ppe",
+        "target_id": "figure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ec",
+        "target_id": "cpe",
+        "type": "uses_potential"
+      },
+      {
+        "source_id": "tc",
+        "target_id": "cpe",
+        "type": "uses_duration"
+      },
+      {
+        "source_id": "ea",
+        "target_id": "ppe",
+        "type": "uses_potential"
+      },
+      {
+        "source_id": "ta",
+        "target_id": "ppe",
+        "type": "uses_duration"
+      },
+      {
+        "source_id": "ec",
+        "target_id": "figure",
+        "type": "shown_as"
+      },
+      {
+        "source_id": "tc",
+        "target_id": "figure",
+        "type": "shown_as"
+      },
+      {
+        "source_id": "ta",
+        "target_id": "figure",
+        "type": "shown_as"
+      },
+      {
+        "source_id": "ea",
+        "target_id": "figure",
+        "type": "shown_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "product"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "starting_point"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "labels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "references"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "references"
+      },
+      {
+        "source_id": "OH-",
+        "target_id": "rxn1",
+        "type": "reactant"
+      },
+      {
+        "source_id": "O2-",
+        "target_id": "rxn1",
+        "type": "reactant"
+      },
+      {
+        "source_id": "rxn1",
+        "target_id": "H2O",
+        "type": "product"
+      },
+      {
+        "source_id": "rxn1",
+        "target_id": "H+",
+        "type": "product"
+      },
+      {
+        "source_id": "rxn1",
+        "target_id": "O",
+        "type": "product"
+      },
+      {
+        "source_id": "OH-",
+        "target_id": "rxn2",
+        "type": "reactant"
+      },
+      {
+        "source_id": "rxn2",
+        "target_id": "HOOH",
+        "type": "product"
+      },
+      {
+        "source_id": "catalyst",
+        "target_id": "rxn1",
+        "type": "catalyzed_by"
+      },
+      {
+        "source_id": "catalyst",
+        "target_id": "rxn2",
+        "type": "catalyzed_by"
+      },
+      {
+        "source_id": "rxn1",
+        "target_id": "mech",
+        "type": "part_of"
+      },
+      {
+        "source_id": "rxn2",
+        "target_id": "mech",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "targets_property"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "predicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "predicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "predicts"
+      },
+      {
+        "source_id": "Qa",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "Qc",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "E_vs_RHE",
+        "target_id": "chart",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "charge",
+        "target_id": "chart",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "condition",
+        "target_id": "chart",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "Qa",
+        "target_id": "E_vs_RHE",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "Qc",
+        "target_id": "E_vs_RHE",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "measures"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "measures"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "uses_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "uses_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "uses_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "marks"
+      },
+      {
+        "source_id": "chem_DMPO",
+        "target_id": "before-electrolysis",
+        "type": "added_to"
+      },
+      {
+        "source_id": "before-electrolysis",
+        "target_id": "EPR_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_DMPO",
+        "target_id": "PPE_2min",
+        "type": "added_to"
+      },
+      {
+        "source_id": "PPE_2min",
+        "target_id": "EPR_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_DMPO",
+        "target_id": "PPE_4min",
+        "type": "added_to"
+      },
+      {
+        "source_id": "PPE_4min",
+        "target_id": "EPR_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_DMSO",
+        "target_id": "DMSO_PPE_4min",
+        "type": "added_to"
+      },
+      {
+        "source_id": "chem_DMPO",
+        "target_id": "DMSO_PPE_4min",
+        "type": "added_to"
+      },
+      {
+        "source_id": "DMSO_PPE_4min",
+        "target_id": "EPR_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "occurs_during"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "measures"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "measures"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "measures"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "time_axis"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "measures"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "catalyst"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "efficiency"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "condition"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "condition"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "condition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "measures"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n1",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n4",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n5",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n6",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n7",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n8",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n9",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n10",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n11",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n12",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n13",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n14",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n15",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n16",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n17",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n18",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n19",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n20",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "n21",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "parameter_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "parameter_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "parameter_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n6",
+        "type": "x_axis_mark"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n6",
+        "type": "x_axis_mark"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n6",
+        "type": "x_axis_mark"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n6",
+        "type": "x_axis_mark"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "target_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "plotted_in"
+      }
+    ]
+  }
+}

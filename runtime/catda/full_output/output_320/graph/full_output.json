@@ -1,0 +1,2839 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_ethanol",
+        "type": "chemical",
+        "name": "ethanol",
+        "aliases": [
+          "Ethanol"
+        ],
+        "formula": "C2H5OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_water",
+        "type": "chemical",
+        "name": "water",
+        "aliases": [
+          "water"
+        ],
+        "formula": "H2O",
+        "properties": {},
+        "related_images": [
+          "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg",
+          "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "H₂O",
+            "properties": {
+              "formula": "H₂O",
+              "description": "Water fraction feature",
+              "extracted_from_image": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+            },
+            "source_image_file": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "H2O",
+            "properties": {
+              "description": "Water reactant",
+              "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+            },
+            "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_propylene_oxide",
+        "type": "chemical",
+        "name": "propylene oxide",
+        "aliases": [
+          "propylene oxide"
+        ],
+        "formula": "C3H6O",
+        "properties": {}
+      },
+      {
+        "id": "chem_acetone",
+        "type": "chemical",
+        "name": "acetone",
+        "aliases": [
+          "acetone"
+        ],
+        "formula": "C3H6O",
+        "properties": {}
+      },
+      {
+        "id": "chem_metal_precursors",
+        "type": "chemical",
+        "name": "metal precursors",
+        "aliases": [
+          "precursors",
+          "metal chlorides",
+          "nitrate and chloride salts"
+        ],
+        "properties": {},
+        "related_images": [
+          "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Precursors",
+            "properties": {
+              "description": "Chemical precursors",
+              "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+            },
+            "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_ruo2",
+        "type": "chemical",
+        "name": "RuO2",
+        "aliases": [
+          "RuO2",
+          "${ \\mathrm { R u O } } _ { 2 }$"
+        ],
+        "formula": "RuO2",
+        "properties": {}
+      },
+      {
+        "id": "chem_ru0_5_zr0_1_zn0_4_ox",
+        "type": "chemical",
+        "name": "Ru0.5Zr0.1Zn0.4Ox",
+        "aliases": [
+          "\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { \\times }",
+          "Ru₀.₅Zr₀.₁Zn₀.₄Oₓ"
+        ],
+        "formula": "Ru0.5Zr0.1Zn0.4Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "mol fraction"
+          },
+          "Zr": {
+            "value": 0.1,
+            "unit": "mol fraction"
+          },
+          "Zn": {
+            "value": 0.4,
+            "unit": "mol fraction"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Sol-gel synthesis with post-processing",
+        "procedure": "All precursors were dissolved in ethanol at a concentration of 0.675 mol l^{-1}. For precursors insoluble in ethanol, water was used to maintain the same concentration. Using a Chemspeed Swing system, different precursors were accurately dispensed into 15·ml round-bottom centrifuge tubes, with a total volume of 1 ml per tube. The solution was shaken for 10 min to ensure thorough mixing of the precursors. Then, 0.5 ml of propylene oxide was added to the mixture, followed by an additional 5 min of shaking and 1 day of standing to promote gel formation. For the gelled samples, 5 ml of acetone was added to each centrifuge tube, the mixture was centrifuged and the supernatant was discarded. This acetone washing process was repeated three times. Subsequently, 5 ml of water was added, followed by centrifugation and removal of the supernatant. The supernatant-removal steps were manually performed, while all other steps were automated using the Chemspeed system. After centrifugation, the powder was obtained by drying the gel in a vacuum oven for 1 day and annealing it at 400 °C for 2 h to produce crystalline samples. Finally, a high-throughput ball miller (MSK-SFM-50, MTI) was used to produce fine powders.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Precursor dissolution",
+            "method": "Dissolution",
+            "conditions": {
+              "concentration": {
+                "value": 0.675,
+                "unit": "mol/L"
+              }
+            },
+            "procedure_snippet": "All precursors were dissolved in ethanol at a concentration of 0.675 mol l^{-1}. For precursors insoluble in ethanol, water was used to maintain the same concentration."
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Dispensing and mixing",
+            "method": "Automated dispensing",
+            "conditions": {
+              "total_volume": {
+                "value": 1,
+                "unit": "ml"
+              }
+            },
+            "procedure_snippet": "Using a Chemspeed Swing system, different precursors were accurately dispensed into 15 ml round-bottom centrifuge tubes, with a total volume of 1 ml per tube. The solution was shaken for 10 min to ensure thorough mixing of the precursors."
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Gelation",
+            "method": "Sol-gel reaction",
+            "conditions": {
+              "shaking_time_initial": {
+                "value": 10,
+                "unit": "min"
+              },
+              "propylene_oxide_volume": {
+                "value": 0.5,
+                "unit": "ml"
+              },
+              "shaking_time_after_po": {
+                "value": 5,
+                "unit": "min"
+              },
+              "standing_time": {
+                "value": 1,
+                "unit": "day"
+              }
+            },
+            "procedure_snippet": "Then, 0.5 ml of propylene oxide was added to the mixture, followed by an additional 5 min of shaking and 1 day of standing to promote gel formation."
+          },
+          {
+            "id": "unit_op_1.4",
+            "name": "Acetone washing",
+            "method": "Centrifugation washing",
+            "conditions": {
+              "acetone_volume": {
+                "value": 5,
+                "unit": "ml"
+              },
+              "repetitions": {
+                "value": 3,
+                "unit": "times"
+              }
+            },
+            "procedure_snippet": "For the gelled samples, 5 ml of acetone was added to each centrifuge tube, the mixture was centrifuged and the supernatant was discarded. This acetone washing process was repeated three times."
+          },
+          {
+            "id": "unit_op_1.5",
+            "name": "Water washing",
+            "method": "Centrifugation washing",
+            "conditions": {
+              "water_volume": {
+                "value": 5,
+                "unit": "ml"
+              }
+            },
+            "procedure_snippet": "Subsequently, 5 ml of water was added, followed by centrifugation and removal of the supernatant."
+          },
+          {
+            "id": "unit_op_1.6",
+            "name": "Drying and annealing",
+            "method": "Vacuum drying and annealing",
+            "conditions": {
+              "drying_time": {
+                "value": 1,
+                "unit": "day"
+              },
+              "annealing_temperature": {
+                "value": 400,
+                "unit": "°C"
+              },
+              "annealing_time": {
+                "value": 2,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "After centrifugation, the powder was obtained by drying the gel in a vacuum oven for 1 day and annealing it at 400 °C for 2 h to produce crystalline samples."
+          },
+          {
+            "id": "unit_op_1.7",
+            "name": "Ball milling",
+            "method": "High-throughput ball milling",
+            "conditions": {},
+            "procedure_snippet": "Finally, a high-throughput ball miller (MSK-SFM-50, MTI) was used to produce fine powders."
+          }
+        ],
+        "method": "Sol-gel synthesis",
+        "conditions": {
+          "precursor_concentration": {
+            "value": 0.675,
+            "unit": "mol/L"
+          },
+          "total_solution_volume": {
+            "value": 1,
+            "unit": "ml"
+          },
+          "propylene_oxide_volume": {
+            "value": 0.5,
+            "unit": "ml"
+          },
+          "acetone_wash_volume": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "water_wash_volume": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "annealing_temperature": {
+            "value": 400,
+            "unit": "°C"
+          },
+          "annealing_time": {
+            "value": 2,
+            "unit": "h"
+          },
+          "drying_time": {
+            "value": 1,
+            "unit": "day"
+          }
+        },
+        "source_text": "All precursors were dissolved in ethanol at a concentration of 0.675 mol l^{-1} ... a high-throughput ball miller (MSK-SFM-50, MTI) was used to produce fine powders."
+      },
+      {
+        "id": "chem_nafion",
+        "type": "chemical",
+        "name": "Nafion",
+        "aliases": [
+          "Nafion"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 5,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "RuO2",
+        "aliases": [
+          "${ \\mathrm { R u O } } _ { 2 }$"
+        ],
+        "formula": "RuO2"
+      },
+      {
+        "id": "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+        "type": "chemical",
+        "name": "Ru0.5 Zr0.1 Zn0.4 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.5Zr0.1Zn0.4Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "fraction"
+          },
+          "Zr": {
+            "value": 0.1,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.4,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.5_Zn0.4_Ni0.1_Ox",
+        "type": "chemical",
+        "name": "Ru0.5 Zn0.4 Ni0.1 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { N i } _ { 0 . 1 } 0 _ { x }$"
+        ],
+        "formula": "Ru0.5Zn0.4Ni0.1Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.4,
+            "unit": "fraction"
+          },
+          "Ni": {
+            "value": 0.1,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.6_Zn0.3_Cu0.1_Ox",
+        "type": "chemical",
+        "name": "Ru0.6 Zn0.3 Cu0.1 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 6 } Z \\mathsf { n } _ { 0 . 3 } \\mathsf { C u } _ { 0 . 1 } 0 _ { x }$"
+        ],
+        "formula": "Ru0.6Zn0.3Cu0.1Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.6,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.3,
+            "unit": "fraction"
+          },
+          "Cu": {
+            "value": 0.1,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.6_Zr0.1_Zn0.3_Ox",
+        "type": "chemical",
+        "name": "Ru0.6 Zr0.1 Zn0.3 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 6 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 3 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.6Zr0.1Zn0.3Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.6,
+            "unit": "fraction"
+          },
+          "Zr": {
+            "value": 0.1,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.3,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.5_Mg0.1_Zn0.4_Ox",
+        "type": "chemical",
+        "name": "Ru0.5 Mg0.1 Zn0.4 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } \\mathsf { M g } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.5Mg0.1Zn0.4Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "fraction"
+          },
+          "Mg": {
+            "value": 0.1,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.4,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.8_Fe0.1_Ni0.1_Ox",
+        "type": "chemical",
+        "name": "Ru0.8 Fe0.1 Ni0.1 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 8 } \\mathsf { F e } _ { 0 . 1 } \\mathsf { N i } _ { 0 . 1 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.8Fe0.1Ni0.1Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.8,
+            "unit": "fraction"
+          },
+          "Fe": {
+            "value": 0.1,
+            "unit": "fraction"
+          },
+          "Ni": {
+            "value": 0.1,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.7_Cs0.2_Rb0.1_Ox",
+        "type": "chemical",
+        "name": "Ru0.7 Cs0.2 Rb0.1 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 7 } \\mathsf { C s } _ { 0 . 2 } \\mathsf { R b } _ { 0 . 1 }$ $_ { 0 _ { x } , }$"
+        ],
+        "formula": "Ru0.7Cs0.2Rb0.1Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.7,
+            "unit": "fraction"
+          },
+          "Cs": {
+            "value": 0.2,
+            "unit": "fraction"
+          },
+          "Rb": {
+            "value": 0.1,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.5_Rb0.2_Ni0.3_Ox",
+        "type": "chemical",
+        "name": "Ru0.5 Rb0.2 Ni0.3 Ox",
+        "aliases": [
+          "$\\mathsf { R } \\mathsf { u } _ { 0 . 5 } \\mathsf { R b } _ { 0 . 2 } \\mathsf { N i } _ { 0 . 3 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.5Rb0.2Ni0.3Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "fraction"
+          },
+          "Rb": {
+            "value": 0.2,
+            "unit": "fraction"
+          },
+          "Ni": {
+            "value": 0.3,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.5Zr0.1Zn0.4Ox",
+        "type": "chemical",
+        "name": "Ru0.5Zr0.1Zn0.4Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.5Zr0.1Zn0.4Ox",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ru0.5Rb0.2Ni0.3Ox",
+        "type": "chemical",
+        "name": "Ru0.5Rb0.2Ni0.3Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } \\mathsf { R b } _ { 0 . 2 } \\mathsf { N i } _ { 0 . 3 } 0 _ { x }$"
+        ],
+        "formula": "Ru0.5Rb0.2Ni0.3Ox",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ru0.7Cs0.2Rb0.1Ox",
+        "type": "chemical",
+        "name": "Ru0.7Cs0.2Rb0.1Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 7 } \\mathsf { C s } _ { 0 . 2 } \\mathsf { R b } _ { 0 . 1 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.7Cs0.2Rb0.1Ox",
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_ethanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_propylene_oxide_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_propylene_oxide",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "gelation_agent"
+        }
+      },
+      {
+        "id": "edge_input_chem_acetone_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_acetone",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "washing_solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_metal_precursors_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_metal_precursors",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 0.675,
+            "unit": "mol/L"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_ru0_5_zr0_1_zn0_4_ox",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_ru0_5_zr0_1_zn0_4_ox",
+        "properties": {
+          "form": "fine_crystalline_powder"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_ruo2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_ruo2",
+        "properties": {
+          "form": "fine_crystalline_powder"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Ru0.5_Zn0.4_Ni0.1_Ox",
+      "chem_Ru0.6_Zn0.3_Cu0.1_Ox",
+      "chem_Ru0.8_Fe0.1_Ni0.1_Ox",
+      "chem_Ru0.5_Mg0.1_Zn0.4_Ox",
+      "chem_Ru0.6_Zr0.1_Zn0.3_Ox",
+      "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+      "chem_Ru0.7_Cs0.2_Rb0.1_Ox",
+      "chem_Ru0.5_Rb0.2_Ni0.3_Ox",
+      "chem_RuO2"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "RuO2",
+        "aliases": [
+          "${ \\mathrm { R u O } } _ { 2 }$"
+        ],
+        "formula": "RuO2"
+      },
+      {
+        "id": "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+        "type": "chemical",
+        "name": "Ru0.5 Zr0.1 Zn0.4 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.5Zr0.1Zn0.4Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "fraction"
+          },
+          "Zr": {
+            "value": 0.1,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.4,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.5_Zn0.4_Ni0.1_Ox",
+        "type": "chemical",
+        "name": "Ru0.5 Zn0.4 Ni0.1 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { N i } _ { 0 . 1 } 0 _ { x }$"
+        ],
+        "formula": "Ru0.5Zn0.4Ni0.1Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.4,
+            "unit": "fraction"
+          },
+          "Ni": {
+            "value": 0.1,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.6_Zn0.3_Cu0.1_Ox",
+        "type": "chemical",
+        "name": "Ru0.6 Zn0.3 Cu0.1 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 6 } Z \\mathsf { n } _ { 0 . 3 } \\mathsf { C u } _ { 0 . 1 } 0 _ { x }$"
+        ],
+        "formula": "Ru0.6Zn0.3Cu0.1Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.6,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.3,
+            "unit": "fraction"
+          },
+          "Cu": {
+            "value": 0.1,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.6_Zr0.1_Zn0.3_Ox",
+        "type": "chemical",
+        "name": "Ru0.6 Zr0.1 Zn0.3 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 6 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 3 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.6Zr0.1Zn0.3Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.6,
+            "unit": "fraction"
+          },
+          "Zr": {
+            "value": 0.1,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.3,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.5_Mg0.1_Zn0.4_Ox",
+        "type": "chemical",
+        "name": "Ru0.5 Mg0.1 Zn0.4 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } \\mathsf { M g } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.5Mg0.1Zn0.4Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "fraction"
+          },
+          "Mg": {
+            "value": 0.1,
+            "unit": "fraction"
+          },
+          "Zn": {
+            "value": 0.4,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.8_Fe0.1_Ni0.1_Ox",
+        "type": "chemical",
+        "name": "Ru0.8 Fe0.1 Ni0.1 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 8 } \\mathsf { F e } _ { 0 . 1 } \\mathsf { N i } _ { 0 . 1 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.8Fe0.1Ni0.1Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.8,
+            "unit": "fraction"
+          },
+          "Fe": {
+            "value": 0.1,
+            "unit": "fraction"
+          },
+          "Ni": {
+            "value": 0.1,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.7_Cs0.2_Rb0.1_Ox",
+        "type": "chemical",
+        "name": "Ru0.7 Cs0.2 Rb0.1 Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 7 } \\mathsf { C s } _ { 0 . 2 } \\mathsf { R b } _ { 0 . 1 }$ $_ { 0 _ { x } , }$"
+        ],
+        "formula": "Ru0.7Cs0.2Rb0.1Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.7,
+            "unit": "fraction"
+          },
+          "Cs": {
+            "value": 0.2,
+            "unit": "fraction"
+          },
+          "Rb": {
+            "value": 0.1,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "chem_Ru0.5_Rb0.2_Ni0.3_Ox",
+        "type": "chemical",
+        "name": "Ru0.5 Rb0.2 Ni0.3 Ox",
+        "aliases": [
+          "$\\mathsf { R } \\mathsf { u } _ { 0 . 5 } \\mathsf { R b } _ { 0 . 2 } \\mathsf { N i } _ { 0 . 3 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.5Rb0.2Ni0.3Ox",
+        "composition": {
+          "Ru": {
+            "value": 0.5,
+            "unit": "fraction"
+          },
+          "Rb": {
+            "value": 0.2,
+            "unit": "fraction"
+          },
+          "Ni": {
+            "value": 0.3,
+            "unit": "fraction"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+        "description": "OER performance of Ru0.5Zr0.1Zn0.4Ox - best performer beyond Pareto frontier",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H2SO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (3 M KCl)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm2": {
+            "value": 194,
+            "unit": "mV"
+          },
+          "ruthenium_dissolution": {
+            "value": 0.046,
+            "unit": "%"
+          },
+          "ruthenium_dissolution_relative_to_RuO2": {
+            "value": 12,
+            "unit": "times lower"
+          }
+        },
+        "source_text": "$\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { x } ,$ achieved an overpotential of 194 mV at 10 mA cm−2 and exhibited a ruthenium dissolution rate under acidic OER conditions 12 times lower than that of ${ \\mathrm { R u O } } _ { 2 }$... demonstrated a ruthenium dissolution rate of $0 . 0 4 6 \\%$"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_RuO2",
+        "description": "OER stability reference testing in 0.5 M H2SO4",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H2SO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          },
+          "test_duration": {
+            "value": 2,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "ruthenium_dissolution": {
+            "value": 0.72,
+            "unit": "%"
+          }
+        },
+        "source_text": "The median ruthenium dissolution rates for the I1, I3, I4 and I5 were $0 . 7 2 \\%$"
+      },
+      {
+        "id": "test_general",
+        "type": "testing",
+        "catalyst_id": "general",
+        "description": "General high-throughput OER testing conditions for all catalysts",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H2SO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (3 M KCl)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "potential_range": {
+            "value": "1.0-1.65 V",
+            "unit": "vs RHE"
+          },
+          "catalyst_loading": {
+            "value": 5,
+            "unit": "mg"
+          },
+          "ink_composition": {
+            "value": "5 wt% Nafion in water:ethanol (4:1)",
+            "unit": "binder"
+          },
+          "substrate": {
+            "value": "carbon paper (AvCarb MGL190)",
+            "unit": "working electrode"
+          },
+          "drying_temperature": {
+            "value": 70,
+            "unit": "°C"
+          },
+          "drying_time": {
+            "value": 2,
+            "unit": "h"
+          }
+        },
+        "results_json": {},
+        "source_text": "All electrochemical tests were performed in a three-electrode configuration... The electrolyte was 0.5 M ${ \\sf H } _ { 2 } { \\sf S } { \\bf O } _ { 4 }$... Linear sweep voltammetry was then conducted from 1 V to 1.65 V versus RHE at a scan rate of $5 \\mathsf { m } \\mathsf { V } \\mathsf { s } ^ { - 1 }$... Catalyst ink preparation... 5 mg of catalyst powder was dispersed in $2 5 0 \\mu \\mathrm { l }$..."
+      },
+      {
+        "id": "test_activity",
+        "type": "testing",
+        "catalyst_id": "general",
+        "description": "OER activity measurement at 10 mA/cm²",
+        "conditions_json": {
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          }
+        },
+        "results_json": {
+          "threshold_high_activity": {
+            "value": 220,
+            "unit": "mV"
+          },
+          "threshold_stability_testing": {
+            "value": 250,
+            "unit": "mV"
+          }
+        },
+        "source_text": "overpotentials at $1 0 \\mathsf { m A } \\mathsf { c m } ^ { - 2 }$ as the metric for catalyst activity... materials with overpotentials smaller than $2 5 0 \\mathrm { m V }$ at $1 0 \\mathsf { m A } / \\mathsf { c m } ^ { 2 }$ were selected for further stability testing",
+        "related_images": [
+          "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg",
+          "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "OER",
+            "properties": {
+              "description": "Oxygen Evolution Reaction",
+              "extracted_from_image": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+            },
+            "source_image_file": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "OER performance",
+            "properties": {
+              "description": "OER catalytic performance metrics",
+              "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+            },
+            "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "test_stability_short",
+        "type": "testing",
+        "catalyst_id": "general",
+        "description": "Short-term OER stability chronopotentiometry (2h)",
+        "conditions_json": {
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          },
+          "test_duration": {
+            "value": 2,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "ruthenium_dissolution_median_I1": {
+            "value": 0.72,
+            "unit": "%"
+          },
+          "ruthenium_dissolution_median_I3": {
+            "value": 1.74,
+            "unit": "%"
+          },
+          "ruthenium_dissolution_median_I4": {
+            "value": 0.79,
+            "unit": "%"
+          },
+          "ruthenium_dissolution_median_I5": {
+            "value": 0.34,
+            "unit": "%"
+          }
+        },
+        "source_text": "we conducted 2-h constant-current OER tests at $1 0 \\mathsf { m A c m } ^ { - 2 }$... The median ruthenium dissolution rates for the I1, I3, I4 and I5 were $0 . 7 2 \\%$ $1 . 7 4 \\%$ , $0 . 7 9 \\%$ and $0 . 3 4 \\%$"
+      },
+      {
+        "id": "test_stability_long",
+        "type": "testing",
+        "catalyst_id": "general",
+        "description": "Extended OER stability chronopotentiometry (20h) for top catalysts",
+        "conditions_json": {
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          },
+          "test_duration": {
+            "value": 20,
+            "unit": "h"
+          },
+          "sampling_times": {
+            "value": "0, 2, 5, 20 h",
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "ruthenium_dissolution_Ru0.5Zr0.1Zn0.4Ox": {
+            "value": 0.046,
+            "unit": "%"
+          }
+        },
+        "source_text": "we conducted extended 20-h chronopotentiometric tests at $1 0 \\mathsf { m A } \\mathsf { c m } ^ { - 2 }$... $\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { x } ,$ an iridium-free catalyst, demonstrated a ruthenium dissolution rate of $0 . 0 4 6 \\%$",
+        "related_images": [
+          "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "OER stability",
+            "properties": {
+              "description": "Stability in OER conditions",
+              "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+            },
+            "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Ru0.5_Zr0.1_Zn0.4_Ox_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RuO2_test_2",
+        "type": "tested_in",
+        "source_id": "chem_RuO2",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ru0.5_Zr0.1_Zn0.4_Ox_test_general",
+        "type": "tested_in",
+        "source_id": "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+        "target_id": "test_general",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RuO2_test_general",
+        "type": "tested_in",
+        "source_id": "chem_RuO2",
+        "target_id": "test_general",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ru0.5_Zr0.1_Zn0.4_Ox_test_activity",
+        "type": "tested_in",
+        "source_id": "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+        "target_id": "test_activity",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RuO2_test_activity",
+        "type": "tested_in",
+        "source_id": "chem_RuO2",
+        "target_id": "test_activity",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ru0.5_Zr0.1_Zn0.4_Ox_test_stability_short",
+        "type": "tested_in",
+        "source_id": "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+        "target_id": "test_stability_short",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RuO2_test_stability_short",
+        "type": "tested_in",
+        "source_id": "chem_RuO2",
+        "target_id": "test_stability_short",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ru0.5_Zr0.1_Zn0.4_Ox_test_stability_long",
+        "type": "tested_in",
+        "source_id": "chem_Ru0.5_Zr0.1_Zn0.4_Ox",
+        "target_id": "test_stability_long",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Ru0.5Zr0.1Zn0.4Ox",
+        "type": "chemical",
+        "name": "Ru0.5Zr0.1Zn0.4Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } Z \\mathsf { r } _ { 0 . 1 } Z \\mathsf { n } _ { 0 . 4 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.5Zr0.1Zn0.4Ox",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ru0.5Rb0.2Ni0.3Ox",
+        "type": "chemical",
+        "name": "Ru0.5Rb0.2Ni0.3Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 5 } \\mathsf { R b } _ { 0 . 2 } \\mathsf { N i } _ { 0 . 3 } 0 _ { x }$"
+        ],
+        "formula": "Ru0.5Rb0.2Ni0.3Ox",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ru0.7Cs0.2Rb0.1Ox",
+        "type": "chemical",
+        "name": "Ru0.7Cs0.2Rb0.1Ox",
+        "aliases": [
+          "$\\mathsf { R u } _ { 0 . 7 } \\mathsf { C s } _ { 0 . 2 } \\mathsf { R b } _ { 0 . 1 } \\mathsf { O } _ { x }$"
+        ],
+        "formula": "Ru0.7Cs0.2Rb0.1Ox",
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "XRD measurements conducted using Bruker D8 diffractometer with copper Kα source on synthesized ruthenium-based catalysts to identify crystal structures and phase fractions.",
+        "evidence_snippet": "XRD measurements were conducted using a Bruker D8 diffractometer with a copper Kα source.",
+        "related_images": [
+          "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Structure properties",
+            "properties": {
+              "description": "Structural characterization (XRD, SEM)",
+              "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+            },
+            "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XRF",
+        "is_reported": true,
+        "characterization_summary": "XRF analysis performed with Fischerscope XRF-XDAL 237 SDD on drop-cast catalyst samples to determine composition.",
+        "evidence_snippet": "XRF analysis was performed with a Fischerscope XRF-XDAL 237 SDD.",
+        "related_images": [
+          "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Composition properties",
+            "properties": {
+              "description": "Compositional analysis",
+              "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+            },
+            "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "XPS analysis showed seven Pareto-front-surpassing catalysts initially exhibited lower ruthenium oxidation states than Ru0.5Rb0.2Ni0.3Ox; after 20h operation, six showed minimal or increased Ru4+ content while retaining Ru3+ for stability; zirconium-containing samples showed <3% shift vs >10% for zirconium-free.",
+        "evidence_snippet": "X-ray photoelectron spectroscopy analysis (Supplementary Figs. 31–38 and Supplementary Table 2) showed that the seven Pareto-front-surpassing catalysts initially exhibited lower ruthenium oxidation states..."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "Electrochemical impedance spectroscopy at 0, 2, 5 and 20h showed Cdl remained stable or slightly decreased post-activation; Rct showed mild early increases before stabilizing.",
+        "evidence_snippet": "Electrochemical impedance spectroscopy (Supplementary Figs. 39–46) at 0, 2, 5 and 20 h (1.5 V versus RHE) was conducted to assess changes in active surface area and intrinsic activity."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "ICP-OES",
+        "is_reported": true,
+        "characterization_summary": "ICP-OES analysis of electrolytes showed Ru0.5Zr0.1Zn0.4Ox had ruthenium dissolution rate 12 times lower than RuO2; seven Pareto-front catalysts showed low Ru dissolution (<1% for Ru and Zr); most non-Ru elements showed >10% dissolution.",
+        "evidence_snippet": "Dissolution data were collected through inductively coupled plasma optical emission spectroscopy (ICP-OES) measurements of the electrolytes after the OER."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "Transmission electron microscopy and high-resolution TEM performed on catalyst samples.",
+        "evidence_snippet": "Transmission electron microscopy (TEM) and high-resolution TEM were performed using JEM-2100F and JEM-F200 (JEOL) microscopes, respectively..."
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Ru Dissolution Scatter Plot",
+        "properties": {
+          "x_axis": "Ru dissolution (%)",
+          "y_axis": "Current density (mA cm⁻²)",
+          "y_range": "200 to 320",
+          "x_range": "0.1 to 10",
+          "points": [
+            "blue",
+            "red",
+            "light blue"
+          ],
+          "labels": [
+            "1",
+            "3",
+            "4",
+            "5"
+          ],
+          "extracted_from_image": "b2dc5628e69bcac2acbe5726dbe92b5137d60ace5874380092f0d79ffeb29b91.jpg"
+        },
+        "source_image_file": "b2dc5628e69bcac2acbe5726dbe92b5137d60ace5874380092f0d79ffeb29b91.jpg"
+      },
+      {
+        "id": "Ru",
+        "type": "chemical",
+        "name": "Ruthenium",
+        "properties": {
+          "symbol": "Ru",
+          "dissolution": "high (~10^2 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Rb",
+        "type": "chemical",
+        "name": "Rubidium",
+        "properties": {
+          "symbol": "Rb",
+          "dissolution": "high (~10^2 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Cs",
+        "type": "chemical",
+        "name": "Cesium",
+        "properties": {
+          "symbol": "Cs",
+          "dissolution": "high (~10^2 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Cu",
+        "type": "chemical",
+        "name": "Copper",
+        "properties": {
+          "overpotential": "~280 mV",
+          "extracted_from_image": "08e96b89907ba3c93c08a28f119b772e863b833cca5c6bd9d68f2951a521d4c0.jpg"
+        },
+        "source_image_file": "08e96b89907ba3c93c08a28f119b772e863b833cca5c6bd9d68f2951a521d4c0.jpg"
+      },
+      {
+        "id": "Co",
+        "type": "chemical",
+        "name": "Cobalt",
+        "properties": {
+          "symbol": "Co",
+          "dissolution": "medium (~10^1 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Fe",
+        "type": "chemical",
+        "name": "Iron",
+        "properties": {
+          "symbol": "Fe",
+          "dissolution": "medium (~10^1 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Ni",
+        "type": "chemical",
+        "name": "Nickel",
+        "properties": {
+          "symbol": "Ni",
+          "dissolution": "medium (~10^1 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Ir",
+        "type": "chemical",
+        "name": "Iridium",
+        "properties": {
+          "symbol": "Ir",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Zn",
+        "type": "chemical",
+        "name": "Zinc",
+        "properties": {
+          "symbol": "Zn",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Mo",
+        "type": "chemical",
+        "name": "Molybdenum",
+        "properties": {
+          "symbol": "Mo",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Na",
+        "type": "chemical",
+        "name": "Sodium",
+        "properties": {
+          "symbol": "Na",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Cr",
+        "type": "chemical",
+        "name": "Chromium",
+        "properties": {
+          "symbol": "Cr",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Sn",
+        "type": "chemical",
+        "name": "Tin",
+        "properties": {
+          "symbol": "Sn",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Ga",
+        "type": "chemical",
+        "name": "Gallium",
+        "properties": {
+          "symbol": "Ga",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "K",
+        "type": "chemical",
+        "name": "Potassium",
+        "properties": {
+          "symbol": "K",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Bi",
+        "type": "chemical",
+        "name": "Bismuth",
+        "properties": {
+          "overpotential": "~150 mV",
+          "extracted_from_image": "08e96b89907ba3c93c08a28f119b772e863b833cca5c6bd9d68f2951a521d4c0.jpg"
+        },
+        "source_image_file": "08e96b89907ba3c93c08a28f119b772e863b833cca5c6bd9d68f2951a521d4c0.jpg"
+      },
+      {
+        "id": "Sb",
+        "type": "chemical",
+        "name": "Antimony",
+        "properties": {
+          "overpotential": "~150 mV",
+          "extracted_from_image": "08e96b89907ba3c93c08a28f119b772e863b833cca5c6bd9d68f2951a521d4c0.jpg"
+        },
+        "source_image_file": "08e96b89907ba3c93c08a28f119b772e863b833cca5c6bd9d68f2951a521d4c0.jpg"
+      },
+      {
+        "id": "current_density",
+        "type": "parameter",
+        "name": "10 mA/cm²",
+        "properties": {
+          "extracted_from_image": "08e96b89907ba3c93c08a28f119b772e863b833cca5c6bd9d68f2951a521d4c0.jpg"
+        },
+        "source_image_file": "08e96b89907ba3c93c08a28f119b772e863b833cca5c6bd9d68f2951a521d4c0.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "process",
+        "name": "MA",
+        "properties": {
+          "extracted_from_image": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+        },
+        "source_image_file": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "input",
+        "name": "Presynthesis Input",
+        "properties": {
+          "extracted_from_image": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+        },
+        "source_image_file": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "chemical",
+        "name": "Chemical Information",
+        "properties": {
+          "extracted_from_image": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+        },
+        "source_image_file": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "condition",
+        "name": "Synthesis Condition",
+        "properties": {
+          "extracted_from_image": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+        },
+        "source_image_file": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "input",
+        "name": "Experimental Data Input",
+        "properties": {
+          "extracted_from_image": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+        },
+        "source_image_file": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "data",
+        "name": "OER Activity",
+        "properties": {
+          "extracted_from_image": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+        },
+        "source_image_file": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+      },
+      {
+        "id": "colorbar",
+        "type": "characterization",
+        "name": "Colorbar",
+        "properties": {
+          "description": "Vertical colorbar ranging from blue (10) to red (60)",
+          "scale": "continuous",
+          "min_value": 10,
+          "max_value": 60,
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "label_number",
+        "type": "label",
+        "name": "Number",
+        "properties": {
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "label_of",
+        "type": "label",
+        "name": "of",
+        "properties": {
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "label_syntheses",
+        "type": "label",
+        "name": "Syntheses",
+        "properties": {
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "value_60",
+        "type": "value",
+        "name": "60",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "value_50",
+        "type": "value",
+        "name": "50",
+        "properties": {
+          "color": "orange-red",
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "value_40",
+        "type": "value",
+        "name": "40",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "value_30",
+        "type": "value",
+        "name": "30",
+        "properties": {
+          "color": "light orange",
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "value_20",
+        "type": "value",
+        "name": "20",
+        "properties": {
+          "color": "light blue",
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "value_10",
+        "type": "value",
+        "name": "10",
+        "properties": {
+          "color": "dark blue",
+          "extracted_from_image": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+        },
+        "source_image_file": "3402f323e648e53b05d65ac1ef9755bb1ad72d375328526a9dd0f0e38de41a27.jpg"
+      },
+      {
+        "id": "f1",
+        "type": "feature",
+        "name": "H₂O fraction",
+        "properties": {
+          "position": "top",
+          "color": "dashed light blue",
+          "extracted_from_image": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+        },
+        "source_image_file": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+      },
+      {
+        "id": "f2",
+        "type": "feature",
+        "name": "Max. ionic character",
+        "properties": {
+          "position": "2nd from top",
+          "color": "solid dark blue",
+          "extracted_from_image": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+        },
+        "source_image_file": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+      },
+      {
+        "id": "f3",
+        "type": "feature",
+        "name": "Δr range",
+        "properties": {
+          "position": "3rd from top",
+          "color": "magenta",
+          "extracted_from_image": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+        },
+        "source_image_file": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+      },
+      {
+        "id": "f4",
+        "type": "feature",
+        "name": "s.Δr",
+        "properties": {
+          "position": "4th from top",
+          "color": "light magenta",
+          "extracted_from_image": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+        },
+        "source_image_file": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+      },
+      {
+        "id": "f5",
+        "type": "feature",
+        "name": "Average s.Δr",
+        "properties": {
+          "position": "5th from top",
+          "color": "red",
+          "extracted_from_image": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+        },
+        "source_image_file": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+      },
+      {
+        "id": "f6",
+        "type": "feature",
+        "name": "Average anion EA",
+        "properties": {
+          "position": "6th from top",
+          "color": "dark blue",
+          "extracted_from_image": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+        },
+        "source_image_file": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+      },
+      {
+        "id": "f7",
+        "type": "feature",
+        "name": "Cation oxidation range",
+        "properties": {
+          "position": "bottom",
+          "color": "light blue",
+          "extracted_from_image": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+        },
+        "source_image_file": "368b1155b06167fbcf79a67ad0afde933dccee8376e202f76366dfdcd7ca248b.jpg"
+      },
+      {
+        "id": "figure_c",
+        "type": "figure",
+        "name": "Figure C",
+        "properties": {
+          "label": "C",
+          "extracted_from_image": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+        },
+        "source_image_file": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+      },
+      {
+        "id": "ru",
+        "type": "chemical",
+        "name": "Ruthenium",
+        "properties": {
+          "symbol": "Ru",
+          "extracted_from_image": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+        },
+        "source_image_file": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+      },
+      {
+        "id": "scatter_plot",
+        "type": "characterization",
+        "name": "Scatter Plot",
+        "properties": {
+          "type": "predicted vs detected dissolution",
+          "extracted_from_image": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+        },
+        "source_image_file": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "axis",
+        "name": "Pourbaix energy",
+        "properties": {
+          "unit": "eV per atom",
+          "range": "[0, 6]",
+          "extracted_from_image": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+        },
+        "source_image_file": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "axis",
+        "name": "Dissolution (%)",
+        "properties": {
+          "range": "[0.1, 100]",
+          "extracted_from_image": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+        },
+        "source_image_file": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+      },
+      {
+        "id": "trend_line",
+        "type": "data_element",
+        "name": "Trend Line",
+        "properties": {
+          "style": "dashed line",
+          "extracted_from_image": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+        },
+        "source_image_file": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+      },
+      {
+        "id": "data_points",
+        "type": "data_element",
+        "name": "Data Points",
+        "properties": {
+          "colors": [
+            "blue",
+            "light blue",
+            "orange",
+            "gray"
+          ],
+          "scatter": true,
+          "extracted_from_image": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+        },
+        "source_image_file": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+      },
+      {
+        "id": "pourbaix_diagram",
+        "type": "characterization",
+        "name": "Pourbaix Energy",
+        "properties": {
+          "context": "stability diagram for Ru",
+          "extracted_from_image": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+        },
+        "source_image_file": "81747483f0440e281e136deac14b0f17b6b300cb14779d8529f7aee6546750ad.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "product",
+        "name": "Synthesized Product Features",
+        "properties": {
+          "extracted_from_image": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+        },
+        "source_image_file": "cb62e5d0dd01b7310f26dd794ad053853f310564538e770211b9ee5c64d6e18a.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "system",
+        "name": "Quaternary",
+        "properties": {
+          "description": "Likely quaternary chemical system or alloy",
+          "extracted_from_image": "aa5f3d4106de7d93606f736510b595a5a46a10d1e531f5b6b69b55665914ba74.jpg"
+        },
+        "source_image_file": "aa5f3d4106de7d93606f736510b595a5a46a10d1e531f5b6b69b55665914ba74.jpg"
+      },
+      {
+        "id": "chemical_space",
+        "type": "concept",
+        "name": "Chemical Space",
+        "properties": {
+          "representation": "gray wireframe cube",
+          "description": "Full range of possible chemical compositions",
+          "extracted_from_image": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+        },
+        "source_image_file": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+      },
+      {
+        "id": "gelation_space",
+        "type": "concept",
+        "name": "Gelation Space",
+        "properties": {
+          "representation": "blue filled cube",
+          "description": "Subset of chemical space forming gels",
+          "extracted_from_image": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+        },
+        "source_image_file": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+      },
+      {
+        "id": "active_oer_space",
+        "type": "concept",
+        "name": "Active OER Space",
+        "properties": {
+          "representation": "blue cube with yellow interior",
+          "description": "Subset exhibiting OER activity",
+          "extracted_from_image": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+        },
+        "source_image_file": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+      },
+      {
+        "id": "experimental_features",
+        "type": "concept",
+        "name": "Experimental Features",
+        "properties": {
+          "representation": "blue cube with yellow grid",
+          "description": "Experimentally explored region",
+          "extracted_from_image": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+        },
+        "source_image_file": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+      },
+      {
+        "id": "stable_oer_space",
+        "type": "concept",
+        "name": "Stable OER Space",
+        "properties": {
+          "representation": "blue cube with red interior",
+          "description": "Stable region with OER performance",
+          "extracted_from_image": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+        },
+        "source_image_file": "b3e6cbf5068cc5c5b6f7bf73fb42a8d8a084f139d61609f70613b7210ac13f20.jpg"
+      },
+      {
+        "id": "chart_dissolution",
+        "type": "characterization",
+        "name": "Dissolution Rate Chart",
+        "properties": {
+          "type": "bar chart",
+          "y_axis": "Dissolution (%)",
+          "scale": "10^0 to 10^2",
+          "label": "e",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Nb",
+        "type": "chemical",
+        "name": "Niobium",
+        "properties": {
+          "symbol": "Nb",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "Hf",
+        "type": "chemical",
+        "name": "Hafnium",
+        "properties": {
+          "symbol": "Hf",
+          "dissolution": "low (~10^0 %)",
+          "extracted_from_image": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+        },
+        "source_image_file": "d86cdd11f3e51fd5aa5e958628fd5e7f03c49207d97aeb8d2f9f202f314d160c.jpg"
+      },
+      {
+        "id": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7_1",
+        "type": "process",
+        "name": "ML model",
+        "properties": {
+          "description": "Machine Learning model",
+          "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        },
+        "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+      },
+      {
+        "id": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7_2",
+        "type": "process",
+        "name": "HT experiments",
+        "properties": {
+          "description": "High-Throughput experiments",
+          "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        },
+        "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+      },
+      {
+        "id": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7_4",
+        "type": "process",
+        "name": "Sol-gel reaction",
+        "properties": {
+          "description": "Sol-gel synthesis process",
+          "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        },
+        "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+      },
+      {
+        "id": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7_5",
+        "type": "chemical",
+        "name": "Synthesized catalyst",
+        "properties": {
+          "description": "Catalyst produced via sol-gel",
+          "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        },
+        "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+      },
+      {
+        "id": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7_6",
+        "type": "process",
+        "name": "OER reaction",
+        "properties": {
+          "description": "Oxygen Evolution Reaction",
+          "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        },
+        "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+      },
+      {
+        "id": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7_8",
+        "type": "chemical",
+        "name": "O2",
+        "properties": {
+          "description": "Oxygen product",
+          "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        },
+        "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+      },
+      {
+        "id": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7_9",
+        "type": "characterization",
+        "name": "Transfer learning",
+        "properties": {
+          "description": "ML transfer learning technique",
+          "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        },
+        "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+      },
+      {
+        "id": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7_10",
+        "type": "characterization",
+        "name": "Element properties",
+        "properties": {
+          "description": "Properties of elements in precursors",
+          "extracted_from_image": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+        },
+        "source_image_file": "ebdeced813d5e238bfe6bb263de46d852a196f872b319f11a053910132d9c9b7.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Ru0.5Zr0.1Zn0.4Ox_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Zr0.1Zn0.4Ox",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Zr0.1Zn0.4Ox_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Zr0.1Zn0.4Ox",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Zr0.1Zn0.4Ox_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Zr0.1Zn0.4Ox",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Zr0.1Zn0.4Ox_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Zr0.1Zn0.4Ox",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Zr0.1Zn0.4Ox_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Zr0.1Zn0.4Ox",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Rb0.2Ni0.3Ox_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Rb0.2Ni0.3Ox",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Rb0.2Ni0.3Ox_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Rb0.2Ni0.3Ox",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.7Cs0.2Rb0.1Ox_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.7Cs0.2Rb0.1Ox",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.7Cs0.2Rb0.1Ox_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.7Cs0.2Rb0.1Ox",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Zr0.1Zn0.4Ox_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Zr0.1Zn0.4Ox",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Rb0.2Ni0.3Ox_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Rb0.2Ni0.3Ox",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.5Rb0.2Ni0.3Ox_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.5Rb0.2Ni0.3Ox",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.7Cs0.2Rb0.1Ox_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.7Cs0.2Rb0.1Ox",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru0.7Cs0.2Rb0.1Ox_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ru0.7Cs0.2Rb0.1Ox",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ru",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Rb",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Cs",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Cu",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Co",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Fe",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ir",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Zn",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Mo",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Na",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Cr",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Sn",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ga",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "K",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Bi",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Sb",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "current_density",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "Ru",
+        "target_id": "current_density",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "Rb",
+        "target_id": "current_density",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "dissolution_measured"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "dissolution_measured"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "dissolution_measured"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "dissolution_measured"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "label_number",
+        "type": "has_label"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "label_of",
+        "type": "has_label"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "label_syntheses",
+        "type": "has_label"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "value_60",
+        "type": "maps_to_scale"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "value_50",
+        "type": "maps_to_scale"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "value_40",
+        "type": "maps_to_scale"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "value_30",
+        "type": "maps_to_scale"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "value_20",
+        "type": "maps_to_scale"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "value_10",
+        "type": "maps_to_scale"
+      },
+      {
+        "source_id": "label_number",
+        "target_id": "label_of",
+        "type": "part_of_title"
+      },
+      {
+        "source_id": "label_of",
+        "target_id": "label_syntheses",
+        "type": "part_of_title"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "f1",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "f2",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "f3",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "f4",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "f5",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "f6",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "f7",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "f1",
+        "target_id": "chem_water",
+        "type": "references"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "sequential"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "sequential"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "sequential"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measures"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "measures"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "measures"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measured"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "dissolution"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "prediction"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "color_scale"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measured_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_property"
+      },
+      {
+        "source_id": "figure_c",
+        "target_id": "scatter_plot",
+        "type": "contains"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "ru",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "trend_line",
+        "type": "contains"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "data_points",
+        "type": "contains"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "pourbaix_diagram",
+        "type": "represents"
+      },
+      {
+        "source_id": "ru",
+        "target_id": "pourbaix_diagram",
+        "type": "subject_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "used_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chemical_space",
+        "target_id": "gelation_space",
+        "type": "subset_of"
+      },
+      {
+        "source_id": "gelation_space",
+        "target_id": "active_oer_space",
+        "type": "subset_of"
+      },
+      {
+        "source_id": "active_oer_space",
+        "target_id": "experimental_features",
+        "type": "intersects_with"
+      },
+      {
+        "source_id": "experimental_features",
+        "target_id": "stable_oer_space",
+        "type": "refines_to"
+      },
+      {
+        "source_id": "active_oer_space",
+        "target_id": "test_activity",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "stable_oer_space",
+        "target_id": "test_activity",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "includes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "includes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "includes"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "includes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Ru",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Rb",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Cs",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Fe",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Co",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Ni",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Ir",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Zn",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Mo",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Na",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Ga",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "K",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Cr",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Nb",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Sn",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "chart_dissolution",
+        "target_id": "Hf",
+        "type": "shows_dissolution"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "predicts"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "guides"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "input_to"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "produces"
+      },
+      {
+        "source_id": "5",
+        "target_id": "6",
+        "type": "used_in"
+      },
+      {
+        "source_id": "7",
+        "target_id": "6",
+        "type": "reactant_in"
+      },
+      {
+        "source_id": "6",
+        "target_id": "8",
+        "type": "produces"
+      },
+      {
+        "source_id": "1",
+        "target_id": "9",
+        "type": "uses"
+      },
+      {
+        "source_id": "3",
+        "target_id": "10",
+        "type": "has"
+      },
+      {
+        "source_id": "5",
+        "target_id": "11",
+        "type": "has"
+      },
+      {
+        "source_id": "5",
+        "target_id": "12",
+        "type": "has"
+      },
+      {
+        "source_id": "5",
+        "target_id": "13",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "5",
+        "target_id": "14",
+        "type": "exhibits"
+      }
+    ]
+  }
+}

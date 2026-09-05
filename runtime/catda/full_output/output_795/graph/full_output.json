@@ -1,0 +1,2693 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_ni_foam",
+        "type": "chemical",
+        "name": "Ni foam",
+        "aliases": [
+          "Ni foam substrate"
+        ],
+        "formula": "Ni",
+        "properties": {}
+      },
+      {
+        "id": "chem_ni_no3_2",
+        "type": "chemical",
+        "name": "Ni(NO3)2",
+        "aliases": [
+          "Ni2+"
+        ],
+        "formula": "Ni(NO3)2",
+        "properties": {}
+      },
+      {
+        "id": "chem_fe_no3_3",
+        "type": "chemical",
+        "name": "Fe(NO3)3",
+        "aliases": [
+          "Fe3+"
+        ],
+        "formula": "Fe(NO3)3",
+        "properties": {}
+      },
+      {
+        "id": "chem_urea",
+        "type": "chemical",
+        "name": "urea",
+        "aliases": [],
+        "formula": "CO(NH2)2",
+        "properties": {}
+      },
+      {
+        "id": "chem_gradient_nife_ldh_nanoarray",
+        "type": "chemical",
+        "name": "gradient NiFe-LDH nanoarray",
+        "aliases": [
+          "Nanoarray-LDH",
+          "gradient-LDH",
+          "NiFe-LDH nanoarray"
+        ],
+        "composition": {
+          "Ni:Fe": {
+            "value": "3:1 (gradient 3.5:1 to 2.4:1)",
+            "unit": "ratio"
+          }
+        },
+        "properties": {
+          "electrochemical surface area": {
+            "value": "measured",
+            "unit": "Fig. S7"
+          }
+        },
+        "related_images": [
+          "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "NiFe-LDH",
+            "properties": {
+              "description": "Nickel-Iron Layered Double Hydroxide",
+              "extracted_from_image": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+            },
+            "source_image_file": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Gradient-LDH",
+            "properties": {
+              "description": "Gradient Layered Double Hydroxide",
+              "extracted_from_image": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+            },
+            "source_image_file": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_colloidal_ldh",
+        "type": "chemical",
+        "name": "Colloidal-LDH",
+        "aliases": [
+          "gradient-free-LDH",
+          "Colloidal-LDH nanosheets"
+        ],
+        "composition": {
+          "Ni:Fe": {
+            "value": "3.42:1",
+            "unit": "ratio"
+          }
+        },
+        "properties": {
+          "electrochemical surface area": {
+            "value": "measured",
+            "unit": "Table S1"
+          }
+        },
+        "related_images": [
+          "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Gradient free-LDH",
+            "properties": {
+              "description": "Gradient-free Layered Double Hydroxide",
+              "extracted_from_image": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+            },
+            "source_image_file": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Hydrothermal synthesis of gradient NiFe-LDH",
+        "procedure": "NiFe-LDH nanoarrays grown on Ni foam by one-step hydrothermal method [20]: Ni foam substrate with Ni(NO3)2·6H2O, Fe(NO3)3·9H2O precursors and urea; Fe3+ partially oxidizes Ni foam creating Ni2-δ; sequential nucleation forms Ni-rich bottom (Ni:Fe 3.5:1, low Ksp) then Fe-rich top (Ni:Fe 2.4:1, high pH from urea hydrolysis).",
+        "method": "one-step hydrothermal",
+        "conditions": {
+          "pH": {
+            "value": "monitored every 2h",
+            "unit": "increasing"
+          },
+          "temperature": {
+            "value": "elevated",
+            "unit": "°C"
+          }
+        },
+        "source_text": "The Nanoarray-LDH were prepared by a simple hydrothermal method [20]... NiFe-LDH grown on Ni foam prepared via one-step hydrothermal method was refocused.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Fe3+ oxidation of Ni foam",
+            "method": "surface oxidation",
+            "conditions": {},
+            "procedure_snippet": "Fe3+ ions would first partially oxidize Ni foam surface prior to nucleation"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Ni-rich LDH nucleation",
+            "method": "low Ksp precipitation",
+            "conditions": {
+              "Ksp": {
+                "value": "1.1×10^-36 (Fe), 5.48×10^-16 (Ni)",
+                "unit": ""
+              }
+            },
+            "procedure_snippet": "Fe3+, Ni2+ with low Ksp nucleate forming Ni2-δ-O-Ni2+-O-Fe3+ moiety"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Fe-rich epitaxial growth",
+            "method": "high pH precipitation",
+            "conditions": {
+              "pH": {
+                "value": "high",
+                "unit": "urea hydrolysis"
+              }
+            },
+            "procedure_snippet": "Fe3-δ and Ni2-δ with high Ksp sediment forming Fe-rich top structure"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Co-precipitation synthesis of colloidal NiFe-LDH",
+        "procedure": "Colloidal NiFe-LDH nanosheets were prepared by co-precipitation method where Ni2+ and Fe3+ nucleate simultaneously forming uniform gradient-free NiFe-LDH with Ni:Fe ratio 3.42:1 close to feeding ratio.",
+        "method": "co-precipitation",
+        "conditions": {},
+        "source_text": "Colloidal-LDH nanosheets prepared by co-precipitation method was used as counterparts [21]... Ni2+ and Fe3+ will nucleate simultaneously",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Simultaneous co-precipitation",
+            "method": "co-precipitation",
+            "conditions": {},
+            "procedure_snippet": "Ni2+ and Fe3+ will nucleate simultaneously in the preparation of Colloidal-LDH"
+          }
+        ]
+      },
+      {
+        "id": "chem_ni_no3_2_6h2o",
+        "type": "chemical",
+        "name": "Ni(NO3)2·6H2O",
+        "aliases": [
+          "Ni(NO3)2·6H2O"
+        ],
+        "formula": "Ni(NO3)2·6H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_fe_no3_3_9h2o",
+        "type": "chemical",
+        "name": "Fe(NO3)3·9H2O",
+        "aliases": [
+          "Fe(NO3)3·9H2O"
+        ],
+        "formula": "Fe(NO3)3·9H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_gradient_nife35fe1_ldh",
+        "type": "chemical",
+        "name": "gradient-free Ni3.5Fe1.0 3+-LDH",
+        "aliases": [
+          "Ni3.5Fe1.0 3+-LDH"
+        ],
+        "composition": {
+          "Ni:Fe": {
+            "value": "3.5:1",
+            "unit": "ratio"
+          }
+        },
+        "properties": {},
+        "related_images": [
+          "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ni_{3.3}Fe_{1}-LDH",
+            "properties": {
+              "composition": "Ni:Fe = 3.3:1",
+              "structure": "Layered Double Hydroxide",
+              "extracted_from_image": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+            },
+            "source_image_file": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_ni3fe025_2plus_fe075_3plus_ldh",
+        "type": "chemical",
+        "name": "Ni3.0Fe0.25 2+Fe0.75 3+-LDH",
+        "aliases": [
+          "Ni3.0Fe0.25 2+Fe0.75 3+-LDH"
+        ],
+        "composition": {
+          "Ni:Fe": {
+            "value": "3:0.25",
+            "unit": "ratio"
+          }
+        },
+        "properties": {},
+        "related_images": [
+          "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "NiFe^{2+}_{0.75}Fe^{3+}-LDH",
+            "properties": {
+              "composition": "NiFe^{2+}_{0.75}Fe^{3+}",
+              "structure": "Layered Double Hydroxide",
+              "extracted_from_image": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+            },
+            "source_image_file": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni_{3.0}Fe_{2.0}Fe_{0.75}-LDH",
+            "properties": {
+              "composition": "Ni_{3.0}Fe_{2.0}Fe_{0.75}",
+              "structure": "Layered Double Hydroxide",
+              "extracted_from_image": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+            },
+            "source_image_file": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_ni25fe05_2plus_fe05_3plus_ldh",
+        "type": "chemical",
+        "name": "Ni2.5Fe0.5 2+Fe0.5 3+-LDH",
+        "aliases": [
+          "Ni2.5Fe0.5 2+Fe0.5 3+-LDH"
+        ],
+        "composition": {
+          "Ni:Fe": {
+            "value": "2.5:0.5",
+            "unit": "ratio"
+          }
+        },
+        "properties": {},
+        "related_images": [
+          "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ni_{2.5}Fe_{0.5}-LDH",
+            "properties": {
+              "composition": "Ni:Fe = 2.5:0.5",
+              "structure": "Layered Double Hydroxide",
+              "extracted_from_image": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+            },
+            "source_image_file": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_gradient_LDH",
+        "type": "chemical",
+        "name": "gradient NiFe-LDH",
+        "aliases": [
+          "Nanoarray-LDH",
+          "gradient-LDH"
+        ],
+        "formula": "NiFe-LDH"
+      },
+      {
+        "id": "chem_gradient_free_LDH",
+        "type": "chemical",
+        "name": "gradient-free NiFe-LDH",
+        "aliases": [
+          "Colloidal-LDH"
+        ],
+        "formula": "NiFe-LDH"
+      },
+      {
+        "id": "chem_gradient_NiFe_LDH",
+        "type": "chemical",
+        "name": "gradient NiFe-LDH",
+        "aliases": [
+          "Nanoarray-LDH"
+        ],
+        "formula": "NiFe-LDH",
+        "properties": {
+          "Ni:Fe ratio": {
+            "value": "3.5:1 to 2.4:1",
+            "unit": "gradient"
+          },
+          "Ni valence": {
+            "value": "Ni^{2-δ}",
+            "unit": ""
+          },
+          "Fe valence": {
+            "value": "Fe^{3-δ}",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_gradient_free_NiFe_LDH",
+        "type": "chemical",
+        "name": "gradient-free NiFe-LDH",
+        "aliases": [
+          "Colloidal-LDH"
+        ],
+        "formula": "NiFe-LDH",
+        "properties": {
+          "Ni:Fe ratio": {
+            "value": "3.42:1",
+            "unit": ""
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_ni_foam_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ni_foam",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_ni_no3_2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ni_no3_2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_urea_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_urea",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_gradient_nife_ldh_nanoarray",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_gradient_nife_ldh_nanoarray",
+        "properties": {
+          "form": "nanoarray on Ni foam"
+        }
+      },
+      {
+        "id": "edge_input_chem_ni_no3_2_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ni_no3_2",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_fe_no3_3_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_fe_no3_3",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_colloidal_ldh",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_colloidal_ldh",
+        "properties": {
+          "form": "nanosheets"
+        }
+      },
+      {
+        "id": "edge_input_chem_ni_no3_2_6h2o_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ni_no3_2_6h2o",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_fe_no3_3_9h2o_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_fe_no3_3_9h2o",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_gradient_LDH",
+      "chem_gradient_free_LDH"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_gradient_LDH",
+        "type": "chemical",
+        "name": "gradient NiFe-LDH",
+        "aliases": [
+          "Nanoarray-LDH",
+          "gradient-LDH"
+        ],
+        "formula": "NiFe-LDH"
+      },
+      {
+        "id": "chem_gradient_free_LDH",
+        "type": "chemical",
+        "name": "gradient-free NiFe-LDH",
+        "aliases": [
+          "Colloidal-LDH"
+        ],
+        "formula": "NiFe-LDH"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_gradient_LDH",
+        "description": "OER performance (BET & iR-corrected) in alkaline electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline",
+            "unit": "pH 13.6"
+          },
+          "reference_electrode": {
+            "value": "RHE",
+            "unit": "electrode"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "yes"
+          },
+          "BET_correction": {
+            "value": "applied",
+            "unit": "yes"
+          },
+          "ECSA_normalization": {
+            "value": "considered",
+            "unit": "yes"
+          }
+        },
+        "results_json": {
+          "OER_onset_potential": {
+            "value": 1.41,
+            "unit": "V vs RHE"
+          },
+          "overpotential_at_onset": {
+            "value": 180,
+            "unit": "mV"
+          },
+          "turnover_frequency_TOF": {
+            "value": 0.22,
+            "unit": "s^-1"
+          },
+          "Ni_oxidation_peak": {
+            "value": 1.32,
+            "unit": "V"
+          },
+          "Ni_oxidation_peak_shift": {
+            "value": 15,
+            "unit": "mV earlier"
+          },
+          "stability": {
+            "value": "satisfying",
+            "unit": "50 mA/cm^2 for 24 h"
+          }
+        },
+        "source_text": "As shown in Fig. 3a, OER onset potential of gradient-LDH is as low as 1.41 V (vs. RHE), which is ∼40 mV lower than that of gradient free-LDH... turnover frequency (TOF) of gradient-LDH is 0.22 s−1... The Ni oxidation peak in gradient-LDH appears at 1.32 Vi, around 15 mV earlier than the counterpart... gradient-LDH shows satisfying electrochemical stability at 50 mA/cm2 for 24 hrs as shown in Fig. S10."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_gradient_free_LDH",
+        "description": "OER performance (BET & iR-corrected) in alkaline electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline",
+            "unit": "pH 13.6"
+          },
+          "reference_electrode": {
+            "value": "RHE",
+            "unit": "electrode"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "yes"
+          },
+          "BET_correction": {
+            "value": "applied",
+            "unit": "yes"
+          }
+        },
+        "results_json": {
+          "OER_onset_potential": {
+            "value": 1.45,
+            "unit": "V vs RHE"
+          },
+          "overpotential_at_onset": {
+            "value": 220,
+            "unit": "mV"
+          },
+          "turnover_frequency_TOF": {
+            "value": 0.17,
+            "unit": "s^-1"
+          }
+        },
+        "source_text": "OER onset potential of gradient-LDH is as low as 1.41 V (vs. RHE), which is ∼40 mV lower than that of gradient free-LDH... TOF of gradient-LDH is 0.22 s−1, which is ∼30% higher than that of gradient free-LDH (0.17 s−1)"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_gradient_LDH",
+        "description": "Electrochemical impedance spectroscopy (EIS) analysis",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline",
+            "unit": "pH 13.6"
+          },
+          "analysis_type": {
+            "value": "EIS Nyquist plots",
+            "unit": "electrochemical"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance_Rct": {
+            "value": "lower",
+            "unit": "compared to gradient-free"
+          },
+          "series_resistance_Rs": {
+            "value": "similar",
+            "unit": "compared to gradient-free"
+          }
+        },
+        "source_text": "charge transfer resistance (R_ct) of different samples studied by Nyquist plots in Fig. 3c shows that electron transfer can be facilitated in gradient-LDH nanoarray compared with that of gradient free-LDH. The similar system resistance (R_s) for both samples"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_gradient_LDH",
+        "description": "Laviron analysis for redox kinetics",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "CV redox analysis",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline",
+            "unit": "pH 13.6"
+          },
+          "analysis_type": {
+            "value": "Laviron analysis",
+            "unit": "redox kinetics"
+          }
+        },
+        "results_json": {
+          "redox_constant_Ks": {
+            "value": "higher",
+            "unit": "compared to gradient-free"
+          },
+          "OH_binding_strength": {
+            "value": "stronger",
+            "unit": "to OH-"
+          }
+        },
+        "source_text": "Laviron analysis in Fig. 3d and Fig.S9 further verifies the higher redox constant (K_s) and stronger binding of gradient-LDH to OH−"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_gradient_LDH",
+        "description": "Long-term stability test at constant current density",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER chronoamperometry",
+            "unit": "stability"
+          },
+          "electrolyte": {
+            "value": "alkaline",
+            "unit": "pH 13.6"
+          },
+          "current_density": {
+            "value": 50,
+            "unit": "mA/cm^2"
+          },
+          "duration": {
+            "value": 24,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": 24,
+            "unit": "h"
+          },
+          "current_density_maintained": {
+            "value": 50,
+            "unit": "mA/cm^2"
+          }
+        },
+        "source_text": "the gradient-LDH shows satisfying electrochemical stability at 50 mA/cm2 for 24 hrs as shown in Fig. S10"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_gradient_LDH_test_1",
+        "type": "tested_in",
+        "source_id": "chem_gradient_LDH",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_gradient_free_LDH_test_2",
+        "type": "tested_in",
+        "source_id": "chem_gradient_free_LDH",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_gradient_LDH_test_3",
+        "type": "tested_in",
+        "source_id": "chem_gradient_LDH",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_gradient_LDH_test_4",
+        "type": "tested_in",
+        "source_id": "chem_gradient_LDH",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_gradient_LDH_test_5",
+        "type": "tested_in",
+        "source_id": "chem_gradient_LDH",
+        "target_id": "test_5",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_gradient_NiFe_LDH",
+        "type": "chemical",
+        "name": "gradient NiFe-LDH",
+        "aliases": [
+          "Nanoarray-LDH"
+        ],
+        "formula": "NiFe-LDH",
+        "properties": {
+          "Ni:Fe ratio": {
+            "value": "3.5:1 to 2.4:1",
+            "unit": "gradient"
+          },
+          "Ni valence": {
+            "value": "Ni^{2-δ}",
+            "unit": ""
+          },
+          "Fe valence": {
+            "value": "Fe^{3-δ}",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_gradient_free_NiFe_LDH",
+        "type": "chemical",
+        "name": "gradient-free NiFe-LDH",
+        "aliases": [
+          "Colloidal-LDH"
+        ],
+        "formula": "NiFe-LDH",
+        "properties": {
+          "Ni:Fe ratio": {
+            "value": "3.42:1",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "TEM line scan",
+        "is_reported": true,
+        "characterization_summary": "Fe concentration gradient from bottom to top in gradient NiFe-LDH with Ni:Fe ratio decreasing from 3.5:1 to 2.4:1.",
+        "evidence_snippet": "Fig. 1a and b reveal the Fe-concentration gradient distribution from the bottom to the top in Nanoarray-LDH, in which the Ni:Fe ratio decreases from 3.5:1 to 2.4:1..."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "EELS",
+        "is_reported": true,
+        "characterization_summary": "Valence states evolution of Fe and Ni from bottom to top in gradient NiFe-LDH showing lower overall valence states than gradient-free LDH due to Ni foam reduction effect.",
+        "evidence_snippet": "The overall valence states of both Ni and Fe from bottom to top in Nanoarray-LDH are lower than that in Colloidal-LDH due to the reducing effect by Ni foam."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "SEM line scan",
+        "is_reported": true,
+        "characterization_summary": "Confirms Fe concentration gradient distribution from bottom to top in gradient NiFe-LDH.",
+        "evidence_snippet": "Fig. 1a and b reveal the Fe-concentration gradient distribution from the bottom to the top in Nanoarray-LDH..."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "XPS O 1s spectra show M-O bonds at 529.8 eV and increased intensity of adsorbed O-O at 532.8 eV in gradient NiFe-LDH, suggesting enhanced binding strength to oxygenated intermediates.",
+        "evidence_snippet": "In Fig. 2a, the binding strength of NiFe-LDH with/without gradient composition to oxygenated intermediates is revealed by X-ray photoelectron spectroscopy (XPS) O 1s spectra. The O species at 529.8 eV are assignable to the typical metal-oxygen (M − O) bonds in NiFe-LDH. ... However, there observes an obvious increase in intensity of adsorbed O-O in NiFe-LDH after gradient Fe doping, suggesting enhanced binding strength of gradient NiFe-LDH surface to oxygenated intermediates.",
+        "related_images": [
+          "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "O 1s XPS Spectrum",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy",
+              "region": "O 1s",
+              "binding_energy_range": "525-537 eV",
+              "extracted_from_image": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+            },
+            "source_image_file": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "(110) diffraction peak of gradient NiFe-LDH shifts to lower angle compared to gradient-free counterpart, indicating stretched M-O-M bonds.",
+        "evidence_snippet": "The detailed XRD patterns in Fig. 2b, where (110) diffraction peak of gradient NiFe-LDH shifts to lower angle compared to the gradient-free counterpart...",
+        "related_images": [
+          "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "technique": "X-ray Diffraction",
+              "reference": "PDF-40-0215",
+              "extracted_from_image": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+            },
+            "source_image_file": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "EXAFS",
+        "is_reported": true,
+        "characterization_summary": "Stretched Ni-O/Fe-O bonds found in gradient NiFe-LDH by Fourier transformed magnitudes indicating higher covalency of M-O bonds.",
+        "evidence_snippet": "In Fig. 2c and d, bond length evolution of NiFe-LDH with/without gradient composition was studied and a stretched Ni-O/Fe-O bond can be found in gradient NiFe-LDH...",
+        "related_images": [
+          "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg",
+          "615556109d7d95d0d64a13406ecde2c475d84b0060787ee04097f218ae2a02fc.jpg",
+          "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg",
+          "90fed2bac6c55b5e2eccb2bbf7dafc2bfa5dac6356bd82c7fa198366fea0896e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "OH- + H2O(l)",
+            "properties": {
+              "extracted_from_image": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+            },
+            "source_image_file": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "LDH Layer",
+            "properties": {
+              "description": "Brucite-like layered structure with metal hydroxide octahedra",
+              "extracted_from_image": "615556109d7d95d0d64a13406ecde2c475d84b0060787ee04097f218ae2a02fc.jpg"
+            },
+            "source_image_file": "615556109d7d95d0d64a13406ecde2c475d84b0060787ee04097f218ae2a02fc.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EXAFS Spectrum",
+            "properties": {
+              "technique": "Extended X-ray Absorption Fine Structure",
+              "x_axis": "Radial distance (Å)",
+              "y_axis": "χ(R)",
+              "range": "1-4 Å",
+              "extracted_from_image": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+            },
+            "source_image_file": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EXAFS spectrum",
+            "properties": {
+              "technique": "Extended X-ray Absorption Fine Structure",
+              "x_axis": "Radial distance (Å)",
+              "y_axis": "χ(R)",
+              "extracted_from_image": "90fed2bac6c55b5e2eccb2bbf7dafc2bfa5dac6356bd82c7fa198366fea0896e.jpg"
+            },
+            "source_image_file": "90fed2bac6c55b5e2eccb2bbf7dafc2bfa5dac6356bd82c7fa198366fea0896e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "Mott-Schottky",
+        "is_reported": true,
+        "characterization_summary": "Flat band potentials measured for NiFe-LDH variants to study electron transfer trends in gradient structure.",
+        "evidence_snippet": "In Fig. 4a and b, the Mott-Schottky plots reveal the flat band potential (vs. RHE, pH = 13.6) of gradient-free Ni_{3.5}Fe_{1.0}^{3+}-LDH...",
+        "related_images": [
+          "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg",
+          "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg",
+          "3074933e4f5532db0d4ef9f4bb24fda41f20d4c8362d0ce5aea2363913fb9251.jpg",
+          "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "1/C² vs Potential Plot",
+            "properties": {
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "1/C² (10^7 F^{-2})",
+              "type": "Mott-Schottky plot",
+              "extracted_from_image": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+            },
+            "source_image_file": "1d915d2c0423ec7e15041e253edd7140fee1c71841bb9ef5e1d7f852a69dbfea.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Pourbaix Diagram",
+            "properties": {
+              "U": "1.23 V",
+              "x-axis": "Reaction coordinates",
+              "y-axis": "Potential (V)",
+              "extracted_from_image": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+            },
+            "source_image_file": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Flat Band Potential vs RHE",
+            "properties": {
+              "x_axis": "Ni:Fe ratio",
+              "y_axis": "Flat Band Potential (V vs RHE)",
+              "range_x": [
+                2.15,
+                3.5
+              ],
+              "range_y": [
+                0.15,
+                0.21
+              ],
+              "extracted_from_image": "3074933e4f5532db0d4ef9f4bb24fda41f20d4c8362d0ce5aea2363913fb9251.jpg"
+            },
+            "source_image_file": "3074933e4f5532db0d4ef9f4bb24fda41f20d4c8362d0ce5aea2363913fb9251.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EDS Line Scan",
+            "properties": {
+              "technique": "Energy Dispersive Spectroscopy",
+              "mode": "line scan",
+              "distance": "0-300 nm",
+              "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+            },
+            "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "valence band XPS",
+        "is_reported": true,
+        "characterization_summary": "Valence band XPS spectra used with UV-vis to determine CBM and VBM positions of gradient-free NiFe-LDH variants: Ni3.5Fe1.0^3+-LDH (-1.13 eV, 0.91 eV), Ni3.0Fe0.25^2+Fe0.75^3+-LDH (-1.14 eV, 0.83 eV), Ni2.5Fe0.5^2+Fe0.5^3+-LDH (-1.16 eV, 0.73 eV) vs. H2O/O2.",
+        "evidence_snippet": "The CBM and VBM of gradient-free Ni3.5Fe1.0^3+-LDH, Ni3.0Fe0.25^2+Fe0.75^3+-LDH and Ni2.5Fe0.5^2+Fe0.5^3+-LDH were collectively characterized by valence band XPS spectra (Fig. S13) and UV–vis (Fig. S14 and Tab. S2) as (−1.13 eV, 0.91 eV), (−1.14 eV, 0.83 eV) and (−1.16 eV, 0.73 eV) (vs. H2O/O2), respectively."
+      },
+      {
+        "id": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d_5",
+        "type": "reference",
+        "name": "PDF-40-0215",
+        "properties": {
+          "description": "Powder Diffraction File reference for NiFe-LDH",
+          "extracted_from_image": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+        },
+        "source_image_file": "033253fb9217f845fb95c05a5b512eb48dbb0c2668584c0f0fcc087eb659430d.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "element": "Nickel",
+          "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        },
+        "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "Fe",
+        "properties": {
+          "element": "Iron",
+          "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        },
+        "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "material",
+        "name": "Ni-Fe material",
+        "properties": {
+          "composition": "Ni-Fe alloy or compound",
+          "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        },
+        "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "data",
+        "name": "43.7 mV/dec",
+        "properties": {
+          "value": "43.7 mV/dec",
+          "associated_with": "Gradient free-LDH",
+          "extracted_from_image": "a9e57357d3facf8f9a540fa3ce996d3110cf35e8ef018a71b9e85d2bd1bba074.jpg"
+        },
+        "source_image_file": "a9e57357d3facf8f9a540fa3ce996d3110cf35e8ef018a71b9e85d2bd1bba074.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "data",
+        "name": "41.3 mV/dec",
+        "properties": {
+          "value": "41.3 mV/dec",
+          "associated_with": "Gradient-LDH",
+          "extracted_from_image": "a9e57357d3facf8f9a540fa3ce996d3110cf35e8ef018a71b9e85d2bd1bba074.jpg"
+        },
+        "source_image_file": "a9e57357d3facf8f9a540fa3ce996d3110cf35e8ef018a71b9e85d2bd1bba074.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "peak",
+        "name": "Fe-Ni peak",
+        "properties": {
+          "distance": "2-3 Å",
+          "description": "Iron-Nickel radial distance peak",
+          "extracted_from_image": "90fed2bac6c55b5e2eccb2bbf7dafc2bfa5dac6356bd82c7fa198366fea0896e.jpg"
+        },
+        "source_image_file": "90fed2bac6c55b5e2eccb2bbf7dafc2bfa5dac6356bd82c7fa198366fea0896e.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chemical",
+        "name": "H+ + e-",
+        "properties": {
+          "extracted_from_image": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+        },
+        "source_image_file": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "chemical",
+        "name": "O2 + 4e- + 4H+",
+        "properties": {
+          "extracted_from_image": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+        },
+        "source_image_file": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "2e- + 2H+",
+        "properties": {
+          "extracted_from_image": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+        },
+        "source_image_file": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "3e- + 3H+",
+        "properties": {
+          "extracted_from_image": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+        },
+        "source_image_file": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "O2 + 4(e- + H+)",
+        "properties": {
+          "extracted_from_image": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+        },
+        "source_image_file": "2f937b1bf13ebca6de6230b55bc2b37eadc26a567078dd3fd02a223c8663531b.jpg"
+      },
+      {
+        "id": "N1",
+        "type": "chemical",
+        "name": "Ni₃Fe-LDH",
+        "properties": {
+          "formula": "Ni₃Fe-LDH",
+          "description": "Nickel-iron layered double hydroxide",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N2",
+        "type": "chemical",
+        "name": "Ni₂FeOₓ",
+        "properties": {
+          "formula": "Ni₂FeOₓ",
+          "description": "Nickel-iron oxyhydroxide",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N3",
+        "type": "chemical",
+        "name": "Ni₂.₅Fe₀.₅O₄",
+        "properties": {
+          "formula": "Ni₂.₅Fe₀.₅O₄",
+          "description": "Nickel-iron spinel oxide",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N4",
+        "type": "region",
+        "name": "Depletion region",
+        "properties": {
+          "description": "Electrochemical depletion region",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N5",
+        "type": "species",
+        "name": "e⁻",
+        "properties": {
+          "description": "Electron",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N6",
+        "type": "species",
+        "name": "H⁺",
+        "properties": {
+          "description": "Proton",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N7",
+        "type": "species",
+        "name": "H₂",
+        "properties": {
+          "description": "Hydrogen gas",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N8",
+        "type": "species",
+        "name": "O₂",
+        "properties": {
+          "description": "Oxygen gas",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N9",
+        "type": "parameter",
+        "name": "Ni:Fe ratio",
+        "properties": {
+          "description": "Nickel to iron atomic ratio",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N10",
+        "type": "chart",
+        "name": "Energy diagram",
+        "properties": {
+          "x_axis": "Ni:Fe ratio",
+          "y_axis": "Energy (eV) vs Potential (vs RHE)",
+          "type": "phase diagram",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N11",
+        "type": "label",
+        "name": "CB",
+        "properties": {
+          "description": "Conduction band",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "N12",
+        "type": "label",
+        "name": "VB",
+        "properties": {
+          "description": "Valence band",
+          "extracted_from_image": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+        },
+        "source_image_file": "33e1bc95ee569e97e2ee9e71b7179568ae8cbebe7bfcdb7937bf3bdd3ea34062.jpg"
+      },
+      {
+        "id": "gradient_free_LDH",
+        "type": "chemical",
+        "name": "Gradient-free LDH",
+        "properties": {
+          "description": "Layered Double Hydroxide without gradient structure",
+          "extracted_from_image": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+        },
+        "source_image_file": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+      },
+      {
+        "id": "gradient_LDH",
+        "type": "chemical",
+        "name": "Gradient-LDH",
+        "properties": {
+          "description": "Layered Double Hydroxide with gradient structure",
+          "extracted_from_image": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+        },
+        "source_image_file": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+      },
+      {
+        "id": "NiO6_octahedron_initial",
+        "type": "structure",
+        "name": "NiO6 Octahedron (Gradient-free LDH)",
+        "properties": {
+          "coordination": "Ni surrounded by 6 O atoms",
+          "color": "red",
+          "extracted_from_image": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+        },
+        "source_image_file": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+      },
+      {
+        "id": "NiO6_octahedron_final",
+        "type": "structure",
+        "name": "NiO6 Octahedron (Gradient-LDH)",
+        "properties": {
+          "coordination": "Ni surrounded by 6 O atoms",
+          "color": "green",
+          "extracted_from_image": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+        },
+        "source_image_file": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+      },
+      {
+        "id": "NiO6_tetrahedron",
+        "type": "structure",
+        "name": "NiO6 Tetrahedron (NiO-LDH)",
+        "properties": {
+          "coordination": "Ni surrounded by 6 O atoms in tetrahedral representation",
+          "color": "orange",
+          "extracted_from_image": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+        },
+        "source_image_file": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+      },
+      {
+        "id": "Ni-O_bond_free",
+        "type": "bond",
+        "name": "Ni-O bond (Gradient-free LDH)",
+        "properties": {
+          "peak_position": "1.4-1.6 Å",
+          "extracted_from_image": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+        },
+        "source_image_file": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+      },
+      {
+        "id": "Ni-O_bond_grad",
+        "type": "bond",
+        "name": "Ni-O bond (Gradient-LDH)",
+        "properties": {
+          "peak_position": "1.4-1.6 Å",
+          "extracted_from_image": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+        },
+        "source_image_file": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+      },
+      {
+        "id": "Ni-NiFe",
+        "type": "bond",
+        "name": "Ni-Ni/Fe bond",
+        "properties": {
+          "peak_position": "2.7-3.0 Å",
+          "extracted_from_image": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+        },
+        "source_image_file": "7aa2b0116129273147ab9616a7743d9197693a7303ff35bd7968156497861765.jpg"
+      },
+      {
+        "id": "chart_C",
+        "type": "characterization",
+        "name": "Figure C",
+        "properties": {
+          "type": "line_chart",
+          "x_axis": "Z/ohm",
+          "y_axis": "Z/ohm",
+          "description": "Nyquist plot (electrochemical impedance spectroscopy)",
+          "extracted_from_image": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+        },
+        "source_image_file": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+      },
+      {
+        "id": "gradient_free_curve",
+        "type": "data",
+        "name": "Gradient-free LDH curve",
+        "properties": {
+          "color": "orange",
+          "shape": "open circles",
+          "extracted_from_image": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+        },
+        "source_image_file": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+      },
+      {
+        "id": "gradient_curve",
+        "type": "data",
+        "name": "Gradient-LDH curve",
+        "properties": {
+          "color": "blue",
+          "shape": "filled circles",
+          "extracted_from_image": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+        },
+        "source_image_file": "813088405dd67fe732ad0157d63a498dd46793823db39ab3916d6b5c3b9ffeb6.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node1",
+        "type": "chemical",
+        "name": "Fe",
+        "properties": {
+          "element": "Iron",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node2",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "element": "Nickel",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node3",
+        "type": "chemical",
+        "name": "Fe-Ni structure",
+        "properties": {
+          "description": "Fe-Ni bimetallic or alloy structure",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node4",
+        "type": "characterization",
+        "name": "ELNES Fe L-edge",
+        "properties": {
+          "peaks": "705-715 eV",
+          "colors": [
+            "purple",
+            "pink"
+          ],
+          "description": "Electron energy loss near-edge structure for Fe",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node5",
+        "type": "characterization",
+        "name": "ELNES Ni L-edge",
+        "properties": {
+          "peaks": "855-860 eV",
+          "colors": [
+            "green",
+            "cyan"
+          ],
+          "description": "Electron energy loss near-edge structure for Ni",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node6",
+        "type": "characterization",
+        "name": "Reference spectra",
+        "properties": {
+          "colors": [
+            "orange",
+            "blue"
+          ],
+          "description": "Reference or background spectra",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node7",
+        "type": "spectrum",
+        "name": "Spectrum 1",
+        "properties": {
+          "color": "purple",
+          "energy_range": "705-715 eV",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node8",
+        "type": "spectrum",
+        "name": "Spectrum 2",
+        "properties": {
+          "color": "pink",
+          "energy_range": "705-715 eV",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node9",
+        "type": "spectrum",
+        "name": "Spectrum 3",
+        "properties": {
+          "color": "orange",
+          "energy_range": "705-715 eV",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node10",
+        "type": "spectrum",
+        "name": "Spectrum 4",
+        "properties": {
+          "color": "green",
+          "energy_range": "855-860 eV",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d_node11",
+        "type": "spectrum",
+        "name": "Spectrum 5",
+        "properties": {
+          "color": "cyan",
+          "energy_range": "855-860 eV",
+          "extracted_from_image": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+        },
+        "source_image_file": "922d874f3d74dbed8e2b615c434c71cecf36a22992061d24e7fe754de042c35d.jpg"
+      },
+      {
+        "id": "fe-ldh",
+        "type": "chemical",
+        "name": "Fe-LDH",
+        "properties": {
+          "description": "Iron-based layered double hydroxide",
+          "extracted_from_image": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+        },
+        "source_image_file": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+      },
+      {
+        "id": "nife-ldh",
+        "type": "chemical",
+        "name": "NiFe-LDH",
+        "properties": {
+          "description": "Nickel-Iron layered double hydroxide",
+          "extracted_from_image": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+        },
+        "source_image_file": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+      },
+      {
+        "id": "gradient-nife-ldh",
+        "type": "chemical",
+        "name": "Gradient NiFe-LDH",
+        "properties": {
+          "description": "Gradient structure of NiFe layered double hydroxide",
+          "extracted_from_image": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+        },
+        "source_image_file": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+      },
+      {
+        "id": "fe1",
+        "type": "chemical",
+        "name": "Fe₁",
+        "properties": {
+          "description": "Iron in gradient NiFe-LDH",
+          "extracted_from_image": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+        },
+        "source_image_file": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+      },
+      {
+        "id": "fe2",
+        "type": "chemical",
+        "name": "Fe2",
+        "properties": {
+          "description": "Iron site 2 in the structure",
+          "extracted_from_image": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+        },
+        "source_image_file": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+      },
+      {
+        "id": "structure",
+        "type": "characterization",
+        "name": "Crystal Structure",
+        "properties": {
+          "type": "molecular model",
+          "visualization": "polyhedral representation with Fe (blue), O (red), other metals (green)",
+          "extracted_from_image": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+        },
+        "source_image_file": "a5cf7e59c2c1bf1c297de9b7a472bbe746395b5c73bac20c87c2b98b569778f1.jpg"
+      },
+      {
+        "id": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920_1",
+        "type": "chemical",
+        "name": "Gradient-LDH",
+        "properties": {
+          "description": "Layered Double Hydroxide with gradient structure",
+          "extracted_from_image": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+        },
+        "source_image_file": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+      },
+      {
+        "id": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920_2",
+        "type": "chemical",
+        "name": "Free-LDH",
+        "properties": {
+          "description": "Layered Double Hydroxide without gradient structure",
+          "extracted_from_image": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+        },
+        "source_image_file": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+      },
+      {
+        "id": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920_3",
+        "type": "chemical",
+        "name": "Free O₂",
+        "properties": {
+          "description": "Free oxygen molecule",
+          "extracted_from_image": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+        },
+        "source_image_file": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+      },
+      {
+        "id": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920_4",
+        "type": "chemical",
+        "name": "M-O",
+        "properties": {
+          "description": "Metal-oxygen bond",
+          "extracted_from_image": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+        },
+        "source_image_file": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+      },
+      {
+        "id": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920_6",
+        "type": "spectrum",
+        "name": "Gradient-LDH O 1s Peak",
+        "properties": {
+          "color": "green",
+          "position": "broad peak around 529-532 eV",
+          "extracted_from_image": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+        },
+        "source_image_file": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+      },
+      {
+        "id": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920_7",
+        "type": "spectrum",
+        "name": "Free O₂ Peak",
+        "properties": {
+          "color": "red",
+          "position": "peak around 533-535 eV",
+          "extracted_from_image": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+        },
+        "source_image_file": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+      },
+      {
+        "id": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920_8",
+        "type": "spectrum",
+        "name": "Gradient-free-LDH O 1s Peak",
+        "properties": {
+          "color": "blue",
+          "position": "peak around 530-532 eV",
+          "extracted_from_image": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+        },
+        "source_image_file": "c844008d122ea82ca5350d16a9817e5dce4844aef5c4e4dcdf7498da3e140920.jpg"
+      },
+      {
+        "id": "colloidal-ldh",
+        "type": "chemical",
+        "name": "Colloidal-LDH",
+        "properties": {
+          "description": "Colloidal layered double hydroxide particles",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "homogeneous-ldh",
+        "type": "chemical",
+        "name": "Ni/Fe Homogeneous LDH",
+        "properties": {
+          "description": "Hexagonal LDH with homogeneous Ni/Fe distribution",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "nanoarray-ldh",
+        "type": "chemical",
+        "name": "Nanoarray-LDH",
+        "properties": {
+          "description": "Nanoarray layered double hydroxide on Ni substrate",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "ni-substrate-initial",
+        "type": "material",
+        "name": "Ni Substrate (initial)",
+        "properties": {
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "ni-substrate-intermediate",
+        "type": "material",
+        "name": "Ni Substrate (intermediate)",
+        "properties": {
+          "description": "With Ni-rich LDH",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "ni-substrate-final",
+        "type": "material",
+        "name": "Ni Substrate (final)",
+        "properties": {
+          "description": "With Ni-rich LDH and Fe-rich regions",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "ni2-ion",
+        "type": "chemical",
+        "name": "Ni²⁺",
+        "properties": {
+          "color": "yellow",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "fe3-ion",
+        "type": "chemical",
+        "name": "Fe³⁺",
+        "properties": {
+          "color": "yellow",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "ni2-6",
+        "type": "chemical",
+        "name": "Ni₂₆",
+        "properties": {
+          "color": "blue",
+          "description": "Ni-rich cluster",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "fe3-6",
+        "type": "chemical",
+        "name": "Fe₃₆",
+        "properties": {
+          "color": "red",
+          "description": "Fe-rich cluster",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "figure-a",
+        "type": "figure",
+        "name": "Figure a: Colloidal-LDH",
+        "properties": {
+          "process": "colloidal to homogeneous",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "figure-b",
+        "type": "figure",
+        "name": "Figure b: Nanoarray-LDH",
+        "properties": {
+          "process": "substrate evolution with ions",
+          "extracted_from_image": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+        },
+        "source_image_file": "c9a2bf263ace019166bf2f05d406c742e062c639d89f3ee50114aa4873064b86.jpg"
+      },
+      {
+        "id": "fe0",
+        "type": "chemical",
+        "name": "Fe₀",
+        "properties": {
+          "description": "Iron in gradient-free NiFe-LDH",
+          "extracted_from_image": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+        },
+        "source_image_file": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+      },
+      {
+        "id": "nife_ldh_gradient_free",
+        "type": "chemical",
+        "name": "NiFe-LDH (gradient-free)",
+        "properties": {
+          "extracted_from_image": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+        },
+        "source_image_file": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+      },
+      {
+        "id": "nife_ldh_gradient",
+        "type": "chemical",
+        "name": "NiFe-LDH (gradient)",
+        "properties": {
+          "extracted_from_image": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+        },
+        "source_image_file": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+      },
+      {
+        "id": "xanes_spectrum_fe0",
+        "type": "characterization",
+        "name": "XANES spectrum of Fe₀",
+        "properties": {
+          "type": "XANES",
+          "x_axis": "Energy (eV)",
+          "x_range": [
+            -6,
+            4
+          ],
+          "color": "orange",
+          "extracted_from_image": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+        },
+        "source_image_file": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+      },
+      {
+        "id": "xanes_spectrum_fe1",
+        "type": "characterization",
+        "name": "XANES spectrum of Fe₁",
+        "properties": {
+          "type": "XANES",
+          "x_axis": "Energy (eV)",
+          "x_range": [
+            -6,
+            4
+          ],
+          "color": "blue",
+          "extracted_from_image": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+        },
+        "source_image_file": "ca01f479f1b1a1cb7c381991cc5c39088a94c03605ec388d0008cb8a2fb29b3d.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "Ni Concentration Profile",
+        "properties": {
+          "color": "purple",
+          "scale": "0-20%",
+          "variation": "peaks and troughs",
+          "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        },
+        "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "Fe Concentration Profile",
+        "properties": {
+          "color": "green",
+          "scale": "0-10%",
+          "variation": "peaks and troughs",
+          "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        },
+        "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+      },
+      {
+        "id": "c4",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "type": "nanofiber structure",
+          "scalebar": "present",
+          "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        },
+        "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+      },
+      {
+        "id": "g1",
+        "type": "graph",
+        "name": "Ni/Fe Ratio Plot",
+        "properties": {
+          "y-axis": "Ni/Fe ratio",
+          "scale": "2.4-3.6",
+          "trend": "decreasing",
+          "data points": "multiple blue points",
+          "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        },
+        "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+      },
+      {
+        "id": "spot",
+        "type": "location",
+        "name": "Spot",
+        "properties": {
+          "analysis location": "marked in SEM image",
+          "extracted_from_image": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+        },
+        "source_image_file": "fd31c96b1fe1b1907fa13c09e87046d54107b150e07ecb38032f9dc81bd2c5d7.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_gradient_NiFe_LDH_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_NiFe_LDH",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_NiFe_LDH_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_NiFe_LDH",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_NiFe_LDH_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_NiFe_LDH",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_NiFe_LDH_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_NiFe_LDH",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_NiFe_LDH_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_NiFe_LDH",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_NiFe_LDH_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_NiFe_LDH",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_free_NiFe_LDH_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_free_NiFe_LDH",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_free_NiFe_LDH_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_free_NiFe_LDH",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_NiFe_LDH_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_NiFe_LDH",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_free_NiFe_LDH_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_free_NiFe_LDH",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_free_NiFe_LDH_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_free_NiFe_LDH",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_free_NiFe_LDH_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_free_NiFe_LDH",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_free_NiFe_LDH_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_free_NiFe_LDH",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gradient_free_NiFe_LDH_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_gradient_free_NiFe_LDH",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "1",
+        "target_id": "5",
+        "type": "matches_reference"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "references"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ni25fe05_2plus_fe05_3plus_ldh",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ni3fe025_2plus_fe075_3plus_ldh",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ni3fe025_2plus_fe075_3plus_ldh",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_gradient_nife35fe1_ldh",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_7",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_7",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_7",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "char_7",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "char_7",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_7",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "char_7",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "char_7",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "N10",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "N2",
+        "target_id": "N10",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "N3",
+        "target_id": "N10",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "N4",
+        "target_id": "N10",
+        "type": "highlighted_in"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "N2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "N2",
+        "target_id": "N3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "N9",
+        "target_id": "N10",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "N5",
+        "target_id": "N4",
+        "type": "involved_in"
+      },
+      {
+        "source_id": "N6",
+        "target_id": "N4",
+        "type": "involved_in"
+      },
+      {
+        "source_id": "N11",
+        "target_id": "N10",
+        "type": "labeled_in"
+      },
+      {
+        "source_id": "N12",
+        "target_id": "N10",
+        "type": "labeled_in"
+      },
+      {
+        "source_id": "N7",
+        "target_id": "N10",
+        "type": "product"
+      },
+      {
+        "source_id": "N8",
+        "target_id": "N10",
+        "type": "product"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n6",
+        "type": "constitutes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "ratio": "2"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "ratio": "1"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "decorated_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "constituent"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "constituent"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "constituent"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "is_a"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "metal_cation"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "metal_cation"
+      },
+      {
+        "source_id": "gradient_free_LDH",
+        "target_id": "NiO6_octahedron_initial",
+        "type": "contains"
+      },
+      {
+        "source_id": "gradient_LDH",
+        "target_id": "NiO6_octahedron_final",
+        "type": "contains"
+      },
+      {
+        "source_id": "NiO6_octahedron_initial",
+        "target_id": "NiO6_octahedron_final",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "NiO6_octahedron_final",
+        "target_id": "NiO6_tetrahedron",
+        "type": "structural_change"
+      },
+      {
+        "source_id": "gradient_free_LDH",
+        "target_id": "Ni-O_bond_free",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "gradient_LDH",
+        "target_id": "Ni-O_bond_grad",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "gradient_LDH",
+        "target_id": "Ni-NiFe",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "gradient_free_LDH",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "gradient_LDH",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ni-O_bond_free",
+        "target_id": "char_6",
+        "type": "peak_at"
+      },
+      {
+        "source_id": "Ni-O_bond_grad",
+        "target_id": "char_6",
+        "type": "peak_at"
+      },
+      {
+        "source_id": "Ni-NiFe",
+        "target_id": "char_6",
+        "type": "peak_at"
+      },
+      {
+        "source_id": "gradient_free_LDH",
+        "target_id": "chart_C",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "gradient_LDH",
+        "target_id": "chart_C",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "gradient_free_LDH",
+        "target_id": "gradient_free_curve",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "gradient_LDH",
+        "target_id": "gradient_curve",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "gradient_free_curve",
+        "target_id": "chart_C",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "gradient_curve",
+        "target_id": "chart_C",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_6",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_6",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains_structure"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "indicates"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "contains"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node5",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node7",
+        "type": "includes"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node8",
+        "type": "includes"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node10",
+        "type": "includes"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node11",
+        "type": "includes"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node9",
+        "type": "includes"
+      },
+      {
+        "source_id": "fe-ldh",
+        "target_id": "structure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "nife-ldh",
+        "target_id": "structure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "gradient-nife-ldh",
+        "target_id": "structure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "fe1",
+        "target_id": "structure",
+        "type": "part_of"
+      },
+      {
+        "source_id": "fe2",
+        "target_id": "structure",
+        "type": "part_of"
+      },
+      {
+        "source_id": "fe-ldh",
+        "target_id": "nife-ldh",
+        "type": "component_of"
+      },
+      {
+        "source_id": "nife-ldh",
+        "target_id": "gradient-nife-ldh",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "fe1",
+        "target_id": "nife-ldh",
+        "type": "contains"
+      },
+      {
+        "source_id": "fe2",
+        "target_id": "fe-ldh",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_slope"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_slope"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "1",
+        "target_id": "5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "1",
+        "target_id": "6",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "2",
+        "target_id": "5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "2",
+        "target_id": "8",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "3",
+        "target_id": "7",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "4",
+        "target_id": "6",
+        "type": "indicated_by"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure-a",
+        "target_id": "colloidal-ldh",
+        "type": "depicts"
+      },
+      {
+        "source_id": "colloidal-ldh",
+        "target_id": "homogeneous-ldh",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "figure-a",
+        "target_id": "homogeneous-ldh",
+        "type": "depicts"
+      },
+      {
+        "source_id": "figure-b",
+        "target_id": "nanoarray-ldh",
+        "type": "depicts"
+      },
+      {
+        "source_id": "figure-b",
+        "target_id": "ni-substrate-initial",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ni-substrate-initial",
+        "target_id": "ni-substrate-intermediate",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "ni-substrate-intermediate",
+        "target_id": "ni-substrate-final",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "figure-b",
+        "target_id": "ni-substrate-final",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ni2-ion",
+        "target_id": "ni-substrate-initial",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "fe3-ion",
+        "target_id": "ni-substrate-initial",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "ni2-6",
+        "target_id": "ni-substrate-final",
+        "type": "component_of"
+      },
+      {
+        "source_id": "fe3-6",
+        "target_id": "ni-substrate-final",
+        "type": "component_of"
+      },
+      {
+        "source_id": "ni2-ion",
+        "target_id": "ni2-6",
+        "type": "forms"
+      },
+      {
+        "source_id": "fe3-ion",
+        "target_id": "fe3-6",
+        "type": "forms"
+      },
+      {
+        "source_id": "fe0",
+        "target_id": "nife_ldh_gradient_free",
+        "type": "in"
+      },
+      {
+        "source_id": "fe1",
+        "target_id": "nife_ldh_gradient",
+        "type": "in"
+      },
+      {
+        "source_id": "fe0",
+        "target_id": "xanes_spectrum_fe0",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "fe1",
+        "target_id": "xanes_spectrum_fe1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nife_ldh_gradient_free",
+        "target_id": "xanes_spectrum_fe0",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "nife_ldh_gradient",
+        "target_id": "xanes_spectrum_fe1",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c2",
+        "type": "measured in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c3",
+        "type": "measured in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_7",
+        "type": "characterized by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c4",
+        "type": "imaged as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "component"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "c2",
+        "type": "contains profile"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "c3",
+        "type": "contains profile"
+      },
+      {
+        "source_id": "spot",
+        "target_id": "char_7",
+        "type": "analysis location"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "g1",
+        "type": "ratio component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "g1",
+        "type": "ratio component"
+      },
+      {
+        "source_id": "g1",
+        "target_id": "n3",
+        "type": "property of"
+      }
+    ]
+  }
+}

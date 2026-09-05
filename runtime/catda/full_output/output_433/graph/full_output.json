@@ -1,0 +1,4957 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_MnCo_NiSe_NF",
+        "type": "chemical",
+        "name": "MnCo/NiSe/NF",
+        "aliases": [
+          "MnCo/NiSe/NF"
+        ]
+      },
+      {
+        "id": "chem_NiCoHPi_Ni3N_NF",
+        "type": "chemical",
+        "name": "NiCoHPi@Ni3N/NF",
+        "aliases": [
+          "NiCoHPi@Ni3N/NF"
+        ]
+      },
+      {
+        "id": "chem_NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "aliases": [
+          "NiOOH"
+        ],
+        "formula": "NiOOH",
+        "properties": {},
+        "related_images": [
+          "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "NiOOH",
+            "properties": {
+              "structure": "Nickel oxyhydroxide",
+              "role": "Catalyst active phase",
+              "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+            },
+            "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_NiFeO_CeO2_NF",
+        "type": "chemical",
+        "name": "NiFeO-CeO2/nickel foam",
+        "aliases": [
+          "NiFeO-CeO2/NF"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni3S2_NiFe_LDH_NF",
+        "type": "chemical",
+        "name": "Ni3S2@NiFe LDH/NF",
+        "aliases": [
+          "Ni3S2@NiFe LDH/NF",
+          "N3iS2@NiFe LDH/NF"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Co2(OH)3Cl",
+        "type": "chemical",
+        "name": "Co2(OH)3Cl",
+        "aliases": [
+          "Co2(OH)3Cl"
+        ],
+        "formula": "Co2(OH)3Cl",
+        "properties": {}
+      }
+    ],
+    "edges": [],
+    "catalyst_tested_ids": [
+      "chem_NiCoHPi_Ni3N_NF",
+      "chem_MnCo_NiSe_NF"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_NiOOH",
+        "description": "OER performance in simulated seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.5 M NaCl",
+            "unit": "simulated seawater"
+          }
+        },
+        "results_json": {
+          "overpotential": {
+            "value": 470,
+            "unit": "mV"
+          },
+          "current_density": {
+            "value": 500,
+            "unit": "mA/cm²"
+          }
+        },
+        "source_text": "Only a small overpotential of 470 mV was required to reach the OER current density of 500 mA cm⁻² in simulated seawater (1.0 M KOH + 0.5 M NaCl)."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_NiFeB_x",
+        "description": "OER performance in alkaline seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "30 wt% KOH + 0.5 M NaCl",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_500mA": {
+            "value": 400,
+            "unit": "mV"
+          },
+          "overpotential_1000mA": {
+            "value": 470,
+            "unit": "mV"
+          }
+        },
+        "source_text": "It was reported to achieve 500 and 1000 mA cm⁻² at overpotentials of 400 and 470 mV in 30 wt% KOH + 0.5 M NaCl."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_NiFeO_CeO2_NF",
+        "description": "OER performance and selectivity in seawater electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + seawater",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential": {
+            "value": 338,
+            "unit": "mV"
+          },
+          "current_density": {
+            "value": 500,
+            "unit": "mA/cm²"
+          },
+          "OER_selectivity": {
+            "value": "almost 100",
+            "unit": "%"
+          }
+        },
+        "source_text": "It can achieve 500 mAcm^{-2} with a small overpotential of 338 mV in 1.0 M KOH + seawater electrolyte, and exhibited almost 100% OER selectivity (Figure 3c)."
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_S_P_NiMoFeOOH_NiMoP_wood_aerogel",
+        "description": "OER performance in alkaline natural seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH + seawater",
+            "unit": "natural seawater"
+          }
+        },
+        "results_json": {
+          "overpotential": {
+            "value": 297,
+            "unit": "mV"
+          },
+          "current_density": {
+            "value": 500,
+            "unit": "mA/cm²"
+          }
+        },
+        "source_text": "It delivered a high OER current density of 500 mA cm⁻² under a low overpotential of 297 mV in alkaline natural seawater (1 M KOH + seawater)."
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_Ru_P_NiMoO4_NF",
+        "description": "UOR performance in simulated seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "UOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.5 M NaCl",
+            "unit": "simulated seawater"
+          }
+        },
+        "results_json": {
+          "working_potential": {
+            "value": 1.46,
+            "unit": "V"
+          },
+          "current_density": {
+            "value": 1000,
+            "unit": "mA/cm²"
+          }
+        },
+        "source_text": "The working potential of synthesized Ru/P-NiMoO₄@NF for UOR was 1.46 V to obtain a current density of 1000 mA cm⁻² in simulated seawater."
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NiFe_LDH_NF",
+        "description": "OER performance in seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + seawater",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential": {
+            "value": 341,
+            "unit": "mV"
+          },
+          "current_density": {
+            "value": 1000,
+            "unit": "mA/cm²"
+          },
+          "stability": {
+            "value": 100,
+            "unit": "h@200 mA/cm²"
+          }
+        },
+        "source_text": "It can achieve 1000 mA cm⁻² at an overpotential of 341 mV in 1.0 M KOH + seawater, and was stable for over 100 h at ∼200 mA cm⁻²."
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_Cr2O3_CoOx",
+        "description": "Overall seawater electrolysis performance",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall electrolysis",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "natural seawater",
+            "unit": "solution"
+          },
+          "temperature": {
+            "value": 60,
+            "unit": "°C"
+          }
+        },
+        "results_json": {
+          "cell_voltage": {
+            "value": 1.87,
+            "unit": "V"
+          },
+          "current_density": {
+            "value": 1000,
+            "unit": "mA/cm²"
+          },
+          "stability": {
+            "value": 100,
+            "unit": "h@500 mA/cm²"
+          }
+        },
+        "source_text": "Such a Cr₂O₃-CoOₓ electrode required only 1.87 V to reach 1000 mA cm⁻² at 60 °C in natural seawater electrolyzers and exhibited long-term stability of over 100 h at 500 mA cm⁻²."
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_Co2(OH)3Cl",
+        "description": "OER performance in simulated seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.6 M NaCl",
+            "unit": "simulated seawater"
+          }
+        },
+        "results_json": {
+          "cell_potential": {
+            "value": 1.63,
+            "unit": "V"
+          },
+          "current_density": {
+            "value": 330.5,
+            "unit": "mA/cm²"
+          },
+          "current_retention": {
+            "value": 99.9,
+            "unit": "%"
+          },
+          "stability": {
+            "value": 60000,
+            "unit": "s@130 mA/cm²"
+          }
+        },
+        "source_text": "Co₂(OH)₃Cl exhibited a low potential of 1.63 V at 330.5 mA cm⁻² and maintained an initial current density of 99.9% after operating at ∼130 mA cm⁻² for 60000 s."
+      },
+      {
+        "id": "chem_MnCo_NiSe_NF",
+        "type": "chemical",
+        "name": "MnCo/NiSe/NF",
+        "aliases": [
+          "MnCo/NiSe/NF"
+        ]
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_MnCo_NiSe_NF",
+        "description": "OER performance in alkaline seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + Seawater",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential": {
+            "value": 460.2,
+            "unit": "mV@1000 mA/cm²"
+          },
+          "stability": {
+            "value": 200,
+            "unit": "h@500 mA/cm²"
+          }
+        },
+        "source_text": "MnCo/NiSe/NF ... 460.2 mV@1000 mA cm-2 ... 200 h@500 mA cm-2"
+      },
+      {
+        "id": "chem_NiCoHPi_Ni3N_NF",
+        "type": "chemical",
+        "name": "NiCoHPi@Ni3N/NF",
+        "aliases": [
+          "NiCoHPi@Ni3N/NF"
+        ]
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_NiCoHPi_Ni3N_NF",
+        "description": "OER performance in simulated seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.5 M NaCl",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential": {
+            "value": 365,
+            "unit": "mV@100 mA/cm²"
+          },
+          "stability": {
+            "value": 120,
+            "unit": "h@200 mA/cm²"
+          }
+        },
+        "source_text": "NiCoHPi@Ni3N/NF ... 365 mV@100 mA cm-2 ... 120 h@200 mA cm-2"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_NiOOH_test_1",
+        "type": "tested_in",
+        "source_id": "chem_NiOOH",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFeB_x_test_2",
+        "type": "tested_in",
+        "source_id": "chem_NiFeB_x",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFeO_CeO2_NF_test_3",
+        "type": "tested_in",
+        "source_id": "chem_NiFeO_CeO2_NF",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_S_P_NiMoFeOOH_NiMoP_wood_aerogel_test_4",
+        "type": "tested_in",
+        "source_id": "chem_S_P_NiMoFeOOH_NiMoP_wood_aerogel",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ru_P_NiMoO4_NF_test_5",
+        "type": "tested_in",
+        "source_id": "chem_Ru_P_NiMoO4_NF",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni3S2_NiFe_LDH_NF_test_6",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NiFe_LDH_NF",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Cr2O3_CoOx_test_7",
+        "type": "tested_in",
+        "source_id": "chem_Cr2O3_CoOx",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co2(OH)3Cl_test_8",
+        "type": "tested_in",
+        "source_id": "chem_Co2(OH)3Cl",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_MnCo_NiSe_NF_test_9",
+        "type": "tested_in",
+        "source_id": "chem_MnCo_NiSe_NF",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiCoHPi_Ni3N_NF_test_10",
+        "type": "tested_in",
+        "source_id": "chem_NiCoHPi_Ni3N_NF",
+        "target_id": "test_10",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "aliases": [
+          "NiOOH"
+        ],
+        "formula": "NiOOH",
+        "properties": {}
+      },
+      {
+        "id": "chem_NiFeO_CeO2_NF",
+        "type": "chemical",
+        "name": "NiFeO-CeO2/nickel foam",
+        "aliases": [
+          "NiFeO-CeO2/NF"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni3S2_NiFe_LDH_NF",
+        "type": "chemical",
+        "name": "Ni3S2@NiFe LDH/NF",
+        "aliases": [
+          "Ni3S2@NiFe LDH/NF",
+          "N3iS2@NiFe LDH/NF"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Co2(OH)3Cl",
+        "type": "chemical",
+        "name": "Co2(OH)3Cl",
+        "aliases": [
+          "Co2(OH)3Cl"
+        ],
+        "formula": "Co2(OH)3Cl",
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "EXAFS",
+        "is_reported": true,
+        "characterization_summary": "Fourier-transformed Co K-edge EXAFS spectra for Co2(OH)3Cl show decrease in Co-Cl coordination number after seawater splitting, confirming Cl- precipitation and vacancy formation.",
+        "evidence_snippet": "Fourier-transformed Co K-edge extended X-ray absorption fine structure spectra for Co2(OH)3Cl and Co2(OH)3Cl - AS (AS = after seawater splitting).",
+        "related_images": [
+          "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Co R-space plot",
+            "properties": {
+              "description": "EXAFS Fourier transform magnitude plot",
+              "x_axis": "Distance (Å)",
+              "y_axis": "Magnitude",
+              "range": "0-4 Å",
+              "extracted_from_image": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+            },
+            "source_image_file": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+          }
+        ]
+      },
+      {
+        "id": "cathode",
+        "type": "electrode",
+        "name": "Cathode",
+        "properties": {
+          "extracted_from_image": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+        },
+        "source_image_file": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+      },
+      {
+        "id": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "color": "yellow",
+          "extracted_from_image": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+        },
+        "source_image_file": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+      },
+      {
+        "id": "h2",
+        "type": "chemical",
+        "name": "H₂",
+        "properties": {
+          "state": "gas",
+          "location": "anode side",
+          "role": "product",
+          "extracted_from_image": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+        },
+        "source_image_file": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+      },
+      {
+        "id": "oh-",
+        "type": "chemical",
+        "name": "OH⁻",
+        "properties": {
+          "symbol": "●",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "n2h4",
+        "type": "chemical",
+        "name": "N₂H₄",
+        "properties": {
+          "role": "product",
+          "extracted_from_image": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+        },
+        "source_image_file": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+      },
+      {
+        "id": "h2o",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "formula": "H₂O",
+          "extracted_from_image": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+        },
+        "source_image_file": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+      },
+      {
+        "id": "cl-",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "symbol": "●",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "clo-",
+        "type": "chemical",
+        "name": "ClO⁻",
+        "properties": {
+          "role": "product",
+          "extracted_from_image": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+        },
+        "source_image_file": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "visual_element",
+        "name": "Triangular Prism",
+        "properties": {
+          "description": "Glowing orange triangular prism emitting light beams",
+          "symbolism": "likely representing photonics, plasmonics, or nanoscale light manipulation",
+          "extracted_from_image": "f2897637a7477d17037e3e94f614961257fed9b8ed330295a02bcd4d5d9dd729.jpg"
+        },
+        "source_image_file": "f2897637a7477d17037e3e94f614961257fed9b8ed330295a02bcd4d5d9dd729.jpg"
+      },
+      {
+        "id": "seawater",
+        "type": "electrolyte",
+        "name": "Seawater",
+        "properties": {
+          "extracted_from_image": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+        },
+        "source_image_file": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+      },
+      {
+        "id": "aem",
+        "type": "material",
+        "name": "AEM",
+        "properties": {
+          "description": "Anion Exchange Membrane",
+          "extracted_from_image": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+        },
+        "source_image_file": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+      },
+      {
+        "id": "cem",
+        "type": "material",
+        "name": "CEM",
+        "properties": {
+          "description": "Cation Exchange Membrane",
+          "extracted_from_image": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+        },
+        "source_image_file": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+      },
+      {
+        "id": "cell_voltage",
+        "type": "parameter",
+        "name": "<1.72 V",
+        "properties": {
+          "description": "Cell voltage",
+          "extracted_from_image": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+        },
+        "source_image_file": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+      },
+      {
+        "id": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3_anode_kinetics",
+        "type": "property",
+        "name": "-0.33 V",
+        "properties": {
+          "description": "Fast kinetics at anode",
+          "extracted_from_image": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+        },
+        "source_image_file": "280f4ac1ad45df1edc77eb27cbba8798950e608b6905111c53881a3b4967baf3.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "publication",
+        "name": "ACS Nano",
+        "properties": {
+          "journal": "ACS Nano",
+          "visual_element": "cover art",
+          "theme": "science of light at nanoscale",
+          "extracted_from_image": "f2897637a7477d17037e3e94f614961257fed9b8ed330295a02bcd4d5d9dd729.jpg"
+        },
+        "source_image_file": "f2897637a7477d17037e3e94f614961257fed9b8ed330295a02bcd4d5d9dd729.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "concept",
+        "name": "Light at Nanoscale",
+        "properties": {
+          "description": "Central theme of the journal issue/cover",
+          "associated_fields": [
+            "nanophotonics",
+            "plasmonics",
+            "metamaterials"
+          ],
+          "extracted_from_image": "f2897637a7477d17037e3e94f614961257fed9b8ed330295a02bcd4d5d9dd729.jpg"
+        },
+        "source_image_file": "f2897637a7477d17037e3e94f614961257fed9b8ed330295a02bcd4d5d9dd729.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "infrastructure",
+        "name": "Desalination Unit",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "storage",
+        "name": "Water Storage Tank",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "process",
+        "name": "RO Pretreatment",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "process",
+        "name": "5 Micron Filter",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "equipment",
+        "name": "High Pressure Pump",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_1",
+        "type": "chemical",
+        "name": "ClO⁻",
+        "properties": {
+          "formula": "ClO⁻",
+          "description": "Hypochlorite ion",
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_2",
+        "type": "chemical",
+        "name": "HOCl",
+        "properties": {
+          "formula": "HOCl",
+          "description": "Hypochlorous acid",
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_3",
+        "type": "chemical",
+        "name": "Cl₂",
+        "properties": {
+          "formula": "Cl₂",
+          "description": "Chlorine gas",
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_4",
+        "type": "chemical",
+        "name": "OER",
+        "properties": {
+          "formula": "Oxygen Evolution Reaction",
+          "description": "Oxygen evolution reaction",
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_5",
+        "type": "chemical",
+        "name": "Cl⁻ oxidation",
+        "properties": {
+          "description": "Chloride oxidation reactions",
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_6",
+        "type": "characterization",
+        "name": "Thermodynamic Stability Diagram",
+        "properties": {
+          "type": "plot",
+          "x_axis": "pH",
+          "y_axis": "E (V)",
+          "range_x": [
+            0,
+            14
+          ],
+          "range_y": [
+            0.1,
+            0.6
+          ],
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_7",
+        "type": "condition",
+        "name": "Only OER thermodynamically possible",
+        "properties": {
+          "description": "Region where only OER is thermodynamically possible",
+          "pH_range": "> certain threshold",
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_8",
+        "type": "condition",
+        "name": "100% selective OER at high pH",
+        "properties": {
+          "description": "Alleviated conditions for 100% selective OER",
+          "pH": "high pH",
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0_9",
+        "type": "potential",
+        "name": "-0.48 V",
+        "properties": {
+          "value": "-0.48 V",
+          "context": "Boundary for ClO⁻/Cl⁻",
+          "extracted_from_image": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+        },
+        "source_image_file": "36413989b8af7b38697aac89bd5b9bad544f13e6310144b8814b85a45ab478e0.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_1",
+        "type": "electrode",
+        "name": "Cathode",
+        "properties": {
+          "label": "C",
+          "position": "left",
+          "reaction": "Seawater reduction",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_2",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "label": "+",
+          "position": "right",
+          "reaction": "Sulfion oxidation",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_3",
+        "type": "membrane",
+        "name": "Cation exchange membrane",
+        "properties": {
+          "label": "CEM",
+          "color": "blue",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_4",
+        "type": "membrane",
+        "name": "Anion exchange membrane",
+        "properties": {
+          "label": "AEM",
+          "color": "orange",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_5",
+        "type": "chemical",
+        "name": "Na⁺",
+        "properties": {
+          "ion": "sodium ion",
+          "transport": "through CEM",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_6",
+        "type": "chemical",
+        "name": "OH⁻",
+        "properties": {
+          "ion": "hydroxide ion",
+          "produced": "at cathode",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_7",
+        "type": "chemical",
+        "name": "H₂",
+        "properties": {
+          "product": "hydrogen gas",
+          "reaction": "seawater reduction",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_8",
+        "type": "chemical",
+        "name": "S²⁻",
+        "properties": {
+          "ion": "sulfide ion",
+          "potential": "0.48 V",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_9",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "ion": "chloride ion",
+          "transport": "through AEM",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_10",
+        "type": "electrolyte",
+        "name": "Seawater",
+        "properties": {
+          "composition": "Na⁺, Cl⁻, S²⁻",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_11",
+        "type": "process",
+        "name": "Seawater reduction",
+        "properties": {
+          "location": "cathode",
+          "potential": "< -0.4 V",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_12",
+        "type": "process",
+        "name": "Sulfion oxidation",
+        "properties": {
+          "location": "anode",
+          "potential": "0.48 V",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383_13",
+        "type": "parameter",
+        "name": "Cell voltage",
+        "properties": {
+          "value": "< 1.0 V",
+          "extracted_from_image": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+        },
+        "source_image_file": "37b0f944a39b13f3986151de794cf6f7a4572a2c200eb4b30bebbfaf7e11f383.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "process",
+        "name": "RO (Reverse Osmosis)",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "equipment",
+        "name": "Energy Recovery",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "storage",
+        "name": "Water Tank",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "OER",
+        "type": "chemical",
+        "name": "OER",
+        "properties": {
+          "position": "upper right, ΔV=0.48V",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "CER",
+        "type": "chemical",
+        "name": "Chlorine Evolution Reaction",
+        "properties": {
+          "description": "Electrochemical reaction for chloride oxidation",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "position": "upper center",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "Cl",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "structure": "Chloride ion",
+          "role": "Reactant in CER",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "position": "upper center",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "Cl2",
+        "type": "chemical",
+        "name": "Cl₂O",
+        "properties": {
+          "structure": "Cl₂O (chlorine monoxide)",
+          "role": "Intermediate/product in CER",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "H2O_ads",
+        "type": "chemical",
+        "name": "H₂O*",
+        "properties": {
+          "structure": "Adsorbed water",
+          "role": "Surface intermediate",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "Cl_ads",
+        "type": "chemical",
+        "name": "Cl*",
+        "properties": {
+          "structure": "Adsorbed chloride",
+          "role": "Surface intermediate",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "O_ads",
+        "type": "chemical",
+        "name": "O*",
+        "properties": {
+          "structure": "Adsorbed oxygen",
+          "role": "Surface intermediate",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "OOH_ads",
+        "type": "chemical",
+        "name": "OOH*",
+        "properties": {
+          "structure": "Adsorbed hydroperoxyl",
+          "role": "Surface intermediate",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "catalyst_surface",
+        "type": "chemical",
+        "name": "Catalyst Surface",
+        "properties": {
+          "description": "Ni-based catalyst surface with red/blue coordination sites",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "E_05V",
+        "type": "characterization",
+        "name": "0.5 V",
+        "properties": {
+          "value": "0.5 V",
+          "description": "Overpotential for OER",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "E_139V",
+        "type": "characterization",
+        "name": "1.39 V",
+        "properties": {
+          "value": "1.39 V",
+          "description": "Overpotential for CER",
+          "extracted_from_image": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+        },
+        "source_image_file": "4d125fbbc250a0284b1d6813ab41f1813b1e1c7c73b4a8de811a79b095aaed2b.jpg"
+      },
+      {
+        "id": "figure",
+        "type": "figure",
+        "name": "Replacing OER",
+        "properties": {
+          "label": "b",
+          "description": "Schematic of OER replacement mechanism",
+          "extracted_from_image": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+        },
+        "source_image_file": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Z/r vs Ionic Potential Chart",
+        "properties": {
+          "type": "scatter_plot",
+          "x_axis": "Ionic potential Z/r (1/pm)",
+          "y_axis": "Z (pm)",
+          "title": "C",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "axis",
+        "name": "Ionic Potential Z/r (1/pm)",
+        "properties": {
+          "range": [
+            0.0,
+            0.02
+          ],
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "axis",
+        "name": "Z (pm)",
+        "properties": {
+          "range": [
+            0,
+            1000
+          ],
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "tfsi",
+        "type": "chemical",
+        "name": "TFSI",
+        "properties": {
+          "position": "high Z, low Z/r",
+          "symbol": "●",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "po4_3-",
+        "type": "chemical",
+        "name": "PO₄³⁻",
+        "properties": {
+          "position": "highlighted star",
+          "symbol": "★",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "cr04_2-",
+        "type": "chemical",
+        "name": "CrO₄²⁻",
+        "properties": {
+          "symbol": "○",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "so4_2-",
+        "type": "chemical",
+        "name": "SO₄²⁻",
+        "properties": {
+          "symbol": "◆",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "moo4_2-",
+        "type": "chemical",
+        "name": "MoO₄²⁻",
+        "properties": {
+          "symbol": "◆",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "bo3_3-",
+        "type": "chemical",
+        "name": "BO₃³⁻",
+        "properties": {
+          "symbol": "■",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "wo4_2-",
+        "type": "chemical",
+        "name": "WO₄²⁻",
+        "properties": {
+          "symbol": "◆",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "seo4_2-",
+        "type": "chemical",
+        "name": "SeO₄²⁻",
+        "properties": {
+          "symbol": "◆",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "co3_2-",
+        "type": "chemical",
+        "name": "CO₃²⁻",
+        "properties": {
+          "symbol": "○",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "sio3_2-",
+        "type": "chemical",
+        "name": "SiO₃²⁻",
+        "properties": {
+          "symbol": "◆",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "clo4-",
+        "type": "chemical",
+        "name": "ClO₄⁻",
+        "properties": {
+          "symbol": "●",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "ch3coo-",
+        "type": "chemical",
+        "name": "CH₃COO⁻",
+        "properties": {
+          "symbol": "●",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "no3-",
+        "type": "chemical",
+        "name": "NO₃⁻",
+        "properties": {
+          "symbol": "●",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "mno4-",
+        "type": "chemical",
+        "name": "MnO₄⁻",
+        "properties": {
+          "symbol": "●",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "io4-",
+        "type": "chemical",
+        "name": "IO₄⁻",
+        "properties": {
+          "symbol": "●",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "region_trivalent",
+        "type": "region",
+        "name": "Trivalent",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "region_divalent",
+        "type": "region",
+        "name": "Divalent",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "region_monovalent",
+        "type": "region",
+        "name": "Monovalent",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+        },
+        "source_image_file": "514986cf3834bd23751cbcfcc67b477249ae09e3f31620c0ea214ff076811efd.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "H2",
+        "properties": {
+          "formula": "H₂",
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "cl1",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "representation": "green circle above",
+          "extracted_from_image": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3.jpg"
+        },
+        "source_image_file": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3.jpg"
+      },
+      {
+        "id": "cl2",
+        "type": "chemical",
+        "name": "Cl₂",
+        "properties": {
+          "description": "Chlorine gas",
+          "extracted_from_image": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+        },
+        "source_image_file": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+      },
+      {
+        "id": "o2",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "state": "gas",
+          "location": "cathode side",
+          "role": "reactant",
+          "extracted_from_image": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+        },
+        "source_image_file": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+      },
+      {
+        "id": "blocking_layer",
+        "type": "material",
+        "name": "Blocking Layer",
+        "properties": {
+          "description": "Inhibits CER, blocks Cl⁻ migration",
+          "extracted_from_image": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3.jpg"
+        },
+        "source_image_file": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3.jpg"
+      },
+      {
+        "id": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "extracted_from_image": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3.jpg"
+        },
+        "source_image_file": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3.jpg"
+      },
+      {
+        "id": "cer",
+        "type": "process",
+        "name": "CER",
+        "properties": {
+          "full_name": "Chlorine Evolution Reaction",
+          "extracted_from_image": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3.jpg"
+        },
+        "source_image_file": "6620e5b4e59b709cefa192fc9f1c111fbd67a55c636ee1f5b3047d152f488bb3.jpg"
+      },
+      {
+        "id": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "electrolyte": "KOH",
+          "extracted_from_image": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+        },
+        "source_image_file": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+      },
+      {
+        "id": "diaphragm",
+        "type": "component",
+        "name": "Diaphragm",
+        "properties": {
+          "extracted_from_image": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+        },
+        "source_image_file": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+      },
+      {
+        "id": "membrane",
+        "type": "component",
+        "name": "Membrane",
+        "properties": {
+          "extracted_from_image": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+        },
+        "source_image_file": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+      },
+      {
+        "id": "koh",
+        "type": "chemical",
+        "name": "KOH",
+        "properties": {
+          "formula": "KOH",
+          "extracted_from_image": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+        },
+        "source_image_file": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+      },
+      {
+        "id": "cl_ion",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "formula": "Cl⁻",
+          "extracted_from_image": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+        },
+        "source_image_file": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+      },
+      {
+        "id": "mg_ion",
+        "type": "chemical",
+        "name": "Mg²⁺",
+        "properties": {
+          "formula": "Mg²⁺",
+          "extracted_from_image": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+        },
+        "source_image_file": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+      },
+      {
+        "id": "ca_ion",
+        "type": "chemical",
+        "name": "Ca²⁺",
+        "properties": {
+          "formula": "Ca²⁺",
+          "extracted_from_image": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+        },
+        "source_image_file": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+      },
+      {
+        "id": "cell",
+        "type": "system",
+        "name": "Electrochemical Cell",
+        "properties": {
+          "type": "seawater electrolysis cell",
+          "extracted_from_image": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+        },
+        "source_image_file": "6d7a71f188d194bcb0c0eab8678d46f01316d3dab9e5b903fb112fa63a8444a3.jpg"
+      },
+      {
+        "id": "cl_ion_1",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "description": "Chloride ion reactant",
+          "extracted_from_image": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+        },
+        "source_image_file": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+      },
+      {
+        "id": "cl_ion_2",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "description": "Chloride ion product",
+          "extracted_from_image": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+        },
+        "source_image_file": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+      },
+      {
+        "id": "r_cl",
+        "type": "chemical",
+        "name": "R-Cl",
+        "properties": {
+          "description": "Alkyl chloride intermediate",
+          "extracted_from_image": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+        },
+        "source_image_file": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+      },
+      {
+        "id": "mci",
+        "type": "chemical",
+        "name": "MCl",
+        "properties": {
+          "description": "Metal chloride",
+          "extracted_from_image": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+        },
+        "source_image_file": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+      },
+      {
+        "id": "mcix",
+        "type": "chemical",
+        "name": "MCIx",
+        "properties": {
+          "description": "Metal chloride complex on anode",
+          "extracted_from_image": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+        },
+        "source_image_file": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+      },
+      {
+        "id": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7_anode",
+        "type": "component",
+        "name": "Anode",
+        "properties": {
+          "description": "Electrochemical anode surface",
+          "extracted_from_image": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+        },
+        "source_image_file": "7adf37e4c6192af1ea3a3e2905e86fc7ec87dc0f0e20451540e2125f899f3ff7.jpg"
+      },
+      {
+        "id": "waterproof_membrane",
+        "type": "material",
+        "name": "Waterproof breathable membrane",
+        "properties": {
+          "description": "Membrane enabling water resistance while allowing gas permeability",
+          "extracted_from_image": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+        },
+        "source_image_file": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+      },
+      {
+        "id": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "location": "left side",
+          "function": "oxidation reaction site",
+          "extracted_from_image": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+        },
+        "source_image_file": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+      },
+      {
+        "id": "outer_frame_smd",
+        "type": "component",
+        "name": "Outer frame SMD",
+        "properties": {
+          "material": "SMD (likely solid membrane diaphragm)",
+          "position": "outer enclosure",
+          "extracted_from_image": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+        },
+        "source_image_file": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+      },
+      {
+        "id": "diaphragm_smd",
+        "type": "component",
+        "name": "Diaphragm SMD",
+        "properties": {
+          "material": "SMD",
+          "function": "gas separation/internal diaphragm",
+          "extracted_from_image": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+        },
+        "source_image_file": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+      },
+      {
+        "id": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974_sde_anode",
+        "type": "component",
+        "name": "SDE Anode",
+        "properties": {
+          "material": "SDE (likely selective diaphragm electrode)",
+          "location": "anode side",
+          "extracted_from_image": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+        },
+        "source_image_file": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+      },
+      {
+        "id": "sde_cathode",
+        "type": "component",
+        "name": "SDE Cathode",
+        "properties": {
+          "material": "SDE",
+          "location": "cathode side",
+          "extracted_from_image": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+        },
+        "source_image_file": "7faa6fadb1a78ecee44aef72a1e09d66108eb416a18a5bb2417d4a5dbcf9f974.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "pH-dependent Potential Plot",
+        "properties": {
+          "label": "a",
+          "x_axis": "pH value (8-14)",
+          "y_axis": "Potential vs SHE (V)",
+          "conditions": "T=25°C, C=0.5M NH4+",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "Cl-",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "position": "upper left slope",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "OCl-",
+        "type": "chemical",
+        "name": "OCl⁻",
+        "properties": {
+          "position": "upper left slope",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "UOR",
+        "type": "chemical",
+        "name": "UOR",
+        "properties": {
+          "position": "upper right cyan box, ΔV=1.23V",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "SOR",
+        "type": "chemical",
+        "name": "SOR",
+        "properties": {
+          "position": "upper right cyan box, ΔV=1.23V",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "HER",
+        "type": "chemical",
+        "name": "HER",
+        "properties": {
+          "position": "lower right orange",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "HOR",
+        "type": "chemical",
+        "name": "HOR",
+        "properties": {
+          "position": "lower right cyan box",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "N2",
+        "type": "chemical",
+        "name": "N₂",
+        "properties": {
+          "position": "lower center",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "NH4+",
+        "type": "chemical",
+        "name": "NH₄⁺",
+        "properties": {
+          "concentration": "0.5 M",
+          "position": "lower left",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "deltaV_0.48",
+        "type": "property",
+        "name": "ΔV = 0.48 V",
+        "properties": {
+          "associated_with": "OER",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "deltaV_1.23",
+        "type": "property",
+        "name": "ΔV = 1.23 V",
+        "properties": {
+          "associated_with": "UOR/SOR",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "deltaV_-0.33",
+        "type": "property",
+        "name": "ΔV = -0.33 V",
+        "properties": {
+          "associated_with": "HER region",
+          "extracted_from_image": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+        },
+        "source_image_file": "8059a777a1167663ead24bbe66a43a88d1fe5af198c778d9ebb73bb660efad1c.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_1",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "position": "right",
+          "charge": "+",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_2",
+        "type": "electrode",
+        "name": "Cathode",
+        "properties": {
+          "position": "left",
+          "charge": "E (implied -)",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_3",
+        "type": "chemical",
+        "name": "H⁺",
+        "properties": {
+          "location": "near cathode",
+          "color": "red",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_4",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "location": "cathode side",
+          "color": "blue",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_5",
+        "type": "chemical",
+        "name": "OH⁻",
+        "properties": {
+          "location": "cathode side",
+          "color": "red",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_6",
+        "type": "chemical",
+        "name": "LA",
+        "properties": {
+          "location": "cathode interface",
+          "color": "black",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_7",
+        "type": "chemical",
+        "name": "OH⁻",
+        "properties": {
+          "location": "anode interface",
+          "color": "red",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_8",
+        "type": "chemical",
+        "name": "LA",
+        "properties": {
+          "location": "anode interface",
+          "color": "black",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_9",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "location": "bulk seawater",
+          "color": "black",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_10",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "location": "bulk seawater",
+          "color": "blue",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_11",
+        "type": "region",
+        "name": "Bulk Seawater",
+        "properties": {
+          "position": "top",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_12",
+        "type": "region",
+        "name": "EDL",
+        "properties": {
+          "position": "anode side",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_13",
+        "type": "region",
+        "name": "EDL",
+        "properties": {
+          "position": "cathode side",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_14",
+        "type": "process",
+        "name": "Migration",
+        "properties": {
+          "direction": "Cl⁻ to anode",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_15",
+        "type": "process",
+        "name": "Migration",
+        "properties": {
+          "direction": "OH⁻ to cathode",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_16",
+        "type": "process",
+        "name": "Protonation",
+        "properties": {
+          "species": "LA + H⁺ → LAH⁺",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a_17",
+        "type": "process",
+        "name": "Deprotonation",
+        "properties": {
+          "species": "LA + OH⁻",
+          "extracted_from_image": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+        },
+        "source_image_file": "81e27c7204f205513b31954d842b4f7f13d02fef704b66c79375e49379ec6a4a.jpg"
+      },
+      {
+        "id": "chloride1",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "description": "Chloride ion (left)",
+          "extracted_from_image": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+        },
+        "source_image_file": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+      },
+      {
+        "id": "chloride2",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "description": "Chloride ion (right)",
+          "extracted_from_image": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+        },
+        "source_image_file": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+      },
+      {
+        "id": "OM_left",
+        "type": "chemical",
+        "name": "OM⁻",
+        "properties": {
+          "description": "Anionic organic molecule (left)",
+          "extracted_from_image": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+        },
+        "source_image_file": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+      },
+      {
+        "id": "OM_right",
+        "type": "chemical",
+        "name": "OM",
+        "properties": {
+          "description": "Organic molecule (right)",
+          "extracted_from_image": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+        },
+        "source_image_file": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+      },
+      {
+        "id": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "description": "Anode surface",
+          "extracted_from_image": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+        },
+        "source_image_file": "824f19e98171c5cbd12dd752e452a451a13ceecf4aa128792a0b5652e7924af6.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "chemical",
+        "name": "1 M KOH",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "extracted_from_image": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+        },
+        "source_image_file": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+      },
+      {
+        "id": "cl",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "formula": "Cl⁻",
+          "extracted_from_image": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+        },
+        "source_image_file": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+      },
+      {
+        "id": "mg2",
+        "type": "chemical",
+        "name": "Mg²⁺",
+        "properties": {
+          "formula": "Mg²⁺",
+          "extracted_from_image": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+        },
+        "source_image_file": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+      },
+      {
+        "id": "ca2",
+        "type": "chemical",
+        "name": "Ca²⁺",
+        "properties": {
+          "formula": "Ca²⁺",
+          "extracted_from_image": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+        },
+        "source_image_file": "8f2d7fcc7d6f54cc6a1dc8278d1ef516078d27ec7080c4d7297d23d7604e0ace.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_1",
+        "type": "chemical",
+        "name": "Cl-",
+        "properties": {
+          "description": "Chloride ion",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_2",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "description": "Water",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_3",
+        "type": "chemical",
+        "name": "O2",
+        "properties": {
+          "description": "Oxygen gas",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_4",
+        "type": "chemical",
+        "name": "H+",
+        "properties": {
+          "description": "Proton",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_5",
+        "type": "chemical",
+        "name": "OH-",
+        "properties": {
+          "description": "Hydroxide ion",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_6",
+        "type": "process",
+        "name": "MX",
+        "properties": {
+          "description": "MXene material",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_7",
+        "type": "process",
+        "name": "CER",
+        "properties": {
+          "description": "Chloride Evolution Reaction",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_8",
+        "type": "process",
+        "name": "OER",
+        "properties": {
+          "description": "Oxygen Evolution Reaction",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_9",
+        "type": "process",
+        "name": "HER",
+        "properties": {
+          "description": "Hydrogen Evolution Reaction",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_10",
+        "type": "system",
+        "name": "Seawater Electrolyzers",
+        "properties": {
+          "description": "Electrochemical system for seawater electrolysis",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_11",
+        "type": "component",
+        "name": "Anion Exchange Membrane",
+        "properties": {
+          "description": "AEM membrane",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_12",
+        "type": "component",
+        "name": "Cation Exchange Membrane",
+        "properties": {
+          "description": "CEM membrane",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_13",
+        "type": "component",
+        "name": "Anode",
+        "properties": {
+          "description": "Electrochemical anode",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_14",
+        "type": "component",
+        "name": "Cathode",
+        "properties": {
+          "description": "Electrochemical cathode",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_15",
+        "type": "component",
+        "name": "RO Electrolyte",
+        "properties": {
+          "description": "Reverse Osmosis electrolyte",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52_16",
+        "type": "nanostructure",
+        "name": "Nanoparticles",
+        "properties": {
+          "description": "Catalytic nanoparticles",
+          "extracted_from_image": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+        },
+        "source_image_file": "980e4de9269f8496194f62ebab6918711aa39ccfd46e83baae9279455636ba52.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chemical",
+        "name": "O2",
+        "properties": {
+          "formula": "O₂",
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "process",
+        "name": "H2 Storage",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "process",
+        "name": "Liquid H2",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "process",
+        "name": "Product Water",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "equipment",
+        "name": "Mechanical Booster Pump",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n18",
+        "type": "equipment",
+        "name": "Heat Exchanger",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n19",
+        "type": "equipment",
+        "name": "Water Circulation Pump",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n20",
+        "type": "system",
+        "name": "PEM Electrolyzer System",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n21",
+        "type": "power_source",
+        "name": "Fossil Fuel Power",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n22",
+        "type": "power_source",
+        "name": "Nuclear Power",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n23",
+        "type": "power_source",
+        "name": "Solar Power",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n24",
+        "type": "power_source",
+        "name": "Wind Power",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n25",
+        "type": "power_source",
+        "name": "Grid Electricity",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n26",
+        "type": "power_source",
+        "name": "Low Electricity",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n27",
+        "type": "equipment",
+        "name": "DC Rectifier",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n28",
+        "type": "equipment",
+        "name": "AC Inverter",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n29",
+        "type": "equipment",
+        "name": "Electrical Busbar",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "n30",
+        "type": "equipment",
+        "name": "Electrode Stack",
+        "properties": {
+          "extracted_from_image": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+        },
+        "source_image_file": "dae9b1a1463e420a7ebe4637d9a1b39bf96e5bb6babc57ebf8e4e7e4d28cb289.jpg"
+      },
+      {
+        "id": "electrolyte_seawater",
+        "type": "chemical",
+        "name": "Seawater",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "electrolyte_0.6M",
+        "type": "chemical",
+        "name": "1 M KOH + 0.6 M NaCl",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "cat1",
+        "type": "chemical",
+        "name": "NiMoS/NF",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "cat2",
+        "type": "chemical",
+        "name": "FeP2S6/NF",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "cat3",
+        "type": "chemical",
+        "name": "NiPS3/NF",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "cat4",
+        "type": "chemical",
+        "name": "NiFeP/NF",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "cat5",
+        "type": "chemical",
+        "name": "NiMoP/NF",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "cat6",
+        "type": "chemical",
+        "name": "NiMoS-NF",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "cat7",
+        "type": "chemical",
+        "name": "CoS2/NF",
+        "properties": {
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "prop1",
+        "type": "characterization",
+        "name": "Overpotential @ 10 mA cm⁻²",
+        "properties": {
+          "unit": "mV",
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "prop2",
+        "type": "characterization",
+        "name": "Current Density @ 300 mV",
+        "properties": {
+          "unit": "mA cm⁻²",
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "prop3",
+        "type": "characterization",
+        "name": "Stability",
+        "properties": {
+          "unit": "h @ 30 mA cm⁻²",
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "prop4",
+        "type": "characterization",
+        "name": "Overpotential @ 400 mA cm⁻²",
+        "properties": {
+          "unit": "mV",
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "prop5",
+        "type": "characterization",
+        "name": "Current Density @ 300 mV",
+        "properties": {
+          "unit": "mA cm⁻²",
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "prop6",
+        "type": "characterization",
+        "name": "Stability",
+        "properties": {
+          "unit": "h @ 500 mA cm⁻²",
+          "extracted_from_image": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+        },
+        "source_image_file": "dc6296b5b0c6491f38ca66cf34c6a1597c361e6d40387c969faa13eb77fe9bb3.jpg"
+      },
+      {
+        "id": "electrolyte_1M_KOH_0.5M_NaCl",
+        "type": "chemical",
+        "name": "1 M KOH + 0.5 M NaCl",
+        "properties": {
+          "composition": "1 M KOH + 0.5 M NaCl",
+          "extracted_from_image": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+        },
+        "source_image_file": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+      },
+      {
+        "id": "electrolyte_1M_KOH_seawater",
+        "type": "chemical",
+        "name": "1 M KOH + seawater",
+        "properties": {
+          "composition": "1 M KOH + seawater",
+          "extracted_from_image": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+        },
+        "source_image_file": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+      },
+      {
+        "id": "catalyst_IrC_1M_KOH_seawater",
+        "type": "chemical",
+        "name": "Ir/C (1 M KOH + seawater)",
+        "properties": {
+          "composition": "Ir/C catalyst in 1 M KOH + seawater",
+          "extracted_from_image": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+        },
+        "source_image_file": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+      },
+      {
+        "id": "catalyst_IrC_1M_KOH",
+        "type": "chemical",
+        "name": "Ir/C (1 M KOH)",
+        "properties": {
+          "composition": "Ir/C catalyst in 1 M KOH",
+          "extracted_from_image": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+        },
+        "source_image_file": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+      },
+      {
+        "id": "lsv_curve_1M_KOH_0.5M_NaCl",
+        "type": "characterization",
+        "name": "LSV curve in 1 M KOH + 0.5 M NaCl",
+        "properties": {
+          "type": "linear sweep voltammetry",
+          "color": "red",
+          "x_axis": "E (V vs. RHE)",
+          "y_axis": "j (mA cm⁻²)",
+          "extracted_from_image": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+        },
+        "source_image_file": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+      },
+      {
+        "id": "lsv_curve_1M_KOH_seawater",
+        "type": "characterization",
+        "name": "LSV curve in 1 M KOH + seawater",
+        "properties": {
+          "type": "linear sweep voltammetry",
+          "color": "blue",
+          "x_axis": "E (V vs. RHE)",
+          "y_axis": "j (mA cm⁻²)",
+          "extracted_from_image": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+        },
+        "source_image_file": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+      },
+      {
+        "id": "lsv_curve_IrC_1M_KOH_seawater",
+        "type": "characterization",
+        "name": "LSV curve Ir/C in 1 M KOH + seawater",
+        "properties": {
+          "type": "linear sweep voltammetry",
+          "color": "green",
+          "x_axis": "E (V vs. RHE)",
+          "y_axis": "j (mA cm⁻²)",
+          "extracted_from_image": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+        },
+        "source_image_file": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+      },
+      {
+        "id": "lsv_curve_IrC_1M_KOH",
+        "type": "characterization",
+        "name": "LSV curve Ir/C in 1 M KOH",
+        "properties": {
+          "type": "linear sweep voltammetry",
+          "color": "orange",
+          "x_axis": "E (V vs. RHE)",
+          "y_axis": "j (mA cm⁻²)",
+          "extracted_from_image": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+        },
+        "source_image_file": "f460e4a2861b9e9aed805780d7c8158553867d6ede4d590a00099453cd645aae.jpg"
+      },
+      {
+        "id": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48_2",
+        "type": "chemical",
+        "name": "Co(OH)₂",
+        "properties": {
+          "formula": "Co(OH)₂",
+          "description": "Cobalt(II) hydroxide reference",
+          "extracted_from_image": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+        },
+        "source_image_file": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+      },
+      {
+        "id": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48_3",
+        "type": "chemical",
+        "name": "Co(OH)₂-AS",
+        "properties": {
+          "formula": "Co(OH)₂-AS",
+          "description": "Activated or modified Co(OH)₂ sample",
+          "extracted_from_image": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+        },
+        "source_image_file": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+      },
+      {
+        "id": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48_4",
+        "type": "chemical",
+        "name": "Co-O",
+        "properties": {
+          "bond": "Co-O",
+          "description": "Cobalt-oxygen coordination",
+          "peak_position": "around 1.5-2 Å",
+          "extracted_from_image": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+        },
+        "source_image_file": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+      },
+      {
+        "id": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48_5",
+        "type": "chemical",
+        "name": "Co-Cl",
+        "properties": {
+          "bond": "Co-Cl",
+          "description": "Cobalt-chlorine coordination",
+          "peak_position": "around 2-2.5 Å",
+          "extracted_from_image": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+        },
+        "source_image_file": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+      },
+      {
+        "id": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48_6",
+        "type": "chemical",
+        "name": "OH⁻",
+        "properties": {
+          "formula": "OH⁻",
+          "description": "Hydroxide ligand",
+          "extracted_from_image": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+        },
+        "source_image_file": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+      },
+      {
+        "id": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48_7",
+        "type": "chemical",
+        "name": "Cl⁻",
+        "properties": {
+          "formula": "Cl⁻",
+          "description": "Chloride ligand",
+          "extracted_from_image": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+        },
+        "source_image_file": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+      },
+      {
+        "id": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48_8",
+        "type": "chemical",
+        "name": "Co-Co",
+        "properties": {
+          "bond": "Co-Co",
+          "description": "Cobalt-cobalt metal-metal distance",
+          "peak_position": "around 3 Å",
+          "extracted_from_image": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+        },
+        "source_image_file": "f8da0680c13f0e37141494eba468347526e9e181e86d6a15b29a8d73c3563a48.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_1",
+        "type": "chemical",
+        "name": "Seawater Electrolyte",
+        "properties": {
+          "description": "Electrolyte containing Cl- ions",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_2",
+        "type": "process",
+        "name": "Cl Invasion",
+        "properties": {
+          "label": "1",
+          "description": "Chloride ion invasion into material",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_3",
+        "type": "process",
+        "name": "Cl Leaching",
+        "properties": {
+          "label": "2",
+          "description": "Leaching of chloride ions",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_4",
+        "type": "process",
+        "name": "OER Process",
+        "properties": {
+          "label": "3",
+          "description": "Oxygen Evolution Reaction process",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_5",
+        "type": "chemical",
+        "name": "Co (Cobalt)",
+        "properties": {
+          "color": "blue",
+          "description": "Cobalt atoms/ions in structure",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_6",
+        "type": "chemical",
+        "name": "Cl (Chloride)",
+        "properties": {
+          "color": "green",
+          "description": "Chloride ions",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_7",
+        "type": "chemical",
+        "name": "O (Oxygen)",
+        "properties": {
+          "color": "red",
+          "description": "Oxygen atoms",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_8",
+        "type": "chemical",
+        "name": "H (Hydrogen)",
+        "properties": {
+          "color": "pink/white",
+          "description": "Hydrogen atoms",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_9",
+        "type": "defect",
+        "name": "Cl Vacancy",
+        "properties": {
+          "symbol": "○",
+          "description": "Chloride ion vacancy in structure",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521_10",
+        "type": "material",
+        "name": "Metal-Organic Framework",
+        "properties": {
+          "description": "Co-based framework structure with Cl coordination",
+          "extracted_from_image": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+        },
+        "source_image_file": "fa6214ff8c63d4e916e0cd2f03b6290e4912532379c84719129552b226ef0521.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_1",
+        "type": "chemical",
+        "name": "Mg",
+        "properties": {
+          "role": "anode material",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_2",
+        "type": "chemical",
+        "name": "O2",
+        "properties": {
+          "role": "cathode reactant",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_3",
+        "type": "chemical",
+        "name": "H2",
+        "properties": {
+          "role": "gas product",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_4",
+        "type": "chemical",
+        "name": "H2O(l)",
+        "properties": {
+          "state": "liquid",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_5",
+        "type": "chemical",
+        "name": "OH-",
+        "properties": {
+          "role": "ion",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_6",
+        "type": "chemical",
+        "name": "Cl-",
+        "properties": {
+          "role": "ion in seawater",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_7",
+        "type": "chemical",
+        "name": "SO4 2-",
+        "properties": {
+          "role": "ion in seawater",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_8",
+        "type": "material",
+        "name": "Hydrophobic membrane",
+        "properties": {
+          "function": "waterproof breathable",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_9",
+        "type": "material",
+        "name": "SDE",
+        "properties": {
+          "full": "self-vapour pressure electrolyte",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_10",
+        "type": "material",
+        "name": "Diaphragm",
+        "properties": {
+          "role": "separator",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_11",
+        "type": "electrolyte",
+        "name": "Seawater",
+        "properties": {
+          "composition": "Mg2+, Cl-, SO4 2-",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_12",
+        "type": "concept",
+        "name": "Anode",
+        "properties": {
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_13",
+        "type": "concept",
+        "name": "Cathode",
+        "properties": {
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_14",
+        "type": "concept",
+        "name": "VP Seawater",
+        "properties": {
+          "full": "vapour pressure of seawater",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_15",
+        "type": "concept",
+        "name": "VP SDE",
+        "properties": {
+          "full": "vapour pressure of SDE",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_16",
+        "type": "concept",
+        "name": "ΔVP",
+        "properties": {
+          "value": "≈ 0",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      },
+      {
+        "id": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e_17",
+        "type": "concept",
+        "name": "Gas path",
+        "properties": {
+          "direction": "H2 transport",
+          "extracted_from_image": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+        },
+        "source_image_file": "ffb6e46e0e2bcb3a7b8524c71365e68d48ee901f5d01bd96aebb569b915a007e.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Co2(OH)3Cl_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Co2(OH)3Cl",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "oh-",
+        "type": "produces"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "cathode",
+        "type": "feeds"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "h2o",
+        "type": "produces"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "clo-",
+        "type": "produces"
+      },
+      {
+        "source_id": "oh-",
+        "target_id": "anode",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n2h4",
+        "target_id": "anode",
+        "type": "reacts_at"
+      },
+      {
+        "source_id": "cl-",
+        "target_id": "anode",
+        "type": "reacts_at"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "anode",
+        "type": "feeds"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n2h4",
+        "type": "converted_to"
+      },
+      {
+        "source_id": "cl-",
+        "target_id": "clo-",
+        "type": "oxidized_to"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "cem",
+        "type": "separated_by"
+      },
+      {
+        "source_id": "cem",
+        "target_id": "aem",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "aem",
+        "target_id": "anode",
+        "type": "separated_by"
+      },
+      {
+        "source_id": "cell_voltage",
+        "target_id": "cathode",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "cell_voltage",
+        "target_id": "anode",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "anode_kinetics",
+        "target_id": "anode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "efficiency_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "represents"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "represents"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "represents"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "represents"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "product_of"
+      },
+      {
+        "source_id": "6",
+        "target_id": "4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "6",
+        "target_id": "5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "6",
+        "target_id": "1",
+        "type": "shows"
+      },
+      {
+        "source_id": "6",
+        "target_id": "2",
+        "type": "shows"
+      },
+      {
+        "source_id": "6",
+        "target_id": "3",
+        "type": "shows"
+      },
+      {
+        "source_id": "4",
+        "target_id": "7",
+        "type": "occurs_in"
+      },
+      {
+        "source_id": "4",
+        "target_id": "8",
+        "type": "achieves_selectivity"
+      },
+      {
+        "source_id": "1",
+        "target_id": "9",
+        "type": "boundary_at"
+      },
+      {
+        "source_id": "5",
+        "target_id": "1",
+        "type": "produces"
+      },
+      {
+        "source_id": "5",
+        "target_id": "2",
+        "type": "produces"
+      },
+      {
+        "source_id": "5",
+        "target_id": "3",
+        "type": "produces"
+      },
+      {
+        "source_id": "1",
+        "target_id": "11",
+        "type": "hosts"
+      },
+      {
+        "source_id": "2",
+        "target_id": "12",
+        "type": "hosts"
+      },
+      {
+        "source_id": "11",
+        "target_id": "7",
+        "type": "produces"
+      },
+      {
+        "source_id": "11",
+        "target_id": "6",
+        "type": "produces"
+      },
+      {
+        "source_id": "12",
+        "target_id": "8",
+        "type": "involves"
+      },
+      {
+        "source_id": "3",
+        "target_id": "5",
+        "type": "transports"
+      },
+      {
+        "source_id": "4",
+        "target_id": "9",
+        "type": "transports"
+      },
+      {
+        "source_id": "10",
+        "target_id": "5",
+        "type": "contains"
+      },
+      {
+        "source_id": "10",
+        "target_id": "9",
+        "type": "contains"
+      },
+      {
+        "source_id": "10",
+        "target_id": "8",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "separated_by"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "separated_by"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "connected_by"
+      },
+      {
+        "source_id": "13",
+        "target_id": "1",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "13",
+        "target_id": "2",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "involves"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "produces"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "accelerated_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "reacts_on"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "produces"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "accelerates"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "output_from"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n7",
+        "type": "powers"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n9",
+        "type": "supplies"
+      },
+      {
+        "source_id": "H2O",
+        "target_id": "H2O_ads",
+        "type": "adsorption"
+      },
+      {
+        "source_id": "Cl",
+        "target_id": "Cl_ads",
+        "type": "adsorption"
+      },
+      {
+        "source_id": "H2O_ads",
+        "target_id": "O_ads",
+        "type": "transformation"
+      },
+      {
+        "source_id": "O_ads",
+        "target_id": "OOH_ads",
+        "type": "transformation"
+      },
+      {
+        "source_id": "OOH_ads",
+        "target_id": "O2",
+        "type": "desorption"
+      },
+      {
+        "source_id": "Cl_ads",
+        "target_id": "Cl2",
+        "type": "transformation"
+      },
+      {
+        "source_id": "chem_NiOOH",
+        "target_id": "catalyst_surface",
+        "type": "component"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "E_05V",
+        "type": "has_potential"
+      },
+      {
+        "source_id": "CER",
+        "target_id": "E_139V",
+        "type": "has_potential"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "H2O",
+        "type": "reactant"
+      },
+      {
+        "source_id": "CER",
+        "target_id": "Cl",
+        "type": "reactant"
+      },
+      {
+        "source_id": "figure",
+        "target_id": "OER",
+        "type": "depicts"
+      },
+      {
+        "source_id": "figure",
+        "target_id": "CER",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_NiOOH",
+        "target_id": "OER",
+        "type": "catalyzes"
+      },
+      {
+        "source_id": "chem_NiOOH",
+        "target_id": "CER",
+        "type": "catalyzes"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "tfsi",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "po4_3-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "cr04_2-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "so4_2-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "moo4_2-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "bo3_3-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "wo4_2-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "seo4_2-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "co3_2-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "sio3_2-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "clo4-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ch3coo-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "no3-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "cl-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "oh-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "mno4-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "io4-",
+        "type": "plots"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "region_trivalent",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "region_divalent",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "region_monovalent",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "po4_3-",
+        "target_id": "region_trivalent",
+        "type": "in_region"
+      },
+      {
+        "source_id": "tfsi",
+        "target_id": "region_monovalent",
+        "type": "in_region"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "repels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "mediates"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n8",
+        "type": "causes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n11",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n11",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n4",
+        "type": "maintains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n11",
+        "type": "solvent_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n6",
+        "type": "dissolves_to"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n6",
+        "type": "produces"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n9",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n7",
+        "type": "property_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n7",
+        "type": "property_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "cl1",
+        "target_id": "blocking_layer",
+        "type": "inhibited_by"
+      },
+      {
+        "source_id": "cl2",
+        "target_id": "blocking_layer",
+        "type": "inhibited_by"
+      },
+      {
+        "source_id": "h2o",
+        "target_id": "blocking_layer",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "blocking_layer",
+        "target_id": "o2",
+        "type": "enables"
+      },
+      {
+        "source_id": "blocking_layer",
+        "target_id": "anode",
+        "type": "on"
+      },
+      {
+        "source_id": "blocking_layer",
+        "target_id": "cer",
+        "type": "inhibits"
+      },
+      {
+        "source_id": "cl1",
+        "target_id": "cer",
+        "type": "reactant"
+      },
+      {
+        "source_id": "cl2",
+        "target_id": "cer",
+        "type": "reactant"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n10",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n11",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n11",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n12",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n12",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "koh",
+        "type": "contains"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "koh",
+        "type": "contains"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "diaphragm",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "diaphragm",
+        "target_id": "anode",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "diaphragm",
+        "target_id": "membrane",
+        "type": "contains"
+      },
+      {
+        "source_id": "cell",
+        "target_id": "cathode",
+        "type": "contains"
+      },
+      {
+        "source_id": "cell",
+        "target_id": "anode",
+        "type": "contains"
+      },
+      {
+        "source_id": "cell",
+        "target_id": "diaphragm",
+        "type": "contains"
+      },
+      {
+        "source_id": "cell",
+        "target_id": "membrane",
+        "type": "contains"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "h2o",
+        "type": "contains"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "cl_ion",
+        "type": "contains"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "mg_ion",
+        "type": "contains"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "ca_ion",
+        "type": "contains"
+      },
+      {
+        "source_id": "cell",
+        "target_id": "seawater",
+        "type": "uses"
+      },
+      {
+        "source_id": "cl_ion_1",
+        "target_id": "mcix",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "cl_ion_1",
+        "target_id": "anode",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "mcix",
+        "target_id": "mci",
+        "type": "forms"
+      },
+      {
+        "source_id": "mci",
+        "target_id": "r_cl",
+        "type": "chlorinates"
+      },
+      {
+        "source_id": "r_cl",
+        "target_id": "cl2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cl2",
+        "target_id": "cl_ion_2",
+        "type": "dissociates_to"
+      },
+      {
+        "source_id": "mcix",
+        "target_id": "anode",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "waterproof_membrane",
+        "target_id": "outer_frame_smd",
+        "type": "contains"
+      },
+      {
+        "source_id": "waterproof_membrane",
+        "target_id": "anode",
+        "type": "contains"
+      },
+      {
+        "source_id": "waterproof_membrane",
+        "target_id": "cathode",
+        "type": "contains"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "sde_anode",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "sde_cathode",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "waterproof_membrane",
+        "target_id": "diaphragm_smd",
+        "type": "contains"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "o2",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "waterproof_membrane",
+        "target_id": "seawater",
+        "type": "exposed_to"
+      },
+      {
+        "source_id": "outer_frame_smd",
+        "target_id": "seawater",
+        "type": "protects_from"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Cl-",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "OCl-",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "O2",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "H2O",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "OER",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "UOR",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "SOR",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "HER",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "HOR",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "N2",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "NH4+",
+        "type": "contains"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "deltaV_0.48",
+        "type": "has_property"
+      },
+      {
+        "source_id": "UOR",
+        "target_id": "deltaV_1.23",
+        "type": "has_property"
+      },
+      {
+        "source_id": "SOR",
+        "target_id": "deltaV_1.23",
+        "type": "has_property"
+      },
+      {
+        "source_id": "HER",
+        "target_id": "deltaV_-0.33",
+        "type": "has_property"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "interface"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "interface"
+      },
+      {
+        "source_id": "2",
+        "target_id": "5",
+        "type": "interface"
+      },
+      {
+        "source_id": "2",
+        "target_id": "6",
+        "type": "adsorbed"
+      },
+      {
+        "source_id": "1",
+        "target_id": "7",
+        "type": "interface"
+      },
+      {
+        "source_id": "1",
+        "target_id": "8",
+        "type": "adsorbed"
+      },
+      {
+        "source_id": "11",
+        "target_id": "9",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "10",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "14",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "14",
+        "target_id": "12",
+        "type": "direction"
+      },
+      {
+        "source_id": "7",
+        "target_id": "15",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "15",
+        "target_id": "13",
+        "type": "direction"
+      },
+      {
+        "source_id": "3",
+        "target_id": "16",
+        "type": "reactant"
+      },
+      {
+        "source_id": "6",
+        "target_id": "16",
+        "type": "reactant"
+      },
+      {
+        "source_id": "7",
+        "target_id": "17",
+        "type": "reactant"
+      },
+      {
+        "source_id": "8",
+        "target_id": "17",
+        "type": "reactant"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "produces"
+      },
+      {
+        "source_id": "OM_left",
+        "target_id": "anode",
+        "type": "adsorbed_on"
+      },
+      {
+        "source_id": "OM_right",
+        "target_id": "anode",
+        "type": "adsorbed_on"
+      },
+      {
+        "source_id": "chloride1",
+        "target_id": "figure",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "chloride2",
+        "target_id": "figure",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "OM_left",
+        "target_id": "OM_right",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "OM_left",
+        "target_id": "chloride1",
+        "type": "replaces"
+      },
+      {
+        "source_id": "OM_left",
+        "target_id": "chloride2",
+        "type": "replaces"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "figure",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "core_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n2",
+        "type": "catalyzes"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "electrolyte",
+        "type": "contacts"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "anode",
+        "type": "contacts"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "membrane",
+        "type": "separated_by"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "seawater",
+        "type": "immersed_in"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "seawater",
+        "type": "immersed_in"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "h2o",
+        "type": "contains"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "cl",
+        "type": "contains"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "mg2",
+        "type": "contains"
+      },
+      {
+        "source_id": "seawater",
+        "target_id": "ca2",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "cl",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "mg2",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "ca2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "classified_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "classified_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "classified_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "classified_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "classified_as"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "classified_as"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n7",
+        "type": "uses_category"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n8",
+        "type": "uses_category"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n9",
+        "type": "uses_category"
+      },
+      {
+        "source_id": "1",
+        "target_id": "7",
+        "type": "inhibits"
+      },
+      {
+        "source_id": "1",
+        "target_id": "6",
+        "type": "utilizes"
+      },
+      {
+        "source_id": "2",
+        "target_id": "10",
+        "type": "feedstock"
+      },
+      {
+        "source_id": "3",
+        "target_id": "8",
+        "type": "product"
+      },
+      {
+        "source_id": "4",
+        "target_id": "9",
+        "type": "reactant"
+      },
+      {
+        "source_id": "5",
+        "target_id": "8",
+        "type": "reactant"
+      },
+      {
+        "source_id": "6",
+        "target_id": "10",
+        "type": "component"
+      },
+      {
+        "source_id": "7",
+        "target_id": "8",
+        "type": "inhibiting"
+      },
+      {
+        "source_id": "8",
+        "target_id": "13",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "9",
+        "target_id": "14",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "11",
+        "target_id": "10",
+        "type": "integrated_in"
+      },
+      {
+        "source_id": "12",
+        "target_id": "10",
+        "type": "integrated_in"
+      },
+      {
+        "source_id": "13",
+        "target_id": "10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "14",
+        "target_id": "10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "15",
+        "target_id": "10",
+        "type": "electrolyte"
+      },
+      {
+        "source_id": "16",
+        "target_id": "13",
+        "type": "catalyst"
+      },
+      {
+        "source_id": "16",
+        "target_id": "14",
+        "type": "catalyst"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n11",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n12",
+        "type": "marks"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "feeds_into"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "zero_liquid_discharge"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "stores"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "feeds_into"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "processed_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "feeds_into"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "powers"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "uses"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n11",
+        "type": "produces"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n8",
+        "type": "recovers_energy_to"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n16",
+        "type": "contains"
+      },
+      {
+        "source_id": "n20",
+        "target_id": "n12",
+        "type": "produces"
+      },
+      {
+        "source_id": "n20",
+        "target_id": "n13",
+        "type": "produces"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n14",
+        "type": "stored_in"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n15",
+        "type": "processed_to"
+      },
+      {
+        "source_id": "n21",
+        "target_id": "n25",
+        "type": "supplies"
+      },
+      {
+        "source_id": "n22",
+        "target_id": "n25",
+        "type": "supplies"
+      },
+      {
+        "source_id": "n23",
+        "target_id": "n25",
+        "type": "supplies"
+      },
+      {
+        "source_id": "n24",
+        "target_id": "n25",
+        "type": "supplies"
+      },
+      {
+        "source_id": "n25",
+        "target_id": "n27",
+        "type": "powers"
+      },
+      {
+        "source_id": "n26",
+        "target_id": "n28",
+        "type": "powers"
+      },
+      {
+        "source_id": "n27",
+        "target_id": "n29",
+        "type": "converts_to"
+      },
+      {
+        "source_id": "n28",
+        "target_id": "n29",
+        "type": "converts_to"
+      },
+      {
+        "source_id": "n29",
+        "target_id": "n30",
+        "type": "supplies"
+      },
+      {
+        "source_id": "n30",
+        "target_id": "n20",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n17",
+        "type": "feeds_into"
+      },
+      {
+        "source_id": "n17",
+        "target_id": "n18",
+        "type": "pumps_to"
+      },
+      {
+        "source_id": "n18",
+        "target_id": "n19",
+        "type": "exchanges_heat_with"
+      },
+      {
+        "source_id": "cat1",
+        "target_id": "electrolyte",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "cat1",
+        "target_id": "prop1",
+        "type": "has_value_402"
+      },
+      {
+        "source_id": "cat1",
+        "target_id": "prop2",
+        "type": "has_value_200"
+      },
+      {
+        "source_id": "cat1",
+        "target_id": "prop3",
+        "type": "has_value_30"
+      },
+      {
+        "source_id": "cat2",
+        "target_id": "electrolyte",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "cat2",
+        "target_id": "prop1",
+        "type": "has_value_355"
+      },
+      {
+        "source_id": "cat2",
+        "target_id": "prop2",
+        "type": "has_value_110"
+      },
+      {
+        "source_id": "cat2",
+        "target_id": "prop3",
+        "type": "has_value_27"
+      },
+      {
+        "source_id": "cat3",
+        "target_id": "electrolyte",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "cat3",
+        "target_id": "prop1",
+        "type": "has_value_374"
+      },
+      {
+        "source_id": "cat3",
+        "target_id": "prop2",
+        "type": "has_value_80"
+      },
+      {
+        "source_id": "cat3",
+        "target_id": "prop3",
+        "type": "has_value_38"
+      },
+      {
+        "source_id": "cat4",
+        "target_id": "electrolyte",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "cat4",
+        "target_id": "prop1",
+        "type": "has_value_398"
+      },
+      {
+        "source_id": "cat4",
+        "target_id": "prop2",
+        "type": "has_value_100"
+      },
+      {
+        "source_id": "cat4",
+        "target_id": "prop3",
+        "type": "has_value_43"
+      },
+      {
+        "source_id": "cat5",
+        "target_id": "electrolyte_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "cat5",
+        "target_id": "prop4",
+        "type": "has_value_487"
+      },
+      {
+        "source_id": "cat5",
+        "target_id": "prop5",
+        "type": "has_value_230"
+      },
+      {
+        "source_id": "cat5",
+        "target_id": "prop6",
+        "type": "has_value_64"
+      },
+      {
+        "source_id": "cat6",
+        "target_id": "electrolyte_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "cat6",
+        "target_id": "prop4",
+        "type": "has_value_540"
+      },
+      {
+        "source_id": "cat6",
+        "target_id": "prop5",
+        "type": "has_value_100"
+      },
+      {
+        "source_id": "cat6",
+        "target_id": "prop6",
+        "type": "has_value_76"
+      },
+      {
+        "source_id": "cat7",
+        "target_id": "electrolyte_0.6M",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "cat7",
+        "target_id": "prop4",
+        "type": "has_value_400"
+      },
+      {
+        "source_id": "cat7",
+        "target_id": "prop5",
+        "type": "has_value_600"
+      },
+      {
+        "source_id": "cat7",
+        "target_id": "prop6",
+        "type": "has_value_80"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "features"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "represents"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "electrolyte_1M_KOH_0.5M_NaCl",
+        "target_id": "lsv_curve_1M_KOH_0.5M_NaCl",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_1M_KOH_seawater",
+        "target_id": "lsv_curve_1M_KOH_seawater",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "catalyst_IrC_1M_KOH_seawater",
+        "target_id": "lsv_curve_IrC_1M_KOH_seawater",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "catalyst_IrC_1M_KOH",
+        "target_id": "lsv_curve_IrC_1M_KOH",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "catalyst_IrC_1M_KOH_seawater",
+        "target_id": "electrolyte_1M_KOH_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "catalyst_IrC_1M_KOH",
+        "target_id": "electrolyte_1M_KOH_seawater",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "compares_to"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "shows"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "2",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "3",
+        "target_id": "5",
+        "type": "contains"
+      },
+      {
+        "source_id": "3",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "3",
+        "target_id": "7",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "8",
+        "type": "shows"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "contains"
+      },
+      {
+        "source_id": "2",
+        "target_id": "10",
+        "type": "affects"
+      },
+      {
+        "source_id": "2",
+        "target_id": "6",
+        "type": "involves"
+      },
+      {
+        "source_id": "6",
+        "target_id": "3",
+        "type": "subject_of"
+      },
+      {
+        "source_id": "3",
+        "target_id": "9",
+        "type": "creates"
+      },
+      {
+        "source_id": "10",
+        "target_id": "4",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "10",
+        "target_id": "5",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "10",
+        "target_id": "6",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "10",
+        "target_id": "7",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "10",
+        "target_id": "8",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "10",
+        "target_id": "9",
+        "type": "contains"
+      },
+      {
+        "source_id": "4",
+        "target_id": "7",
+        "type": "produces"
+      },
+      {
+        "source_id": "12",
+        "target_id": "1",
+        "type": "contains"
+      },
+      {
+        "source_id": "13",
+        "target_id": "2",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "12",
+        "target_id": "11",
+        "type": "in_contact_with"
+      },
+      {
+        "source_id": "13",
+        "target_id": "11",
+        "type": "in_contact_with"
+      },
+      {
+        "source_id": "12",
+        "target_id": "6",
+        "type": "in_contact_with"
+      },
+      {
+        "source_id": "11",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "7",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "15",
+        "type": "has"
+      },
+      {
+        "source_id": "11",
+        "target_id": "14",
+        "type": "has"
+      },
+      {
+        "source_id": "16",
+        "target_id": "14",
+        "type": "relates_to"
+      },
+      {
+        "source_id": "16",
+        "target_id": "15",
+        "type": "relates_to"
+      },
+      {
+        "source_id": "8",
+        "target_id": "12",
+        "type": "protects"
+      },
+      {
+        "source_id": "8",
+        "target_id": "13",
+        "type": "protects"
+      },
+      {
+        "source_id": "10",
+        "target_id": "12",
+        "type": "separates"
+      },
+      {
+        "source_id": "10",
+        "target_id": "13",
+        "type": "separates"
+      },
+      {
+        "source_id": "17",
+        "target_id": "3",
+        "type": "transports"
+      },
+      {
+        "source_id": "4",
+        "target_id": "8",
+        "type": "blocked_by"
+      },
+      {
+        "source_id": "5",
+        "target_id": "13",
+        "type": "produced_at"
+      }
+    ]
+  }
+}

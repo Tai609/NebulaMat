@@ -1,0 +1,4681 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "nodes": [
+          {
+            "id": "chem_NF",
+            "type": "chemical",
+            "name": "nickel foam",
+            "aliases": [
+              "NF"
+            ],
+            "properties": {}
+          },
+          {
+            "id": "chem_Mo7O24",
+            "type": "chemical",
+            "name": "(NH4)6Mo7O24·4H2O",
+            "aliases": [
+              "(NH4)6Mo7O24·4H2O"
+            ],
+            "formula": "(NH4)6Mo7O24·4H2O",
+            "properties": {}
+          },
+          {
+            "id": "chem_HCl",
+            "type": "chemical",
+            "name": "hydrochloric acid",
+            "aliases": [
+              "HCl"
+            ],
+            "formula": "HCl",
+            "properties": {}
+          },
+          {
+            "id": "chem_DI_water",
+            "type": "chemical",
+            "name": "deionized water",
+            "aliases": [
+              "DI water"
+            ],
+            "formula": "H2O",
+            "properties": {}
+          },
+          {
+            "id": "chem_MoO2_NF",
+            "type": "chemical",
+            "name": "MoO2/NF",
+            "aliases": [
+              "MoO2/NF"
+            ],
+            "formula": "MoO2/NF",
+            "properties": {
+              "mass_loading": {
+                "value": 5,
+                "unit": "mg cm^-2"
+              }
+            }
+          },
+          {
+            "id": "chem_FeNO3",
+            "type": "chemical",
+            "name": "Fe(NO3)3·9H2O",
+            "aliases": [
+              "Fe(NO3)3·9H2O"
+            ],
+            "formula": "Fe(NO3)3·9H2O",
+            "properties": {
+              "concentration": {
+                "value": 0.28,
+                "unit": "mM"
+              }
+            }
+          },
+          {
+            "id": "chem_KOH",
+            "type": "chemical",
+            "name": "KOH",
+            "aliases": [
+              "KOH"
+            ],
+            "formula": "KOH",
+            "properties": {
+              "concentration": {
+                "value": 1.0,
+                "unit": "M"
+              }
+            }
+          },
+          {
+            "id": "chem_FeMoOOH_NF",
+            "type": "chemical",
+            "name": "FeMoOOH/NF",
+            "aliases": [
+              "FeMoOOH/NF",
+              "amorphous FeMo oxyhydroxide/NF"
+            ],
+            "composition": {
+              "Fe:Mo": {
+                "value": "3:7",
+                "unit": "mole ratio"
+              }
+            },
+            "properties": {
+              "double-layer_capacitance": {
+                "value": 469,
+                "unit": "mF cm^-2"
+              }
+            }
+          },
+          {
+            "id": "synth_step_1",
+            "type": "synthesis",
+            "name": "NF cleaning",
+            "procedure": "hydrochloric acid (2 M) was used to clean and remove impurities on the commercial nickel foam (NF, Kunshan Guangjiayuan New Materials Co. Ltd).",
+            "method": "acid cleaning",
+            "conditions": {
+              "HCl_concentration": {
+                "value": 2,
+                "unit": "M"
+              }
+            },
+            "source_text": "First, hydrochloric acid (2 M) was used to clean and remove impurities on the commercial nickel foam (NF..."
+          },
+          {
+            "id": "synth_step_2",
+            "type": "synthesis",
+            "name": "Hydrothermal Mo precursor deposition",
+            "procedure": "(NH4)6Mo7O24·4H2O (740 mg) was separately dispersed in 80 mL of deionized (DI) water. The mixture was transferred into an autoclave, and a piece of NF (4.5 cm × 4.5 cm) was vertically immersed into the solution and kept at 150 °C for 6 h. Then, Mo-based oxides were collected and dried.",
+            "method": "hydrothermal synthesis",
+            "conditions": {
+              "temperature": {
+                "value": 150,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 6,
+                "unit": "h"
+              }
+            },
+            "unit_operations": [
+              {
+                "id": "unit_op_2.1",
+                "name": "Precursor dispersion",
+                "method": "dispersion",
+                "conditions": {},
+                "procedure_snippet": "(NH4)6Mo7O24·4H2O (740 mg) was separately dispersed in 80 mL of deionized (DI) water."
+              },
+              {
+                "id": "unit_op_2.2",
+                "name": "Hydrothermal reaction",
+                "method": "hydrothermal",
+                "conditions": {
+                  "temperature": {
+                    "value": 150,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 6,
+                    "unit": "h"
+                  }
+                },
+                "procedure_snippet": "The mixture was transferred into an autoclave, and a piece of NF (4.5 cm × 4.5 cm) was vertically immersed into the solution and kept at 150 °C for 6 h."
+              },
+              {
+                "id": "unit_op_2.3",
+                "name": "Drying",
+                "method": "drying",
+                "conditions": {},
+                "procedure_snippet": "Then, Mo-based oxides were collected and dried."
+              }
+            ],
+            "source_text": "Then, (NH4)6Mo7O24·4H2O (740 mg) was separately dispersed in 80 mL of deionized (DI) water..."
+          },
+          {
+            "id": "synth_step_3",
+            "type": "synthesis",
+            "name": "Carbothermal shocking reduction",
+            "procedure": "Then, a rapid carbothermal shocking method (Joule-heat equipment: Hefei in situ technology Co., Ltd. China) and hydrogen reduction were applied to prepare MoO2/NF. A piece of Mo-based oxides (1 cm × 2 cm) was heated at 800 °C on a graphite heating plate for 133 seconds under Ar-H2 flow (Fig. S1, ESI†), and then, MoO2/NF (mass loading ∼5 mg cm^-2) was collected.",
+            "method": "carbothermal shocking",
+            "conditions": {
+              "temperature": {
+                "value": 800,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 133,
+                "unit": "s"
+              },
+              "atmosphere": {
+                "value": "Ar-H2",
+                "unit": "flow"
+              }
+            },
+            "unit_operations": [
+              {
+                "id": "unit_op_3.1",
+                "name": "Carbothermal shocking",
+                "method": "Joule heating",
+                "conditions": {
+                  "temperature": {
+                    "value": 800,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 133,
+                    "unit": "s"
+                  }
+                },
+                "procedure_snippet": "A piece of Mo-based oxides (1 cm × 2 cm) was heated at 800 °C on a graphite heating plate for 133 seconds under Ar-H2 flow"
+              }
+            ],
+            "source_text": "Then, a rapid carbothermal shocking method... and then, MoO2/NF (mass loading ∼5 mg cm^-2) was collected."
+          },
+          {
+            "id": "synth_step_4",
+            "type": "synthesis",
+            "name": "Anodic reconstruction to FeMoOOH",
+            "procedure": "A typical three-electrode system was used to prepare FeMoOOH/NF (Fig. S2, ESI†). Among them, a carbon rod and a Hg/HgO electrode (SCE) were used as the counter electrode and the reference electrode, respectively. Then, MoO2/NF was placed in 1.0 M KOH solution with 0.28 mM Fe(NO3)3·9H2O as the working electrode. Subsequently, electrochemical anodic reconstruction was performed at a constant voltage (0.87 V vs. Hg/HgO) of 2 h to obtain the amorphous FeMoOOH/NF electrocatalysts.",
+            "method": "anodic reconstruction",
+            "conditions": {
+              "voltage": {
+                "value": 0.87,
+                "unit": "V vs. Hg/HgO"
+              },
+              "time": {
+                "value": 2,
+                "unit": "h"
+              }
+            },
+            "unit_operations": [
+              {
+                "id": "unit_op_4.1",
+                "name": "Electrochemical reconstruction",
+                "method": "constant voltage electrolysis",
+                "conditions": {
+                  "voltage": {
+                    "value": 0.87,
+                    "unit": "V vs. Hg/HgO"
+                  },
+                  "time": {
+                    "value": 2,
+                    "unit": "h"
+                  }
+                },
+                "procedure_snippet": "electrochemical anodic reconstruction was performed at a constant voltage (0.87 V vs. Hg/HgO) of 2 h"
+              }
+            ],
+            "source_text": "A typical three-electrode system was used to prepare FeMoOOH/NF... to obtain the amorphous FeMoOOH/NF electrocatalysts."
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge_input_chem_NF_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_NF",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "support"
+            }
+          },
+          {
+            "id": "edge_output_synth_step_1_chem_NF",
+            "type": "synthesis_output",
+            "source_id": "synth_step_1",
+            "target_id": "chem_NF",
+            "properties": {
+              "form": "cleaned"
+            }
+          },
+          {
+            "id": "edge_input_chem_NF_synth_step_2",
+            "type": "synthesis_input",
+            "source_id": "chem_NF",
+            "target_id": "synth_step_2",
+            "properties": {
+              "role": "support"
+            }
+          },
+          {
+            "id": "edge_input_chem_Mo7O24_synth_step_2",
+            "type": "synthesis_input",
+            "source_id": "chem_Mo7O24",
+            "target_id": "synth_step_2",
+            "properties": {
+              "role": "precursor",
+              "amount": 740,
+              "unit": "mg"
+            }
+          }
+        ],
+        "id": "edge_input_chem_DI_water_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_DI_water",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "volume": 80,
+          "unit": "mL"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_MoO2_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_MoO2_NF",
+        "properties": {
+          "form": "Mo-based oxides (dried)"
+        }
+      },
+      {
+        "id": "edge_input_chem_MoO2_NF_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_MoO2_NF",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_MoO2_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_MoO2_NF",
+        "properties": {
+          "form": "reduced (mass loading 5 mg cm^-2)"
+        }
+      },
+      {
+        "id": "edge_input_chem_FeNO3_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_FeNO3",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_chem_FeMoOOH_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_FeMoOOH_NF",
+        "properties": {
+          "form": "amorphous electrocatalyst"
+        }
+      },
+      {
+        "id": "chem_MoOx_NF",
+        "type": "chemical",
+        "name": "MoOx/NF",
+        "aliases": [
+          "MoOx/NF"
+        ],
+        "formula": "MoOx"
+      },
+      {
+        "id": "chem_FeMoOOH_NF",
+        "type": "chemical",
+        "name": "FeMoOOH/NF",
+        "aliases": [
+          "amorphous FeMoOOH/NF",
+          "FeMoOOH/NF electrocatalyst"
+        ],
+        "formula": "FeMoOOH",
+        "composition": {
+          "Fe": {
+            "value": 3,
+            "unit": "mol%"
+          },
+          "Mo": {
+            "value": 7,
+            "unit": "mol%"
+          }
+        },
+        "properties": {
+          "double-layer capacitance": {
+            "value": 469,
+            "unit": "mF cm^-2"
+          }
+        },
+        "related_images": [
+          "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "FeMoOOH",
+            "properties": {
+              "description": "Iron molybdate oxyhydroxide",
+              "extracted_from_image": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+            },
+            "source_image_file": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_MoO2_NF",
+        "type": "chemical",
+        "name": "MoO2/NF",
+        "aliases": [
+          "MoO2/NF"
+        ],
+        "formula": "MoO2"
+      },
+      {
+        "id": "chem_RuO2_NF",
+        "type": "chemical",
+        "name": "RuO2/NF",
+        "aliases": [],
+        "formula": "RuO2/NF",
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_HCl_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_HCl",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "cleaning_agent",
+          "concentration": {
+            "value": 2,
+            "unit": "M"
+          }
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_FeMoOOH_NF",
+      "chem_MoO2_NF",
+      "chem_RuO2_NF"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_FeMoOOH_NF",
+        "type": "chemical",
+        "name": "FeMoOOH/NF",
+        "aliases": [
+          "amorphous FeMo oxyhydroxide/NF",
+          "reconstructed FeMoOOH/NF"
+        ],
+        "formula": "",
+        "properties": {
+          "double-layer capacitance": {
+            "value": 469,
+            "unit": "mF/cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_MoOx_NF",
+        "type": "chemical",
+        "name": "MoOx/NF",
+        "aliases": [
+          "MoO2/NF after reconstruction"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_MoO2_NF",
+        "type": "chemical",
+        "name": "MoO2/NF",
+        "aliases": [],
+        "formula": "MoO2/NF",
+        "properties": {
+          "double-layer capacitance": {
+            "value": 275,
+            "unit": "mF/cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_RuO2_NF",
+        "type": "chemical",
+        "name": "RuO2/NF",
+        "aliases": [],
+        "formula": "RuO2/NF",
+        "properties": {}
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "OER performance in 1.0 M KOH (no iR-compensation)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "MoO2/NF reconstructed",
+            "unit": ""
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "iR_correction": {
+            "value": "no iR-compensation",
+            "unit": ""
+          }
+        },
+        "results_json": {
+          "overpotential_at_100_mA/cm²": {
+            "value": 240,
+            "unit": "mV"
+          },
+          "overpotential_at_0.5_A/cm²": {
+            "value": 300,
+            "unit": "mV"
+          },
+          "overpotential_at_1.0_A/cm²": {
+            "value": 340,
+            "unit": "mV"
+          },
+          "overpotential_at_1.4_A/cm²": {
+            "value": 360,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 72.3,
+            "unit": "mV/dec"
+          },
+          "double-layer_capacitance": {
+            "value": 469,
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "The OER activity of FeMoOOH/NF only required 240 mV to reach 100 mA cm⁻²... low overpotential of 300 mV (@ 0.5 A cm⁻²), 340 mV (@ 1.0 A cm⁻²) and 360 mV (@ 1.4 A cm⁻²)... much smaller slope (72.3 mV dec⁻¹)... higher double-layer capacitance (Cdl) value (469 mF cm⁻²)"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "OER performance in alkaline simulated seawater (1.0 M KOH + 0.5 M NaCl)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.5 M NaCl",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_1.0_A/cm²": {
+            "value": 350,
+            "unit": "mV"
+          }
+        },
+        "source_text": "only 350 mV... were required for FeMoOOH/NF to achieve 1.0 A cm⁻² in alkaline simulated seawater (1.0 M KOH + 0.5 M NaCl)"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "OER performance in alkaline high Cl⁻ seawater (1.0 M KOH + 2.0 M NaCl)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 2.0 M NaCl",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_1.0_A/cm²": {
+            "value": 351,
+            "unit": "mV"
+          }
+        },
+        "source_text": "351 mV... in alkaline high Cl⁻ seawater (1.0 M KOH + 2.0 M NaCl)"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "OER performance in alkaline seawater (1.0 M KOH + seawater)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + seawater",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_1.0_A/cm²": {
+            "value": 420,
+            "unit": "mV"
+          }
+        },
+        "source_text": "420 mV were required... in alkaline seawater (1.0 M KOH + seawater)"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "OER chronopotentiometry stability at 1.5 A/cm²",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "current_density": {
+            "value": 1.5,
+            "unit": "A/cm²"
+          },
+          "electrolyte": {
+            "value": "alkaline seawater",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "chronopotentiometry",
+            "unit": ""
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": 1000,
+            "unit": "h"
+          },
+          "overpotential_change": {
+            "value": "slight change",
+            "unit": ""
+          }
+        },
+        "source_text": "After working at 1.5 A cm⁻² for 1000 h, FeMoOOH/NF showed a slight change of overpotential"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_MoOx_NF",
+        "description": "OER performance comparison in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_100_mA/cm²": {
+            "value": 450,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 113.8,
+            "unit": "mV/dec"
+          },
+          "double-layer_capacitance": {
+            "value": 275,
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "MoOx/NF (450 mV)... Tafel slope... 113.8 mV dec⁻¹... (275 mF cm⁻²)"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_MoO2_NF",
+        "description": "OER performance comparison in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_100_mA/cm²": {
+            "value": 420,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 113.1,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "MoO2/NF (420 mV)... 113.1 mV dec⁻¹"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_RuO2_NF",
+        "description": "OER performance comparison in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_100_mA/cm²": {
+            "value": 430,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 194.0,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "RuO2/NF (430 mV)... 194.0 mV dec⁻¹"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "Faradaic efficiency measurement for OER",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline seawater",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "faradaic_efficiency": {
+            "value": 100,
+            "unit": "%"
+          }
+        },
+        "source_text": "high selectivity (faradaic efficiency of 100 %)"
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "Overall water splitting in 1.0 M KOH two-electrode cell",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OWS",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "cathode": {
+            "value": "Co2Mo3O8/MoO2/NF",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_100_mA/cm²": {
+            "value": 1.53,
+            "unit": "V"
+          },
+          "cell_voltage_at_1.0_A/cm²": {
+            "value": 1.75,
+            "unit": "V"
+          }
+        },
+        "source_text": "Co2Mo3O8/MoO2/NF // FeMoOOH/NF exhibited the low cell voltage of 1.53 V (1.0 M KOH)... 1.75 V at 1.0 A cm⁻² in 1.0 M KOH"
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "Overall seawater splitting in alkaline seawater two-electrode cell",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OWS",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + seawater",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "cathode": {
+            "value": "Co2Mo3O8/MoO2/NF",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_100_mA/cm²": {
+            "value": 1.61,
+            "unit": "V"
+          },
+          "cell_voltage_at_1.0_A/cm²": {
+            "value": 1.89,
+            "unit": "V"
+          }
+        },
+        "source_text": "1.61 V (1.0 M KOH + seawater)... 1.89 V at 1.0 A cm⁻² in 1.0 M KOH seawater solution"
+      },
+      {
+        "id": "test_12",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "AEM electrolyzer performance at 65°C in alkaline solution",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OWS",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline solution",
+            "unit": "solution"
+          },
+          "temperature": {
+            "value": 65,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "AEM electrolyzer",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_1.0_A/cm²": {
+            "value": 1.76,
+            "unit": "V"
+          },
+          "electricity_consumption": {
+            "value": 3.94,
+            "unit": "kWh/Nm³"
+          },
+          "electricity_to_hydrogen_efficiency": {
+            "value": 89.7,
+            "unit": "%"
+          }
+        },
+        "source_text": "potentials... in the alkaline solution (65 °C) were 1.76 V... unit electricity consumption per cubic meter hydrogen (3.94 kW h Nm⁻³)... η_ETH, 89.7 %"
+      },
+      {
+        "id": "test_13",
+        "type": "testing",
+        "catalyst_id": "chem_FeMoOOH_NF",
+        "description": "AEM electrolyzer performance at 65°C in alkaline seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OWS",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline seawater",
+            "unit": "solution"
+          },
+          "temperature": {
+            "value": 65,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "AEM electrolyzer",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_1.0_A/cm²": {
+            "value": 1.8,
+            "unit": "V"
+          },
+          "electricity_consumption": {
+            "value": 4.04,
+            "unit": "kWh/Nm³"
+          },
+          "electricity_to_hydrogen_efficiency": {
+            "value": 87.6,
+            "unit": "%"
+          }
+        },
+        "source_text": "alkaline seawater electrolyte (65 °C) were 1.80 V... 4.04 kW h Nm⁻³... 87.6%"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_2",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_3",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_4",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_5",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_MoOx_NF_test_6",
+        "type": "tested_in",
+        "source_id": "chem_MoOx_NF",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_MoO2_NF_test_7",
+        "type": "tested_in",
+        "source_id": "chem_MoO2_NF",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RuO2_NF_test_8",
+        "type": "tested_in",
+        "source_id": "chem_RuO2_NF",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_9",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_10",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_11",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_12",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_12",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeMoOOH_NF_test_13",
+        "type": "tested_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "test_13",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_FeMoOOH_NF",
+        "type": "chemical",
+        "name": "FeMoOOH/NF",
+        "aliases": [
+          "amorphous FeMoOOH/NF",
+          "FeMoOOH/NF electrocatalyst"
+        ],
+        "formula": "FeMoOOH",
+        "composition": {
+          "Fe": {
+            "value": 3,
+            "unit": "mol%"
+          },
+          "Mo": {
+            "value": 7,
+            "unit": "mol%"
+          }
+        },
+        "properties": {
+          "double-layer capacitance": {
+            "value": 469,
+            "unit": "mF cm^-2"
+          }
+        }
+      },
+      {
+        "id": "chem_MoO2_NF",
+        "type": "chemical",
+        "name": "MoO2/NF",
+        "aliases": [
+          "MoO2/NF"
+        ],
+        "formula": "MoO2"
+      },
+      {
+        "id": "chem_MoOx_NF",
+        "type": "chemical",
+        "name": "MoOx/NF",
+        "aliases": [
+          "MoOx/NF"
+        ],
+        "formula": "MoOx"
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "ICP-MS",
+        "is_reported": true,
+        "characterization_summary": "ICP-MS shows Mo leaching of 4.2 mg L^-1 for FeMoOOH/NF and 8.7 mg L^-1 for MoOx/NF after 2 h reconstruction.",
+        "evidence_snippet": "The corresponding inductively coupled plasma-mass spectrometry (ICP-MS) test showed that the Mo content in the electrolyte was 8.7 mg L^-1 after 2 hours of testing. ... The corresponding Mo content in the electrolyte solution was 4.2 mg L^-1."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "XRD shows FeMoOOH/NF is amorphous with disappearance of original MoO2 peaks after reconstruction.",
+        "evidence_snippet": "X-ray diffraction (XRD) of FeMoOOH/NF with different reconstruction times (0 h, 0.5 h and 2 h) revealed that the crystal structure of FeMoOOH/NF was significantly altered and the original MoO2 peaks disappeared."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "TEM shows FeMoOOH/NF evolves from dense nanosheet structure at 0 h to loose surface structure at 0.5 h and deep reconstructed structure at 2 h.",
+        "evidence_snippet": "The surface morphology of FeMoOOH/NF was studied using scanning electron microscopy (SEM)/ex situ transmission electron microscopy (TEM)."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "is_reported": true,
+        "characterization_summary": "HRTEM confirms amorphous nanosheet structure of FeMoOOH/NF.",
+        "evidence_snippet": "The high-resolution TEM (HRTEM) image (Fig. 2g) showed a nanosheet structure. An amorphous state structure of FeMoOOH/NF (Fig. 2g and h) was consistent with the XRD results."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "SAED",
+        "is_reported": true,
+        "characterization_summary": "SAED pattern confirms amorphous structure of FeMoOOH/NF.",
+        "evidence_snippet": "An amorphous state structure of FeMoOOH/NF (Fig. 2g and h) was consistent with the XRD results."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "EDX",
+        "is_reported": true,
+        "characterization_summary": "EDX mapping shows uniform distribution of Mo, O, and Fe in amorphous FeMoOOH/NF.",
+        "evidence_snippet": "The energy-dispersive X-ray spectroscopy (EDX) mapping images (Fig. 2i and j) of FeMoOOH/NF revealed the uniform distribution of Mo, O and Fe."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "Raman",
+        "is_reported": true,
+        "characterization_summary": "In situ Raman shows Mo=O peak at 891 cm^-1 for MoO4^2-, Mo–O–Mo/Fe at 797 cm^-1, and M–OOH peaks at 472 and 552 cm^-1 in FeMoOOH/NF.",
+        "evidence_snippet": "In situ Raman spectroscopy was performed from 0 to 2 h to investigate the dynamic reconstruction process of FeMoOOH/NF."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "Mo 3d shifts from Mo^4+ (229.6/233.6 eV) to Mo^6+ (232.3/235.6 eV); O 1s shows Mo–O–Fe bond at 531.5 eV increasing to 33.5% at 2 h; Fe 2p shows Fe^3+ at 708.8/720.4 eV.",
+        "evidence_snippet": "The two peaks (Fig. 3d) in the Mo 3d spectrum in MoO2/NF were from Mo^4+ (229.6/233.6 eV) ... as the reconstruction time increased, the peak of Mo^4+ completely converted into the more stable Mo^6+. ... a new Mo–O–Fe bond peak was found at 531.5 eV, which gradually increased from 27.8% (0.5 h) to 33.5% (2 h)."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "ICP",
+        "is_reported": true,
+        "characterization_summary": "ICP shows stable Fe:Mo mole ratio of 3:7 in FeMoOOH/NF after reconstruction.",
+        "evidence_snippet": "Moreover, the corresponding ICP test (Fig. 3g) of FeMoOOH/NF from 0 to 2 h exhibited that the mole ratio of Fe : Mo was about 3 : 7 and then it remained stable."
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "Double-layer capacitance Cdl of FeMoOOH/NF is 469 mF cm^-2, higher than MoOx/NF (275 mF cm^-2), indicating high ECSA.",
+        "evidence_snippet": "FeMoOOH/NF had a higher double-layer capacitance (Cdl) value (469 mF cm^-2) than MoOx/NF (275 mF cm^-2), suggesting that the deep reconstructed FeMoOOH/NF possessed a high electrochemically active surface area (ECSA)."
+      },
+      {
+        "id": "n1",
+        "type": "characterization",
+        "name": "Chronopotentiometry Plot",
+        "properties": {
+          "description": "Potential vs Time plot",
+          "x_axis": "Time (h)",
+          "y_axis": "Potential (V)",
+          "x_range": "0 to 1000 h",
+          "y_range": "0 to 1.6 V",
+          "extracted_from_image": "ea4feba982b8ed6ba527cf3119ad2d68d81cbd8d49ec75005eb76e5e57702bdf.jpg"
+        },
+        "source_image_file": "ea4feba982b8ed6ba527cf3119ad2d68d81cbd8d49ec75005eb76e5e57702bdf.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "condition",
+        "name": "1000 mA cm⁻²",
+        "properties": {
+          "current_density": "1000 mA/cm²",
+          "extracted_from_image": "ea4feba982b8ed6ba527cf3119ad2d68d81cbd8d49ec75005eb76e5e57702bdf.jpg"
+        },
+        "source_image_file": "ea4feba982b8ed6ba527cf3119ad2d68d81cbd8d49ec75005eb76e5e57702bdf.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "condition",
+        "name": "1.5 A cm⁻²",
+        "properties": {
+          "current_density": "1.5 A/cm²",
+          "extracted_from_image": "ea4feba982b8ed6ba527cf3119ad2d68d81cbd8d49ec75005eb76e5e57702bdf.jpg"
+        },
+        "source_image_file": "ea4feba982b8ed6ba527cf3119ad2d68d81cbd8d49ec75005eb76e5e57702bdf.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "material",
+        "name": "Electrode Material",
+        "properties": {
+          "context": "Tested under high current density",
+          "extracted_from_image": "ea4feba982b8ed6ba527cf3119ad2d68d81cbd8d49ec75005eb76e5e57702bdf.jpg"
+        },
+        "source_image_file": "ea4feba982b8ed6ba527cf3119ad2d68d81cbd8d49ec75005eb76e5e57702bdf.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "chemical",
+        "name": "O18 O16",
+        "properties": {
+          "description": "Oxygen-18 Oxygen-16 mixed labeled species",
+          "m/z": "34",
+          "extracted_from_image": "e9d8526e7c32dabdc808cbf82bf08afab7b0ec51ae3d6e450e2b9725ce7a0193.jpg"
+        },
+        "source_image_file": "e9d8526e7c32dabdc808cbf82bf08afab7b0ec51ae3d6e450e2b9725ce7a0193.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "chemical",
+        "name": "O18 O16",
+        "properties": {
+          "description": "Oxygen-18 Oxygen-16 mixed labeled species (secondary peak)",
+          "m/z": "34",
+          "extracted_from_image": "e9d8526e7c32dabdc808cbf82bf08afab7b0ec51ae3d6e450e2b9725ce7a0193.jpg"
+        },
+        "source_image_file": "e9d8526e7c32dabdc808cbf82bf08afab7b0ec51ae3d6e450e2b9725ce7a0193.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "chemical",
+        "name": "O18 O18",
+        "properties": {
+          "description": "Oxygen-18 doubly labeled species",
+          "m/z": "36",
+          "extracted_from_image": "e9d8526e7c32dabdc808cbf82bf08afab7b0ec51ae3d6e450e2b9725ce7a0193.jpg"
+        },
+        "source_image_file": "e9d8526e7c32dabdc808cbf82bf08afab7b0ec51ae3d6e450e2b9725ce7a0193.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "characterization",
+        "name": "Mass Spectrum",
+        "properties": {
+          "type": "MS",
+          "range": "30-38 m/z",
+          "intensity_unit": "(a.u.)",
+          "extracted_from_image": "e9d8526e7c32dabdc808cbf82bf08afab7b0ec51ae3d6e450e2b9725ce7a0193.jpg"
+        },
+        "source_image_file": "e9d8526e7c32dabdc808cbf82bf08afab7b0ec51ae3d6e450e2b9725ce7a0193.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "condition",
+        "name": "1.4 A/cm²",
+        "properties": {
+          "current_density": "1.4 A/cm²",
+          "extracted_from_image": "e2826c862e94b8257c05a23fc4b82a5e51f6489b0e609d58c0e8c6c41f96f42f.jpg"
+        },
+        "source_image_file": "e2826c862e94b8257c05a23fc4b82a5e51f6489b0e609d58c0e8c6c41f96f42f.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "peak",
+        "name": "Mo-O-Fe Peak",
+        "properties": {
+          "binding_energy": "~532-534 eV",
+          "intensity": "high",
+          "extracted_from_image": "b5a254c13b212283dbf0b46ea9e8d707887e155bdda45dc659230d12da7399f9.jpg"
+        },
+        "source_image_file": "b5a254c13b212283dbf0b46ea9e8d707887e155bdda45dc659230d12da7399f9.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "peak",
+        "name": "Metal-O Peak",
+        "properties": {
+          "binding_energy": "~528-530 eV",
+          "intensity": "high",
+          "extracted_from_image": "b5a254c13b212283dbf0b46ea9e8d707887e155bdda45dc659230d12da7399f9.jpg"
+        },
+        "source_image_file": "b5a254c13b212283dbf0b46ea9e8d707887e155bdda45dc659230d12da7399f9.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "process",
+        "name": "Mo dissolution",
+        "properties": {
+          "extracted_from_image": "e31c73d75b25819b5f32d35d5e6357859eaf749b8850806a71a2d23015c477ff.jpg"
+        },
+        "source_image_file": "e31c73d75b25819b5f32d35d5e6357859eaf749b8850806a71a2d23015c477ff.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "process",
+        "name": "Fe substitution",
+        "properties": {
+          "extracted_from_image": "e31c73d75b25819b5f32d35d5e6357859eaf749b8850806a71a2d23015c477ff.jpg"
+        },
+        "source_image_file": "e31c73d75b25819b5f32d35d5e6357859eaf749b8850806a71a2d23015c477ff.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "process",
+        "name": "Surface Reconstruction",
+        "properties": {
+          "extracted_from_image": "e31c73d75b25819b5f32d35d5e6357859eaf749b8850806a71a2d23015c477ff.jpg"
+        },
+        "source_image_file": "e31c73d75b25819b5f32d35d5e6357859eaf749b8850806a71a2d23015c477ff.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "Co-Ru/RuO N CN",
+        "properties": {
+          "extracted_from_image": "7b3bee96b0a038f78d7cc4a5c95f79f56d4a6604f83d03177966173ee2528b5e.jpg"
+        },
+        "source_image_file": "7b3bee96b0a038f78d7cc4a5c95f79f56d4a6604f83d03177966173ee2528b5e.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chemical",
+        "name": "RuS AS-Mo2N NF",
+        "properties": {
+          "extracted_from_image": "7b3bee96b0a038f78d7cc4a5c95f79f56d4a6604f83d03177966173ee2528b5e.jpg"
+        },
+        "source_image_file": "7b3bee96b0a038f78d7cc4a5c95f79f56d4a6604f83d03177966173ee2528b5e.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "description": "Oxygen molecule",
+          "extracted_from_image": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+        },
+        "source_image_file": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "description": "Water molecule",
+          "extracted_from_image": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+        },
+        "source_image_file": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+      },
+      {
+        "id": "loose_structure",
+        "type": "structure",
+        "name": "Loose structure",
+        "properties": {
+          "description": "Loose structure of FeMoOOH",
+          "extracted_from_image": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+        },
+        "source_image_file": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+      },
+      {
+        "id": "Ni_substrate",
+        "type": "material",
+        "name": "Ni substrate",
+        "properties": {
+          "description": "Nickel substrate",
+          "extracted_from_image": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+        },
+        "source_image_file": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+      },
+      {
+        "id": "e-",
+        "type": "chemical",
+        "name": "e⁻",
+        "properties": {
+          "description": "Electron",
+          "extracted_from_image": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+        },
+        "source_image_file": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+      },
+      {
+        "id": "deep_reconstruction",
+        "type": "process",
+        "name": "Deep Reconstruction",
+        "properties": {
+          "description": "Deep reconstruction process",
+          "extracted_from_image": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+        },
+        "source_image_file": "34bb490ceb52a10e12df1e78bfad4758c496a5f499778f5165460c499f0b2ff2.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_1",
+        "type": "chemical",
+        "name": "MoO2:OH",
+        "properties": {
+          "description": "Surface species on MoO2",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_2",
+        "type": "chemical",
+        "name": "OH-",
+        "properties": {
+          "description": "Hydroxide ion",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_3",
+        "type": "chemical",
+        "name": "Mo-ion",
+        "properties": {
+          "description": "Leached molybdenum ion",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_4",
+        "type": "region",
+        "name": "CDL",
+        "properties": {
+          "description": "Cationic Double Layer",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_5",
+        "type": "region",
+        "name": "CL",
+        "properties": {
+          "description": "Compact Layer",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_6",
+        "type": "region",
+        "name": "Electrolyte",
+        "properties": {
+          "description": "Electrolyte solution",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_7",
+        "type": "element",
+        "name": "Mo",
+        "properties": {
+          "color": "blue",
+          "description": "Molybdenum atoms",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_8",
+        "type": "element",
+        "name": "Fe",
+        "properties": {
+          "color": "yellow",
+          "description": "Iron atoms",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_9",
+        "type": "element",
+        "name": "O",
+        "properties": {
+          "color": "red",
+          "description": "Oxygen atoms",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f_10",
+        "type": "defect",
+        "name": "Vacancy",
+        "properties": {
+          "color": "white circle",
+          "description": "Atomic vacancy",
+          "extracted_from_image": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+        },
+        "source_image_file": "36dc3f08d82d8b9784b00e2d167ddda0e3994e0401472a56de1f9d1b192d893f.jpg"
+      },
+      {
+        "id": "electrochemical_cell",
+        "type": "apparatus",
+        "name": "Electrochemical Cell",
+        "properties": {
+          "description": "Custom-built H-type or two-compartment electrochemical cell with transparent (likely acrylic or glass) body",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "color": "green",
+          "position": "left",
+          "bubbles": "present",
+          "extracted_from_image": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+        },
+        "source_image_file": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+      },
+      {
+        "id": "cathode",
+        "type": "electrode",
+        "name": "Cathode",
+        "properties": {
+          "color": "blue",
+          "position": "right",
+          "bubbles": "present",
+          "extracted_from_image": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+        },
+        "source_image_file": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+      },
+      {
+        "id": "voltage_source",
+        "type": "component",
+        "name": "Voltage Source",
+        "properties": {
+          "symbol": "V",
+          "color": "blue",
+          "connection": "top of electrodes",
+          "extracted_from_image": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+        },
+        "source_image_file": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "chemical",
+        "name": "Electrolyte",
+        "properties": {
+          "description": "Liquid electrolyte in electrochemical cell",
+          "extracted_from_image": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+        },
+        "source_image_file": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+      },
+      {
+        "id": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a_gas_bubbles_anode",
+        "type": "phenomenon",
+        "name": "Gas Bubbles at Anode",
+        "properties": {
+          "location": "anode surface",
+          "indication": "electrochemical reaction (likely O2 evolution)",
+          "extracted_from_image": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+        },
+        "source_image_file": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+      },
+      {
+        "id": "gas_bubbles_cathode",
+        "type": "phenomenon",
+        "name": "Gas Bubbles at Cathode",
+        "properties": {
+          "location": "cathode surface",
+          "indication": "electrochemical reaction (likely H2 evolution)",
+          "extracted_from_image": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+        },
+        "source_image_file": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+      },
+      {
+        "id": "glass_container",
+        "type": "component",
+        "name": "Glass Cell Container",
+        "properties": {
+          "material": "glass",
+          "transparency": "clear",
+          "extracted_from_image": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+        },
+        "source_image_file": "4481c1cd174686de6b1d8f38389d37d9087e131fec7b9527bedc1282d4a99b1a.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node1",
+        "type": "characterization",
+        "name": "CV Spectrum at 1.2V",
+        "properties": {
+          "voltage": "1.2V",
+          "color": "orange",
+          "data_type": "cyclic voltammetry",
+          "unit": "a.u.",
+          "x_range": [
+            800,
+            2000
+          ],
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node2",
+        "type": "characterization",
+        "name": "CV Spectrum at 1.3V",
+        "properties": {
+          "voltage": "1.3V",
+          "color": "green",
+          "data_type": "cyclic voltammetry",
+          "unit": "a.u.",
+          "x_range": [
+            800,
+            2000
+          ],
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node3",
+        "type": "characterization",
+        "name": "CV Spectrum at 1.4V",
+        "properties": {
+          "voltage": "1.4V",
+          "color": "blue",
+          "data_type": "cyclic voltammetry",
+          "unit": "a.u.",
+          "x_range": [
+            800,
+            2000
+          ],
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node4",
+        "type": "characterization",
+        "name": "CV Spectrum at 1.5V",
+        "properties": {
+          "voltage": "1.5V",
+          "color": "black",
+          "data_type": "cyclic voltammetry",
+          "unit": "a.u.",
+          "x_range": [
+            800,
+            2000
+          ],
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node5",
+        "type": "characterization",
+        "name": "CV Spectrum at 1.6V",
+        "properties": {
+          "voltage": "1.6V",
+          "color": "yellow",
+          "data_type": "cyclic voltammetry",
+          "unit": "a.u.",
+          "x_range": [
+            800,
+            2000
+          ],
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node6",
+        "type": "characterization",
+        "name": "CV Spectrum at 1.7V",
+        "properties": {
+          "voltage": "1.7V",
+          "color": "dark blue",
+          "data_type": "cyclic voltammetry",
+          "unit": "a.u.",
+          "x_range": [
+            800,
+            2000
+          ],
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node7",
+        "type": "chemical",
+        "name": "O-O",
+        "properties": {
+          "description": "O-O species (likely peroxide or superoxide)",
+          "region": "highlighted green",
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node8",
+        "type": "chemical",
+        "name": "OOH",
+        "properties": {
+          "description": "OOH species (hydroperoxide)",
+          "region": "highlighted green",
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7_node9",
+        "type": "chart",
+        "name": "Cyclic Voltammetry Plot",
+        "properties": {
+          "label": "C",
+          "x_axis": "Wavenumber (cm⁻¹)",
+          "y_axis": "Absorbance (a.u.)",
+          "x_range": [
+            800,
+            2000
+          ],
+          "technique": "in situ spectroelectrochemistry",
+          "extracted_from_image": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+        },
+        "source_image_file": "58bb065a642b794208e8e6ac87be958d640898a4d202bb82efbc89d65ee93df7.jpg"
+      },
+      {
+        "id": "image",
+        "type": "image",
+        "name": "SEM image labeled d",
+        "properties": {
+          "label": "d",
+          "scale": "100 nm",
+          "extracted_from_image": "7514a2541e53dc362b6c80dd353d5af1ceb5878fa241a4c3c82c55573af1a314.jpg"
+        },
+        "source_image_file": "7514a2541e53dc362b6c80dd353d5af1ceb5878fa241a4c3c82c55573af1a314.jpg"
+      },
+      {
+        "id": "structure",
+        "type": "material_structure",
+        "name": "Dense structure",
+        "properties": {
+          "description": "Dense microstructure indicated by yellow arrow",
+          "extracted_from_image": "7514a2541e53dc362b6c80dd353d5af1ceb5878fa241a4c3c82c55573af1a314.jpg"
+        },
+        "source_image_file": "7514a2541e53dc362b6c80dd353d5af1ceb5878fa241a4c3c82c55573af1a314.jpg"
+      },
+      {
+        "id": "micrograph",
+        "type": "characterization",
+        "name": "SEM micrograph",
+        "properties": {
+          "technique": "Scanning Electron Microscopy",
+          "scale_bar": "100 nm",
+          "features": "dense structure, edge view",
+          "extracted_from_image": "7514a2541e53dc362b6c80dd353d5af1ceb5878fa241a4c3c82c55573af1a314.jpg"
+        },
+        "source_image_file": "7514a2541e53dc362b6c80dd353d5af1ceb5878fa241a4c3c82c55573af1a314.jpg"
+      },
+      {
+        "id": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae_node1",
+        "type": "chemical",
+        "name": "FeMoOOH",
+        "properties": {
+          "description": "Iron molybdate hydroxide",
+          "extracted_from_image": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae.jpg"
+        },
+        "source_image_file": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae.jpg"
+      },
+      {
+        "id": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae_node2",
+        "type": "chemical",
+        "name": "MoOx",
+        "properties": {
+          "description": "Molybdenum oxide",
+          "extracted_from_image": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae.jpg"
+        },
+        "source_image_file": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae.jpg"
+      },
+      {
+        "id": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae_node3",
+        "type": "chemical",
+        "name": "Cl-",
+        "properties": {
+          "description": "Chloride ion",
+          "extracted_from_image": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae.jpg"
+        },
+        "source_image_file": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae.jpg"
+      },
+      {
+        "id": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae_node4",
+        "type": "characterization",
+        "name": "Free Energy vs Wavenumber Plot",
+        "properties": {
+          "x_axis": "Wavenumber (cm⁻¹)",
+          "y_axis": "Free Energy (eV)",
+          "data_points": [
+            "-1.48 eV",
+            "-2.42 eV"
+          ],
+          "figure_label": "f",
+          "extracted_from_image": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae.jpg"
+        },
+        "source_image_file": "77813dceab9787960c52cf995f37d8e8574f57f70c9bce315cfd09edbbff46ae.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "chemical",
+        "name": "Co-RuO NF",
+        "properties": {
+          "extracted_from_image": "7b3bee96b0a038f78d7cc4a5c95f79f56d4a6604f83d03177966173ee2528b5e.jpg"
+        },
+        "source_image_file": "7b3bee96b0a038f78d7cc4a5c95f79f56d4a6604f83d03177966173ee2528b5e.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "characterization",
+        "name": "Current Density Plot",
+        "properties": {
+          "y_axis": "Current density (mA cm^-2)",
+          "y_max": 1500,
+          "x_axis": "Overpotential (mV)",
+          "extracted_from_image": "7b3bee96b0a038f78d7cc4a5c95f79f56d4a6604f83d03177966173ee2528b5e.jpg"
+        },
+        "source_image_file": "7b3bee96b0a038f78d7cc4a5c95f79f56d4a6604f83d03177966173ee2528b5e.jpg"
+      },
+      {
+        "id": "d1",
+        "type": "data_point",
+        "name": "FeMoOOH/NF performance",
+        "properties": {
+          "current_density": 84.3,
+          "unit": "mA cm⁻²",
+          "extracted_from_image": "8bb077d3c89bc4ee12c360bf42fb504b4e37402e459e20c53760b922a0fd72b6.jpg"
+        },
+        "source_image_file": "8bb077d3c89bc4ee12c360bf42fb504b4e37402e459e20c53760b922a0fd72b6.jpg"
+      },
+      {
+        "id": "d2",
+        "type": "data_point",
+        "name": "Raney Ni/NF performance",
+        "properties": {
+          "current_density": 60,
+          "unit": "mA cm⁻²",
+          "extracted_from_image": "8bb077d3c89bc4ee12c360bf42fb504b4e37402e459e20c53760b922a0fd72b6.jpg"
+        },
+        "source_image_file": "8bb077d3c89bc4ee12c360bf42fb504b4e37402e459e20c53760b922a0fd72b6.jpg"
+      },
+      {
+        "id": "d3",
+        "type": "data_point",
+        "name": "Pt black performance",
+        "properties": {
+          "current_density": 910,
+          "unit": "mA cm⁻²",
+          "extracted_from_image": "8bb077d3c89bc4ee12c360bf42fb504b4e37402e459e20c53760b922a0fd72b6.jpg"
+        },
+        "source_image_file": "8bb077d3c89bc4ee12c360bf42fb504b4e37402e459e20c53760b922a0fd72b6.jpg"
+      },
+      {
+        "id": "AEM",
+        "type": "chemical",
+        "name": "AEM",
+        "properties": {
+          "description": "Anionic Exchange Membrane",
+          "color": "red",
+          "configuration": "high frequency local configuration",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "LM",
+        "type": "chemical",
+        "name": "LM",
+        "properties": {
+          "description": "Low frequency configuration",
+          "color": "blue",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "MOH",
+        "type": "chemical",
+        "name": "M-OH",
+        "properties": {
+          "description": "Metal-Hydroxyl group",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "MO",
+        "type": "chemical",
+        "name": "M-O",
+        "properties": {
+          "description": "Metal-Oxygen bond",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "LatticeO",
+        "type": "chemical",
+        "name": "Lattice Oxygen",
+        "properties": {
+          "description": "Oxygen in the lattice",
+          "symbol": "red circle",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "AdsO",
+        "type": "chemical",
+        "name": "Adsorbed Oxygen",
+        "properties": {
+          "description": "Adsorbed oxygen species",
+          "symbol": "green circle",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "OVac",
+        "type": "chemical",
+        "name": "Oxygen Vacancy",
+        "properties": {
+          "description": "Oxygen vacancy defect",
+          "symbol": "black square",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "H2Oe",
+        "type": "chemical",
+        "name": "H2O(e)",
+        "properties": {
+          "description": "Electrophilic water",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "H2On",
+        "type": "chemical",
+        "name": "H2O(n)",
+        "properties": {
+          "description": "Nucleophilic water",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "OH",
+        "type": "chemical",
+        "name": "OH",
+        "properties": {
+          "description": "Hydroxyl group",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "e",
+        "type": "chemical",
+        "name": "e-",
+        "properties": {
+          "description": "Electron",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "Modulation",
+        "type": "process",
+        "name": "Local Configuration Modulation",
+        "properties": {
+          "description": "Transition from AEM to LM",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "Figure",
+        "type": "characterization",
+        "name": "Schematic Diagram",
+        "properties": {
+          "description": "Illustration of AEM to LM modulation with labeled species",
+          "extracted_from_image": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+        },
+        "source_image_file": "ac81207946776851719b4e8fe465b86d76840330d235a9cc1c1b99c3d046f979.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "Tafel Plot",
+        "properties": {
+          "x_axis": "log|j| (mA cm⁻²)",
+          "y_axis": "Overpotential (V vs RHE)",
+          "reference": "RHE",
+          "extracted_from_image": "c0294e944da703874a76c3e0758a9eba2b66c6d1134d806685190e9c98f51f22.jpg"
+        },
+        "source_image_file": "c0294e944da703874a76c3e0758a9eba2b66c6d1134d806685190e9c98f51f22.jpg"
+      },
+      {
+        "id": "e1",
+        "type": "interaction",
+        "name": "π-donation",
+        "properties": {
+          "description": "π-donation interaction",
+          "extracted_from_image": "c10efbf215bd11598035980c8219fce51a02d1abab9132f8e85430737dd74fd3.jpg"
+        },
+        "source_image_file": "c10efbf215bd11598035980c8219fce51a02d1abab9132f8e85430737dd74fd3.jpg"
+      },
+      {
+        "id": "e2",
+        "type": "interaction",
+        "name": "π-donation",
+        "properties": {
+          "description": "π-donation interaction",
+          "extracted_from_image": "c10efbf215bd11598035980c8219fce51a02d1abab9132f8e85430737dd74fd3.jpg"
+        },
+        "source_image_file": "c10efbf215bd11598035980c8219fce51a02d1abab9132f8e85430737dd74fd3.jpg"
+      },
+      {
+        "id": "e3",
+        "type": "interaction",
+        "name": "π-donation",
+        "properties": {
+          "description": "π-donation interaction",
+          "extracted_from_image": "c10efbf215bd11598035980c8219fce51a02d1abab9132f8e85430737dd74fd3.jpg"
+        },
+        "source_image_file": "c10efbf215bd11598035980c8219fce51a02d1abab9132f8e85430737dd74fd3.jpg"
+      },
+      {
+        "id": "e4",
+        "type": "interaction",
+        "name": "Repulsion",
+        "properties": {
+          "description": "Repulsive interaction",
+          "extracted_from_image": "c10efbf215bd11598035980c8219fce51a02d1abab9132f8e85430737dd74fd3.jpg"
+        },
+        "source_image_file": "c10efbf215bd11598035980c8219fce51a02d1abab9132f8e85430737dd74fd3.jpg"
+      },
+      {
+        "id": "electrolyte_1m_koh",
+        "type": "chemical",
+        "name": "1.0 M KOH",
+        "properties": {
+          "concentration": "1.0 M",
+          "components": [
+            "KOH"
+          ],
+          "extracted_from_image": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+        },
+        "source_image_file": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+      },
+      {
+        "id": "electrolyte_seawater",
+        "type": "chemical",
+        "name": "Seawater",
+        "properties": {
+          "description": "Natural seawater",
+          "extracted_from_image": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+        },
+        "source_image_file": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+      },
+      {
+        "id": "electrolyte_1m_koh_seawater",
+        "type": "chemical",
+        "name": "1.0 M KOH + Seawater",
+        "properties": {
+          "components": [
+            "1.0 M KOH",
+            "Seawater"
+          ],
+          "extracted_from_image": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+        },
+        "source_image_file": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+      },
+      {
+        "id": "electrolyte_1m_koh_0.5m_nacl",
+        "type": "chemical",
+        "name": "1.0 M KOH + 0.5 M NaCl",
+        "properties": {
+          "components": [
+            "1.0 M KOH",
+            "0.5 M NaCl"
+          ],
+          "extracted_from_image": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+        },
+        "source_image_file": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+      },
+      {
+        "id": "electrolyte_1m_koh_2m_nacl",
+        "type": "chemical",
+        "name": "1.0 M KOH + 2.0 M NaCl",
+        "properties": {
+          "components": [
+            "1.0 M KOH",
+            "2.0 M NaCl"
+          ],
+          "extracted_from_image": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+        },
+        "source_image_file": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+      },
+      {
+        "id": "chart_lsv",
+        "type": "characterization",
+        "name": "LSV Curves",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Potential (V)",
+          "y_axis": "Current Density (mA/cm²)",
+          "range_x": [
+            1.2,
+            2.0
+          ],
+          "range_y": [
+            0,
+            1500
+          ],
+          "extracted_from_image": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+        },
+        "source_image_file": "cf530f204e3cdde198a6f92973bdb7341dee367fc2d66ccd9d694d0aca5aa9d9.jpg"
+      },
+      {
+        "id": "p4",
+        "type": "process",
+        "name": "iv) OH bridging",
+        "properties": {
+          "extracted_from_image": "d55ad9c25a82711f54d00851e98a8fadb8590995e0ac2c548677bb1095574031.jpg"
+        },
+        "source_image_file": "d55ad9c25a82711f54d00851e98a8fadb8590995e0ac2c548677bb1095574031.jpg"
+      },
+      {
+        "id": "working_electrode",
+        "type": "electrode",
+        "name": "Working Electrode",
+        "properties": {
+          "connection": "Green crocodile clip",
+          "position": "One side of cell",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "counter_electrode",
+        "type": "electrode",
+        "name": "Counter Electrode",
+        "properties": {
+          "connection": "Red crocodile clip",
+          "position": "Opposite side of cell",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "reference_electrode",
+        "type": "electrode",
+        "name": "Reference Electrode",
+        "properties": {
+          "connection": "White crocodile clip",
+          "position": "Near working electrode compartment",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "electrolyte_solution",
+        "type": "chemical",
+        "name": "Electrolyte Solution",
+        "properties": {
+          "container": "Glass beaker/test tube",
+          "position": "Inside cell compartment",
+          "appearance": "Colorless/clear liquid",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "wires",
+        "type": "component",
+        "name": "Electrical Wires",
+        "properties": {
+          "colors": [
+            "white",
+            "red",
+            "green"
+          ],
+          "function": "Potentiostat connections",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "crocodile_clips",
+        "type": "component",
+        "name": "Crocodile Clips",
+        "properties": {
+          "colors": [
+            "red",
+            "green",
+            "white"
+          ],
+          "material": "Metal jaws with plastic coating",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "cell_frame",
+        "type": "component",
+        "name": "Cell Frame",
+        "properties": {
+          "material": "Transparent plastic (acrylic/polycarbonate)",
+          "features": "Screw-fastened assembly",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "screws",
+        "type": "component",
+        "name": "Fastening Screws",
+        "properties": {
+          "material": "Metal",
+          "quantity": "Multiple (gray color visible)",
+          "extracted_from_image": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+        },
+        "source_image_file": "db39c3949ccb9db3d84cc72a99f99f1e84e4d01e097503974f5144dcaf625307.jpg"
+      },
+      {
+        "id": "s1",
+        "type": "structure",
+        "name": "Loose structure",
+        "properties": {
+          "extracted_from_image": "e31c73d75b25819b5f32d35d5e6357859eaf749b8850806a71a2d23015c477ff.jpg"
+        },
+        "source_image_file": "e31c73d75b25819b5f32d35d5e6357859eaf749b8850806a71a2d23015c477ff.jpg"
+      },
+      {
+        "id": "laser",
+        "type": "equipment",
+        "name": "Laser",
+        "properties": {
+          "description": "Green laser beam source",
+          "extracted_from_image": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+        },
+        "source_image_file": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+      },
+      {
+        "id": "FeMoOOH_NF",
+        "type": "chemical",
+        "name": "FeMoOOH/NF",
+        "properties": {
+          "description": "Iron molybdate oxyhydroxide on nickel foam, likely working electrode material",
+          "extracted_from_image": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+        },
+        "source_image_file": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+      },
+      {
+        "id": "RE",
+        "type": "electrode",
+        "name": "RE",
+        "properties": {
+          "description": "Reference Electrode",
+          "extracted_from_image": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+        },
+        "source_image_file": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+      },
+      {
+        "id": "CE",
+        "type": "electrode",
+        "name": "CE",
+        "properties": {
+          "description": "Counter Electrode",
+          "extracted_from_image": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+        },
+        "source_image_file": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+      },
+      {
+        "id": "WE",
+        "type": "electrode",
+        "name": "Working Electrode",
+        "properties": {
+          "description": "Central square electrode, implied to be FeMoOOH/NF",
+          "extracted_from_image": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+        },
+        "source_image_file": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+      },
+      {
+        "id": "cell",
+        "type": "setup",
+        "name": "Electrochemical Cell",
+        "properties": {
+          "description": "H-shaped or ring-shaped cell with electrodes",
+          "extracted_from_image": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+        },
+        "source_image_file": "ef05916e5b22e070d8cb5dacd10582e029c05fec2e7db9c2cd523915d6fbc925.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoO2_NF_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_MoO2_NF",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoOx_NF_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_MoOx_NF",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoO2_NF_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_MoO2_NF",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeMoOOH_NF_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoOx_NF_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_MoOx_NF",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "produces"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "forms"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "enters"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n5",
+        "type": "located_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n2",
+        "type": "represents"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "on"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n11",
+        "type": "involves"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "driven_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "component"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "component"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "component"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "component"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "component"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "baseline"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "subpeak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "of_sample"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "on_substrate"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "peak_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "via_process",
+        "properties": {
+          "process": "p2"
+        }
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p1",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p3",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "n3",
+        "type": "produces"
+      },
+      {
+        "source_id": "p3",
+        "target_id": "n4",
+        "type": "results_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "y_label_component"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n5",
+        "type": "y_label_component"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "data_point"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "data_point"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "data_point"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "data_point"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "composition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "composition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "composition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "composition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n1",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n1",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n1",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "reference"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "reference"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "O2",
+        "target_id": "chem_FeMoOOH_NF",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "chem_FeMoOOH_NF",
+        "target_id": "loose_structure",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "loose_structure",
+        "target_id": "Ni_substrate",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "loose_structure",
+        "target_id": "deep_reconstruction",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "H2O",
+        "target_id": "chem_FeMoOOH_NF",
+        "type": "produced_from"
+      },
+      {
+        "source_id": "Ni_substrate",
+        "target_id": "e-",
+        "type": "provides"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "located_in"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "attacking"
+      },
+      {
+        "source_id": "2",
+        "target_id": "5",
+        "type": "present_in"
+      },
+      {
+        "source_id": "3",
+        "target_id": "6",
+        "type": "leached_into"
+      },
+      {
+        "source_id": "7",
+        "target_id": "1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "7",
+        "target_id": "3",
+        "type": "source_of"
+      },
+      {
+        "source_id": "8",
+        "target_id": "5",
+        "type": "present_in"
+      },
+      {
+        "source_id": "9",
+        "target_id": "1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "10",
+        "target_id": "5",
+        "type": "present_in"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "5",
+        "target_id": "6",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_data"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_data"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_pattern"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "has_reference"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "has_reference"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "compared_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "compared_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "anode",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "cathode",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "voltage_source",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "electrolyte",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "glass_container",
+        "type": "contained_in"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "gas_bubbles_anode",
+        "type": "produces"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "gas_bubbles_cathode",
+        "type": "produces"
+      },
+      {
+        "source_id": "voltage_source",
+        "target_id": "anode",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "voltage_source",
+        "target_id": "cathode",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "electrolyte",
+        "type": "immersed_in"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "electrolyte",
+        "type": "immersed_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n13",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n13",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n13",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n13",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n13",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n13",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n13",
+        "type": "reactant"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n13",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n13",
+        "type": "product"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n13",
+        "type": "condition"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n7",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "labeled_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "highlights"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "shows"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "shows"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n10",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n11",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n12",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "indicates"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n2",
+        "type": "indicates"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node9",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "node8",
+        "target_id": "node9",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "shows"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node8",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_label"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_scale"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "x_condition"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "x_condition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_mapping"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_mapping"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_mapping"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "instance_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "component"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "component"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "component"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "measured_with"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "measured_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "coupled_with"
+      },
+      {
+        "source_id": "image",
+        "target_id": "micrograph",
+        "type": "depicts"
+      },
+      {
+        "source_id": "micrograph",
+        "target_id": "structure",
+        "type": "shows"
+      },
+      {
+        "source_id": "image",
+        "target_id": "structure",
+        "type": "annotates"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "assigned_to"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n1",
+        "type": "assigned_to"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n1",
+        "type": "labels"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n15",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "d1",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "d2",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "d3",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "d1",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "d2",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "d3",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n4",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "produces"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n6",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "achieved"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "achieved"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "achieved"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "Modulation",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "Modulation",
+        "target_id": "LM",
+        "type": "produces"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "MOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "MO",
+        "type": "contains"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "LatticeO",
+        "type": "contains"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "AdsO",
+        "type": "contains"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "OVac",
+        "type": "contains"
+      },
+      {
+        "source_id": "LM",
+        "target_id": "MOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "LM",
+        "target_id": "MO",
+        "type": "contains"
+      },
+      {
+        "source_id": "LM",
+        "target_id": "LatticeO",
+        "type": "contains"
+      },
+      {
+        "source_id": "LM",
+        "target_id": "AdsO",
+        "type": "contains"
+      },
+      {
+        "source_id": "LM",
+        "target_id": "OVac",
+        "type": "contains"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "e",
+        "type": "involves"
+      },
+      {
+        "source_id": "LM",
+        "target_id": "e",
+        "type": "involves"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "H2Oe",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "LM",
+        "target_id": "H2On",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "Figure",
+        "target_id": "AEM",
+        "type": "depicts"
+      },
+      {
+        "source_id": "Figure",
+        "target_id": "LM",
+        "type": "depicts"
+      },
+      {
+        "source_id": "Figure",
+        "target_id": "Modulation",
+        "type": "illustrates"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "measures"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n10",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n11",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n1",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "tested_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "tested_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "tested_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "tested_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "catalyst_for"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "added_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "added_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c1",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c1",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c1",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "e1",
+        "type": "has_interaction"
+      },
+      {
+        "source_id": "e1",
+        "target_id": "n2",
+        "type": "connects"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "e2",
+        "type": "has_interaction"
+      },
+      {
+        "source_id": "e2",
+        "target_id": "n3",
+        "type": "connects"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "e3",
+        "type": "has_interaction"
+      },
+      {
+        "source_id": "e3",
+        "target_id": "n4",
+        "type": "connects"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "e4",
+        "type": "has_interaction"
+      },
+      {
+        "source_id": "e4",
+        "target_id": "n5",
+        "type": "connects"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "produces"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "added_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "measures"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "measures"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "measures"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "vs_current"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "vs_current"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "vs_current"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "displays"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "electrolyte_1m_koh",
+        "target_id": "chart_lsv",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_seawater",
+        "target_id": "chart_lsv",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_1m_koh_seawater",
+        "target_id": "chart_lsv",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_1m_koh_0.5m_nacl",
+        "target_id": "chart_lsv",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_1m_koh_2m_nacl",
+        "target_id": "chart_lsv",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_data"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "has_data"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "attacks"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "leaches_from"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "substitutes"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "forms_bridge"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "n1",
+        "type": "involves"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "n1",
+        "type": "involves"
+      },
+      {
+        "source_id": "p3",
+        "target_id": "n1",
+        "type": "involves"
+      },
+      {
+        "source_id": "p4",
+        "target_id": "n1",
+        "type": "involves"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "located_in"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "working_electrode",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "counter_electrode",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "reference_electrode",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "electrolyte_solution",
+        "type": "contains"
+      },
+      {
+        "source_id": "working_electrode",
+        "target_id": "crocodile_clips",
+        "type": "connected_by"
+      },
+      {
+        "source_id": "counter_electrode",
+        "target_id": "crocodile_clips",
+        "type": "connected_by"
+      },
+      {
+        "source_id": "reference_electrode",
+        "target_id": "crocodile_clips",
+        "type": "connected_by"
+      },
+      {
+        "source_id": "crocodile_clips",
+        "target_id": "wires",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "cell_frame",
+        "type": "constructed_with"
+      },
+      {
+        "source_id": "electrochemical_cell",
+        "target_id": "screws",
+        "type": "assembled_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "x_axis_value"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "x_axis_value"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "x_axis_value"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n5",
+        "type": "x_axis_value"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p1",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p2",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "s1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "p1",
+        "type": "produced_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p2",
+        "type": "produced_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "p1",
+        "type": "involved_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "p2",
+        "type": "involved_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "present_in"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "p3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "p3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "p3",
+        "target_id": "n7",
+        "type": "occurs_on"
+      },
+      {
+        "source_id": "s1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "peak_in_spectrum"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "peak_in_spectrum"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "peak_in_spectrum"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "peak_in_spectrum"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "peak_in_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "tested_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "tested_on"
+      },
+      {
+        "source_id": "laser",
+        "target_id": "WE",
+        "type": "irradiates"
+      },
+      {
+        "source_id": "FeMoOOH_NF",
+        "target_id": "WE",
+        "type": "material_of"
+      },
+      {
+        "source_id": "RE",
+        "target_id": "cell",
+        "type": "component_of"
+      },
+      {
+        "source_id": "CE",
+        "target_id": "cell",
+        "type": "component_of"
+      },
+      {
+        "source_id": "WE",
+        "target_id": "cell",
+        "type": "component_of"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "cell",
+        "type": "component_of"
+      },
+      {
+        "source_id": "laser",
+        "target_id": "FeMoOOH_NF",
+        "type": "targets"
+      }
+    ]
+  }
+}

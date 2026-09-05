@@ -1,0 +1,38 @@
+schema_version: 1
+id: T001
+title: Extract method fingerprint from source
+role: literature-method
+role_contract: procedures/research-orchestrator/references/roles.md#literature-method
+skill: literature-to-calculation
+status: accepted
+depends_on: []
+approval: none
+inputs:
+  - type: source-document
+    path: inputs/source.md
+can_read:
+  - path: inputs/source.md
+can_write:
+  - artifact_type: method-fingerprint
+cannot:
+  - submit or monitor HPC jobs
+outputs_expected:
+  - artifact_id: method-fingerprint
+    type: method-fingerprint
+    path: work/method-fingerprint.md
+success_criteria:
+  - source assumptions are labeled
+  - method settings needed downstream are recorded
+knowledge_required:
+  - knowledge/periodic-dft-modeling.md
+required_refs:
+  - procedures/literature-to-calculation/SKILL.md
+required_checks: []
+release_gates:
+  - method-fingerprint
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions: []
+provenance:
+  - inputs/source.md

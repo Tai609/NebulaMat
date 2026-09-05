@@ -1,0 +1,176 @@
+.stage {
+  position: relative;
+  min-height: 560px;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout paint style;
+  background:
+    radial-gradient(ellipse at 12% 18%, color-mix(in srgb, var(--series-1) 18%, transparent), transparent 36%),
+    radial-gradient(ellipse at 82% 76%, color-mix(in srgb, var(--series-5) 12%, transparent), transparent 38%),
+    radial-gradient(ellipse at 52% 48%, color-mix(in srgb, var(--series-2) 9%, transparent), transparent 42%),
+    var(--bg);
+}
+
+.stage::before,
+.stage::after {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  z-index: -2;
+  pointer-events: none;
+  opacity: .48;
+  background-image:
+    radial-gradient(circle at 8% 24%, color-mix(in srgb, var(--text) 80%, transparent) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 27% 72%, color-mix(in srgb, var(--series-6) 68%, transparent) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 49% 14%, color-mix(in srgb, var(--text) 64%, transparent) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 71% 37%, color-mix(in srgb, var(--series-4) 75%, transparent) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 92% 68%, color-mix(in srgb, var(--text) 68%, transparent) 0 1px, transparent 1.4px);
+  background-size: 182px 182px, 239px 239px, 307px 307px, 271px 271px, 331px 331px;
+  animation: drift 42s linear infinite;
+}
+
+.stage::after {
+  inset: -8%;
+  z-index: -1;
+  opacity: .28;
+  background-size: 113px 113px, 211px 211px, 173px 173px, 257px 257px, 191px 191px;
+  animation: none;
+}
+
+.hud {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  color: color-mix(in srgb, var(--text) 78%, transparent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hudTop {
+  top: 14px;
+  left: 16px;
+  right: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 12px;
+  display: flex;
+  gap: 5px;
+}
+
+.controlButton {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  color: color-mix(in srgb, var(--text) 82%, transparent);
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease, color 140ms ease, transform 140ms ease;
+}
+
+.controlButton:hover {
+  border-color: color-mix(in srgb, var(--accent) 62%, transparent);
+  background: color-mix(in srgb, var(--surface-2) 90%, transparent);
+  color: var(--text);
+}
+
+.controlButton:active { transform: scale(.96); }
+
+.controlButton:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 85%, transparent);
+  outline-offset: 2px;
+}
+
+.hudLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.signal {
+  width: 6px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 92%, transparent);
+}
+
+.legend {
+  position: absolute;
+  z-index: 4;
+  bottom: 14px;
+  left: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 999px;
+  padding: 4px 7px;
+  background: color-mix(in srgb, var(--surface) 76%, transparent);
+  color: color-mix(in srgb, var(--text) 72%, transparent);
+  font-size: 10px;
+}
+
+.legendDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.hint {
+  position: absolute;
+  z-index: 4;
+  right: 16px;
+  bottom: 16px;
+  padding: 6px 8px;
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+  color: color-mix(in srgb, var(--text) 58%, transparent);
+  font-size: 10px;
+  pointer-events: none;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) rotate(0deg); }
+  to { transform: translate3d(2%, -2%, 0) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage::before,
+  .stage::after { animation: none; }
+}
+
+@media (max-width: 767px) {
+  .stage { min-height: 430px; }
+  .hint { display: none; }
+  .hudTop { top: 10px; left: 11px; right: 50px; }
+  .controls { top: 8px; right: 9px; }
+  .legend { left: 11px; bottom: 10px; right: 11px; }
+}

@@ -1,0 +1,3510 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "RuO2",
+        "aliases": [
+          "RuO2 thin-film",
+          "RuO2 RDE"
+        ],
+        "formula": "RuO2",
+        "composition": {
+          "RuO2": {
+            "value": 10,
+            "unit": "mg"
+          },
+          "C65": {
+            "value": 2,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "chem_C65",
+        "type": "chemical",
+        "name": "super C65 carbon black",
+        "aliases": [
+          "C65"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Nafion",
+        "type": "chemical",
+        "name": "Nafion solution",
+        "aliases": [
+          "Nafion"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 5,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_H2O",
+        "type": "chemical",
+        "name": "deionized water",
+        "aliases": [
+          "water",
+          "DI water"
+        ],
+        "formula": "H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_RuO2_ink",
+        "type": "chemical",
+        "name": "RuO2 catalyst ink",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_RuO2薄膜",
+        "type": "chemical",
+        "name": "RuO2 thin-film",
+        "aliases": [
+          "RuO2 thin-film working electrode"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni(OH)2",
+        "type": "chemical",
+        "name": "Ni(OH)2",
+        "aliases": [
+          "nickel(II) hydroxide"
+        ],
+        "formula": "Ni(OH)2",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni(NO3)2_6H2O",
+        "type": "chemical",
+        "name": "nickel(II) nitrate hexahydrate",
+        "aliases": [
+          "Ni(NO3)2·6H2O"
+        ],
+        "formula": "Ni(NO3)2·6H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_KNO3",
+        "type": "chemical",
+        "name": "potassium nitrate",
+        "aliases": [
+          "KNO3"
+        ],
+        "formula": "KNO3",
+        "properties": {
+          "concentration": {
+            "value": 30,
+            "unit": "mM"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "RuO2 catalyst ink preparation",
+        "procedure": "First, 10 mg RuO2 and 2 mg C65 carbon black were added to 1 ml deionized water containing 50 μl Nafion solution (5 wt%). The mixture was sonicated for 30 min to obtain a well-dispersed catalyst ink.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Mixing",
+            "method": "Mixing",
+            "conditions": {},
+            "procedure_snippet": "10 mg RuO2 and 2 mg C65 carbon black were added to 1 ml deionized water containing 50 μl Nafion solution (5 wt%)"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Sonication",
+            "method": "Sonication",
+            "conditions": {
+              "time": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "The mixture was sonicated for 30 min to obtain a well-dispersed catalyst ink"
+          }
+        ],
+        "method": "Sonication dispersion",
+        "conditions": {
+          "time": {
+            "value": 30,
+            "unit": "min"
+          }
+        },
+        "source_text": "First, 10 mg RuO2 and 2 mg C65 carbon black were added to 1 ml deionized water containing 50 μl Nafion solution (5 wt%). The mixture was sonicated for 30 min..."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "RuO2 thin-film electrode fabrication",
+        "procedure": "Then, 10 μl catalyst ink was drop-cast onto a freshly polished gold RDE, and dried at 60°C for 3 min to form a RuO2 thin-film working electrode.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Drop-casting",
+            "method": "Drop-casting",
+            "conditions": {
+              "volume": {
+                "value": 10,
+                "unit": "μl"
+              }
+            },
+            "procedure_snippet": "10 μl catalyst ink was drop-cast onto a freshly polished gold RDE"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Drying",
+            "method": "Thermal drying",
+            "conditions": {
+              "temperature": {
+                "value": 60,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 3,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "dried at 60°C for 3 min to form a RuO2 thin-film working electrode"
+          }
+        ],
+        "method": "Drop-cast drying",
+        "conditions": {
+          "temperature": {
+            "value": 60,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 3,
+            "unit": "min"
+          },
+          "volume": {
+            "value": 10,
+            "unit": "μl"
+          }
+        },
+        "source_text": "Then, 10 μl catalyst ink was drop-cast onto a freshly polished gold RDE, and dried at 60°C for 3 min..."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Ni(OH)2 electrodeposition",
+        "procedure": "The Ni(OH)2 electrocatalysts used for ammonia oxidation were prepared through an established electrodeposition technique in which nitrate is reduced at the working electrode, leading to an increase in the local pH that causes Ni2+ to precipitate out as Ni(OH)2. The electrodeposition was achieved by maintaining a -0.25 mA cm-2 current density for 45 s with a deposition solution consisting of 10 mM Ni(NO3)2·6H2O and 30 mM KNO3.",
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Electrodeposition",
+            "method": "Galvanostatic electrodeposition",
+            "conditions": {
+              "current_density": {
+                "value": -0.25,
+                "unit": "mA cm^-2"
+              },
+              "time": {
+                "value": 45,
+                "unit": "s"
+              }
+            },
+            "procedure_snippet": "maintaining a -0.25 mA cm^-2 current density for 45 s with a deposition solution consisting of 10 mM Ni(NO3)2·6H2O and 30 mM KNO3"
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Rinsing",
+            "method": "Water rinsing",
+            "conditions": {},
+            "procedure_snippet": "The electrodeposited Ni(OH)2 films were then rinsed with >18 MΩ cm water"
+          },
+          {
+            "id": "unit_op_3.3",
+            "name": "Drying",
+            "method": "Air drying",
+            "conditions": {},
+            "procedure_snippet": "and dried with an air stream"
+          }
+        ],
+        "method": "Electrodeposition",
+        "conditions": {
+          "current_density": {
+            "value": -0.25,
+            "unit": "mA cm^-2"
+          },
+          "time": {
+            "value": 45,
+            "unit": "s"
+          }
+        },
+        "source_text": "The electrodeposition was achieved by maintaining a -0.25 mA cm^-2 current density for 45 s with a deposition solution consisting of 10 mM Ni(NO3)2·6H2O and 30 mM KNO3."
+      },
+      {
+        "id": "chem_gold_RDE",
+        "type": "chemical",
+        "name": "gold RDE",
+        "aliases": [
+          "freshly polished gold RDE"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_platinum",
+        "type": "chemical",
+        "name": "platinum",
+        "aliases": [
+          "platinum working electrode",
+          "platinum RDE"
+        ],
+        "formula": "Pt"
+      },
+      {
+        "id": "chem_gold",
+        "type": "chemical",
+        "name": "gold",
+        "aliases": [
+          "gold RDE"
+        ],
+        "formula": "Au"
+      },
+      {
+        "id": "chem_copper",
+        "type": "chemical",
+        "name": "copper",
+        "aliases": [
+          "copper foil electrode"
+        ],
+        "formula": "Cu",
+        "related_images": [
+          "2993eac41e1819d2e4c39e2ea16500108b2204edca4b4f7c3efd675173d45aef.jpg",
+          "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg",
+          "8a2b4a4d0976d83a678ba92f38a5f29276a0604508c7d75c57f4568c016dc41f.jpg",
+          "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg",
+          "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "condition",
+            "name": "pH3_buffered",
+            "properties": {
+              "pH": 3,
+              "buffered": true,
+              "extracted_from_image": "2993eac41e1819d2e4c39e2ea16500108b2204edca4b4f7c3efd675173d45aef.jpg"
+            },
+            "source_image_file": "2993eac41e1819d2e4c39e2ea16500108b2204edca4b4f7c3efd675173d45aef.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "20 mM borate",
+            "properties": {
+              "concentration": "20 mM",
+              "extracted_from_image": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+            },
+            "source_image_file": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV_Au",
+            "properties": {
+              "type": "cyclic voltammetry",
+              "current_range": "-100 to 20 mA/cm²",
+              "potential_range": "-1.5 to 0 V vs SHE",
+              "color": "red",
+              "extracted_from_image": "8a2b4a4d0976d83a678ba92f38a5f29276a0604508c7d75c57f4568c016dc41f.jpg"
+            },
+            "source_image_file": "8a2b4a4d0976d83a678ba92f38a5f29276a0604508c7d75c57f4568c016dc41f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu",
+            "properties": {
+              "description": "Copper electrode",
+              "extracted_from_image": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+            },
+            "source_image_file": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "pH 6 phosphate buffer",
+            "properties": {
+              "pH": 6,
+              "buffer_type": "phosphate",
+              "extracted_from_image": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+            },
+            "source_image_file": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_silver",
+        "type": "chemical",
+        "name": "silver",
+        "aliases": [
+          "silver foil electrode"
+        ],
+        "formula": "Ag",
+        "related_images": [
+          "19e73f0559281f0f0f257f32d8a9ffc829f66768644f2d0a72233439094ad41d.jpg",
+          "2993eac41e1819d2e4c39e2ea16500108b2204edca4b4f7c3efd675173d45aef.jpg",
+          "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg",
+          "8a2b4a4d0976d83a678ba92f38a5f29276a0604508c7d75c57f4568c016dc41f.jpg",
+          "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg",
+          "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg",
+          "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "CV Plot",
+            "properties": {
+              "type": "Cyclic Voltammetry",
+              "x_axis": "Potential (V vs SHE)",
+              "y_axis": "Current Density (mA/cm²)",
+              "peaks": [
+                {
+                  "position": "0.403 V",
+                  "label": "Ni(OH)₂"
+                },
+                {
+                  "position": "1.229 V",
+                  "label": "NiOOH"
+                }
+              ],
+              "extracted_from_image": "19e73f0559281f0f0f257f32d8a9ffc829f66768644f2d0a72233439094ad41d.jpg"
+            },
+            "source_image_file": "19e73f0559281f0f0f257f32d8a9ffc829f66768644f2d0a72233439094ad41d.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "pH3_unbuffered",
+            "properties": {
+              "pH": 3,
+              "buffered": false,
+              "extracted_from_image": "2993eac41e1819d2e4c39e2ea16500108b2204edca4b4f7c3efd675173d45aef.jpg"
+            },
+            "source_image_file": "2993eac41e1819d2e4c39e2ea16500108b2204edca4b4f7c3efd675173d45aef.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "15 mM borate",
+            "properties": {
+              "concentration": "15 mM",
+              "extracted_from_image": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+            },
+            "source_image_file": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV_Pt",
+            "properties": {
+              "type": "cyclic voltammetry",
+              "current_range": "-100 to 0 mA/cm²",
+              "potential_range": "-1.5 to 0 V vs SHE",
+              "color": "black",
+              "extracted_from_image": "8a2b4a4d0976d83a678ba92f38a5f29276a0604508c7d75c57f4568c016dc41f.jpg"
+            },
+            "source_image_file": "8a2b4a4d0976d83a678ba92f38a5f29276a0604508c7d75c57f4568c016dc41f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NH₃",
+            "properties": {
+              "formula": "NH₃",
+              "concentrations": [
+                "0 mM",
+                "30 mM"
+              ],
+              "extracted_from_image": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+            },
+            "source_image_file": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ag",
+            "properties": {
+              "description": "Silver electrode",
+              "extracted_from_image": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+            },
+            "source_image_file": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "pH 6 acetate buffer",
+            "properties": {
+              "pH": 6,
+              "buffer_type": "acetate",
+              "extracted_from_image": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+            },
+            "source_image_file": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_indium",
+        "type": "chemical",
+        "name": "indium",
+        "aliases": [
+          "indium foil electrode"
+        ],
+        "formula": "In"
+      },
+      {
+        "id": "chem_RuO2_C65",
+        "type": "chemical",
+        "name": "RuO2/C65",
+        "aliases": [
+          "RuO2 thin-film electrode",
+          "RuO2 drop-cast with C65 support"
+        ],
+        "formula": "RuO2",
+        "composition": {
+          "C65": {
+            "value": 2,
+            "unit": "mg"
+          }
+        },
+        "properties": {
+          "loading": {
+            "value": 10,
+            "unit": "μl ink"
+          }
+        }
+      },
+      {
+        "id": "chem_NiOH2",
+        "type": "chemical",
+        "name": "Ni(OH)2",
+        "aliases": [
+          "Ni(OH)2 electrocatalysts",
+          "Ni(OH)2 films"
+        ],
+        "formula": "Ni(OH)2"
+      },
+      {
+        "id": "chem_NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "aliases": [
+          "NiOOH"
+        ],
+        "formula": "NiOOH"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_RuO2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_RuO2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "amount": {
+            "value": 10,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_C65_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_C65",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support",
+          "amount": {
+            "value": 2,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 1,
+            "unit": "ml"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_Nafion_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Nafion",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "binder",
+          "volume": {
+            "value": 50,
+            "unit": "μl"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_RuO2_ink",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_RuO2_ink",
+        "properties": {
+          "form": "well-dispersed ink"
+        }
+      },
+      {
+        "id": "edge_input_chem_RuO2_ink_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_RuO2_ink",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "volume": {
+            "value": 10,
+            "unit": "μl"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_RuO2薄膜",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_RuO2薄膜",
+        "properties": {
+          "form": "thin-film (dried)"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni(NO3)2_6H2O_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni(NO3)2_6H2O",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 10,
+            "unit": "mM"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_KNO3_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_KNO3",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "electrolyte"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_Ni(OH)2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_Ni(OH)2",
+        "properties": {
+          "form": "electrodeposited film (rinsed and dried)"
+        }
+      },
+      {
+        "id": "edge_input_chem_gold_RDE_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_gold_RDE",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_copper",
+      "chem_RuO2_C65",
+      "chem_gold",
+      "chem_platinum",
+      "chem_NiOH2",
+      "chem_NiOOH",
+      "chem_silver",
+      "chem_indium"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_platinum",
+        "type": "chemical",
+        "name": "platinum",
+        "aliases": [
+          "platinum electrode",
+          "platinum working electrode",
+          "platinum RDE"
+        ],
+        "formula": "Pt"
+      },
+      {
+        "id": "chem_gold",
+        "type": "chemical",
+        "name": "gold",
+        "aliases": [
+          "gold RDE"
+        ],
+        "formula": "Au"
+      },
+      {
+        "id": "chem_copper",
+        "type": "chemical",
+        "name": "copper",
+        "aliases": [
+          "copper foil"
+        ],
+        "formula": "Cu"
+      },
+      {
+        "id": "chem_silver",
+        "type": "chemical",
+        "name": "silver",
+        "aliases": [
+          "silver foil"
+        ],
+        "formula": "Ag"
+      },
+      {
+        "id": "chem_indium",
+        "type": "chemical",
+        "name": "indium",
+        "aliases": [
+          "indium foil"
+        ],
+        "formula": "In"
+      },
+      {
+        "id": "chem_RuO2_C65",
+        "type": "chemical",
+        "name": "RuO2/C65",
+        "aliases": [
+          "RuO2 thin-film electrode",
+          "RuO2 drop-cast with C65 support"
+        ],
+        "formula": "RuO2",
+        "composition": {
+          "C65": {
+            "value": 2,
+            "unit": "mg"
+          }
+        },
+        "properties": {
+          "loading": {
+            "value": 10,
+            "unit": "μl ink"
+          }
+        }
+      },
+      {
+        "id": "chem_NiOH2",
+        "type": "chemical",
+        "name": "Ni(OH)2",
+        "aliases": [
+          "Ni(OH)2 electrocatalysts",
+          "Ni(OH)2 films"
+        ],
+        "formula": "Ni(OH)2"
+      },
+      {
+        "id": "chem_NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "aliases": [
+          "NiOOH"
+        ],
+        "formula": "NiOOH"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_platinum",
+        "description": "HER LSVs in unbuffered, unstirred solutions pH 0,1,7,12 H2 saturated",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "unbuffered",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": "0,1,7,12",
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "platinum disk",
+            "unit": "3.0 mm diameter"
+          },
+          "stirring": {
+            "value": "unstirred",
+            "unit": "condition"
+          },
+          "gas": {
+            "value": "H2 saturated",
+            "unit": "atmosphere"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "H2_pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "results_json": {
+          "first_feature_onset_pH1": {
+            "value": -0.059,
+            "unit": "V vs SHE"
+          },
+          "second_feature_onset_pH1": {
+            "value": -0.8,
+            "unit": "V vs SHE"
+          },
+          "HER_onset_pH7": {
+            "value": -0.7,
+            "unit": "V vs SHE"
+          },
+          "HER_onset_pH12": {
+            "value": -0.7,
+            "unit": "V vs SHE"
+          },
+          "expected_onset_pH7": {
+            "value": -0.413,
+            "unit": "V vs SHE"
+          }
+        },
+        "source_text": "When we experimentally obtain LSVs with a platinum working electrode (WE) in unbuffered and unstirred solutions saturated with H2 at pH 0, 1, 7 and 12 (Fig. 1b)... At pH 1 two reduction features are observed. The onset of the first feature (marked as 1) occurs at around -0.059 V_SHE... second reduction feature (marked as 2) appears at around -0.8 V_SHE. At pH 7 appreciable reduction current does not appear until around -0.7 V_SHE, which is considerably more negative than the expected onset potential (-0.413 V_SHE)."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_platinum",
+        "description": "HER RDE LSVs unbuffered pH 1-3 1M NaClO4 H2 saturated",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M NaClO4 unbuffered",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": "1,2,3",
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "platinum RDE",
+            "unit": "3.0 mm diameter"
+          },
+          "rotation_speed": {
+            "value": 3000,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "gas": {
+            "value": "H2 saturated",
+            "unit": "atmosphere"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "JL_vs_H3O_plus": {
+            "value": "linear",
+            "unit": "first-order relationship"
+          },
+          "diffusion_limited_plateau": {
+            "value": "observed",
+            "unit": "H3O+ mass transport"
+          }
+        },
+        "source_text": "LSVs collected using a platinum RDE in unbuffered 1 M NaClO4 solutions saturated with H2 at pH 1–3 (rotation speed, 3,000 rpm; scan rate, 50 mV s^-1 ) (Fig. 2a). ... JL is proportional to the concentration of H3O+ in the bulk solution... straight line, meaning the reduction rate has a first-order relationship with the concentration of H3O+ in the solution (Fig. 2b)."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_platinum",
+        "description": "HER in unbuffered pH 0-14 with RDE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "unbuffered",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": "0-14",
+            "unit": "pH"
+          },
+          "rotation_speed": {
+            "value": 3000,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "gas": {
+            "value": "H2 saturated",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {},
+        "source_text": "LSVs collected using a platinum RDE in unbuffered solutions of pH 0–14 saturated with H2... rotation speed is 3,000 rpm and the scan rate is 50 mV s^-1."
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_gold",
+        "description": "HER comparison with Pt at pH 2 RDE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "unbuffered pH 2",
+            "unit": "solution"
+          },
+          "rotation_speed": {
+            "value": 3000,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "plateau_shift": {
+            "value": ">500",
+            "unit": "mV more negative"
+          }
+        },
+        "source_text": "LSVs at pH 2 measured with platinum and gold RDEs... On gold... the plateau current... is achieved at a more negative potential (by >500 mV) than on platinum."
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_copper",
+        "description": "HER in unbuffered unstirred pH 2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "unbuffered pH 2",
+            "unit": "solution"
+          },
+          "stirring": {
+            "value": "unstirred",
+            "unit": "condition"
+          },
+          "gas": {
+            "value": "H2 saturated",
+            "unit": "atmosphere"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "thermodynamic_potential": {
+            "value": -0.118,
+            "unit": "V vs SHE"
+          }
+        },
+        "source_text": "LSVs of copper... in an unbuffered, unstirred pH 2 solution saturated with H2... scan rate, 50 mV s^-1. The dashed line represents the thermodynamic equilibrium HER potential at pH 2 (-0.118 V versus SHE)."
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_silver",
+        "description": "HER in unbuffered unstirred pH 2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "unbuffered pH 2",
+            "unit": "solution"
+          },
+          "stirring": {
+            "value": "unstirred",
+            "unit": "condition"
+          },
+          "gas": {
+            "value": "H2 saturated",
+            "unit": "atmosphere"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {},
+        "source_text": "LSVs of silver... in an unbuffered, unstirred pH 2 solution saturated with H2... scan rate, 50 mV s^-1."
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_indium",
+        "description": "HER in unbuffered unstirred pH 2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "unbuffered pH 2",
+            "unit": "solution"
+          },
+          "stirring": {
+            "value": "unstirred",
+            "unit": "condition"
+          },
+          "gas": {
+            "value": "H2 saturated",
+            "unit": "atmosphere"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {},
+        "source_text": "LSVs of indium... in an unbuffered, unstirred pH 2 solution saturated with H2... scan rate, 50 mV s^-1."
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_platinum",
+        "description": "HER in buffered pH 0-14 with RDE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "buffered",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": "0-14",
+            "unit": "pH"
+          },
+          "rotation_speed": {
+            "value": 3000,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "gas": {
+            "value": "H2 saturated",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {},
+        "source_text": "LSVs collected using a platinum RDE in buffered solutions of pH 0–14 saturated with H2 (rotation speed, 3,000 rpm; scan rate, 50 mV s^-1)."
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_NiOH2",
+        "description": "OER LSV rapidly stirred unbuffered pH 12 0.1M KClO4",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KClO4 unbuffered",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 12,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "Ni(OH)2 film on FTO",
+            "unit": "electrodeposited"
+          },
+          "stirring": {
+            "value": "rapidly stirred",
+            "unit": "condition"
+          },
+          "scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "NiII_to_NiIII_peak": {
+            "value": 0.75,
+            "unit": "V vs SHE"
+          },
+          "OER_onset_delay": {
+            "value": 0.37,
+            "unit": "V vs thermodynamic"
+          },
+          "two_feature_pattern": {
+            "value": "observed",
+            "unit": "OH- then H2O oxidation"
+          }
+        },
+        "source_text": "LSV in a rapidly stirred, unbuffered 0.1 M KClO4 solution (pH 12) using a Ni(OH)2 working electrode (scan rate, 10 mV s^-1 )... following the peak at 0.75 V_SHE corresponding to oxidation of Ni(OH)2 to NiOOH, the LSV clearly shows the same two-feature pattern... current onset is markedly delayed relative to its thermodynamic potential (by ~0.37 V)."
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_RuO2_C65",
+        "description": "OER in unbuffered pH 0-14 with RDE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "unbuffered",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": "0-14",
+            "unit": "pH"
+          },
+          "rotation_speed": {
+            "value": 3000,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "gas": {
+            "value": "O2 saturated",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {
+          "onset_delay_pH14": {
+            "value": 0.24,
+            "unit": "V"
+          }
+        },
+        "source_text": "LSVs collected using a RuO2 RDE in unbuffered... solutions of pH 0–14 saturated with O2 (rotation speed, 3,000 rpm; scan rate, 50 mV s^-1)... Even in a pH 14 solution, the OH- oxidation onset is delayed by 0.24 V from its thermodynamic value."
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_RuO2_C65",
+        "description": "OER in buffered pH 0-14 with RDE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "buffered",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": "0-14",
+            "unit": "pH"
+          },
+          "rotation_speed": {
+            "value": 3000,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "gas": {
+            "value": "O2 saturated",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {},
+        "source_text": "LSVs collected using a RuO2 RDE in buffered (c) solutions of pH 0–14 saturated with O2 (rotation speed, 3,000 rpm; scan rate, 50 mV s^-1)."
+      },
+      {
+        "id": "test_12",
+        "type": "testing",
+        "catalyst_id": "chem_NiOH2",
+        "description": "Ammonia oxidation LSVs pH 11 0.5M K2SO4 with/without NH4+ unstirred",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ammonia oxidation",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M K2SO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 11,
+            "unit": "pH"
+          },
+          "ammonium_sulfate": {
+            "value": "0-30 mM",
+            "unit": "concentration"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "Ni(OH)2 on FTO",
+            "unit": "0.5 cm²"
+          },
+          "stirring": {
+            "value": "unstirred",
+            "unit": "condition"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (4M KCl)",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "NiOH2_oxidation_peak": {
+            "value": 0.8,
+            "unit": "V vs SHE"
+          },
+          "middle_peak_center": {
+            "value": 1.15,
+            "unit": "V vs SHE"
+          },
+          "H2O_oxidation_onset": {
+            "value": 1.35,
+            "unit": "V vs SHE"
+          }
+        },
+        "source_text": "LSVs obtained in 0.5 M K2SO4 (pH 11) solutions containing 0-30 mM ammonium sulfate... LSV without ammonia shows two oxidation features: the first is the oxidation peak at around 0.8 V for the oxidation of Ni(OH)2 to NiOOH, and the second is the oxidation wave for water oxidation initiating at around 1.35 V_SHE... new oxidation peak centred at around 1.15 V_SHE."
+      },
+      {
+        "id": "test_13",
+        "type": "testing",
+        "catalyst_id": "chem_platinum",
+        "description": "HER overpotential comparison pH 0 vs pH 14 onset region",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "unbuffered",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": "0,14",
+            "unit": "pH"
+          },
+          "current_density": {
+            "value": 1,
+            "unit": "mA/cm²"
+          }
+        },
+        "results_json": {
+          "overpotential_pH0_1mA_cm2": {
+            "value": 4.2,
+            "unit": "mV"
+          },
+          "overpotential_pH14_1mA_cm2": {
+            "value": 34.9,
+            "unit": "mV"
+          }
+        },
+        "source_text": "when we compare the HER current in a pH 0 solution near the onset region... and the HER current in a pH 14 solution near the onset region... the overpotential required to achieve 1 mA cm−2 is 4.2 mV and 34.9 mV, respectively (Fig. 3b)."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_platinum_test_1",
+        "type": "tested_in",
+        "source_id": "chem_platinum",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_platinum_test_2",
+        "type": "tested_in",
+        "source_id": "chem_platinum",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_platinum_test_3",
+        "type": "tested_in",
+        "source_id": "chem_platinum",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_platinum_test_8",
+        "type": "tested_in",
+        "source_id": "chem_platinum",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_gold_test_4",
+        "type": "tested_in",
+        "source_id": "chem_gold",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_copper_test_5",
+        "type": "tested_in",
+        "source_id": "chem_copper",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_silver_test_6",
+        "type": "tested_in",
+        "source_id": "chem_silver",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_indium_test_7",
+        "type": "tested_in",
+        "source_id": "chem_indium",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiOH2_test_9",
+        "type": "tested_in",
+        "source_id": "chem_NiOH2",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RuO2_C65_test_10",
+        "type": "tested_in",
+        "source_id": "chem_RuO2_C65",
+        "target_id": "test_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RuO2_C65_test_11",
+        "type": "tested_in",
+        "source_id": "chem_RuO2_C65",
+        "target_id": "test_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiOH2_test_12",
+        "type": "tested_in",
+        "source_id": "chem_NiOH2",
+        "target_id": "test_12",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_platinum_test_13",
+        "type": "tested_in",
+        "source_id": "chem_platinum",
+        "target_id": "test_13",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_platinum",
+        "type": "chemical",
+        "name": "platinum",
+        "aliases": [
+          "platinum working electrode",
+          "platinum RDE"
+        ],
+        "formula": "Pt"
+      },
+      {
+        "id": "chem_gold",
+        "type": "chemical",
+        "name": "gold",
+        "aliases": [
+          "gold RDE"
+        ],
+        "formula": "Au"
+      },
+      {
+        "id": "chem_copper",
+        "type": "chemical",
+        "name": "copper",
+        "aliases": [
+          "copper foil electrode"
+        ],
+        "formula": "Cu"
+      },
+      {
+        "id": "chem_silver",
+        "type": "chemical",
+        "name": "silver",
+        "aliases": [
+          "silver foil electrode"
+        ],
+        "formula": "Ag"
+      },
+      {
+        "id": "chem_indium",
+        "type": "chemical",
+        "name": "indium",
+        "aliases": [
+          "indium foil electrode"
+        ],
+        "formula": "In"
+      },
+      {
+        "id": "chem_NiOH2",
+        "type": "chemical",
+        "name": "Ni(OH)2",
+        "aliases": [
+          "Ni(OH)2 electrocatalysts",
+          "Ni(OH)2 films"
+        ],
+        "formula": "Ni(OH)2"
+      },
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "RuO2",
+        "aliases": [
+          "RuO2 thin-film",
+          "RuO2 RDE"
+        ],
+        "formula": "RuO2",
+        "composition": {
+          "RuO2": {
+            "value": 10,
+            "unit": "mg"
+          },
+          "C65": {
+            "value": 2,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "LSV",
+        "is_reported": true,
+        "characterization_summary": "LSVs experimentally collected using platinum electrode in unbuffered, unstirred solutions of pH 0, 1, 7, 12 saturated with H2 show two reduction features at pH 1 and single features at other pHs.",
+        "evidence_snippet": "When we experimentally obtain LSVs with a platinum working electrode (WE) in unbuffered and unstirred solutions saturated with H2 at pH 0, 1, 7 and 12 (Fig. 1b), they look quite different from those shown in Fig. 1a except for the case with pH 0. At pH 1 two reduction features are observed.",
+        "related_images": [
+          "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg",
+          "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "figure",
+            "name": "Figure 1a",
+            "properties": {
+              "label": "a",
+              "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+            },
+            "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV at pH 0",
+            "properties": {
+              "description": "Linear Sweep Voltammetry curve at pH 0",
+              "color": "black",
+              "current_range": "-80 to 0 mA/cm²",
+              "potential_range": "-1.0 to 0 V vs SHE",
+              "extracted_from_image": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+            },
+            "source_image_file": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV at pH 7",
+            "properties": {
+              "description": "Linear Sweep Voltammetry curve at pH 7",
+              "color": "blue",
+              "current_range": "-40 to 0 mA/cm²",
+              "potential_range": "-1.0 to 0 V vs SHE",
+              "extracted_from_image": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+            },
+            "source_image_file": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV at pH 12",
+            "properties": {
+              "description": "Linear Sweep Voltammetry curve at pH 12",
+              "color": "green",
+              "current_range": "-60 to 0 mA/cm²",
+              "potential_range": "-1.0 to 0 V vs SHE",
+              "extracted_from_image": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+            },
+            "source_image_file": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "LSV",
+        "is_reported": true,
+        "characterization_summary": "Platinum RDE LSVs in unbuffered pH 1-3 solutions at 3000 rpm show H3O+ diffusion-limited plateaus with JL proportional to bulk [H3O+].",
+        "evidence_snippet": "LSVs collected using a platinum RDE in unbuffered 1 M NaClO4 solutions saturated with H2 at pH 1–3 (rotation speed, 3,000 rpm; scan rate, 50 mV s−1). ... When the JL is plotted against the [H3O+] concentration in the bulk solution, we get a straight line",
+        "related_images": [
+          "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg",
+          "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "pH 2 curve",
+            "properties": {
+              "description": "Blue curve starting near 0 current at -0.5 V, rising sharply near -0.827 V",
+              "onset_potential": "-0.827 V vs SHE",
+              "extracted_from_image": "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg"
+            },
+            "source_image_file": "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "pH 3 curve",
+            "properties": {
+              "description": "Dashed blue curve with similar sharp rise",
+              "extracted_from_image": "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg"
+            },
+            "source_image_file": "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV at pH 2",
+            "properties": {
+              "description": "Linear Sweep Voltammetry curve (red)",
+              "current_range": "-500 to 0 mA/cm²",
+              "potential_range": "-2.0 to 0 V vs SHE",
+              "extracted_from_image": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+            },
+            "source_image_file": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV at pH 3",
+            "properties": {
+              "description": "Linear Sweep Voltammetry curve (blue)",
+              "current_range": "-400 to -100 mA/cm²",
+              "potential_range": "-2.0 to 0 V vs SHE",
+              "extracted_from_image": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+            },
+            "source_image_file": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Main Inset Plot",
+            "properties": {
+              "description": "High current density region (-0.827 mA/cm²)",
+              "x_range": "-0.5 to 0 V vs SHE",
+              "y_range": "-10 to 0 mA/cm²",
+              "extracted_from_image": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+            },
+            "source_image_file": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Zoomed Inset Plot",
+            "properties": {
+              "description": "Detailed view near onset potential",
+              "x_range": "-0.1 to 0 V vs SHE",
+              "y_range": "-5 to 0 mA/cm²",
+              "extracted_from_image": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+            },
+            "source_image_file": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "LSV",
+        "is_reported": true,
+        "characterization_summary": "Gold shows delayed HER onset and plateau current achieved at >500 mV more negative potential than platinum at pH 2.",
+        "evidence_snippet": "On gold with slow HER kinetics ... the plateau current on gold is achieved at a more negative potential (by >500 mV) than on platinum"
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "LSV",
+        "is_reported": true,
+        "characterization_summary": "Cu, Ag, In show two HER features in pH 2 with first diffusion-limited onset more negative than thermodynamic potential -0.118 V_SHE.",
+        "evidence_snippet": "All metals show two HER features in this mildly acidic solution. Like gold, all of these metals are poor HER catalysts"
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "LSV",
+        "is_reported": true,
+        "characterization_summary": "Ni(OH)2 shows two OER features in pH 12: first mass-transport-limited OH- oxidation plateau followed by second H2O oxidation feature.",
+        "evidence_snippet": "the LSV clearly shows the same two-feature pattern: the first feature initiates at a less positive potential, followed by a mass-transport-limited plateau"
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "LSV",
+        "is_reported": true,
+        "characterization_summary": "RuO2/C65 shows pH-dependent OER onsets with two features in mildly alkaline pH 11-12 and single wave in pH 14.",
+        "evidence_snippet": "In mildly alkaline conditions such as pH 12 and 11, there is a plateau caused by OH− oxidation being mass transport limited, followed by H2O oxidation"
+      },
+      {
+        "id": "chem_NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "aliases": [
+          "NiOOH"
+        ],
+        "formula": "NiOOH"
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "Electrochemical impedance spectroscopy used to measure uncompensated solution resistances Ru of 15.4-25.6 Ω for unbuffered solutions.",
+        "evidence_snippet": "The Ru was measured by electrochemical impedance spectroscopy at 200 kHz–0.5 Hz with an a.c. voltage of 10 mV at open-circuit potential."
+      },
+      {
+        "id": "n1",
+        "type": "characterization",
+        "name": "CV plot pH 6 acetate buffer",
+        "properties": {
+          "description": "Cyclic voltammetry curve in black",
+          "x_axis": "Potential (V vs SHE)",
+          "y_axis": "Current density (mA cm⁻²)",
+          "range_x": "-1.5 to 0 V",
+          "range_y": "-400 to 0 mA cm⁻²",
+          "extracted_from_image": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+        },
+        "source_image_file": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "characterization",
+        "name": "CV plot pH 6 phosphate buffer",
+        "properties": {
+          "description": "Cyclic voltammetry curve in red",
+          "x_axis": "Potential (V vs SHE)",
+          "y_axis": "Current density (mA cm⁻²)",
+          "range_x": "-1.5 to 0 V",
+          "range_y": "-400 to -0.827 mA cm⁻²",
+          "extracted_from_image": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+        },
+        "source_image_file": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+      },
+      {
+        "id": "cv_plot",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry Plot",
+        "properties": {
+          "type": "CV",
+          "x_axis": "Potential (V vs SHE)",
+          "y_axis": "Current Density (mA cm⁻²)",
+          "x_range": [
+            -1.5,
+            0
+          ],
+          "y_range": [
+            -500,
+            0
+          ],
+          "annotation": "-0.827",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "she_reference",
+        "type": "reference_electrode",
+        "name": "SHE",
+        "properties": {
+          "full_name": "Standard Hydrogen Electrode",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample1",
+        "type": "sample",
+        "name": "Sample 1",
+        "properties": {
+          "color": "black",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample2",
+        "type": "sample",
+        "name": "Sample 2",
+        "properties": {
+          "color": "gray",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample3",
+        "type": "sample",
+        "name": "Sample 3",
+        "properties": {
+          "color": "purple",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample4",
+        "type": "sample",
+        "name": "Sample 4",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample5",
+        "type": "sample",
+        "name": "Sample 5",
+        "properties": {
+          "color": "cyan",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample6",
+        "type": "sample",
+        "name": "Sample 6",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample7",
+        "type": "sample",
+        "name": "Sample 7",
+        "properties": {
+          "color": "yellow",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample8",
+        "type": "sample",
+        "name": "Sample 8",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "sample9",
+        "type": "sample",
+        "name": "Sample 9",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+        },
+        "source_image_file": "2170c522ee5b08e447b4eaa8279fcf0a089fad46fa5665ac5a5f4ef86757276d.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "reference_electrode",
+        "name": "SHE",
+        "properties": {
+          "full_name": "Standard Hydrogen Electrode",
+          "extracted_from_image": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+        },
+        "source_image_file": "fb2e01118482591cfa7ab71a2f24509d0729f0d3108c97d2f6fafa04d092dbc7.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "LSV Graph",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Potential (V vs SHE)",
+          "y_axis": "Current density (mA cm⁻²)",
+          "range_x": [
+            -0.5,
+            0
+          ],
+          "range_y": [
+            -10,
+            0
+          ],
+          "extracted_from_image": "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg"
+        },
+        "source_image_file": "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg"
+      },
+      {
+        "id": "ph2",
+        "type": "condition",
+        "name": "pH 2",
+        "properties": {
+          "color": "magenta",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph3",
+        "type": "condition",
+        "name": "pH 3",
+        "properties": {
+          "color": "red",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "electrode",
+        "type": "chemical",
+        "name": "Working Electrode",
+        "properties": {
+          "context": "likely catalyst material under HER conditions",
+          "extracted_from_image": "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg"
+        },
+        "source_image_file": "2a3a230133c19a723ff2e2794672b74654c3aa43a257280112ca5b9c80299f5c.jpg"
+      },
+      {
+        "id": "figure_a",
+        "type": "figure",
+        "name": "Figure a",
+        "properties": {
+          "label": "a",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_1",
+        "type": "sample",
+        "name": "Sample 1",
+        "properties": {
+          "color": "black",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_2",
+        "type": "sample",
+        "name": "Sample 2",
+        "properties": {
+          "color": "gray",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_3",
+        "type": "sample",
+        "name": "Sample 3",
+        "properties": {
+          "color": "light gray",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_4",
+        "type": "sample",
+        "name": "Sample 4",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_5",
+        "type": "sample",
+        "name": "Sample 5",
+        "properties": {
+          "color": "pink",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_6",
+        "type": "sample",
+        "name": "Sample 6",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_7",
+        "type": "sample",
+        "name": "Sample 7",
+        "properties": {
+          "color": "cyan",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_8",
+        "type": "sample",
+        "name": "Sample 8",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_9",
+        "type": "sample",
+        "name": "Sample 9",
+        "properties": {
+          "color": "yellow",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sample_10",
+        "type": "sample",
+        "name": "Sample 10",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "sHE",
+        "type": "reference",
+        "name": "Standard Hydrogen Electrode",
+        "properties": {
+          "abbreviation": "SHE",
+          "extracted_from_image": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+        },
+        "source_image_file": "31d11f5d713e1aeb168046b66ce424be27d2e3ba0304100fd81822bb484b689c.jpg"
+      },
+      {
+        "id": "peak_0827",
+        "type": "feature",
+        "name": "-0.827 V",
+        "properties": {
+          "position": "-0.827 V vs SHE",
+          "description": "Upper limit marked on graph",
+          "extracted_from_image": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+        },
+        "source_image_file": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "characterization",
+        "name": "CV curve (0 mM borate)",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "current_density_unit": "mA cm⁻²",
+          "potential_range": "0.6-1.6 V vs SHE",
+          "extracted_from_image": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+        },
+        "source_image_file": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "characterization",
+        "name": "CV curve (15 mM borate)",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "current_density_unit": "mA cm⁻²",
+          "potential_range": "0.6-1.6 V vs SHE",
+          "extracted_from_image": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+        },
+        "source_image_file": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "characterization",
+        "name": "CV curve (20 mM borate)",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "current_density_unit": "mA cm⁻²",
+          "potential_range": "0.6-1.6 V vs SHE",
+          "extracted_from_image": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+        },
+        "source_image_file": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "characterization",
+        "name": "CV curve (30 mM borate)",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "current_density_unit": "mA cm⁻²",
+          "potential_range": "0.6-1.6 V vs SHE",
+          "extracted_from_image": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+        },
+        "source_image_file": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "reference",
+        "name": "SHE",
+        "properties": {
+          "description": "Standard Hydrogen Electrode",
+          "extracted_from_image": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+        },
+        "source_image_file": "6a212a53c9fc194f3923a9e4c027896a9a183d5b587a078ca15e88d0b6d83083.jpg"
+      },
+      {
+        "id": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2_node4",
+        "type": "condition",
+        "name": "pH 0",
+        "properties": {
+          "value": 0,
+          "extracted_from_image": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+        },
+        "source_image_file": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+      },
+      {
+        "id": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2_node5",
+        "type": "condition",
+        "name": "pH 7",
+        "properties": {
+          "value": 7,
+          "extracted_from_image": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+        },
+        "source_image_file": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+      },
+      {
+        "id": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2_node6",
+        "type": "condition",
+        "name": "pH 12",
+        "properties": {
+          "value": 12,
+          "extracted_from_image": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+        },
+        "source_image_file": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+      },
+      {
+        "id": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2_node7",
+        "type": "reference",
+        "name": "SHE",
+        "properties": {
+          "description": "Standard Hydrogen Electrode",
+          "extracted_from_image": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+        },
+        "source_image_file": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+      },
+      {
+        "id": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2_node8",
+        "type": "figure",
+        "name": "Figure b",
+        "properties": {
+          "label": "b",
+          "type": "LSV pH dependence",
+          "x_axis": "Potential (V versus SHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "annotation": "0.827",
+          "extracted_from_image": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+        },
+        "source_image_file": "71ddd9cb56aa9a467cab2a7c2b5f2f6240598f2a9959c472580eeaed3c7ad5d2.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "CV Plot",
+        "properties": {
+          "label": "c",
+          "x_axis": "Potential (V versus SHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "x_range": [
+            0,
+            1.5
+          ],
+          "y_range": [
+            0,
+            20
+          ],
+          "extracted_from_image": "7ff75772ca26e9b3b58febe3e1430b4b7e8ba745a4400443fd98e71967467d97.jpg"
+        },
+        "source_image_file": "7ff75772ca26e9b3b58febe3e1430b4b7e8ba745a4400443fd98e71967467d97.jpg"
+      },
+      {
+        "id": "ph1",
+        "type": "condition",
+        "name": "pH 1",
+        "properties": {
+          "color": "black",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph4",
+        "type": "condition",
+        "name": "pH 4",
+        "properties": {
+          "color": "blue",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph5",
+        "type": "condition",
+        "name": "pH 5",
+        "properties": {
+          "color": "cyan",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph6",
+        "type": "condition",
+        "name": "pH 6",
+        "properties": {
+          "color": "green",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph7",
+        "type": "condition",
+        "name": "pH 7",
+        "properties": {
+          "color": "orange",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph8",
+        "type": "condition",
+        "name": "pH 8",
+        "properties": {
+          "color": "pink",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph9",
+        "type": "condition",
+        "name": "pH 9",
+        "properties": {
+          "color": "brown",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph10",
+        "type": "condition",
+        "name": "pH 10",
+        "properties": {
+          "color": "purple",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph11",
+        "type": "condition",
+        "name": "pH 11",
+        "properties": {
+          "color": "light_purple",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph12",
+        "type": "condition",
+        "name": "pH 12",
+        "properties": {
+          "color": "navy",
+          "line_style": "solid",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph13",
+        "type": "condition",
+        "name": "pH 13",
+        "properties": {
+          "color": "red_dashed",
+          "line_style": "dashed",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "ph14",
+        "type": "condition",
+        "name": "pH 14",
+        "properties": {
+          "color": "blue_dashed",
+          "line_style": "dashed",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "she",
+        "type": "reference",
+        "name": "SHE",
+        "properties": {
+          "description": "Standard Hydrogen Electrode",
+          "extracted_from_image": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+        },
+        "source_image_file": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "LSV 0 mM NH₃ stirred",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "conditions": "0 mM NH₃, stirred",
+          "x_axis": "Potential (V vs SHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "color": "dark blue",
+          "extracted_from_image": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+        },
+        "source_image_file": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "LSV 0 mM NH₃ unstirred",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "conditions": "0 mM NH₃, unstirred",
+          "x_axis": "Potential (V vs SHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "color": "black",
+          "extracted_from_image": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+        },
+        "source_image_file": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "LSV 30 mM NH₃ unstirred",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "conditions": "30 mM NH₃, unstirred",
+          "x_axis": "Potential (V vs SHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "color": "red",
+          "extracted_from_image": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+        },
+        "source_image_file": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+      },
+      {
+        "id": "c4",
+        "type": "chemical",
+        "name": "NH₃",
+        "properties": {
+          "concentration": "30 mM",
+          "extracted_from_image": "8f955d6a15028d741f5ce405ca3778eed4518aafb606dc33e0536203925c473f.jpg"
+        },
+        "source_image_file": "8f955d6a15028d741f5ce405ca3778eed4518aafb606dc33e0536203925c473f.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "characterization",
+        "name": "CV Plot",
+        "properties": {
+          "x_axis": "Potential (V vs SHE)",
+          "y_axis": "Current density (mA cm⁻²)",
+          "conditions": [
+            "0 mM NH₃",
+            "15 mM NH₃",
+            "20 mM NH₃",
+            "30 mM NH₃"
+          ],
+          "extracted_from_image": "8f955d6a15028d741f5ce405ca3778eed4518aafb606dc33e0536203925c473f.jpg"
+        },
+        "source_image_file": "8f955d6a15028d741f5ce405ca3778eed4518aafb606dc33e0536203925c473f.jpg"
+      },
+      {
+        "id": "graph_b",
+        "type": "characterization",
+        "name": "Figure b",
+        "properties": {
+          "description": "Cyclic voltammetry or polarization curves at different pH values",
+          "x_axis": "Potential (versus SHE)",
+          "y_axis": "Current density (mA cm⁻²)",
+          "inset": "Enlarged view of low current density region",
+          "extracted_from_image": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+        },
+        "source_image_file": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+      },
+      {
+        "id": "ph0",
+        "type": "condition",
+        "name": "pH 0",
+        "properties": {
+          "color": "black",
+          "extracted_from_image": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+        },
+        "source_image_file": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+      },
+      {
+        "id": "cv_curves",
+        "type": "characterization_data",
+        "name": "CV Curves",
+        "properties": {
+          "range_pH": "0-14",
+          "potential_range": "-1.0 to 0 V vs SHE",
+          "current_range": "-1.0 to 0 mA/cm²",
+          "annotation": "-0.827 V",
+          "extracted_from_image": "99ca07e0155809e72a291525fc934fae99c27f76ca0a025c3ba910e9d6272af6.jpg"
+        },
+        "source_image_file": "99ca07e0155809e72a291525fc934fae99c27f76ca0a025c3ba910e9d6272af6.jpg"
+      },
+      {
+        "id": "electrode_material",
+        "type": "chemical",
+        "name": "Electrode Material",
+        "properties": {
+          "context": "pH-dependent CV study",
+          "reference_electrode": "SHE",
+          "extracted_from_image": "99ca07e0155809e72a291525fc934fae99c27f76ca0a025c3ba910e9d6272af6.jpg"
+        },
+        "source_image_file": "99ca07e0155809e72a291525fc934fae99c27f76ca0a025c3ba910e9d6272af6.jpg"
+      },
+      {
+        "id": "peak_0591",
+        "type": "feature",
+        "name": "-0.591 V",
+        "properties": {
+          "position": "-0.591 V vs SHE",
+          "description": "Peak or onset potential marked on graph",
+          "extracted_from_image": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+        },
+        "source_image_file": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+      },
+      {
+        "id": "peak_0295",
+        "type": "feature",
+        "name": "-0.295 V",
+        "properties": {
+          "position": "-0.295 V vs SHE",
+          "description": "Peak or onset potential marked on graph",
+          "extracted_from_image": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+        },
+        "source_image_file": "c4c7a9baaad5277f9a4eab99ea1009e0056503a5b909a72dc2ff5d2e79d5ee72.jpg"
+      },
+      {
+        "id": "ref",
+        "type": "reference",
+        "name": "SHE",
+        "properties": {
+          "description": "Standard Hydrogen Electrode",
+          "extracted_from_image": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+        },
+        "source_image_file": "d2af407d9a4d703159bcfcd736bb9fa2785b3e03a55c553d25d78d9ce719eb99.jpg"
+      },
+      {
+        "id": "figure_b",
+        "type": "characterization",
+        "name": "Figure b",
+        "properties": {
+          "description": "Cyclic voltammetry (CV) plot",
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "axis",
+        "name": "Potential (V versus SHE)",
+        "properties": {
+          "range": [
+            0,
+            1.5
+          ],
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "axis",
+        "name": "Current density (mA/cm²)",
+        "properties": {
+          "range": [
+            0,
+            20
+          ],
+          "extracted_from_image": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+        },
+        "source_image_file": "e6b10c4835ca2d923b6d8e9a497826bb45262932e9c7c866dbcb74a321cd106f.jpg"
+      },
+      {
+        "id": "curve_in",
+        "type": "data",
+        "name": "In CV curve",
+        "properties": {
+          "color": "blue",
+          "label": "In",
+          "extracted_from_image": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+        },
+        "source_image_file": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+      },
+      {
+        "id": "curve_ag",
+        "type": "data",
+        "name": "Ag CV curve",
+        "properties": {
+          "color": "black",
+          "label": "Ag",
+          "extracted_from_image": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+        },
+        "source_image_file": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+      },
+      {
+        "id": "curve_cu",
+        "type": "data",
+        "name": "Cu CV curve",
+        "properties": {
+          "color": "red",
+          "label": "Cu",
+          "extracted_from_image": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+        },
+        "source_image_file": "ec62520e4a508206a660d0e9190ed9d6a692c9570799873149e69f34a61a715d.jpg"
+      },
+      {
+        "id": "pH2",
+        "type": "condition",
+        "name": "pH 2",
+        "properties": {
+          "description": "Electrolyte condition at pH 2",
+          "extracted_from_image": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+        },
+        "source_image_file": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+      },
+      {
+        "id": "pH3",
+        "type": "condition",
+        "name": "pH 3",
+        "properties": {
+          "description": "Electrolyte condition at pH 3",
+          "extracted_from_image": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+        },
+        "source_image_file": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+      },
+      {
+        "id": "SHE",
+        "type": "reference",
+        "name": "SHE",
+        "properties": {
+          "description": "Standard Hydrogen Electrode reference",
+          "extracted_from_image": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+        },
+        "source_image_file": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+      },
+      {
+        "id": "current_density_0827",
+        "type": "measurement",
+        "name": "-0.827 mA/cm²",
+        "properties": {
+          "description": "Key current density value marked in plot",
+          "extracted_from_image": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+        },
+        "source_image_file": "fabe5e59f00194f670fb8bbdd652d88ce41b160cc06e8b50ff885641833f8cae.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_platinum_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_platinum",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_platinum_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_platinum",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_gold_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_gold",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_copper_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_copper",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_silver_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_silver",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_indium_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_indium",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiOH2_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NiOH2",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_RuO2_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_RuO2",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_platinum_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_platinum",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiOOH_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NiOOH",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_silver",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_silver",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "redox_pair"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "cv_plot",
+        "type": "contains"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "she_reference",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample1",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample2",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample3",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample4",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample5",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample6",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample7",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample8",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sample9",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_silver",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_copper",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "ph2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "ph3",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "electrode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "electrode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "figure_a",
+        "target_id": "cv_plot",
+        "type": "contains"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "sHE",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "cv_plot",
+        "target_id": "peak_0827",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "sample_1",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_2",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_3",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_4",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_5",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_6",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_7",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_8",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_9",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample_10",
+        "target_id": "cv_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "electrolyte_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_silver",
+        "target_id": "n7",
+        "type": "electrolyte_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_copper",
+        "target_id": "n8",
+        "type": "electrolyte_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "electrolyte_for"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n10",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n10",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node7",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node7",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "ph1",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph2",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph3",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph4",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph5",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph6",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph7",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph8",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph9",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph10",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph11",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph12",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph13",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ph14",
+        "target_id": "graph",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "she",
+        "type": "versus"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_silver",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_copper",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "chem_silver",
+        "target_id": "n5",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "chem_copper",
+        "target_id": "n5",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "chart1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "chart1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "chart1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "c4",
+        "target_id": "chart1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "cv_curves",
+        "type": "contains"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph0",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph3",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph4",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph5",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph8",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph9",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph10",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph12",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "cv_curves",
+        "target_id": "ph14",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "electrode_material",
+        "target_id": "cv_curves",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "electrode_material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "ph0",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "ph1",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "ph3",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "ph5",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "ph7",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "ph9",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "ph11",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "ph14",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "peak_0591",
+        "type": "marks_feature"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "peak_0295",
+        "type": "marks_feature"
+      },
+      {
+        "source_id": "graph_b",
+        "target_id": "peak_0827",
+        "type": "marks_feature"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "n1",
+        "type": "shows"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "n2",
+        "type": "shows"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "chem_silver",
+        "type": "in_presence_of"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "n1",
+        "type": "shows"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "n2",
+        "type": "shows"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "chem_silver",
+        "type": "in_presence_of"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "n1",
+        "type": "shows"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "n2",
+        "type": "shows"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "chem_silver",
+        "type": "in_presence_of"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "ref",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "ref",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "ref",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph1",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph2",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph3",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph4",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph5",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph6",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph7",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph8",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph9",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph10",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph11",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph12",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph13",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "ph14",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "ph1",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph1",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph2",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph2",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph3",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph3",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph4",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph4",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph5",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph5",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph6",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph6",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph7",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph7",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph8",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph8",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph9",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph9",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph10",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph10",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph11",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph11",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph12",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph12",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph13",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph13",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph14",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "ph14",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "curve_in",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "curve_ag",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "curve_cu",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "curve_in",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_silver",
+        "target_id": "curve_ag",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_copper",
+        "target_id": "curve_cu",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "she",
+        "type": "references"
+      },
+      {
+        "source_id": "pH2",
+        "target_id": "char_2",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "pH3",
+        "target_id": "char_2",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "SHE",
+        "type": "referenced_to"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "SHE",
+        "type": "referenced_to"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "current_density_0827",
+        "type": "shows_value"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_silver",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_copper",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "vs_reference"
+      }
+    ]
+  }
+}

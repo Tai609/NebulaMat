@@ -1,0 +1,5052 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_7075_T6_Al_alloy",
+        "type": "chemical",
+        "name": "7075-T6 Al alloy",
+        "aliases": [
+          "7075 Al alloy"
+        ],
+        "formula": "Al-Zn-Mg-Cu",
+        "composition": {
+          "Zn": {
+            "value": 5.1,
+            "unit": "wt%"
+          },
+          "Mg": {
+            "value": 2.7,
+            "unit": "wt%"
+          },
+          "Cu": {
+            "value": 1.6,
+            "unit": "wt%"
+          },
+          "Si": {
+            "value": 0.36,
+            "unit": "wt%"
+          },
+          "Mn": {
+            "value": 0.3,
+            "unit": "wt%"
+          },
+          "Cr": {
+            "value": 0.23,
+            "unit": "wt%"
+          },
+          "Fe": {
+            "value": 0.23,
+            "unit": "wt%"
+          },
+          "Al": {
+            "value": "Remainder",
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_3_passes_DG",
+        "type": "chemical",
+        "name": "3-passes deformation gradient structure 7075 Al alloy",
+        "aliases": [
+          "3-passes-DG sample"
+        ],
+        "properties": {
+          "gradient_deformation_layer_depth": {
+            "value": 208,
+            "unit": "μm"
+          },
+          "surface_compressive_residual_stress": {
+            "value": 736,
+            "unit": "MPa"
+          },
+          "surface_roughness_Ra_reduction": {
+            "value": 92,
+            "unit": "%"
+          },
+          "surface_roughness_Rz_reduction": {
+            "value": 89,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_7_passes_NG",
+        "type": "chemical",
+        "name": "7-passes nano-gradient structure 7075 Al alloy",
+        "aliases": [
+          "7-passes-NG sample"
+        ],
+        "properties": {
+          "average_grain_size": {
+            "value": 57,
+            "unit": "nm"
+          },
+          "gradient_deformation_layer_depth": {
+            "value": 332,
+            "unit": "μm"
+          },
+          "surface_compressive_residual_stress": {
+            "value": 775,
+            "unit": "MPa"
+          },
+          "surface_roughness_Ra_reduction": {
+            "value": 84,
+            "unit": "%"
+          },
+          "surface_roughness_Rz_reduction": {
+            "value": 81,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "T6 heat treatment of 7075 Al alloy",
+        "procedure": "The 7075 Al alloy was subjected to T6 heat treatment: solution treating at 480 °C for 2 h followed by rapid quenching in water and finally age hardening at 120 °C for 24 h. The chemical composition was examined by X-ray fluorescence spectroscopy.",
+        "method": "T6 heat treatment",
+        "conditions": {
+          "solution_temperature": {
+            "value": 480,
+            "unit": "°C"
+          },
+          "solution_time": {
+            "value": 2,
+            "unit": "h"
+          },
+          "quenching_medium": {
+            "value": "water",
+            "unit": ""
+          },
+          "aging_temperature": {
+            "value": 120,
+            "unit": "°C"
+          },
+          "aging_time": {
+            "value": 24,
+            "unit": "h"
+          }
+        },
+        "source_text": "T6 heat treatment involves solution treating at 480 °C for 2 h followed by rapid quenching in water and finally age hardening at 120 °C for 24 h. The chemical composition of the alloy is examined by X-ray fluorescence spectroscopy"
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "3 passes USRP treatment",
+        "procedure": "Cylindrical samples of 7075-T6 Al alloy (120 mm in length and 26 mm in diameter) were subjected to 3 passes of ultrasonic surface rolling process (USRP). The specific USRP processing parameter values, including the current, pressure, feed rate, and lathe spindle speed, are shown in the inset table in Fig. 1. After USRP, each sample was immediately immersed in acetone to remove lubricating oil from its surface. The samples were then air-cooled and dried for later use.",
+        "method": "Ultrasonic Surface Rolling Process",
+        "conditions": {
+          "sample_length": {
+            "value": 120,
+            "unit": "mm"
+          },
+          "sample_diameter": {
+            "value": 26,
+            "unit": "mm"
+          },
+          "passes": {
+            "value": 3,
+            "unit": "passes"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Ultrasonic Surface Rolling",
+            "method": "USRP",
+            "conditions": {
+              "passes": {
+                "value": 3,
+                "unit": "passes"
+              }
+            },
+            "procedure_snippet": "3 USRP treatment passes were carried out to tailor the surface microstructure and surface state of the alloy samples"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Lubricant Removal",
+            "method": "Acetone immersion",
+            "conditions": {},
+            "procedure_snippet": "After USRP, each sample was immediately immersed in acetone to remove lubricating oil from its surface"
+          },
+          {
+            "id": "unit_op_2.3",
+            "name": "Drying",
+            "method": "Air drying",
+            "conditions": {},
+            "procedure_snippet": "The samples were then air-cooled and dried for later use"
+          }
+        ],
+        "source_text": "The cylindrical samples used for USRP were 120 mm in length and 26 mm in diameter... 3, 7, and 12 USRP treatment passes were carried out... After USRP, each sample was immediately immersed in acetone"
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "7 passes USRP treatment",
+        "procedure": "Cylindrical samples of 7075-T6 Al alloy (120 mm in length and 26 mm in diameter) were subjected to 7 passes of ultrasonic surface rolling process (USRP). The specific USRP processing parameter values, including the current, pressure, feed rate, and lathe spindle speed, are shown in the inset table in Fig. 1. After USRP, each sample was immediately immersed in acetone to remove lubricating oil from its surface. The samples were then air-cooled and dried for later use.",
+        "method": "Ultrasonic Surface Rolling Process",
+        "conditions": {
+          "sample_length": {
+            "value": 120,
+            "unit": "mm"
+          },
+          "sample_diameter": {
+            "value": 26,
+            "unit": "mm"
+          },
+          "passes": {
+            "value": 7,
+            "unit": "passes"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Ultrasonic Surface Rolling",
+            "method": "USRP",
+            "conditions": {
+              "passes": {
+                "value": 7,
+                "unit": "passes"
+              }
+            },
+            "procedure_snippet": "7 USRP treatment passes were carried out to tailor the surface microstructure and surface state of the alloy samples"
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Lubricant Removal",
+            "method": "Acetone immersion",
+            "conditions": {},
+            "procedure_snippet": "After USRP, each sample was immediately immersed in acetone to remove lubricating oil from its surface"
+          },
+          {
+            "id": "unit_op_3.3",
+            "name": "Drying",
+            "method": "Air drying",
+            "conditions": {},
+            "procedure_snippet": "The samples were then air-cooled and dried for later use"
+          }
+        ],
+        "source_text": "The cylindrical samples used for USRP were 120 mm in length and 26 mm in diameter... 3, 7, and 12 USRP treatment passes were carried out... After USRP, each sample was immediately immersed in acetone"
+      },
+      {
+        "id": "chem_acetone",
+        "type": "chemical",
+        "name": "acetone",
+        "aliases": [],
+        "formula": "C3H6O",
+        "properties": {}
+      },
+      {
+        "id": "chem_7075_3_passes_DG",
+        "type": "chemical",
+        "name": "3-passes-DG sample",
+        "aliases": [
+          "3-passes-DG"
+        ],
+        "formula": "7075 Al alloy (3 USRP passes)",
+        "properties": {
+          "average_grain_rotation_angle": {
+            "value": 53,
+            "unit": "degrees"
+          },
+          "gradient_deformation_layer_depth": {
+            "value": 208,
+            "unit": "μm"
+          },
+          "surface_compressive_residual_stress": {
+            "value": 736,
+            "unit": "MPa"
+          },
+          "surface_roughness_Ra_reduction": {
+            "value": 92,
+            "unit": "%"
+          },
+          "surface_roughness_Rz_reduction": {
+            "value": 89,
+            "unit": "%"
+          }
+        },
+        "related_images": [
+          "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg",
+          "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "3 Passes DG",
+            "properties": {
+              "description": "3-pass delaminated graphene",
+              "extracted_from_image": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+            },
+            "source_image_file": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "3 Passes - DG",
+            "properties": {
+              "description": "Material processed with 3 passes, DG variant",
+              "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+            },
+            "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_7075_7_passes_NG",
+        "type": "chemical",
+        "name": "7-passes-NG sample",
+        "aliases": [
+          "7-passes-NG"
+        ],
+        "formula": "7075 Al alloy (7 USRP passes)",
+        "properties": {
+          "average_grain_size": {
+            "value": 57,
+            "unit": "nm"
+          },
+          "average_grain_rotation_angle": {
+            "value": 80,
+            "unit": "degrees"
+          },
+          "gradient_deformation_layer_depth": {
+            "value": 332,
+            "unit": "μm"
+          },
+          "surface_compressive_residual_stress": {
+            "value": 775,
+            "unit": "MPa"
+          },
+          "surface_roughness_Ra_reduction": {
+            "value": 84,
+            "unit": "%"
+          },
+          "surface_roughness_Rz_reduction": {
+            "value": 81,
+            "unit": "%"
+          }
+        },
+        "related_images": [
+          "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg",
+          "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "7 Passes NG",
+            "properties": {
+              "description": "7-pass nitrogen-doped graphene",
+              "extracted_from_image": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+            },
+            "source_image_file": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "7 Passes - NG",
+            "properties": {
+              "description": "Material processed with 7 passes, NG variant",
+              "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+            },
+            "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_7075_3_passes_DG_U",
+        "type": "chemical",
+        "name": "3-passes-DG-U sample",
+        "aliases": [
+          "3-passes-DG-U"
+        ],
+        "formula": "7075 Al alloy (3 USRP passes, stress relaxed)",
+        "properties": {
+          "surface_compressive_residual_stress_after_relaxation": {
+            "value": 280,
+            "unit": "MPa"
+          }
+        },
+        "related_images": [
+          "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg",
+          "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg",
+          "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg",
+          "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "sample",
+            "name": "3-passes-DG-U",
+            "properties": {
+              "R": 5.934,
+              "Yo_cm2": "4.548e-5",
+              "n": 0.8931,
+              "R_ct_cm2": 2297,
+              "L_H_cm2": 1320,
+              "R_f_cm2": 324.9,
+              "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+            },
+            "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "3 Passes DG-U",
+            "properties": {
+              "description": "3-pass delaminated graphene (unoxidized)",
+              "extracted_from_image": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+            },
+            "source_image_file": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "3 Passes - DG-U",
+            "properties": {
+              "description": "Material processed with 3 passes, DG-U variant",
+              "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+            },
+            "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "3 passes DG",
+            "properties": {
+              "E_corr": -1.128,
+              "units_E_corr": "V vs SCE",
+              "I_corr": "1.514 x 10^-5",
+              "units_I_corr": "A/cm²",
+              "CR": 0.485,
+              "units_CR": "mm/year",
+              "extracted_from_image": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+            },
+            "source_image_file": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_7075_7_passes_NG_U",
+        "type": "chemical",
+        "name": "7-passes-NG-U sample",
+        "aliases": [
+          "7-passes-NG-U"
+        ],
+        "formula": "7075 Al alloy (7 USRP passes, stress relaxed)",
+        "properties": {
+          "surface_compressive_residual_stress_after_relaxation": {
+            "value": 410,
+            "unit": "MPa"
+          }
+        },
+        "related_images": [
+          "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg",
+          "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg",
+          "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg",
+          "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "sample",
+            "name": "7-passes-NG-U",
+            "properties": {
+              "R": 5.817,
+              "Yo_cm2": "3.241e-6",
+              "n": 0.8845,
+              "R_ct_cm2": 4621,
+              "L_H_cm2": 1097,
+              "R_f_cm2": 395.4,
+              "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+            },
+            "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "7 Passes NG-U",
+            "properties": {
+              "description": "7-pass nitrogen-doped graphene (unoxidized)",
+              "extracted_from_image": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+            },
+            "source_image_file": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "7 Passes - NG-U",
+            "properties": {
+              "description": "Material processed with 7 passes, NG-U variant",
+              "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+            },
+            "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "7 passes NG-U",
+            "properties": {
+              "E_corr": -1.028,
+              "units_E_corr": "V vs SCE",
+              "I_corr": "8.012 x 10^-6",
+              "units_I_corr": "A/cm²",
+              "CR": 0.251,
+              "units_CR": "mm/year",
+              "extracted_from_image": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+            },
+            "source_image_file": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_7075-Al",
+        "type": "chemical",
+        "name": "7075-T6 Al alloy",
+        "aliases": [
+          "7075 Al alloy",
+          "CG sample",
+          "3-passes-DG sample",
+          "7-passes-NG sample"
+        ],
+        "formula": "Al-Zn-Mg-Cu",
+        "composition": {
+          "Zn": {
+            "value": 5.1,
+            "unit": "wt%"
+          },
+          "Mg": {
+            "value": 2.7,
+            "unit": "wt%"
+          },
+          "Cu": {
+            "value": 1.6,
+            "unit": "wt%"
+          },
+          "Si": {
+            "value": 0.36,
+            "unit": "wt%"
+          },
+          "Mn": {
+            "value": 0.3,
+            "unit": "wt%"
+          },
+          "Cr": {
+            "value": 0.23,
+            "unit": "wt%"
+          },
+          "Fe": {
+            "value": 0.23,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "average grain size": {
+            "value": 4,
+            "unit": "μm"
+          }
+        },
+        "related_images": [
+          "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg",
+          "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg",
+          "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg",
+          "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg",
+          "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg",
+          "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "sample",
+            "name": "CG-DG",
+            "properties": {
+              "R": 10.2,
+              "Yo_cm2": "3.795e-5",
+              "n": 0.875,
+              "R_ct_cm2": 2093,
+              "L_H_cm2": 1602,
+              "R_f_cm2": 327.1,
+              "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+            },
+            "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CG",
+            "properties": {
+              "description": "Commercial graphite or control material",
+              "extracted_from_image": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+            },
+            "source_image_file": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CG",
+            "properties": {
+              "mean_size": "35.3 nm",
+              "extracted_from_image": "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg"
+            },
+            "source_image_file": "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CG",
+            "properties": {
+              "description": "Control group or pristine material",
+              "extracted_from_image": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+            },
+            "source_image_file": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "CG",
+            "properties": {
+              "description": "Control Group or Coarse Grain sample",
+              "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+            },
+            "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "3 passes DG-U",
+            "properties": {
+              "E_corr": -1.165,
+              "units_E_corr": "V vs SCE",
+              "I_corr": "5.697 x 10^-5",
+              "units_I_corr": "A/cm²",
+              "CR": 2.4,
+              "units_CR": "mm/year",
+              "extracted_from_image": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+            },
+            "source_image_file": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_7075_T6_Al_alloy_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_7075_T6_Al_alloy",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_3_passes_DG",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_3_passes_DG",
+        "properties": {
+          "form": "surface treated solid"
+        }
+      },
+      {
+        "id": "edge_input_chem_7075_T6_Al_alloy_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_7075_T6_Al_alloy",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_7_passes_NG",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_7_passes_NG",
+        "properties": {
+          "form": "nanocrystalline surface solid"
+        }
+      },
+      {
+        "id": "edge_input_chem_acetone_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_acetone",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "purpose": "lubricant removal"
+        }
+      },
+      {
+        "id": "edge_input_chem_acetone_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_acetone",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent",
+          "purpose": "lubricant removal"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_7075_3_passes_DG",
+      "chem_7075_3_passes_DG_U",
+      "chem_7075_7_passes_NG_U",
+      "chem_7075_7_passes_NG"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_7075_T6_Al_alloy",
+        "type": "chemical",
+        "name": "7075-T6 Al alloy",
+        "aliases": [
+          "7075 Al alloy"
+        ],
+        "formula": "Al-Zn-Mg-Cu",
+        "composition": {
+          "Zn": {
+            "value": 5.1,
+            "unit": "wt%"
+          },
+          "Mg": {
+            "value": 2.7,
+            "unit": "wt%"
+          },
+          "Cu": {
+            "value": 1.6,
+            "unit": "wt%"
+          },
+          "Si": {
+            "value": 0.36,
+            "unit": "wt%"
+          },
+          "Mn": {
+            "value": 0.3,
+            "unit": "wt%"
+          },
+          "Cr": {
+            "value": 0.23,
+            "unit": "wt%"
+          },
+          "Fe": {
+            "value": 0.23,
+            "unit": "wt%"
+          },
+          "Al": {
+            "value": "Remainder",
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_7075_3_passes_DG",
+        "type": "chemical",
+        "name": "3-passes-DG sample",
+        "aliases": [
+          "3-passes-DG"
+        ],
+        "formula": "7075 Al alloy (3 USRP passes)",
+        "properties": {
+          "average_grain_rotation_angle": {
+            "value": 53,
+            "unit": "degrees"
+          },
+          "gradient_deformation_layer_depth": {
+            "value": 208,
+            "unit": "μm"
+          },
+          "surface_compressive_residual_stress": {
+            "value": 736,
+            "unit": "MPa"
+          },
+          "surface_roughness_Ra_reduction": {
+            "value": 92,
+            "unit": "%"
+          },
+          "surface_roughness_Rz_reduction": {
+            "value": 89,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_7075_7_passes_NG",
+        "type": "chemical",
+        "name": "7-passes-NG sample",
+        "aliases": [
+          "7-passes-NG"
+        ],
+        "formula": "7075 Al alloy (7 USRP passes)",
+        "properties": {
+          "average_grain_size": {
+            "value": 57,
+            "unit": "nm"
+          },
+          "average_grain_rotation_angle": {
+            "value": 80,
+            "unit": "degrees"
+          },
+          "gradient_deformation_layer_depth": {
+            "value": 332,
+            "unit": "μm"
+          },
+          "surface_compressive_residual_stress": {
+            "value": 775,
+            "unit": "MPa"
+          },
+          "surface_roughness_Ra_reduction": {
+            "value": 84,
+            "unit": "%"
+          },
+          "surface_roughness_Rz_reduction": {
+            "value": 81,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_7075_T6_Al_alloy",
+        "description": "Immersion corrosion testing in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "immersion_time": {
+            "value": 120,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "average_corrosion_depth": {
+            "value": 11.01,
+            "unit": "μm"
+          }
+        },
+        "source_text": "The average corrosion depths of the CG... were 11.01 μm"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_7075_3_passes_DG",
+        "description": "Immersion corrosion testing in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "immersion_time": {
+            "value": 120,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "average_corrosion_depth": {
+            "value": 2.71,
+            "unit": "μm"
+          },
+          "corrosion_depth_reduction": {
+            "value": 75.4,
+            "unit": "%"
+          }
+        },
+        "source_text": "the average corrosion depths of the... 3-passes-DG... were... 2.71 μm"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_7075_7_passes_NG",
+        "description": "Immersion corrosion testing in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "immersion_time": {
+            "value": 120,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "average_corrosion_depth": {
+            "value": 1.86,
+            "unit": "μm"
+          },
+          "corrosion_depth_reduction": {
+            "value": 83.1,
+            "unit": "%"
+          }
+        },
+        "source_text": "the average corrosion depths of the... 7-passes-NG... were... 1.86 μm"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_7075_T6_Al_alloy",
+        "description": "Electrochemical potentiodynamic polarization in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode_area": {
+            "value": 4.08,
+            "unit": "cm²"
+          },
+          "counter_electrode": {
+            "value": "Pt foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "SCE",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 0.5,
+            "unit": "mV/s"
+          },
+          "potential_range": {
+            "value": "-0.8 to 1.5",
+            "unit": "V vs OCP"
+          }
+        },
+        "results_json": {
+          "self_corrosion_potential_Ecorr": {
+            "value": -1.165,
+            "unit": "V vs SCE"
+          },
+          "corrosion_current_density_Icorr": {
+            "value": 7.624e-05,
+            "unit": "A/cm²"
+          },
+          "corrosion_rate_CR": {
+            "value": 2.4,
+            "unit": "mm/year"
+          }
+        },
+        "source_text": "Table 2 Electrochemical corrosion parameters... CG: Ecorr -1.165 VSCE, Icorr 7.624 × 10-5 A/cm2, CR 2.400 mm/year"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_7075_3_passes_DG",
+        "description": "Electrochemical potentiodynamic polarization in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode_area": {
+            "value": 4.08,
+            "unit": "cm²"
+          },
+          "counter_electrode": {
+            "value": "Pt foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "SCE",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 0.5,
+            "unit": "mV/s"
+          },
+          "potential_range": {
+            "value": "-0.8 to 1.5",
+            "unit": "V vs OCP"
+          }
+        },
+        "results_json": {
+          "self_corrosion_potential_Ecorr": {
+            "value": -1.128,
+            "unit": "V vs SCE"
+          },
+          "corrosion_current_density_Icorr": {
+            "value": 1.541e-05,
+            "unit": "A/cm²"
+          },
+          "corrosion_rate_CR": {
+            "value": 0.485,
+            "unit": "mm/year"
+          },
+          "corrosion_rate_reduction": {
+            "value": 79.8,
+            "unit": "%"
+          }
+        },
+        "source_text": "Table 2... 3-passes-DG: Ecorr -1.128 VSCE, Icorr 1.541 × 10-5 A/cm2, CR 0.485 mm/year"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_7075_7_passes_NG",
+        "description": "Electrochemical potentiodynamic polarization in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode_area": {
+            "value": 4.08,
+            "unit": "cm²"
+          },
+          "counter_electrode": {
+            "value": "Pt foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "SCE",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 0.5,
+            "unit": "mV/s"
+          },
+          "potential_range": {
+            "value": "-0.8 to 1.5",
+            "unit": "V vs OCP"
+          }
+        },
+        "results_json": {
+          "self_corrosion_potential_Ecorr": {
+            "value": -1.088,
+            "unit": "V vs SCE"
+          },
+          "corrosion_current_density_Icorr": {
+            "value": 5.445e-06,
+            "unit": "A/cm²"
+          },
+          "corrosion_rate_CR": {
+            "value": 0.171,
+            "unit": "mm/year"
+          },
+          "corrosion_rate_reduction": {
+            "value": 92.9,
+            "unit": "%"
+          }
+        },
+        "source_text": "Table 2... 7-passes-NG: Ecorr -1.088 VSCE, Icorr 5.445 × 10-6 A/cm2, CR 0.171 mm/year"
+      },
+      {
+        "id": "chem_7075_3_passes_DG_U",
+        "type": "chemical",
+        "name": "3-passes-DG-U sample",
+        "aliases": [
+          "3-passes-DG-U"
+        ],
+        "formula": "7075 Al alloy (3 USRP passes, stress relaxed)",
+        "properties": {
+          "surface_compressive_residual_stress_after_relaxation": {
+            "value": 280,
+            "unit": "MPa"
+          }
+        }
+      },
+      {
+        "id": "chem_7075_7_passes_NG_U",
+        "type": "chemical",
+        "name": "7-passes-NG-U sample",
+        "aliases": [
+          "7-passes-NG-U"
+        ],
+        "formula": "7075 Al alloy (7 USRP passes, stress relaxed)",
+        "properties": {
+          "surface_compressive_residual_stress_after_relaxation": {
+            "value": 410,
+            "unit": "MPa"
+          }
+        }
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_7075_3_passes_DG_U",
+        "description": "Immersion corrosion testing in 3.5% NaCl (stress relaxed)",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "immersion_time": {
+            "value": 120,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "average_corrosion_depth": {
+            "value": 7.12,
+            "unit": "μm"
+          }
+        },
+        "source_text": "The average corrosion depths of the... 3-passes-DG-U... were 7.12 μm"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_7075_7_passes_NG_U",
+        "description": "Immersion corrosion testing in 3.5% NaCl (stress relaxed)",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "immersion_time": {
+            "value": 120,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "average_corrosion_depth": {
+            "value": 2.01,
+            "unit": "μm"
+          }
+        },
+        "source_text": "The average corrosion depths of the... 7-passes-NG-U... were 2.01 μm"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_7075_3_passes_DG_U",
+        "description": "Electrochemical potentiodynamic polarization in 3.5% NaCl (stress relaxed)",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode_area": {
+            "value": 4.08,
+            "unit": "cm²"
+          },
+          "counter_electrode": {
+            "value": "Pt foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "SCE",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 0.5,
+            "unit": "mV/s"
+          },
+          "potential_range": {
+            "value": "-0.8 to 1.5",
+            "unit": "V vs OCP"
+          }
+        },
+        "results_json": {
+          "self_corrosion_potential_Ecorr": {
+            "value": -1.162,
+            "unit": "V vs SCE"
+          },
+          "corrosion_current_density_Icorr": {
+            "value": 5.597e-05,
+            "unit": "A/cm²"
+          },
+          "corrosion_rate_CR": {
+            "value": 1.762,
+            "unit": "mm/year"
+          }
+        },
+        "source_text": "Table 2... 3-passes-DG-U: Ecorr -1.162 VSCE, Icorr 5.597 × 10-5 A/cm2, CR 1.762 mm/year"
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_7075_7_passes_NG_U",
+        "description": "Electrochemical potentiodynamic polarization in 3.5% NaCl (stress relaxed)",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode_area": {
+            "value": 4.08,
+            "unit": "cm²"
+          },
+          "counter_electrode": {
+            "value": "Pt foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "SCE",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 0.5,
+            "unit": "mV/s"
+          },
+          "potential_range": {
+            "value": "-0.8 to 1.5",
+            "unit": "V vs OCP"
+          }
+        },
+        "results_json": {
+          "self_corrosion_potential_Ecorr": {
+            "value": -1.121,
+            "unit": "V vs SCE"
+          },
+          "corrosion_current_density_Icorr": {
+            "value": 8.012e-06,
+            "unit": "A/cm²"
+          },
+          "corrosion_rate_CR": {
+            "value": 0.252,
+            "unit": "mm/year"
+          }
+        },
+        "source_text": "Table 2... 7-passes-NG-U: Ecorr -1.121 VSCE, Icorr 8.012 × 10-6 A/cm2, CR 0.252 mm/year"
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_7075_T6_Al_alloy",
+        "description": "Electrochemical impedance spectroscopy (EIS) in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "perturbation_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "frequency_range": {
+            "value": "0.01 to 100",
+            "unit": "kHz"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance_Rct": {
+            "value": 2093,
+            "unit": "Ω·cm²"
+          }
+        },
+        "source_text": "Table 3... CG: Rct 2093 Ω·cm2"
+      },
+      {
+        "id": "test_12",
+        "type": "testing",
+        "catalyst_id": "chem_7075_3_passes_DG",
+        "description": "Electrochemical impedance spectroscopy (EIS) in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "perturbation_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "frequency_range": {
+            "value": "0.01 to 100",
+            "unit": "kHz"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance_Rct": {
+            "value": 2987,
+            "unit": "Ω·cm²"
+          }
+        },
+        "source_text": "Table 3... 3-passes-DG: Rct 2987 Ω·cm2"
+      },
+      {
+        "id": "test_13",
+        "type": "testing",
+        "catalyst_id": "chem_7075_7_passes_NG",
+        "description": "Electrochemical impedance spectroscopy (EIS) in 3.5% NaCl",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "3.5%",
+            "unit": "NaCl solution"
+          },
+          "temperature": {
+            "value": 30,
+            "unit": "°C"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "perturbation_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "frequency_range": {
+            "value": "0.01 to 100",
+            "unit": "kHz"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance_Rct": {
+            "value": 5206,
+            "unit": "Ω·cm²"
+          }
+        },
+        "source_text": "Table 3... 7-passes-NG: Rct 5206 Ω·cm2"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_7075_T6_Al_alloy_test_1",
+        "type": "tested_in",
+        "source_id": "chem_7075_T6_Al_alloy",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_3_passes_DG_test_2",
+        "type": "tested_in",
+        "source_id": "chem_7075_3_passes_DG",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_7_passes_NG_test_3",
+        "type": "tested_in",
+        "source_id": "chem_7075_7_passes_NG",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_T6_Al_alloy_test_4",
+        "type": "tested_in",
+        "source_id": "chem_7075_T6_Al_alloy",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_3_passes_DG_test_5",
+        "type": "tested_in",
+        "source_id": "chem_7075_3_passes_DG",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_7_passes_NG_test_6",
+        "type": "tested_in",
+        "source_id": "chem_7075_7_passes_NG",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_3_passes_DG_U_test_7",
+        "type": "tested_in",
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_7_passes_NG_U_test_8",
+        "type": "tested_in",
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_3_passes_DG_U_test_9",
+        "type": "tested_in",
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_7_passes_NG_U_test_10",
+        "type": "tested_in",
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "test_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_T6_Al_alloy_test_11",
+        "type": "tested_in",
+        "source_id": "chem_7075_T6_Al_alloy",
+        "target_id": "test_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_3_passes_DG_test_12",
+        "type": "tested_in",
+        "source_id": "chem_7075_3_passes_DG",
+        "target_id": "test_12",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_7075_7_passes_NG_test_13",
+        "type": "tested_in",
+        "source_id": "chem_7075_7_passes_NG",
+        "target_id": "test_13",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_7075-Al",
+        "type": "chemical",
+        "name": "7075-T6 Al alloy",
+        "aliases": [
+          "7075 Al alloy",
+          "CG sample",
+          "3-passes-DG sample",
+          "7-passes-NG sample"
+        ],
+        "formula": "Al-Zn-Mg-Cu",
+        "composition": {
+          "Zn": {
+            "value": 5.1,
+            "unit": "wt%"
+          },
+          "Mg": {
+            "value": 2.7,
+            "unit": "wt%"
+          },
+          "Cu": {
+            "value": 1.6,
+            "unit": "wt%"
+          },
+          "Si": {
+            "value": 0.36,
+            "unit": "wt%"
+          },
+          "Mn": {
+            "value": 0.3,
+            "unit": "wt%"
+          },
+          "Cr": {
+            "value": 0.23,
+            "unit": "wt%"
+          },
+          "Fe": {
+            "value": 0.23,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "average grain size": {
+            "value": 4,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "OM",
+        "data_reported": true,
+        "characterization_summary": "Cross-sectional OM shows untreated CG sample average grain size of 4 μm; USRP-treated samples show gradient deformation layers of depths 208 μm (3 passes), 332 μm (7 passes), 350 μm (12 passes).",
+        "evidence_snippet": "Fig. 2(a) displays the microstructure of a sample before USRP (denoted CG sample) with an average grain size of 4 μm. ... the depths of the gradient deformation layers in the samples with 3, 7, and 12 USRP treatment passes were 208 μm, 332 μm, and 350 μm, respectively."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "SEM observes surface morphologies and corrosion morphologies after immersion testing, showing reduced corrosion pits in USRP-treated samples.",
+        "evidence_snippet": "The surface morphologies of the samples were observed by scanning electron microscopy (SEM, ZEISS SUPRA55)."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "CLSM",
+        "data_reported": true,
+        "characterization_summary": "Surface roughness dramatically reduced after USRP: Ra and Rz values 92% and 89% lower for 3-passes-DG, 84% and 81% lower for 7-passes-NG vs CG. Average corrosion depths: CG 11.01 μm, 3-passes-DG 2.71 μm, 7-passes-NG 1.86 μm.",
+        "evidence_snippet": "The Ra and Rz values of the 3-passes-DG sample were 92% and 89% lower than that of the CG sample, respectively. ... the average corrosion depths of the CG, 3-passes-DG, ... and 7-passes-NG samples were 11.01 μm, 2.71 μm, ... and 1.86 μm."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM shows CG sample uniform grains nearly dislocation-free with spherical G.P. zones and strip-like precipitates; 3-passes has dislocation structures/walls/tangles; 7-passes has equiaxed nanocrystals average size ~57 nm with continuous SAED rings.",
+        "evidence_snippet": "The grains of this sample are uniform and almost free of dislocations ... A large number of dislocation structures were generated in the grains after 3 USRP passes ... the surface grains of the 7-passes USRP sample are refined into equiaxed nanocrystals ... average grain size of these nanocrystals was ~57 nm."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "X-ray stress analysis",
+        "data_reported": true,
+        "characterization_summary": "Surface compressive residual stress: CG very low; 3-passes-DG 736 MPa (layer depth 560 μm); 7-passes-NG 775 MPa (layer depth 620 μm).",
+        "evidence_snippet": "The surface compressive residual stress of the 3-passes-DG sample reached 736 MPa, and the layer depth of this sample reached 560 μm. The surface compressive residual stress of the 7-passes-NG sample was 39 MPa higher than that of the 3-passes-DG sample."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "potentiodynamic polarization",
+        "data_reported": true,
+        "characterization_summary": "All samples show passivation; USRP samples have left-shifted passivation zones and lower current densities. 7-passes-NG: Ecorr -1.088 V_SCE, Icorr 5.445×10^{-6} A/cm², CR 0.171 mm/year.",
+        "evidence_snippet": "The Ecorr values of all the USRP-treated samples were more positive than that of the CG sample. ... 7-passes-NG: -1.088, 5.445 × 10-6, 0.171."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "EIS",
+        "data_reported": true,
+        "characterization_summary": "Nyquist plots show larger capacitive semicircles for USRP samples, largest for 7-passes-NG. Rct values: CG 2093 Ω·cm², 3-passes-DG 2987 Ω·cm², 7-passes-NG 5206 Ω·cm².",
+        "evidence_snippet": "The radii of the capacitive semicircles of the USRP-treated samples were larger than that of the CG sample. The largest capacitive semicircle radius was obtained by the 7-passes-NG sample. ... Rct values of the CG, ... 7-passes-NG samples were 2093, ... and 5206 Ω·cm²."
+      },
+      {
+        "id": "n1",
+        "type": "characterization",
+        "name": "Ra Plot",
+        "properties": {
+          "label": "(b)",
+          "type": "surface roughness",
+          "unit": "μm",
+          "x_label": "Distance (μm)",
+          "y_label": "Ra (μm)",
+          "x_range": [
+            0,
+            250
+          ],
+          "y_range": [
+            -2.0,
+            2.0
+          ],
+          "extracted_from_image": "fba7f30d80474e1a2b0b46ad2124ddc2251402beaadacde877ce3a984a34c5cf.jpg"
+        },
+        "source_image_file": "fba7f30d80474e1a2b0b46ad2124ddc2251402beaadacde877ce3a984a34c5cf.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "property",
+        "name": "Mean Grain Size",
+        "properties": {
+          "value": "57 nm",
+          "extracted_from_image": "f5714b8985a02ab88eb3283c56c4465939fe6b3f6e742c96b6c61f7cc0135fa6.jpg"
+        },
+        "source_image_file": "f5714b8985a02ab88eb3283c56c4465939fe6b3f6e742c96b6c61f7cc0135fa6.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "material",
+        "name": "Nanomaterial",
+        "properties": {
+          "feature": "grain size distribution",
+          "extracted_from_image": "f5714b8985a02ab88eb3283c56c4465939fe6b3f6e742c96b6c61f7cc0135fa6.jpg"
+        },
+        "source_image_file": "f5714b8985a02ab88eb3283c56c4465939fe6b3f6e742c96b6c61f7cc0135fa6.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "annotation",
+        "name": "Dashed boundary line",
+        "properties": {
+          "description": "Separates deformation layer from matrix",
+          "extracted_from_image": "ec4e3f11eee18cdd1031c0b74b699b550850e6a857a6c1e24ff9c234cd441fe1.jpg"
+        },
+        "source_image_file": "ec4e3f11eee18cdd1031c0b74b699b550850e6a857a6c1e24ff9c234cd441fe1.jpg"
+      },
+      {
+        "id": "image_f",
+        "type": "image",
+        "name": "Figure f",
+        "properties": {
+          "description": "High-resolution TEM image with scale bars",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "scale_2nm",
+        "type": "scale",
+        "name": "2 nm scale bar",
+        "properties": {
+          "length": "2 nm",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "scale_10nm",
+        "type": "scale",
+        "name": "10 nm scale bar",
+        "properties": {
+          "length": "10 nm",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "lattice_main",
+        "type": "lattice",
+        "name": "Main lattice fringes",
+        "properties": {
+          "spacing": "0.20 nm",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "inset",
+        "type": "characterization",
+        "name": "SAED Pattern",
+        "properties": {
+          "description": "Selected area electron diffraction pattern",
+          "d_spacings": [
+            "0.20 nm",
+            "0.21 nm",
+            "0.37 nm"
+          ],
+          "features": [
+            "diffuse rings",
+            "spots"
+          ],
+          "label": "[001] HA",
+          "extracted_from_image": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+        },
+        "source_image_file": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+      },
+      {
+        "id": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48_200",
+        "type": "miller_index",
+        "name": "(200)",
+        "properties": {
+          "hkl": [
+            2,
+            0,
+            0
+          ],
+          "d_spacing": "0.20 nm",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48_121",
+        "type": "miller_index",
+        "name": "(121)",
+        "properties": {
+          "hkl": [
+            1,
+            2,
+            1
+          ],
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48_113",
+        "type": "miller_index",
+        "name": "(113)",
+        "properties": {
+          "hkl": [
+            1,
+            1,
+            3
+          ],
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48_002",
+        "type": "miller_index",
+        "name": "(002)",
+        "properties": {
+          "hkl": [
+            0,
+            0,
+            2
+          ],
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48_011",
+        "type": "miller_index",
+        "name": "(011)",
+        "properties": {
+          "hkl": [
+            0,
+            1,
+            1
+          ],
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48_001",
+        "type": "miller_index",
+        "name": "(001)",
+        "properties": {
+          "hkl": [
+            0,
+            0,
+            1
+          ],
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "material_al",
+        "type": "chemical",
+        "name": "Aluminum",
+        "properties": {
+          "element": "Al",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "material_zn",
+        "type": "chemical",
+        "name": "Zinc",
+        "properties": {
+          "element": "Zn",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "hrtem",
+        "type": "characterization",
+        "name": "HRTEM",
+        "properties": {
+          "technique": "High-Resolution Transmission Electron Microscopy",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "fft",
+        "type": "characterization",
+        "name": "FFT",
+        "properties": {
+          "technique": "Fast Fourier Transform",
+          "extracted_from_image": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+        },
+        "source_image_file": "063f284db8b57b304f32dde775a290c20329f37ce53585fe338ff172193b3c48.jpg"
+      },
+      {
+        "id": "image_a",
+        "type": "image",
+        "name": "Figure (a)",
+        "properties": {
+          "description": "Grayscale microscopic image showing irregular crystalline particles",
+          "scale_bar": "2 μm",
+          "extracted_from_image": "b8d24792d17572593393834c648a30e96c4d65f4726552608d3bca595f39ab1f.jpg"
+        },
+        "source_image_file": "b8d24792d17572593393834c648a30e96c4d65f4726552608d3bca595f39ab1f.jpg"
+      },
+      {
+        "id": "microstructure",
+        "type": "characterization",
+        "name": "Granular Microstructure",
+        "properties": {
+          "features": [
+            "irregular grains",
+            "heterogeneous texture",
+            "white arrows indicating regions of interest"
+          ],
+          "scale": "100 μm",
+          "extracted_from_image": "0755757dbfe9b81b07081ddfa1a015d205f2d5a50a426a7cc670722ac7ef89a2.jpg"
+        },
+        "source_image_file": "0755757dbfe9b81b07081ddfa1a015d205f2d5a50a426a7cc670722ac7ef89a2.jpg"
+      },
+      {
+        "id": "sem",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "technique": "Scanning Electron Microscopy",
+          "scale": "2 μm bar",
+          "features": "Multiple particles, angular morphology, micrometer scale",
+          "extracted_from_image": "b8d24792d17572593393834c648a30e96c4d65f4726552608d3bca595f39ab1f.jpg"
+        },
+        "source_image_file": "b8d24792d17572593393834c648a30e96c4d65f4726552608d3bca595f39ab1f.jpg"
+      },
+      {
+        "id": "param_R",
+        "type": "parameter",
+        "name": "R (Ω)",
+        "properties": {
+          "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+        },
+        "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+      },
+      {
+        "id": "param_Yo",
+        "type": "parameter",
+        "name": "Y₀ (Ω⁻¹ cm⁻²)",
+        "properties": {
+          "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+        },
+        "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+      },
+      {
+        "id": "param_n",
+        "type": "parameter",
+        "name": "n",
+        "properties": {
+          "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+        },
+        "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+      },
+      {
+        "id": "param_Rct",
+        "type": "parameter",
+        "name": "R_ct (Ω cm²)",
+        "properties": {
+          "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+        },
+        "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+      },
+      {
+        "id": "param_LH",
+        "type": "parameter",
+        "name": "L_H (H cm²)",
+        "properties": {
+          "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+        },
+        "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+      },
+      {
+        "id": "param_Rf",
+        "type": "parameter",
+        "name": "R_f (Ω cm²)",
+        "properties": {
+          "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+        },
+        "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+      },
+      {
+        "id": "dataset",
+        "type": "characterization",
+        "name": "EIS Parameters Table",
+        "properties": {
+          "type": "Electrochemical Impedance Spectroscopy",
+          "units": {
+            "R": "Ω",
+            "Yo": "Ω⁻¹ cm⁻²",
+            "n": "dimensionless",
+            "R_ct": "Ω cm²",
+            "L_H": "H cm²",
+            "R_f": "Ω cm²"
+          },
+          "extracted_from_image": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+        },
+        "source_image_file": "153c50b0190bd1edf122904f09b33d6604c18ee1a511ba46933655fc5f91b77d.jpg"
+      },
+      {
+        "id": "nanoparticles",
+        "type": "chemical",
+        "name": "Nanoparticles",
+        "properties": {
+          "size": "~10-50 nm (estimated from scale)",
+          "morphology": "spherical to irregular",
+          "extracted_from_image": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+        },
+        "source_image_file": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "scale_bar",
+        "name": "100 μm scale",
+        "properties": {
+          "extracted_from_image": "ec4e3f11eee18cdd1031c0b74b699b550850e6a857a6c1e24ff9c234cd441fe1.jpg"
+        },
+        "source_image_file": "ec4e3f11eee18cdd1031c0b74b699b550850e6a857a6c1e24ff9c234cd441fe1.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "image",
+        "name": "XRD pattern (c)",
+        "properties": {
+          "label": "(c)",
+          "type": "diffraction_pattern",
+          "description": "Selected area electron diffraction (SAED) pattern showing crystal planes",
+          "extracted_from_image": "9af0ac2e92d4e2b82b43c896dad99606177cecfd44fd7c1af27eefb411d97dd9.jpg"
+        },
+        "source_image_file": "9af0ac2e92d4e2b82b43c896dad99606177cecfd44fd7c1af27eefb411d97dd9.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "model",
+        "name": "Equivalent Circuit",
+        "properties": {
+          "components": [
+            "R_s",
+            "R_ct",
+            "R_L",
+            "L",
+            "CPE"
+          ],
+          "extracted_from_image": "897bd82b715947b68d49d15ad66f32538e511122c5397b4554eea7c882f2e576.jpg"
+        },
+        "source_image_file": "897bd82b715947b68d49d15ad66f32538e511122c5397b4554eea7c882f2e576.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "data",
+        "name": "Fitting",
+        "properties": {
+          "description": "EIS data fitting curve",
+          "extracted_from_image": "897bd82b715947b68d49d15ad66f32538e511122c5397b4554eea7c882f2e576.jpg"
+        },
+        "source_image_file": "897bd82b715947b68d49d15ad66f32538e511122c5397b4554eea7c882f2e576.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "state",
+        "name": "After USRP",
+        "properties": {
+          "extracted_from_image": "1616fcf17f3e1803f12fff7cda6ea353aa88d3c89cee4c927627cada8790dec4.jpg"
+        },
+        "source_image_file": "1616fcf17f3e1803f12fff7cda6ea353aa88d3c89cee4c927627cada8790dec4.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "process",
+        "name": "Lathe",
+        "properties": {
+          "speed": "110 r/min",
+          "extracted_from_image": "1616fcf17f3e1803f12fff7cda6ea353aa88d3c89cee4c927627cada8790dec4.jpg"
+        },
+        "source_image_file": "1616fcf17f3e1803f12fff7cda6ea353aa88d3c89cee4c927627cada8790dec4.jpg"
+      },
+      {
+        "id": "image_d",
+        "type": "image",
+        "name": "Figure (d)",
+        "properties": {
+          "label": "(d)",
+          "scale_bar": "200 nm",
+          "inset_scale": "2.1 μm",
+          "extracted_from_image": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+        },
+        "source_image_file": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+      },
+      {
+        "id": "GPII",
+        "type": "chemical",
+        "name": "GP II",
+        "properties": {
+          "description": "Nanoparticle or chemical entity labeled in TEM image",
+          "extracted_from_image": "29bdc6effc7c864ba6cd6487117f85c525012b0d451f0176880cdb2eea7bd32d.jpg"
+        },
+        "source_image_file": "29bdc6effc7c864ba6cd6487117f85c525012b0d451f0176880cdb2eea7bd32d.jpg"
+      },
+      {
+        "id": "main_region",
+        "type": "characterization",
+        "name": "Main TEM Region",
+        "properties": {
+          "description": "Granular nanostructure with scale bar 1 nm",
+          "scale": "1 nm",
+          "extracted_from_image": "29bdc6effc7c864ba6cd6487117f85c525012b0d451f0176880cdb2eea7bd32d.jpg"
+        },
+        "source_image_file": "29bdc6effc7c864ba6cd6487117f85c525012b0d451f0176880cdb2eea7bd32d.jpg"
+      },
+      {
+        "id": "image_c",
+        "type": "image",
+        "name": "Figure (c)",
+        "properties": {
+          "label": "(c)",
+          "scale_bar": "100 nm",
+          "extracted_from_image": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+        },
+        "source_image_file": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+      },
+      {
+        "id": "main_image",
+        "type": "characterization",
+        "name": "HR-TEM Image",
+        "properties": {
+          "description": "High-resolution transmission electron microscopy image showing nanostructured material with ordered stripes/layers",
+          "scale": "1 nm",
+          "extracted_from_image": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+        },
+        "source_image_file": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+      },
+      {
+        "id": "highlighted_region",
+        "type": "region",
+        "name": "Yellow Highlighted Area",
+        "properties": {
+          "description": "Rectangular yellow box enclosing detailed structure",
+          "extracted_from_image": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+        },
+        "source_image_file": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+      },
+      {
+        "id": "inset_image",
+        "type": "characterization",
+        "name": "SAED Pattern",
+        "properties": {
+          "description": "Selected Area Electron Diffraction pattern with labeled rings",
+          "scale": "2.1 μm",
+          "extracted_from_image": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+        },
+        "source_image_file": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+      },
+      {
+        "id": "arrow_annotation",
+        "type": "annotation",
+        "name": "Yellow Arrow",
+        "properties": {
+          "description": "Points to specific feature in inset",
+          "extracted_from_image": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+        },
+        "source_image_file": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+      },
+      {
+        "id": "stars",
+        "type": "annotation",
+        "name": "Stars (*)",
+        "properties": {
+          "count": 9,
+          "description": "Marking multiple bright spots in inset",
+          "extracted_from_image": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+        },
+        "source_image_file": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+      },
+      {
+        "id": "hkl_110",
+        "type": "annotation",
+        "name": "(110) Miller Index",
+        "properties": {
+          "description": "Crystalline plane label in inset",
+          "extracted_from_image": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+        },
+        "source_image_file": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+      },
+      {
+        "id": "nanostructure",
+        "type": "material",
+        "name": "Nanostructured Material",
+        "properties": {
+          "scale": "nanoscale",
+          "description": "Porous or aggregated nanoparticles",
+          "extracted_from_image": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+        },
+        "source_image_file": "30af2e27c11ec701d60f611343d861b0811008318085ae418a793ce1ef9ad9d8.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "SEM Image (a)",
+        "properties": {
+          "description": "Scanning Electron Microscopy image labeled (a)",
+          "scale_bar": "200 nm",
+          "extracted_from_image": "c0df3b4469edfbfec39e7ae2ad73eacf06b1fdb8f13561521fcec971dae85880.jpg"
+        },
+        "source_image_file": "c0df3b4469edfbfec39e7ae2ad73eacf06b1fdb8f13561521fcec971dae85880.jpg"
+      },
+      {
+        "id": "DTS",
+        "type": "chemical",
+        "name": "DTSs",
+        "properties": {
+          "description": "Red arrow labeled structures, likely nanoscrolls or tubes",
+          "extracted_from_image": "35cc0fa7a56a91b0b2ccc5c2c12ae6d9bb1a0e9fddea22ebf6462ec0548faa6b.jpg"
+        },
+        "source_image_file": "35cc0fa7a56a91b0b2ccc5c2c12ae6d9bb1a0e9fddea22ebf6462ec0548faa6b.jpg"
+      },
+      {
+        "id": "DWS",
+        "type": "chemical",
+        "name": "DWSs",
+        "properties": {
+          "description": "Yellow arrow labeled structures, likely nanosheets or walls",
+          "extracted_from_image": "35cc0fa7a56a91b0b2ccc5c2c12ae6d9bb1a0e9fddea22ebf6462ec0548faa6b.jpg"
+        },
+        "source_image_file": "35cc0fa7a56a91b0b2ccc5c2c12ae6d9bb1a0e9fddea22ebf6462ec0548faa6b.jpg"
+      },
+      {
+        "id": "corrosion_pits",
+        "type": "feature",
+        "name": "Corrosion Pits",
+        "properties": {
+          "description": "Pits observed on material surface",
+          "annotation": "Yellow arrows pointing to circular pits",
+          "extracted_from_image": "da62622f9486004387b20aaa4d444ea5b869793b5f33844c0d48d5aaa37ff7cc.jpg"
+        },
+        "source_image_file": "da62622f9486004387b20aaa4d444ea5b869793b5f33844c0d48d5aaa37ff7cc.jpg"
+      },
+      {
+        "id": "material_surface",
+        "type": "material",
+        "name": "Material Surface",
+        "properties": {
+          "description": "Surface showing corrosion damage",
+          "texture": "Rough with pits and debris",
+          "extracted_from_image": "da62622f9486004387b20aaa4d444ea5b869793b5f33844c0d48d5aaa37ff7cc.jpg"
+        },
+        "source_image_file": "da62622f9486004387b20aaa4d444ea5b869793b5f33844c0d48d5aaa37ff7cc.jpg"
+      },
+      {
+        "id": "7G-DGU",
+        "type": "chemical",
+        "name": "7 Passes DG-U",
+        "properties": {
+          "description": "7-pass delaminated graphene (unoxidized)",
+          "extracted_from_image": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+        },
+        "source_image_file": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+      },
+      {
+        "id": "CV_plot",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry Plot",
+        "properties": {
+          "x_axis": "Current density (A/cm²)",
+          "y_axis": "Potential (V vs SCE)",
+          "scale_x": "10⁻⁸ to 10¹ A/cm²",
+          "scale_y": "-1.4 to 0.6 V",
+          "extracted_from_image": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+        },
+        "source_image_file": "44d5d0523f171cfe3165c783b3cf9ac42e6e02c8eedd0e0c534ea471da9e54b5.jpg"
+      },
+      {
+        "id": "deformation_layer",
+        "type": "microstructural_feature",
+        "name": "Deformation layer",
+        "properties": {
+          "location": "highlighted yellow triangular region",
+          "appearance": "darker, distinct from matrix",
+          "extracted_from_image": "4a092c489caa1efee8ac2b7bf3f38e04c81cac6a0c1dbf032ad64c55a7766ea0.jpg"
+        },
+        "source_image_file": "4a092c489caa1efee8ac2b7bf3f38e04c81cac6a0c1dbf032ad64c55a7766ea0.jpg"
+      },
+      {
+        "id": "matrix",
+        "type": "microstructural_feature",
+        "name": "Matrix",
+        "properties": {
+          "location": "lower region indicated by red arrow",
+          "appearance": "lighter granular structure",
+          "extracted_from_image": "4a092c489caa1efee8ac2b7bf3f38e04c81cac6a0c1dbf032ad64c55a7766ea0.jpg"
+        },
+        "source_image_file": "4a092c489caa1efee8ac2b7bf3f38e04c81cac6a0c1dbf032ad64c55a7766ea0.jpg"
+      },
+      {
+        "id": "material",
+        "type": "material",
+        "name": "Microstructured Material",
+        "properties": {
+          "description": "Granular matrix with PFZ feature, likely metallic alloy",
+          "extracted_from_image": "c0df3b4469edfbfec39e7ae2ad73eacf06b1fdb8f13561521fcec971dae85880.jpg"
+        },
+        "source_image_file": "c0df3b4469edfbfec39e7ae2ad73eacf06b1fdb8f13561521fcec971dae85880.jpg"
+      },
+      {
+        "id": "figure_e",
+        "type": "figure",
+        "name": "Figure (e)",
+        "properties": {
+          "label": "(e)",
+          "extracted_from_image": "4c0941a143a4ef035d6bcefbe5a446369d0ace227e1a3ab67ac7eb39616e1942.jpg"
+        },
+        "source_image_file": "4c0941a143a4ef035d6bcefbe5a446369d0ace227e1a3ab67ac7eb39616e1942.jpg"
+      },
+      {
+        "id": "topography_map",
+        "type": "characterization",
+        "name": "Topography Map",
+        "properties": {
+          "type": "2D color map",
+          "color_scale": "green to red",
+          "scale_bar": "12.90 μm to 2.10 μm",
+          "extracted_from_image": "4c0941a143a4ef035d6bcefbe5a446369d0ace227e1a3ab67ac7eb39616e1942.jpg"
+        },
+        "source_image_file": "4c0941a143a4ef035d6bcefbe5a446369d0ace227e1a3ab67ac7eb39616e1942.jpg"
+      },
+      {
+        "id": "line_profile",
+        "type": "characterization",
+        "name": "Cross-sectional Height Profile",
+        "properties": {
+          "x_axis": "Distance (0-35 units)",
+          "y_axis": "Ra (μm)",
+          "peaks": [
+            "12.928 μm",
+            "12.96 μm"
+          ],
+          "valleys": [
+            "-1.103 μm",
+            "-4.77 μm"
+          ],
+          "extracted_from_image": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+        },
+        "source_image_file": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+      },
+      {
+        "id": "sample_surface",
+        "type": "material",
+        "name": "Sample Surface",
+        "properties": {
+          "roughness_parameter": "Ra",
+          "max_height": "12.96 μm",
+          "min_height": "-1.103 μm",
+          "extracted_from_image": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+        },
+        "source_image_file": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "annotation",
+        "name": "20 nm Scale Bar",
+        "properties": {
+          "length": "20 nm",
+          "extracted_from_image": "dac8c813feba11fe72c6534316283610afa4f94dbed9c2fafd4db5417c943649.jpg"
+        },
+        "source_image_file": "dac8c813feba11fe72c6534316283610afa4f94dbed9c2fafd4db5417c943649.jpg"
+      },
+      {
+        "id": "pores",
+        "type": "structural_feature",
+        "name": "Pores",
+        "properties": {
+          "size": "variable, meso-scale",
+          "distribution": "throughout matrix",
+          "extracted_from_image": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+        },
+        "source_image_file": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+      },
+      {
+        "id": "morphology",
+        "type": "characterization",
+        "name": "Surface Morphology",
+        "properties": {
+          "technique": "likely SEM",
+          "features": "rough texture, pore walls",
+          "extracted_from_image": "5700743b6710f99473faa5994f1e2bf88a9332038ef792b5973e968b4ffac3bf.jpg"
+        },
+        "source_image_file": "5700743b6710f99473faa5994f1e2bf88a9332038ef792b5973e968b4ffac3bf.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "Corrosion Depth Chart",
+        "properties": {
+          "type": "bar_chart",
+          "unit": "μm",
+          "x_label": "Materials",
+          "y_label": "Corrosion Depth (μm)",
+          "extracted_from_image": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+        },
+        "source_image_file": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+      },
+      {
+        "id": "d1",
+        "type": "data_point",
+        "name": "CG Corrosion Depth",
+        "properties": {
+          "value": 11.01,
+          "unit": "μm",
+          "extracted_from_image": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+        },
+        "source_image_file": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+      },
+      {
+        "id": "d2",
+        "type": "data_point",
+        "name": "3-pass DG-U Corrosion Depth",
+        "properties": {
+          "value": 7.12,
+          "unit": "μm",
+          "extracted_from_image": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+        },
+        "source_image_file": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+      },
+      {
+        "id": "d3",
+        "type": "data_point",
+        "name": "3-pass DG Corrosion Depth",
+        "properties": {
+          "value": 2.71,
+          "unit": "μm",
+          "extracted_from_image": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+        },
+        "source_image_file": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+      },
+      {
+        "id": "d4",
+        "type": "data_point",
+        "name": "7-pass NG-U Corrosion Depth",
+        "properties": {
+          "value": 2.01,
+          "unit": "μm",
+          "extracted_from_image": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+        },
+        "source_image_file": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+      },
+      {
+        "id": "d5",
+        "type": "data_point",
+        "name": "7-pass NG Corrosion Depth",
+        "properties": {
+          "value": 1.86,
+          "unit": "μm",
+          "extracted_from_image": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+        },
+        "source_image_file": "608ce61a12ff9f593549e76f7a91abd383d38afd53700a9a3a17e7bed4dc703e.jpg"
+      },
+      {
+        "id": "figure",
+        "type": "figure",
+        "name": "Figure (d)",
+        "properties": {
+          "label": "(d)",
+          "extracted_from_image": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+        },
+        "source_image_file": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "Impedance Spectroscopy Plot",
+        "properties": {
+          "figure_label": "b",
+          "type": "Bode plot",
+          "x_axis": "Frequency (Hz)",
+          "y_axis_left": "|Z| (ohm cm²)",
+          "y_axis_right": "Phase (deg)",
+          "scale": "log-log",
+          "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+        },
+        "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "axis",
+        "name": "X-axis",
+        "properties": {
+          "label": "Distance (μm)",
+          "range": "0 to 32 μm",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "axis",
+        "name": "Y-axis (Profile)",
+        "properties": {
+          "label": "Ra (μm)",
+          "range": "-6 to 6 μm",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "z_axis",
+        "type": "axis",
+        "name": "Height (μm)",
+        "properties": {
+          "label": "",
+          "range": "[-2.05, 1.59]",
+          "extracted_from_image": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+        },
+        "source_image_file": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+      },
+      {
+        "id": "surface_map",
+        "type": "data",
+        "name": "Topographic Surface Map",
+        "properties": {
+          "description": "Color-coded height map (blue-green-yellow-red)",
+          "scale": "129.28 μm width",
+          "max_height": "1.59 μm",
+          "min_height": "-2.05 μm",
+          "extracted_from_image": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+        },
+        "source_image_file": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+      },
+      {
+        "id": "measurement_1",
+        "type": "annotation",
+        "name": "129.28 μm",
+        "properties": {
+          "value": "129.28 μm",
+          "type": "length_scale",
+          "extracted_from_image": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+        },
+        "source_image_file": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+      },
+      {
+        "id": "measurement_2",
+        "type": "annotation",
+        "name": "129.6 μm",
+        "properties": {
+          "value": "129.6 μm",
+          "type": "length_scale",
+          "extracted_from_image": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+        },
+        "source_image_file": "635a53ea6e38d0f048761a0cc173ee7ef9feeceba40956b01b643be0d650ecbf.jpg"
+      },
+      {
+        "id": "image_e",
+        "type": "image",
+        "name": "Figure (e)",
+        "properties": {
+          "description": "SEM micrograph",
+          "scale": "10 μm",
+          "extracted_from_image": "da62622f9486004387b20aaa4d444ea5b869793b5f33844c0d48d5aaa37ff7cc.jpg"
+        },
+        "source_image_file": "da62622f9486004387b20aaa4d444ea5b869793b5f33844c0d48d5aaa37ff7cc.jpg"
+      },
+      {
+        "id": "microscopy_image",
+        "type": "characterization",
+        "name": "TEM Image",
+        "properties": {
+          "technique": "Transmission Electron Microscopy",
+          "scale": "20 nm",
+          "description": "High-resolution image showing nanostructured material with lattice fringes",
+          "extracted_from_image": "dac8c813feba11fe72c6534316283610afa4f94dbed9c2fafd4db5417c943649.jpg"
+        },
+        "source_image_file": "dac8c813feba11fe72c6534316283610afa4f94dbed9c2fafd4db5417c943649.jpg"
+      },
+      {
+        "id": "3P-NG",
+        "type": "chemical",
+        "name": "3 Passes - NG",
+        "properties": {
+          "description": "Material processed with 3 passes, NG variant",
+          "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+        },
+        "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+      },
+      {
+        "id": "fit-3P-DG",
+        "type": "characterization",
+        "name": "3 Passes-DG Fit",
+        "properties": {
+          "type": "fitting curve",
+          "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+        },
+        "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+      },
+      {
+        "id": "fit-3P-DGU",
+        "type": "characterization",
+        "name": "3 Passes-DG-U Fit",
+        "properties": {
+          "type": "fitting curve",
+          "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+        },
+        "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+      },
+      {
+        "id": "fit-7P-NGU",
+        "type": "characterization",
+        "name": "7 Passes-NG-U Fit",
+        "properties": {
+          "type": "fitting curve",
+          "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+        },
+        "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+      },
+      {
+        "id": "fit-7P-NG",
+        "type": "characterization",
+        "name": "7 Passes-NG Fit",
+        "properties": {
+          "type": "fitting curve",
+          "extracted_from_image": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+        },
+        "source_image_file": "73e99582cf70ae76241e6813d95febd77f42bb18c057b31fe4f92893e0bcbbe8.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "characterization",
+        "name": "TEM Image (b)",
+        "properties": {
+          "scale_bar": "200 nm",
+          "technique": "Transmission Electron Microscopy",
+          "extracted_from_image": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+        },
+        "source_image_file": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+      },
+      {
+        "id": "corrosion_crack",
+        "type": "feature",
+        "name": "Corrosion Crack",
+        "properties": {
+          "description": "Crack-like defect indicated by yellow arrow",
+          "location": "upper region of image",
+          "extracted_from_image": "79b157a94d7732c782d9654977849d335f9354d3c1b4de84f3a12d32f12dee9f.jpg"
+        },
+        "source_image_file": "79b157a94d7732c782d9654977849d335f9354d3c1b4de84f3a12d32f12dee9f.jpg"
+      },
+      {
+        "id": "corrosion_pit",
+        "type": "feature",
+        "name": "Corrosion Pit",
+        "properties": {
+          "description": "Pit-like defect indicated by yellow arrow",
+          "location": "lower region of image",
+          "extracted_from_image": "79b157a94d7732c782d9654977849d335f9354d3c1b4de84f3a12d32f12dee9f.jpg"
+        },
+        "source_image_file": "79b157a94d7732c782d9654977849d335f9354d3c1b4de84f3a12d32f12dee9f.jpg"
+      },
+      {
+        "id": "ring_220",
+        "type": "diffraction_ring",
+        "name": "(220)",
+        "properties": {
+          "hkl": "220",
+          "color": "red",
+          "extracted_from_image": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+        },
+        "source_image_file": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+      },
+      {
+        "id": "ring_311",
+        "type": "diffraction_ring",
+        "name": "(311)",
+        "properties": {
+          "hkl": "311",
+          "color": "green",
+          "extracted_from_image": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+        },
+        "source_image_file": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+      },
+      {
+        "id": "ring_111",
+        "type": "diffraction_ring",
+        "name": "(111)",
+        "properties": {
+          "hkl": "111",
+          "color": "blue",
+          "extracted_from_image": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+        },
+        "source_image_file": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+      },
+      {
+        "id": "central_spot",
+        "type": "diffraction_feature",
+        "name": "Central Beam Spot",
+        "properties": {
+          "description": "Transmitted beam or (000) spot",
+          "extracted_from_image": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+        },
+        "source_image_file": "86896fd26d2a5a3cb0b37cbda8b8b25e6ef2b4ff0d3b507af55a1e2253977799.jpg"
+      },
+      {
+        "id": "nanomaterial",
+        "type": "chemical",
+        "name": "Nanostructured Material",
+        "properties": {
+          "morphology": "nanoparticles or nanosheets",
+          "features": "lattice fringes visible, crystalline structure",
+          "extracted_from_image": "dac8c813feba11fe72c6534316283610afa4f94dbed9c2fafd4db5417c943649.jpg"
+        },
+        "source_image_file": "dac8c813feba11fe72c6534316283610afa4f94dbed9c2fafd4db5417c943649.jpg"
+      },
+      {
+        "id": "figure_c",
+        "type": "figure",
+        "name": "Figure (c)",
+        "properties": {
+          "extracted_from_image": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+        },
+        "source_image_file": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+      },
+      {
+        "id": "profile_curve",
+        "type": "characterization",
+        "name": "Surface Profile Curve",
+        "properties": {
+          "color": "blue",
+          "description": "Wavy line showing Ra -1 values vs distance",
+          "extracted_from_image": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+        },
+        "source_image_file": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+      },
+      {
+        "id": "color_map",
+        "type": "characterization",
+        "name": "Height Color Map",
+        "properties": {
+          "scale": {
+            "min": "-2.73 μm",
+            "max": "2.13 μm"
+          },
+          "colors": [
+            "blue",
+            "green",
+            "red"
+          ],
+          "extracted_from_image": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+        },
+        "source_image_file": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+      },
+      {
+        "id": "peak_129_28",
+        "type": "data_point",
+        "name": "Peak 129.28 μm",
+        "properties": {
+          "position": "129.28 μm",
+          "height": "2.13 μm",
+          "extracted_from_image": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+        },
+        "source_image_file": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+      },
+      {
+        "id": "peak_129_60",
+        "type": "data_point",
+        "name": "Peak 129.60 μm",
+        "properties": {
+          "position": "129.60 μm",
+          "height": "2.73 μm",
+          "extracted_from_image": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+        },
+        "source_image_file": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+      },
+      {
+        "id": "valley_0",
+        "type": "data_point",
+        "name": "Valley at 0 μm",
+        "properties": {
+          "position": "0 μm",
+          "height": "0 μm",
+          "extracted_from_image": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+        },
+        "source_image_file": "928c0762668a09f8bfbc445e87dc339ec256cbfeed2c01c0fea4717bba71fea9.jpg"
+      },
+      {
+        "id": "tem_image",
+        "type": "characterization",
+        "name": "TEM Image",
+        "properties": {
+          "technique": "Transmission Electron Microscopy",
+          "scale": "100 nm",
+          "features": [
+            "nanoparticles",
+            "pores",
+            "aggregated structures"
+          ],
+          "extracted_from_image": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+        },
+        "source_image_file": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+      },
+      {
+        "id": "roi1",
+        "type": "region_of_interest",
+        "name": "ROI 1 (upper red box)",
+        "properties": {
+          "location": "upper right",
+          "features": "aggregated nanoparticles",
+          "extracted_from_image": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+        },
+        "source_image_file": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+      },
+      {
+        "id": "roi2",
+        "type": "region_of_interest",
+        "name": "ROI 2 (lower red box)",
+        "properties": {
+          "location": "lower center",
+          "features": "detailed nanoparticle cluster",
+          "extracted_from_image": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+        },
+        "source_image_file": "958e9f9541ee7a8bfaa6a68a5483d453b60b823ad22b04393e81e40e60306292.jpg"
+      },
+      {
+        "id": "3p-DG",
+        "type": "chemical",
+        "name": "3 passes DG",
+        "properties": {
+          "description": "Material processed with 3 passes DG method",
+          "extracted_from_image": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+        },
+        "source_image_file": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+      },
+      {
+        "id": "7p-NG",
+        "type": "chemical",
+        "name": "7 passes NG",
+        "properties": {
+          "description": "Material processed with 7 passes NG method",
+          "extracted_from_image": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+        },
+        "source_image_file": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+      },
+      {
+        "id": "CG_hist",
+        "type": "characterization",
+        "name": "CG Particle Size Histogram",
+        "properties": {
+          "type": "histogram",
+          "x_axis": "Size (nm)",
+          "x_range": "0-60 nm",
+          "y_axis": "Frequency (%)",
+          "y_max": "16",
+          "extracted_from_image": "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg"
+        },
+        "source_image_file": "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg"
+      },
+      {
+        "id": "3pDG_hist",
+        "type": "characterization",
+        "name": "3-passes-DG Particle Size Histogram",
+        "properties": {
+          "type": "histogram",
+          "x_axis": "Size (nm)",
+          "x_range": "0-60 nm",
+          "y_axis": "Frequency (%)",
+          "y_max": "15",
+          "extracted_from_image": "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg"
+        },
+        "source_image_file": "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg"
+      },
+      {
+        "id": "7pNG_hist",
+        "type": "characterization",
+        "name": "7-passes-NG Particle Size Histogram",
+        "properties": {
+          "type": "histogram",
+          "x_axis": "Size (nm)",
+          "x_range": "0-20 nm",
+          "y_axis": "Frequency (%)",
+          "y_max": "30",
+          "extracted_from_image": "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg"
+        },
+        "source_image_file": "970fd747251ada62f96781f952dfed0619a73c461a39a2f70e3d3ad089c2ffa2.jpg"
+      },
+      {
+        "id": "7p-DG",
+        "type": "chemical",
+        "name": "7 passes DG",
+        "properties": {
+          "description": "Material processed with 7 passes DG method",
+          "extracted_from_image": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+        },
+        "source_image_file": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+      },
+      {
+        "id": "3p-NG",
+        "type": "chemical",
+        "name": "3 passes NG",
+        "properties": {
+          "description": "Material processed with 3 passes NG method",
+          "extracted_from_image": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+        },
+        "source_image_file": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+      },
+      {
+        "id": "chart_a",
+        "type": "characterization",
+        "name": "Residual Stress vs Distance (a)",
+        "properties": {
+          "type": "line chart",
+          "x_axis": "Distance from surface (μm)",
+          "y_axis": "Residual Stress (MPa)",
+          "range_x": [
+            0,
+            700
+          ],
+          "range_y": [
+            -600,
+            200
+          ],
+          "extracted_from_image": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+        },
+        "source_image_file": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+      },
+      {
+        "id": "chart_b",
+        "type": "characterization",
+        "name": "Residual Stress at Surface (b)",
+        "properties": {
+          "type": "bar chart",
+          "x_axis": [
+            "3 passes",
+            "7 passes",
+            "7 passes"
+          ],
+          "labels": [
+            "DG",
+            "DG",
+            "NG"
+          ],
+          "y_axis": "Residual Stress (MPa)",
+          "values": [
+            -756,
+            -775,
+            -410
+          ],
+          "extracted_from_image": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+        },
+        "source_image_file": "9d53a1c5e089ec61bfd9b77253f1d4f8c844dd5616f7d87f37d4e008129715e9.jpg"
+      },
+      {
+        "id": "figure_d",
+        "type": "figure",
+        "name": "Figure (d)",
+        "properties": {
+          "label": "(d)",
+          "extracted_from_image": "b7eb4c0a9699ab5634e1b44e345b34285b342279f1a2514251b0f4218297c7a6.jpg"
+        },
+        "source_image_file": "b7eb4c0a9699ab5634e1b44e345b34285b342279f1a2514251b0f4218297c7a6.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Surface Roughness Bar Chart",
+        "properties": {
+          "type": "bar_chart",
+          "parameters": [
+            "Ra",
+            "Rz"
+          ],
+          "unit": "μm",
+          "x_axis": "Samples",
+          "y_axis": "Roughness (μm)",
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "figure_b",
+        "type": "figure",
+        "name": "Figure (b)",
+        "properties": {
+          "label": "(b)",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "surface_plot",
+        "type": "characterization",
+        "name": "3D Surface Topography Plot",
+        "properties": {
+          "type": "surface topography",
+          "color_scale": "yellow to blue",
+          "z_range": "0 to 6 μm",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "profile_plot",
+        "type": "characterization",
+        "name": "Cross-sectional Height Profile",
+        "properties": {
+          "type": "line profile",
+          "x_axis": "Distance (μm), 0 to 32 μm",
+          "y_axis": "Ra (μm), -6 to 6 μm",
+          "color": "blue",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "height_max",
+        "type": "measurement",
+        "name": "Maximum Height",
+        "properties": {
+          "value": "6 μm",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "height_min",
+        "type": "measurement",
+        "name": "Minimum Height",
+        "properties": {
+          "value": "-6 μm",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "peak_129_28um",
+        "type": "feature",
+        "name": "Peak at 129.28 μm",
+        "properties": {
+          "position": "129.28 μm",
+          "height": "2.09 μm",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "peak_129_60um",
+        "type": "feature",
+        "name": "Peak at 129.60 μm",
+        "properties": {
+          "position": "129.60 μm",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "color_scale",
+        "type": "scale",
+        "name": "Color Scale",
+        "properties": {
+          "min": "0.9 μm",
+          "max": "2.09 μm",
+          "range": "0.9 to 2.09 μm",
+          "extracted_from_image": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+        },
+        "source_image_file": "b8cec97e767fd12f224539b86f1d553fbfcc7a848a3c3d718a4fdf79d4cfa8a8.jpg"
+      },
+      {
+        "id": "PFZ",
+        "type": "chemical",
+        "name": "PFZ",
+        "properties": {
+          "label": "PFZ (center)",
+          "extracted_from_image": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+        },
+        "source_image_file": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+      },
+      {
+        "id": "PFZ_label",
+        "type": "annotation",
+        "name": "PFZ Label",
+        "properties": {
+          "position": "bottom right of image",
+          "extracted_from_image": "c0df3b4469edfbfec39e7ae2ad73eacf06b1fdb8f13561521fcec971dae85880.jpg"
+        },
+        "source_image_file": "c0df3b4469edfbfec39e7ae2ad73eacf06b1fdb8f13561521fcec971dae85880.jpg"
+      },
+      {
+        "id": "arrows",
+        "type": "annotation",
+        "name": "Red Double Arrows",
+        "properties": {
+          "description": "Marking the PFZ region, two parallel red lines with double arrowheads",
+          "extracted_from_image": "c0df3b4469edfbfec39e7ae2ad73eacf06b1fdb8f13561521fcec971dae85880.jpg"
+        },
+        "source_image_file": "c0df3b4469edfbfec39e7ae2ad73eacf06b1fdb8f13561521fcec971dae85880.jpg"
+      },
+      {
+        "id": "3passes-DG",
+        "type": "sample",
+        "name": "3-passes-DG",
+        "properties": {
+          "description": "3 passes Deformed Grain sample",
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "7passes-NG",
+        "type": "sample",
+        "name": "7-passes-NG",
+        "properties": {
+          "description": "7 passes Nanograin sample",
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "Ra_CG",
+        "type": "measurement",
+        "name": "Ra (CG)",
+        "properties": {
+          "value": 0.62,
+          "unit": "μm",
+          "error": null,
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "Rz_CG",
+        "type": "measurement",
+        "name": "Rz (CG)",
+        "properties": {
+          "value": 3.93,
+          "unit": "μm",
+          "error": null,
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "Ra_3passes-DG",
+        "type": "measurement",
+        "name": "Ra (3-passes-DG)",
+        "properties": {
+          "value": 0.43,
+          "unit": "μm",
+          "error": 0.05,
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "Rz_3passes-DG",
+        "type": "measurement",
+        "name": "Rz (3-passes-DG)",
+        "properties": {
+          "value": 3.93,
+          "unit": "μm",
+          "error": null,
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "Ra_7passes-NG",
+        "type": "measurement",
+        "name": "Ra (7-passes-NG)",
+        "properties": {
+          "value": 0.12,
+          "unit": "μm",
+          "error": null,
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "Rz_7passes-NG",
+        "type": "measurement",
+        "name": "Rz (7-passes-NG)",
+        "properties": {
+          "value": 0.62,
+          "unit": "μm",
+          "error": null,
+          "extracted_from_image": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+        },
+        "source_image_file": "caeeac5eda1020cf78b35555d337266c0c4a8131b93be5bf00a053465bfa69ab.jpg"
+      },
+      {
+        "id": "sample4",
+        "type": "sample",
+        "name": "7 passes NG",
+        "properties": {
+          "E_corr": -1.071,
+          "units_E_corr": "V vs SCE",
+          "I_corr": "5.445 x 10^-6",
+          "units_I_corr": "A/cm²",
+          "CR": 0.171,
+          "units_CR": "mm/year",
+          "extracted_from_image": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+        },
+        "source_image_file": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+      },
+      {
+        "id": "E_corr",
+        "type": "parameter",
+        "name": "Corrosion Potential",
+        "properties": {
+          "unit": "V vs SCE",
+          "extracted_from_image": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+        },
+        "source_image_file": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+      },
+      {
+        "id": "I_corr",
+        "type": "parameter",
+        "name": "Corrosion Current Density",
+        "properties": {
+          "unit": "A/cm²",
+          "extracted_from_image": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+        },
+        "source_image_file": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+      },
+      {
+        "id": "CR",
+        "type": "parameter",
+        "name": "Corrosion Rate",
+        "properties": {
+          "unit": "mm/year",
+          "extracted_from_image": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+        },
+        "source_image_file": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+      },
+      {
+        "id": "table",
+        "type": "characterization",
+        "name": "Electrochemical Corrosion Data Table",
+        "properties": {
+          "extracted_from_image": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+        },
+        "source_image_file": "e0d3998153d80cec9e4685d1360f91dd8c3c3385e3147027f57af05735087fd4.jpg"
+      },
+      {
+        "id": "n-MgZn2_1",
+        "type": "chemical",
+        "name": "n-MgZn2",
+        "properties": {
+          "label": "n-MgZn2 (top left)",
+          "extracted_from_image": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+        },
+        "source_image_file": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+      },
+      {
+        "id": "n-MgZn2_2",
+        "type": "chemical",
+        "name": "n-MgZn2",
+        "properties": {
+          "label": "n-MgZn2 (top right)",
+          "extracted_from_image": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+        },
+        "source_image_file": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+      },
+      {
+        "id": "n-MgZn2_3",
+        "type": "chemical",
+        "name": "n'-MgZn2",
+        "properties": {
+          "label": "n'-MgZn2 (bottom left)",
+          "extracted_from_image": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+        },
+        "source_image_file": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+      },
+      {
+        "id": "n-MgZn2_4",
+        "type": "chemical",
+        "name": "n-MgZn2",
+        "properties": {
+          "label": "n-MgZn2 (bottom right)",
+          "extracted_from_image": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+        },
+        "source_image_file": "ebff7ad080f69552cbb10fd57b588e6e5b04a84e07b34ac1b9ce7ebbcf77d9df.jpg"
+      },
+      {
+        "id": "n_prime",
+        "type": "chemical",
+        "name": "n'",
+        "properties": {
+          "label": "n'",
+          "extracted_from_image": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+        },
+        "source_image_file": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+      },
+      {
+        "id": "d_0.20nm",
+        "type": "measurement",
+        "name": "d = 0.20 nm",
+        "properties": {
+          "type": "interplanar spacing",
+          "value": "0.20 nm",
+          "extracted_from_image": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+        },
+        "source_image_file": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+      },
+      {
+        "id": "d_0.21nm",
+        "type": "measurement",
+        "name": "d = 0.21 nm",
+        "properties": {
+          "type": "interplanar spacing",
+          "value": "0.21 nm",
+          "extracted_from_image": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+        },
+        "source_image_file": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+      },
+      {
+        "id": "d_0.37nm",
+        "type": "measurement",
+        "name": "d = 0.37 nm",
+        "properties": {
+          "type": "interplanar spacing",
+          "value": "0.37 nm",
+          "extracted_from_image": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+        },
+        "source_image_file": "f498519c6a3b8c79c3c07f8d7f0b19250a2394b9336a3f3a1eec00d9bd3883f5.jpg"
+      },
+      {
+        "id": "figure_a",
+        "type": "figure",
+        "name": "Figure (a)",
+        "properties": {
+          "label": "(a)",
+          "extracted_from_image": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+        },
+        "source_image_file": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+      },
+      {
+        "id": "3d_surface_plot",
+        "type": "characterization",
+        "name": "3D Surface Topography Plot",
+        "properties": {
+          "type": "AFM/SEM-like 3D map",
+          "color_scale": "rainbow",
+          "height_range": [
+            "-4.77 μm",
+            "12.9 μm"
+          ],
+          "extracted_from_image": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+        },
+        "source_image_file": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+      },
+      {
+        "id": "colorbar",
+        "type": "scale",
+        "name": "Height Color Scale",
+        "properties": {
+          "min": "-4.77 μm",
+          "max": "12.9 μm",
+          "unit": "μm",
+          "extracted_from_image": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+        },
+        "source_image_file": "fbb5edc70a862b2cf8c814d3232767c84e9c19d148dfb66e5fa56d6ce09eaac6.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_7075-Al_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_7075-Al_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_7075-Al_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_7075-Al_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_7075-Al_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_7075-Al_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_7075-Al_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_7075-Al_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_7075-Al_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_7075-Al",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_scale"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_dimension"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_dimension"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "scale_2nm",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "scale_10nm",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "lattice_main",
+        "type": "shows"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "inset",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "200",
+        "type": "labels"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "121",
+        "type": "labels"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "113",
+        "type": "labels"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "002",
+        "type": "labels"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "011",
+        "type": "labels"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "001",
+        "type": "labels"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "hrtem",
+        "type": "technique"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "fft",
+        "type": "technique"
+      },
+      {
+        "source_id": "200",
+        "target_id": "material_al",
+        "type": "belongs_to"
+      },
+      {
+        "source_id": "lattice_main",
+        "target_id": "200",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "microstructure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "sem",
+        "type": "obtained_by"
+      },
+      {
+        "source_id": "sem",
+        "target_id": "microstructure",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "param_R",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "param_Yo",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "param_n",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "param_Rct",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "param_LH",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "param_Rf",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "param_R",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "param_Yo",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "param_n",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "param_Rct",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "param_LH",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "param_Rf",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "param_R",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "param_Yo",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "param_n",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "param_Rct",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "param_LH",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "param_Rf",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "dataset",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "dataset",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "dataset",
+        "type": "part_of"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "nanoparticles",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "transforms"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "transforms"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_dimension"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_dimension"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "GPII",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "main_region",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "inset",
+        "type": "contains"
+      },
+      {
+        "source_id": "main_region",
+        "target_id": "GPII",
+        "type": "labels"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "GPII",
+        "type": "labels"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "main_region",
+        "type": "magnifies"
+      },
+      {
+        "source_id": "image_c",
+        "target_id": "main_image",
+        "type": "contains"
+      },
+      {
+        "source_id": "main_image",
+        "target_id": "highlighted_region",
+        "type": "highlights"
+      },
+      {
+        "source_id": "main_image",
+        "target_id": "inset_image",
+        "type": "contains_inset"
+      },
+      {
+        "source_id": "highlighted_region",
+        "target_id": "inset_image",
+        "type": "magnified_view"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "arrow_annotation",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "stars",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "hkl_110",
+        "type": "labels"
+      },
+      {
+        "source_id": "main_image",
+        "target_id": "nanostructure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "nanostructure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "hkl_110",
+        "target_id": "nanostructure",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image",
+        "target_id": "DTS",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "DWS",
+        "type": "contains"
+      },
+      {
+        "source_id": "DTS",
+        "target_id": "DWS",
+        "type": "coexists_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "precipitate_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "forms"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "surface_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "corrosion_pits",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "material_surface",
+        "type": "images"
+      },
+      {
+        "source_id": "corrosion_pits",
+        "target_id": "material_surface",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "7G-DGU",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG",
+        "target_id": "CV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_surface"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "present_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "indicated_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "deformation_layer",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "matrix",
+        "type": "depicts"
+      },
+      {
+        "source_id": "deformation_layer",
+        "target_id": "matrix",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "deformation_layer",
+        "target_id": "material",
+        "type": "part_of"
+      },
+      {
+        "source_id": "matrix",
+        "target_id": "material",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "figure_e",
+        "target_id": "topography_map",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_e",
+        "target_id": "line_profile",
+        "type": "contains"
+      },
+      {
+        "source_id": "topography_map",
+        "target_id": "sample_surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "line_profile",
+        "target_id": "sample_surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "line_profile",
+        "target_id": "topography_map",
+        "type": "extracted_from"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "material",
+        "type": "depicts"
+      },
+      {
+        "source_id": "material",
+        "target_id": "pores",
+        "type": "has_feature"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "morphology",
+        "type": "shows"
+      },
+      {
+        "source_id": "material",
+        "target_id": "morphology",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "pores",
+        "target_id": "scale_bar",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "c1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "d1",
+        "type": "has_data"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "d2",
+        "type": "has_data"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "d3",
+        "type": "has_data"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "d4",
+        "type": "has_data"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "d5",
+        "type": "has_data"
+      },
+      {
+        "source_id": "d1",
+        "target_id": "c1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "d2",
+        "target_id": "c1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "d3",
+        "target_id": "c1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "d4",
+        "target_id": "c1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "d5",
+        "target_id": "c1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "figure",
+        "target_id": "graph",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "z_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "line_profile",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "surface_map",
+        "type": "contains"
+      },
+      {
+        "source_id": "surface_map",
+        "target_id": "scale_bar",
+        "type": "has"
+      },
+      {
+        "source_id": "scale_bar",
+        "target_id": "measurement_1",
+        "type": "includes"
+      },
+      {
+        "source_id": "scale_bar",
+        "target_id": "measurement_2",
+        "type": "includes"
+      },
+      {
+        "source_id": "line_profile",
+        "target_id": "y_axis",
+        "type": "measures"
+      },
+      {
+        "source_id": "surface_map",
+        "target_id": "z_axis",
+        "type": "maps_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "marks_boundary"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "marks_boundary"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "magnifies"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "located_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "image_e",
+        "target_id": "microscopy_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "microscopy_image",
+        "target_id": "nanoparticles",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG",
+        "target_id": "graph",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "graph",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "graph",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG",
+        "target_id": "graph",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "3P-NG",
+        "target_id": "graph",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG",
+        "target_id": "fit-3P-DG",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "fit-3P-DGU",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "fit-7P-NGU",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG",
+        "target_id": "fit-7P-NG",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "fit-3P-DG",
+        "target_id": "graph",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "fit-3P-DGU",
+        "target_id": "graph",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "fit-7P-NGU",
+        "target_id": "graph",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "fit-7P-NG",
+        "target_id": "graph",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "corrosion_crack",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "corrosion_pit",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "material_surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "material_surface",
+        "target_id": "corrosion_crack",
+        "type": "contains"
+      },
+      {
+        "source_id": "material_surface",
+        "target_id": "corrosion_pit",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "present_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "causes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "affects"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "characteristic_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "microstructure"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "dispersed_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "environment"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "in_environment"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_scale"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_x_range"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_y_range"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_z_range"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "has_feature_size"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "main_image",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "inset_image",
+        "type": "contains"
+      },
+      {
+        "source_id": "main_image",
+        "target_id": "nanomaterial",
+        "type": "depicts"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "ring_220",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "ring_311",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "ring_111",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "central_spot",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset_image",
+        "target_id": "nanomaterial",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "ring_220",
+        "target_id": "nanomaterial",
+        "type": "indicates_crystal_plane"
+      },
+      {
+        "source_id": "ring_311",
+        "target_id": "nanomaterial",
+        "type": "indicates_crystal_plane"
+      },
+      {
+        "source_id": "ring_111",
+        "target_id": "nanomaterial",
+        "type": "indicates_crystal_plane"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "analyzed_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "present_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "present_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "induces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "occurs_on"
+      },
+      {
+        "source_id": "figure_c",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "figure_c",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "figure_c",
+        "target_id": "profile_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_c",
+        "target_id": "color_map",
+        "type": "contains"
+      },
+      {
+        "source_id": "profile_curve",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "profile_curve",
+        "target_id": "y_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "profile_curve",
+        "target_id": "peak_129_28",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "profile_curve",
+        "target_id": "peak_129_60",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "profile_curve",
+        "target_id": "valley_0",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "color_map",
+        "target_id": "peak_129_28",
+        "type": "indicates"
+      },
+      {
+        "source_id": "color_map",
+        "target_id": "peak_129_60",
+        "type": "indicates"
+      },
+      {
+        "source_id": "image_c",
+        "target_id": "tem_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "tem_image",
+        "target_id": "nanomaterial",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "nanomaterial",
+        "target_id": "nanoparticles",
+        "type": "contains"
+      },
+      {
+        "source_id": "nanomaterial",
+        "target_id": "pores",
+        "type": "contains"
+      },
+      {
+        "source_id": "tem_image",
+        "target_id": "scale_bar",
+        "type": "includes"
+      },
+      {
+        "source_id": "tem_image",
+        "target_id": "roi1",
+        "type": "highlights"
+      },
+      {
+        "source_id": "tem_image",
+        "target_id": "roi2",
+        "type": "highlights"
+      },
+      {
+        "source_id": "roi1",
+        "target_id": "nanoparticles",
+        "type": "shows"
+      },
+      {
+        "source_id": "roi2",
+        "target_id": "nanoparticles",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "CG_hist",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "3p-DG",
+        "target_id": "3pDG_hist",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "7p-NG",
+        "target_id": "7pNG_hist",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "chart_a",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "3p-DG",
+        "target_id": "chart_a",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "7p-DG",
+        "target_id": "chart_a",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "3p-NG",
+        "target_id": "chart_a",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "7p-NG",
+        "target_id": "chart_a",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "3p-DG",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "7p-DG",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "7p-NG",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "figure_d",
+        "target_id": "chart",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "surface_plot",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "profile_plot",
+        "type": "contains"
+      },
+      {
+        "source_id": "surface_plot",
+        "target_id": "height_max",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "surface_plot",
+        "target_id": "height_min",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "surface_plot",
+        "target_id": "color_scale",
+        "type": "uses_scale"
+      },
+      {
+        "source_id": "profile_plot",
+        "target_id": "peak_129_28um",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "profile_plot",
+        "target_id": "peak_129_60um",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "profile_plot",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "profile_plot",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "surface_plot",
+        "target_id": "profile_plot",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "sem",
+        "type": "depicts"
+      },
+      {
+        "source_id": "sem",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "material",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "image",
+        "target_id": "PFZ",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "PFZ_label",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "arrows",
+        "type": "contains"
+      },
+      {
+        "source_id": "arrows",
+        "target_id": "PFZ",
+        "type": "indicates"
+      },
+      {
+        "source_id": "PFZ",
+        "target_id": "material",
+        "type": "part_of"
+      },
+      {
+        "source_id": "image",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "Ra_CG",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "Rz_CG",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "3passes-DG",
+        "target_id": "Ra_3passes-DG",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "3passes-DG",
+        "target_id": "Rz_3passes-DG",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "7passes-NG",
+        "target_id": "Ra_7passes-NG",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "7passes-NG",
+        "target_id": "Rz_7passes-NG",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "3passes-DG",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "7passes-NG",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Ra_CG",
+        "target_id": "chart",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "Rz_CG",
+        "target_id": "chart",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "Ra_3passes-DG",
+        "target_id": "chart",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "Rz_3passes-DG",
+        "target_id": "chart",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "Ra_7passes-NG",
+        "target_id": "chart",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "Rz_7passes-NG",
+        "target_id": "chart",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "causes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "present_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_e",
+        "target_id": "corrosion_pits",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_e",
+        "target_id": "material_surface",
+        "type": "images"
+      },
+      {
+        "source_id": "corrosion_pits",
+        "target_id": "material_surface",
+        "type": "located_on"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "microscopy_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "microscopy_image",
+        "target_id": "nanomaterial",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "scale_bar",
+        "target_id": "nanomaterial",
+        "type": "scales"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "E_corr",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "I_corr",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "CR",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "E_corr",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "I_corr",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "CR",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "E_corr",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "I_corr",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "CR",
+        "type": "has_property"
+      },
+      {
+        "source_id": "sample4",
+        "target_id": "E_corr",
+        "type": "has_property"
+      },
+      {
+        "source_id": "sample4",
+        "target_id": "I_corr",
+        "type": "has_property"
+      },
+      {
+        "source_id": "sample4",
+        "target_id": "CR",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_7075-Al",
+        "target_id": "table",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_7075_3_passes_DG_U",
+        "target_id": "table",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_7075_7_passes_NG_U",
+        "target_id": "table",
+        "type": "part_of"
+      },
+      {
+        "source_id": "sample4",
+        "target_id": "table",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n-MgZn2_1",
+        "target_id": "image_b",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "n-MgZn2_2",
+        "target_id": "image_b",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "PFZ",
+        "target_id": "image_b",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "n-MgZn2_3",
+        "target_id": "image_b",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "n-MgZn2_4",
+        "target_id": "image_b",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "bounds"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "bounds"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "n_prime",
+        "target_id": "main_image",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "main_image",
+        "target_id": "inset",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "d_0.20nm",
+        "type": "shows"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "d_0.21nm",
+        "type": "shows"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "d_0.37nm",
+        "type": "shows"
+      },
+      {
+        "source_id": "n_prime",
+        "target_id": "d_0.37nm",
+        "type": "has_spacing"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "figure_a",
+        "target_id": "3d_surface_plot",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_a",
+        "target_id": "line_profile",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_a",
+        "target_id": "colorbar",
+        "type": "contains"
+      },
+      {
+        "source_id": "3d_surface_plot",
+        "target_id": "sample_surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "line_profile",
+        "target_id": "sample_surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "colorbar",
+        "target_id": "3d_surface_plot",
+        "type": "scales"
+      },
+      {
+        "source_id": "3d_surface_plot",
+        "target_id": "line_profile",
+        "type": "corresponds_to"
+      }
+    ]
+  }
+}

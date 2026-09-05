@@ -1,0 +1,3358 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_ni_foam",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF",
+          "Ni foam"
+        ],
+        "properties": {
+          "structure": {
+            "value": "3D porous structure",
+            "unit": "descriptive"
+          }
+        }
+      },
+      {
+        "id": "chem_hcl_solution",
+        "type": "chemical",
+        "name": "HCl solution",
+        "formula": "HCl",
+        "properties": {
+          "molarity": {
+            "value": 5,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "chem_di_water",
+        "type": "chemical",
+        "name": "deionized water",
+        "formula": "H2O",
+        "aliases": [
+          "DI water"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_ni_foam_pretreated",
+        "type": "chemical",
+        "name": "pre-treated nickel foam",
+        "aliases": [
+          "cleaned NF"
+        ],
+        "properties": {
+          "surface_state": {
+            "value": "oxide layer removed",
+            "unit": "descriptive"
+          }
+        }
+      },
+      {
+        "id": "chem_co_nitrate",
+        "type": "chemical",
+        "name": "cobalt nitrate hexahydrate",
+        "formula": "Co(NO3)2·6H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_cu_nitrate",
+        "type": "chemical",
+        "name": "copper nitrate hemipentahydrate",
+        "formula": "Cu(NO3)2·2.5H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_ti_mesh",
+        "type": "chemical",
+        "name": "Ti-mesh",
+        "aliases": [
+          "titanium mesh"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_sce",
+        "type": "chemical",
+        "name": "saturated calomel electrode",
+        "aliases": [
+          "SCE"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_cuco_hydroxide_electrode",
+        "type": "chemical",
+        "name": "copper cobalt hydroxide electrode",
+        "formula": "CuCo(OH)2",
+        "aliases": [
+          "CuCo-hydroxide nanosheet",
+          "CuCo(OH)2/NF"
+        ],
+        "properties": {
+          "electrochemical active surface area": {
+            "value": 82.75,
+            "unit": "cm2"
+          },
+          "charge transfer resistance": {
+            "value": 0.136,
+            "unit": "Ohm"
+          },
+          "cobalt oxidation state ratio": {
+            "value": "Co3+ > Co2+",
+            "unit": "qualitative ratio"
+          },
+          "oxygen vacancy concentration": {
+            "value": "relatively higher",
+            "unit": "comparative"
+          },
+          "morphology": {
+            "value": "sharper nanosheets",
+            "unit": "descriptive"
+          },
+          "crystal phase": {
+            "value": "cobalt hydroxide (JCPDS:00-046-0605)",
+            "unit": "JCPDS"
+          }
+        }
+      },
+      {
+        "id": "chem_co_hydroxide_electrode",
+        "type": "chemical",
+        "name": "cobalt hydroxide electrode",
+        "formula": "Co(OH)2",
+        "aliases": [
+          "Co(OH)2/NF"
+        ],
+        "properties": {
+          "electrochemical active surface area": {
+            "value": 44.75,
+            "unit": "cm2"
+          },
+          "charge_transfer_resistance": {
+            "value": 0.179,
+            "unit": "Ohm"
+          },
+          "cobalt oxidation state ratio": {
+            "value": "50% Co2+ and 50% Co3+",
+            "unit": "%"
+          },
+          "morphology": {
+            "value": "nanosheet",
+            "unit": "descriptive"
+          },
+          "crystal phase": {
+            "value": "cobalt hydroxide (JCPDS:00-046-0605)",
+            "unit": "JCPDS"
+          }
+        }
+      },
+      {
+        "id": "chem_pt_c_hispec",
+        "type": "chemical",
+        "name": "Pt/C HISPEC 4000",
+        "aliases": [
+          "Pt/C"
+        ],
+        "composition": {
+          "Pt": {
+            "value": 40,
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_nafion_binder",
+        "type": "chemical",
+        "name": "Nafion binder",
+        "properties": {}
+      },
+      {
+        "id": "chem_carbon_cloth",
+        "type": "chemical",
+        "name": "carbon cloth with a microporous layer",
+        "properties": {}
+      },
+      {
+        "id": "chem_pt_c_cathode",
+        "type": "chemical",
+        "name": "Pt/C cathode",
+        "properties": {
+          "loading amount of Pt": {
+            "value": 1.0,
+            "unit": "mg/cm2"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Nickel Foam Pre-treatment",
+        "method": "Chemical etching",
+        "procedure": "Before electrochemical co-precipitation of CuCo(OH)2, NF was immersed in 5 M HCl solution to remove the surface oxide layer for 15 min. And then, it was rinsed with deionized water.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Immersion",
+            "method": "Acid etching",
+            "conditions": {
+              "time": {
+                "value": 15,
+                "unit": "min"
+              },
+              "molarity": {
+                "value": 5,
+                "unit": "M"
+              }
+            },
+            "procedure_snippet": "NF was immersed in 5 M HCl solution to remove the surface oxide layer for 15 min."
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Rinsing",
+            "method": "Water rinsing",
+            "conditions": {},
+            "procedure_snippet": "it was rinsed with deionized water."
+          }
+        ],
+        "conditions": {
+          "time": {
+            "value": 15,
+            "unit": "min"
+          }
+        },
+        "source_text": "Before electrochemical co-precipitation of CuCo(OH)2, NF was immersed in 5 M HCl solution ... it was rinsed with deionized water."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "CuCo(OH)2 Electrochemical Co-precipitation",
+        "method": "Electrochemical co-precipitation",
+        "procedure": "The solution for CuCo(OH)2 was prepared with 30 mM Co(NO3)2·6H2O and 20 mM Cu(NO3)2·2.5H2O. The electrodeposition was conducted with -1 V (vs. SCE) for 5 min on the pre-treated NF working electrode with Ti-mesh counter electrode. The electrode was rinsed several with deionized water and then dried in a convection oven.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Solution Preparation",
+            "method": "Mixing",
+            "conditions": {
+              "Co_precursor_concentration": {
+                "value": 30,
+                "unit": "mM"
+              },
+              "Cu_precursor_concentration": {
+                "value": 20,
+                "unit": "mM"
+              }
+            },
+            "procedure_snippet": "The solution for CuCo(OH)2 was prepared with 30 mM Co(NO3)2·6H2O and 20 mM Cu(NO3)2·2.5H2O."
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Electrodeposition",
+            "method": "Electrochemical deposition",
+            "conditions": {
+              "voltage": {
+                "value": -1,
+                "unit": "V vs SCE"
+              },
+              "time": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "The electrodeposition was conducted with -1 V (vs. SCE) for 5 min."
+          },
+          {
+            "id": "unit_op_2.3",
+            "name": "Rinsing",
+            "method": "Water rinsing",
+            "conditions": {},
+            "procedure_snippet": "The electrode was rinsed several with deionized water"
+          },
+          {
+            "id": "unit_op_2.4",
+            "name": "Drying",
+            "method": "Convection drying",
+            "conditions": {
+              "equipment": {
+                "value": "convection oven",
+                "unit": "string"
+              }
+            },
+            "procedure_snippet": "and then dried in a convection oven."
+          }
+        ],
+        "conditions": {
+          "voltage": {
+            "value": -1,
+            "unit": "V vs SCE"
+          },
+          "time": {
+            "value": 5,
+            "unit": "min"
+          }
+        },
+        "source_text": "The solution for CuCo(OH)2 was prepared with 30 mM Co(NO3)2·6H2O and 20 mM Cu(NO3)2·2.5H2O. ... then dried in a convection oven."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Co(OH)2 Electrochemical Deposition",
+        "method": "Electrochemical deposition",
+        "procedure": "The solution for Co(OH)2 was prepared with 30 mM Co(NO3)2·6H2O. The electrodeposition was conducted with -1 V (vs. SCE) for 5 min. The electrode was rinsed several with deionized water and then dried in a convection oven.",
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Solution Preparation",
+            "method": "Mixing",
+            "conditions": {
+              "Co_precursor_concentration": {
+                "value": 30,
+                "unit": "mM"
+              }
+            },
+            "procedure_snippet": "The solution for Co(OH)2 was prepared with 30 mM Co(NO3)2·6H2O."
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Electrodeposition",
+            "method": "Electrochemical deposition",
+            "conditions": {
+              "voltage": {
+                "value": -1,
+                "unit": "V vs SCE"
+              },
+              "time": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "The electrodeposition was conducted with -1 V (vs. SCE) for 5 min."
+          }
+        ],
+        "conditions": {
+          "voltage": {
+            "value": -1,
+            "unit": "V vs SCE"
+          },
+          "time": {
+            "value": 5,
+            "unit": "min"
+          }
+        },
+        "source_text": "In order to investigate the effect of Cu, the electrode deposited with Co(OH)2 was prepared. Co(OH)2 has the same manufacturing process as CuCo(OH)2 except for the Cu-precursor."
+      },
+      {
+        "id": "synth_step_4",
+        "type": "synthesis",
+        "name": "Cathode Preparation",
+        "method": "Mixing and coating",
+        "procedure": "The cathode was prepared with Pt/C with a Nafion binder (40 wt%, HISPEC 4000, Johnson Matthey) on carbon cloth with a microporous layer.",
+        "unit_operations": [
+          {
+            "id": "unit_op_4.1",
+            "name": "Ink preparation",
+            "method": "Mixing",
+            "conditions": {
+              "binder_content": {
+                "value": 40,
+                "unit": "wt%"
+              }
+            },
+            "procedure_snippet": "The cathode was prepared with Pt/C with a Nafion binder (40 wt%, HISPEC 4000, Johnson Matthey)"
+          },
+          {
+            "id": "unit_op_4.2",
+            "name": "Coating",
+            "method": "Spray/Doctor blade/Decal (Implied)",
+            "conditions": {
+              "loading_amount_Pt": {
+                "value": 1.0,
+                "unit": "mg/cm2"
+              }
+            },
+            "procedure_snippet": "on carbon cloth with a microporous layer. The loading amount of Pt was approximately 1.0 mg/cm2."
+          }
+        ],
+        "conditions": {
+          "loading_amount_Pt": {
+            "value": 1.0,
+            "unit": "mg/cm2"
+          }
+        },
+        "source_text": "The cathode was prepared with Pt/C with a Nafion binder (40 wt%, HISPEC 4000, Johnson Matthey) on carbon cloth with a microporous layer."
+      },
+      {
+        "id": "chem_CuCo_OH_2_NF",
+        "type": "chemical",
+        "name": "copper cobalt hydroxide nanosheet on nickel foam",
+        "aliases": [
+          "CuCo(OH)2",
+          "CuCo-hydroxide",
+          "CuCo(OH)2/NF"
+        ],
+        "formula": "CuCo(OH)2",
+        "composition": {
+          "Co": {
+            "value": "variable",
+            "unit": "oxidation state"
+          },
+          "Cu": {
+            "value": "variable",
+            "unit": "oxidation state"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_Co_OH_2_NF",
+        "type": "chemical",
+        "name": "cobalt hydroxide nanosheet on nickel foam",
+        "aliases": [
+          "Co(OH)2",
+          "Co(OH)2/NF"
+        ],
+        "formula": "Co(OH)2",
+        "properties": {}
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "properties": {
+          "Overpotential at 10 mA/cm2": {
+            "value": 362,
+            "unit": "mV"
+          }
+        },
+        "related_images": [
+          "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg",
+          "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg",
+          "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg",
+          "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical_entity",
+            "name": "NF",
+            "properties": {
+              "full_name": "Nickel Foam",
+              "material_type": "substrate/electrode",
+              "color_in_plot": "grey",
+              "extracted_from_image": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+            },
+            "source_image_file": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+          },
+          {
+            "type": "material",
+            "name": "NF",
+            "properties": {
+              "description": "Nickel Foam",
+              "role": "substrate/reference material",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nickel Foam",
+            "properties": {
+              "abbreviation": "NF",
+              "role_in_experiment": "Substrate / Electrode Material",
+              "plot_line_color": "grey",
+              "extracted_from_image": "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg"
+            },
+            "source_image_file": "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Nickel Foam",
+            "properties": {
+              "abbreviation": "NF",
+              "extracted_from_image": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+            },
+            "source_image_file": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "platinum on carbon",
+        "aliases": [
+          "Pt/C",
+          "HISPEC 4000"
+        ],
+        "properties": {
+          "catalyst_loading": {
+            "value": 1.0,
+            "unit": "mg/cm^2"
+          }
+        }
+      },
+      {
+        "id": "chem_CuCo_OH_2",
+        "type": "chemical",
+        "name": "copper cobalt hydroxide",
+        "aliases": [
+          "CuCo(OH)2",
+          "CuCo-hydroxide",
+          "CuCo(OH)2 nanosheet"
+        ],
+        "formula": "CuCo(OH)2",
+        "properties": {
+          "Electrochemical active surface area": {
+            "value": 82.75,
+            "unit": "cm2"
+          },
+          "Charge transfer resistance": {
+            "value": 0.136,
+            "unit": "Ohm"
+          },
+          "Tafel slope": {
+            "value": 55,
+            "unit": "mV/dec"
+          },
+          "Overpotential at 10 mA/cm2": {
+            "value": 294,
+            "unit": "mV"
+          }
+        },
+        "related_images": [
+          "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg",
+          "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg",
+          "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg",
+          "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg",
+          "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg",
+          "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg",
+          "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg",
+          "7803dfb3cb9763bcb056228981a8f6b49d7ee7bebcc99072c7378c6ad4cb0ef0.jpg",
+          "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg",
+          "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg",
+          "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg",
+          "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg",
+          "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical_compound",
+            "name": "Copper Cobalt hydroxide",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "note": "Likely a mixed metal hydroxide or solid solution of copper and cobalt hydroxides.",
+              "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+            },
+            "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "CuCo(OH)₂",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "material_type": "hydroxide",
+              "color_in_plot": "red",
+              "extracted_from_image": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+            },
+            "source_image_file": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Copper Cobalt Hydroxide",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "extracted_from_image": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+            },
+            "source_image_file": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "CuCo(OH)₂",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Copper Cobalt Hydroxide",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "role_in_experiment": "Electrocatalyst",
+              "plot_line_color": "red",
+              "extracted_from_image": "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg"
+            },
+            "source_image_file": "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Copper Cobalt Hydroxide",
+            "properties": {
+              "formula": "CuCo(OH)2",
+              "extracted_from_image": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+            },
+            "source_image_file": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Copper Cobalt Hydroxide",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "role": "Electrocatalyst",
+              "extracted_from_image": "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg"
+            },
+            "source_image_file": "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "CuCo(OH)2",
+            "properties": {
+              "formula": "CuCo(OH)2",
+              "chemical_name": "Copper Cobalt Hydroxide",
+              "extracted_from_image": "7803dfb3cb9763bcb056228981a8f6b49d7ee7bebcc99072c7378c6ad4cb0ef0.jpg"
+            },
+            "source_image_file": "7803dfb3cb9763bcb056228981a8f6b49d7ee7bebcc99072c7378c6ad4cb0ef0.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Copper Cobalt Hydroxide",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "extracted_from_image": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+            },
+            "source_image_file": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Copper Cobalt Hydroxide",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "extracted_from_image": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+            },
+            "source_image_file": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Copper Cobalt Hydroxide",
+            "properties": {
+              "formula": "CuCo(OH)2",
+              "extracted_from_image": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+            },
+            "source_image_file": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "CuCo(OH)₂",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "material_type": "hydroxide",
+              "extracted_from_image": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+            },
+            "source_image_file": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "CuCo(OH)₂",
+            "properties": {
+              "formula": "CuCo(OH)₂",
+              "description": "Copper Cobalt Hydroxide",
+              "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+            },
+            "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Co_OH_2",
+        "type": "chemical",
+        "name": "cobalt hydroxide",
+        "aliases": [
+          "Co(OH)2"
+        ],
+        "formula": "Co(OH)2",
+        "properties": {
+          "Electrochemical active surface area": {
+            "value": 44.75,
+            "unit": "cm2"
+          },
+          "Charge transfer resistance": {
+            "value": 0.179,
+            "unit": "Ohm"
+          },
+          "Tafel slope": {
+            "value": 67,
+            "unit": "mV/dec"
+          },
+          "Overpotential at 10 mA/cm2": {
+            "value": 325,
+            "unit": "mV"
+          }
+        },
+        "related_images": [
+          "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg",
+          "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg",
+          "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg",
+          "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg",
+          "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg",
+          "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg",
+          "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg",
+          "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg",
+          "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg",
+          "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg",
+          "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg",
+          "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical_compound",
+            "name": "Cobalt(II) hydroxide",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+            },
+            "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Co(OH)₂",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "material_type": "hydroxide",
+              "color_in_plot": "blue",
+              "extracted_from_image": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+            },
+            "source_image_file": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Cobalt Hydroxide",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "extracted_from_image": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+            },
+            "source_image_file": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Co(OH)₂",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Cobalt Hydroxide",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "role_in_experiment": "Electrocatalyst",
+              "plot_line_color": "blue",
+              "extracted_from_image": "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg"
+            },
+            "source_image_file": "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Cobalt Hydroxide",
+            "properties": {
+              "formula": "Co(OH)2",
+              "extracted_from_image": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+            },
+            "source_image_file": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Cobalt(II) hydroxide",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "role": "Electrocatalyst",
+              "extracted_from_image": "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg"
+            },
+            "source_image_file": "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Cobalt Hydroxide",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "extracted_from_image": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+            },
+            "source_image_file": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Cobalt(II) hydroxide",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "extracted_from_image": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+            },
+            "source_image_file": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Cobalt Hydroxide",
+            "properties": {
+              "formula": "Co(OH)2",
+              "extracted_from_image": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+            },
+            "source_image_file": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Co(OH)₂",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "material_type": "hydroxide",
+              "extracted_from_image": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+            },
+            "source_image_file": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+          },
+          {
+            "type": "chemical_compound",
+            "name": "Co(OH)₂",
+            "properties": {
+              "formula": "Co(OH)₂",
+              "description": "Cobalt Hydroxide",
+              "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+            },
+            "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_ni_foam_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ni_foam",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_hcl_solution_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_hcl_solution",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_input_di_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_di_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_ni_foam_pretreated",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_ni_foam_pretreated",
+        "properties": {
+          "form": "etched solid"
+        }
+      },
+      {
+        "id": "edge_input_ni_foam_pretreated_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ni_foam_pretreated",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_co_nitrate_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_co_nitrate",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "concentration": "30 mM"
+        }
+      },
+      {
+        "id": "edge_input_cu_nitrate_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_cu_nitrate",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "concentration": "20 mM"
+        }
+      },
+      {
+        "id": "edge_input_ti_mesh_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ti_mesh",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_input_sce_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_sce",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_cuco_hydroxide_electrode",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_cuco_hydroxide_electrode",
+        "properties": {
+          "form": "deposited nanosheet"
+        }
+      },
+      {
+        "id": "edge_input_ni_foam_pretreated_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_ni_foam_pretreated",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_co_nitrate_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_co_nitrate",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor",
+          "concentration": "30 mM"
+        }
+      },
+      {
+        "id": "edge_input_ti_mesh_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_ti_mesh",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_input_sce_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_sce",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_co_hydroxide_electrode",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_co_hydroxide_electrode",
+        "properties": {
+          "form": "deposited nanosheet"
+        }
+      },
+      {
+        "id": "edge_input_pt_c_hispec_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_pt_c_hispec",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_nafion_binder_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_nafion_binder",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_input_carbon_cloth_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_carbon_cloth",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_pt_c_cathode",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_pt_c_cathode",
+        "properties": {
+          "form": "coated cloth"
+        }
+      },
+      {
+        "id": "edge_input_chem_di_water_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_di_water",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "usage": "rinsing"
+        }
+      },
+      {
+        "id": "edge_input_chem_di_water_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_di_water",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent",
+          "usage": "rinsing"
+        }
+      },
+      {
+        "id": "edge_input_chem_ti_mesh_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_ti_mesh",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_input_chem_sce_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_sce",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "reagent"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_NF",
+      "chem_Pt_C",
+      "chem_CuCo_OH_2_NF",
+      "chem_Co_OH_2_NF"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_CuCo_OH_2_NF",
+        "type": "chemical",
+        "name": "copper cobalt hydroxide nanosheet on nickel foam",
+        "aliases": [
+          "CuCo(OH)2",
+          "CuCo-hydroxide",
+          "CuCo(OH)2/NF"
+        ],
+        "formula": "CuCo(OH)2",
+        "composition": {
+          "Co": {
+            "value": "variable",
+            "unit": "oxidation state"
+          },
+          "Cu": {
+            "value": "variable",
+            "unit": "oxidation state"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_Co_OH_2_NF",
+        "type": "chemical",
+        "name": "cobalt hydroxide nanosheet on nickel foam",
+        "aliases": [
+          "Co(OH)2",
+          "Co(OH)2/NF"
+        ],
+        "formula": "Co(OH)2",
+        "properties": {}
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "formula": "Ni"
+      },
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "platinum on carbon",
+        "aliases": [
+          "Pt/C",
+          "HISPEC 4000"
+        ],
+        "properties": {
+          "catalyst_loading": {
+            "value": 1.0,
+            "unit": "mg/cm^2"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_CuCo_OH_2_NF",
+        "description": "OER performance and EIS in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Oxygen Evolution Reaction (OER)",
+            "unit": "type"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode_active_area": {
+            "value": 1.0,
+            "unit": "cm^2"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO (1 M KOH)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "potential_scale": {
+            "value": "Reversible Hydrogen Electrode (RHE)",
+            "unit": "scale"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "correction"
+          },
+          "EIS_potential": {
+            "value": 1.88,
+            "unit": "V vs. RHE"
+          },
+          "EIS_frequency_range": {
+            "value": "200 kHz to 10 Hz",
+            "unit": "Hz"
+          },
+          "EIS_amplitude": {
+            "value": 10.0,
+            "unit": "mV"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm2": {
+            "value": 294,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 55,
+            "unit": "mV/dec"
+          },
+          "charge_transfer_resistance_Rct": {
+            "value": 0.136,
+            "unit": "ohm"
+          },
+          "electrochemical_active_surface_area_ECSA": {
+            "value": 82.75,
+            "unit": "cm^2"
+          }
+        },
+        "source_text": "The prepared electrode (active area = 1 cm x 1 cm) was used as the working electrode. A graphite rod was used as the counter electrode, and Hg/HgO (1 M KOH) was used as the reference electrode... Polarization curves... recorded at a scan rate of 1 mV/s with iR-correction... electrochemical impedance spectroscopy was conducted at 1.88 V (vs. RHE) from 200 kHz to 10 Hz with an amplitude of 10.0 mV... overpotential of about 294 mV... Tafel slope of 55 mV/dec... Rct values of CuCo(OH)2... 0.136 ohm... values of ECSA were 82.75 cm2 (CuCo(OH)2)"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Co_OH_2_NF",
+        "description": "OER performance and EIS in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Oxygen Evolution Reaction (OER)",
+            "unit": "type"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "correction"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm2": {
+            "value": 325,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 67,
+            "unit": "mV/dec"
+          },
+          "charge_transfer_resistance_Rct": {
+            "value": 0.179,
+            "unit": "ohm"
+          },
+          "electrochemical_active_surface_area_ECSA": {
+            "value": 44.75,
+            "unit": "cm^2"
+          }
+        },
+        "source_text": "Co(OH)2... showed an overpotential of about 325 mV... Tafel slope of 67 mV/dec... Rct... 0.179 ohm... ECSA were... 44.75 cm2 (Co(OH)2)"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_NF",
+        "description": "OER performance of bare Nickel Foam in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "reaction"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "concentration"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm2": {
+            "value": 362,
+            "unit": "mV"
+          }
+        },
+        "source_text": "NF required the overpotential of 362 mV, indicating poor OER performance."
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_CuCo_OH_2_NF",
+        "description": "Durability test of CuCo(OH)2 electrode",
+        "conditions_json": {
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm^2"
+          },
+          "duration": {
+            "value": 700,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "performance_retention": {
+            "value": 95,
+            "unit": "%"
+          }
+        },
+        "source_text": "The durability of CuCo(OH)2 was tested at 10 mA/cm2 for 700 h. Despite the long-term durability test, the performance was maintained at about 95% compared to the initial performance"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_CuCo_OH_2_NF",
+        "description": "AEM electrolyzer performance testing",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Overall water splitting",
+            "unit": "reaction"
+          },
+          "anode": {
+            "value": "CuCo(OH)2 on NF",
+            "unit": "electrode"
+          },
+          "cathode": {
+            "value": "Pt/C with Nafion binder",
+            "unit": "electrode"
+          },
+          "membrane": {
+            "value": "X37-50 Grade T",
+            "unit": "anion exchange membrane"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "concentration"
+          },
+          "electrolyte_flow_rate": {
+            "value": 50,
+            "unit": "mL/min"
+          },
+          "temperature": {
+            "value": 50,
+            "unit": "degree C"
+          },
+          "active_area": {
+            "value": 3.8,
+            "unit": "cm^2"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_1.0_A/cm2": {
+            "value": 1.81,
+            "unit": "V"
+          },
+          "cell_efficiency_at_0.5_A/cm2": {
+            "value": 73.5,
+            "unit": "%"
+          },
+          "faradaic_efficiency": {
+            "value": 99,
+            "unit": "%"
+          }
+        },
+        "source_text": "To achieve the current density of 1.0 A/cm2, the cell voltages of the AEM electrolyzer were 1.81 Vcell (CuCo(OH)2)... At a current density of 0.5 A/cm2, the cell efficiencies were calculated as 73.5% (CuCo(OH)2)... During the durability test, the Faraday efficiency... was about 99%"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_Co_OH_2_NF",
+        "description": "AEM electrolyzer performance testing",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Overall water splitting",
+            "unit": "reaction"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_1.0_A/cm2": {
+            "value": 1.855,
+            "unit": "V"
+          },
+          "cell_efficiency_at_0.5_A/cm2": {
+            "value": 71.5,
+            "unit": "%"
+          }
+        },
+        "source_text": "the cell voltages of the AEM electrolyzer were... 1.855 Vcell (Co(OH)2). At a current density of 0.5 A/cm2, the cell efficiencies were calculated as... 71.5% (Co(OH)2)."
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_CuCo_OH_2_NF",
+        "description": "AEM electrolyzer durability testing",
+        "conditions_json": {
+          "current_density": {
+            "value": 0.5,
+            "unit": "A/cm^2"
+          },
+          "duration": {
+            "value": 90,
+            "unit": "h"
+          },
+          "operating_temperature": {
+            "value": 50,
+            "unit": "degree C"
+          }
+        },
+        "results_json": {
+          "cell_voltage_degradation_rate": {
+            "value": 1.0,
+            "unit": "mV/h"
+          },
+          "cell_efficiency_degradation_rate": {
+            "value": 0.1,
+            "unit": "%/h"
+          },
+          "Faradaic_efficiency": {
+            "value": 99,
+            "unit": "%"
+          }
+        },
+        "source_text": "The durability of the AEM electrolyzer catalyzed by CuCo(OH)2 was tested at a current density of 0.5 A/cm2 for 90 h (Fig. 4e)... degradation rate was calculated to be ~1.0 mV/h. The cell efficiency gradually decreased during the durability test at 0.1%/h... Faraday efficiency... was about 99%"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_CuCo_OH_2_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_CuCo_OH_2_NF",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co_OH_2_NF_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Co_OH_2_NF",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_test_3",
+        "type": "tested_in",
+        "source_id": "chem_NF",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_CuCo_OH_2_NF_test_4",
+        "type": "tested_in",
+        "source_id": "chem_CuCo_OH_2_NF",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_CuCo_OH_2_NF_test_5",
+        "type": "tested_in",
+        "source_id": "chem_CuCo_OH_2_NF",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co_OH_2_NF_test_6",
+        "type": "tested_in",
+        "source_id": "chem_Co_OH_2_NF",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_CuCo_OH_2_NF_test_7",
+        "type": "tested_in",
+        "source_id": "chem_CuCo_OH_2_NF",
+        "target_id": "test_7",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_CuCo_OH_2",
+        "type": "chemical",
+        "name": "copper cobalt hydroxide",
+        "aliases": [
+          "CuCo(OH)2",
+          "CuCo-hydroxide",
+          "CuCo(OH)2 nanosheet"
+        ],
+        "formula": "CuCo(OH)2",
+        "properties": {
+          "Electrochemical active surface area": {
+            "value": 82.75,
+            "unit": "cm2"
+          },
+          "Charge transfer resistance": {
+            "value": 0.136,
+            "unit": "Ohm"
+          },
+          "Tafel slope": {
+            "value": 55,
+            "unit": "mV/dec"
+          },
+          "Overpotential at 10 mA/cm2": {
+            "value": 294,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "chem_Co_OH_2",
+        "type": "chemical",
+        "name": "cobalt hydroxide",
+        "aliases": [
+          "Co(OH)2"
+        ],
+        "formula": "Co(OH)2",
+        "properties": {
+          "Electrochemical active surface area": {
+            "value": 44.75,
+            "unit": "cm2"
+          },
+          "Charge transfer resistance": {
+            "value": 0.179,
+            "unit": "Ohm"
+          },
+          "Tafel slope": {
+            "value": 67,
+            "unit": "mV/dec"
+          },
+          "Overpotential at 10 mA/cm2": {
+            "value": 325,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "properties": {
+          "Overpotential at 10 mA/cm2": {
+            "value": 362,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM imaging shows that CuCo(OH)2 and Co(OH)2 exhibit nanosheet morphologies, with CuCo(OH)2 nanosheets appearing relatively sharper.",
+        "evidence_snippet": "CuCo(OH)2 and Co(OH)2 had nanosheet shapes ... CuCo(OH)2 had relatively sharper nanosheets than Co(OH)2.",
+        "related_images": [
+          "eb87f19df1abe1f2d2030eae7ef26ef59af0bd358e723255c7bd1636e085ddac.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization_data",
+            "name": "Scanning Electron Microscopy Image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy (SEM)",
+              "description": "A grayscale image displaying the surface morphology of a material.",
+              "magnification_type": "Surface morphology",
+              "extracted_from_image": "eb87f19df1abe1f2d2030eae7ef26ef59af0bd358e723255c7bd1636e085ddac.jpg"
+            },
+            "source_image_file": "eb87f19df1abe1f2d2030eae7ef26ef59af0bd358e723255c7bd1636e085ddac.jpg"
+          },
+          {
+            "type": "material_structure",
+            "name": "Complex Nanostructured Morphology",
+            "properties": {
+              "observed_features": "Dense arrangement of interconnected, plate-like or flake-like structures, with some sharper, needle-like or rod-like features interspersed.",
+              "approximate_feature_size": "Sub-micrometer to micrometer scale",
+              "overall_texture": "Rough, highly textured surface",
+              "extracted_from_image": "eb87f19df1abe1f2d2030eae7ef26ef59af0bd358e723255c7bd1636e085ddac.jpg"
+            },
+            "source_image_file": "eb87f19df1abe1f2d2030eae7ef26ef59af0bd358e723255c7bd1636e085ddac.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "is_reported": true,
+        "characterization_summary": "HRTEM imaging confirms the nanosheet shape of both CuCo(OH)2 and Co(OH)2 catalysts.",
+        "evidence_snippet": "High-resolution transmission electron microscopy (HR-TEM) images were obtained ... confirmed through TEM images that both samples had a nanosheet shape (Fig. 3d and Fig. S3).",
+        "related_images": [
+          "a41219cdfbfc1ffeca65d695823e1a3571a561b3d1e7b4c631d56bcbbb675b35.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical_entity",
+            "name": "Layered Nanomaterial",
+            "properties": {
+              "morphology": "crumpled sheets/flakes",
+              "nanostructure_type": "nanosheets",
+              "description": "A material exhibiting a layered or sheet-like morphology at the nanoscale.",
+              "extracted_from_image": "a41219cdfbfc1ffeca65d695823e1a3571a561b3d1e7b4c631d56bcbbb675b35.jpg"
+            },
+            "source_image_file": "a41219cdfbfc1ffeca65d695823e1a3571a561b3d1e7b4c631d56bcbbb675b35.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Transmission Electron Microscopy Image",
+            "properties": {
+              "technique": "TEM",
+              "scale_bar": "50 nm",
+              "description": "High-resolution image showing the crumpled, sheet-like morphology of the material.",
+              "extracted_from_image": "a41219cdfbfc1ffeca65d695823e1a3571a561b3d1e7b4c631d56bcbbb675b35.jpg"
+            },
+            "source_image_file": "a41219cdfbfc1ffeca65d695823e1a3571a561b3d1e7b4c631d56bcbbb675b35.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EDS",
+        "is_reported": true,
+        "characterization_summary": "TEM-EDS mapping confirms a uniform distribution of Cu, Co, and O elements throughout the CuCo(OH)2 nanosheets.",
+        "evidence_snippet": "TEM-EDS mapping images showed that the element (Cu/Co/O) were uniformly distributed in CuCo(OH)2 and Co(OH)2 nanosheets (Fig. 1d and Fig. S4).",
+        "related_images": [
+          "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical_entity",
+            "name": "Cobalt Copper Oxide Nanostructure",
+            "properties": {
+              "description": "A nanostructured material composed of Cobalt, Copper, and Oxygen, likely a mixed metal oxide.",
+              "composition_elements": [
+                "Co",
+                "Cu",
+                "O"
+              ],
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "atomic_number": 27,
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Copper",
+            "properties": {
+              "symbol": "Cu",
+              "atomic_number": 29,
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          },
+          {
+            "type": "chemical_entity",
+            "name": "Oxygen",
+            "properties": {
+              "symbol": "O",
+              "atomic_number": 8,
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          },
+          {
+            "type": "characterization_technique",
+            "name": "STEM-EDX Mapping",
+            "properties": {
+              "description": "Scanning Transmission Electron Microscopy (STEM) combined with Energy-dispersive X-ray spectroscopy (EDX) for high-resolution imaging and elemental distribution mapping.",
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "STEM Overview Image",
+            "properties": {
+              "description": "A high-angle annular dark-field (HAADF) STEM image showing the overall morphology of the nanostructured material.",
+              "scale_bar": "100 nm",
+              "image_type": "HAADF-STEM",
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Cobalt Elemental Map",
+            "properties": {
+              "description": "EDX elemental map showing the spatial distribution of Cobalt (Co) within the nanostructure.",
+              "element_mapped": "Co",
+              "color_representation": "yellow",
+              "scale_bar": "100 nm",
+              "image_type": "EDX map",
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Copper Elemental Map",
+            "properties": {
+              "description": "EDX elemental map showing the spatial distribution of Copper (Cu) within the nanostructure.",
+              "element_mapped": "Cu",
+              "color_representation": "green",
+              "scale_bar": "100 nm",
+              "image_type": "EDX map",
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Oxygen Elemental Map",
+            "properties": {
+              "description": "EDX elemental map showing the spatial distribution of Oxygen (O) within the nanostructure.",
+              "element_mapped": "O",
+              "color_representation": "magenta",
+              "scale_bar": "100 nm",
+              "image_type": "EDX map",
+              "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+            },
+            "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "XRD patterns match cobalt hydroxide (JCPDS: 00-046-0605); nickel foam substrate peaks are observed at 44, 52, and 76 degrees.",
+        "evidence_snippet": "The strong peaks at 44°, 52°, and 76° indicate the metallic nickel (JCPDS:00-004-0850) ... The pattern matched well with the cobalt hydroxide (JCPDS:00-046-0605).",
+        "related_images": [
+          "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization_data",
+            "name": "X-ray Diffraction Pattern",
+            "properties": {
+              "technique": "XRD",
+              "x_axis_label": "2-theta (degree)",
+              "y_axis_label": "Intensity (a.u.)",
+              "extracted_from_image": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+            },
+            "source_image_file": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "XRD Curve for Co(OH)2",
+            "properties": {
+              "technique": "XRD",
+              "color": "blue",
+              "material_characterized_id": "cobalt_hydroxide_material",
+              "extracted_from_image": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+            },
+            "source_image_file": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "XRD Curve for CuCo(OH)2",
+            "properties": {
+              "technique": "XRD",
+              "color": "red",
+              "material_characterized_id": "copper_cobalt_hydroxide_material",
+              "extracted_from_image": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+            },
+            "source_image_file": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+          },
+          {
+            "type": "reference_data",
+            "name": "JCPDS Reference Pattern 00-046-0605",
+            "properties": {
+              "type": "JCPDS",
+              "identifier": "00-046-0605",
+              "material_id": "cobalt_hydroxide_material",
+              "material_name": "Cobalt Hydroxide",
+              "extracted_from_image": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+            },
+            "source_image_file": "d1898f603db62cd7d439de7341ec12be736165a8f66fa4bfe10e23900e4fc4ae.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "SAED",
+        "is_reported": true,
+        "characterization_summary": "SAED confirms the presence of (102), (108), and (116) planes of cobalt hydroxide.",
+        "evidence_snippet": "the plane of (102), (108), and (116) of cobalt hydroxide were confirmed through SAED (Selected Area Electron Diffraction) pattern (Fig. 1c).",
+        "related_images": [
+          "a41219cdfbfc1ffeca65d695823e1a3571a561b3d1e7b4c631d56bcbbb675b35.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization_data",
+            "name": "Selected Area Electron Diffraction Pattern",
+            "properties": {
+              "technique": "SAED",
+              "scale_bar": "5 nm^-1",
+              "diffraction_pattern_type": "polycrystalline_rings",
+              "indexed_planes": [
+                "(102)",
+                "(108)",
+                "(116)"
+              ],
+              "description": "Concentric diffraction rings indicating the polycrystalline nature of the material, with specific crystallographic planes indexed.",
+              "extracted_from_image": "a41219cdfbfc1ffeca65d695823e1a3571a561b3d1e7b4c631d56bcbbb675b35.jpg"
+            },
+            "source_image_file": "a41219cdfbfc1ffeca65d695823e1a3571a561b3d1e7b4c631d56bcbbb675b35.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "XPS spectra identify Co2+/Co3+ and Cu+/Cu2+ oxidation states; CuCo(OH)2 exhibits a higher Co3+ concentration and significantly more oxygen vacancies (Ov) compared to Co(OH)2, indicating electronic structure modification.",
+        "evidence_snippet": "high-resolution XPS spectra of Co 2p showed two oxidation states of Co (Co2+ and Co3+) ... high-resolution XPS spectra of Cu 2p showed two oxidation states of Cu (Cu+ and Cu2+) ... CuCo(OH)2 showed a relatively higher concentration of oxygen vacancies due to strong interaction with Cu.",
+        "related_images": [
+          "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg",
+          "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg",
+          "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg",
+          "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization_data",
+            "name": "XPS Speciation Bar Chart",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy (XPS)",
+              "chart_type": "stacked_bar_chart",
+              "figure_label": "(d)",
+              "y_axis": "Ratio (%)",
+              "x_axis_groups": [
+                "Co species",
+                "O species"
+              ],
+              "implied_measurement": "Binding Energy (B.E.) in eV",
+              "extracted_from_image": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+            },
+            "source_image_file": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Cobalt(II) ion",
+            "properties": {
+              "element": "Co",
+              "oxidation_state": "+2",
+              "charge": "+2",
+              "extracted_from_image": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+            },
+            "source_image_file": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Cobalt(III) ion",
+            "properties": {
+              "element": "Co",
+              "oxidation_state": "+3",
+              "charge": "+3",
+              "extracted_from_image": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+            },
+            "source_image_file": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Hydroxyl Oxygen",
+            "properties": {
+              "element": "O",
+              "context": "oxygen in hydroxyl group (OH)",
+              "extracted_from_image": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+            },
+            "source_image_file": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Oxygen Vacancy",
+            "properties": {
+              "element": "O",
+              "context": "oxygen vacancy",
+              "symbol": "O_v",
+              "extracted_from_image": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+            },
+            "source_image_file": "4951fc3d9ae6f3b86eccba6f36ba940b33ac533769f89b623736664d6175d4cd.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Co 2p XPS Spectrum",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy (XPS)",
+              "analyte": "Cobalt 2p core level",
+              "x_axis": "Binding Energy (B.E.)",
+              "x_unit": "eV",
+              "y_axis": "Intensity",
+              "y_unit": "a.u.",
+              "figure_part": "(a)",
+              "extracted_from_image": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+            },
+            "source_image_file": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Cobalt(II) ion",
+            "properties": {
+              "element": "Cobalt",
+              "oxidation_state": "+2",
+              "ion_type": "cation",
+              "extracted_from_image": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+            },
+            "source_image_file": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Cobalt(III) ion",
+            "properties": {
+              "element": "Cobalt",
+              "oxidation_state": "+3",
+              "ion_type": "cation",
+              "extracted_from_image": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+            },
+            "source_image_file": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "O 1s XPS Spectrum",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy (XPS)",
+              "core_level": "O 1s",
+              "description": "XPS spectra showing the O 1s core level for different materials, deconvoluted into various oxygen species.",
+              "x_axis": "Binding Energy (B.E.)",
+              "x_unit": "eV",
+              "y_axis": "Intensity",
+              "y_unit": "a.u.",
+              "figure_part": "c",
+              "extracted_from_image": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+            },
+            "source_image_file": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Adsorbed Water",
+            "properties": {
+              "formula": "H₂O",
+              "label_in_figure": "H₂O",
+              "species_type": "adsorbed_water",
+              "approx_binding_energy_range_eV": "534-536",
+              "extracted_from_image": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+            },
+            "source_image_file": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Oxygen Vacancies",
+            "properties": {
+              "label_in_figure": "O_V",
+              "species_type": "oxygen_defect",
+              "approx_binding_energy_range_eV": "532.5-534.5",
+              "extracted_from_image": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+            },
+            "source_image_file": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Hydroxyl Oxygen",
+            "properties": {
+              "label_in_figure": "O_OH",
+              "species_type": "surface_hydroxyl",
+              "approx_binding_energy_range_eV": "530.5-532.5",
+              "extracted_from_image": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+            },
+            "source_image_file": "d2162c10d0c8d9335f64cc2ebe16d12e837a2346ba8f3ea96f2668c91f94eeee.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "XPS Spectrum (Cu 2p) for CuCo(OH)₂",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy",
+              "element_analyzed": "Copper",
+              "subshell_analyzed": "2p",
+              "x_axis": "Binding Energy (eV)",
+              "y_axis": "Intensity (a.u.)",
+              "sample_name": "CuCo(OH)₂",
+              "figure_label": "(b)",
+              "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+            },
+            "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Cu²⁺",
+            "properties": {
+              "element": "Copper",
+              "oxidation_state": "+2",
+              "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+            },
+            "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+          },
+          {
+            "type": "chemical_species",
+            "name": "Cu⁺",
+            "properties": {
+              "element": "Copper",
+              "oxidation_state": "+1",
+              "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+            },
+            "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "XPS Cu 2p baseline for Co(OH)₂",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy",
+              "element_analyzed": "Copper",
+              "subshell_analyzed": "2p",
+              "sample_name": "Co(OH)₂",
+              "observation": "No significant Cu signal, serves as a reference baseline",
+              "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+            },
+            "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "LSV",
+        "is_reported": true,
+        "characterization_summary": "Polarization curves show CuCo(OH)2 has an overpotential of 294 mV at 10 mA/cm2 and a Tafel slope of 55 mV/dec.",
+        "evidence_snippet": "CuCo(OH)2 showed an overpotential of about 294 mV, which is 29 mV lower than Co(OH)2. ... CuCo(OH)2 showed a lower Tafel slope of 55 mV/dec than Co(OH)2 (67 mV/dec)",
+        "related_images": [
+          "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg",
+          "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg",
+          "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg",
+          "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg",
+          "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg",
+          "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization_data",
+            "name": "Cell voltage",
+            "properties": {
+              "unit": "V",
+              "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+            },
+            "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Tafel Plot",
+            "properties": {
+              "figure_part": "(b)",
+              "x_axis": "log i (mA/cm²)",
+              "y_axis": "Potential (V vs. RHE)",
+              "description": "Tafel plot showing potential versus logarithm of current density for different materials.",
+              "extracted_from_image": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+            },
+            "source_image_file": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+          },
+          {
+            "type": "characterization_parameter",
+            "name": "Tafel Slope",
+            "properties": {
+              "value": "54 mV/dec",
+              "associated_material_id": "cuco_oh2",
+              "extracted_from_image": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+            },
+            "source_image_file": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+          },
+          {
+            "type": "characterization_parameter",
+            "name": "Tafel Slope",
+            "properties": {
+              "value": "66 mV/dec",
+              "associated_material_id": "co_oh2",
+              "extracted_from_image": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+            },
+            "source_image_file": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+          },
+          {
+            "type": "characterization_parameter",
+            "name": "Tafel Slope",
+            "properties": {
+              "value": "72 mV/dec",
+              "associated_material_id": "nf",
+              "extracted_from_image": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+            },
+            "source_image_file": "34b93bbbfe7acc6417bbc1e41e12f5c81ab08687337cd8c40bd76da111ec4ae8.jpg"
+          },
+          {
+            "type": "electrochemical_property",
+            "name": "Overpotential (η)",
+            "properties": {
+              "value": 294,
+              "unit": "mV",
+              "current_density": "10 mA/cm²",
+              "reference_electrode": "RHE",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "electrochemical_property",
+            "name": "Overpotential (η)",
+            "properties": {
+              "value": 325,
+              "unit": "mV",
+              "current_density": "10 mA/cm²",
+              "reference_electrode": "RHE",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "electrochemical_property",
+            "name": "Overpotential (η)",
+            "properties": {
+              "value": 362,
+              "unit": "mV",
+              "current_density": "10 mA/cm²",
+              "reference_electrode": "RHE",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "electrochemical_property",
+            "name": "Tafel slope",
+            "properties": {
+              "value": 54,
+              "unit": "mV/dec",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "electrochemical_property",
+            "name": "Tafel slope",
+            "properties": {
+              "value": 66,
+              "unit": "mV/dec",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "electrochemical_property",
+            "name": "Tafel slope",
+            "properties": {
+              "value": 72,
+              "unit": "mV/dec",
+              "extracted_from_image": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+            },
+            "source_image_file": "54ff288bc93670d6178e6a50f8cfc0f7cba71413d020cddcd2d281ccb9381b77.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Electrochemical Polarization Curve",
+            "properties": {
+              "figure_part": "a",
+              "plot_type": "Current Density vs. Potential",
+              "x_axis_label": "Potential",
+              "x_axis_unit": "V vs. RHE",
+              "y_axis_label": "Current Density",
+              "y_axis_unit": "mA/cm²",
+              "measurement_technique": "Electrochemistry",
+              "inferred_reaction_type": "Oxygen Evolution Reaction (OER)",
+              "extracted_from_image": "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg"
+            },
+            "source_image_file": "662953e521f777d6266365b193edebece50d883a8d8e8b9927153e1f9ae8dc61.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Polarization Curve",
+            "properties": {
+              "figure_part": "b",
+              "x_axis": "Current density",
+              "x_unit": "A/cm²",
+              "y_axis": "Cell voltage",
+              "y_unit": "V",
+              "plot_type": "Polarization curve",
+              "description": "Shows cell voltage as a function of current density for different electrocatalysts, indicating electrochemical performance.",
+              "measurement_type": "Electrochemical performance",
+              "extracted_from_image": "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg"
+            },
+            "source_image_file": "6d551b2a035923a2745b3917c8cb720c592cc8bec3216d8815252922d45a42bf.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Activation Overpotential vs. Current Density Plot",
+            "properties": {
+              "figure_label": "f",
+              "description": "Plot showing activation overpotential (η_act) as a function of current density (i) for Co(OH)₂ and CuCo(OH)₂.",
+              "extracted_from_image": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+            },
+            "source_image_file": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "EIS analysis shows Rct values of 0.136 Ohm for CuCo(OH)2 and 0.179 Ohm for Co(OH)2.",
+        "evidence_snippet": "The Rct values of CuCo(OH)2 and Co(OH)2 were 0.136 Ω and 0.179 Ω, respectively.",
+        "related_images": [
+          "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization_data",
+            "name": "Nyquist Plot",
+            "properties": {
+              "technique": "Electrochemical Impedance Spectroscopy (EIS)",
+              "plot_type": "Nyquist Plot",
+              "x_axis": "Z' (ohm)",
+              "y_axis": "-Z'' (ohm)",
+              "extracted_from_image": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+            },
+            "source_image_file": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "ECSA calculated from double-layer capacitance (Cdl) measurements yielded 82.75 cm2 for CuCo(OH)2 and 44.75 cm2 for Co(OH)2.",
+        "evidence_snippet": "The values of ECSA were 82.75 cm2 (CuCo(OH)2) and 44.75 cm2 (Co(OH)2), respectively."
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "Chronoamperometry",
+        "is_reported": true,
+        "characterization_summary": "The CuCo(OH)2 catalyst demonstrates high OER stability, maintaining 95% of its initial performance during a 700 h durability test at a constant current density of 10 mA/cm2.",
+        "evidence_snippet": "The electrode's durability was tested at a constant current density of 10 mA/cm2 for 700 h. ... the performance was maintained at about 95% compared to the initial performance, and a stable voltage was observed ... (Fig. 3e).",
+        "related_images": [
+          "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg",
+          "7803dfb3cb9763bcb056228981a8f6b49d7ee7bebcc99072c7378c6ad4cb0ef0.jpg",
+          "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization_data",
+            "name": "Cell efficiency",
+            "properties": {
+              "unit": "%",
+              "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+            },
+            "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+          },
+          {
+            "type": "characterization_technique",
+            "name": "Electrochemical Stability Test",
+            "properties": {
+              "method": "Chronopotentiometry",
+              "purpose": "Assessment of long-term electrochemical stability",
+              "extracted_from_image": "7803dfb3cb9763bcb056228981a8f6b49d7ee7bebcc99072c7378c6ad4cb0ef0.jpg"
+            },
+            "source_image_file": "7803dfb3cb9763bcb056228981a8f6b49d7ee7bebcc99072c7378c6ad4cb0ef0.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Potential vs. Time Plot",
+            "properties": {
+              "data_type": "Electrochemical Stability Data",
+              "x_axis_label": "Time",
+              "x_axis_unit": "h",
+              "y_axis_label": "Potential",
+              "y_axis_unit": "V vs. RHE",
+              "applied_current_density": "10 mA/cm^2",
+              "duration": "700 h",
+              "observed_potential_range": "approx. 1.5-1.6 V vs. RHE",
+              "stability_observation": "Stable potential maintained over 700 hours, indicating good electrochemical stability.",
+              "extracted_from_image": "7803dfb3cb9763bcb056228981a8f6b49d7ee7bebcc99072c7378c6ad4cb0ef0.jpg"
+            },
+            "source_image_file": "7803dfb3cb9763bcb056228981a8f6b49d7ee7bebcc99072c7378c6ad4cb0ef0.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "Cell Voltage Stability Test",
+            "properties": {
+              "figure_label": "(e)",
+              "description": "A chronopotentiometry plot showing the cell voltage as a function of time, indicating electrochemical stability.",
+              "measurement_type": "Galvanostatic electrolysis / Stability test",
+              "extracted_from_image": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+            },
+            "source_image_file": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chart_1",
+        "type": "characterization_data",
+        "name": "Bar Chart",
+        "properties": {
+          "description": "Comparison of cell voltage and cell efficiency for different hydroxide materials.",
+          "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+        },
+        "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+      },
+      {
+        "id": "value_CoOH2_voltage",
+        "type": "measurement_value",
+        "name": "1.76 V",
+        "properties": {
+          "value": 1.76,
+          "unit": "V",
+          "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+        },
+        "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+      },
+      {
+        "id": "value_CuCoOH2_voltage",
+        "type": "measurement_value",
+        "name": "1.71 V",
+        "properties": {
+          "value": 1.71,
+          "unit": "V",
+          "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+        },
+        "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+      },
+      {
+        "id": "value_CoOH2_efficiency",
+        "type": "measurement_value",
+        "name": "71.5 %",
+        "properties": {
+          "value": 71.5,
+          "unit": "%",
+          "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+        },
+        "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+      },
+      {
+        "id": "value_CuCoOH2_efficiency",
+        "type": "measurement_value",
+        "name": "73.5 %",
+        "properties": {
+          "value": 73.5,
+          "unit": "%",
+          "extracted_from_image": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+        },
+        "source_image_file": "1e14664abb3047bd4c7059d2c3646af7c29aaae4b13a5ab47139650db4581dcf.jpg"
+      },
+      {
+        "id": "morphology_intertwined_nanosheets",
+        "type": "structural_feature",
+        "name": "Intertwined Nanosheet/Nanowire Morphology",
+        "properties": {
+          "description": "The material exhibits a complex nanostructure characterized by intertwined nanosheets or nanowires, forming a porous aggregate.",
+          "feature_size_range": "nanoscale",
+          "extracted_from_image": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+        },
+        "source_image_file": "48576c8eea15f6822d55a719955f4ba51a8bfcfcdea8eb5071aa965e123db3ed.jpg"
+      },
+      {
+        "id": "model_EquivalentCircuit",
+        "type": "model",
+        "name": "Equivalent Circuit Model",
+        "properties": {
+          "model_type": "Equivalent Circuit",
+          "description": "Randles-like circuit used to fit EIS data",
+          "extracted_from_image": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+        },
+        "source_image_file": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+      },
+      {
+        "id": "component_Rs",
+        "type": "electrical_component",
+        "name": "Solution Resistance",
+        "properties": {
+          "symbol": "Rs",
+          "extracted_from_image": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+        },
+        "source_image_file": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+      },
+      {
+        "id": "component_Cdl",
+        "type": "electrical_component",
+        "name": "Double-layer Capacitance",
+        "properties": {
+          "symbol": "Cdl",
+          "extracted_from_image": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+        },
+        "source_image_file": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+      },
+      {
+        "id": "component_Rct",
+        "type": "electrical_component",
+        "name": "Charge Transfer Resistance",
+        "properties": {
+          "symbol": "Rct",
+          "extracted_from_image": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+        },
+        "source_image_file": "6989529c952eb990dd9fb73ec867df539b7c93f7a8b6689dcc77bb7d4d247f9e.jpg"
+      },
+      {
+        "id": "spectral_feature_satellite",
+        "type": "spectral_feature",
+        "name": "Satellite Peak",
+        "properties": {
+          "description": "Shake-up satellite peak, often indicative of high spin Co(II) species or charge transfer processes.",
+          "extracted_from_image": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+        },
+        "source_image_file": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+      },
+      {
+        "id": "orbital_co2p1_2",
+        "type": "atomic_orbital",
+        "name": "Co 2p1/2",
+        "properties": {
+          "element": "Cobalt",
+          "orbital": "2p1/2",
+          "extracted_from_image": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+        },
+        "source_image_file": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+      },
+      {
+        "id": "orbital_co2p3_2",
+        "type": "atomic_orbital",
+        "name": "Co 2p3/2",
+        "properties": {
+          "element": "Cobalt",
+          "orbital": "2p3/2",
+          "extracted_from_image": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+        },
+        "source_image_file": "8440587858c0171db386a13bf96ab33ec6440c2558eaf42fe487220792c725ce.jpg"
+      },
+      {
+        "id": "parameter_activation_overpotential",
+        "type": "measurement_parameter",
+        "name": "Activation Overpotential",
+        "properties": {
+          "symbol": "η_act",
+          "unit": "V",
+          "extracted_from_image": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+        },
+        "source_image_file": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+      },
+      {
+        "id": "parameter_current_density",
+        "type": "measurement_parameter",
+        "name": "Current Density",
+        "properties": {
+          "symbol": "i",
+          "unit": "A/cm²",
+          "extracted_from_image": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+        },
+        "source_image_file": "9c8f2772ca196b9d127ec42eab45b21e7d7f622a653860bcf27a6937e57a40c6.jpg"
+      },
+      {
+        "id": "xps_peak_cu_2p_3_2",
+        "type": "xps_peak",
+        "name": "Cu 2p₃/₂",
+        "properties": {
+          "subshell": "2p3/2",
+          "region_type": "spin-orbit split component",
+          "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+        },
+        "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+      },
+      {
+        "id": "xps_peak_cu_2p_1_2",
+        "type": "xps_peak",
+        "name": "Cu 2p₁/₂",
+        "properties": {
+          "subshell": "2p1/2",
+          "region_type": "spin-orbit split component",
+          "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+        },
+        "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+      },
+      {
+        "id": "xps_feature_satellite",
+        "type": "xps_feature",
+        "name": "Satellite (sat.)",
+        "properties": {
+          "description": "Shake-up satellite peak, typically associated with Cu(II) species",
+          "extracted_from_image": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+        },
+        "source_image_file": "dbd94c96a8d93657f6bc11249656bf8b505f7996289c9a382bf6408c8d2527ec.jpg"
+      },
+      {
+        "id": "cell_voltage_property",
+        "type": "measured_property",
+        "name": "Cell voltage",
+        "properties": {
+          "unit": "V",
+          "axis": "Y-axis",
+          "range_displayed": "[1.4, 2.0]",
+          "observed_initial_value": "~1.68",
+          "observed_final_value": "~1.78",
+          "extracted_from_image": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+        },
+        "source_image_file": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+      },
+      {
+        "id": "time_property",
+        "type": "measured_property",
+        "name": "Time",
+        "properties": {
+          "unit": "h",
+          "axis": "X-axis",
+          "range_displayed": "[0, 84]",
+          "extracted_from_image": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+        },
+        "source_image_file": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+      },
+      {
+        "id": "current_density_condition",
+        "type": "experimental_condition",
+        "name": "Current density",
+        "properties": {
+          "value": 0.5,
+          "unit": "A/cm²",
+          "extracted_from_image": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+        },
+        "source_image_file": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+      },
+      {
+        "id": "stability_observation",
+        "type": "observation",
+        "name": "Electrochemical Stability Trend",
+        "properties": {
+          "trend": "Gradual increase in cell voltage over 84 hours",
+          "voltage_change": "~0.1 V increase (from ~1.68 V to ~1.78 V)",
+          "duration": "84 h",
+          "extracted_from_image": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+        },
+        "source_image_file": "e3585ce1131af36a4adf66bd55e548bb54291bdfa61b23bf7b51ffe936165c09.jpg"
+      },
+      {
+        "id": "scale_bar_1",
+        "type": "measurement_unit",
+        "name": "Scale Bar",
+        "properties": {
+          "value": 2,
+          "unit": "µm",
+          "extracted_from_image": "eb87f19df1abe1f2d2030eae7ef26ef59af0bd358e723255c7bd1636e085ddac.jpg"
+        },
+        "source_image_file": "eb87f19df1abe1f2d2030eae7ef26ef59af0bd358e723255c7bd1636e085ddac.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co_OH_2_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co_OH_2_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_4",
+        "properties": {
+          "scan_speed": {
+            "value": 1,
+            "unit": "deg/min"
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_Co_OH_2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_NF",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co_OH_2_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_7",
+        "properties": {
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_Co_OH_2_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_NF",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_8",
+        "properties": {
+          "potential": {
+            "value": 1.88,
+            "unit": "V vs RHE"
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_Co_OH_2_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co_OH_2_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CuCo_OH_2_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_10",
+        "properties": {
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm2"
+          },
+          "duration": {
+            "value": 700,
+            "unit": "h"
+          }
+        }
+      },
+      {
+        "source_id": "chart_1",
+        "target_id": "chem_Co_OH_2",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart_1",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart_1",
+        "target_id": "char_7",
+        "type": "displays_metric"
+      },
+      {
+        "source_id": "chart_1",
+        "target_id": "char_10",
+        "type": "displays_metric"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_7",
+        "type": "has_measured_property"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "value_CoOH2_voltage",
+        "type": "has_value"
+      },
+      {
+        "source_id": "value_CoOH2_voltage",
+        "target_id": "char_7",
+        "type": "is_measurement_of"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_7",
+        "type": "has_measured_property"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "value_CuCoOH2_voltage",
+        "type": "has_value"
+      },
+      {
+        "source_id": "value_CuCoOH2_voltage",
+        "target_id": "char_7",
+        "type": "is_measurement_of"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_10",
+        "type": "has_measured_property"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "value_CoOH2_efficiency",
+        "type": "has_value"
+      },
+      {
+        "source_id": "value_CoOH2_efficiency",
+        "target_id": "char_10",
+        "type": "is_measurement_of"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_10",
+        "type": "has_measured_property"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "value_CuCoOH2_efficiency",
+        "type": "has_value"
+      },
+      {
+        "source_id": "value_CuCoOH2_efficiency",
+        "target_id": "char_10",
+        "type": "is_measurement_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co_OH_2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_NF",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_7",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_7",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "char_7",
+        "type": "has_property"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "morphology_intertwined_nanosheets",
+        "type": "exhibits_morphology"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "produces_data"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "produces_data"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "produces_data"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "produces_data"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "maps_distribution_of"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "maps_distribution_of"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "maps_distribution_of"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "morphology_intertwined_nanosheets",
+        "type": "shows_morphology"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "morphology_intertwined_nanosheets",
+        "type": "shows_elemental_distribution_within"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "morphology_intertwined_nanosheets",
+        "type": "shows_elemental_distribution_within"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "morphology_intertwined_nanosheets",
+        "type": "shows_elemental_distribution_within"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "is_map_of"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "is_map_of"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "is_map_of"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "is_image_of"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_Co_OH_2",
+        "type": "quantifies_composition_of"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "quantifies_composition_of"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "has_component_ratio",
+        "properties": {
+          "ratio": 49,
+          "unit": "%",
+          "component_group": "Co species"
+        }
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "has_component_ratio",
+        "properties": {
+          "ratio": 51,
+          "unit": "%",
+          "component_group": "Co species"
+        }
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "has_component_ratio",
+        "properties": {
+          "ratio": 65,
+          "unit": "%",
+          "component_group": "O species"
+        }
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "has_component_ratio",
+        "properties": {
+          "ratio": 35,
+          "unit": "%",
+          "component_group": "O species"
+        }
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "has_component_ratio",
+        "properties": {
+          "ratio": 43,
+          "unit": "%",
+          "component_group": "Co species"
+        }
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "has_component_ratio",
+        "properties": {
+          "ratio": 57,
+          "unit": "%",
+          "component_group": "Co species"
+        }
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "has_component_ratio",
+        "properties": {
+          "ratio": 49,
+          "unit": "%",
+          "component_group": "O species"
+        }
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "has_component_ratio",
+        "properties": {
+          "ratio": 51,
+          "unit": "%",
+          "component_group": "O species"
+        }
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_7",
+        "type": "HAS_PROPERTY"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_7",
+        "type": "HAS_PROPERTY"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_7",
+        "type": "HAS_PROPERTY"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_7",
+        "type": "HAS_PROPERTY"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "char_7",
+        "type": "HAS_PROPERTY"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "char_7",
+        "type": "HAS_PROPERTY"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_7",
+        "type": "is_characterized_by"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_7",
+        "type": "is_characterized_by"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "char_7",
+        "type": "is_characterized_by"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "represents_data_for"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "chem_Co_OH_2",
+        "type": "represents_data_for"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "chem_NF",
+        "type": "represents_data_for"
+      },
+      {
+        "source_id": "model_EquivalentCircuit",
+        "target_id": "char_8",
+        "type": "models"
+      },
+      {
+        "source_id": "model_EquivalentCircuit",
+        "target_id": "component_Rs",
+        "type": "consists_of"
+      },
+      {
+        "source_id": "model_EquivalentCircuit",
+        "target_id": "component_Cdl",
+        "type": "consists_of"
+      },
+      {
+        "source_id": "model_EquivalentCircuit",
+        "target_id": "component_Rct",
+        "type": "consists_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co_OH_2",
+        "type": "data_for"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "data_for"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "APPLIED_TO_CHEMICAL_ENTITY"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_10",
+        "type": "REPRESENTS_DATA_FROM_TECHNIQUE"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "SHOWS_PERFORMANCE_OF_CHEMICAL_ENTITY"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "CHARACTERIZES"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_Co_OH_2",
+        "type": "CHARACTERIZES"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "CONTAINS_SPECIES"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "CONTAINS_SPECIES"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "spectral_feature_satellite",
+        "type": "EXHIBITS_FEATURE"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "CONTAINS_SPECIES"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "CONTAINS_SPECIES"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "spectral_feature_satellite",
+        "type": "EXHIBITS_FEATURE"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "orbital_co2p1_2",
+        "type": "SHOWS_SPLIT_ORBITAL"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "orbital_co2p3_2",
+        "type": "SHOWS_SPLIT_ORBITAL"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "parameter_current_density",
+        "type": "HAS_X_AXIS"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "parameter_activation_overpotential",
+        "type": "HAS_Y_AXIS"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co_OH_2",
+        "type": "PLOTS_DATA_FOR"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "PLOTS_DATA_FOR"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_5",
+        "type": "contains_inset"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_4",
+        "type": "HAS_COMPONENT"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_4",
+        "type": "HAS_COMPONENT"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_4",
+        "type": "HAS_REFERENCE"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "chem_Co_OH_2",
+        "type": "CHARACTERIZES"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "CHARACTERIZES"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "chem_Co_OH_2",
+        "type": "IS_REFERENCE_FOR"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_Co_OH_2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "contains_component"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "contains_component"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "contains_component"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "contains_component"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "contains_component"
+      },
+      {
+        "source_id": "chem_Co_OH_2",
+        "target_id": "char_6",
+        "type": "contains_component"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_CuCo_OH_2",
+        "type": "CHARACTERIZES"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "xps_peak_cu_2p_3_2",
+        "type": "HAS_COMPONENT"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "xps_peak_cu_2p_1_2",
+        "type": "HAS_COMPONENT"
+      },
+      {
+        "source_id": "xps_peak_cu_2p_3_2",
+        "target_id": "char_6",
+        "type": "DECONVOLUTED_INTO_SPECIES"
+      },
+      {
+        "source_id": "xps_peak_cu_2p_3_2",
+        "target_id": "char_6",
+        "type": "DECONVOLUTED_INTO_SPECIES"
+      },
+      {
+        "source_id": "xps_peak_cu_2p_3_2",
+        "target_id": "xps_feature_satellite",
+        "type": "DECONVOLUTED_INTO_FEATURE"
+      },
+      {
+        "source_id": "xps_peak_cu_2p_1_2",
+        "target_id": "char_6",
+        "type": "DECONVOLUTED_INTO_SPECIES"
+      },
+      {
+        "source_id": "xps_peak_cu_2p_1_2",
+        "target_id": "char_6",
+        "type": "DECONVOLUTED_INTO_SPECIES"
+      },
+      {
+        "source_id": "xps_peak_cu_2p_1_2",
+        "target_id": "xps_feature_satellite",
+        "type": "DECONVOLUTED_INTO_FEATURE"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "CONTAINS_CHEMICAL_STATE"
+      },
+      {
+        "source_id": "chem_CuCo_OH_2",
+        "target_id": "char_6",
+        "type": "CONTAINS_CHEMICAL_STATE"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_Co_OH_2",
+        "type": "CHARACTERIZES"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_6",
+        "type": "SERVES_AS_REFERENCE_FOR"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "cell_voltage_property",
+        "type": "MEASURES"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "time_property",
+        "type": "MEASURES_AGAINST"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "current_density_condition",
+        "type": "CONDUCTED_AT"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "stability_observation",
+        "type": "SHOWS"
+      },
+      {
+        "source_id": "stability_observation",
+        "target_id": "cell_voltage_property",
+        "type": "RELATES_TO"
+      },
+      {
+        "source_id": "stability_observation",
+        "target_id": "time_property",
+        "type": "RELATES_TO"
+      },
+      {
+        "source_id": "stability_observation",
+        "target_id": "current_density_condition",
+        "type": "RELATES_TO"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_1",
+        "type": "shows_morphology_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "scale_bar_1",
+        "type": "has_scale"
+      }
+    ]
+  }
+}

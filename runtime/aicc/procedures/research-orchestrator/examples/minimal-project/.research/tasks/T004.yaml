@@ -1,0 +1,36 @@
+schema_version: 1
+id: T004
+title: Submit VASP relaxation for accepted structures
+role: engine-runner
+skill: vasp
+status: approved
+depends_on:
+  - T003
+approval: expensive_hpc_submission
+inputs:
+  - artifact_id: candidate-structures
+    min_status: accepted
+outputs_expected:
+  - artifact_id: vasp-relax-job
+    type: job-record
+    path: work/runs/ads-relax/
+success_criteria:
+  - VASP preflight passed
+  - smoke test completed before production submission
+  - job ID and workdir recorded
+knowledge_required:
+  - knowledge/periodic-dft-modeling.md
+required_refs:
+  - tools/vasp/SKILL.md
+  - tools/vasp/references/validation.md
+  - tools/hpc-submit/SKILL.md
+  - tools/hpc-submit/references/validation.md
+required_checks:
+  - uv run {repo_root}/tools/vasp/scripts/check_inputs.py work/runs/ads-relax/
+release_gates:
+  - engine-preflight
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions: []
+provenance: []

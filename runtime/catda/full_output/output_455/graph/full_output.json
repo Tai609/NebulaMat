@@ -1,0 +1,3397 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_KB",
+        "type": "chemical",
+        "name": "Ketjen Black (KB)",
+        "aliases": [
+          "KB",
+          "carbon black"
+        ],
+        "formula": "C",
+        "properties": {
+          "loading": {
+            "value": 50,
+            "unit": "μg cm⁻²"
+          }
+        },
+        "related_images": [
+          "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Gray Spheres",
+            "properties": {
+              "description": "Likely nanoparticles or pore structures",
+              "color": "gray",
+              "extracted_from_image": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+            },
+            "source_image_file": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Nafion",
+        "type": "chemical",
+        "name": "Nafion solution",
+        "aliases": [
+          "Nafion"
+        ],
+        "formula": "Nafion",
+        "properties": {
+          "concentration": {
+            "value": 5,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_isopropanol",
+        "type": "chemical",
+        "name": "isopropanol",
+        "aliases": [
+          "isopropanol"
+        ],
+        "formula": "C3H8O",
+        "properties": {}
+      },
+      {
+        "id": "chem_deionized_water",
+        "type": "chemical",
+        "name": "deionized water",
+        "aliases": [
+          "deionized water"
+        ],
+        "formula": "H2O",
+        "properties": {
+          "resistivity": {
+            "value": 18.2,
+            "unit": "MΩ·cm"
+          }
+        }
+      },
+      {
+        "id": "chem_KB_ink",
+        "type": "chemical",
+        "name": "KB EC 600JD ink",
+        "aliases": [
+          "KB ink",
+          "KB EC 600JD ink"
+        ],
+        "properties": {
+          "KB_content": {
+            "value": 5,
+            "unit": "mg"
+          },
+          "water_volume": {
+            "value": 7234,
+            "unit": "μl"
+          },
+          "Nafion_volume": {
+            "value": 40,
+            "unit": "μl"
+          },
+          "Nafion_concentration": {
+            "value": 5,
+            "unit": "wt%"
+          },
+          "isopropanol_volume": {
+            "value": 683,
+            "unit": "μl"
+          },
+          "total_ink_volume": {
+            "value": 7957,
+            "unit": "μl"
+          },
+          "ultrasonication_time": {
+            "value": 30,
+            "unit": "min"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "KB Catalyst Ink Formulation",
+        "procedure": "The KB EC 600JD ink (KB, Mitsubishi Chemical) was prepared by dispersing 5 mg KB in a solution containing 7234 μl deionized water, 40 μl Nafion solution (5 wt%) and 683 μl isopropanol, followed by ultrasonication for 30 min.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "KB Dispersion",
+            "method": "Solvent dispersion",
+            "conditions": {
+              "KB_amount": {
+                "value": 5,
+                "unit": "mg"
+              },
+              "water_volume": {
+                "value": 7234,
+                "unit": "μl"
+              },
+              "Nafion_volume": {
+                "value": 40,
+                "unit": "μl"
+              },
+              "isopropanol_volume": {
+                "value": 683,
+                "unit": "μl"
+              }
+            },
+            "procedure_snippet": "dispersing 5 mg KB in a solution containing 7234 μl deionized water, 40 μl Nafion solution (5 wt%) and 683 μl isopropanol"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Ultrasonication",
+            "method": "Ultrasonication",
+            "conditions": {
+              "time": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "followed by ultrasonication for 30 min"
+          }
+        ],
+        "method": "Catalyst ink preparation",
+        "conditions": {
+          "KB_amount": {
+            "value": 5,
+            "unit": "mg"
+          },
+          "water_volume": {
+            "value": 7234,
+            "unit": "μl"
+          },
+          "Nafion_volume": {
+            "value": 40,
+            "unit": "μl"
+          },
+          "Nafion_concentration": {
+            "value": 5,
+            "unit": "wt%"
+          },
+          "isopropanol_volume": {
+            "value": 683,
+            "unit": "μl"
+          },
+          "ultrasonication_time": {
+            "value": 30,
+            "unit": "min"
+          }
+        },
+        "source_text": "The KB EC 600JD ink (KB, Mitsubishi Chemical) was prepared by dispersing 5 mg KB in a solution containing 7234 μl deionized water, 40 μl Nafion solution (5 wt%) and 683 μl isopropanol, followed by ultrasonication for 30 min."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "KB Working Electrode Fabrication",
+        "procedure": "The working electrode was prepared by drop-casting 10 μl of the KB ink onto a glassy carbon disk (0.126 cm²; A-011162, ALS). The total catalyst loading was fixed at 50 μg cm⁻².",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Drop-casting",
+            "method": "Drop-casting",
+            "conditions": {
+              "ink_volume": {
+                "value": 10,
+                "unit": "μl"
+              }
+            },
+            "procedure_snippet": "drop-casting 10 μl of the ink onto a glassy carbon disk (0.126 cm²; A-011162, ALS)"
+          }
+        ],
+        "method": "Drop-casting electrode fabrication",
+        "conditions": {
+          "ink_volume": {
+            "value": 10,
+            "unit": "μl"
+          },
+          "catalyst_loading": {
+            "value": 50,
+            "unit": "μg cm⁻²"
+          },
+          "substrate_area": {
+            "value": 0.126,
+            "unit": "cm²"
+          }
+        },
+        "source_text": "The working electrode was prepared by drop-casting 10 μl of the ink onto a glassy carbon disk (0.126 cm²; A-011162, ALS). The total catalyst was fixed at 50 μg cm⁻²."
+      },
+      {
+        "id": "chem_glassy_carbon_disk",
+        "type": "chemical",
+        "name": "glassy carbon disk",
+        "aliases": [
+          "glassy carbon disk"
+        ],
+        "properties": {
+          "area": {
+            "value": 0.126,
+            "unit": "cm²"
+          },
+          "catalog": "A-011162, ALS"
+        }
+      },
+      {
+        "id": "chem_KB_working_electrode",
+        "type": "chemical",
+        "name": "KB working electrode",
+        "aliases": [
+          "working electrode"
+        ],
+        "properties": {
+          "catalyst_loading": {
+            "value": 50,
+            "unit": "μg cm⁻²"
+          },
+          "ink_volume": {
+            "value": 10,
+            "unit": "μl"
+          },
+          "substrate": "glassy carbon disk (0.126 cm²)"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_KB_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_KB",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "amount": {
+            "value": 5,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_Nafion_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Nafion",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "binder",
+          "volume": {
+            "value": 40,
+            "unit": "μl"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_isopropanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_isopropanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 683,
+            "unit": "μl"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_deionized_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_deionized_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 7234,
+            "unit": "μl"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_KB_ink",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_KB_ink",
+        "properties": {
+          "form": "ink"
+        }
+      },
+      {
+        "id": "edge_input_chem_KB_ink_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_KB_ink",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "volume": {
+            "value": 10,
+            "unit": "μl"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_glassy_carbon_disk_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_glassy_carbon_disk",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_KB_working_electrode",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_KB_working_electrode",
+        "properties": {
+          "form": "drop-cast electrode"
+        }
+      }
+    ],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_KB",
+        "type": "chemical",
+        "name": "Ketjen Black (KB)",
+        "aliases": [
+          "KB",
+          "carbon black"
+        ],
+        "formula": "C"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "ORR polarization curves in 0.001 M NaOH with/without 0.009 M and 0.099 M NaClO4 (Fig. 1a-c)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.001 M NaOH",
+            "unit": "solution"
+          },
+          "added_electrolyte": {
+            "value": "0.009 M NaClO4, 0.099 M NaClO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "saturated Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite",
+            "unit": "electrode"
+          },
+          "working_electrode": {
+            "value": "glassy carbon disk",
+            "unit": "0.126 cm²"
+          },
+          "catalyst_loading": {
+            "value": 50,
+            "unit": "μg/cm²"
+          },
+          "scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "rotation_speed": {
+            "value": 900,
+            "unit": "rpm"
+          },
+          "potential_range": {
+            "value": "0.05 to -0.95 V",
+            "unit": "vs RHE"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "compensated"
+          },
+          "O2_saturation": {
+            "value": "saturated",
+            "unit": "gas"
+          },
+          "reference_scales": {
+            "value": "SHE, RHE, CCE",
+            "unit": "scales"
+          }
+        },
+        "results_json": {
+          "Nernstian_shift": {
+            "value": "60 mV",
+            "unit": "per log[Na+] vs SHE"
+          },
+          "OOH_selectivity": {
+            "value": ">=90",
+            "unit": "%"
+          },
+          "Tafel_slope": {
+            "value": 60,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "Fig. 1 | ORR polarization curves of KB in various electrolytes. a–c, The ORR polarization curves of KB measured in 0.001 M NaOH electrolyte with or without addition of 0.009 and 0.099 M NaClO4... the ORR polarization curves of the KB exhibited a Nernstian potential shift of approximately 60 mV per log[Na+] on the SHE scale (Fig. 1a). ... RRDE study showed selective OOH− formation (≥90%)"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "ORR in 0.01 M NaOH with/without 0.09 M NaClO4 (Fig. 1)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.01 M NaOH",
+            "unit": "solution"
+          },
+          "added_electrolyte": {
+            "value": "0.09 M NaClO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "catalyst_loading": {
+            "value": 50,
+            "unit": "μg/cm²"
+          },
+          "scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "rotation_speed": {
+            "value": 900,
+            "unit": "rpm"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "compensated"
+          }
+        },
+        "results_json": {
+          "Tafel_slope": {
+            "value": 51,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "0.01 M NaOH electrolyte with or without addition of 0.09 M NaClO4... In electrolytes with [Na+] of 0.01 and 0.1 M, the TS values decreased to 51 and 45 mV dec−1"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "ORR in 0.1 M NaOH (Fig. 1, Fig. 2)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M NaOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "catalyst_loading": {
+            "value": 50,
+            "unit": "μg/cm²"
+          },
+          "scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "rotation_speed": {
+            "value": 900,
+            "unit": "rpm"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "compensated"
+          }
+        },
+        "results_json": {
+          "Tafel_slope": {
+            "value": 45,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "0.1 M NaOH electrolyte... In electrolytes with [Na+] of 0.1 M, the TS values decreased to 45 mV dec−1"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "ORR activity comparison in 0.1 M AMOH electrolytes (LiOH, NaOH, KOH, CsOH)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M AMOH (AM=Li,Na,K,Cs)",
+            "unit": "solution"
+          },
+          "reference_scale": {
+            "value": "SHE",
+            "unit": "scale"
+          }
+        },
+        "results_json": {
+          "activity_sequence": {
+            "value": "CsOH > KOH > NaOH > LiOH",
+            "unit": "ORR activity"
+          },
+          "OOH_selectivity": {
+            "value": "selective",
+            "unit": "%"
+          }
+        },
+        "source_text": "g, Comparison of the ORR polarization curves of KB (versus SHE) measured in 0.1 M AMOH (AM = Li, Na, K and Cs) electrolytes... higher ORR activity as the atomic number of AM+ increased"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "ORR in neutral electrolytes (pH 6-8)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "neutral pH 6-8 with high Na+",
+            "unit": "solution"
+          },
+          "reference_scale": {
+            "value": "CCE",
+            "unit": "scale"
+          }
+        },
+        "results_json": {},
+        "source_text": "the collapse of the polarization curves on the CCE scale was also evident in neutral electrolytes (pH 6–8) with high Na+ concentrations"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "ORR in acidic electrolytes",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "acidic",
+            "unit": "solution"
+          },
+          "reference_scale": {
+            "value": "RHE",
+            "unit": "scale"
+          }
+        },
+        "results_json": {},
+        "source_text": "in acidic environments, the ORR polarization curves of KB collapsed on the RHE scale"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "ORR in 0.1 M NaOH with Na+ chelation by 15C5 (0.035-0.117 M)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M NaOH + 0.035-0.117 M 15C5",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "catalyst_loading": {
+            "value": 50,
+            "unit": "μg/cm²"
+          },
+          "scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "rotation_speed": {
+            "value": 900,
+            "unit": "rpm"
+          }
+        },
+        "results_json": {
+          "ORR_activity": {
+            "value": "substantial decrease with increasing 15C5",
+            "unit": "relative"
+          }
+        },
+        "source_text": "j, The ORR polarization curves of KB (versus SHE) measured in 0.1 M NaOH electrolyte with or without addition of 0.035–0.117 M 15C5... substantial decreases in the ORR activity upon Na+ chelation (Fig. 1j)"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "Kinetic Isotope Effect (KIE) study for ORR in 0.1 M NaOH (H2O vs D2O)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M NaOH",
+            "unit": "solution"
+          },
+          "solvent": {
+            "value": "H2O and D2O",
+            "unit": "comparison"
+          },
+          "O2_saturation": {
+            "value": "saturated",
+            "unit": "gas"
+          }
+        },
+        "results_json": {
+          "KIE_value": {
+            "value": "1.0",
+            "unit": "±0.04 dimensionless"
+          }
+        },
+        "source_text": "Fig. 2a,c | The ORR polarization curves measured in H2O and D2O show no considerable change... The KIE values... were close to 1.0 (±0.04)"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "In situ NEXAFS spectroscopy during ORR (0.1 M NaOH, O2-saturated)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "spectroscopy"
+          },
+          "electrolyte": {
+            "value": "0.1 M NaOH",
+            "unit": "solution"
+          },
+          "O2_saturation": {
+            "value": "saturated",
+            "unit": "gas"
+          },
+          "potentials": {
+            "value": "OCP, -0.1 V, -0.7 V",
+            "unit": "vs SHE"
+          },
+          "catalyst_loading": {
+            "value": 150,
+            "unit": "μg/cm²"
+          },
+          "substrate": {
+            "value": "Au-coated SiNx window",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "Na_K-edge_shift": {
+            "value": "-3 eV",
+            "unit": "at -0.1 V and -0.7 V_SHE"
+          },
+          "spectral_peaks_OCP": {
+            "value": "1078 eV, 1083 eV",
+            "unit": "Na K-edge"
+          },
+          "reversibility": {
+            "value": "peaks return to OCP values",
+            "unit": "confirmed"
+          }
+        },
+        "source_text": "Fig. 4a | Na K-edge spectra obtained at different potentials of OCP, −0.1 and −0.7 V_SHE in 0.1 M NaOH electrolyte saturated with O2... when a cathodic bias was applied... the peaks shifted negatively by approximately 3 eV. This peak shift was reversible"
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_KB",
+        "description": "In situ Raman spectroscopy during ORR (0.1 M NaOH, O2-saturated)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "spectroscopy"
+          },
+          "electrolyte": {
+            "value": "0.1 M NaOH",
+            "unit": "solution"
+          },
+          "O2_saturation": {
+            "value": "saturated",
+            "unit": "gas"
+          },
+          "potentials": {
+            "value": "0 to -0.7 V_SHE (0.1 V steps)",
+            "unit": "constant potential"
+          },
+          "catalyst_loading": {
+            "value": 150,
+            "unit": "μg/cm²"
+          },
+          "substrate": {
+            "value": "glassy carbon or Au foil",
+            "unit": "electrode"
+          },
+          "laser": {
+            "value": "532 nm, 2 mW",
+            "unit": "Nd:YAG"
+          },
+          "objective": {
+            "value": "60x oil-immersion",
+            "unit": "optics"
+          }
+        },
+        "results_json": {
+          "Raman_peaks": {
+            "value": "1150 cm⁻¹, 1525 cm⁻¹",
+            "unit": "new peaks during ORR"
+          },
+          "carbon_peaks": {
+            "value": "D: 1345 cm⁻¹, G: 1600 cm⁻¹",
+            "unit": "OCP"
+          },
+          "OOH_peak": {
+            "value": "850 cm⁻¹",
+            "unit": "< -0.4 V_SHE"
+          },
+          "peak_reversibility": {
+            "value": "confirmed",
+            "unit": "high"
+          },
+          "NaO2_assignment": {
+            "value": "1150 cm⁻¹ (ν_O-O)",
+            "unit": "confirmed"
+          }
+        },
+        "source_text": "Fig. 4c | In situ Raman spectra obtained on the biased KB electrode in 0.1 M NaOH electrolyte saturated with O2... during ORR at −0.1 V_SHE, new Raman signals appeared at 1,150 and 1,525 cm⁻¹... These new peaks also showed great reversibility"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_KB_test_1",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_2",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_3",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_4",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_5",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_6",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_7",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_8",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_9",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_KB_test_10",
+        "type": "tested_in",
+        "source_id": "chem_KB",
+        "target_id": "test_10",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_KB",
+        "type": "chemical",
+        "name": "Ketjen Black (KB)",
+        "aliases": [
+          "KB",
+          "carbon black"
+        ],
+        "formula": "C",
+        "properties": {
+          "loading": {
+            "value": 50,
+            "unit": "μg cm⁻²"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "Post mortem XPS shows marginal changes in surface composition of KB after ORR tests.",
+        "evidence_snippet": "Additionally, marginal changes in surface composition, as confirmed by post mortem spectroscopy studies, were found after the ORR tests...",
+        "related_images": [
+          "19cbc36a74c2fe73087fe84d7a8ce8c7b26b0115b84abe2d25b49beca9c1e78f.jpg",
+          "2eda18204568819c7aec3ef3c011f4e0829d7a049dda242a627d69a2c15f45b0.jpg",
+          "62fc8ea329dce846b88c781f85ab0cb1dddedb97d7caf64cc7a9eb4799361a23.jpg",
+          "87575bc3fcbfb1d87b18b4d8ad8ac755655f33104589496b68d889db00c5ce17.jpg",
+          "b2644a929f6d8d8316a5ad551d46f0f890c028e306c5cb397a8adb7431c768fe.jpg",
+          "c44ef5a607e2e6dd945ccd9ab494801ef6c5154565ed55ffdaa9983c26eb6be3.jpg",
+          "e38eb9be51db36ea0fd16e6fb7255a53a136577737a91d56863dc57d540ec142.jpg",
+          "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg",
+          "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "potential",
+            "name": "-0.2 V SHE",
+            "properties": {
+              "value": "-0.2 V",
+              "reference": "SHE",
+              "extracted_from_image": "19cbc36a74c2fe73087fe84d7a8ce8c7b26b0115b84abe2d25b49beca9c1e78f.jpg"
+            },
+            "source_image_file": "19cbc36a74c2fe73087fe84d7a8ce8c7b26b0115b84abe2d25b49beca9c1e78f.jpg"
+          },
+          {
+            "type": "curve",
+            "name": "N-O RDF",
+            "properties": {
+              "color": "another shade",
+              "peaks": "Peaks visible",
+              "extracted_from_image": "2eda18204568819c7aec3ef3c011f4e0829d7a049dda242a627d69a2c15f45b0.jpg"
+            },
+            "source_image_file": "2eda18204568819c7aec3ef3c011f4e0829d7a049dda242a627d69a2c15f45b0.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "pH = 0",
+            "properties": {
+              "pH": 0,
+              "color": "green",
+              "extracted_from_image": "62fc8ea329dce846b88c781f85ab0cb1dddedb97d7caf64cc7a9eb4799361a23.jpg"
+            },
+            "source_image_file": "62fc8ea329dce846b88c781f85ab0cb1dddedb97d7caf64cc7a9eb4799361a23.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV curve (0.1 M KOH)",
+            "properties": {
+              "color": "dark orange",
+              "data_type": "current density vs potential",
+              "extracted_from_image": "87575bc3fcbfb1d87b18b4d8ad8ac755655f33104589496b68d889db00c5ce17.jpg"
+            },
+            "source_image_file": "87575bc3fcbfb1d87b18b4d8ad8ac755655f33104589496b68d889db00c5ce17.jpg"
+          },
+          {
+            "type": "potential",
+            "name": "0 V_saturated",
+            "properties": {
+              "value": "0 V (saturated)",
+              "description": "Applied potential in saturated condition",
+              "extracted_from_image": "b2644a929f6d8d8316a5ad551d46f0f890c028e306c5cb397a8adb7431c768fe.jpg"
+            },
+            "source_image_file": "b2644a929f6d8d8316a5ad551d46f0f890c028e306c5cb397a8adb7431c768fe.jpg"
+          },
+          {
+            "type": "raman_peak",
+            "name": "836 cm⁻¹",
+            "properties": {
+              "intensity": "medium",
+              "color": "red",
+              "extracted_from_image": "c44ef5a607e2e6dd945ccd9ab494801ef6c5154565ed55ffdaa9983c26eb6be3.jpg"
+            },
+            "source_image_file": "c44ef5a607e2e6dd945ccd9ab494801ef6c5154565ed55ffdaa9983c26eb6be3.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "*AM",
+            "properties": {
+              "formula": "*AM",
+              "description": "surface-bound AM",
+              "extracted_from_image": "e38eb9be51db36ea0fd16e6fb7255a53a136577737a91d56863dc57d540ec142.jpg"
+            },
+            "source_image_file": "e38eb9be51db36ea0fd16e6fb7255a53a136577737a91d56863dc57d540ec142.jpg"
+          },
+          {
+            "type": "potential",
+            "name": "-0.3 V vs SHE",
+            "properties": {
+              "value": -0.3,
+              "reference": "SHE",
+              "unit": "V",
+              "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+            },
+            "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "pH -13",
+            "properties": {
+              "pH": -13,
+              "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+            },
+            "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "ICP-MS",
+        "is_reported": true,
+        "characterization_summary": "ICP-MS analysis of Nafion ionomer-free KB electrode shows chemical composition before and after ORR test.",
+        "evidence_snippet": "Chemical composition of KB before and after the ORR test was analysed with... inductively coupled plasma-mass spectrometry (7700S, Agilent)."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "NEXAFS",
+        "is_reported": true,
+        "characterization_summary": "In situ Na K-edge NEXAFS reveals change in electronic structure of Na+ from hydrated state on charged KB electrode during ORR, with peaks shifting from 1078/1083 eV at OCP to ~1075/1080 eV at -0.1/-0.7 V SHE in O2-saturated 0.1 M NaOH; reversible and O2-dependent.",
+        "evidence_snippet": "In situ X-ray absorption spectroscopy reveals a change in the electronic structure of Na+ from its hydrated state on a charged electrode... The NEXAFS signals were collected on KB/Au-coated SiNx windows... At open circuit potential (OCP), the Na K-edge spectrum showed two distinct peaks at 1,078 and 1,083 eV... when a cathodic bias was applied at −0.1 and −0.7 V SHE, the peaks shifted negatively by approximately 3 eV."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "Raman",
+        "is_reported": true,
+        "characterization_summary": "In situ Raman identifies formation of water-unstable NaO2 as key intermediate in OOH− production on biased KB; shows reversible peaks at 1150 cm⁻¹ (νO-O symmetric stretch) and 1525 cm⁻¹ (distorted graphitic ring) during ORR in O2-saturated 0.1 M NaOH, absent in Ar and diminished by 15C5 Na+ chelation.",
+        "evidence_snippet": "In situ Raman spectroscopy further identifies that this change is due to the formation of water-unstable NaO2 as a key intermediate in OOH− production... At OCP, the Raman spectrum showed only D (1,345 cm⁻¹) and G (1,600 cm⁻¹) peaks... during ORR at −0.1 V SHE, new Raman signals appeared at 1,150 and 1,525 cm⁻¹...",
+        "related_images": [
+          "19cbc36a74c2fe73087fe84d7a8ce8c7b26b0115b84abe2d25b49beca9c1e78f.jpg",
+          "62fc8ea329dce846b88c781f85ab0cb1dddedb97d7caf64cc7a9eb4799361a23.jpg",
+          "c44ef5a607e2e6dd945ccd9ab494801ef6c5154565ed55ffdaa9983c26eb6be3.jpg",
+          "e38eb9be51db36ea0fd16e6fb7255a53a136577737a91d56863dc57d540ec142.jpg",
+          "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "label",
+            "name": "G",
+            "properties": {
+              "description": "Peak/Feature G",
+              "extracted_from_image": "19cbc36a74c2fe73087fe84d7a8ce8c7b26b0115b84abe2d25b49beca9c1e78f.jpg"
+            },
+            "source_image_file": "19cbc36a74c2fe73087fe84d7a8ce8c7b26b0115b84abe2d25b49beca9c1e78f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum",
+            "properties": {
+              "type": "in situ spectroelectrochemistry",
+              "x_axis": "Raman shift (cm⁻¹)",
+              "x_range": [
+                0,
+                1800
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "extracted_from_image": "19cbc36a74c2fe73087fe84d7a8ce8c7b26b0115b84abe2d25b49beca9c1e78f.jpg"
+            },
+            "source_image_file": "19cbc36a74c2fe73087fe84d7a8ce8c7b26b0115b84abe2d25b49beca9c1e78f.jpg"
+          },
+          {
+            "type": "reference",
+            "name": "SHE",
+            "properties": {
+              "full_name": "Standard Hydrogen Electrode",
+              "extracted_from_image": "62fc8ea329dce846b88c781f85ab0cb1dddedb97d7caf64cc7a9eb4799361a23.jpg"
+            },
+            "source_image_file": "62fc8ea329dce846b88c781f85ab0cb1dddedb97d7caf64cc7a9eb4799361a23.jpg"
+          },
+          {
+            "type": "chart",
+            "name": "Raman Spectrum",
+            "properties": {
+              "x_axis": "Raman shift (cm⁻¹)",
+              "y_axis": "Intensity (a.u.)",
+              "range_x": [
+                200,
+                1600
+              ],
+              "extracted_from_image": "c44ef5a607e2e6dd945ccd9ab494801ef6c5154565ed55ffdaa9983c26eb6be3.jpg"
+            },
+            "source_image_file": "c44ef5a607e2e6dd945ccd9ab494801ef6c5154565ed55ffdaa9983c26eb6be3.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "OOH⁻",
+            "properties": {
+              "formula": "OOH⁻",
+              "extracted_from_image": "e38eb9be51db36ea0fd16e6fb7255a53a136577737a91d56863dc57d540ec142.jpg"
+            },
+            "source_image_file": "e38eb9be51db36ea0fd16e6fb7255a53a136577737a91d56863dc57d540ec142.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum",
+            "properties": {
+              "type": "spectroscopy",
+              "x_axis": "Raman shift (cm⁻¹)",
+              "x_range": [
+                200,
+                1800
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "peaks": [
+                850,
+                1153,
+                1530
+              ],
+              "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+            },
+            "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+          },
+          {
+            "type": "peak",
+            "name": "850 cm⁻¹",
+            "properties": {
+              "position": 850,
+              "unit": "cm⁻¹",
+              "intensity": "medium",
+              "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+            },
+            "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "Electrochemical impedance spectroscopy at OCP used for solution resistance (Rs) determination and iR compensation.",
+        "evidence_snippet": "The solution resistance (Rs) was determined by electrochemical impedance spectroscopy at OCP in electrolytes saturated with Ar...",
+        "related_images": [
+          "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg",
+          "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "RDF",
+            "properties": {
+              "description": "Radial Distribution Function",
+              "extracted_from_image": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+            },
+            "source_image_file": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "OCP",
+            "properties": {
+              "extracted_from_image": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+            },
+            "source_image_file": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "staircase potentiostatic EIS",
+        "is_reported": true,
+        "characterization_summary": "Differential capacitance measured in 10 mM NaF or 0.1 M AMOH electrolytes at 0.1 Hz and 10 mV amplitude; E_PZC for KB is approximately 0.2 V SHE.",
+        "evidence_snippet": "The differential capacitance was measured by staircase potentiostatic electrochemical impedance spectroscopy in 10 mM NaF or 0.1 M AMOH... electrolytes with a frequency of 0.1 Hz and a potential amplitude of 10 mV."
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "Na+",
+        "properties": {
+          "description": "Sodium ion",
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "condition",
+        "name": "0.001 M Na+",
+        "properties": {
+          "concentration": "0.001 M",
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "condition",
+        "name": "0.01 M Na+",
+        "properties": {
+          "concentration": "0.01 M",
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "condition",
+        "name": "0.1 M Na+",
+        "properties": {
+          "concentration": "0.1 M",
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      },
+      {
+        "id": "e5",
+        "type": "experiment",
+        "name": "XPS spectrum b",
+        "properties": {
+          "figure_label": "b",
+          "technique": "X-ray Photoelectron Spectroscopy",
+          "x_axis": "Photon energy (eV)",
+          "x_range": [
+            1.07,
+            1.1
+          ],
+          "y_axis": "Intensity (a.u.)",
+          "extracted_from_image": "01c4e0a0bd60855bd9ba07be80da1dba4569b21c1d385f34baddfad6f973439b.jpg"
+        },
+        "source_image_file": "01c4e0a0bd60855bd9ba07be80da1dba4569b21c1d385f34baddfad6f973439b.jpg"
+      },
+      {
+        "id": "d6",
+        "type": "data",
+        "name": "Peak positions",
+        "properties": {
+          "positions": [
+            1.078,
+            1.083
+          ],
+          "extracted_from_image": "01c4e0a0bd60855bd9ba07be80da1dba4569b21c1d385f34baddfad6f973439b.jpg"
+        },
+        "source_image_file": "01c4e0a0bd60855bd9ba07be80da1dba4569b21c1d385f34baddfad6f973439b.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "condition",
+        "name": "0.5 M Na+",
+        "properties": {
+          "concentration": "0.5 M",
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "condition",
+        "name": "pH -11",
+        "properties": {
+          "pH": -11,
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "condition",
+        "name": "pH -12",
+        "properties": {
+          "pH": -12,
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "condition",
+        "name": "pH -13.7",
+        "properties": {
+          "pH": -13.7,
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "potential",
+        "name": "-0.5 V vs SHE",
+        "properties": {
+          "value": -0.5,
+          "reference": "SHE",
+          "unit": "V",
+          "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+        },
+        "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "potential",
+        "name": "-0.6 V vs SHE",
+        "properties": {
+          "value": -0.6,
+          "reference": "SHE",
+          "unit": "V",
+          "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+        },
+        "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "potential",
+        "name": "-0.7 V vs SHE",
+        "properties": {
+          "value": -0.7,
+          "reference": "SHE",
+          "unit": "V",
+          "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+        },
+        "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+      },
+      {
+        "id": "Na",
+        "type": "chemical",
+        "name": "Na⁺",
+        "properties": {
+          "extracted_from_image": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+        },
+        "source_image_file": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+      },
+      {
+        "id": "U",
+        "type": "chemical",
+        "name": "Uₑ",
+        "properties": {
+          "label": "Uₑ",
+          "extracted_from_image": "4685f6352e8b1d9388ef888a068af732e1cf1ce84e924f5667941f9fc1983b98.jpg"
+        },
+        "source_image_file": "4685f6352e8b1d9388ef888a068af732e1cf1ce84e924f5667941f9fc1983b98.jpg"
+      },
+      {
+        "id": "CV_plot",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry Plot",
+        "properties": {
+          "type": "electrochemical plot",
+          "x_axis": "log(k/k₀)",
+          "y_axis": "E (V vs SHE)",
+          "range_x": "10⁻⁴ to 10¹²",
+          "range_y": "-0.3 to 0.3 V",
+          "extracted_from_image": "4685f6352e8b1d9388ef888a068af732e1cf1ce84e924f5667941f9fc1983b98.jpg"
+        },
+        "source_image_file": "4685f6352e8b1d9388ef888a068af732e1cf1ce84e924f5667941f9fc1983b98.jpg"
+      },
+      {
+        "id": "Na_38mVdec",
+        "type": "data_point",
+        "name": "Na⁺ 38 mV/dec",
+        "properties": {
+          "slope": "38 mV/dec⁻¹",
+          "ion": "Na⁺",
+          "extracted_from_image": "4685f6352e8b1d9388ef888a068af732e1cf1ce84e924f5667941f9fc1983b98.jpg"
+        },
+        "source_image_file": "4685f6352e8b1d9388ef888a068af732e1cf1ce84e924f5667941f9fc1983b98.jpg"
+      },
+      {
+        "id": "Na_60mVdec",
+        "type": "data_point",
+        "name": "Na⁺ 60 mV/dec",
+        "properties": {
+          "slope": "60 mV/dec⁻¹",
+          "ion": "Na⁺",
+          "extracted_from_image": "4685f6352e8b1d9388ef888a068af732e1cf1ce84e924f5667941f9fc1983b98.jpg"
+        },
+        "source_image_file": "4685f6352e8b1d9388ef888a068af732e1cf1ce84e924f5667941f9fc1983b98.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry Plot",
+        "properties": {
+          "label": "e",
+          "x_axis": "E (V vs SHE)",
+          "y_axis": "ΔE (V vs Ag/AgCl)",
+          "description": "Plot showing ΔE due to Na+ stabilization coupling",
+          "extracted_from_image": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+        },
+        "source_image_file": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+      },
+      {
+        "id": "na_ion",
+        "type": "chemical",
+        "name": "Na⁺",
+        "properties": {
+          "formula": "Na⁺",
+          "role": "Cation",
+          "color": "red",
+          "extracted_from_image": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+        },
+        "source_image_file": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+      },
+      {
+        "id": "delta_e",
+        "type": "characterization",
+        "name": "ΔE",
+        "properties": {
+          "description": "Shift in potential due to stabilization coupling",
+          "color": "blue",
+          "arrow": "stabilization coupling",
+          "extracted_from_image": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+        },
+        "source_image_file": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "axis",
+        "name": "E-ir (V SHE)",
+        "properties": {
+          "label": "E-ir (V SHE)",
+          "unit": "V vs SHE",
+          "iR_corrected": true,
+          "extracted_from_image": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+        },
+        "source_image_file": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+      },
+      {
+        "id": "y_axis_sigma",
+        "type": "axis",
+        "name": "σ (μC cm⁻²)",
+        "properties": {
+          "range": "[-2.8, 0] μC cm⁻²",
+          "extracted_from_image": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+        },
+        "source_image_file": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+      },
+      {
+        "id": "y_axis_delta_e",
+        "type": "axis",
+        "name": "ΔE (V vs Ag/AgCl)",
+        "properties": {
+          "range": "[-0.6, 0.2] V",
+          "extracted_from_image": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+        },
+        "source_image_file": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+      },
+      {
+        "id": "ag_agcl",
+        "type": "reference",
+        "name": "Ag/AgCl",
+        "properties": {
+          "reference_electrode": true,
+          "extracted_from_image": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+        },
+        "source_image_file": "533e56caa1fbab88e8c6631994df714e1d01741b42b26bb26de51ea6cb074548.jpg"
+      },
+      {
+        "id": "she",
+        "type": "electrode",
+        "name": "SHE",
+        "properties": {
+          "description": "Standard Hydrogen Electrode",
+          "extracted_from_image": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+        },
+        "source_image_file": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+      },
+      {
+        "id": "initial_structure",
+        "type": "chemical",
+        "name": "Initial Structure",
+        "properties": {
+          "description": "Molecular structure with gray spheres (nanoparticles or pores), red O2 molecules, and polymeric chains",
+          "extracted_from_image": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+        },
+        "source_image_file": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "state": "molecular oxygen",
+          "role": "reactant",
+          "extracted_from_image": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+        },
+        "source_image_file": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+      },
+      {
+        "id": "polymeric_chains",
+        "type": "chemical",
+        "name": "Polymeric Chains",
+        "properties": {
+          "description": "Red and gray stick representations of polymer molecules",
+          "color": "red/gray",
+          "extracted_from_image": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+        },
+        "source_image_file": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+      },
+      {
+        "id": "purple_entity",
+        "type": "chemical",
+        "name": "Purple Entity",
+        "properties": {
+          "description": "Purple colored molecular species (possibly metal center or cation)",
+          "color": "purple",
+          "extracted_from_image": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+        },
+        "source_image_file": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+      },
+      {
+        "id": "final_structure",
+        "type": "chemical",
+        "name": "Final Structure",
+        "properties": {
+          "description": "Structure after ET with O₂⁻-Na⁺ and modified coordination",
+          "extracted_from_image": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+        },
+        "source_image_file": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+      },
+      {
+        "id": "O2_minus_Na",
+        "type": "chemical",
+        "name": "O₂⁻-Na⁺",
+        "properties": {
+          "formula": "O₂⁻-Na⁺",
+          "color": "red/purple",
+          "label": "O₂⁻-Na",
+          "extracted_from_image": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+        },
+        "source_image_file": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+      },
+      {
+        "id": "ET1",
+        "type": "process",
+        "name": "Electron Transfer 1",
+        "properties": {
+          "label": "ET",
+          "direction": "initial → intermediate",
+          "extracted_from_image": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+        },
+        "source_image_file": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+      },
+      {
+        "id": "ET2",
+        "type": "process",
+        "name": "Electron Transfer 2",
+        "properties": {
+          "label": "ET",
+          "direction": "intermediate → final",
+          "extracted_from_image": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+        },
+        "source_image_file": "6595b2f15924c7ab2c28f0efeeb71fe8008725736e5102bd1dfa1bb59c606bcc.jpg"
+      },
+      {
+        "id": "Na-O2",
+        "type": "chemical",
+        "name": "Na⁺-O₂",
+        "properties": {
+          "extracted_from_image": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+        },
+        "source_image_file": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+      },
+      {
+        "id": "CN",
+        "type": "chemical",
+        "name": "C-N",
+        "properties": {
+          "extracted_from_image": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+        },
+        "source_image_file": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+      },
+      {
+        "id": "OV_0.2V",
+        "type": "chemical",
+        "name": "O_V (0.2 V)",
+        "properties": {
+          "voltage": "0.2 V",
+          "extracted_from_image": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+        },
+        "source_image_file": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+      },
+      {
+        "id": "OV_0.4V",
+        "type": "chemical",
+        "name": "O_V (0.4 V)",
+        "properties": {
+          "voltage": "0.4 V",
+          "extracted_from_image": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+        },
+        "source_image_file": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+      },
+      {
+        "id": "OV_0.19V",
+        "type": "chemical",
+        "name": "O_V (0.19 V)",
+        "properties": {
+          "voltage": "0.19 V",
+          "extracted_from_image": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+        },
+        "source_image_file": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+      },
+      {
+        "id": "RDF_plot",
+        "type": "characterization",
+        "name": "RDF Plot",
+        "properties": {
+          "x_axis": "Distance (Å)",
+          "y_axis": "Intensity",
+          "x_range": [
+            0,
+            8
+          ],
+          "extracted_from_image": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+        },
+        "source_image_file": "69b90cf475391967044f33f63df5b9043312dec9e027655bc3dbcdc9dcb4284d.jpg"
+      },
+      {
+        "id": "graph_g",
+        "type": "characterization",
+        "name": "Graph g",
+        "properties": {
+          "description": "Polarization curve",
+          "label": "g",
+          "extracted_from_image": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+        },
+        "source_image_file": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+      },
+      {
+        "id": "liOH",
+        "type": "chemical",
+        "name": "LiOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "color": "blue",
+          "extracted_from_image": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+        },
+        "source_image_file": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+      },
+      {
+        "id": "naOH",
+        "type": "chemical",
+        "name": "NaOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "color": "red",
+          "extracted_from_image": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+        },
+        "source_image_file": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+      },
+      {
+        "id": "koh",
+        "type": "chemical",
+        "name": "KOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "color": "orange",
+          "extracted_from_image": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+        },
+        "source_image_file": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+      },
+      {
+        "id": "csOH",
+        "type": "chemical",
+        "name": "CsOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "color": "brown",
+          "extracted_from_image": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+        },
+        "source_image_file": "705aa8b6398c4fbb585395db182c491232833615690ca809e828058694157be5.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "axis",
+        "name": "j (mA cm⁻²)",
+        "properties": {
+          "label": "j (mA cm⁻²)",
+          "unit": "mA/cm²",
+          "extracted_from_image": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+        },
+        "source_image_file": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+      },
+      {
+        "id": "e-",
+        "type": "chemical",
+        "name": "e⁻",
+        "properties": {
+          "description": "electron",
+          "extracted_from_image": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+        },
+        "source_image_file": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+      },
+      {
+        "id": "O2-",
+        "type": "chemical",
+        "name": "O₂⁻",
+        "properties": {
+          "state": "superoxide ion",
+          "role": "intermediate",
+          "extracted_from_image": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+        },
+        "source_image_file": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+      },
+      {
+        "id": "NaO2",
+        "type": "chemical",
+        "name": "NaO₂",
+        "properties": {
+          "description": "sodium superoxide",
+          "role": "product",
+          "extracted_from_image": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+        },
+        "source_image_file": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+      },
+      {
+        "id": "energy_diagram",
+        "type": "characterization",
+        "name": "Energy Diagram",
+        "properties": {
+          "type": "potential energy profile",
+          "figure_label": "d",
+          "extracted_from_image": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+        },
+        "source_image_file": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+      },
+      {
+        "id": "O2_curve",
+        "type": "characterization",
+        "name": "O₂ Energy Curve",
+        "properties": {
+          "description": "potential energy well for O₂",
+          "extracted_from_image": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+        },
+        "source_image_file": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+      },
+      {
+        "id": "O2-_curve",
+        "type": "characterization",
+        "name": "O₂⁻ Energy Curve",
+        "properties": {
+          "description": "potential energy well for O₂⁻",
+          "extracted_from_image": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+        },
+        "source_image_file": "87e4ad7ed97fdfe16797bdcdaf9c82b7855296629914ddc150195eb19c8c1ca5.jpg"
+      },
+      {
+        "id": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf_node1",
+        "type": "characterization",
+        "name": "Pourbaix diagram",
+        "properties": {
+          "description": "E-pH diagram with Na+ concentration dependence",
+          "x_axis": "E - ir(V) corrected to SHE: E(V SHE) = E(V CCE) + 0.059*log[Na+]",
+          "y_axis": "j (mA cm^-2)",
+          "conditions": "[Na+] = 0.001 M, 0.01 M, 0.1 M",
+          "extracted_from_image": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+        },
+        "source_image_file": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+      },
+      {
+        "id": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf_node2",
+        "type": "chemical",
+        "name": "Na+",
+        "properties": {
+          "concentration": "0.001 M, 0.01 M, 0.1 M",
+          "extracted_from_image": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+        },
+        "source_image_file": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+      },
+      {
+        "id": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf_node3",
+        "type": "electrode",
+        "name": "CCE",
+        "properties": {
+          "reference": "Calomel electrode (CCE)",
+          "extracted_from_image": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+        },
+        "source_image_file": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+      },
+      {
+        "id": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf_node4",
+        "type": "reference",
+        "name": "SHE",
+        "properties": {
+          "standard": "Standard Hydrogen Electrode",
+          "extracted_from_image": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+        },
+        "source_image_file": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+      },
+      {
+        "id": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf_node5",
+        "type": "condition",
+        "name": "0.001 M Na+",
+        "properties": {
+          "color": "black",
+          "concentration": "0.001 M",
+          "extracted_from_image": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+        },
+        "source_image_file": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+      },
+      {
+        "id": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf_node6",
+        "type": "condition",
+        "name": "0.01 M Na+",
+        "properties": {
+          "color": "blue dashed",
+          "concentration": "0.01 M",
+          "extracted_from_image": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+        },
+        "source_image_file": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+      },
+      {
+        "id": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf_node7",
+        "type": "condition",
+        "name": "0.1 M Na+",
+        "properties": {
+          "color": "red",
+          "concentration": "0.1 M",
+          "extracted_from_image": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+        },
+        "source_image_file": "92d7c807e1d5af445723f9749baef85ce1c70f4abfdd2a4383a80ce1a8063ebf.jpg"
+      },
+      {
+        "id": "figure_b",
+        "type": "figure",
+        "name": "Figure b",
+        "properties": {
+          "label": "b",
+          "extracted_from_image": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+        },
+        "source_image_file": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+      },
+      {
+        "id": "plot",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry Plot",
+        "properties": {
+          "x_axis": "E - IR (RHE) = V SHE - 0.059 × log[H⁺]",
+          "y_axis": "j / mA cm⁻²",
+          "x_range": [
+            0,
+            1.0
+          ],
+          "y_range": [
+            -2.5,
+            0
+          ],
+          "extracted_from_image": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+        },
+        "source_image_file": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+      },
+      {
+        "id": "rhe",
+        "type": "electrode",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+        },
+        "source_image_file": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+      },
+      {
+        "id": "h_plus",
+        "type": "chemical",
+        "name": "H⁺",
+        "properties": {
+          "formula": "H⁺",
+          "description": "Proton",
+          "extracted_from_image": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+        },
+        "source_image_file": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+      },
+      {
+        "id": "curve_red",
+        "type": "curve",
+        "name": "Red Curve",
+        "properties": {
+          "color": "red",
+          "description": "Highest current density curve",
+          "extracted_from_image": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+        },
+        "source_image_file": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+      },
+      {
+        "id": "curve_blue",
+        "type": "curve",
+        "name": "Blue Curve",
+        "properties": {
+          "color": "blue",
+          "description": "Multiple overlapping curves",
+          "extracted_from_image": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+        },
+        "source_image_file": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+      },
+      {
+        "id": "curve_grey",
+        "type": "dataset",
+        "name": "Grey Curves",
+        "properties": {
+          "color": "grey",
+          "description": "Multiple reference curves",
+          "extracted_from_image": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+        },
+        "source_image_file": "9a13cfde8ff7833e447be0a8f7dfde93efd061409bfaf4622eb5eb6062ee84ab.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "chemical",
+        "name": "0.1 M NaOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "base": "NaOH",
+          "extracted_from_image": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+        },
+        "source_image_file": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+      },
+      {
+        "id": "gas",
+        "type": "chemical",
+        "name": "O2-saturated",
+        "properties": {
+          "gas": "O2",
+          "extracted_from_image": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+        },
+        "source_image_file": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "CV or LSV spectra",
+        "properties": {
+          "x_axis": "Photon energy (eV)",
+          "x_range": "[1.06, 1.10]",
+          "y_axis": "Intensity (a.u.)",
+          "potentials": [
+            "-0.1 V",
+            "-0.7 V",
+            "-1.0 V"
+          ],
+          "peaks": [
+            "1.078 eV",
+            "1.083 eV",
+            "1.075 eV",
+            "1.080 eV"
+          ],
+          "extracted_from_image": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+        },
+        "source_image_file": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+      },
+      {
+        "id": "potential_1",
+        "type": "condition",
+        "name": "-0.1 V",
+        "properties": {
+          "potential": "-0.1 V vs SHE",
+          "extracted_from_image": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+        },
+        "source_image_file": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+      },
+      {
+        "id": "potential_2",
+        "type": "condition",
+        "name": "-0.7 V",
+        "properties": {
+          "potential": "-0.7 V vs SHE",
+          "extracted_from_image": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+        },
+        "source_image_file": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+      },
+      {
+        "id": "potential_3",
+        "type": "condition",
+        "name": "-1.0 V",
+        "properties": {
+          "potential": "-1.0 V vs SHE",
+          "extracted_from_image": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+        },
+        "source_image_file": "cd44b0ced85fda90e091656a8fdd417c27a5b391add67633887d3c27da288c15.jpg"
+      },
+      {
+        "id": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba_node1",
+        "type": "chemical",
+        "name": "0.1 M NaOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "compound": "NaOH",
+          "role": "electrolyte",
+          "extracted_from_image": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+        },
+        "source_image_file": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+      },
+      {
+        "id": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba_node2",
+        "type": "chemical",
+        "name": "0.035 M 15C5",
+        "properties": {
+          "concentration": "0.035 M",
+          "compound": "15C5",
+          "role": "additive",
+          "extracted_from_image": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+        },
+        "source_image_file": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+      },
+      {
+        "id": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba_node3",
+        "type": "chemical",
+        "name": "0.07 M 15C5",
+        "properties": {
+          "concentration": "0.07 M",
+          "compound": "15C5",
+          "role": "additive",
+          "extracted_from_image": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+        },
+        "source_image_file": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+      },
+      {
+        "id": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba_node4",
+        "type": "chemical",
+        "name": "0.117 M 15C5",
+        "properties": {
+          "concentration": "0.117 M",
+          "compound": "15C5",
+          "role": "additive",
+          "extracted_from_image": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+        },
+        "source_image_file": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+      },
+      {
+        "id": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba_node5",
+        "type": "characterization",
+        "name": "CV Plot",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "x_axis": "E vs RHE (V)",
+          "y_axis": "j (mA/cm²)",
+          "conditions": "various electrolyte compositions",
+          "extracted_from_image": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+        },
+        "source_image_file": "da3ec6ccad2152022d434d34011ab6a1618f96f27bdb858f8cdc4ad16d1886ba.jpg"
+      },
+      {
+        "id": "figure_a",
+        "type": "figure",
+        "name": "Figure a",
+        "properties": {
+          "label": "a",
+          "extracted_from_image": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+        },
+        "source_image_file": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+      },
+      {
+        "id": "lsv_plot",
+        "type": "characterization",
+        "name": "LSV Plot",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "E-ir (V SHE)",
+          "y_axis": "j (mA cm⁻²)",
+          "x_range": [
+            -0.7,
+            0.3
+          ],
+          "y_range": [
+            -2.5,
+            0
+          ],
+          "extracted_from_image": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+        },
+        "source_image_file": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+      },
+      {
+        "id": "curve_black",
+        "type": "curve",
+        "name": "Black Curve",
+        "properties": {
+          "color": "black",
+          "description": "Baseline/reference curve",
+          "extracted_from_image": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+        },
+        "source_image_file": "de9eac50cd08ae2c1836e6d4029ee042d93bb62f6d23ad74c2f12e07aaafd237.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "peak",
+        "name": "1153 cm⁻¹",
+        "properties": {
+          "position": 1153,
+          "unit": "cm⁻¹",
+          "intensity": "strong",
+          "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+        },
+        "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "peak",
+        "name": "1530 cm⁻¹",
+        "properties": {
+          "position": 1530,
+          "unit": "cm⁻¹",
+          "intensity": "very strong",
+          "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+        },
+        "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "reference_electrode",
+        "name": "SHE",
+        "properties": {
+          "full_name": "Standard Hydrogen Electrode",
+          "extracted_from_image": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+        },
+        "source_image_file": "ea8441d9927ac3862b037f8ae36d4ab100b78a54168b2c47714cf9941e3d8713.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "Tafel Plot",
+        "properties": {
+          "type": "electrochemical plot",
+          "y_axis": "dec (mV/mV⁻¹)",
+          "x_axis": "Na+ concentration (M)",
+          "data_points": [
+            {
+              "x": 0.001,
+              "y": 70
+            },
+            {
+              "x": 0.01,
+              "y": 60
+            },
+            {
+              "x": 0.1,
+              "y": 40
+            },
+            {
+              "x": 0.5,
+              "y": 30
+            }
+          ],
+          "slope": "decreasing trend",
+          "extracted_from_image": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+        },
+        "source_image_file": "f18e59c834021e635b4901b3e6309316c856d768bb683c6bdf3382dcfafa8e0e.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_KB_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_KB",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_KB_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_KB",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_KB_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_KB",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_KB_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_KB",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "source_id": "e5",
+        "target_id": "n1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "e5",
+        "target_id": "n2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "e5",
+        "target_id": "n3",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "e5",
+        "target_id": "n4",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "e5",
+        "target_id": "d6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_4",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_4",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_4",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_4",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_4",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_4",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "char_4",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_4",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "char_4",
+        "type": "baseline"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "char_4",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_4",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_1",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "represents_pair"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "represents_pair"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "represents_pair"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "represents_pair"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "references"
+      },
+      {
+        "source_id": "Na",
+        "target_id": "CV_plot",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "U",
+        "target_id": "CV_plot",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Na",
+        "target_id": "Na_38mVdec",
+        "type": "has_data_point"
+      },
+      {
+        "source_id": "Na",
+        "target_id": "Na_60mVdec",
+        "type": "has_data_point"
+      },
+      {
+        "source_id": "Na_38mVdec",
+        "target_id": "CV_plot",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "Na_60mVdec",
+        "target_id": "CV_plot",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "na_ion",
+        "type": "plots"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "delta_e",
+        "type": "plots"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "x_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "y_axis_sigma",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "y_axis_delta_e",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "delta_e",
+        "target_id": "na_ion",
+        "type": "due_to_stabilization"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "she",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "y_axis_delta_e",
+        "target_id": "ag_agcl",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_1",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n10",
+        "type": "uses_concentration"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "uses_concentration"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n10",
+        "type": "uses_concentration"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n10",
+        "type": "uses_concentration"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n11",
+        "type": "uses_pH"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n11",
+        "type": "uses_pH"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n11",
+        "type": "uses_pH"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n11",
+        "type": "uses_pH"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n12",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_4",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "co_electrolyte"
+      },
+      {
+        "source_id": "initial_structure",
+        "target_id": "O2",
+        "type": "contains"
+      },
+      {
+        "source_id": "initial_structure",
+        "target_id": "polymeric_chains",
+        "type": "contains"
+      },
+      {
+        "source_id": "initial_structure",
+        "target_id": "chem_KB",
+        "type": "contains"
+      },
+      {
+        "source_id": "initial_structure",
+        "target_id": "purple_entity",
+        "type": "contains"
+      },
+      {
+        "source_id": "initial_structure",
+        "target_id": "ET1",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "ET1",
+        "target_id": "final_structure",
+        "type": "produces"
+      },
+      {
+        "source_id": "final_structure",
+        "target_id": "O2_minus_Na",
+        "type": "contains"
+      },
+      {
+        "source_id": "final_structure",
+        "target_id": "polymeric_chains",
+        "type": "contains"
+      },
+      {
+        "source_id": "final_structure",
+        "target_id": "chem_KB",
+        "type": "contains"
+      },
+      {
+        "source_id": "O2",
+        "target_id": "O2_minus_Na",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "purple_entity",
+        "target_id": "final_structure",
+        "type": "present_in"
+      },
+      {
+        "source_id": "ET2",
+        "target_id": "O2_minus_Na",
+        "type": "involves"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "RDF_plot",
+        "type": "depicts"
+      },
+      {
+        "source_id": "Na-O2",
+        "target_id": "RDF_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "CN",
+        "target_id": "RDF_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "OV_0.2V",
+        "target_id": "RDF_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "OV_0.4V",
+        "target_id": "RDF_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "OV_0.19V",
+        "target_id": "RDF_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Na",
+        "target_id": "Na-O2",
+        "type": "bond"
+      },
+      {
+        "source_id": "O2",
+        "target_id": "Na-O2",
+        "type": "bond"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "detected_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "detected_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "graph_g",
+        "target_id": "liOH",
+        "type": "shows_curve"
+      },
+      {
+        "source_id": "graph_g",
+        "target_id": "naOH",
+        "type": "shows_curve"
+      },
+      {
+        "source_id": "graph_g",
+        "target_id": "koh",
+        "type": "shows_curve"
+      },
+      {
+        "source_id": "graph_g",
+        "target_id": "csOH",
+        "type": "shows_curve"
+      },
+      {
+        "source_id": "graph_g",
+        "target_id": "x_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "graph_g",
+        "target_id": "y_axis",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "O2",
+        "target_id": "O2_curve",
+        "type": "represents"
+      },
+      {
+        "source_id": "O2-",
+        "target_id": "O2-_curve",
+        "type": "represents"
+      },
+      {
+        "source_id": "O2",
+        "target_id": "e-",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "e-",
+        "target_id": "O2-",
+        "type": "forms"
+      },
+      {
+        "source_id": "O2-",
+        "target_id": "NaO2",
+        "type": "forms"
+      },
+      {
+        "source_id": "energy_diagram",
+        "target_id": "O2_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "energy_diagram",
+        "target_id": "O2-_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "O2_curve",
+        "target_id": "O2-_curve",
+        "type": "transitions_via"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "calibrated_to"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node2",
+        "type": "uses_concentration"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node2",
+        "type": "uses_concentration"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node2",
+        "type": "uses_concentration"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "calibration"
+      },
+      {
+        "source_id": "figure_b",
+        "target_id": "plot",
+        "type": "contains"
+      },
+      {
+        "source_id": "plot",
+        "target_id": "x_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "plot",
+        "target_id": "y_axis",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "rhe",
+        "type": "references"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "she",
+        "type": "references"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "h_plus",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "plot",
+        "target_id": "curve_red",
+        "type": "contains"
+      },
+      {
+        "source_id": "plot",
+        "target_id": "curve_blue",
+        "type": "contains"
+      },
+      {
+        "source_id": "plot",
+        "target_id": "curve_grey",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "electrolyte_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "solvent_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "electrolyte_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "solvent_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n5",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n5",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n5",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n5",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "solvent_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_4",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_4",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n2",
+        "type": "represents"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n3",
+        "type": "represents"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n1",
+        "type": "related_to"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "graph",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "gas",
+        "target_id": "graph",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "graph",
+        "type": "describes"
+      },
+      {
+        "source_id": "potential_1",
+        "target_id": "graph",
+        "type": "at_potential"
+      },
+      {
+        "source_id": "potential_2",
+        "target_id": "graph",
+        "type": "at_potential"
+      },
+      {
+        "source_id": "potential_3",
+        "target_id": "graph",
+        "type": "at_potential"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "figure_a",
+        "target_id": "lsv_plot",
+        "type": "contains"
+      },
+      {
+        "source_id": "lsv_plot",
+        "target_id": "curve_red",
+        "type": "displays"
+      },
+      {
+        "source_id": "lsv_plot",
+        "target_id": "curve_blue",
+        "type": "displays"
+      },
+      {
+        "source_id": "lsv_plot",
+        "target_id": "curve_black",
+        "type": "displays"
+      },
+      {
+        "source_id": "lsv_plot",
+        "target_id": "x_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "lsv_plot",
+        "target_id": "y_axis",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "reverse"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "reverse"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "protonated_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_1",
+        "type": "adsorbed_to"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "deprotonates_to"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "char_4",
+        "type": "deprotonates_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "saturated_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "at_temperature"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n1",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n5",
+        "type": "referenced_to"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n6",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n7",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_1",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n9",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n10",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n11",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n12",
+        "type": "recorded_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n17",
+        "type": "vs"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n17",
+        "type": "vs"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n17",
+        "type": "vs"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n17",
+        "type": "vs"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n17",
+        "type": "vs"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n17",
+        "type": "vs"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n17",
+        "type": "vs"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n15",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n16",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_concentration"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "c1",
+        "type": "condition_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "c1",
+        "type": "condition_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "c1",
+        "type": "condition_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "c1",
+        "type": "condition_in"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+schema_version: 1
+id: T004
+title: Execute accepted follow-up calculation
+role: engine-runner
+role_contract: procedures/research-orchestrator/references/roles.md#engine-runner
+skill: vasp
+status: accepted
+stage: follow-up
+wave_id: wave-2
+iteration: 2
+source_proposal: follow-up-proposal
+follow_up_of: scientific-claim-wave1
+resolves_follow_up: follow-up-proposal
+depends_on:
+  - T003
+approval: none
+inputs:
+  - artifact_id: follow-up-proposal
+    min_status: accepted
+can_read:
+  - artifact_id: follow-up-proposal
+can_write:
+  - artifact_type: parser-result
+cannot:
+  - treat this scaffolded follow-up as resolved before acceptance
+outputs_expected:
+  - artifact_id: parser-result-wave2
+    type: parser-result
+    path: work/run-wave2/parser-result.json
+success_criteria:
+  - follow-up observable is computed and parsed
+knowledge_required: []
+required_refs:
+  - tools/vasp/SKILL.md
+required_checks: []
+release_gates:
+  - engine-parser-validation
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions:
+  - Fixture parser output is illustrative.
+provenance:
+  - follow-up-proposal
+  - work/followups/follow-up-proposal.yaml

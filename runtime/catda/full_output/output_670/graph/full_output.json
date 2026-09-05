@@ -1,0 +1,5227 @@
+{
+  "synthesis": {
+    "nodes": [],
+    "edges": [],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [],
+    "edges": []
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "n1",
+        "type": "process",
+        "name": "Data Acquisition",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "process",
+        "name": "Data Preprocessing",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "process",
+        "name": "Data Preparation",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "process",
+        "name": "Multi-Variate Multi-Site Battery Data",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "process",
+        "name": "Voltage Features",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "process",
+        "name": "Current Features",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "gan",
+        "type": "model",
+        "name": "GAN",
+        "properties": {
+          "description": "Generative Adversarial Network for label-to-image transfer on real data",
+          "extracted_from_image": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+        },
+        "source_image_file": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+      },
+      {
+        "id": "positive_examples",
+        "type": "data",
+        "name": "Positive examples",
+        "properties": {
+          "description": "Positive training examples (real labeled images)",
+          "extracted_from_image": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+        },
+        "source_image_file": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+      },
+      {
+        "id": "negative_examples",
+        "type": "data",
+        "name": "Negative examples",
+        "properties": {
+          "description": "Negative training examples (synthetic images)",
+          "extracted_from_image": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+        },
+        "source_image_file": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+      },
+      {
+        "id": "discriminator_real",
+        "type": "component",
+        "name": "Discriminator (Real)",
+        "properties": {
+          "input": "Real images",
+          "layers": [
+            "Conv1",
+            "Conv2",
+            "FC1"
+          ],
+          "extracted_from_image": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+        },
+        "source_image_file": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+      },
+      {
+        "id": "discriminator_synth",
+        "type": "component",
+        "name": "Discriminator (Synthetic)",
+        "properties": {
+          "input": "Synthetic images",
+          "layers": [
+            "Conv1",
+            "Conv2",
+            "FC1"
+          ],
+          "extracted_from_image": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+        },
+        "source_image_file": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+      },
+      {
+        "id": "generator",
+        "type": "model",
+        "name": "Generator",
+        "properties": {
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "training_stage",
+        "type": "process",
+        "name": "Training Stage",
+        "properties": {
+          "caption": "(c) Training Stage: GAN for label-to-image transfer on real data",
+          "extracted_from_image": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+        },
+        "source_image_file": "03a3b052d9f7caaccafaed4c37def9a3630ae76a13fd4618aea15e5c00064692.jpg"
+      },
+      {
+        "id": "data",
+        "type": "dataset",
+        "name": "Data",
+        "properties": {
+          "features": [
+            "Unit cell size",
+            "Polarizability",
+            "etc..."
+          ],
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "feature_selection",
+        "type": "process",
+        "name": "Feature size selection",
+        "properties": {
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "combinations",
+        "type": "dataset",
+        "name": "Combinations",
+        "properties": {
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "fit_training",
+        "type": "process",
+        "name": "Fit (training)",
+        "properties": {
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "fit_validation",
+        "type": "process",
+        "name": "Fit (validation)",
+        "properties": {
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "best_model",
+        "type": "model",
+        "name": "Best model",
+        "properties": {
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "output",
+        "type": "output",
+        "name": "Output",
+        "properties": {
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "unit_cell_size",
+        "type": "chemical_property",
+        "name": "Unit cell size",
+        "properties": {
+          "description": "Crystallographic parameter",
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "polarizability",
+        "type": "chemical_property",
+        "name": "Polarizability",
+        "properties": {
+          "description": "Molecular property",
+          "extracted_from_image": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+        },
+        "source_image_file": "0469ec8d11f7fc82232f44a7dd41ec5652f35917a72b6faa9d3a1b8e86d6c3e9.jpg"
+      },
+      {
+        "id": "carbon-coating",
+        "type": "concept",
+        "name": "Carbon-coating",
+        "properties": {
+          "extracted_from_image": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+        },
+        "source_image_file": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+      },
+      {
+        "id": "surface-kinetic-heterogeneity",
+        "type": "concept",
+        "name": "Surface kinetic heterogeneity",
+        "properties": {
+          "extracted_from_image": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+        },
+        "source_image_file": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+      },
+      {
+        "id": "particle1",
+        "type": "chemical",
+        "name": "Particle 1",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+        },
+        "source_image_file": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+      },
+      {
+        "id": "intensity-1",
+        "type": "characterization",
+        "name": "Intensity I(x,y)",
+        "properties": {
+          "scale": "[0.81, 2.03]",
+          "extracted_from_image": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+        },
+        "source_image_file": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+      },
+      {
+        "id": "prefactor-1",
+        "type": "characterization",
+        "name": "Prefactor j₀(x,y)",
+        "properties": {
+          "scale": "[1.12, 0.50]",
+          "extracted_from_image": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+        },
+        "source_image_file": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+      },
+      {
+        "id": "particle2",
+        "type": "chemical",
+        "name": "Particle 2",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+        },
+        "source_image_file": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+      },
+      {
+        "id": "intensity-2",
+        "type": "characterization",
+        "name": "Intensity I(x,y)",
+        "properties": {
+          "scale": "[0.75, 1.72]",
+          "extracted_from_image": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+        },
+        "source_image_file": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+      },
+      {
+        "id": "prefactor-2",
+        "type": "characterization",
+        "name": "Prefactor j₀(x,y)",
+        "properties": {
+          "scale": "[1.19, 0.44]",
+          "extracted_from_image": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+        },
+        "source_image_file": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+      },
+      {
+        "id": "particle3",
+        "type": "chemical",
+        "name": "Particle 3",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+        },
+        "source_image_file": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+      },
+      {
+        "id": "intensity-3",
+        "type": "characterization",
+        "name": "Intensity I(x,y)",
+        "properties": {
+          "scale": "[0.64, 1.87]",
+          "extracted_from_image": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+        },
+        "source_image_file": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+      },
+      {
+        "id": "prefactor-3",
+        "type": "characterization",
+        "name": "Prefactor j₀(x,y)",
+        "properties": {
+          "scale": "[1.43, 0.42]",
+          "extracted_from_image": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+        },
+        "source_image_file": "12d6740386d023fc32024deda6da7a5ac2d26b77a9a0ab604a6c611d4371ba47.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "process",
+        "name": "GPRN Model Training",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "homo",
+        "type": "chemical",
+        "name": "HOMO",
+        "properties": {
+          "description": "Highest Occupied Molecular Orbital",
+          "extracted_from_image": "2162623e2e0bfc62e801e866c8062de420bdef38d56e6b3f1b23f8e8677a35a7.jpg"
+        },
+        "source_image_file": "2162623e2e0bfc62e801e866c8062de420bdef38d56e6b3f1b23f8e8677a35a7.jpg"
+      },
+      {
+        "id": "lumo_group",
+        "type": "characterization",
+        "name": "LUMO Orbitals",
+        "properties": {
+          "description": "Set of Lowest Unoccupied Molecular Orbitals",
+          "extracted_from_image": "2162623e2e0bfc62e801e866c8062de420bdef38d56e6b3f1b23f8e8677a35a7.jpg"
+        },
+        "source_image_file": "2162623e2e0bfc62e801e866c8062de420bdef38d56e6b3f1b23f8e8677a35a7.jpg"
+      },
+      {
+        "id": "ThN_61761",
+        "type": "chemical",
+        "name": "ThN (61761)",
+        "properties": {
+          "formula": "ThN",
+          "reference": "61761",
+          "extracted_from_image": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+        },
+        "source_image_file": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+      },
+      {
+        "id": "ThP_648203",
+        "type": "chemical",
+        "name": "ThP (648203)",
+        "properties": {
+          "formula": "ThP",
+          "reference": "648203",
+          "extracted_from_image": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+        },
+        "source_image_file": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+      },
+      {
+        "id": "ThAs_680116",
+        "type": "chemical",
+        "name": "ThAs (680116)",
+        "properties": {
+          "formula": "ThAs",
+          "reference": "680116",
+          "extracted_from_image": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+        },
+        "source_image_file": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+      },
+      {
+        "id": "ThSb_851695",
+        "type": "chemical",
+        "name": "ThSb (851695)",
+        "properties": {
+          "formula": "ThSb",
+          "reference": "851695",
+          "extracted_from_image": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+        },
+        "source_image_file": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+      },
+      {
+        "id": "ThBi_5880",
+        "type": "chemical",
+        "name": "ThBi (5880)",
+        "properties": {
+          "formula": "ThBi",
+          "reference": "5880",
+          "extracted_from_image": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+        },
+        "source_image_file": "2182051c99ee0375f8cd5673db1412219022025cb1913b7f0d61f9c16b170238.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Density of States Plot",
+        "properties": {
+          "description": "Electronic Density of States (DOS) curves for plutonium pnictides",
+          "x_axis": "Energy (eV)",
+          "y_axis": "DOS",
+          "range_x": [
+            -10.0,
+            5.0
+          ],
+          "range_y": [
+            -4.0,
+            0.0
+          ],
+          "extracted_from_image": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+        },
+        "source_image_file": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "process",
+        "name": "Training Data (80%)",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "process",
+        "name": "Testing Data (20%)",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "model",
+        "name": "Model",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "metric",
+        "name": "R²",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "metric",
+        "name": "RMSE",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chart",
+        "name": "Model Performance Chart",
+        "properties": {
+          "description": "Line chart showing model performance",
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "process",
+        "name": "FL Conclusions",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "sim_label",
+        "type": "data",
+        "name": "Simulated Label",
+        "properties": {
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "syn_image",
+        "type": "data",
+        "name": "Synthetic Image (Generated)",
+        "properties": {
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "sim_data",
+        "type": "data",
+        "name": "Simulated Data",
+        "properties": {
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "n512",
+        "type": "parameter",
+        "name": "512",
+        "properties": {
+          "likely": "dimension or size",
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "n512_2",
+        "type": "parameter",
+        "name": "512",
+        "properties": {
+          "likely": "dimension or size",
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "n256",
+        "type": "parameter",
+        "name": "256",
+        "properties": {
+          "likely": "dimension or size",
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "n128",
+        "type": "parameter",
+        "name": "128",
+        "properties": {
+          "likely": "dimension or size",
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "n64",
+        "type": "parameter",
+        "name": "64",
+        "properties": {
+          "likely": "dimension or size",
+          "extracted_from_image": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+        },
+        "source_image_file": "2bb52a102256267a01b731ebe15300b8c060ed58cdde9e7269446ba2a95955a9.jpg"
+      },
+      {
+        "id": "image",
+        "type": "image",
+        "name": "Passport-style photo",
+        "properties": {
+          "description": "Headshot of an Asian male with short black hair, wearing a dark polo shirt with white collar trim, neutral background",
+          "extracted_from_image": "3181f64c6f5d9154036973c1ae358f85dcc443daec4e5b91aef0f88d56c5f429.jpg"
+        },
+        "source_image_file": "3181f64c6f5d9154036973c1ae358f85dcc443daec4e5b91aef0f88d56c5f429.jpg"
+      },
+      {
+        "id": "subject",
+        "type": "person",
+        "name": "Unidentified individual",
+        "properties": {
+          "description": "Asian male, short hair, formal attire",
+          "extracted_from_image": "2c8366fe74f617c3dbbd886ddad8d687e6173c205c03ec08c0276e8887301f09.jpg"
+        },
+        "source_image_file": "2c8366fe74f617c3dbbd886ddad8d687e6173c205c03ec08c0276e8887301f09.jpg"
+      },
+      {
+        "id": "person",
+        "type": "person",
+        "name": "Unknown individual",
+        "properties": {
+          "description": "Likely an author or researcher from the scientific paper",
+          "extracted_from_image": "3181f64c6f5d9154036973c1ae358f85dcc443daec4e5b91aef0f88d56c5f429.jpg"
+        },
+        "source_image_file": "3181f64c6f5d9154036973c1ae358f85dcc443daec4e5b91aef0f88d56c5f429.jpg"
+      },
+      {
+        "id": "f1",
+        "type": "chemical",
+        "name": "FC",
+        "properties": {
+          "description": "Fluorocarbon feature",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "f2",
+        "type": "chemical",
+        "name": "SF",
+        "properties": {
+          "description": "Sulfur-fluorine feature",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "f3",
+        "type": "chemical",
+        "name": "SC",
+        "properties": {
+          "description": "Sulfur-carbon feature",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "f4",
+        "type": "chemical",
+        "name": "aF",
+        "properties": {
+          "description": "Aromatic fluorine feature",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "f5",
+        "type": "chemical",
+        "name": "FO",
+        "properties": {
+          "description": "Fluorine-oxygen feature",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "f6",
+        "type": "chemical",
+        "name": "InOr",
+        "properties": {
+          "description": "Inorganic oxygen-related feature",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "f7",
+        "type": "chemical",
+        "name": "aC",
+        "properties": {
+          "description": "Aromatic carbon feature",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "f8",
+        "type": "chemical",
+        "name": "sO",
+        "properties": {
+          "description": "Sulfur-oxygen feature",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "feat1",
+        "type": "feature_set",
+        "name": "1 Feature",
+        "properties": {
+          "selected_features": [
+            "sO"
+          ],
+          "performance": "check",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "feat2",
+        "type": "feature_set",
+        "name": "2 Features",
+        "properties": {
+          "selected_features": [
+            "sO",
+            "aC"
+          ],
+          "performance": "check",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "feat3",
+        "type": "feature_set",
+        "name": "3 Features",
+        "properties": {
+          "selected_features": [
+            "sO",
+            "aC",
+            "InOr"
+          ],
+          "performance": "check",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "feat4",
+        "type": "feature_set",
+        "name": "4 Features",
+        "properties": {
+          "selected_features": [
+            "sO",
+            "aC",
+            "InOr",
+            "FO"
+          ],
+          "performance": "check",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "feat5",
+        "type": "feature_set",
+        "name": "5 Features",
+        "properties": {
+          "selected_features": [
+            "sO",
+            "aC",
+            "InOr",
+            "FO",
+            "aF"
+          ],
+          "performance": "check",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "feat6",
+        "type": "feature_set",
+        "name": "6 Features",
+        "properties": {
+          "selected_features": [
+            "sO",
+            "aC",
+            "InOr",
+            "FO",
+            "aF",
+            "SC"
+          ],
+          "performance": "check",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "feat7",
+        "type": "feature_set",
+        "name": "7 Features",
+        "properties": {
+          "selected_features": [
+            "sO",
+            "aC",
+            "InOr",
+            "FO",
+            "aF",
+            "SC",
+            "SF"
+          ],
+          "performance": "check",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "feat8",
+        "type": "feature_set",
+        "name": "8 Features",
+        "properties": {
+          "selected_features": [
+            "sO",
+            "aC",
+            "InOr",
+            "FO",
+            "aF",
+            "SC",
+            "SF",
+            "FC"
+          ],
+          "performance": "check",
+          "extracted_from_image": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+        },
+        "source_image_file": "33d7db28066ef4a3cf4af680036cbcbf66370b2f7693d44ed0417ca3ae9069e9.jpg"
+      },
+      {
+        "id": "HOMO",
+        "type": "energy_level",
+        "name": "HOMO",
+        "properties": {
+          "description": "Highest Occupied Molecular Orbital energy levels",
+          "unit": "eV",
+          "range": "2 to 6 eV",
+          "extracted_from_image": "373e9a3a3726b71255cba344109d259a38852e834babbd7d775a2c2995c8696a.jpg"
+        },
+        "source_image_file": "373e9a3a3726b71255cba344109d259a38852e834babbd7d775a2c2995c8696a.jpg"
+      },
+      {
+        "id": "LUMO",
+        "type": "energy_level",
+        "name": "LUMO",
+        "properties": {
+          "description": "Lowest Unoccupied Molecular Orbital energy levels",
+          "unit": "eV",
+          "range": "2 to 6 eV",
+          "extracted_from_image": "373e9a3a3726b71255cba344109d259a38852e834babbd7d775a2c2995c8696a.jpg"
+        },
+        "source_image_file": "373e9a3a3726b71255cba344109d259a38852e834babbd7d775a2c2995c8696a.jpg"
+      },
+      {
+        "id": "scatter_plot",
+        "type": "characterization",
+        "name": "Scatter Plot",
+        "properties": {
+          "x_axis": "l(x,y) z-score",
+          "y_axis": "l(s) z-score",
+          "x_range": [
+            -4,
+            4
+          ],
+          "y_range": [
+            -2,
+            5
+          ],
+          "extracted_from_image": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+        },
+        "source_image_file": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+      },
+      {
+        "id": "dataset",
+        "type": "chemical",
+        "name": "Molecular Dataset",
+        "properties": {
+          "description": "Set of molecules with computed HOMO/LUMO energies",
+          "color_coding": "blue and green points",
+          "extracted_from_image": "373e9a3a3726b71255cba344109d259a38852e834babbd7d775a2c2995c8696a.jpg"
+        },
+        "source_image_file": "373e9a3a3726b71255cba344109d259a38852e834babbd7d775a2c2995c8696a.jpg"
+      },
+      {
+        "id": "image1",
+        "type": "image",
+        "name": "STXM Image 1",
+        "properties": {
+          "color": "red-yellow",
+          "shape": "irregular particle",
+          "scale_bar": "present",
+          "extracted_from_image": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+        },
+        "source_image_file": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+      },
+      {
+        "id": "subject1",
+        "type": "person",
+        "name": "Unknown Individual",
+        "properties": {
+          "description": "Male, East Asian features, short black hair parted to the side, formal attire",
+          "extracted_from_image": "399646e1666392d18e9d214a3580cac9dc22fadfbafaddba4401aef884fc4a50.jpg"
+        },
+        "source_image_file": "399646e1666392d18e9d214a3580cac9dc22fadfbafaddba4401aef884fc4a50.jpg"
+      },
+      {
+        "id": "data_processing",
+        "type": "module",
+        "name": "Data Processing",
+        "properties": {
+          "description": "Main module for data processing activities",
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "classification",
+        "type": "submodule",
+        "name": "Classification",
+        "properties": {
+          "icon": "□",
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "extraction_screening",
+        "type": "submodule",
+        "name": "Extraction & Screening & Exploration",
+        "properties": {
+          "icons": [
+            "▽",
+            "🔍"
+          ],
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "dimension_reduction",
+        "type": "submodule",
+        "name": "Dimension Reduction & Generation",
+        "properties": {
+          "icons": [
+            "◈",
+            "△",
+            "•"
+          ],
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "modeling_evaluation",
+        "type": "submodule",
+        "name": "Modeling & Evaluation of Domain Knowledge",
+        "properties": {
+          "icons": [
+            "▨",
+            "⚙",
+            "🎓",
+            "⚗"
+          ],
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "data_management",
+        "type": "module",
+        "name": "Data Management",
+        "properties": {
+          "description": "Handles data storage and database operations",
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "data_analysis",
+        "type": "module",
+        "name": "Data Analysis",
+        "properties": {
+          "description": "Performs analytical tasks with charts and models",
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "db_files",
+        "type": "component",
+        "name": "Database & Files",
+        "properties": {
+          "icon": "📁",
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "db_graph",
+        "type": "component",
+        "name": "Database Graph",
+        "properties": {
+          "icon": "📊",
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "gear",
+        "type": "component",
+        "name": "Gear (Configuration)",
+        "properties": {
+          "icon": "⚙",
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "charts",
+        "type": "component",
+        "name": "Charts (L, K)",
+        "properties": {
+          "icons": [
+            "📈",
+            "📉"
+          ],
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "magnifier",
+        "type": "component",
+        "name": "Magnifier (Search)",
+        "properties": {
+          "icon": "🔍",
+          "extracted_from_image": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+        },
+        "source_image_file": "3ac34835247265ca2dd7eee6d872ca5b65b86a55afd69de4bb594802ecedbca0.jpg"
+      },
+      {
+        "id": "real_dataset",
+        "type": "dataset",
+        "name": "Real Dataset",
+        "properties": {
+          "description": "Dataset containing manually annotated real images and labels",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "real_images",
+        "type": "image_set",
+        "name": "Real Images",
+        "properties": {
+          "visual": "Grayscale textured microstructure images",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "real_labels",
+        "type": "annotation",
+        "name": "Manually Annotated Real Labels",
+        "properties": {
+          "method": "manual",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "sim_dataset",
+        "type": "dataset",
+        "name": "Simulated Dataset",
+        "properties": {
+          "description": "Dataset containing simulated images and labels",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "sim_images",
+        "type": "image_set",
+        "name": "Simulated Images",
+        "properties": {
+          "visual": "Colorful textured microstructure images",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "sim_labels",
+        "type": "annotation",
+        "name": "Simulated Labels",
+        "properties": {
+          "method": "simulated",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "style",
+        "type": "transfer",
+        "name": "Style",
+        "properties": {
+          "description": "Style transfer component between real and synthetic",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "label",
+        "type": "transfer",
+        "name": "Label",
+        "properties": {
+          "description": "Label transfer component between real and synthetic",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "syn_images",
+        "type": "image_set",
+        "name": "Synthetic Images",
+        "properties": {
+          "visual": "Grayscale textured microstructure images",
+          "source": "style transfer",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "syn_labels",
+        "type": "annotation",
+        "name": "Synthetic Labels",
+        "properties": {
+          "source": "label transfer",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "data_augmentation",
+        "type": "process",
+        "name": "Data Augmentation",
+        "properties": {
+          "description": "Synthetic data augmentation process",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "syn_dataset",
+        "type": "dataset",
+        "name": "Synthetic Dataset",
+        "properties": {
+          "description": "Combined synthetic images and labels dataset",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "neural_network",
+        "type": "model",
+        "name": "Neural Network",
+        "properties": {
+          "visual": "Green nodes representing neural network architecture",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "data_mining_model",
+        "type": "model",
+        "name": "Data Mining Model",
+        "properties": {
+          "description": "Overall model for microstructure data mining",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "output_layers",
+        "type": "visualization",
+        "name": "Output Layers",
+        "properties": {
+          "visual": "Multi-colored layered output (yellow, orange, pink)",
+          "extracted_from_image": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+        },
+        "source_image_file": "3cb97734c1f0294e51f2aedd50320ac8af6f79fb3bbf9527d4c76a54473b2f17.jpg"
+      },
+      {
+        "id": "AEM1",
+        "type": "characterization",
+        "name": "AEM Image 1",
+        "properties": {
+          "description": "First Atomic Electron Microscopy image showing irregular particle morphology",
+          "scale_bar": "Present",
+          "extracted_from_image": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+        },
+        "source_image_file": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+      },
+      {
+        "id": "AEM2",
+        "type": "characterization",
+        "name": "AEM Image 2",
+        "properties": {
+          "description": "Second Atomic Electron Microscopy image showing similar irregular particle morphology",
+          "scale_bar": "Present",
+          "extracted_from_image": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+        },
+        "source_image_file": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+      },
+      {
+        "id": "AEM3",
+        "type": "characterization",
+        "name": "AEM Image 3",
+        "properties": {
+          "description": "Third Atomic Electron Microscopy image with textured surface morphology",
+          "scale_bar": "Present",
+          "extracted_from_image": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+        },
+        "source_image_file": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+      },
+      {
+        "id": "CIET1",
+        "type": "characterization",
+        "name": "CIET Energy Coordinate Plot",
+        "properties": {
+          "description": "3D surface plot of energy coordinates",
+          "axes": [
+            "Energy",
+            "Ion-transfer coordinate"
+          ],
+          "visualization": "3D surface with red contour line",
+          "extracted_from_image": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+        },
+        "source_image_file": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+      },
+      {
+        "id": "CIET2",
+        "type": "characterization",
+        "name": "CIET Electron-transfer Coordinate Plot",
+        "properties": {
+          "description": "3D surface plot of electron-transfer coordinates",
+          "axes": [
+            "Electron-transfer coordinate",
+            "Ion-transfer coordinate"
+          ],
+          "visualization": "3D surface with red contour line",
+          "extracted_from_image": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+        },
+        "source_image_file": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+      },
+      {
+        "id": "material",
+        "type": "chemical",
+        "name": "Nanostructured Material",
+        "properties": {
+          "technique": "AEM/CIET characterization",
+          "morphology": "Irregular particles",
+          "extracted_from_image": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+        },
+        "source_image_file": "495ddeda4c56a257c404668c21c63d5111176ce400433f83b0282105888ecaa1.jpg"
+      },
+      {
+        "id": "figure_d",
+        "type": "characterization",
+        "name": "Figure (d)",
+        "properties": {
+          "description": "Cycling performance plot",
+          "extracted_from_image": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+        },
+        "source_image_file": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+      },
+      {
+        "id": "actual_capacity",
+        "type": "data_series",
+        "name": "Actual Capacity",
+        "properties": {
+          "color": "red",
+          "unit": "Ah",
+          "trend": "decreasing",
+          "extracted_from_image": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+        },
+        "source_image_file": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+      },
+      {
+        "id": "predicted_capacity",
+        "type": "data_series",
+        "name": "Predicted Capacity",
+        "properties": {
+          "color": "green",
+          "unit": "Ah",
+          "trend": "decreasing",
+          "extracted_from_image": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+        },
+        "source_image_file": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+      },
+      {
+        "id": "rmse",
+        "type": "metric",
+        "name": "RMSE",
+        "properties": {
+          "value": "0.0181",
+          "extracted_from_image": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+        },
+        "source_image_file": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "characterization",
+        "name": "Number of Features",
+        "properties": {
+          "range": "1 to 8",
+          "unit": "count",
+          "extracted_from_image": "6eaccc749a9817ad261f5e31e5dd0369bf5101f8261213777bda188e7203c8d0.jpg"
+        },
+        "source_image_file": "6eaccc749a9817ad261f5e31e5dd0369bf5101f8261213777bda188e7203c8d0.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "axis",
+        "name": "Capacity (Ah)",
+        "properties": {
+          "range": [
+            1.2,
+            2.0
+          ],
+          "extracted_from_image": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+        },
+        "source_image_file": "4b5f16c24e3c72b7a974336f524d340e2a28fa42eff2178eba664feb5c5adfec.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "Black square",
+        "properties": {
+          "color": "black",
+          "shape": "square",
+          "position": "cubic-trigonal",
+          "extracted_from_image": "4c4dee7c3d29135f896f2c508ce6d60fe4949cb9e30eca3ce1d9aa7b67d60627.jpg"
+        },
+        "source_image_file": "4c4dee7c3d29135f896f2c508ce6d60fe4949cb9e30eca3ce1d9aa7b67d60627.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "Dark blue square",
+        "properties": {
+          "color": "dark blue",
+          "shape": "square",
+          "position": "hexagonal-trigonal",
+          "extracted_from_image": "4c4dee7c3d29135f896f2c508ce6d60fe4949cb9e30eca3ce1d9aa7b67d60627.jpg"
+        },
+        "source_image_file": "4c4dee7c3d29135f896f2c508ce6d60fe4949cb9e30eca3ce1d9aa7b67d60627.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "Light blue square",
+        "properties": {
+          "color": "light blue",
+          "shape": "square",
+          "position": "multiple positions",
+          "extracted_from_image": "4c4dee7c3d29135f896f2c508ce6d60fe4949cb9e30eca3ce1d9aa7b67d60627.jpg"
+        },
+        "source_image_file": "4c4dee7c3d29135f896f2c508ce6d60fe4949cb9e30eca3ce1d9aa7b67d60627.jpg"
+      },
+      {
+        "id": "c4",
+        "type": "characterization",
+        "name": "White square (empty)",
+        "properties": {
+          "color": "white",
+          "shape": "square",
+          "position": "multiple positions",
+          "extracted_from_image": "4c4dee7c3d29135f896f2c508ce6d60fe4949cb9e30eca3ce1d9aa7b67d60627.jpg"
+        },
+        "source_image_file": "4c4dee7c3d29135f896f2c508ce6d60fe4949cb9e30eca3ce1d9aa7b67d60627.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "characterization",
+        "name": "Crystal System Stability Chart",
+        "properties": {
+          "type": "bar_chart",
+          "description": "Stacked bar chart showing relative stability or abundance of crystal systems",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "cubic",
+        "type": "crystal_system",
+        "name": "Cubic",
+        "properties": {
+          "color": "dark_blue",
+          "height": "high",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "hexagonal",
+        "type": "crystal_system",
+        "name": "Hexagonal",
+        "properties": {
+          "color": "light_blue",
+          "height": "medium",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "monoclinic",
+        "type": "crystal_system",
+        "name": "Monoclinic",
+        "properties": {
+          "color": "dark_blue",
+          "height": "medium-high",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "orthorhombic",
+        "type": "crystal_system",
+        "name": "Orthorhombic",
+        "properties": {
+          "color": "light_blue",
+          "height": "low-medium",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "rhombohedral",
+        "type": "crystal_system",
+        "name": "Rhombohedral",
+        "properties": {
+          "color": "light_blue",
+          "height": "low",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "tetragonal",
+        "type": "crystal_system",
+        "name": "Tetragonal",
+        "properties": {
+          "color": "dark_blue",
+          "height": "medium",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "triclinic",
+        "type": "crystal_system",
+        "name": "Triclinic",
+        "properties": {
+          "color": "dark_blue",
+          "height": "high",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "trigonal",
+        "type": "crystal_system",
+        "name": "Trigonal",
+        "properties": {
+          "color": "light_blue",
+          "height": "low",
+          "extracted_from_image": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+        },
+        "source_image_file": "4c7b3600ac60e51e48667322a599c988fbad06ff34718f8db5a1a5d5e580958f.jpg"
+      },
+      {
+        "id": "UN_64827",
+        "type": "chemical",
+        "name": "UN(64827)",
+        "properties": {
+          "label": "UN(64827)",
+          "extracted_from_image": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+        },
+        "source_image_file": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+      },
+      {
+        "id": "UP_64827",
+        "type": "chemical",
+        "name": "UP(64827)",
+        "properties": {
+          "label": "UP(64827)",
+          "extracted_from_image": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+        },
+        "source_image_file": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+      },
+      {
+        "id": "UAs_61527",
+        "type": "chemical",
+        "name": "UAs(61527)",
+        "properties": {
+          "label": "UAs(61527)",
+          "extracted_from_image": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+        },
+        "source_image_file": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+      },
+      {
+        "id": "USb_61599",
+        "type": "chemical",
+        "name": "USb(61599)",
+        "properties": {
+          "label": "USb(61599)",
+          "extracted_from_image": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+        },
+        "source_image_file": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+      },
+      {
+        "id": "UB_65126",
+        "type": "chemical",
+        "name": "UB(65126)",
+        "properties": {
+          "label": "UB(65126)",
+          "extracted_from_image": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+        },
+        "source_image_file": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+      },
+      {
+        "id": "arrhenius_plot",
+        "type": "characterization",
+        "name": "Arrhenius Plot",
+        "properties": {
+          "x_label": "1/T (1/K)",
+          "y_label": "ln(Δ) (eV)",
+          "description": "Arrhenius plot showing temperature-dependent behavior of uranium compounds",
+          "extracted_from_image": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+        },
+        "source_image_file": "4e2de3e2240f817faa74bde061f963c2fcc7060806a295be011a264b71667907.jpg"
+      },
+      {
+        "id": "stxm",
+        "type": "characterization",
+        "name": "Ex situ STXM",
+        "properties": {
+          "description": "Scanning Transmission X-ray Microscopy",
+          "extracted_from_image": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+        },
+        "source_image_file": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+      },
+      {
+        "id": "ptychography",
+        "type": "characterization",
+        "name": "Ptychography",
+        "properties": {
+          "description": "High-resolution imaging technique",
+          "extracted_from_image": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+        },
+        "source_image_file": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+      },
+      {
+        "id": "image2",
+        "type": "image",
+        "name": "STXM Image 2",
+        "properties": {
+          "color": "red",
+          "shape": "elongated particle",
+          "extracted_from_image": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+        },
+        "source_image_file": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+      },
+      {
+        "id": "image3",
+        "type": "image",
+        "name": "STXM Image 3",
+        "properties": {
+          "color": "green-red",
+          "shape": "irregular",
+          "extracted_from_image": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+        },
+        "source_image_file": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+      },
+      {
+        "id": "image4",
+        "type": "image",
+        "name": "STXM Image 4",
+        "properties": {
+          "color": "red",
+          "shape": "diamond-like",
+          "extracted_from_image": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+        },
+        "source_image_file": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+      },
+      {
+        "id": "image5",
+        "type": "image",
+        "name": "STXM Image 5",
+        "properties": {
+          "color": "red",
+          "shape": "diamond-like with outline",
+          "extracted_from_image": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+        },
+        "source_image_file": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+      },
+      {
+        "id": "validation",
+        "type": "process",
+        "name": "Validation",
+        "properties": {
+          "description": "Validation step indicated by arrow",
+          "extracted_from_image": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+        },
+        "source_image_file": "5218b639a58bfa507d369faec453964d028d4b80c2885e613ec0af904056d5b3.jpg"
+      },
+      {
+        "id": "photodiode",
+        "type": "device_component",
+        "name": "Photodiode",
+        "properties": {
+          "extracted_from_image": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+        },
+        "source_image_file": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+      },
+      {
+        "id": "lfp",
+        "type": "material",
+        "name": "LFP",
+        "properties": {
+          "description": "likely LiFePO4 (Lithium Iron Phosphate)",
+          "extracted_from_image": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+        },
+        "source_image_file": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "material",
+        "name": "Electrolyte",
+        "properties": {
+          "extracted_from_image": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+        },
+        "source_image_file": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+      },
+      {
+        "id": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17_li_anode",
+        "type": "material",
+        "name": "Li",
+        "properties": {
+          "description": "Lithium anode",
+          "extracted_from_image": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+        },
+        "source_image_file": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+      },
+      {
+        "id": "xray_source1",
+        "type": "characterization",
+        "name": "X-ray",
+        "properties": {
+          "description": "X-ray source (left)",
+          "extracted_from_image": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+        },
+        "source_image_file": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+      },
+      {
+        "id": "xray_detector",
+        "type": "device",
+        "name": "X-ray Detector",
+        "properties": {
+          "description": "Implied by photodiode and X-ray setup",
+          "extracted_from_image": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+        },
+        "source_image_file": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+      },
+      {
+        "id": "cell",
+        "type": "device",
+        "name": "Electrochemical Cell",
+        "properties": {
+          "extracted_from_image": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+        },
+        "source_image_file": "5761d00c58886c62327467b1859c0079f6183a1aec025ecfb2e58d9415cf2c17.jpg"
+      },
+      {
+        "id": "BIC",
+        "type": "characterization",
+        "name": "Bayesian Information Criterion",
+        "properties": {
+          "description": "Model selection criterion plotted against number of features",
+          "values": [
+            "-60",
+            "-70",
+            "-80",
+            "-90",
+            "-100",
+            "-110",
+            "-120"
+          ],
+          "trend": "decreasing then fluctuating",
+          "extracted_from_image": "6eaccc749a9817ad261f5e31e5dd0369bf5101f8261213777bda188e7203c8d0.jpg"
+        },
+        "source_image_file": "6eaccc749a9817ad261f5e31e5dd0369bf5101f8261213777bda188e7203c8d0.jpg"
+      },
+      {
+        "id": "plot",
+        "type": "characterization",
+        "name": "BIC Plot",
+        "properties": {
+          "label": "(c)",
+          "type": "line graph",
+          "data_points": [
+            8
+          ],
+          "x_range": [
+            1,
+            8
+          ],
+          "y_range": [
+            -60,
+            -120
+          ],
+          "extracted_from_image": "6eaccc749a9817ad261f5e31e5dd0369bf5101f8261213777bda188e7203c8d0.jpg"
+        },
+        "source_image_file": "6eaccc749a9817ad261f5e31e5dd0369bf5101f8261213777bda188e7203c8d0.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_1",
+        "type": "process",
+        "name": "Domain Knowledge Embedding",
+        "properties": {
+          "description": "Embeds domain knowledge into the model",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_2",
+        "type": "process",
+        "name": "Data Processing Embedding",
+        "properties": {
+          "description": "Processes and embeds input data",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_3",
+        "type": "model",
+        "name": "Modeling & Evaluation",
+        "properties": {
+          "description": "Core modeling and evaluation component",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_4",
+        "type": "output",
+        "name": "Small-sample Learning",
+        "properties": {
+          "description": "Enables learning from small samples",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_5",
+        "type": "input",
+        "name": "Human Expert 1",
+        "properties": {
+          "description": "Human expert input source",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_6",
+        "type": "input",
+        "name": "Human Expert 2",
+        "properties": {
+          "description": "Human expert input source",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_7",
+        "type": "input",
+        "name": "Human Expert 3",
+        "properties": {
+          "description": "Human expert input source",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_8",
+        "type": "process",
+        "name": "Data-driven Feature Selection",
+        "properties": {
+          "description": "Selects most relevant features from data",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_9",
+        "type": "database",
+        "name": "Material Database",
+        "properties": {
+          "description": "Source of material data",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_10",
+        "type": "challenge",
+        "name": "Sparsity",
+        "properties": {
+          "description": "Data sparsity challenge",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_11",
+        "type": "challenge",
+        "name": "Correlation",
+        "properties": {
+          "description": "Data correlation challenge",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_12",
+        "type": "challenge",
+        "name": "Redundancy",
+        "properties": {
+          "description": "Data redundancy challenge",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_13",
+        "type": "output",
+        "name": "High-dimensionality",
+        "properties": {
+          "description": "Handles high-dimensional data",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_14",
+        "type": "feature",
+        "name": "Feature 1 (Initial)",
+        "properties": {
+          "description": "Initial feature set",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_15",
+        "type": "feature",
+        "name": "Feature 1 (Selected)",
+        "properties": {
+          "description": "Selected feature set",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_16",
+        "type": "challenge",
+        "name": "Heterogeneity",
+        "properties": {
+          "description": "Data heterogeneity challenge",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb_17",
+        "type": "resource",
+        "name": "Data Resources",
+        "properties": {
+          "description": "Available data resources",
+          "extracted_from_image": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+        },
+        "source_image_file": "7935fbff3e13ce5e412d0f3a8de2f3a6b622b86cd1520c7b85708e7e4419c7cb.jpg"
+      },
+      {
+        "id": "pde_opt",
+        "type": "mathematical_equation",
+        "name": "PDE-constrained optimization",
+        "properties": {
+          "equation": "min (1/2) ||c_data - c(gh, R, k)||²",
+          "description": "Optimization formula minimizing difference between data and model prediction",
+          "extracted_from_image": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+        },
+        "source_image_file": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+      },
+      {
+        "id": "uncertainty",
+        "type": "process",
+        "name": "Uncertainty quantification",
+        "properties": {
+          "extracted_from_image": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+        },
+        "source_image_file": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+      },
+      {
+        "id": "learn_physics",
+        "type": "process",
+        "name": "Learning physics from images",
+        "properties": {
+          "extracted_from_image": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+        },
+        "source_image_file": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+      },
+      {
+        "id": "c_data",
+        "type": "variable",
+        "name": "c_data",
+        "properties": {
+          "description": "Data concentration/field",
+          "extracted_from_image": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+        },
+        "source_image_file": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+      },
+      {
+        "id": "c_gh_R_k",
+        "type": "variable",
+        "name": "c(gh, R, k)",
+        "properties": {
+          "description": "Model prediction depending on parameters gh, R, k",
+          "extracted_from_image": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+        },
+        "source_image_file": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+      },
+      {
+        "id": "gh",
+        "type": "parameter",
+        "name": "gh",
+        "properties": {
+          "extracted_from_image": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+        },
+        "source_image_file": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+      },
+      {
+        "id": "R",
+        "type": "parameter",
+        "name": "R",
+        "properties": {
+          "extracted_from_image": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+        },
+        "source_image_file": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+      },
+      {
+        "id": "k",
+        "type": "parameter",
+        "name": "k",
+        "properties": {
+          "extracted_from_image": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+        },
+        "source_image_file": "87baa57f1c958c433aa9e157c90ff524e5e00fe1d861506b6323c91c4551b5b4.jpg"
+      },
+      {
+        "id": "correlation_coefficient",
+        "type": "characterization",
+        "name": "Correlation Coefficient",
+        "properties": {
+          "value": -0.4,
+          "extracted_from_image": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+        },
+        "source_image_file": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+      },
+      {
+        "id": "trend_line",
+        "type": "characterization",
+        "name": "Trend Line",
+        "properties": {
+          "color": "black",
+          "style": "dashed",
+          "extracted_from_image": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+        },
+        "source_image_file": "8f55be598f9c6b9e4352dba03389f3fc2cae3f63e13660dd2529eaf560917826.jpg"
+      },
+      {
+        "id": "prior_theory",
+        "type": "theory",
+        "name": "Prior theory",
+        "properties": {
+          "extracted_from_image": "91bdb39767b65312de2b473e4ed5bdaf3744e9fc4149acb918a38400f544418e.jpg"
+        },
+        "source_image_file": "91bdb39767b65312de2b473e4ed5bdaf3744e9fc4149acb918a38400f544418e.jpg"
+      },
+      {
+        "id": "regular_solution",
+        "type": "model",
+        "name": "Regular solution",
+        "properties": {
+          "Ω": 4.4,
+          "extracted_from_image": "91bdb39767b65312de2b473e4ed5bdaf3744e9fc4149acb918a38400f544418e.jpg"
+        },
+        "source_image_file": "91bdb39767b65312de2b473e4ed5bdaf3744e9fc4149acb918a38400f544418e.jpg"
+      },
+      {
+        "id": "green_solid_curve",
+        "type": "curve",
+        "name": "Regular solution Ω=4.4",
+        "properties": {
+          "style": "solid green",
+          "label": "Regular solution Ω=4.4",
+          "extracted_from_image": "91bdb39767b65312de2b473e4ed5bdaf3744e9fc4149acb918a38400f544418e.jpg"
+        },
+        "source_image_file": "91bdb39767b65312de2b473e4ed5bdaf3744e9fc4149acb918a38400f544418e.jpg"
+      },
+      {
+        "id": "green_dashed_curves",
+        "type": "curve",
+        "name": "Regular solution variants",
+        "properties": {
+          "style": "dashed green",
+          "description": "Dashed and shaded variants",
+          "extracted_from_image": "91bdb39767b65312de2b473e4ed5bdaf3744e9fc4149acb918a38400f544418e.jpg"
+        },
+        "source_image_file": "91bdb39767b65312de2b473e4ed5bdaf3744e9fc4149acb918a38400f544418e.jpg"
+      },
+      {
+        "id": "psi_1",
+        "type": "chemical",
+        "name": "Ψ₁(σ₁)",
+        "properties": {
+          "description": "First chemical entity or complex with ligand σ₁",
+          "extracted_from_image": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+        },
+        "source_image_file": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+      },
+      {
+        "id": "psi_2",
+        "type": "chemical",
+        "name": "Ψ₂(σ₂)",
+        "properties": {
+          "description": "Second chemical entity or complex with ligand σ₂",
+          "extracted_from_image": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+        },
+        "source_image_file": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+      },
+      {
+        "id": "psi_n",
+        "type": "chemical",
+        "name": "Ψₙ(σₙ)",
+        "properties": {
+          "description": "Nth chemical entity or complex with ligand σₙ, representing general term",
+          "extracted_from_image": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+        },
+        "source_image_file": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+      },
+      {
+        "id": "sigma_1",
+        "type": "chemical",
+        "name": "σ₁",
+        "properties": {
+          "description": "First sigma ligand",
+          "extracted_from_image": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+        },
+        "source_image_file": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+      },
+      {
+        "id": "sigma_2",
+        "type": "chemical",
+        "name": "σ₂",
+        "properties": {
+          "description": "Second sigma ligand",
+          "extracted_from_image": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+        },
+        "source_image_file": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+      },
+      {
+        "id": "sigma_n",
+        "type": "chemical",
+        "name": "σₙ",
+        "properties": {
+          "description": "Nth sigma ligand",
+          "extracted_from_image": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+        },
+        "source_image_file": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+      },
+      {
+        "id": "series",
+        "type": "concept",
+        "name": "Homologous Series",
+        "properties": {
+          "description": "Sequence Ψ₁(σ₁), Ψ₂(σ₂), ..., Ψₙ(σₙ)",
+          "extracted_from_image": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+        },
+        "source_image_file": "95a20da610097fe577d94b33dbddc0d6acb0dda65dea49384d359be6fc165196.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "data",
+        "name": "Raw Battery Data",
+        "properties": {
+          "extracted_from_image": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+        },
+        "source_image_file": "fce6921a1e08e8abb9863ef0d76eac45d15577d9f44afe3ff77f057c93b71d68.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "feature",
+        "name": "Atomic valence",
+        "properties": {
+          "status": "removed",
+          "extracted_from_image": "96c2c4caf53ee4c7635cbbefd8dcef5c2220a32e344139130c02b8188d066358.jpg"
+        },
+        "source_image_file": "96c2c4caf53ee4c7635cbbefd8dcef5c2220a32e344139130c02b8188d066358.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "feature",
+        "name": "Average coordination number",
+        "properties": {
+          "status": "removed",
+          "extracted_from_image": "96c2c4caf53ee4c7635cbbefd8dcef5c2220a32e344139130c02b8188d066358.jpg"
+        },
+        "source_image_file": "96c2c4caf53ee4c7635cbbefd8dcef5c2220a32e344139130c02b8188d066358.jpg"
+      },
+      {
+        "id": "borophene-X",
+        "type": "chemical",
+        "name": "Borophene-X",
+        "properties": {
+          "C_B": "Mo 399.57",
+          "DFT": "402.08 eV",
+          "extracted_from_image": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+        },
+        "source_image_file": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+      },
+      {
+        "id": "borophene-B",
+        "type": "chemical",
+        "name": "Borophene-β",
+        "properties": {
+          "C_B": "Mo 398.72",
+          "DFT": "381.46 eV",
+          "extracted_from_image": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+        },
+        "source_image_file": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+      },
+      {
+        "id": "borophene-stripes",
+        "type": "chemical",
+        "name": "Borophene Stripes",
+        "properties": {
+          "C_B": "Mo 345.85",
+          "DFT": "327.67 eV",
+          "extracted_from_image": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+        },
+        "source_image_file": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+      },
+      {
+        "id": "borophene-network",
+        "type": "chemical",
+        "name": "Borophene Network",
+        "properties": {
+          "C_B": "Mo 529.83",
+          "DFT": "537.39 eV",
+          "extracted_from_image": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+        },
+        "source_image_file": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+      },
+      {
+        "id": "test-data",
+        "type": "label",
+        "name": "Test Data",
+        "properties": {
+          "extracted_from_image": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+        },
+        "source_image_file": "9fd7747e19736fe8bfc625cccdd26cfe500e5fe56bb76d0a8fd107f7ba2de714.jpg"
+      },
+      {
+        "id": "pn1",
+        "type": "chemical",
+        "name": "PuN (64643)",
+        "properties": {
+          "label": "PuN (64643)",
+          "extracted_from_image": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+        },
+        "source_image_file": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+      },
+      {
+        "id": "pn2",
+        "type": "chemical",
+        "name": "PuN (61728)",
+        "properties": {
+          "label": "PuN (61728)",
+          "extracted_from_image": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+        },
+        "source_image_file": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+      },
+      {
+        "id": "pna",
+        "type": "chemical",
+        "name": "PuAs (49748)",
+        "properties": {
+          "label": "PuAs (49748)",
+          "extracted_from_image": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+        },
+        "source_image_file": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+      },
+      {
+        "id": "pns",
+        "type": "chemical",
+        "name": "PuSb (64939)",
+        "properties": {
+          "label": "PuSb (64939)",
+          "extracted_from_image": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+        },
+        "source_image_file": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+      },
+      {
+        "id": "pnb",
+        "type": "chemical",
+        "name": "PuBi (106955)",
+        "properties": {
+          "label": "PuBi (106955)",
+          "extracted_from_image": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+        },
+        "source_image_file": "aa00ed801f81589d9a820b790a1e5cc42d68c8ea643fad24d72a4c76edc039c1.jpg"
+      },
+      {
+        "id": "legend",
+        "type": "diagram",
+        "name": "Legend",
+        "properties": {
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "feature_map",
+        "type": "visualization",
+        "name": "Feature Map",
+        "properties": {
+          "symbol": "▱",
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "concat",
+        "type": "operation",
+        "name": "Concat",
+        "properties": {
+          "symbol": "∘",
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "conv2d_stride2",
+        "type": "layer",
+        "name": "Conv2d(3×3, stride=2) + BN + ReLU",
+        "properties": {
+          "symbol": "🟨",
+          "kernel": "3x3",
+          "stride": 2,
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "conv2d_stride1",
+        "type": "layer",
+        "name": "Conv2d(3×3, stride=1) + BN + ReLU",
+        "properties": {
+          "symbol": "🟦",
+          "kernel": "3x3",
+          "stride": 1,
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "convtranspose2d_stride2",
+        "type": "layer",
+        "name": "ConvTranspose2d(3×3, stride=2) + BN + ReLU",
+        "properties": {
+          "symbol": "🟩",
+          "kernel": "3x3",
+          "stride": 2,
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "convtranspose2d_stride1_a",
+        "type": "layer",
+        "name": "ConvTranspose2d(3×3, stride=1) + BN + ReLU",
+        "properties": {
+          "symbol": "🟥",
+          "kernel": "3x3",
+          "stride": 1,
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "convtranspose2d_stride1_b",
+        "type": "layer",
+        "name": "ConvTranspose2d(3×3, stride=1) + BN + ReLU",
+        "properties": {
+          "symbol": "🟦",
+          "kernel": "3x3",
+          "stride": 1,
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "bn",
+        "type": "operation",
+        "name": "Batch Normalization",
+        "properties": {
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "relu",
+        "type": "activation",
+        "name": "ReLU",
+        "properties": {
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "conv2d",
+        "type": "operation",
+        "name": "Conv2d",
+        "properties": {
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "convtranspose2d",
+        "type": "operation",
+        "name": "ConvTranspose2d",
+        "properties": {
+          "extracted_from_image": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+        },
+        "source_image_file": "ab6bbe4eda79f351dafd27781cbdd693c230c65f6a8c3d9719c52b1ad0c51e67.jpg"
+      },
+      {
+        "id": "CeN_52881",
+        "type": "chemical",
+        "name": "CeN (52881)",
+        "properties": {
+          "formula": "CeN",
+          "reference": "52881",
+          "extracted_from_image": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+        },
+        "source_image_file": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+      },
+      {
+        "id": "CeAs_52009",
+        "type": "chemical",
+        "name": "CeAs (52009)",
+        "properties": {
+          "formula": "CeAs",
+          "reference": "52009",
+          "extracted_from_image": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+        },
+        "source_image_file": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+      },
+      {
+        "id": "CeSb_61620",
+        "type": "chemical",
+        "name": "CeSb (61620)",
+        "properties": {
+          "formula": "CeSb",
+          "reference": "61620",
+          "extracted_from_image": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+        },
+        "source_image_file": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+      },
+      {
+        "id": "CeBi_10562",
+        "type": "chemical",
+        "name": "CeBi (10562)",
+        "properties": {
+          "formula": "CeBi",
+          "reference": "10562",
+          "extracted_from_image": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+        },
+        "source_image_file": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+      },
+      {
+        "id": "DOS_plot",
+        "type": "characterization",
+        "name": "Density of States Plot",
+        "properties": {
+          "x_label": "Energy (eV)",
+          "y_label": "ln(Δ) (eV)",
+          "x_range": [
+            -10.0,
+            5.0
+          ],
+          "y_range": [
+            -3.0,
+            0.0
+          ],
+          "extracted_from_image": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+        },
+        "source_image_file": "cdee854f69723e1b8aa590ad01b15cd727bba67fef434fb4dcc94144216736d8.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "measures"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "trained_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "tested_on"
+      },
+      {
+        "source_id": "training_stage",
+        "target_id": "gan",
+        "type": "describes"
+      },
+      {
+        "source_id": "positive_examples",
+        "target_id": "discriminator_real",
+        "type": "input_to"
+      },
+      {
+        "source_id": "negative_examples",
+        "target_id": "discriminator_synth",
+        "type": "input_to"
+      },
+      {
+        "source_id": "discriminator_real",
+        "target_id": "gan",
+        "type": "part_of"
+      },
+      {
+        "source_id": "discriminator_synth",
+        "target_id": "gan",
+        "type": "part_of"
+      },
+      {
+        "source_id": "generator",
+        "target_id": "gan",
+        "type": "part_of"
+      },
+      {
+        "source_id": "generator",
+        "target_id": "negative_examples",
+        "type": "generates"
+      },
+      {
+        "source_id": "positive_examples",
+        "target_id": "training_stage",
+        "type": "used_in"
+      },
+      {
+        "source_id": "negative_examples",
+        "target_id": "training_stage",
+        "type": "used_in"
+      },
+      {
+        "source_id": "data",
+        "target_id": "feature_selection",
+        "type": "provides"
+      },
+      {
+        "source_id": "feature_selection",
+        "target_id": "combinations",
+        "type": "generates"
+      },
+      {
+        "source_id": "data",
+        "target_id": "unit_cell_size",
+        "type": "contains"
+      },
+      {
+        "source_id": "data",
+        "target_id": "polarizability",
+        "type": "contains"
+      },
+      {
+        "source_id": "combinations",
+        "target_id": "fit_training",
+        "type": "input_to"
+      },
+      {
+        "source_id": "fit_training",
+        "target_id": "fit_validation",
+        "type": "precedes"
+      },
+      {
+        "source_id": "fit_validation",
+        "target_id": "best_model",
+        "type": "produces"
+      },
+      {
+        "source_id": "best_model",
+        "target_id": "output",
+        "type": "predicts"
+      },
+      {
+        "source_id": "carbon-coating",
+        "target_id": "particle1",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "carbon-coating",
+        "target_id": "particle2",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "carbon-coating",
+        "target_id": "particle3",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "surface-kinetic-heterogeneity",
+        "target_id": "intensity-1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "surface-kinetic-heterogeneity",
+        "target_id": "prefactor-1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "particle1",
+        "target_id": "intensity-1",
+        "type": "has_map"
+      },
+      {
+        "source_id": "particle1",
+        "target_id": "prefactor-1",
+        "type": "has_map"
+      },
+      {
+        "source_id": "surface-kinetic-heterogeneity",
+        "target_id": "intensity-2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "surface-kinetic-heterogeneity",
+        "target_id": "prefactor-2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "particle2",
+        "target_id": "intensity-2",
+        "type": "has_map"
+      },
+      {
+        "source_id": "particle2",
+        "target_id": "prefactor-2",
+        "type": "has_map"
+      },
+      {
+        "source_id": "surface-kinetic-heterogeneity",
+        "target_id": "intensity-3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "surface-kinetic-heterogeneity",
+        "target_id": "prefactor-3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "particle3",
+        "target_id": "intensity-3",
+        "type": "has_map"
+      },
+      {
+        "source_id": "particle3",
+        "target_id": "prefactor-3",
+        "type": "has_map"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "measures"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "predicts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "fits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "homo",
+        "target_id": "lumo_group",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "lumo_group",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "lumo_group",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "lumo_group",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "lumo_group",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "lumo_group",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "ThN_61761",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ThP_648203",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ThAs_680116",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ThSb_851695",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ThBi_5880",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "uses"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n11",
+        "type": "uses"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n12",
+        "type": "uses"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n13",
+        "type": "uses"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "uses"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n10",
+        "type": "uses"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n14",
+        "type": "uses"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "related"
+      },
+      {
+        "source_id": "sim_label",
+        "target_id": "generator",
+        "type": "input_to"
+      },
+      {
+        "source_id": "generator",
+        "target_id": "syn_image",
+        "type": "output_from"
+      },
+      {
+        "source_id": "sim_data",
+        "target_id": "sim_label",
+        "type": "provides"
+      },
+      {
+        "source_id": "sim_label",
+        "target_id": "n512",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n512",
+        "target_id": "n512_2",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n512_2",
+        "target_id": "n256",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n256",
+        "target_id": "n128",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n128",
+        "target_id": "n64",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n64",
+        "target_id": "n1",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "generator",
+        "type": "input_to"
+      },
+      {
+        "source_id": "image",
+        "target_id": "subject",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "person",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "feat1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "feat2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "feat3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "feat4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "feat5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "feat6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "feat7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "feat8",
+        "type": "contains"
+      },
+      {
+        "source_id": "feat1",
+        "target_id": "f8",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat2",
+        "target_id": "f8",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat2",
+        "target_id": "f7",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat3",
+        "target_id": "f8",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat3",
+        "target_id": "f7",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat3",
+        "target_id": "f6",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat4",
+        "target_id": "f8",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat4",
+        "target_id": "f7",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat4",
+        "target_id": "f6",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat4",
+        "target_id": "f5",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat5",
+        "target_id": "f8",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat5",
+        "target_id": "f7",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat5",
+        "target_id": "f6",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat5",
+        "target_id": "f5",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat5",
+        "target_id": "f4",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat6",
+        "target_id": "f8",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat6",
+        "target_id": "f7",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat6",
+        "target_id": "f6",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat6",
+        "target_id": "f5",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat6",
+        "target_id": "f4",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat6",
+        "target_id": "f3",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat7",
+        "target_id": "f8",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat7",
+        "target_id": "f7",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat7",
+        "target_id": "f6",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat7",
+        "target_id": "f5",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat7",
+        "target_id": "f4",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat7",
+        "target_id": "f3",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat7",
+        "target_id": "f2",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat8",
+        "target_id": "f8",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat8",
+        "target_id": "f7",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat8",
+        "target_id": "f6",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat8",
+        "target_id": "f5",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat8",
+        "target_id": "f4",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat8",
+        "target_id": "f3",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat8",
+        "target_id": "f2",
+        "type": "includes"
+      },
+      {
+        "source_id": "feat8",
+        "target_id": "f1",
+        "type": "includes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains_feature"
+      },
+      {
+        "source_id": "HOMO",
+        "target_id": "scatter_plot",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "LUMO",
+        "target_id": "scatter_plot",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "dataset",
+        "target_id": "scatter_plot",
+        "type": "represents"
+      },
+      {
+        "source_id": "dataset",
+        "target_id": "HOMO",
+        "type": "has_property"
+      },
+      {
+        "source_id": "dataset",
+        "target_id": "LUMO",
+        "type": "has_property"
+      },
+      {
+        "source_id": "image1",
+        "target_id": "subject1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "data_processing",
+        "target_id": "classification",
+        "type": "contains"
+      },
+      {
+        "source_id": "data_processing",
+        "target_id": "extraction_screening",
+        "type": "contains"
+      },
+      {
+        "source_id": "data_processing",
+        "target_id": "dimension_reduction",
+        "type": "contains"
+      },
+      {
+        "source_id": "data_processing",
+        "target_id": "modeling_evaluation",
+        "type": "contains"
+      },
+      {
+        "source_id": "data_processing",
+        "target_id": "data_management",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "data_management",
+        "target_id": "data_analysis",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "data_management",
+        "target_id": "db_files",
+        "type": "contains"
+      },
+      {
+        "source_id": "data_management",
+        "target_id": "db_graph",
+        "type": "contains"
+      },
+      {
+        "source_id": "data_management",
+        "target_id": "gear",
+        "type": "contains"
+      },
+      {
+        "source_id": "data_analysis",
+        "target_id": "charts",
+        "type": "contains"
+      },
+      {
+        "source_id": "data_analysis",
+        "target_id": "magnifier",
+        "type": "contains"
+      },
+      {
+        "source_id": "real_dataset",
+        "target_id": "real_images",
+        "type": "contains"
+      },
+      {
+        "source_id": "real_dataset",
+        "target_id": "real_labels",
+        "type": "contains"
+      },
+      {
+        "source_id": "sim_dataset",
+        "target_id": "sim_images",
+        "type": "contains"
+      },
+      {
+        "source_id": "sim_dataset",
+        "target_id": "sim_labels",
+        "type": "contains"
+      },
+      {
+        "source_id": "real_images",
+        "target_id": "style",
+        "type": "transfers_to"
+      },
+      {
+        "source_id": "style",
+        "target_id": "syn_images",
+        "type": "generates"
+      },
+      {
+        "source_id": "real_labels",
+        "target_id": "label",
+        "type": "transfers_to"
+      },
+      {
+        "source_id": "label",
+        "target_id": "syn_labels",
+        "type": "generates"
+      },
+      {
+        "source_id": "syn_images",
+        "target_id": "data_augmentation",
+        "type": "input_to"
+      },
+      {
+        "source_id": "syn_labels",
+        "target_id": "data_augmentation",
+        "type": "input_to"
+      },
+      {
+        "source_id": "data_augmentation",
+        "target_id": "syn_dataset",
+        "type": "produces"
+      },
+      {
+        "source_id": "syn_dataset",
+        "target_id": "scatter_plot",
+        "type": "input_to"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "neural_network",
+        "type": "input_to"
+      },
+      {
+        "source_id": "neural_network",
+        "target_id": "output_layers",
+        "type": "processes_to"
+      },
+      {
+        "source_id": "neural_network",
+        "target_id": "data_mining_model",
+        "type": "component_of"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "data_mining_model",
+        "type": "component_of"
+      },
+      {
+        "source_id": "output_layers",
+        "target_id": "data_mining_model",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "annotation"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "AEM1",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "AEM2",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "AEM3",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "CIET1",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "CIET2",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "figure_d",
+        "target_id": "actual_capacity",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_d",
+        "target_id": "predicted_capacity",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_d",
+        "target_id": "rmse",
+        "type": "annotates"
+      },
+      {
+        "source_id": "figure_d",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "figure_d",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "actual_capacity",
+        "target_id": "y_axis",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "predicted_capacity",
+        "target_id": "y_axis",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "actual_capacity",
+        "target_id": "x_axis",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "predicted_capacity",
+        "target_id": "x_axis",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "rmse",
+        "target_id": "actual_capacity",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "rmse",
+        "target_id": "predicted_capacity",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "has_marker"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c2",
+        "type": "has_marker"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c3",
+        "type": "has_marker"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c1",
+        "type": "has_marker"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "c2",
+        "type": "has_marker"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "c1",
+        "type": "has_marker"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "c1",
+        "type": "has_marker"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "c1",
+        "type": "has_marker"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cubic",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "hexagonal",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "monoclinic",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "orthorhombic",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "rhombohedral",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "tetragonal",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "triclinic",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "trigonal",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "UN_64827",
+        "target_id": "arrhenius_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "UP_64827",
+        "target_id": "arrhenius_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "UAs_61527",
+        "target_id": "arrhenius_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "USb_61599",
+        "target_id": "arrhenius_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "UB_65126",
+        "target_id": "arrhenius_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "stxm",
+        "target_id": "image1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "stxm",
+        "target_id": "image2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "stxm",
+        "target_id": "image3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "stxm",
+        "target_id": "image4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "stxm",
+        "target_id": "image5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ptychography",
+        "target_id": "image1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ptychography",
+        "target_id": "image2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ptychography",
+        "target_id": "image3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ptychography",
+        "target_id": "image4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ptychography",
+        "target_id": "image5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image5",
+        "target_id": "validation",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "generated_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "measures"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "predicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "photodiode",
+        "target_id": "cell",
+        "type": "part_of"
+      },
+      {
+        "source_id": "lfp",
+        "target_id": "cell",
+        "type": "part_of"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "cell",
+        "type": "part_of"
+      },
+      {
+        "source_id": "li_anode",
+        "target_id": "cell",
+        "type": "part_of"
+      },
+      {
+        "source_id": "xray_source1",
+        "target_id": "lfp",
+        "type": "probes"
+      },
+      {
+        "source_id": "xray_detector",
+        "target_id": "photodiode",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "lfp",
+        "target_id": "electrolyte",
+        "type": "interfaces_with"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "li_anode",
+        "type": "interfaces_with"
+      },
+      {
+        "source_id": "BIC",
+        "target_id": "x_axis",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "BIC",
+        "target_id": "plot",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "plot",
+        "type": "x_axis_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "affects"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "inputs_to"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "inputs_to"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "produces"
+      },
+      {
+        "source_id": "5",
+        "target_id": "1",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "6",
+        "target_id": "1",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "7",
+        "target_id": "1",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "9",
+        "target_id": "2",
+        "type": "feeds_into"
+      },
+      {
+        "source_id": "2",
+        "target_id": "8",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "8",
+        "target_id": "13",
+        "type": "handles"
+      },
+      {
+        "source_id": "10",
+        "target_id": "8",
+        "type": "challenges"
+      },
+      {
+        "source_id": "11",
+        "target_id": "8",
+        "type": "challenges"
+      },
+      {
+        "source_id": "12",
+        "target_id": "8",
+        "type": "challenges"
+      },
+      {
+        "source_id": "14",
+        "target_id": "15",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "17",
+        "target_id": "16",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_inset"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measures"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "plots"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "plots"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "correlates_with"
+      },
+      {
+        "source_id": "pde_opt",
+        "target_id": "c_data",
+        "type": "uses"
+      },
+      {
+        "source_id": "pde_opt",
+        "target_id": "c_gh_R_k",
+        "type": "uses"
+      },
+      {
+        "source_id": "c_gh_R_k",
+        "target_id": "gh",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "c_gh_R_k",
+        "target_id": "R",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "c_gh_R_k",
+        "target_id": "k",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "pde_opt",
+        "target_id": "uncertainty",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "uncertainty",
+        "target_id": "learn_physics",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "has_property"
+      },
+      {
+        "source_id": "particle1",
+        "target_id": "scatter_plot",
+        "type": "data_in"
+      },
+      {
+        "source_id": "particle2",
+        "target_id": "scatter_plot",
+        "type": "data_in"
+      },
+      {
+        "source_id": "particle3",
+        "target_id": "scatter_plot",
+        "type": "data_in"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "correlation_coefficient",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "scatter_plot",
+        "target_id": "trend_line",
+        "type": "contains"
+      },
+      {
+        "source_id": "prior_theory",
+        "target_id": "regular_solution",
+        "type": "describes"
+      },
+      {
+        "source_id": "prior_theory",
+        "target_id": "chart",
+        "type": "presents"
+      },
+      {
+        "source_id": "regular_solution",
+        "target_id": "green_solid_curve",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "regular_solution",
+        "target_id": "green_dashed_curves",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "green_solid_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "green_dashed_curves",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "generates"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "predicts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "provides_data"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "generates"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "provides_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "psi_1",
+        "target_id": "sigma_1",
+        "type": "complexed_with"
+      },
+      {
+        "source_id": "psi_2",
+        "target_id": "sigma_2",
+        "type": "complexed_with"
+      },
+      {
+        "source_id": "psi_n",
+        "target_id": "sigma_n",
+        "type": "complexed_with"
+      },
+      {
+        "source_id": "psi_1",
+        "target_id": "series",
+        "type": "member_of"
+      },
+      {
+        "source_id": "psi_2",
+        "target_id": "series",
+        "type": "member_of"
+      },
+      {
+        "source_id": "psi_n",
+        "target_id": "series",
+        "type": "member_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "targets"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "produces"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "filtered_to"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n11",
+        "type": "improves"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n11",
+        "type": "reduces"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "reduces"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n12",
+        "type": "produces"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n13",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n14",
+        "type": "uses"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "n14",
+        "type": "included_in"
+      },
+      {
+        "source_id": "n16",
+        "target_id": "n14",
+        "type": "excluded_from"
+      },
+      {
+        "source_id": "n17",
+        "target_id": "n14",
+        "type": "excluded_from"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "labels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_series"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "defines_x"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "defines_y"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "represents"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "represents"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "overlaid_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "overlaid_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n11",
+        "type": "x-axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n11",
+        "type": "x-axis"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n11",
+        "type": "x-axis"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n11",
+        "type": "x-axis"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n11",
+        "type": "x-axis"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n11",
+        "type": "y-axis"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n11",
+        "type": "dataset"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n11",
+        "type": "dataset"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n11",
+        "type": "dataset"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "dataset"
+      },
+      {
+        "source_id": "test-data",
+        "target_id": "borophene-X",
+        "type": "contains"
+      },
+      {
+        "source_id": "test-data",
+        "target_id": "borophene-B",
+        "type": "contains"
+      },
+      {
+        "source_id": "test-data",
+        "target_id": "borophene-stripes",
+        "type": "contains"
+      },
+      {
+        "source_id": "test-data",
+        "target_id": "borophene-network",
+        "type": "contains"
+      },
+      {
+        "source_id": "pn1",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "pn2",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "pna",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "pns",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "pnb",
+        "target_id": "chart",
+        "type": "depicts"
+      },
+      {
+        "source_id": "legend",
+        "target_id": "feature_map",
+        "type": "labels"
+      },
+      {
+        "source_id": "legend",
+        "target_id": "concat",
+        "type": "labels"
+      },
+      {
+        "source_id": "legend",
+        "target_id": "conv2d_stride2",
+        "type": "labels"
+      },
+      {
+        "source_id": "legend",
+        "target_id": "conv2d_stride1",
+        "type": "labels"
+      },
+      {
+        "source_id": "legend",
+        "target_id": "convtranspose2d_stride2",
+        "type": "labels"
+      },
+      {
+        "source_id": "legend",
+        "target_id": "convtranspose2d_stride1_a",
+        "type": "labels"
+      },
+      {
+        "source_id": "conv2d_stride2",
+        "target_id": "conv2d",
+        "type": "uses"
+      },
+      {
+        "source_id": "conv2d_stride2",
+        "target_id": "bn",
+        "type": "contains"
+      },
+      {
+        "source_id": "conv2d_stride2",
+        "target_id": "relu",
+        "type": "contains"
+      },
+      {
+        "source_id": "conv2d_stride1",
+        "target_id": "conv2d",
+        "type": "uses"
+      },
+      {
+        "source_id": "conv2d_stride1",
+        "target_id": "bn",
+        "type": "contains"
+      },
+      {
+        "source_id": "conv2d_stride1",
+        "target_id": "relu",
+        "type": "contains"
+      },
+      {
+        "source_id": "convtranspose2d_stride2",
+        "target_id": "convtranspose2d",
+        "type": "uses"
+      },
+      {
+        "source_id": "convtranspose2d_stride2",
+        "target_id": "bn",
+        "type": "contains"
+      },
+      {
+        "source_id": "convtranspose2d_stride2",
+        "target_id": "relu",
+        "type": "contains"
+      },
+      {
+        "source_id": "convtranspose2d_stride1_a",
+        "target_id": "convtranspose2d",
+        "type": "uses"
+      },
+      {
+        "source_id": "convtranspose2d_stride1_a",
+        "target_id": "bn",
+        "type": "contains"
+      },
+      {
+        "source_id": "convtranspose2d_stride1_a",
+        "target_id": "relu",
+        "type": "contains"
+      },
+      {
+        "source_id": "convtranspose2d_stride1_b",
+        "target_id": "convtranspose2d",
+        "type": "uses"
+      },
+      {
+        "source_id": "convtranspose2d_stride1_b",
+        "target_id": "bn",
+        "type": "contains"
+      },
+      {
+        "source_id": "convtranspose2d_stride1_b",
+        "target_id": "relu",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "trained_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "tested_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "predicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "CeN_52881",
+        "target_id": "DOS_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "CeAs_52009",
+        "target_id": "DOS_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "CeSb_61620",
+        "target_id": "DOS_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "CeBi_10562",
+        "target_id": "DOS_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "trained_on"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "tested_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "rmse_measurement"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "trained_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "tested_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "generates_residuals"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "contains_inset"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "y_axis_label"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "y_axis_label"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "y_axis_label"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "y_axis_label"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "y_axis_label"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "y_axis_label"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "y_axis_label"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_trendline"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "varies_with"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "varies_with"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "varies_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "displays"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n10",
+        "type": "involves"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "involves"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "represents"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "represents"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "represents"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "represents"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "represents"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "represents"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n11",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n15",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n11",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n15",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n11",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n11",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n12",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n13",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n14",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n12",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n13",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n12",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n13",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n4",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n2",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n6",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "flows_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "n1",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "produces"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n7",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n7",
+        "type": "input_to"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "evaluated_by"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n12",
+        "type": "evaluated_by"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n13",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n14",
+        "type": "leads_to"
+      }
+    ]
+  }
+}

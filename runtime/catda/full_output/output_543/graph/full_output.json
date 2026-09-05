@@ -1,0 +1,4135 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_nickel_foam",
+        "type": "chemical",
+        "name": "Ni foam",
+        "aliases": [
+          "NF",
+          "nickel foam",
+          "Commercial nickel foam"
+        ],
+        "formula": "Ni",
+        "properties": {
+          "thickness": {
+            "value": 1.6,
+            "unit": "mm"
+          },
+          "porosity": {
+            "value": 95,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_ni_no3_2_6h2o",
+        "type": "chemical",
+        "name": "nickel (II) nitrate hexahydrate",
+        "aliases": [
+          "Ni(NO3)2·6H2O"
+        ],
+        "formula": "Ni(NO3)2·6H2O"
+      },
+      {
+        "id": "chem_fe_so4_7h2o",
+        "type": "chemical",
+        "name": "Iron (II) sulfate heptahydrate",
+        "aliases": [
+          "FeSO4·7H2O"
+        ],
+        "formula": "FeSO4·7H2O"
+      },
+      {
+        "id": "chem_hcl",
+        "type": "chemical",
+        "name": "hydrochloric acid",
+        "aliases": [
+          "HCl"
+        ],
+        "formula": "HCl"
+      },
+      {
+        "id": "chem_di_water",
+        "type": "chemical",
+        "name": "Deionized water",
+        "aliases": [
+          "DI water"
+        ],
+        "formula": "H2O"
+      },
+      {
+        "id": "chem_nf_nife_ldh",
+        "type": "chemical",
+        "name": "NF/NiFe LDH",
+        "aliases": [
+          "NF/NiFe LDH electrode"
+        ],
+        "properties": {
+          "Ni/Fe_ratio": {
+            "value": "5/3",
+            "unit": "atomic ratio"
+          }
+        },
+        "related_images": [
+          "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "LSV Curve NF/NiFe LDH",
+            "properties": {
+              "type": "Linear Sweep Voltammetry",
+              "color": "red",
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "Current Density (mA cm⁻²)",
+              "range_x": [
+                1.3,
+                1.7
+              ],
+              "range_y": [
+                0,
+                1000
+              ],
+              "extracted_from_image": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+            },
+            "source_image_file": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_co_no3_2_6h2o",
+        "type": "chemical",
+        "name": "cobalt (II) nitrate hexahydrate",
+        "aliases": [
+          "Co(NO3)2·6H2O"
+        ],
+        "formula": "Co(NO3)2·6H2O"
+      },
+      {
+        "id": "chem_nf_cofe_ldh",
+        "type": "chemical",
+        "name": "NF/CoFe LDH",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_nf_feooh",
+        "type": "chemical",
+        "name": "NF/FeOOH",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "NF pretreatment",
+        "procedure": "Before usage, the NF was immersed in 3 M HCl for 5 min to improve its hydrophilicity and then rinsed with DI water several times.",
+        "method": "Acid pretreatment",
+        "conditions": {
+          "HCl_concentration": {
+            "value": 3,
+            "unit": "M"
+          },
+          "immersion_time": {
+            "value": 5,
+            "unit": "min"
+          },
+          "temperature": {
+            "value": "room",
+            "unit": "temperature"
+          }
+        },
+        "source_text": "Before usage, the NF was immersed in 3 M HCl for 5 min to improve its hydrophilicity and then rinsed with DI water several times."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "NiFe LDH spontaneous growth",
+        "procedure": "Following this pretreatment, pieces of NF (1.5 × 3 cm²) were immersed in 10 mL solution of 0.15 M Ni(NO₃)₂·6H₂O and 0.15 M FeSO₄·7H₂O at room temperature for different amounts of time (from 1 to 5 h). Finally, the NF pieces were removed and placed on filter paper to dry at room temperature. The resulting electrodes are denoted as NF/NiFe LDH.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Immersion",
+            "method": "Spontaneous deposition",
+            "conditions": {
+              "Ni(NO3)2·6H2O_concentration": {
+                "value": 0.15,
+                "unit": "M"
+              },
+              "FeSO4·7H2O_concentration": {
+                "value": 0.15,
+                "unit": "M"
+              },
+              "solution_volume": {
+                "value": 10,
+                "unit": "mL"
+              },
+              "NF_size": {
+                "value": "1.5 x 3",
+                "unit": "cm²"
+              },
+              "temperature": {
+                "value": "room",
+                "unit": "temperature"
+              },
+              "time_range": {
+                "value": "1-5",
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "pieces of NF (1.5 × 3 cm²) were immersed in 10 mL solution of 0.15 M Ni(NO3)2·6H2O and 0.15 M FeSO4·7H2O at room temperature for different amounts of time (from 1 to 5 h)"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Drying",
+            "method": "Filter paper drying",
+            "conditions": {
+              "temperature": {
+                "value": "room",
+                "unit": "temperature"
+              }
+            },
+            "procedure_snippet": "the NF pieces were removed and placed on filter paper to dry at room temperature"
+          }
+        ],
+        "conditions": {
+          "Ni(NO3)2·6H2O_concentration": {
+            "value": 0.15,
+            "unit": "M"
+          },
+          "FeSO4·7H2O_concentration": {
+            "value": 0.15,
+            "unit": "M"
+          },
+          "solution_volume": {
+            "value": 10,
+            "unit": "mL"
+          },
+          "NF_size": {
+            "value": "1.5 x 3",
+            "unit": "cm²"
+          },
+          "temperature": {
+            "value": "room",
+            "unit": "temperature"
+          },
+          "typical_time": {
+            "value": 2,
+            "unit": "h"
+          }
+        },
+        "source_text": "Following this pretreatment, pieces of NF (1.5 × 3 cm²) were immersed in 10 mL solution of 0.15 M Ni(NO3)2·6H2O and 0.15 M FeSO4·7H2O at room temperature for different amounts of time (from 1 to 5 h)."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "CoFe LDH spontaneous growth",
+        "procedure": "The growth of CoFe LDH and FeOOH on the surface of NF generally follows the same procedure as that for NF/NiFe LDH. Solutions of 0.15 M Co(NO3)2·6H2O + 0.15 M FeSO4·7H2O were employed as the reaction solutions for CoFe LDH. The reaction time for both CoFe LDH and FeOOH was set at 2 h.",
+        "method": "Spontaneous deposition",
+        "conditions": {
+          "Co(NO3)2·6H2O_concentration": {
+            "value": 0.15,
+            "unit": "M"
+          },
+          "FeSO4·7H2O_concentration": {
+            "value": 0.15,
+            "unit": "M"
+          },
+          "temperature": {
+            "value": "room",
+            "unit": "temperature"
+          },
+          "time": {
+            "value": 2,
+            "unit": "h"
+          }
+        },
+        "source_text": "Solutions of 0.15 M Co(NO3)2·6H2O + 0.15 M FeSO4·7H2O were employed as the reaction solutions for CoFe LDH... The reaction time for both CoFe LDH and FeOOH was set at 2 h."
+      },
+      {
+        "id": "synth_step_4",
+        "type": "synthesis",
+        "name": "FeOOH spontaneous growth",
+        "procedure": "The growth of CoFe LDH and FeOOH on the surface of NF generally follows the same procedure as that for NF/NiFe LDH. Solutions of 0.15 M FeSO4·7H2O were employed as the reaction solutions for FeOOH. The reaction time for both CoFe LDH and FeOOH was set at 2 h.",
+        "method": "Spontaneous deposition",
+        "conditions": {
+          "FeSO4·7H2O_concentration": {
+            "value": 0.15,
+            "unit": "M"
+          },
+          "temperature": {
+            "value": "room",
+            "unit": "temperature"
+          },
+          "time": {
+            "value": 2,
+            "unit": "h"
+          }
+        },
+        "source_text": "Solutions of ... 0.15 M FeSO4·7H2O were employed as the reaction solutions for FeOOH... The reaction time for both CoFe LDH and FeOOH was set at 2 h."
+      },
+      {
+        "id": "chem_NF_NiFe_LDH",
+        "type": "chemical",
+        "name": "NF/NiFe LDH",
+        "aliases": [
+          "NiFe LDH"
+        ],
+        "formula": "",
+        "composition": {
+          "Ni": {
+            "value": 5,
+            "unit": "atomic ratio"
+          },
+          "Fe": {
+            "value": 3,
+            "unit": "atomic ratio"
+          }
+        },
+        "properties": {},
+        "related_images": [
+          "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg",
+          "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "NF/NiFeLDH",
+            "properties": {
+              "overpotentials": {
+                "10": 274,
+                "100": 382,
+                "200": 459,
+                "500": 533
+              },
+              "extracted_from_image": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+            },
+            "source_image_file": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiFe LDH (015)",
+            "properties": {
+              "hkl": "(015)",
+              "extracted_from_image": "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+            },
+            "source_image_file": "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiFe LDH (012)",
+            "properties": {
+              "hkl": "(012)",
+              "extracted_from_image": "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+            },
+            "source_image_file": "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiFe LDH (113)",
+            "properties": {
+              "hkl": "(113)",
+              "extracted_from_image": "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+            },
+            "source_image_file": "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "formula": "",
+        "properties": {
+          "thickness": {
+            "value": 1.6,
+            "unit": "mm"
+          },
+          "porosity": {
+            "value": 95,
+            "unit": "%"
+          }
+        },
+        "related_images": [
+          "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg",
+          "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "LSV Curve Ni Foam",
+            "properties": {
+              "type": "Linear Sweep Voltammetry",
+              "color": "black",
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "Current Density (mA cm⁻²)",
+              "range_x": [
+                1.3,
+                1.7
+              ],
+              "range_y": [
+                0,
+                1000
+              ],
+              "extracted_from_image": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+            },
+            "source_image_file": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni Foam",
+            "properties": {
+              "overpotentials": {
+                "10": 327,
+                "100": 349,
+                "200": 442,
+                "500": 482
+              },
+              "extracted_from_image": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+            },
+            "source_image_file": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_NF_IrO2",
+        "type": "chemical",
+        "name": "NF/IrO2",
+        "aliases": [
+          "NF/IrO2"
+        ],
+        "formula": "",
+        "properties": {},
+        "related_images": [
+          "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg",
+          "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "LSV Curve NF/IrO2",
+            "properties": {
+              "type": "Linear Sweep Voltammetry",
+              "color": "blue",
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "Current Density (mA cm⁻²)",
+              "range_x": [
+                1.3,
+                1.7
+              ],
+              "range_y": [
+                0,
+                1000
+              ],
+              "extracted_from_image": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+            },
+            "source_image_file": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF/IrO2",
+            "properties": {
+              "overpotentials": {
+                "10": 251,
+                "100": 332,
+                "200": 482,
+                "500": null
+              },
+              "extracted_from_image": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+            },
+            "source_image_file": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_IrO2",
+        "type": "chemical",
+        "name": "IrO2",
+        "aliases": [
+          "IrO2"
+        ],
+        "formula": "IrO2",
+        "properties": {}
+      },
+      {
+        "id": "chem_NF_CoFe_LDH",
+        "type": "chemical",
+        "name": "NF/CoFe LDH",
+        "aliases": [
+          "CoFe LDH"
+        ],
+        "formula": "",
+        "composition": {},
+        "properties": {}
+      },
+      {
+        "id": "chem_NF_FeOOH",
+        "type": "chemical",
+        "name": "NF/FeOOH",
+        "aliases": [
+          "FeOOH"
+        ],
+        "formula": "",
+        "composition": {},
+        "properties": {}
+      },
+      {
+        "id": "chem_NF_NiMoN",
+        "type": "chemical",
+        "name": "NF/NiMoN",
+        "aliases": [
+          "NiMoN",
+          "NF/NiMoN"
+        ],
+        "formula": "",
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_hcl_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_hcl",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "etchant",
+          "concentration": {
+            "value": 3,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_di_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_di_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "rinsing solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_nickel_foam",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_nickel_foam",
+        "properties": {
+          "form": "pretreated"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_ni_no3_2_6h2o_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ni_no3_2_6h2o",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 0.15,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_fe_so4_7h2o_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_fe_so4_7h2o",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 0.15,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_nf_nife_ldh",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_nf_nife_ldh",
+        "properties": {
+          "form": "nanosheets on NF"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_co_no3_2_6h2o_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_co_no3_2_6h2o",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 0.15,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_fe_so4_7h2o_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_fe_so4_7h2o",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 0.15,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_nf_cofe_ldh",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_nf_cofe_ldh",
+        "properties": {
+          "form": "on NF surface"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_fe_so4_7h2o_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_fe_so4_7h2o",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 0.15,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_chem_nf_feooh",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_nf_feooh",
+        "properties": {
+          "form": "on NF surface"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_NF_NiMoN",
+      "chem_NF_FeOOH",
+      "chem_NF",
+      "chem_NF_NiFe_LDH",
+      "chem_NF_CoFe_LDH",
+      "chem_IrO2",
+      "chem_NF_IrO2"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_NF_NiFe_LDH",
+        "type": "chemical",
+        "name": "NF/NiFe LDH",
+        "aliases": [
+          "NiFe LDH",
+          "NF/NiFe LDH electrode"
+        ],
+        "formula": "",
+        "properties": {
+          "Ni/Fe_ratio": {
+            "value": "5/3",
+            "unit": "atomic ratio"
+          }
+        }
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "formula": "",
+        "properties": {
+          "thickness": {
+            "value": 1.6,
+            "unit": "mm"
+          },
+          "porosity": {
+            "value": 95,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_NF_IrO2",
+        "type": "chemical",
+        "name": "NF/IrO2",
+        "aliases": [
+          "NF/IrO2"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_IrO2",
+        "type": "chemical",
+        "name": "IrO2",
+        "aliases": [
+          "IrO2"
+        ],
+        "formula": "IrO2",
+        "properties": {}
+      },
+      {
+        "id": "chem_NF_CoFe_LDH",
+        "type": "chemical",
+        "name": "NF/CoFe LDH",
+        "aliases": [
+          "NF/CoFe LDH"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_NF_FeOOH",
+        "type": "chemical",
+        "name": "NF/FeOOH",
+        "aliases": [
+          "NF/FeOOH"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_NF_NiMoN",
+        "type": "chemical",
+        "name": "NF/NiMoN",
+        "aliases": [
+          "NiMoN",
+          "NF/NiMoN"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_NF_NiFe_LDH",
+        "description": "OER performance comparison in 1 M KOH (includes NF, NF/IrO2 benchmarks)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "current-interrupt method"
+          },
+          "EIS_overpotential": {
+            "value": 300,
+            "unit": "mV"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm2": {
+            "value": 202,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA/cm2": {
+            "value": 237,
+            "unit": "mV"
+          },
+          "overpotential_at_200_mA/cm2": {
+            "value": 251,
+            "unit": "mV"
+          },
+          "overpotential_at_500_mA/cm2": {
+            "value": 274,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 32.8,
+            "unit": "mV/dec"
+          },
+          "charge_transfer_resistance_Rct": {
+            "value": 0.564,
+            "unit": "Ω"
+          },
+          "benchmark_NF_IrO2_eta_10": {
+            "value": 304,
+            "unit": "mV"
+          },
+          "benchmark_NF_eta_10": {
+            "value": 331,
+            "unit": "mV"
+          }
+        },
+        "source_text": "NF/NiFe LDH requires only a very low overpotential of 202 mV to reach a current density of 10 mA/cm2, while overpotentials of 304 mV and 331 mV are required for NF/IrO2 and nickel foam... To achieve higher current densities of 100, 200, and 500 mA/cm2, the needed overpotentials are 237, 251, and 274 mV... NF/NiFe LDH exhibits the lowest Tafel slope of 32.8 mV/dec... NF/NiFe LDH shows the lowest charge transfer resistance (Rct) of about 0.564 Ω"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_NF_NiFe_LDH",
+        "description": "OER performance in alkaline natural seawater (1 M KOH + seawater)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH + seawater",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "current-interrupt method"
+          }
+        },
+        "results_json": {
+          "overpotential_at_100_mA/cm2": {
+            "value": 247,
+            "unit": "mV"
+          },
+          "overpotential_at_500_mA/cm2": {
+            "value": 296,
+            "unit": "mV"
+          },
+          "additional_overpotential_at_100_mA/cm2": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "additional_overpotential_at_200_mA/cm2": {
+            "value": 15,
+            "unit": "mV"
+          },
+          "additional_overpotential_at_500_mA/cm2": {
+            "value": 22,
+            "unit": "mV"
+          }
+        },
+        "source_text": "delivering current densities of 100 and 500 mA/cm2 at low overpotentials of 247 and 296 mV... the additional overpotentials required to achieve current densities of 100, 200, and 500 mA/cm2 are only 10, 15, and 22 mV, respectively, compared with those for 1 M KOH electrolyte"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_NF_NiFe_LDH",
+        "description": "OER stability at 500 mA/cm2 in 1 M KOH seawater electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH seawater",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "chronopotentiometry",
+            "unit": "stability"
+          },
+          "current_density": {
+            "value": 500,
+            "unit": "mA/cm2"
+          },
+          "duration": {
+            "value": 96,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "no significant degradation",
+            "unit": "96 h"
+          }
+        },
+        "source_text": "with no significant degradation observed over long-term stability testing of 96 h under a large current density of 500 mA/cm2 in 1 M KOH seawater electrolyte"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_NF_NiFe_LDH",
+        "description": "Overall water splitting NF/NiFe LDH||NF/NiMoN in alkaline natural seawater (anode testing)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH + seawater",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "anode": {
+            "value": "NF/NiFe LDH",
+            "unit": "OER"
+          },
+          "cathode": {
+            "value": "NF/NiMoN",
+            "unit": "HER"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "method"
+          }
+        },
+        "results_json": {
+          "voltage_at_10_mA/cm2": {
+            "value": 1.477,
+            "unit": "V"
+          },
+          "voltage_at_100_mA/cm2": {
+            "value": 1.533,
+            "unit": "V"
+          },
+          "voltage_at_500_mA/cm2": {
+            "value": 1.665,
+            "unit": "V"
+          },
+          "activity_degradation_at_500_mA/cm2": {
+            "value": 21,
+            "unit": "mV"
+          },
+          "Faradaic_efficiency": {
+            "value": 100,
+            "unit": "%"
+          },
+          "stability_voltage_increase": {
+            "value": 0.047,
+            "unit": "V"
+          },
+          "stability_duration": {
+            "value": 100,
+            "unit": "h"
+          }
+        },
+        "source_text": "current densities of 10, 100, and 500 mA/cm2 at voltages of 1.477, 1.533 and 1.665 V... at an industry-standard current density of 500 mA/cm2, the activity degradation... was found to be only about 21 mV... Faradaic efficiency close to 100%... voltage increase after the stability test was only about 0.047 V"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_NF_CoFe_LDH",
+        "description": "OER performance verification in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "OER_activity": {
+            "value": "very good",
+            "unit": "qualitative"
+          }
+        },
+        "source_text": "NF/CoFe LDH and NF/FeOOH samples were fabricated as examples and their OER performance... confirms the very good activity of the catalysts fabricated in this way"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_NF_FeOOH",
+        "description": "OER performance verification in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "OER_activity": {
+            "value": "very good",
+            "unit": "qualitative"
+          }
+        },
+        "source_text": "NF/CoFe LDH and NF/FeOOH samples were fabricated as examples and their OER performance... confirms the very good activity of the catalysts fabricated in this way"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_NF_NiFe_LDH",
+        "description": "OER stability at 200 mA/cm2 and 500 mA/cm2 in multiple electrolytes",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH, 1 M KOH + seawater",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "chronopotentiometry",
+            "unit": "stability"
+          },
+          "current_density": {
+            "value": [
+              200,
+              500
+            ],
+            "unit": "mA/cm2"
+          },
+          "duration": {
+            "value": [
+              100,
+              96
+            ],
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "highly stable, no obvious degradation",
+            "unit": "100h at 200 mA/cm2, 96h at 500 mA/cm2"
+          }
+        },
+        "source_text": "stability tests were conducted on NF/NiFe LDH at a large current density of 200 mA/cm2 over 100 h in alkaline fresh water (1 M KOH) and in alkaline natural seawater... The OER performance remained highly stable... We then measured the stability... under an even larger current density of 500 mA/cm2 over 96 h in different electrolytes"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_NF_NiMoN",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "HER_performance": {
+            "value": "good",
+            "unit": "qualitative"
+          },
+          "Tafel_slope": {
+            "value": "reported",
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "After coupling with a good hydrogen evolution reaction (HER) catalyst, NiMoN... (a) HER performance and (inset) Tafel slope of NF/NiMoN in 1 M KOH"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_NF_NiFe_LDH_test_1",
+        "type": "tested_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_NiFe_LDH_test_2",
+        "type": "tested_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_NiFe_LDH_test_3",
+        "type": "tested_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_NiFe_LDH_test_4",
+        "type": "tested_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_CoFe_LDH_test_5",
+        "type": "tested_in",
+        "source_id": "chem_NF_CoFe_LDH",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_FeOOH_test_6",
+        "type": "tested_in",
+        "source_id": "chem_NF_FeOOH",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_NiFe_LDH_test_7",
+        "type": "tested_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_NiMoN_test_8",
+        "type": "tested_in",
+        "source_id": "chem_NF_NiMoN",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_IrO2_test_1",
+        "type": "tested_in",
+        "source_id": "chem_NF_IrO2",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_NF",
+        "target_id": "test_1",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_NF_NiFe_LDH",
+        "type": "chemical",
+        "name": "NF/NiFe LDH",
+        "aliases": [
+          "NiFe LDH"
+        ],
+        "formula": "",
+        "composition": {
+          "Ni": {
+            "value": 5,
+            "unit": "atomic ratio"
+          },
+          "Fe": {
+            "value": 3,
+            "unit": "atomic ratio"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM shows a thin layer of nanosheets uniformly grown on the nickel foam surface after 2 h immersion.",
+        "evidence_snippet": "After the NF was immersed in the solution of 0.15 M Fe2+ and 0.15 M Ni2+ for 2 h, a thin layer of nanosheets was uniformly grown on its surface, as shown in Fig. 1c and d.",
+        "related_images": [
+          "156d08f516b899a4d7084587d3dba40db03fcdd5d06dde650b6d7442bc027b4c.jpg",
+          "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg",
+          "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg",
+          "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg",
+          "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg",
+          "38aa0addf2d2404b58d9e3cb946ce1a787d08439115a419cd8b85a437db857d9.jpg",
+          "3fb0bb4c124d98595279c18fbbb75e769b2aed6f15e701aba36bbaa230657949.jpg",
+          "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg",
+          "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg",
+          "91818244d3f2c909dcfe4abd0d8a7679e777dbb5a3368686239876ba4a203bd7.jpg",
+          "a5f9999bd04e9fe4a17f4c025273accd134f0e2a185049ce1a05223bdabf7560.jpg",
+          "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg",
+          "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg",
+          "b8c6058d277cc2d934063681967c5afd0668b17c663cdd4f7e009f0fe2f8209c.jpg",
+          "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg",
+          "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image labeled (i)",
+              "scale_bar": "200 nm",
+              "extracted_from_image": "156d08f516b899a4d7084587d3dba40db03fcdd5d06dde650b6d7442bc027b4c.jpg"
+            },
+            "source_image_file": "156d08f516b899a4d7084587d3dba40db03fcdd5d06dde650b6d7442bc027b4c.jpg"
+          },
+          {
+            "type": "material",
+            "name": "NF/NiFe LDH",
+            "properties": {
+              "description": "Nickel foam supported NiFe layered double hydroxide",
+              "extracted_from_image": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+            },
+            "source_image_file": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiFe LDH",
+            "properties": {
+              "description": "Nickel-Iron Layered Double Hydroxide",
+              "extracted_from_image": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+            },
+            "source_image_file": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "label": "a",
+              "scale_bar": "1 μm",
+              "description": "Micrograph showing porous or nanostructured material with white square highlight",
+              "extracted_from_image": "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg"
+            },
+            "source_image_file": "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni 2p",
+            "properties": {
+              "description": "Nickel 2p orbital",
+              "extracted_from_image": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+            },
+            "source_image_file": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV Plot",
+            "properties": {
+              "type": "Linear Sweep Voltammetry",
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "Current Density (mA/cm²)",
+              "range_x": "-0.25 to 0.00 V",
+              "range_y": "0 to -800 mA/cm²",
+              "label": "a",
+              "extracted_from_image": "38aa0addf2d2404b58d9e3cb946ce1a787d08439115a419cd8b85a437db857d9.jpg"
+            },
+            "source_image_file": "38aa0addf2d2404b58d9e3cb946ce1a787d08439115a419cd8b85a437db857d9.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "label": "f",
+              "scale_bar": "500 nm",
+              "description": "High-magnification SEM image showing nanofibrous morphology with interconnected network structure",
+              "extracted_from_image": "3fb0bb4c124d98595279c18fbbb75e769b2aed6f15e701aba36bbaa230657949.jpg"
+            },
+            "source_image_file": "3fb0bb4c124d98595279c18fbbb75e769b2aed6f15e701aba36bbaa230657949.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni Foam",
+            "properties": {
+              "Tafel_slope": "107.1 mV/dec",
+              "extracted_from_image": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+            },
+            "source_image_file": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Nanoparticle Overview Image",
+            "properties": {
+              "description": "Color-coded overview image showing nanoparticles with green and red regions",
+              "scale_bar": "200 nm",
+              "extracted_from_image": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+            },
+            "source_image_file": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "1 M KOH",
+            "properties": {
+              "concentration": "1 M",
+              "solvent": "water",
+              "temperature": "80°C",
+              "extracted_from_image": "91818244d3f2c909dcfe4abd0d8a7679e777dbb5a3368686239876ba4a203bd7.jpg"
+            },
+            "source_image_file": "91818244d3f2c909dcfe4abd0d8a7679e777dbb5a3368686239876ba4a203bd7.jpg"
+          },
+          {
+            "type": "image",
+            "name": "Figure c",
+            "properties": {
+              "label": "c",
+              "scale_bar": "1 μm",
+              "extracted_from_image": "a5f9999bd04e9fe4a17f4c025273accd134f0e2a185049ce1a05223bdabf7560.jpg"
+            },
+            "source_image_file": "a5f9999bd04e9fe4a17f4c025273accd134f0e2a185049ce1a05223bdabf7560.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale": "1 μm",
+              "features": "nanostructured material with porous morphology, highlighted rectangular region",
+              "extracted_from_image": "a5f9999bd04e9fe4a17f4c025273accd134f0e2a185049ce1a05223bdabf7560.jpg"
+            },
+            "source_image_file": "a5f9999bd04e9fe4a17f4c025273accd134f0e2a185049ce1a05223bdabf7560.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1 M KOH",
+            "properties": {
+              "description": "Standard alkaline electrolyte",
+              "extracted_from_image": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+            },
+            "source_image_file": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Ni foam",
+            "properties": {
+              "description": "Nickel foam substrate",
+              "extracted_from_image": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+            },
+            "source_image_file": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+          },
+          {
+            "type": "image",
+            "name": "SEM image labeled e",
+            "properties": {
+              "label": "e",
+              "scale_bar": "200 nm",
+              "extracted_from_image": "b8c6058d277cc2d934063681967c5afd0668b17c663cdd4f7e009f0fe2f8209c.jpg"
+            },
+            "source_image_file": "b8c6058d277cc2d934063681967c5afd0668b17c663cdd4f7e009f0fe2f8209c.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1 M KOH",
+            "properties": {
+              "concentration": "1 M",
+              "components": [
+                "KOH"
+              ],
+              "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+            },
+            "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Map Data",
+            "properties": {
+              "description": "Elemental mapping image",
+              "extracted_from_image": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+            },
+            "source_image_file": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "TEM verifies the typical nanosheet structure of NiFe LDH; HRTEM shows lattice fringes with interplanar distance of 0.25 nm.",
+        "evidence_snippet": "As shown in Fig. 1e and f, the typical nanosheet structure of NiFe LDH was verified at different magnifications. The high-resolution TEM image displayed in Fig. 1h shows the lattice fringes of the NiFe LDH planes with an interplanar distances of 0.25 nm."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "SAED",
+        "is_reported": true,
+        "characterization_summary": "SAED pattern shows well-resolved diffraction rings corresponding to the (012), (015) and (113) planes of NiFe LDH.",
+        "evidence_snippet": "The selective area electron diffraction (SAED) pattern displayed in Fig. 1g shows well-resolved diffraction rings corresponding to the (012), (015) and (113) planes of NiFe LDH.",
+        "related_images": [
+          "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SAED Pattern",
+            "properties": {
+              "type": "Selected Area Electron Diffraction",
+              "scale": "5 1/nm",
+              "extracted_from_image": "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+            },
+            "source_image_file": "4f16e4ea47f2ed6a5add50badbf73f28ceffb93635e366ecaa908c950968212e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "EDS",
+        "is_reported": true,
+        "characterization_summary": "EDS elemental mapping proves uniform distribution of Ni, Fe, and O; map sum spectrum shows Ni/Fe ratio of about 5/3.",
+        "evidence_snippet": "To determine the elemental distribution in these samples, energy-dispersive X-ray microscopy (EDX) elemental mapping was conducted... The EDX elemental mapping images clearly prove the uniform distribution of elemental Ni, Fe, and O. Moreover, the map sum spectrum of EDX mapping displayed in Fig S5 shows that the Ni/Fe ratio of our sample is about 5/3."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "XPS shows Ni 2p peaks at 855.8 eV and 873.6 eV indicating Ni2+; Fe 2p peaks at 713.1 eV and 725.5 eV indicating Fe3+; O 1s peaks at 531.0 eV (M-O) and 532.7 eV (M-OH).",
+        "evidence_snippet": "In Fig. 2a, the peaks at 855.8 and 873.6 eV correspond to the Ni 2p3/2 and Ni 2p1/2 orbits, respectively... indicating the Ni2+ oxidation state. The Fe 2p spectrum (Fig. 2b) shows two dominant peaks at 713.1 eV (Fe 2p3/2) and 725.5 eV (Fe 2p1/2)... which are the typical characteristics of the Fe3+ oxidation state. The O 1s spectrum in Fig. 2c displays metal-O (M-O) and metal-OH (M-OH) peaks located at 531.0 and 532.7 eV, respectively.",
+        "related_images": [
+          "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg",
+          "156d08f516b899a4d7084587d3dba40db03fcdd5d06dde650b6d7442bc027b4c.jpg",
+          "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg",
+          "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg",
+          "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg",
+          "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg",
+          "38aa0addf2d2404b58d9e3cb946ce1a787d08439115a419cd8b85a437db857d9.jpg",
+          "3fb0bb4c124d98595279c18fbbb75e769b2aed6f15e701aba36bbaa230657949.jpg",
+          "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg",
+          "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg",
+          "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg",
+          "91818244d3f2c909dcfe4abd0d8a7679e777dbb5a3368686239876ba4a203bd7.jpg",
+          "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg",
+          "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg",
+          "b8c6058d277cc2d934063681967c5afd0668b17c663cdd4f7e009f0fe2f8209c.jpg",
+          "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg",
+          "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "O 1s",
+            "properties": {
+              "description": "O 1s XPS core level",
+              "extracted_from_image": "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg"
+            },
+            "source_image_file": "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "M-OH",
+            "properties": {
+              "binding_energy": "531 eV",
+              "description": "Metal-Hydroxide bond",
+              "extracted_from_image": "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg"
+            },
+            "source_image_file": "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "M-O",
+            "properties": {
+              "binding_energy": "534 eV",
+              "description": "Metal-Oxide bond",
+              "extracted_from_image": "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg"
+            },
+            "source_image_file": "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "technique": "XPS",
+              "region": "O 1s",
+              "binding_energy_range": "528-537 eV",
+              "multiple_peaks": true,
+              "extracted_from_image": "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg"
+            },
+            "source_image_file": "06eb565b50f29b9f7da7775070a7dd659aaa0490ede97870ac0b8944aa751628.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanostructured Material",
+            "properties": {
+              "description": "Irregularly shaped particle or aggregate with textured surface",
+              "extracted_from_image": "156d08f516b899a4d7084587d3dba40db03fcdd5d06dde650b6d7442bc027b4c.jpg"
+            },
+            "source_image_file": "156d08f516b899a4d7084587d3dba40db03fcdd5d06dde650b6d7442bc027b4c.jpg"
+          },
+          {
+            "type": "material",
+            "name": "NF/IrO2",
+            "properties": {
+              "description": "Nickel foam supported IrO2",
+              "extracted_from_image": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+            },
+            "source_image_file": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Ni Foam",
+            "properties": {
+              "description": "Bare nickel foam substrate",
+              "extracted_from_image": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+            },
+            "source_image_file": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiFe LDH(012)",
+            "properties": {
+              "description": "NiFe Layered Double Hydroxide with (012) orientation",
+              "extracted_from_image": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+            },
+            "source_image_file": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "scale_bar": "2 nm",
+              "annotation": "0.25 nm",
+              "label": "h",
+              "extracted_from_image": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+            },
+            "source_image_file": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+          },
+          {
+            "type": "measurement",
+            "name": "0.25 nm",
+            "properties": {
+              "description": "Interlayer distance or lattice spacing",
+              "extracted_from_image": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+            },
+            "source_image_file": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+          },
+          {
+            "type": "measurement",
+            "name": "2 nm",
+            "properties": {
+              "description": "Scale bar length",
+              "extracted_from_image": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+            },
+            "source_image_file": "1a79f9923e2d3c4b93012d562824eadde89d8279e2418e8e76f1c0137257a7fd.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanostructured Material",
+            "properties": {
+              "morphology": "porous sheet-like",
+              "scale": "micrometer",
+              "extracted_from_image": "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg"
+            },
+            "source_image_file": "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg"
+          },
+          {
+            "type": "scale_bar",
+            "name": "1 μm Scale Bar",
+            "properties": {
+              "length": "1 μm",
+              "extracted_from_image": "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg"
+            },
+            "source_image_file": "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg"
+          },
+          {
+            "type": "annotation",
+            "name": "White Square Highlight",
+            "properties": {
+              "description": "Region of interest in SEM image",
+              "extracted_from_image": "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg"
+            },
+            "source_image_file": "1d69d2646be9a1c3a3d43bfb397a3f17c7a2f654ad66e9ddbf73d105e85a8a1b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni 2p_{3/2}",
+            "properties": {
+              "description": "Nickel 2p_{3/2} spin-orbit component",
+              "extracted_from_image": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+            },
+            "source_image_file": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Sat. Ni 2p",
+            "properties": {
+              "description": "Saturated Nickel 2p peak",
+              "extracted_from_image": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+            },
+            "source_image_file": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Sat. Ni 2p_{1/2}",
+            "properties": {
+              "description": "Saturated Nickel 2p_{1/2} peak",
+              "extracted_from_image": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+            },
+            "source_image_file": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Sat. Ni 2p_{3/2}",
+            "properties": {
+              "description": "Saturated Nickel 2p_{3/2} peak",
+              "extracted_from_image": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+            },
+            "source_image_file": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Inset Plot",
+            "properties": {
+              "type": "Tafel Plot",
+              "x_axis": "log |j| (mA/cm²)",
+              "y_axis": "Overpotential (V/dec)",
+              "slope": "32.2 mV/dec",
+              "range_x": "log 0.5 to log 1.5",
+              "range_y": "0.04 to 0.06 V",
+              "extracted_from_image": "38aa0addf2d2404b58d9e3cb946ce1a787d08439115a419cd8b85a437db857d9.jpg"
+            },
+            "source_image_file": "38aa0addf2d2404b58d9e3cb946ce1a787d08439115a419cd8b85a437db857d9.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "RHE Reference",
+            "properties": {
+              "reference_electrode": "RHE",
+              "extracted_from_image": "38aa0addf2d2404b58d9e3cb946ce1a787d08439115a419cd8b85a437db857d9.jpg"
+            },
+            "source_image_file": "38aa0addf2d2404b58d9e3cb946ce1a787d08439115a419cd8b85a437db857d9.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanofibrous material",
+            "properties": {
+              "morphology": "interconnected nanofibers",
+              "fiber_diameter_approx": "<500 nm",
+              "extracted_from_image": "3fb0bb4c124d98595279c18fbbb75e769b2aed6f15e701aba36bbaa230657949.jpg"
+            },
+            "source_image_file": "3fb0bb4c124d98595279c18fbbb75e769b2aed6f15e701aba36bbaa230657949.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF/Fe2O3",
+            "properties": {
+              "Tafel_slope": "74.7 mV/dec",
+              "extracted_from_image": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+            },
+            "source_image_file": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF/NiFe LDH",
+            "properties": {
+              "Tafel_slope": "32.8 mV/dec",
+              "extracted_from_image": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+            },
+            "source_image_file": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF/Fe",
+            "properties": {
+              "extracted_from_image": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+            },
+            "source_image_file": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Tafel Plot",
+            "properties": {
+              "x_axis": "log |j| (mA/cm²)",
+              "y_axis": "Overpotential (mV)",
+              "range_x": "[1.0, 2.0]",
+              "range_y": "[200, 450]",
+              "extracted_from_image": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+            },
+            "source_image_file": "6e7b995fa343c3ef6232d62fd0d2480548075864b08ed486bf0a3644b0c0dac3.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Scale Bar",
+            "properties": {
+              "length": "200 nm",
+              "purpose": "Indicates nanoscale dimensions of observed structures",
+              "extracted_from_image": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+            },
+            "source_image_file": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "description": "Irregularly shaped nanostructures forming a dense aggregate",
+              "size_scale": "nanoscale (200 nm scale bar)",
+              "extracted_from_image": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+            },
+            "source_image_file": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+          },
+          {
+            "type": "visual_feature",
+            "name": "Green Regions",
+            "properties": {
+              "color": "green",
+              "likely_significance": "elemental mapping (e.g., specific chemical composition)",
+              "extracted_from_image": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+            },
+            "source_image_file": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+          },
+          {
+            "type": "visual_feature",
+            "name": "Red Regions",
+            "properties": {
+              "color": "red",
+              "likely_significance": "elemental mapping (different chemical component)",
+              "extracted_from_image": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+            },
+            "source_image_file": "7b118586716b9fa03da3a1e52a70fa76a6c45f9f4de69656c6073ee1a76dfd91.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe 2p",
+            "properties": {
+              "description": "Iron 2p XPS peak",
+              "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+            },
+            "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe 2p1/2",
+            "properties": {
+              "description": "Iron 2p1/2 XPS peak",
+              "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+            },
+            "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe 2p3/2",
+            "properties": {
+              "description": "Iron 2p3/2 XPS peak",
+              "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+            },
+            "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "type": "X-ray Photoelectron Spectroscopy",
+              "x_axis": "Binding energy (eV)",
+              "x_range": [
+                700,
+                730
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+            },
+            "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV Curve",
+            "properties": {
+              "scan_rate": "5 mV/s",
+              "potential_window": "0 to 0.47 V",
+              "extracted_from_image": "91818244d3f2c909dcfe4abd0d8a7679e777dbb5a3368686239876ba4a203bd7.jpg"
+            },
+            "source_image_file": "91818244d3f2c909dcfe4abd0d8a7679e777dbb5a3368686239876ba4a203bd7.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "Electrochemical Test",
+            "properties": {
+              "electrolyte": "1 M KOH",
+              "temperature": "80°C",
+              "extracted_from_image": "91818244d3f2c909dcfe4abd0d8a7679e777dbb5a3368686239876ba4a203bd7.jpg"
+            },
+            "source_image_file": "91818244d3f2c909dcfe4abd0d8a7679e777dbb5a3368686239876ba4a203bd7.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1 M KOH & 0.5 M NaCl",
+            "properties": {
+              "description": "Alkaline electrolyte with NaCl",
+              "extracted_from_image": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+            },
+            "source_image_file": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1 M KOH & 1 M NaCl",
+            "properties": {
+              "description": "Alkaline electrolyte with high NaCl",
+              "extracted_from_image": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+            },
+            "source_image_file": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "Seawater",
+            "properties": {
+              "description": "Natural seawater electrolyte",
+              "extracted_from_image": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+            },
+            "source_image_file": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+          },
+          {
+            "type": "current_density",
+            "name": "10 mA/cm²",
+            "properties": {
+              "color": "cyan",
+              "value": "10 mA/cm²",
+              "extracted_from_image": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+            },
+            "source_image_file": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Ni foam LDH",
+            "properties": {
+              "description": "Nickel foam with layered double hydroxide",
+              "extracted_from_image": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+            },
+            "source_image_file": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+          },
+          {
+            "type": "material",
+            "name": "NF/NiFe LD",
+            "properties": {
+              "description": "Nickel foam supported NiFe layered double hydroxide",
+              "extracted_from_image": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+            },
+            "source_image_file": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+          },
+          {
+            "type": "material",
+            "name": "NF/NiFe LDH",
+            "properties": {
+              "description": "Nickel foam supported NiFe layered double hydroxide",
+              "extracted_from_image": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+            },
+            "source_image_file": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+          },
+          {
+            "type": "material",
+            "name": "NF/IrO2",
+            "properties": {
+              "description": "Nickel foam supported IrO2",
+              "extracted_from_image": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+            },
+            "source_image_file": "b2a019aea883d7d2671720ce7d9107ea143647f39bfe3f915606e5e619aa5106.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale": "200 nm",
+              "description": "porous nanofibrous structure with interconnected network and rough surface morphology",
+              "extracted_from_image": "b8c6058d277cc2d934063681967c5afd0668b17c663cdd4f7e009f0fe2f8209c.jpg"
+            },
+            "source_image_file": "b8c6058d277cc2d934063681967c5afd0668b17c663cdd4f7e009f0fe2f8209c.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanofibrous Material",
+            "properties": {
+              "morphology": "3D porous network",
+              "features": "interconnected fibers, rough surface, fiber diameter ~200 nm",
+              "extracted_from_image": "b8c6058d277cc2d934063681967c5afd0668b17c663cdd4f7e009f0fe2f8209c.jpg"
+            },
+            "source_image_file": "b8c6058d277cc2d934063681967c5afd0668b17c663cdd4f7e009f0fe2f8209c.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1 M KOH + 5 M NaCl",
+            "properties": {
+              "concentration": "1 M KOH + 5 M NaCl",
+              "components": [
+                "KOH",
+                "NaCl"
+              ],
+              "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+            },
+            "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1 M KOH + 1 M NaCl",
+            "properties": {
+              "concentration": "1 M KOH + 1 M NaCl",
+              "components": [
+                "KOH",
+                "NaCl"
+              ],
+              "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+            },
+            "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1 M KOH in seawater",
+            "properties": {
+              "concentration": "1 M KOH",
+              "solvent": "seawater",
+              "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+            },
+            "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "KOH",
+            "properties": {
+              "formula": "KOH",
+              "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+            },
+            "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+          },
+          {
+            "type": "element",
+            "name": "K",
+            "properties": {
+              "symbol": "K",
+              "color": "green",
+              "extracted_from_image": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+            },
+            "source_image_file": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+          },
+          {
+            "type": "element",
+            "name": "Fe",
+            "properties": {
+              "symbol": "Fe",
+              "color": "red",
+              "extracted_from_image": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+            },
+            "source_image_file": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+          },
+          {
+            "type": "scale",
+            "name": "200 nm",
+            "properties": {
+              "scale_bar": "200 nm",
+              "extracted_from_image": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+            },
+            "source_image_file": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticle",
+            "properties": {
+              "size_scale": "200 nm",
+              "composition": "K, Fe",
+              "extracted_from_image": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+            },
+            "source_image_file": "d05b4307854403d151a5dcede614de89b9fe6ae360baf758728c24722ba8ad2b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "Raman",
+        "is_reported": true,
+        "characterization_summary": "Raman shows bands at 276, 442, 531 cm-1 (metal-O-metal), 966 and 1063 cm-1 (metal-OOH), corresponding to brucite-like LDH structure.",
+        "evidence_snippet": "As shown in Fig. 2d, three bands located at around 276, 442, and 531 cm-1 are contributed by metal-O-metal... The bands at around 966 and 1063 cm-1 are ascribed to the metal-OOH active species. The Raman spectroscopy results correspond to the typical brucite-like LDH structure.",
+        "related_images": [
+          "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum",
+            "properties": {
+              "type": "Raman",
+              "x_axis": "Raman shift (cm⁻¹)",
+              "y_axis": "Intensity (a.u.)",
+              "range": [
+                400,
+                1200
+              ],
+              "extracted_from_image": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+            },
+            "source_image_file": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_NF_CoFe_LDH",
+        "type": "chemical",
+        "name": "NF/CoFe LDH",
+        "aliases": [
+          "CoFe LDH"
+        ],
+        "formula": "",
+        "composition": {},
+        "properties": {}
+      },
+      {
+        "id": "chem_NF_FeOOH",
+        "type": "chemical",
+        "name": "NF/FeOOH",
+        "aliases": [
+          "FeOOH"
+        ],
+        "formula": "",
+        "composition": {},
+        "properties": {}
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM images confirm successful deposition of CoFe LDH and FeOOH on nickel foam surface.",
+        "evidence_snippet": "The SEM images of NF/CoFe LDH and NF/FeOOH samples are provided in Fig S9 to further confirm the successful deposition of CoFe LDH and FeOOH on the surface of nickel foam."
+      },
+      {
+        "id": "electrolyte_1",
+        "type": "chemical",
+        "name": "1 M KOH",
+        "properties": {
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "electrolyte_2",
+        "type": "chemical",
+        "name": "1 M KOH & 0.5 M Na",
+        "properties": {
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "electrolyte_3",
+        "type": "chemical",
+        "name": "1 M KOH & 1 M NaCl",
+        "properties": {
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "electrolyte_4",
+        "type": "chemical",
+        "name": "1 M KOH & Seawater",
+        "properties": {
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "current_density_100",
+        "type": "parameter",
+        "name": "100 mA/cm²",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "current_density_200",
+        "type": "parameter",
+        "name": "200 mA/cm²",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "current_density_500",
+        "type": "parameter",
+        "name": "500 mA/cm²",
+        "properties": {
+          "color": "gray",
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "technique": "X-ray Photoelectron Spectroscopy",
+          "x_axis": "Binding Energy (eV)",
+          "x_range": [
+            870,
+            880
+          ],
+          "y_axis": "Intensity (a.u.)",
+          "peaks": [
+            "multiple colored peaks at ~870-880 eV"
+          ],
+          "extracted_from_image": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+        },
+        "source_image_file": "34f04b473fec9121a9ad40256d553bd8cbdf7add21734054876c9f74f49422e6.jpg"
+      },
+      {
+        "id": "data_1_100",
+        "type": "data_point",
+        "name": "1M KOH @ 100 mA/cm²",
+        "properties": {
+          "overpotential": 237,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_1_200",
+        "type": "data_point",
+        "name": "1M KOH @ 200 mA/cm²",
+        "properties": {
+          "overpotential": 251,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_1_500",
+        "type": "data_point",
+        "name": "1M KOH @ 500 mA/cm²",
+        "properties": {
+          "overpotential": 274,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_2_100",
+        "type": "data_point",
+        "name": "1M KOH & 0.5M Na @ 100 mA/cm²",
+        "properties": {
+          "overpotential": 237,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_2_200",
+        "type": "data_point",
+        "name": "1M KOH & 0.5M Na @ 200 mA/cm²",
+        "properties": {
+          "overpotential": 257,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_2_500",
+        "type": "data_point",
+        "name": "1M KOH & 0.5M Na @ 500 mA/cm²",
+        "properties": {
+          "overpotential": 280,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_3_100",
+        "type": "data_point",
+        "name": "1M KOH & 1M NaCl @ 100 mA/cm²",
+        "properties": {
+          "overpotential": 238,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_3_200",
+        "type": "data_point",
+        "name": "1M KOH & 1M NaCl @ 200 mA/cm²",
+        "properties": {
+          "overpotential": 254,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_3_500",
+        "type": "data_point",
+        "name": "1M KOH & 1M NaCl @ 500 mA/cm²",
+        "properties": {
+          "overpotential": 277,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_4_100",
+        "type": "data_point",
+        "name": "1M KOH & Seawater @ 100 mA/cm²",
+        "properties": {
+          "overpotential": 247,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_4_200",
+        "type": "data_point",
+        "name": "1M KOH & Seawater @ 200 mA/cm²",
+        "properties": {
+          "overpotential": 266,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "data_4_500",
+        "type": "data_point",
+        "name": "1M KOH & Seawater @ 500 mA/cm²",
+        "properties": {
+          "overpotential": 296,
+          "extracted_from_image": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+        },
+        "source_image_file": "000e3c08d9ace111fb435534b852e2e471113fd474bc6435c43b55e4dcfa0fe6.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "chemical",
+        "name": "1 M KOH",
+        "properties": {
+          "concentration": "1 M",
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "ldh-ni",
+        "type": "chemical",
+        "name": "LDH-Ni",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "nif",
+        "type": "chemical",
+        "name": "NiFe",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "nifs",
+        "type": "chemical",
+        "name": "NiFeS",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "nif2",
+        "type": "chemical",
+        "name": "NiF2",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "nife-ldh",
+        "type": "chemical",
+        "name": "NiFe-LDH",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "nifs2",
+        "type": "chemical",
+        "name": "NiFeS2",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "nif-nc",
+        "type": "chemical",
+        "name": "NiFe-NC",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "nifp",
+        "type": "chemical",
+        "name": "NiFeP",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "mos2",
+        "type": "chemical",
+        "name": "MoS2",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "cos",
+        "type": "chemical",
+        "name": "CoS",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "nys",
+        "type": "chemical",
+        "name": "NiYS",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "cofe",
+        "type": "chemical",
+        "name": "CoFe",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "phosphate",
+        "type": "chemical",
+        "name": "phosphate",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "condition",
+        "type": "condition",
+        "name": "10 mA/cm² in 1 M KOH",
+        "properties": {
+          "extracted_from_image": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+        },
+        "source_image_file": "15acbf6dda497fc677a1e5eac8633a6cdb0e0e62d4a9d58a10ff5ea26c0288d4.jpg"
+      },
+      {
+        "id": "exp1",
+        "type": "experiment",
+        "name": "Electrocatalysis Test",
+        "properties": {
+          "technique": "LSV",
+          "reference_electrode": "RHE",
+          "context": "Oxygen evolution reaction (OER)",
+          "extracted_from_image": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+        },
+        "source_image_file": "171241f0af9c86e7856fba414be6c107bb5e34952b3453acfd0bb0692e75bfd5.jpg"
+      },
+      {
+        "id": "10mA",
+        "type": "condition",
+        "name": "10 mA/cm²",
+        "properties": {
+          "extracted_from_image": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+        },
+        "source_image_file": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+      },
+      {
+        "id": "100mA",
+        "type": "condition",
+        "name": "100 mA/cm²",
+        "properties": {
+          "extracted_from_image": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+        },
+        "source_image_file": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+      },
+      {
+        "id": "200mA",
+        "type": "condition",
+        "name": "200 mA/cm²",
+        "properties": {
+          "extracted_from_image": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+        },
+        "source_image_file": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+      },
+      {
+        "id": "500mA",
+        "type": "condition",
+        "name": "500 mA/cm²",
+        "properties": {
+          "extracted_from_image": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+        },
+        "source_image_file": "204a30a8ed760aaea79ba43925b505257a189b97065931c9e0fe755d0237dd39.jpg"
+      },
+      {
+        "id": "image_d",
+        "type": "image",
+        "name": "Figure Panel d",
+        "properties": {
+          "label": "d",
+          "scale_bar": "1 μm",
+          "extracted_from_image": "44ada4fcd81f256757e88a77daa60a76465bfb500acba965a7a1b0ca56f90b07.jpg"
+        },
+        "source_image_file": "44ada4fcd81f256757e88a77daa60a76465bfb500acba965a7a1b0ca56f90b07.jpg"
+      },
+      {
+        "id": "microscopy_image",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "description": "Fibrous network with bright spots",
+          "scale": "1 μm",
+          "extracted_from_image": "44ada4fcd81f256757e88a77daa60a76465bfb500acba965a7a1b0ca56f90b07.jpg"
+        },
+        "source_image_file": "44ada4fcd81f256757e88a77daa60a76465bfb500acba965a7a1b0ca56f90b07.jpg"
+      },
+      {
+        "id": "fibrous_structure",
+        "type": "morphology",
+        "name": "Nanofiber Network",
+        "properties": {
+          "appearance": "interwoven gray fibers",
+          "texture": "net-like, porous",
+          "extracted_from_image": "44ada4fcd81f256757e88a77daa60a76465bfb500acba965a7a1b0ca56f90b07.jpg"
+        },
+        "source_image_file": "44ada4fcd81f256757e88a77daa60a76465bfb500acba965a7a1b0ca56f90b07.jpg"
+      },
+      {
+        "id": "bright_spots",
+        "type": "feature",
+        "name": "Bright Particles",
+        "properties": {
+          "appearance": "white/bright clusters",
+          "distribution": "scattered within fibers",
+          "size": "sub-micron scale",
+          "extracted_from_image": "44ada4fcd81f256757e88a77daa60a76465bfb500acba965a7a1b0ca56f90b07.jpg"
+        },
+        "source_image_file": "44ada4fcd81f256757e88a77daa60a76465bfb500acba965a7a1b0ca56f90b07.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "characterization",
+        "name": "Scale Bar",
+        "properties": {
+          "length": "1 μm",
+          "description": "Scale indicator for microscopy image",
+          "extracted_from_image": "ff29b0550aabe7637a87c366ebd9ce6a3762216be3313895b97d0781a14a78b5.jpg"
+        },
+        "source_image_file": "ff29b0550aabe7637a87c366ebd9ce6a3762216be3313895b97d0781a14a78b5.jpg"
+      },
+      {
+        "id": "peak_276",
+        "type": "peak",
+        "name": "Raman Peak at 276 cm⁻¹",
+        "properties": {
+          "position": 276,
+          "unit": "cm⁻¹",
+          "extracted_from_image": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+        },
+        "source_image_file": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+      },
+      {
+        "id": "peak_442",
+        "type": "peak",
+        "name": "Raman Peak at 442 cm⁻¹",
+        "properties": {
+          "position": 442,
+          "unit": "cm⁻¹",
+          "extracted_from_image": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+        },
+        "source_image_file": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+      },
+      {
+        "id": "peak_531",
+        "type": "peak",
+        "name": "Raman Peak at 531 cm⁻¹",
+        "properties": {
+          "position": 531,
+          "unit": "cm⁻¹",
+          "extracted_from_image": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+        },
+        "source_image_file": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+      },
+      {
+        "id": "peak_966",
+        "type": "peak",
+        "name": "Raman Peak at 966 cm⁻¹",
+        "properties": {
+          "position": 966,
+          "unit": "cm⁻¹",
+          "extracted_from_image": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+        },
+        "source_image_file": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+      },
+      {
+        "id": "peak_1063",
+        "type": "peak",
+        "name": "Raman Peak at 1063 cm⁻¹",
+        "properties": {
+          "position": 1063,
+          "unit": "cm⁻¹",
+          "extracted_from_image": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+        },
+        "source_image_file": "62fe34955499314095d472c432cbc7c0ffb1a8454b6aec6112716617a8f83bca.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node1",
+        "type": "chemical",
+        "name": "H2",
+        "properties": {
+          "formula": "H₂",
+          "description": "Hydrogen gas",
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node2",
+        "type": "chemical",
+        "name": "O2",
+        "properties": {
+          "formula": "O₂",
+          "description": "Oxygen gas",
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node3",
+        "type": "chemical",
+        "name": "1M KOH",
+        "properties": {
+          "formula": "1 M KOH",
+          "description": "1 molar potassium hydroxide electrolyte",
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node4",
+        "type": "chemical",
+        "name": "Seawater",
+        "properties": {
+          "description": "Seawater electrolyte",
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node5",
+        "type": "characterization",
+        "name": "H2 Experimental",
+        "properties": {
+          "type": "gas production curve",
+          "data_type": "experimental",
+          "gas": "H₂",
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node6",
+        "type": "characterization",
+        "name": "O2 Experimental",
+        "properties": {
+          "type": "gas production curve",
+          "data_type": "experimental",
+          "gas": "O₂",
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node7",
+        "type": "characterization",
+        "name": "H2 Theoretical",
+        "properties": {
+          "type": "gas production curve",
+          "data_type": "theoretical",
+          "gas": "H₂",
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node8",
+        "type": "characterization",
+        "name": "O2 Theoretical",
+        "properties": {
+          "type": "gas production curve",
+          "data_type": "theoretical",
+          "gas": "O₂",
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1_node9",
+        "type": "condition",
+        "name": "Electrochemical Condition",
+        "properties": {
+          "current_density": "250 mA/cm²",
+          "electrolytes": [
+            "1M KOH",
+            "Seawater"
+          ],
+          "extracted_from_image": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+        },
+        "source_image_file": "7c996df95d559a38a0bb659090164bd3ae4a6c0966e8bac31269f7a4683b86a1.jpg"
+      },
+      {
+        "id": "black_curve",
+        "type": "spectrum",
+        "name": "Black curve",
+        "properties": {
+          "color": "black",
+          "style": "solid",
+          "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+        },
+        "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+      },
+      {
+        "id": "red_curve",
+        "type": "spectrum",
+        "name": "Red curve",
+        "properties": {
+          "color": "red",
+          "style": "solid",
+          "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+        },
+        "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+      },
+      {
+        "id": "cyan_curve",
+        "type": "spectrum",
+        "name": "Cyan curve",
+        "properties": {
+          "color": "cyan",
+          "style": "solid",
+          "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+        },
+        "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+      },
+      {
+        "id": "blue_curve",
+        "type": "spectrum",
+        "name": "Blue curve",
+        "properties": {
+          "color": "blue",
+          "style": "solid",
+          "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+        },
+        "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+      },
+      {
+        "id": "orange_curve",
+        "type": "spectrum",
+        "name": "Orange curve",
+        "properties": {
+          "color": "orange",
+          "style": "solid",
+          "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+        },
+        "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+      },
+      {
+        "id": "magenta_curve",
+        "type": "spectrum",
+        "name": "Magenta curve",
+        "properties": {
+          "color": "magenta",
+          "style": "solid",
+          "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+        },
+        "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+      },
+      {
+        "id": "sat_peaks",
+        "type": "feature",
+        "name": "Satellite peaks",
+        "properties": {
+          "description": "Sat. peaks labeled on spectrum",
+          "extracted_from_image": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+        },
+        "source_image_file": "7ee85d4ecca556ac29668056d13d85f2d183f1e652f84efd5d14b86dec5dc114.jpg"
+      },
+      {
+        "id": "electrolyte_1m_koh",
+        "type": "chemical",
+        "name": "1 M KOH",
+        "properties": {
+          "concentration": "1 M",
+          "components": [
+            "KOH"
+          ],
+          "extracted_from_image": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+        },
+        "source_image_file": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+      },
+      {
+        "id": "electrolyte_1m_koh_0.5m_nacl",
+        "type": "chemical",
+        "name": "1 M KOH & 0.5 M NaCl",
+        "properties": {
+          "concentration": "1 M KOH + 0.5 M NaCl",
+          "components": [
+            "KOH",
+            "NaCl"
+          ],
+          "extracted_from_image": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+        },
+        "source_image_file": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+      },
+      {
+        "id": "electrolyte_1m_koh_1m_nacl",
+        "type": "chemical",
+        "name": "1 M KOH & 1 M NaCl",
+        "properties": {
+          "concentration": "1 M KOH + 1 M NaCl",
+          "components": [
+            "KOH",
+            "NaCl"
+          ],
+          "extracted_from_image": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+        },
+        "source_image_file": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+      },
+      {
+        "id": "electrolyte_1m_koh_seawater",
+        "type": "chemical",
+        "name": "1 M KOH & seawater",
+        "properties": {
+          "concentration": "1 M KOH + seawater",
+          "components": [
+            "KOH",
+            "seawater"
+          ],
+          "extracted_from_image": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+        },
+        "source_image_file": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+      },
+      {
+        "id": "lsv_chart",
+        "type": "characterization",
+        "name": "LSV Curves",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Potential (V vs. RHE)",
+          "y_axis": "Current Density (mA/cm²)",
+          "range_x": [
+            1.35,
+            1.55
+          ],
+          "range_y": [
+            0,
+            1000
+          ],
+          "extracted_from_image": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+        },
+        "source_image_file": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+      },
+      {
+        "id": "rhe",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+        },
+        "source_image_file": "893c0acac8fbe71c84f10e2052ff7577732201cf97b8b81345ef60fb37fca2e1.jpg"
+      },
+      {
+        "id": "material",
+        "type": "chemical",
+        "name": "Nanomaterial",
+        "properties": {
+          "description": "Material exhibiting fibrous or sheet-like nanostructure",
+          "extracted_from_image": "ff29b0550aabe7637a87c366ebd9ce6a3762216be3313895b97d0781a14a78b5.jpg"
+        },
+        "source_image_file": "ff29b0550aabe7637a87c366ebd9ce6a3762216be3313895b97d0781a14a78b5.jpg"
+      },
+      {
+        "id": "highlighted_region",
+        "type": "region_of_interest",
+        "name": "Highlighted Region",
+        "properties": {
+          "shape": "rectangle",
+          "description": "white square inset focusing on specific microstructural feature",
+          "extracted_from_image": "a5f9999bd04e9fe4a17f4c025273accd134f0e2a185049ce1a05223bdabf7560.jpg"
+        },
+        "source_image_file": "a5f9999bd04e9fe4a17f4c025273accd134f0e2a185049ce1a05223bdabf7560.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "chemical",
+        "name": "NaCl",
+        "properties": {
+          "formula": "NaCl",
+          "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+        },
+        "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "material",
+        "name": "Electrocatalyst",
+        "properties": {
+          "context": "under test",
+          "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+        },
+        "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "characterization",
+        "name": "Chronopotentiometry",
+        "properties": {
+          "x_axis": "Time (h)",
+          "y_axis": "Potential (V)",
+          "current_density": "10 mA/cm²",
+          "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+        },
+        "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "condition",
+        "name": "10 mA/cm²",
+        "properties": {
+          "type": "current density",
+          "value": "10 mA/cm²",
+          "extracted_from_image": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+        },
+        "source_image_file": "cb1a55daeca8901fd11189029b61c06adadfcfed8a74c6bddb07029545ae578e.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "NaCl",
+        "properties": {
+          "concentration": "0.5 M, 1 M",
+          "role": "salt_additive",
+          "extracted_from_image": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+        },
+        "source_image_file": "aeae6fad6d7df9c399ada33ec3220c6ffc3ee43313d5c1618c03853646f3fbad.jpg"
+      },
+      {
+        "id": "map_data_1",
+        "type": "characterization",
+        "name": "Map Data 1",
+        "properties": {
+          "description": "Fluorescence map or elemental map showing green emission",
+          "scale_bar": "200 nm",
+          "extracted_from_image": "eea0ffe78975c8f88f9b7a882b9d88985b7cda1f47a03ce1777b80b69020c754.jpg"
+        },
+        "source_image_file": "eea0ffe78975c8f88f9b7a882b9d88985b7cda1f47a03ce1777b80b69020c754.jpg"
+      },
+      {
+        "id": "ni_element",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "symbol": "Ni",
+          "name": "Nickel",
+          "distribution": "Red intensity across mapped area",
+          "extracted_from_image": "df327e0891e8d9dbf324ca6b0d163e0c08a2c164cef43375e08891bf75358f45.jpg"
+        },
+        "source_image_file": "df327e0891e8d9dbf324ca6b0d163e0c08a2c164cef43375e08891bf75358f45.jpg"
+      },
+      {
+        "id": "sample_region",
+        "type": "characterization",
+        "name": "Sample Region",
+        "properties": {
+          "shape": "Irregular polygon",
+          "boundary": "White outline",
+          "extracted_from_image": "df327e0891e8d9dbf324ca6b0d163e0c08a2c164cef43375e08891bf75358f45.jpg"
+        },
+        "source_image_file": "df327e0891e8d9dbf324ca6b0d163e0c08a2c164cef43375e08891bf75358f45.jpg"
+      },
+      {
+        "id": "green_region",
+        "type": "region",
+        "name": "Green Fluorescent Region",
+        "properties": {
+          "color": "green",
+          "shape": "irregular polygon",
+          "intensity": "high",
+          "extracted_from_image": "eea0ffe78975c8f88f9b7a882b9d88985b7cda1f47a03ce1777b80b69020c754.jpg"
+        },
+        "source_image_file": "eea0ffe78975c8f88f9b7a882b9d88985b7cda1f47a03ce1777b80b69020c754.jpg"
+      },
+      {
+        "id": "o_element",
+        "type": "chemical",
+        "name": "Oxygen (O)",
+        "properties": {
+          "symbol": "O",
+          "color": "white",
+          "likely_mapping": "elemental distribution",
+          "extracted_from_image": "eea0ffe78975c8f88f9b7a882b9d88985b7cda1f47a03ce1777b80b69020c754.jpg"
+        },
+        "source_image_file": "eea0ffe78975c8f88f9b7a882b9d88985b7cda1f47a03ce1777b80b69020c754.jpg"
+      },
+      {
+        "id": "nanoscale_sample",
+        "type": "sample",
+        "name": "Nanoscale Sample",
+        "properties": {
+          "scale": "200 nm",
+          "technique": "likely EDS/EDX map or fluorescence microscopy",
+          "extracted_from_image": "eea0ffe78975c8f88f9b7a882b9d88985b7cda1f47a03ce1777b80b69020c754.jpg"
+        },
+        "source_image_file": "eea0ffe78975c8f88f9b7a882b9d88985b7cda1f47a03ce1777b80b69020c754.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "image",
+        "name": "Figure b",
+        "properties": {
+          "label": "b",
+          "description": "Microscopy image with scale bar",
+          "extracted_from_image": "ff29b0550aabe7637a87c366ebd9ce6a3762216be3313895b97d0781a14a78b5.jpg"
+        },
+        "source_image_file": "ff29b0550aabe7637a87c366ebd9ce6a3762216be3313895b97d0781a14a78b5.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_NF_NiFe_LDH_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_NiFe_LDH_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_NiFe_LDH_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_NiFe_LDH_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_NiFe_LDH_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_NiFe_LDH_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_CoFe_LDH_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_NF_CoFe_LDH",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NF_FeOOH_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_NF_FeOOH",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "source_id": "electrolyte_1",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_2",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_3",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_4",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "current_density_100",
+        "target_id": "chart",
+        "type": "parameter_of"
+      },
+      {
+        "source_id": "current_density_200",
+        "target_id": "chart",
+        "type": "parameter_of"
+      },
+      {
+        "source_id": "current_density_500",
+        "target_id": "chart",
+        "type": "parameter_of"
+      },
+      {
+        "source_id": "electrolyte_1",
+        "target_id": "data_1_100",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_100",
+        "target_id": "data_1_100",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_1",
+        "target_id": "data_1_200",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_200",
+        "target_id": "data_1_200",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_1",
+        "target_id": "data_1_500",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_500",
+        "target_id": "data_1_500",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_2",
+        "target_id": "data_2_100",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_100",
+        "target_id": "data_2_100",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_2",
+        "target_id": "data_2_200",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_200",
+        "target_id": "data_2_200",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_2",
+        "target_id": "data_2_500",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_500",
+        "target_id": "data_2_500",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_3",
+        "target_id": "data_3_100",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_100",
+        "target_id": "data_3_100",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_3",
+        "target_id": "data_3_200",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_200",
+        "target_id": "data_3_200",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_3",
+        "target_id": "data_3_500",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_500",
+        "target_id": "data_3_500",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_4",
+        "target_id": "data_4_100",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_100",
+        "target_id": "data_4_100",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_4",
+        "target_id": "data_4_200",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_200",
+        "target_id": "data_4_200",
+        "type": "at_current"
+      },
+      {
+        "source_id": "electrolyte_4",
+        "target_id": "data_4_500",
+        "type": "has_data"
+      },
+      {
+        "source_id": "current_density_500",
+        "target_id": "data_4_500",
+        "type": "at_current"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_1_100",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_1_200",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_1_500",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_2_100",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_2_200",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_2_500",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_3_100",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_3_200",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_3_500",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_4_100",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_4_200",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "data_4_500",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "ldh-ni",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "nif",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "nifs",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "nif2",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "nife-ldh",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "nifs2",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "nif-nc",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "nifp",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "mos2",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "cos",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "nys",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "cofe",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "phosphate",
+        "target_id": "chart",
+        "type": "measured"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "chart",
+        "type": "used_in"
+      },
+      {
+        "source_id": "condition",
+        "target_id": "chart",
+        "type": "describes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_nf_nife_ldh",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_NF_IrO2",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_NF",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "exp1",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "exp1",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "exp1",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "chem_nf_nife_ldh",
+        "target_id": "exp1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_NF_IrO2",
+        "target_id": "exp1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "exp1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_1",
+        "type": "substrate_for"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "substrate_for"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "labels"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "annotates"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "scale"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "specifies"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "feature"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "highlights"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "chem_NF_NiFe_LDH",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "chem_NF_IrO2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "chem_NF",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "10mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "100mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "200mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF_NiFe_LDH",
+        "target_id": "500mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF_IrO2",
+        "target_id": "10mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF_IrO2",
+        "target_id": "100mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF_IrO2",
+        "target_id": "200mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "10mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "100mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "200mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "500mA",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chart",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chart",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chart",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chart",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chart",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_1",
+        "type": "spin-orbit_component"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "spin-orbit_component"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "same_component"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "microscopy_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "microscopy_image",
+        "target_id": "fibrous_structure",
+        "type": "shows"
+      },
+      {
+        "source_id": "microscopy_image",
+        "target_id": "bright_spots",
+        "type": "shows"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "fibrous_structure",
+        "target_id": "bright_spots",
+        "type": "contains"
+      },
+      {
+        "source_id": "microscopy_image",
+        "target_id": "scale_bar",
+        "type": "calibrated_by"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node4",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "peak_276",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "peak_442",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "peak_531",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "peak_966",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "peak_1063",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "has_scale"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "calibrates_size"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node1",
+        "type": "measures"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node2",
+        "type": "measures"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node1",
+        "type": "predicts"
+      },
+      {
+        "source_id": "node8",
+        "target_id": "node2",
+        "type": "predicts"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node9",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node9",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node9",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "node8",
+        "target_id": "node9",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "node9",
+        "target_id": "node3",
+        "type": "uses_electrolyte"
+      },
+      {
+        "source_id": "node9",
+        "target_id": "node4",
+        "type": "uses_electrolyte"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "black_curve",
+        "target_id": "char_5",
+        "type": "component"
+      },
+      {
+        "source_id": "red_curve",
+        "target_id": "char_5",
+        "type": "component"
+      },
+      {
+        "source_id": "cyan_curve",
+        "target_id": "char_5",
+        "type": "component"
+      },
+      {
+        "source_id": "blue_curve",
+        "target_id": "char_5",
+        "type": "component"
+      },
+      {
+        "source_id": "orange_curve",
+        "target_id": "char_5",
+        "type": "component"
+      },
+      {
+        "source_id": "magenta_curve",
+        "target_id": "char_5",
+        "type": "component"
+      },
+      {
+        "source_id": "sat_peaks",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "subpeak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "subpeak"
+      },
+      {
+        "source_id": "electrolyte_1m_koh",
+        "target_id": "lsv_chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_1m_koh_0.5m_nacl",
+        "target_id": "lsv_chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_1m_koh_1m_nacl",
+        "target_id": "lsv_chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_1m_koh_seawater",
+        "target_id": "lsv_chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "lsv_chart",
+        "target_id": "rhe",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "used_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "produces"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "highlighted_region",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "scale_bar",
+        "type": "includes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n8",
+        "type": "data_series"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "data_series"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "data_series"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n6",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "substrate_for"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "substrate_for"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "substrate_for"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n7",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n7",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n7",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n8",
+        "type": "at_condition"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "has_scale"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_5",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "component"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "component"
+      },
+      {
+        "source_id": "map_data_1",
+        "target_id": "ni_element",
+        "type": "depicts"
+      },
+      {
+        "source_id": "map_data_1",
+        "target_id": "sample_region",
+        "type": "analyzes"
+      },
+      {
+        "source_id": "ni_element",
+        "target_id": "sample_region",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "map_data_1",
+        "target_id": "green_region",
+        "type": "contains"
+      },
+      {
+        "source_id": "map_data_1",
+        "target_id": "o_element",
+        "type": "maps"
+      },
+      {
+        "source_id": "map_data_1",
+        "target_id": "nanoscale_sample",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "green_region",
+        "target_id": "nanoscale_sample",
+        "type": "part_of"
+      },
+      {
+        "source_id": "o_element",
+        "target_id": "nanoscale_sample",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "material",
+        "type": "depicts"
+      },
+      {
+        "source_id": "scale_bar",
+        "target_id": "material",
+        "type": "calibrates"
+      }
+    ]
+  }
+}

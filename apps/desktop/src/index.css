@@ -1,0 +1,476 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/source-serif-4/400.css";
+@import "@fontsource/source-serif-4/600.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Webview page-zoom factor (Cmd/Ctrl +/-), owned by ZoomProvider. The macOS
+   traffic lights are native chrome and never zoom, so titlebar strips counter-
+   scale their height and traffic-light inset by 1/--zoom (see overlayTitlebarStyle)
+   to stay pinned to the lights at every zoom level. */
+:root {
+  --zoom: 1;
+  --aqua-blur: 20px;
+  --aqua-surface-opacity: 0.605;
+  --aqua-surface-2-opacity: 0.441;
+  --aqua-wash-opacity: 0.08;
+}
+
+/* Warm — the original paper palette. Aqua is selected when no preference is saved. */
+:root,
+[data-theme="warm"] {
+  --bg: #f7f5ef;
+  --surface: #ffffff;
+  --surface-2: #f2efe7;
+  --border: #e7e3da;
+  --border-faint: #efece5;
+  --text: #2a2723;
+  --muted: #8c877d;
+  --accent: #c15f3c;
+  --accent-fg: #ffffff;
+  --link: #2a6fdb;
+  --warn: #c98a2b;
+  --ok: #4b8b5b;
+  --error: #c0564b;
+  /* Chart design system (P1-5) — validated categorical hues + chart chrome,
+     the single source of truth shared with @ai4s/shared and the matplotlib
+     style. Light surface = --surface (#ffffff). */
+  --series-1: #2a78d6;
+  --series-2: #1baf7a;
+  --series-3: #eda100;
+  --series-4: #008300;
+  --series-5: #4a3aa7;
+  --series-6: #e34948;
+  --series-7: #e87ba4;
+  --series-8: #eb6834;
+  --chart-grid: #e7e3da;
+  --chart-axis: #cbc6bb;
+  /* Code highlighting (GitHub-light hues; see .hljs-* rules below). */
+  --hl-keyword: #cf222e;
+  --hl-entity: #8250df;
+  --hl-constant: #0550ae;
+  --hl-string: #0a3069;
+  --hl-builtin: #953800;
+  --hl-comment: #6e7781;
+  --hl-tag: #116329;
+  --hl-addition: #116329;
+  --hl-addition-bg: #dafbe1;
+  --hl-deletion: #82071e;
+  --hl-deletion-bg: #ffebe9;
+}
+
+/* Light — clean white with neutral (cool) grays and a blue accent (the warm
+   terracotta belongs to the warm theme); same chart hues as warm since both
+   sit on a white chart surface. */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f4f4f6;
+  --border: #e6e6ea;
+  --border-faint: #f0f0f3;
+  --text: #1f1f24;
+  --muted: #8a8a93;
+  --accent: #2563eb;
+  --accent-fg: #ffffff;
+  --link: #2a6fdb;
+  --warn: #c98a2b;
+  --ok: #4b8b5b;
+  --error: #c0564b;
+  --series-1: #2a78d6;
+  --series-2: #1baf7a;
+  --series-3: #eda100;
+  --series-4: #008300;
+  --series-5: #4a3aa7;
+  --series-6: #e34948;
+  --series-7: #e87ba4;
+  --series-8: #eb6834;
+  --chart-grid: #e6e6ea;
+  --chart-axis: #c9c9cf;
+  /* Code highlighting (GitHub-light hues; see .hljs-* rules below). */
+  --hl-keyword: #cf222e;
+  --hl-entity: #8250df;
+  --hl-constant: #0550ae;
+  --hl-string: #0a3069;
+  --hl-builtin: #953800;
+  --hl-comment: #6e7781;
+  --hl-tag: #116329;
+  --hl-addition: #116329;
+  --hl-addition-bg: #dafbe1;
+  --hl-deletion: #82071e;
+  --hl-deletion-bg: #ffebe9;
+}
+
+/* Dark — neutral-cool like light, so it shares light's blue accent (stepped
+   up for the dark surface; dark text on the filled accent keeps contrast). */
+[data-theme="dark"] {
+  --bg: #16151a;
+  --surface: #1e1d24;
+  --surface-2: #26252d;
+  --border: #33313c;
+  --border-faint: #25242b;
+  --text: #ece9e2;
+  --muted: #9a958c;
+  --accent: #4d9df6;
+  --accent-fg: #16151a;
+  --link: #7aa5f0;
+  --warn: #d7a24a;
+  --ok: #6bb07d;
+  --error: #d47a70;
+  /* Same hues stepped for the dark chart surface (--surface #1e1d24). */
+  --series-1: #3987e5;
+  --series-2: #199e70;
+  --series-3: #c98500;
+  --series-4: #008300;
+  --series-5: #9085e9;
+  --series-6: #e66767;
+  --series-7: #d55181;
+  --series-8: #d95926;
+  --chart-grid: #33313c;
+  --chart-axis: #4a4753;
+  /* Code highlighting (GitHub-dark hues; see .hljs-* rules below). */
+  --hl-keyword: #ff7b72;
+  --hl-entity: #d2a8ff;
+  --hl-constant: #79c0ff;
+  --hl-string: #a5d6ff;
+  --hl-builtin: #ffa657;
+  --hl-comment: #9198a1;
+  --hl-tag: #7ee787;
+  --hl-addition: #aff5b4;
+  --hl-addition-bg: rgba(46, 160, 67, 0.18);
+  --hl-deletion: #ffdcd7;
+  --hl-deletion-bg: rgba(248, 81, 73, 0.18);
+}
+
+/* Aqua — a desktop-native adaptation of the linked DSH Web glass theme.
+   Unlike the original Web plugin, this uses NebulaMat's semantic tokens and
+   does not patch DSH Web DOM slots. The page remains readable without blur. */
+[data-theme="aqua"] {
+  color-scheme: dark;
+  --bg: transparent;
+  --surface: rgba(23, 42, 60, var(--aqua-surface-opacity));
+  --surface-2: rgba(32, 56, 76, var(--aqua-surface-2-opacity));
+  --border: rgba(177, 215, 236, 0.24);
+  --border-faint: rgba(177, 215, 236, 0.12);
+  --text: #eef8ff;
+  --muted: #a9c2d1;
+  --accent: #70c6e8;
+  --accent-fg: #092033;
+  --link: #8fd9ff;
+  --warn: #e6bb70;
+  --ok: #82d0a6;
+  --error: #f29a9a;
+  --series-1: #70c6e8;
+  --series-2: #82d0a6;
+  --series-3: #e6bb70;
+  --series-4: #b5a0ed;
+  --series-5: #f29a9a;
+  --series-6: #8fd9ff;
+  --series-7: #d2a6ef;
+  --series-8: #f0a879;
+  --chart-grid: rgba(177, 215, 236, 0.16);
+  --chart-axis: rgba(177, 215, 236, 0.32);
+  --hl-keyword: #ff9b9b;
+  --hl-entity: #d2a6ef;
+  --hl-constant: #8fd9ff;
+  --hl-string: #a9e6ff;
+  --hl-builtin: #f0b779;
+  --hl-comment: #9bb3c3;
+  --hl-tag: #9be7b1;
+  --hl-addition: #a9f0bd;
+  --hl-addition-bg: rgba(78, 180, 112, 0.18);
+  --hl-deletion: #ffd2d2;
+  --hl-deletion-bg: rgba(220, 90, 90, 0.2);
+}
+
+/* The source DSH plugin keeps Aqua's glass layer independent from the
+   presenter's light/dark scheme. These values are the light companion to the
+   dark defaults above; AquaEffects flips the resolved scheme attribute and the
+   same glass CSS then exposes the fluid through cool white surfaces. */
+[data-theme="aqua"][data-aqua-scheme="light"] {
+  color-scheme: light;
+  --bg: transparent;
+  --surface: rgba(255, 255, 255, var(--aqua-surface-opacity));
+  --surface-2: rgba(236, 242, 250, var(--aqua-surface-2-opacity));
+  --border: rgba(19, 45, 83, 0.22);
+  --border-faint: rgba(19, 45, 83, 0.1);
+  --text: #13243e;
+  --muted: #40597a;
+  --accent: #3f76d8;
+  --accent-fg: #ffffff;
+  --link: #2e5eb8;
+  --warn: #a56d16;
+  --ok: #2f7b48;
+  --error: #b84646;
+  --chart-grid: rgba(19, 45, 83, 0.12);
+  --chart-axis: rgba(19, 45, 83, 0.24);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+[data-theme="aqua"] body {
+  background: #0c121b;
+}
+
+[data-theme="aqua"][data-aqua-scheme="light"] body {
+  background: #f4f8fd;
+}
+
+[data-theme="aqua"] main {
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+[data-theme="aqua"] .sidebar-surface,
+[data-theme="aqua"] .bg-surface {
+  background: var(--surface);
+  border-color: var(--border);
+  backdrop-filter: blur(var(--aqua-blur)) saturate(135%);
+  -webkit-backdrop-filter: blur(var(--aqua-blur)) saturate(135%);
+}
+
+[data-theme="aqua"] .bg-surface-2 {
+  background: var(--surface-2);
+  border-color: var(--border-faint);
+  backdrop-filter: blur(calc(var(--aqua-blur) * 0.7)) saturate(125%);
+  -webkit-backdrop-filter: blur(calc(var(--aqua-blur) * 0.7)) saturate(125%);
+}
+
+[data-theme="aqua"] .border-border {
+  border-color: var(--border);
+}
+
+[data-theme="aqua"] .border-faint,
+[data-theme="aqua"] .divide-faint > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-faint);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  [data-theme="aqua"] body {
+    background: #102a3e;
+  }
+  [data-theme="aqua"] main,
+  [data-theme="aqua"] .sidebar-surface,
+  [data-theme="aqua"] .bg-surface,
+  [data-theme="aqua"] .bg-surface-2 {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Sidebar background. With window vibrancy (macOS desktop app, data-vibrancy
+   set by ThemeProvider) the page under the sidebar goes transparent and the
+   sidebar turns slightly translucent, letting the blurred desktop tint
+   through; everywhere else it stays an opaque surface. */
+.sidebar-surface {
+  background: var(--surface);
+}
+[data-vibrancy] body {
+  background: transparent;
+}
+/* The translucent tint uses the theme's own --bg (not the white surface) so
+   the sidebar stays warm in warm and dark in dark. The vibrancy material
+   itself follows the in-app theme via setWindowTheme (needs the
+   core:window:allow-set-theme capability). */
+[data-vibrancy] .sidebar-surface {
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+}
+[data-vibrancy][data-theme="dark"] .sidebar-surface {
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+}
+
+/* Native <select> chrome (metallic bezel + arrow) clashes with the flat
+   inputs; draw our own chevron instead. Pair with inputCls via selectCls. */
+.select-chrome {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23898989' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  background-size: 14px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+/* Windows WebView keeps the native article picker popup opaque white even
+   when Aqua uses a dark color scheme. Opt this picker back into light native
+   chrome and pin option colors so titles never become white-on-white. */
+.knowledge-article-select {
+  color-scheme: light;
+}
+.knowledge-article-select option {
+  background-color: #ffffff;
+  color: #111827;
+}
+
+/* Thin, calm scrollbars to match the paper aesthetic. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Horizontal scroll rows (e.g. the model picker's filter chips) where a visible
+   scrollbar would eat row height and clip the content. Still scrolls by drag/wheel. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* One-shot attention pulse for the reasoning-effort slider when a model that
+   supports it is picked — so it's clear where the effort control is. */
+@keyframes effort-flash {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 157, 255, 0);
+  }
+  35%,
+  65% {
+    box-shadow: 0 0 0 3px rgba(76, 157, 255, 0.7);
+  }
+}
+.animate-effort-flash {
+  animation: effort-flash 0.6s ease-in-out 2;
+}
+
+/* highlight.js token colors on the per-theme --hl-* variables (CodeViewer).
+   Grouping mirrors highlight.js's github/github-dark themes so every language
+   grammar maps the same way; a bundled stylesheet would hardcode one theme. */
+.hljs {
+  color: var(--text);
+  background: transparent;
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  color: var(--hl-keyword);
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  color: var(--hl-entity);
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-variable {
+  color: var(--hl-constant);
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-meta .hljs-string {
+  color: var(--hl-string);
+}
+.hljs-built_in,
+.hljs-symbol,
+.hljs-bullet {
+  color: var(--hl-builtin);
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  color: var(--hl-comment);
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  color: var(--hl-tag);
+}
+.hljs-subst {
+  color: var(--text);
+}
+.hljs-section {
+  color: var(--hl-constant);
+  font-weight: 600;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 600;
+}
+.hljs-addition {
+  color: var(--hl-addition);
+  background-color: var(--hl-addition-bg);
+}
+.hljs-deletion {
+  color: var(--hl-deletion);
+  background-color: var(--hl-deletion-bg);
+}
+
+/* Sidebar expand button appears after the collapse animation settles. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 150ms ease-out 150ms backwards;
+}
+
+/* App chrome is not a document. Right-clicking a sidebar row or a Screen tab
+   used to select its label (WebKit selects the word under the cursor before
+   opening its menu), leaving stray highlight behind. Chrome opts out of
+   selection via `select-none`; editable fields always opt back IN, since a
+   `user-select:none` ancestor would otherwise make their own text unselectable. */
+input,
+textarea,
+[contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* While a pane is being dragged (see lib/dragPane), forcefully suppress text
+   selection everywhere — the conversation's message text sets its own
+   `user-select`, which a body-level `user-select:none` can't override. */
+.pane-dragging,
+.pane-dragging * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  cursor: grabbing !important;
+}

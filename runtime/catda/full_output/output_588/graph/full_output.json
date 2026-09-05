@@ -1,0 +1,2950 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_CeOx",
+        "type": "chemical",
+        "name": "CeOx",
+        "aliases": [
+          "CeO_x",
+          "CeO_{\\varpi}"
+        ],
+        "formula": "CeO_x",
+        "properties": {
+          "particle_size": {
+            "value": 7.9,
+            "unit": "nm"
+          },
+          "particle_size_after_ripening": {
+            "value": 10.4,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_carbon_substrate",
+        "type": "chemical",
+        "name": "carbon substrate",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_iridium_salt",
+        "type": "chemical",
+        "name": "iridium salt",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_ethylene_glycol",
+        "type": "chemical",
+        "name": "ethylene glycol",
+        "aliases": [],
+        "formula": "C2H6O2",
+        "properties": {}
+      },
+      {
+        "id": "chem_RIE_Ir_CeOx",
+        "type": "chemical",
+        "name": "RIE-Ir/CeOx",
+        "aliases": [
+          "RIE-Ir/ $\\mathrm{CeO}_x$"
+        ],
+        "formula": "IrO_x/CeO_x",
+        "composition": {
+          "Ir": {
+            "value": 15.6,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "electrical_conductivity": {
+            "value": 0.893,
+            "unit": "S/cm"
+          },
+          "proton_conductivity": {
+            "value": 0.01,
+            "unit": "S/cm"
+          },
+          "Ir_particle_size_initial": {
+            "value": 2.2,
+            "unit": "nm"
+          },
+          "Ir_particle_size_after_test": {
+            "value": 2.3,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_commercial_CeO2",
+        "type": "chemical",
+        "name": "commercial CeO2",
+        "aliases": [
+          "commercial CeO_2"
+        ],
+        "formula": "CeO2",
+        "properties": {
+          "particle_size": {
+            "value": 30,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_C_Ir_CeO2",
+        "type": "chemical",
+        "name": "C-Ir/CeO2",
+        "aliases": [
+          "C - Ir / CeO_2"
+        ],
+        "formula": "Ir/CeO2",
+        "composition": {
+          "Ir": {
+            "value": 17.2,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "CeOx NP synthesis with sonication",
+        "procedure": "Synthesis of sub-10-nm CeO_x particles (4-10 nm, averaging 7.9±1.3 nm) with rough surface morphology. Sonication created transient (<1 ms) local high temperature (5000-5500 K via sonoluminescence) upon acoustic cavitation bubble collapse, eroding surface to expose high-energy facets. Carbon substrate used to facilitate dispersion of CeO_x.",
+        "method": "Sonication-assisted synthesis",
+        "conditions": {
+          "local_temperature": {
+            "value": 5000,
+            "unit": "K"
+          },
+          "local_temperature_max": {
+            "value": 5500,
+            "unit": "K"
+          },
+          "cavitation_time": {
+            "value": 1,
+            "unit": "ms"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Sonication",
+            "method": "Acoustic cavitation",
+            "conditions": {
+              "temperature": {
+                "value": 5000,
+                "unit": "K"
+              },
+              "temperature_max": {
+                "value": 5500,
+                "unit": "K"
+              },
+              "time_scale": {
+                "value": 1,
+                "unit": "ms"
+              }
+            },
+            "procedure_snippet": "Sonication created a transient (<1 ms) local high temperature (5000 to 5500 K, as indicated by sonoluminescence spectra; see fig. S1) upon the collapse of acoustic cavitation bubbles."
+          }
+        ],
+        "source_text": "We applied a sonication-assisted polyol method to promote the growth of the high-energy facets by first synthesizing sub-10-nm CeO_x particles with rough surface morphology."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "RIE sonication-assisted Ir/CeOx synthesis",
+        "procedure": "Ir NPs nucleated onto sonication-prepared CeO_x support using sonication-assisted polyol method: iridium salt reduced to monodispersed Ir NPs in ethylene glycol with heating. Sonication triples CeO_x ripening rate via Ostwald ripening (small particles dissolve, recondense on larger ones). Ir nucleation completes in 1st hour, ripening continues; reaction extended to 3h for optimal embedding (~1nm depth). Carbon substrate removed by final air calcination. Final CeO_x size: 10.4±1.1 nm.",
+        "method": "Sonication-assisted polyol RIE",
+        "conditions": {
+          "time": {
+            "value": 3,
+            "unit": "h"
+          },
+          "Ir_nucleation_time": {
+            "value": 1,
+            "unit": "h"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Polyol reduction",
+            "method": "Ir salt reduction",
+            "conditions": {},
+            "procedure_snippet": "iridium salt is reduced into monodispersed Ir NPs and loaded onto the metal oxide support by heating in ethylene glycol."
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Sonication ripening",
+            "method": "Ostwald ripening acceleration",
+            "conditions": {},
+            "procedure_snippet": "sonication was reintroduced during the Ir loading process, which was expected to expedite the dissolution of smaller particles and accelerate the ripening process. In this scenario, it was found that the ripening rate of the CeO_x support was tripled by sonication."
+          },
+          {
+            "id": "unit_op_2.3",
+            "name": "Calcination cleanup",
+            "method": "Air calcination",
+            "conditions": {},
+            "procedure_snippet": "carbon substrate was used to facilitate the dispersion of CeO_x which was removed at the end of synthesis by calcination in air."
+          }
+        ],
+        "source_text": "Ir NPs were nucleated onto the prepared CeO_x support particles using the polyol method... sonication was reintroduced during the Ir loading process... reaction was prolonged to 3 hours to optimize the embedding process."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Control Ir loading on commercial CeO2",
+        "procedure": "Ir NPs were nucleated onto ~30-nm commercial CeO2 crystallites using the same sonication-assisted polyol method for 3 hours.",
+        "method": "Sonication-assisted polyol",
+        "conditions": {
+          "time": {
+            "value": 3,
+            "unit": "h"
+          }
+        },
+        "unit_operations": [],
+        "source_text": "Ir NPs were then nucleated onto these crystallites using the same sonication-assisted polyol method for 3 hours. The final product, namely C-Ir/CeO2."
+      },
+      {
+        "id": "chem_RIE_Ir_ZrOx",
+        "type": "chemical",
+        "name": "RIE-Ir/ZrOx",
+        "aliases": [
+          "RIE-Ir/ $\\mathrm{ZrO}_x$"
+        ]
+      },
+      {
+        "id": "chem_ZrOx",
+        "type": "chemical",
+        "name": "ZrO_x",
+        "aliases": [],
+        "formula": "ZrO_x",
+        "properties": {}
+      },
+      {
+        "id": "chem_C_Ir_ZrO2",
+        "type": "chemical",
+        "name": "C-Ir/ZrO2",
+        "aliases": [
+          "C-Ir/ $\\mathrm{ZrO}_2$"
+        ],
+        "related_images": [
+          "0256b25f1b4bf83e24a723c9a30e552beaa5f24b627371f893152e1577e70ae9.jpg",
+          "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg",
+          "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg",
+          "382cf240e3759b5807e59c54cd4a0ad751707147affd1900e4f09028efa91773.jpg",
+          "73ef7494b1150aadd5ffea834f88eb8a1f90ea3a07120ba30c0b2163eabf8485.jpg",
+          "89cba8339a186ba83241fc3b7b1b308e2ceea9a0d8a95f1f36ef5364ac3441f2.jpg",
+          "946b6c8c5b3546b113a058996c1c4df64eca13f116eb5fde9b49317040ce18b0.jpg",
+          "bbc6706a3e43f1259fb883c1a15fc430713c5d9462b371a281782dd9a4fe202b.jpg",
+          "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg",
+          "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg",
+          "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg",
+          "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg",
+          "ee026c19c11e56f7fffdeaa9badd0965a41657f45cf13cd7d29d5df5bbbb9304.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ta2O5",
+            "properties": {
+              "formula": "Ta2O5",
+              "extracted_from_image": "0256b25f1b4bf83e24a723c9a30e552beaa5f24b627371f893152e1577e70ae9.jpg"
+            },
+            "source_image_file": "0256b25f1b4bf83e24a723c9a30e552beaa5f24b627371f893152e1577e70ae9.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "color": "red",
+              "size": "~5 nm aggregate, ~2 nm individual",
+              "morphology": "spherical cores with shell structure",
+              "extracted_from_image": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+            },
+            "source_image_file": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cell Voltage at 3 A/cm²",
+            "properties": {
+              "current_density": "3 A/cm²",
+              "initial_voltage": "1.8 V",
+              "final_voltage": "3 A/cm² line",
+              "extracted_from_image": "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg"
+            },
+            "source_image_file": "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Attached Feature",
+            "properties": {
+              "color": "red",
+              "description": "Smaller red-colored protrusion or attached particle on the main nanoparticle",
+              "extracted_from_image": "382cf240e3759b5807e59c54cd4a0ad751707147affd1900e4f09028efa91773.jpg"
+            },
+            "source_image_file": "382cf240e3759b5807e59c54cd4a0ad751707147affd1900e4f09028efa91773.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanostructure",
+            "properties": {
+              "description": "Core-shell nanoparticle aggregate",
+              "core_color": "blue",
+              "shell_color": "red",
+              "morphology": "knobby surface with protruding features",
+              "size_scale": "5 nm",
+              "extracted_from_image": "73ef7494b1150aadd5ffea834f88eb8a1f90ea3a07120ba30c0b2163eabf8485.jpg"
+            },
+            "source_image_file": "73ef7494b1150aadd5ffea834f88eb8a1f90ea3a07120ba30c0b2163eabf8485.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium dioxide",
+              "extracted_from_image": "89cba8339a186ba83241fc3b7b1b308e2ceea9a0d8a95f1f36ef5364ac3441f2.jpg"
+            },
+            "source_image_file": "89cba8339a186ba83241fc3b7b1b308e2ceea9a0d8a95f1f36ef5364ac3441f2.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Galvanostatic curve",
+            "properties": {
+              "conditions": "80°C @ 2 A/cm²",
+              "x_axis": "Time (h)",
+              "y_axis": "Cell Voltage (V)",
+              "voltage_range": [
+                1.62,
+                1.8
+              ],
+              "extracted_from_image": "946b6c8c5b3546b113a058996c1c4df64eca13f116eb5fde9b49317040ce18b0.jpg"
+            },
+            "source_image_file": "946b6c8c5b3546b113a058996c1c4df64eca13f116eb5fde9b49317040ce18b0.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Chronopotentiometry Plot",
+            "properties": {
+              "type": "voltage vs time",
+              "conditions": "80°C @ 2 A/cm²",
+              "x_axis": "Time (h)",
+              "y_axis": "Cell Voltage (V)",
+              "data_range": {
+                "time": "0-120 h",
+                "voltage_C-IrZrO2": "1.74-1.86 V",
+                "voltage_RIE-IrZrOx": "~1.74 V (stable)"
+              },
+              "extracted_from_image": "bbc6706a3e43f1259fb883c1a15fc430713c5d9462b371a281782dd9a4fe202b.jpg"
+            },
+            "source_image_file": "bbc6706a3e43f1259fb883c1a15fc430713c5d9462b371a281782dd9a4fe202b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Mo(111)",
+            "properties": {
+              "description": "Molybdenum (111) surface",
+              "extracted_from_image": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+            },
+            "source_image_file": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO₂",
+            "properties": {
+              "formula": "RuO₂",
+              "extracted_from_image": "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg"
+            },
+            "source_image_file": "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Shell",
+            "properties": {
+              "color": "white",
+              "structure": "porous or less dense overlayer",
+              "extracted_from_image": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+            },
+            "source_image_file": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RIE-IrCeOx",
+            "properties": {
+              "description": "Ruthenium-doped Iridium Cerium Oxide",
+              "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+            },
+            "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "HR-TEM image",
+            "properties": {
+              "label": "D",
+              "scale": "2 nm",
+              "extracted_from_image": "ee026c19c11e56f7fffdeaa9badd0965a41657f45cf13cd7d29d5df5bbbb9304.jpg"
+            },
+            "source_image_file": "ee026c19c11e56f7fffdeaa9badd0965a41657f45cf13cd7d29d5df5bbbb9304.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_RIE_Pt_CeOx",
+        "type": "chemical",
+        "name": "RIE-Pt/CeOx",
+        "aliases": [
+          "RIE-Pt/ $\\mathrm{CeO}_x$"
+        ]
+      },
+      {
+        "id": "chem_platinum_source",
+        "type": "chemical",
+        "name": "platinum source",
+        "aliases": [
+          "Pt"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_RIE_Ru_TiO2",
+        "type": "chemical",
+        "name": "RIE-Ru/TiO_2",
+        "aliases": [
+          "RIE-Ru/TiO2"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_TiO2",
+        "type": "chemical",
+        "name": "TiO_2",
+        "aliases": [
+          "TiO2"
+        ],
+        "formula": "TiO2",
+        "properties": {}
+      },
+      {
+        "id": "chem_ruthenium_source",
+        "type": "chemical",
+        "name": "ruthenium source",
+        "aliases": [
+          "Ru"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "synth_step_4",
+        "type": "synthesis",
+        "name": "RIE Ir loading on ZrOx",
+        "procedure": "RIE strategy applied to ZrO_x support for OER in PEMWE, creating RIE-Ir/ZrO_x with enhanced stability compared to unembedded control.",
+        "method": "RIE polyol method",
+        "conditions": {},
+        "unit_operations": [],
+        "source_text": "ZrO_x was used as the support for OER in PEMWE. The RIE-Ir/ZrO_x displays enhanced stability."
+      },
+      {
+        "id": "synth_step_5",
+        "type": "synthesis",
+        "name": "Control Ir loading on ZrO2",
+        "procedure": "Control sample C-Ir/ZrO2 without RIE embedding.",
+        "method": "Control polyol method",
+        "conditions": {},
+        "unit_operations": [],
+        "source_text": "RIE-Ir/ZrO_x displays enhanced stability in comparison with the unembedded control sample C-Ir/ZrO_2."
+      },
+      {
+        "id": "synth_step_6",
+        "type": "synthesis",
+        "name": "RIE Pt loading on CeOx",
+        "procedure": "RIE-Pt/CeO_x synthesized for HER cathode in PEMWE using RIE strategy on CeO_x support.",
+        "method": "RIE polyol method",
+        "conditions": {},
+        "unit_operations": [],
+        "source_text": "RIE-Pt/CeO_x was found to display a higher stability as well."
+      },
+      {
+        "id": "synth_step_7",
+        "type": "synthesis",
+        "name": "Control Pt loading on CeO2",
+        "procedure": "Control sample C-Pt/CeO2 without RIE embedding.",
+        "method": "Control polyol method",
+        "conditions": {},
+        "unit_operations": [],
+        "source_text": "RIE-Pt/CeO_x or C-Pt/CeO_2 as the cathode catalysts."
+      },
+      {
+        "id": "synth_step_8",
+        "type": "synthesis",
+        "name": "RIE Ru loading on TiO2",
+        "procedure": "RIE-Ru/TiO2 synthesized for NaBH4 hydrolysis catalysis using RIE strategy.",
+        "method": "RIE polyol method",
+        "conditions": {},
+        "unit_operations": [],
+        "source_text": "RIE-Ru/TiO_2 for catalyzing NaBH4 hydrolysis."
+      },
+      {
+        "id": "chem_commercial_IrO2",
+        "type": "chemical",
+        "name": "commercial IrO2",
+        "aliases": [
+          "commercial $\\mathrm{IrO}_2$ (Umicore)"
+        ],
+        "formula": "IrO2",
+        "composition": {
+          "Ir": {
+            "value": 87.7,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_C_Pt_CeO2",
+        "type": "chemical",
+        "name": "C-Pt/CeO2",
+        "aliases": [
+          "C-Pt/ $\\mathrm{CeO}_2$"
+        ]
+      },
+      {
+        "id": "chem_RIE-Ir_CeOx",
+        "type": "chemical",
+        "name": "RIE-Ir/CeOx",
+        "aliases": [
+          "RIE-Ir/ CeO_x"
+        ],
+        "formula": "IrO_x/CeO_x",
+        "composition": {
+          "Ir": {
+            "value": 15.6,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 2.2,
+            "unit": "nm"
+          },
+          "particle_size_after_OER": {
+            "value": 2.3,
+            "unit": "nm"
+          },
+          "electrical_conductivity": {
+            "value": 0.893,
+            "unit": "S/cm"
+          },
+          "proton_conductivity": {
+            "value": 0.01,
+            "unit": "S/cm"
+          }
+        },
+        "related_images": [
+          "0256b25f1b4bf83e24a723c9a30e552beaa5f24b627371f893152e1577e70ae9.jpg",
+          "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg",
+          "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg",
+          "382cf240e3759b5807e59c54cd4a0ad751707147affd1900e4f09028efa91773.jpg",
+          "73ef7494b1150aadd5ffea834f88eb8a1f90ea3a07120ba30c0b2163eabf8485.jpg",
+          "89cba8339a186ba83241fc3b7b1b308e2ceea9a0d8a95f1f36ef5364ac3441f2.jpg",
+          "946b6c8c5b3546b113a058996c1c4df64eca13f116eb5fde9b49317040ce18b0.jpg",
+          "aa56de04833f0d8239a66fbecaaa3d1c0c6e726ec94e059d6cddf7b06bdc505f.jpg",
+          "bbc6706a3e43f1259fb883c1a15fc430713c5d9462b371a281782dd9a4fe202b.jpg",
+          "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg",
+          "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg",
+          "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg",
+          "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg",
+          "ee026c19c11e56f7fffdeaa9badd0965a41657f45cf13cd7d29d5df5bbbb9304.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "formula": "RuO2",
+              "extracted_from_image": "0256b25f1b4bf83e24a723c9a30e552beaa5f24b627371f893152e1577e70ae9.jpg"
+            },
+            "source_image_file": "0256b25f1b4bf83e24a723c9a30e552beaa5f24b627371f893152e1577e70ae9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "formula": "IrO2",
+              "extracted_from_image": "0256b25f1b4bf83e24a723c9a30e552beaa5f24b627371f893152e1577e70ae9.jpg"
+            },
+            "source_image_file": "0256b25f1b4bf83e24a723c9a30e552beaa5f24b627371f893152e1577e70ae9.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "scale_bar": "5 nm",
+              "description": "Main image showing nanoparticle aggregate with red particles on blue surface",
+              "extracted_from_image": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+            },
+            "source_image_file": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Inset",
+            "properties": {
+              "scale_bar": "2 nm",
+              "description": "High-resolution inset showing detailed nanoparticle structure with red cores and blue shells",
+              "extracted_from_image": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+            },
+            "source_image_file": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cell Voltage at 1 A/cm²",
+            "properties": {
+              "current_density": "1 A/cm²",
+              "initial_voltage": "1.5 V",
+              "final_voltage": "1 A/cm² line",
+              "extracted_from_image": "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg"
+            },
+            "source_image_file": "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cell Voltage at 2 A/cm²",
+            "properties": {
+              "current_density": "2 A/cm²",
+              "initial_voltage": "1.5 V",
+              "extracted_from_image": "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg"
+            },
+            "source_image_file": "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "label": "F",
+              "description": "High-resolution transmission electron microscopy image showing nanoparticle structure",
+              "scale": "5 nm",
+              "extracted_from_image": "382cf240e3759b5807e59c54cd4a0ad751707147affd1900e4f09028efa91773.jpg"
+            },
+            "source_image_file": "382cf240e3759b5807e59c54cd4a0ad751707147affd1900e4f09028efa91773.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticle",
+            "properties": {
+              "color": "blue",
+              "description": "Main irregular nanoparticle structure with textured surface",
+              "extracted_from_image": "382cf240e3759b5807e59c54cd4a0ad751707147affd1900e4f09028efa91773.jpg"
+            },
+            "source_image_file": "382cf240e3759b5807e59c54cd4a0ad751707147affd1900e4f09028efa91773.jpg"
+          },
+          {
+            "type": "image",
+            "name": "Figure G",
+            "properties": {
+              "label": "G",
+              "description": "3D rendered nanostructure image",
+              "extracted_from_image": "73ef7494b1150aadd5ffea834f88eb8a1f90ea3a07120ba30c0b2163eabf8485.jpg"
+            },
+            "source_image_file": "73ef7494b1150aadd5ffea834f88eb8a1f90ea3a07120ba30c0b2163eabf8485.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "mode": "3D",
+              "scale_bar": "5 nm",
+              "extracted_from_image": "73ef7494b1150aadd5ffea834f88eb8a1f90ea3a07120ba30c0b2163eabf8485.jpg"
+            },
+            "source_image_file": "73ef7494b1150aadd5ffea834f88eb8a1f90ea3a07120ba30c0b2163eabf8485.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RIE-Ir/CeOx",
+            "properties": {
+              "description": "Red-Ir supported on CeOx",
+              "extracted_from_image": "89cba8339a186ba83241fc3b7b1b308e2ceea9a0d8a95f1f36ef5364ac3441f2.jpg"
+            },
+            "source_image_file": "89cba8339a186ba83241fc3b7b1b308e2ceea9a0d8a95f1f36ef5364ac3441f2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-Ir/CeOx",
+            "properties": {
+              "description": "Carbon-supported Ir on CeOx",
+              "extracted_from_image": "89cba8339a186ba83241fc3b7b1b308e2ceea9a0d8a95f1f36ef5364ac3441f2.jpg"
+            },
+            "source_image_file": "89cba8339a186ba83241fc3b7b1b308e2ceea9a0d8a95f1f36ef5364ac3441f2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-PtCeO2",
+            "properties": {
+              "description": "Carbon-supported PtCeO2 catalyst",
+              "extracted_from_image": "946b6c8c5b3546b113a058996c1c4df64eca13f116eb5fde9b49317040ce18b0.jpg"
+            },
+            "source_image_file": "946b6c8c5b3546b113a058996c1c4df64eca13f116eb5fde9b49317040ce18b0.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RIE-PtCeOx",
+            "properties": {
+              "description": "RIE-treated PtCeOx catalyst",
+              "extracted_from_image": "946b6c8c5b3546b113a058996c1c4df64eca13f116eb5fde9b49317040ce18b0.jpg"
+            },
+            "source_image_file": "946b6c8c5b3546b113a058996c1c4df64eca13f116eb5fde9b49317040ce18b0.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "label": "E",
+              "scale_bar": "5 nm",
+              "description": "Blue-colored nanoparticle with irregular, crumpled surface morphology",
+              "extracted_from_image": "aa56de04833f0d8239a66fbecaaa3d1c0c6e726ec94e059d6cddf7b06bdc505f.jpg"
+            },
+            "source_image_file": "aa56de04833f0d8239a66fbecaaa3d1c0c6e726ec94e059d6cddf7b06bdc505f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nanoparticle",
+            "properties": {
+              "size_scale": "5 nm scale bar",
+              "morphology": "crumpled, irregular surface",
+              "color": "blue (rendering)",
+              "extracted_from_image": "aa56de04833f0d8239a66fbecaaa3d1c0c6e726ec94e059d6cddf7b06bdc505f.jpg"
+            },
+            "source_image_file": "aa56de04833f0d8239a66fbecaaa3d1c0c6e726ec94e059d6cddf7b06bdc505f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-IrZrO2",
+            "properties": {
+              "description": "C-IrZrO2 material",
+              "extracted_from_image": "bbc6706a3e43f1259fb883c1a15fc430713c5d9462b371a281782dd9a4fe202b.jpg"
+            },
+            "source_image_file": "bbc6706a3e43f1259fb883c1a15fc430713c5d9462b371a281782dd9a4fe202b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RIE-IrZrOx",
+            "properties": {
+              "description": "RIE-IrZrOx material",
+              "extracted_from_image": "bbc6706a3e43f1259fb883c1a15fc430713c5d9462b371a281782dd9a4fe202b.jpg"
+            },
+            "source_image_file": "bbc6706a3e43f1259fb883c1a15fc430713c5d9462b371a281782dd9a4fe202b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir NPs",
+            "properties": {
+              "description": "Iridium nanoparticles",
+              "extracted_from_image": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+            },
+            "source_image_file": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2 NPs",
+            "properties": {
+              "description": "Iridium dioxide nanoparticles",
+              "extracted_from_image": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+            },
+            "source_image_file": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuInO₄",
+            "properties": {
+              "formula": "RuInO₄",
+              "extracted_from_image": "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg"
+            },
+            "source_image_file": "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "In₂O₃",
+            "properties": {
+              "formula": "In₂O₃",
+              "extracted_from_image": "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg"
+            },
+            "source_image_file": "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Core-shell nanoparticle",
+            "properties": {
+              "description": "Bimetallic or hybrid nanoparticle with distinct core and shell regions",
+              "extracted_from_image": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+            },
+            "source_image_file": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Core",
+            "properties": {
+              "color": "blue",
+              "structure": "dense metallic or crystalline",
+              "extracted_from_image": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+            },
+            "source_image_file": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RIE-IrO2",
+            "properties": {
+              "description": "Ruthenium-doped Iridium Oxide",
+              "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+            },
+            "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-IrO2",
+            "properties": {
+              "description": "Commercial Iridium Oxide",
+              "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+            },
+            "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CeO2",
+            "properties": {
+              "formula": "CeO2",
+              "plane": "(311)",
+              "extracted_from_image": "ee026c19c11e56f7fffdeaa9badd0965a41657f45cf13cd7d29d5df5bbbb9304.jpg"
+            },
+            "source_image_file": "ee026c19c11e56f7fffdeaa9badd0965a41657f45cf13cd7d29d5df5bbbb9304.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir",
+            "properties": {
+              "element": "Ir",
+              "plane": "(111)",
+              "extracted_from_image": "ee026c19c11e56f7fffdeaa9badd0965a41657f45cf13cd7d29d5df5bbbb9304.jpg"
+            },
+            "source_image_file": "ee026c19c11e56f7fffdeaa9badd0965a41657f45cf13cd7d29d5df5bbbb9304.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_C-Ir_CeO2",
+        "type": "chemical",
+        "name": "C-Ir/CeO2",
+        "aliases": [
+          "C - Ir / CeO_2"
+        ],
+        "formula": "Ir/CeO2",
+        "composition": {
+          "Ir": {
+            "value": 17.2,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_CeO2",
+        "type": "chemical",
+        "name": "commercial CeO2",
+        "aliases": [
+          "CeO_2"
+        ],
+        "formula": "CeO2",
+        "properties": {
+          "particle_size": {
+            "value": 30,
+            "unit": "nm"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_CeOx_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_CeOx",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_iridium_salt_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_iridium_salt",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethylene_glycol_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ethylene_glycol",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_carbon_substrate_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_carbon_substrate",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_RIE_Ir_CeOx",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_RIE_Ir_CeOx",
+        "properties": {
+          "form": "embedded nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_commercial_CeO2_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_commercial_CeO2",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_iridium_salt_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_iridium_salt",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethylene_glycol_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_ethylene_glycol",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_C_Ir_CeO2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_C_Ir_CeO2",
+        "properties": {
+          "form": "surface deposited nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_ZrOx_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_ZrOx",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_iridium_salt_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_iridium_salt",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_chem_RIE_Ir_ZrOx",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_RIE_Ir_ZrOx",
+        "properties": {
+          "form": "embedded nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_ZrOx_synth_step_5",
+        "type": "synthesis_input",
+        "source_id": "chem_ZrOx",
+        "target_id": "synth_step_5",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_iridium_salt_synth_step_5",
+        "type": "synthesis_input",
+        "source_id": "chem_iridium_salt",
+        "target_id": "synth_step_5",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_5_chem_C_Ir_ZrO2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_5",
+        "target_id": "chem_C_Ir_ZrO2",
+        "properties": {
+          "form": "unembedded nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_CeOx_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_CeOx",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_platinum_source_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_platinum_source",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_6_chem_RIE_Pt_CeOx",
+        "type": "synthesis_output",
+        "source_id": "synth_step_6",
+        "target_id": "chem_RIE_Pt_CeOx",
+        "properties": {
+          "form": "embedded nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_commercial_CeO2_synth_step_7",
+        "type": "synthesis_input",
+        "source_id": "chem_commercial_CeO2",
+        "target_id": "synth_step_7",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_platinum_source_synth_step_7",
+        "type": "synthesis_input",
+        "source_id": "chem_platinum_source",
+        "target_id": "synth_step_7",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_7_chem_RIE_Pt_CeOx",
+        "type": "synthesis_output",
+        "source_id": "synth_step_7",
+        "target_id": "chem_RIE_Pt_CeOx",
+        "properties": {
+          "form": "unembedded nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_TiO2_synth_step_8",
+        "type": "synthesis_input",
+        "source_id": "chem_TiO2",
+        "target_id": "synth_step_8",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_ruthenium_source_synth_step_8",
+        "type": "synthesis_input",
+        "source_id": "chem_ruthenium_source",
+        "target_id": "synth_step_8",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_8_chem_RIE_Ru_TiO2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_8",
+        "target_id": "chem_RIE_Ru_TiO2",
+        "properties": {
+          "form": "embedded nanoparticles"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_commercial_IrO2",
+      "chem_C_Pt_CeO2"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_RIE_Ir_CeOx",
+        "type": "chemical",
+        "name": "RIE-Ir/CeOx",
+        "aliases": [
+          "RIE-Ir/ $\\mathrm{CeO}_x$"
+        ],
+        "formula": "IrO_x/CeO_x",
+        "composition": {
+          "Ir": {
+            "value": 15.6,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "electrical_conductivity": {
+            "value": 0.893,
+            "unit": "S/cm"
+          },
+          "proton_conductivity": {
+            "value": 0.01,
+            "unit": "S/cm"
+          },
+          "Ir_particle_size_initial": {
+            "value": 2.2,
+            "unit": "nm"
+          },
+          "Ir_particle_size_after_test": {
+            "value": 2.3,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_C_Ir_CeO2",
+        "type": "chemical",
+        "name": "C-Ir/CeO2",
+        "aliases": [
+          "C - Ir / CeO_2"
+        ],
+        "formula": "Ir/CeO2",
+        "composition": {
+          "Ir": {
+            "value": 17.2,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_commercial_IrO2",
+        "type": "chemical",
+        "name": "commercial IrO2",
+        "aliases": [
+          "commercial $\\mathrm{IrO}_2$ (Umicore)"
+        ],
+        "formula": "IrO2",
+        "composition": {
+          "Ir": {
+            "value": 87.7,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_RIE_Ir_ZrOx",
+        "type": "chemical",
+        "name": "RIE-Ir/ZrOx",
+        "aliases": [
+          "RIE-Ir/ $\\mathrm{ZrO}_x$"
+        ]
+      },
+      {
+        "id": "chem_C_Ir_ZrO2",
+        "type": "chemical",
+        "name": "C-Ir/ZrO2",
+        "aliases": [
+          "C-Ir/ $\\mathrm{ZrO}_2$"
+        ]
+      },
+      {
+        "id": "chem_RIE_Pt_CeOx",
+        "type": "chemical",
+        "name": "RIE-Pt/CeOx",
+        "aliases": [
+          "RIE-Pt/ $\\mathrm{CeO}_x$"
+        ]
+      },
+      {
+        "id": "chem_C_Pt_CeO2",
+        "type": "chemical",
+        "name": "C-Pt/CeO2",
+        "aliases": [
+          "C-Pt/ $\\mathrm{CeO}_2$"
+        ]
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_RIE_Ir_CeOx",
+        "description": "PEMWE polarization curves - OER activity evaluation",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "Ir_loading_anode": {
+            "value": 0.3,
+            "unit": "mg/cm²"
+          },
+          "Pt_loading_cathode": {
+            "value": 0.1,
+            "unit": "mg/cm²"
+          },
+          "total_PGM_loading": {
+            "value": 0.4,
+            "unit": "mg/cm²"
+          }
+        },
+        "results_json": {
+          "cell_voltage": {
+            "value": 1.72,
+            "unit": "V"
+          },
+          "current_density": {
+            "value": 3,
+            "unit": "A/cm²"
+          },
+          "Faradaic_efficiency_H2": {
+            "value": 99,
+            "unit": "%"
+          },
+          "Faradaic_efficiency_O2": {
+            "value": 98,
+            "unit": "%"
+          },
+          "mass_activity": {
+            "value": 777.4,
+            "unit": "A/g_Ir"
+          },
+          "mass_activity_comparison_C-Ir_CeO2": {
+            "value": 6.32,
+            "unit": "fold improvement"
+          },
+          "mass_activity_comparison_commercial_IrO2": {
+            "value": 17.04,
+            "unit": "fold improvement"
+          }
+        },
+        "source_text": "Polarization curves verified the heightened OER activity of the catalyst, achieving a cell voltage of 1.72 V at a 3 A cm⁻² current density... accompanied by ∼99 and ∼98% Faraday efficiencies for H₂ and O₂ generation, respectively... mass activity of RIE-Ir/CeOₓ at 3 A cm⁻² was quantified at 777.4 A g_Ir⁻¹"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_RIE_Ir_CeOx",
+        "description": "6000-hour accelerated aging chronopotentiometry test",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density_stepped": {
+            "value": "1→8→2",
+            "unit": "A/cm²"
+          },
+          "duration": {
+            "value": 6000,
+            "unit": "h"
+          },
+          "Ir_loading": {
+            "value": 0.3,
+            "unit": "mg/cm²"
+          }
+        },
+        "results_json": {
+          "voltage_degradation_rate_3A/cm²": {
+            "value": 1.33,
+            "unit": "µV/h"
+          },
+          "stability_2A/cm²": {
+            "value": "virtually unchanged",
+            "unit": "over 6000h"
+          }
+        },
+        "source_text": "The long-term stability... tested in an accelerated aging experiment that lasted for >6000 hours... with the current density stepped up from 1 A cm⁻² to 8 A cm⁻² and then reverted to 2 A cm⁻²... the decay rate at 3 A cm⁻² was evaluated to be 1.33 µV hour⁻¹"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_C_Ir_CeO2",
+        "description": "Control catalyst aging test 1-8 A/cm²",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density_range": {
+            "value": "1-8",
+            "unit": "A/cm²"
+          }
+        },
+        "results_json": {
+          "voltage_degradation_rate": {
+            "value": 3.1,
+            "unit": "mV/h"
+          }
+        },
+        "source_text": "the control catalyst C - Ir / CeO₂ exhibited a much higher voltage decay rate of 3.1 mV hour⁻¹ during the 1 A cm⁻² to 8 A cm⁻² aging test"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_RIE_Ir_CeOx",
+        "description": "Chronopotentiometry at constant 8 A/cm²",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density": {
+            "value": 8,
+            "unit": "A/cm²"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "well-preserved embedding structure",
+            "unit": "post-test TEM"
+          }
+        },
+        "source_text": "Chronopotentiometric curves of the PEMWE using RIE-Ir/CeOₓ... operated at 8 A cm⁻². TEM images... demonstrate the well-preserved embedding structure"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_RIE_Ir_ZrOx",
+        "description": "PEMWE-OER stability comparison at 2 A/cm²",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density": {
+            "value": 2,
+            "unit": "A/cm²"
+          },
+          "cathode": {
+            "value": "commercial Pt/C",
+            "unit": ""
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "enhanced vs C-Ir/ZrO2",
+            "unit": "chrono"
+          }
+        },
+        "source_text": "PEMWE chronopotentiometric curves operated at 2 A cm⁻², using RIE-Ir/ZrOₓ or C-Ir/ZrO₂ as the anode catalysts"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_C_Ir_CeO2",
+        "description": "Chronopotentiometry at constant 8 A/cm² (control)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density": {
+            "value": 8,
+            "unit": "A/cm²"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "NP detachment and aggregation",
+            "unit": "post-test TEM"
+          },
+          "voltage_increase": {
+            "value": 200,
+            "unit": "mV in 30h"
+          }
+        },
+        "source_text": "Chronopotentiometric curves... C-Ir/CeO₂... at 8 A cm⁻²... contrasting starkly with the evident NP detachment and aggregation in C - Ir / CeO₂"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_C_Ir_CeO2",
+        "description": "Chronopotentiometry at constant 8 A/cm² (control)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density": {
+            "value": 8,
+            "unit": "A/cm²"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "NP detachment and aggregation",
+            "unit": "post-test TEM"
+          },
+          "voltage_increase": {
+            "value": 200,
+            "unit": "mV in 30h"
+          }
+        },
+        "source_text": "Chronopotentiometric curves... C-Ir/CeO₂... at 8 A cm⁻²... contrasting starkly with the evident NP detachment and aggregation in C - Ir / CeO₂"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_RIE_Ir_CeOx",
+        "description": "Chronopotentiometry at constant 1 A/cm² (10 devices)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density": {
+            "value": 1,
+            "unit": "A/cm²"
+          },
+          "devices": {
+            "value": 10,
+            "unit": "parallel"
+          }
+        },
+        "results_json": {
+          "reliability": {
+            "value": "confirmed across 10 devices",
+            "unit": ""
+          }
+        },
+        "source_text": "The reliability of the RIE-Ir/CeOₓ catalyst was tested on 10 different PEMWE devices... at a sequential current density of 1, 3, 4, and 8 A cm⁻²"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_RIE_Pt_CeOx",
+        "description": "PEMWE-HER cathode stability at 2 A/cm²",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density": {
+            "value": 2,
+            "unit": "A/cm²"
+          },
+          "anode": {
+            "value": "RIE-Ir/CeOx",
+            "unit": ""
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "higher vs C-Pt/CeO2",
+            "unit": "chrono"
+          }
+        },
+        "source_text": "PEMWE chronopotentiometric curves operated at 2 A cm⁻², using RIE-Pt/CeOₓ or C-Pt/CeO₂ as the cathode catalysts"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_C_Ir_ZrO2",
+        "description": "PEMWE-OER stability comparison at 2 A/cm² (control)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density": {
+            "value": 2,
+            "unit": "A/cm²"
+          },
+          "cathode": {
+            "value": "commercial Pt/C",
+            "unit": ""
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "lower than RIE-Ir/ZrOx",
+            "unit": "chrono"
+          }
+        },
+        "source_text": "PEMWE chronopotentiometric curves operated at 2 A cm⁻², using RIE-Ir/ZrOₓ or C-Ir/ZrO₂ as the anode catalysts"
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_C_Pt_CeO2",
+        "description": "PEMWE-HER cathode stability at 2 A/cm² (control)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "PEMWE"
+          },
+          "cell_configuration": {
+            "value": "PEMWE",
+            "unit": "two-electrode"
+          },
+          "current_density": {
+            "value": 2,
+            "unit": "A/cm²"
+          },
+          "anode": {
+            "value": "RIE-Ir/CeOx",
+            "unit": ""
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "lower than RIE-Pt/CeOx",
+            "unit": "chrono"
+          }
+        },
+        "source_text": "PEMWE chronopotentiometric curves operated at 2 A cm⁻², using RIE-Pt/CeOₓ or C-Pt/CeO₂ as the cathode catalysts"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_RIE_Ir_CeOx_test_1",
+        "type": "tested_in",
+        "source_id": "chem_RIE_Ir_CeOx",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RIE_Ir_CeOx_test_2",
+        "type": "tested_in",
+        "source_id": "chem_RIE_Ir_CeOx",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_Ir_CeO2_test_3",
+        "type": "tested_in",
+        "source_id": "chem_C_Ir_CeO2",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RIE_Ir_CeOx_test_4",
+        "type": "tested_in",
+        "source_id": "chem_RIE_Ir_CeOx",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_Ir_CeO2_test_4",
+        "type": "tested_in",
+        "source_id": "chem_C_Ir_CeO2",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RIE_Ir_ZrOx_test_5",
+        "type": "tested_in",
+        "source_id": "chem_RIE_Ir_ZrOx",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_Ir_ZrO2_test_5",
+        "type": "tested_in",
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RIE_Pt_CeOx_test_6",
+        "type": "tested_in",
+        "source_id": "chem_RIE_Pt_CeOx",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_Pt_CeO2_test_6",
+        "type": "tested_in",
+        "source_id": "chem_C_Pt_CeO2",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_Ir_CeO2_test_6",
+        "type": "tested_in",
+        "source_id": "chem_C_Ir_CeO2",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RIE_Ir_CeOx_test_7",
+        "type": "tested_in",
+        "source_id": "chem_RIE_Ir_CeOx",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RIE_Pt_CeOx_test_8",
+        "type": "tested_in",
+        "source_id": "chem_RIE_Pt_CeOx",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_Pt_CeO2_test_10",
+        "type": "tested_in",
+        "source_id": "chem_C_Pt_CeO2",
+        "target_id": "test_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_Ir_ZrO2_test_9",
+        "type": "tested_in",
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "test_9",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_RIE-Ir_CeOx",
+        "type": "chemical",
+        "name": "RIE-Ir/CeOx",
+        "aliases": [
+          "RIE-Ir/ CeO_x"
+        ],
+        "formula": "IrO_x/CeO_x",
+        "composition": {
+          "Ir": {
+            "value": 15.6,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 2.2,
+            "unit": "nm"
+          },
+          "particle_size_after_OER": {
+            "value": 2.3,
+            "unit": "nm"
+          },
+          "electrical_conductivity": {
+            "value": 0.893,
+            "unit": "S/cm"
+          },
+          "proton_conductivity": {
+            "value": 0.01,
+            "unit": "S/cm"
+          }
+        }
+      },
+      {
+        "id": "chem_C-Ir_CeO2",
+        "type": "chemical",
+        "name": "C-Ir/CeO2",
+        "aliases": [
+          "C - Ir / CeO_2"
+        ],
+        "formula": "Ir/CeO2",
+        "composition": {
+          "Ir": {
+            "value": 17.2,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_CeOx",
+        "type": "chemical",
+        "name": "CeOx",
+        "aliases": [
+          "CeO_x",
+          "CeO_{\\varpi}"
+        ],
+        "formula": "CeO_x",
+        "properties": {
+          "particle_size": {
+            "value": 7.9,
+            "unit": "nm"
+          },
+          "particle_size_after_ripening": {
+            "value": 10.4,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_CeO2",
+        "type": "chemical",
+        "name": "commercial CeO2",
+        "aliases": [
+          "CeO_2"
+        ],
+        "formula": "CeO2",
+        "properties": {
+          "particle_size": {
+            "value": 30,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "cryo-TEM",
+        "data_reported": true,
+        "characterization_summary": "Cryo-TEM images of CeOx support show Ir NPs deposited after 5 min and more Ir NPs nucleated after 60 min of reaction.",
+        "evidence_snippet": "Cryo-TEM revealed that a few Ir NPs were deposited on the roughened CeOx support after 5 min of reaction (Fig. 2B, dashed red circle; also in movie S2).",
+        "related_images": [
+          "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "TEM Image B (Color)",
+            "properties": {
+              "description": "Color TEM image showing nanostructure with purple, orange, and blue regions",
+              "scale": "5 nm",
+              "extracted_from_image": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+            },
+            "source_image_file": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image E (Color)",
+            "properties": {
+              "description": "Color TEM image with yellow and blue colored nanostructures",
+              "scale": "5 nm",
+              "extracted_from_image": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+            },
+            "source_image_file": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "cryo-ET",
+        "data_reported": true,
+        "characterization_summary": "Cryo-ET 3D models confirm Ir NPs not embedded after 5 min but embedded into CeOx support after 60 min to depth ~1.0 nm.",
+        "evidence_snippet": "At this initial stage, the cryo-ET image confirmed that the Ir NPs were not yet embedded into the CeOx support (Fig. 2F)... Notably, the Ir NPs were embedded into the CeOx support... reaching an embedding depth of ~1.0 nm."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "HAADF-STEM",
+        "data_reported": true,
+        "characterization_summary": "Cs-corrected HAADF-STEM image shows embedding of Ir NPs into CeOx lattice to depth ~1 nm across crystallographic orientations.",
+        "evidence_snippet": "The final product, designated RIE-Ir/CeOx, was examined by spherical aberration-corrected scanning TEM... The high-angle annular dark field (HAADF) image (Fig. 2D) illustrates clearly the embedding of Ir NPs into the CeOx lattice to a depth of ~1 nm."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM images before/after 8 A cm^-2 OER test show preserved embedding structure in RIE-Ir/CeOx vs NP detachment/aggregation in C-Ir/CeO2.",
+        "evidence_snippet": "TEM images, taken before and after the 8 Acm−2 constant current density test, clearly demonstrate the well-preserved embedding structure in RIE-Ir/CeOx, contrasting starkly with the evident NP detachment and aggregation in C-Ir/CeO2 (Fig. 3B, insets...)",
+        "related_images": [
+          "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "TEM Image C",
+            "properties": {
+              "description": "High-resolution TEM image showing lattice fringes and nanoparticle morphology",
+              "scale": "10 nm",
+              "extracted_from_image": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+            },
+            "source_image_file": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "XRD shows broad peaks for sub-10 nm CeOx particles consistent with particle size 7.9±1.3 nm.",
+        "evidence_snippet": "The size of the as-synthesized CeOx NPs ranged from 4 to 10 nm averaging 7.9±1.3 nm (Fig. 2A and fig. S2), in line with the broad peaks in the x-ray diffraction spectrum (see figs. S6 to S8 for detailed characterizations)."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "BET",
+        "data_reported": true,
+        "characterization_summary": "Brunauer-Emmett-Teller method determines surface areas of RIE-Ir/CeOx, C-Ir/CeO2, and commercial IrO2 for specific activity normalization.",
+        "evidence_snippet": "After normalization with surface areas determined by the Brunauer-Emmett-Teller method or electrochemical active surface area, the specific activity of RIE-Ir/CeOx maintained its superiority over both C-Ir/CeO2 and commercial IrO2 (figs. S45 to S47)."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "ICP-MS",
+        "data_reported": true,
+        "characterization_summary": "ICP-MS confirms Ir content of 15.6 wt% in RIE-Ir/CeOx and 17.2 wt% in C-Ir/CeO2; validates inhibition of Ir dissolution.",
+        "evidence_snippet": "considering its lower Ir content (15.6 wt %; table S9)... C-Ir/CeO2 (17.2 wt %)... Inhibition of Ir dissolution and detachment in RIE-Ir/CeOx was further validated by ICP-MS measurements..."
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "TEM Image",
+        "properties": {
+          "label": "J",
+          "technique": "Transmission Electron Microscopy",
+          "scale_bar": "5 nm",
+          "extracted_from_image": "79776c8ecdb7c820148b02d04d9371099966f5c2c4e72cc716808005f0f6a08e.jpg"
+        },
+        "source_image_file": "79776c8ecdb7c820148b02d04d9371099966f5c2c4e72cc716808005f0f6a08e.jpg"
+      },
+      {
+        "id": "nanoparticle",
+        "type": "chemical",
+        "name": "Nanoparticle",
+        "properties": {
+          "description": "Spherical nanoparticle with textured surface",
+          "color": "blue",
+          "scale": "5 nm",
+          "extracted_from_image": "79776c8ecdb7c820148b02d04d9371099966f5c2c4e72cc716808005f0f6a08e.jpg"
+        },
+        "source_image_file": "79776c8ecdb7c820148b02d04d9371099966f5c2c4e72cc716808005f0f6a08e.jpg"
+      },
+      {
+        "id": "Ce",
+        "type": "chemical",
+        "name": "Cerium",
+        "properties": {
+          "color": "blue",
+          "representation": "majority atoms in nanoparticle",
+          "extracted_from_image": "005e3fa698b3c61e2725ed6bc9681e3538ffc6a72116eed0d2f935d4ddd52824.jpg"
+        },
+        "source_image_file": "005e3fa698b3c61e2725ed6bc9681e3538ffc6a72116eed0d2f935d4ddd52824.jpg"
+      },
+      {
+        "id": "Ir",
+        "type": "chemical",
+        "name": "Iridium",
+        "properties": {
+          "color": "white",
+          "representation": "atoms in nanoparticle",
+          "extracted_from_image": "005e3fa698b3c61e2725ed6bc9681e3538ffc6a72116eed0d2f935d4ddd52824.jpg"
+        },
+        "source_image_file": "005e3fa698b3c61e2725ed6bc9681e3538ffc6a72116eed0d2f935d4ddd52824.jpg"
+      },
+      {
+        "id": "O",
+        "type": "chemical",
+        "name": "Oxygen",
+        "properties": {
+          "color": "red",
+          "representation": "atoms in nanoparticle",
+          "extracted_from_image": "005e3fa698b3c61e2725ed6bc9681e3538ffc6a72116eed0d2f935d4ddd52824.jpg"
+        },
+        "source_image_file": "005e3fa698b3c61e2725ed6bc9681e3538ffc6a72116eed0d2f935d4ddd52824.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "chemical",
+        "name": "C-IrCeO2",
+        "properties": {
+          "description": "Commercial Iridium Cerium Oxide",
+          "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+        },
+        "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "characterization",
+        "name": "CV Plot",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "x_axis": "Time (h)",
+          "y_axis": "Cell Voltage (V)",
+          "conditions": "80°C @ 8 A cm⁻²",
+          "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+        },
+        "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "characterization",
+        "name": "RIE-IrO2 TEM",
+        "properties": {
+          "type": "transmission electron microscopy",
+          "scale": "10 nm",
+          "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+        },
+        "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "characterization",
+        "name": "C-IrO2 TEM",
+        "properties": {
+          "type": "transmission electron microscopy",
+          "scale": "10 nm",
+          "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+        },
+        "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "characterization",
+        "name": "C-IrCeO2 TEM",
+        "properties": {
+          "type": "transmission electron microscopy",
+          "scale": "10 nm",
+          "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+        },
+        "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "characterization",
+        "name": "RIE-IrCeOx TEM",
+        "properties": {
+          "type": "transmission electron microscopy",
+          "scale": "10 nm",
+          "extracted_from_image": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+        },
+        "source_image_file": "e5b41f6a8a70b2d04e5f2bfef9a956e899ec4724d4c9fcf09c3a12f3d241ddba.jpg"
+      },
+      {
+        "id": "material",
+        "type": "chemical",
+        "name": "Nanostructured Material",
+        "properties": {
+          "description": "Inorganic nanomaterial with lattice fringes visible in HRTEM",
+          "extracted_from_image": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+        },
+        "source_image_file": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+      },
+      {
+        "id": "pores",
+        "type": "structural_feature",
+        "name": "Circular pores",
+        "properties": {
+          "count": "6",
+          "highlighted": "red circles",
+          "size_estimate": "~1-2 μm diameter (based on 5 μm scale)",
+          "extracted_from_image": "12c092ffcfac66d07dade7a3dcad68f7cedaf29c363fcc49c051d427741a0abd.jpg"
+        },
+        "source_image_file": "12c092ffcfac66d07dade7a3dcad68f7cedaf29c363fcc49c051d427741a0abd.jpg"
+      },
+      {
+        "id": "sb1",
+        "type": "scale_bar",
+        "name": "5 nm Scale Bar",
+        "properties": {
+          "length": "5 nm",
+          "image_reference": "main TEM image",
+          "extracted_from_image": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+        },
+        "source_image_file": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+      },
+      {
+        "id": "sb2",
+        "type": "scale_bar",
+        "name": "2 nm Scale Bar",
+        "properties": {
+          "length": "2 nm",
+          "image_reference": "inset",
+          "extracted_from_image": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+        },
+        "source_image_file": "1b5e2d8ca0c814aa078c5cee7f8f3b6f94598f966760ad42fada6efcf7ed3614.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Long-term Stability Chart",
+        "properties": {
+          "x_axis": "Time (h)",
+          "x_range": "0-400 h",
+          "y_axis": "Cell Voltage (V)",
+          "y_range": "0-2.1 V",
+          "extracted_from_image": "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg"
+        },
+        "source_image_file": "24241e8a2d0b3dd9888339d6d07d40b6a9d3a0ea4eef4a93a27ed09ea27d8c33.jpg"
+      },
+      {
+        "id": "figure_k",
+        "type": "figure",
+        "name": "Figure K",
+        "properties": {
+          "label": "K",
+          "scale": "5 nm",
+          "extracted_from_image": "4c10fde32ea2331442ddbb2f7287ec50eaba5f678fba4d5e4cff1d8703863fcc.jpg"
+        },
+        "source_image_file": "4c10fde32ea2331442ddbb2f7287ec50eaba5f678fba4d5e4cff1d8703863fcc.jpg"
+      },
+      {
+        "id": "core",
+        "type": "structure",
+        "name": "Core",
+        "properties": {
+          "color": "blue",
+          "material": "likely metal or metal oxide",
+          "extracted_from_image": "4c10fde32ea2331442ddbb2f7287ec50eaba5f678fba4d5e4cff1d8703863fcc.jpg"
+        },
+        "source_image_file": "4c10fde32ea2331442ddbb2f7287ec50eaba5f678fba4d5e4cff1d8703863fcc.jpg"
+      },
+      {
+        "id": "shell",
+        "type": "structure",
+        "name": "Shell",
+        "properties": {
+          "color": "white",
+          "material": "likely oxide, polymer, or ligand layer",
+          "extracted_from_image": "4c10fde32ea2331442ddbb2f7287ec50eaba5f678fba4d5e4cff1d8703863fcc.jpg"
+        },
+        "source_image_file": "4c10fde32ea2331442ddbb2f7287ec50eaba5f678fba4d5e4cff1d8703863fcc.jpg"
+      },
+      {
+        "id": "tem_image",
+        "type": "characterization",
+        "name": "TEM Image",
+        "properties": {
+          "technique": "Transmission Electron Microscopy",
+          "description": "High-resolution image showing nanostructure with granular/porous morphology",
+          "scale": "5 nm",
+          "extracted_from_image": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+        },
+        "source_image_file": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+      },
+      {
+        "id": "image_A",
+        "type": "image",
+        "name": "Figure A",
+        "properties": {
+          "label": "A",
+          "scale_bar": "5 nm",
+          "extracted_from_image": "85d5f76898692a7f3d7dc7aa63db30100f00a515cf0f079be36b8d0291f65844.jpg"
+        },
+        "source_image_file": "85d5f76898692a7f3d7dc7aa63db30100f00a515cf0f079be36b8d0291f65844.jpg"
+      },
+      {
+        "id": "micrograph",
+        "type": "characterization",
+        "name": "TEM Micrograph",
+        "properties": {
+          "technique": "Transmission Electron Microscopy",
+          "scale": "5 nm",
+          "description": "High-resolution image showing nanostructured material with lattice fringes and ordered domains",
+          "extracted_from_image": "85d5f76898692a7f3d7dc7aa63db30100f00a515cf0f079be36b8d0291f65844.jpg"
+        },
+        "source_image_file": "85d5f76898692a7f3d7dc7aa63db30100f00a515cf0f079be36b8d0291f65844.jpg"
+      },
+      {
+        "id": "nanomaterial",
+        "type": "chemical",
+        "name": "Nanostructured Material",
+        "properties": {
+          "morphology": "crystalline nanoparticles/domains",
+          "features": "lattice fringes visible, ~5 nm scale",
+          "extracted_from_image": "85d5f76898692a7f3d7dc7aa63db30100f00a515cf0f079be36b8d0291f65844.jpg"
+        },
+        "source_image_file": "85d5f76898692a7f3d7dc7aa63db30100f00a515cf0f079be36b8d0291f65844.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "image",
+        "name": "Figure B",
+        "properties": {
+          "label": "B",
+          "scale_bar": "5 nm",
+          "extracted_from_image": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+        },
+        "source_image_file": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+      },
+      {
+        "id": "nanostructure",
+        "type": "chemical",
+        "name": "Nanoparticles/Aggregates",
+        "properties": {
+          "morphology": "granular, porous",
+          "size_scale": "nanometer range",
+          "highlighted_feature": "central circular region",
+          "extracted_from_image": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+        },
+        "source_image_file": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+      },
+      {
+        "id": "highlighted_region",
+        "type": "feature",
+        "name": "Highlighted Circular Feature",
+        "properties": {
+          "description": "Red circle marking specific nanostructure/void/particle",
+          "shape": "circular",
+          "contrast": "high",
+          "extracted_from_image": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+        },
+        "source_image_file": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "annotation",
+        "name": "5 nm Scale Bar",
+        "properties": {
+          "length": "5 nm",
+          "purpose": "size reference",
+          "extracted_from_image": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+        },
+        "source_image_file": "a8511067d1b48febdfa85877690be07790da4c6e5a7295a705c8f83b4c4c8996.jpg"
+      },
+      {
+        "id": "B2",
+        "type": "characterization",
+        "name": "TEM Image B (Grayscale)",
+        "properties": {
+          "description": "Grayscale TEM image of nanostructured material",
+          "scale": "10 nm",
+          "extracted_from_image": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+        },
+        "source_image_file": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+      },
+      {
+        "id": "E2",
+        "type": "characterization",
+        "name": "TEM Image E (Grayscale)",
+        "properties": {
+          "description": "Grayscale TEM image of nanostructured material",
+          "scale": "10 nm",
+          "extracted_from_image": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+        },
+        "source_image_file": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+      },
+      {
+        "id": "F",
+        "type": "characterization",
+        "name": "TEM Image F",
+        "properties": {
+          "description": "TEM image showing particle aggregation and morphology",
+          "scale": "10 nm",
+          "extracted_from_image": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+        },
+        "source_image_file": "ac58dc6b5081ef5ed7f7e3c9d4b521d1db991180910da00996d3366d63d7c04a.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "data_point",
+        "name": "1.65 V",
+        "properties": {
+          "voltage": "1.65 V",
+          "extracted_from_image": "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg"
+        },
+        "source_image_file": "db7fc3e79e9c0447010c545b4f3cfba217a292a427981c4f718e6bec860eb0ee.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "phenomenon",
+        "name": "Agglomeration",
+        "properties": {
+          "extracted_from_image": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+        },
+        "source_image_file": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "phenomenon",
+        "name": "Detachment",
+        "properties": {
+          "extracted_from_image": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+        },
+        "source_image_file": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "structure",
+        "name": "Stable Embedding Structure",
+        "properties": {
+          "extracted_from_image": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+        },
+        "source_image_file": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "support",
+        "name": "Support",
+        "properties": {
+          "extracted_from_image": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+        },
+        "source_image_file": "d8f7ba49e42b29792f62231c727b51c2bbf765b00b0007c3f58be9fdd9a2f800.jpg"
+      },
+      {
+        "id": "s1",
+        "type": "scale",
+        "name": "5 nm scale bar",
+        "properties": {
+          "length": "5 nm",
+          "position": "bottom-left",
+          "extracted_from_image": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+        },
+        "source_image_file": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+      },
+      {
+        "id": "s2",
+        "type": "scale",
+        "name": "2 nm scale bar",
+        "properties": {
+          "length": "2 nm",
+          "position": "bottom-right inset",
+          "extracted_from_image": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+        },
+        "source_image_file": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+      },
+      {
+        "id": "i1",
+        "type": "image_feature",
+        "name": "Main particle view",
+        "properties": {
+          "description": "Complete core-shell nanoparticle structure",
+          "extracted_from_image": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+        },
+        "source_image_file": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+      },
+      {
+        "id": "i2",
+        "type": "image_feature",
+        "name": "Inset magnification",
+        "properties": {
+          "description": "High-resolution view of core-shell interface with white square bracket",
+          "scale": "2 nm",
+          "extracted_from_image": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+        },
+        "source_image_file": "de819900153817f75320f9868e3c55eeaa809f4ab6b4f35e90996b7ebf10203a.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_RIE-Ir_CeOx_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_RIE-Ir_CeOx_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_RIE-Ir_CeOx_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_RIE-Ir_CeOx_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_C-Ir_CeO2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_C-Ir_CeO2",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CeOx_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_CeOx",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_RIE-Ir_CeOx_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_RIE-Ir_CeOx_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_C-Ir_CeO2_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_C-Ir_CeO2",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CeOx_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_CeOx",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CeO2_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_CeO2",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_C-Ir_CeO2_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_C-Ir_CeO2",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "source_id": "image",
+        "target_id": "nanoparticle",
+        "type": "depicts"
+      },
+      {
+        "source_id": "nanoparticle",
+        "target_id": "Ce",
+        "type": "contains"
+      },
+      {
+        "source_id": "nanoparticle",
+        "target_id": "Ir",
+        "type": "contains"
+      },
+      {
+        "source_id": "nanoparticle",
+        "target_id": "O",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "Ce",
+        "type": "labels"
+      },
+      {
+        "source_id": "image",
+        "target_id": "Ir",
+        "type": "labels"
+      },
+      {
+        "source_id": "image",
+        "target_id": "O",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n9",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n9",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n9",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "image",
+        "target_id": "material",
+        "type": "depicts"
+      },
+      {
+        "source_id": "material",
+        "target_id": "pores",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "pores",
+        "type": "highlights"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "sb1",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "contains_inset"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "sb2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n4",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n5",
+        "type": "contains_label"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n4",
+        "type": "includes"
+      },
+      {
+        "source_id": "figure_k",
+        "target_id": "tem_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "tem_image",
+        "target_id": "nanoparticle",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "nanoparticle",
+        "target_id": "core",
+        "type": "has_part"
+      },
+      {
+        "source_id": "nanoparticle",
+        "target_id": "shell",
+        "type": "has_part"
+      },
+      {
+        "source_id": "core",
+        "target_id": "shell",
+        "type": "surrounded_by"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n4",
+        "type": "has_part"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n5",
+        "type": "has_part"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "calibrates"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "coated_by"
+      },
+      {
+        "source_id": "image",
+        "target_id": "nanoparticle",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_A",
+        "target_id": "micrograph",
+        "type": "depicts"
+      },
+      {
+        "source_id": "micrograph",
+        "target_id": "nanomaterial",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n5",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n5",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n5",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "reference_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "highlighted_in"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n6",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "tem_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "tem_image",
+        "target_id": "nanostructure",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "tem_image",
+        "target_id": "highlighted_region",
+        "type": "contains"
+      },
+      {
+        "source_id": "nanostructure",
+        "target_id": "highlighted_region",
+        "type": "includes"
+      },
+      {
+        "source_id": "tem_image",
+        "target_id": "scale_bar",
+        "type": "includes"
+      },
+      {
+        "source_id": "scale_bar",
+        "target_id": "nanostructure",
+        "type": "calibrates"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "B2",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "E2",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "F",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n4",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n4",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "results_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "results_in"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n8",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "causes"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n12",
+        "type": "countered_by"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n9",
+        "type": "enables"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "on"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "on"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "measured"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n10",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n4",
+        "type": "crystalline_form"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "has_component"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "has_component"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_C_Ir_ZrO2",
+        "type": "surrounded_by"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "i1",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "i2",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "i1",
+        "target_id": "s1",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "i2",
+        "target_id": "s2",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "i1",
+        "target_id": "i2",
+        "type": "contains_inset"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "i1",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n5",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n5",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n5",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_C_Ir_ZrO2",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_RIE-Ir_CeOx",
+        "target_id": "chem_RIE-Ir_CeOx",
+        "type": "coexists_with"
+      }
+    ]
+  }
+}

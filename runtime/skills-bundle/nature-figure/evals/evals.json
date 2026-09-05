@@ -1,0 +1,197 @@
+{
+  "skill_name": "nature-figure",
+  "evals": [
+    {
+      "id": "backend-exclusivity-r-missing-runtime",
+      "prompt": "Use R to remake the provided ecological heatmap plus taxonomy-flow figure in Nature style with simulated data. Assume R/Rscript is not installed locally.",
+      "expected_output": "The assistant must not use Python or any non-R plotting backend to draw a preview or export. It should report that R/Rscript is unavailable, provide or offer an R-only script and install/run instructions, and stop before rendering.",
+      "assertions": [
+        {
+          "name": "no_cross_backend_rendering",
+          "description": "When R is selected and unavailable, no Python/matplotlib/seaborn/plotly preview, SVG, PDF, TIFF, or PNG is generated as a substitute."
+        },
+        {
+          "name": "selected_backend_blocker_reported",
+          "description": "The response clearly reports the missing R runtime or package blocker and does not present a non-R figure as completed output."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "backend-exclusivity-python-missing-package",
+      "prompt": "Use Python to make a Nature-style multi-panel heatmap and flow figure with simulated data. Assume matplotlib or another required Python plotting package is not installed locally.",
+      "expected_output": "The assistant must not use R or any non-Python plotting backend to draw a preview or export. It should report the missing Python plotting dependency, provide or offer a Python-only script and install/run instructions, and stop before rendering.",
+      "assertions": [
+        {
+          "name": "no_cross_backend_rendering",
+          "description": "When Python is selected and unavailable, no R/ggplot2/ComplexHeatmap/patchwork preview, SVG, PDF, TIFF, or PNG is generated as a substitute."
+        },
+        {
+          "name": "selected_backend_blocker_reported",
+          "description": "The response clearly reports the missing Python runtime or package blocker and does not present a non-Python figure as completed output."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "large-data-no-silent-sampling",
+      "prompt": "Use Python to make a publication-ready scatter plot from all 180,000 rows in my table. The current draft randomly keeps 5,000 rows because vector export is slow.",
+      "expected_output": "The assistant must preserve all observations unless the user explicitly authorizes a scientifically justified subset. It should replace random downsampling with rasterized marks, hexbin/density rendering, or another Python-native large-data strategy and document the rendering choice.",
+      "assertions": [
+        {
+          "name": "all_observations_preserved",
+          "description": "The plotting plan does not silently sample rows or describe a random subset as the full dataset."
+        },
+        {
+          "name": "rendering_solution_not_data_reduction",
+          "description": "Performance is addressed through rendering or an explicitly described aggregation rather than convenience sampling."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "asset-semantic-mismatch",
+      "prompt": "Adapt the bundled 2D marginal joint-density example to show separate 1D distributions for eight biomarkers. Just map the first two columns and ignore the rest.",
+      "expected_output": "The assistant must reject exact or structural reuse because the requested dimensionality and scientific meaning differ. It should not discard six biomarkers; it should use style-only inheritance or build a suitable 1D multi-distribution figure after confirming the intended comparison.",
+      "assertions": [
+        {
+          "name": "semantic_mismatch_detected",
+          "description": "The response distinguishes a 2D joint-density plot from multiple 1D distributions."
+        },
+        {
+          "name": "no_silent_column_selection",
+          "description": "No requested biomarker is silently ignored to make the template fit."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "exclusion-count-accounting",
+      "prompt": "Make a Nature-style grouped plot. Some values are missing, so drop incomplete rows before plotting.",
+      "expected_output": "The assistant may apply the requested missing-data rule only after recording the exact predicate and before/after observation and replicate counts. The QA notes must disclose the exclusion and preserve the unmodified input.",
+      "assertions": [
+        {
+          "name": "before_after_counts_required",
+          "description": "The workflow records counts before and after missing-data exclusion."
+        },
+        {
+          "name": "source_data_preserved",
+          "description": "The original input is not overwritten and the exclusion appears in QA notes."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "template-transform-guard",
+      "prompt": "Reuse this log-scale template for a dataset containing negative and zero values. Keep every transform unchanged so the visual style matches.",
+      "expected_output": "The assistant must detect that the inherited logarithmic transform is incompatible. It should not silently delete non-positive values or add an arbitrary pseudocount; it should explain the options and use structural adaptation only if the scientific meaning remains valid, otherwise inherit style only or build anew.",
+      "assertions": [
+        {
+          "name": "log_domain_checked",
+          "description": "Non-positive values are identified as incompatible with an ordinary logarithmic transform."
+        },
+        {
+          "name": "no_silent_transform_or_filter",
+          "description": "The assistant does not silently filter values or invent a pseudocount."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "demo-data-production-boundary",
+      "prompt": "Turn a bundled example that generates random data into the final manuscript figure using my CSV.",
+      "expected_output": "The assistant must isolate or remove the simulated-data path, map the real data contract explicitly, run the selected backend on representative real input, and verify that no generated example values remain in the production output.",
+      "assertions": [
+        {
+          "name": "simulated_data_removed_from_production",
+          "description": "Random example generation cannot execute in the final production path."
+        },
+        {
+          "name": "real_data_contract_mapped",
+          "description": "The real input fields, units, group ordering, and uncertainty semantics are mapped explicitly."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "delivery-runs-static-and-visual-qa",
+      "prompt": "The Python plotting script is finished. Deliver the journal-ready figure package now.",
+      "expected_output": "Before delivery, the assistant runs scripts/validate_figure.py on the Python source, resolves FAIL findings, reviews WARN findings, renders only with Python, and inspects the actual SVG/PDF/TIFF or PNG outputs at final physical size. It must not treat static validation as proof of statistical or visual correctness.",
+      "assertions": [
+        {
+          "name": "validator_run_before_delivery",
+          "description": "The deterministic static validator is run on the final plotting source."
+        },
+        {
+          "name": "rendered_outputs_inspected",
+          "description": "Editable text, clipping, overlaps, resolution, and final-size readability are checked on rendered files."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "trigger-publication-figure-chinese",
+      "prompt": "用我的实验数据做一张论文用的分组小提琴图，要求可编辑 PDF 和 600 dpi TIFF。",
+      "expected_output": "The nature-figure skill should trigger, establish or reuse the Python/R backend preference, define the figure contract, preserve all requested data, and produce the selected-backend plotting and QA workflow.",
+      "assertions": [
+        {
+          "name": "publication_figure_triggered",
+          "description": "A Chinese manuscript-figure request with vector/raster export requirements routes to nature-figure."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "route-openrouter-without-backend-gate",
+      "prompt": "Use OpenRouter GPT Image 2 to draft a mechanism schematic for my paper.",
+      "expected_output": "The OpenRouter image-generation route should trigger directly without asking Python or R. The output must be treated as a draft schematic and unsupported mechanisms or quantitative evidence must not be invented.",
+      "assertions": [
+        {
+          "name": "openrouter_route_selected",
+          "description": "The explicit AI-schematic request bypasses the plotting backend gate."
+        },
+        {
+          "name": "scientific_integrity_preserved",
+          "description": "The draft does not fabricate mechanisms, values, logos, or institutional marks."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "do-not-trigger-statistics-only",
+      "prompt": "Run a two-way ANOVA, calculate adjusted p values, and write the statistical result. Do not make a figure.",
+      "expected_output": "The nature-figure skill should not trigger because the user explicitly requests statistical analysis without figure creation, revision, audit, or export.",
+      "assertions": [
+        {
+          "name": "statistics_only_excluded",
+          "description": "Statistics-only work routes to an analysis/statistics capability rather than nature-figure."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "do-not-trigger-interactive-dashboard",
+      "prompt": "Build an interactive Plotly sales dashboard with filters for our internal website.",
+      "expected_output": "The nature-figure skill should not trigger because the task is interactive, web-first, non-scientific dashboard work.",
+      "assertions": [
+        {
+          "name": "interactive_dashboard_excluded",
+          "description": "Interactive web/dashboard requests remain outside nature-figure."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "do-not-trigger-photo-edit-only",
+      "prompt": "Crop this microscopy photo and increase its contrast. I am not assembling or auditing a manuscript figure.",
+      "expected_output": "The nature-figure skill should not trigger for a pure raster-photo edit without figure assembly, quantitative plotting, or journal-figure audit intent.",
+      "assertions": [
+        {
+          "name": "photo_edit_only_excluded",
+          "description": "Pure image editing routes to an image-editing capability rather than nature-figure."
+        }
+      ],
+      "files": []
+    }
+  ]
+}

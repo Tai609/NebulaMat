@@ -1,0 +1,32 @@
+schema_version: 1
+id: T001
+title: Critic attempts to write final report
+role: scientific-critic
+role_contract: procedures/research-orchestrator/references/missing-role-contract.md#scientific-critic
+skill: comp-chem-workflow
+status: approved
+depends_on: []
+approval: none
+inputs: []
+can_read:
+  - artifact_type: parser-result
+can_write:
+  - artifact_type: docx-report
+cannot:
+  - write final report artifacts
+outputs_expected:
+  - artifact_id: report-docx
+    type: docx-report
+    path: work/report.docx
+success_criteria:
+  - this fixture must fail validation
+knowledge_required: []
+required_refs:
+  - procedures/research-orchestrator/references/critic-contract.md
+required_checks: []
+release_gates: []
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions: []
+provenance: []

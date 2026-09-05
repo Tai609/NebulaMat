@@ -1,0 +1,39 @@
+schema_version: 1
+id: T001
+title: Audit model adequacy before engine submission
+role: structure-critic
+role_contract: procedures/research-orchestrator/references/roles.md#structure-critic
+skill: structure-prep
+status: accepted
+depends_on: []
+approval: none
+inputs: []
+can_read:
+  - artifact_type: structure-set
+can_write:
+  - artifact_type: gate-verdict
+cannot:
+  - edit structure files
+  - submit production HPC jobs
+outputs_expected:
+  - artifact_id: structure-gate
+    type: gate-verdict
+    path: work/reviews/structure_gate.yaml
+success_criteria:
+  - model relevance and finite-size adequacy are checked generically
+knowledge_required:
+  - knowledge/periodic-dft-modeling.md
+required_refs:
+  - procedures/research-orchestrator/references/gate-contract.md
+  - procedures/research-orchestrator/references/model-structure-review.md
+required_checks:
+  - uv run {repo_root}/procedures/research-orchestrator/scripts/validate_gate.py work/reviews/structure_gate.yaml --research {project_root}/.research --target-gate structure_gate --require-passing
+release_gates:
+  - structure_gate
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: true
+assumptions:
+  - Fixture gate is illustrative and not a real geometry review.
+provenance:
+  - work/reviews/structure_gate.yaml

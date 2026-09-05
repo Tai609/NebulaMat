@@ -1,0 +1,4587 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_metal_precursor",
+        "type": "chemical",
+        "name": "metal precursor",
+        "aliases": [
+          "metal salt"
+        ],
+        "properties": {
+          "concentration": {
+            "value": "0.0704 or 0.02",
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "chem_glucose",
+        "type": "chemical",
+        "name": "glucose",
+        "aliases": [
+          "carrier precursor"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_hydroxylammonium_chloride",
+        "type": "chemical",
+        "name": "hydroxylammonium chloride",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_water",
+        "type": "chemical",
+        "name": "deionized water",
+        "aliases": [
+          "DIW"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_nitrogen",
+        "type": "chemical",
+        "name": "N2",
+        "aliases": [
+          "nitrogen flow"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt_SAC",
+        "type": "chemical",
+        "name": "Pt single-atom catalyst",
+        "aliases": [
+          "Pt-0.07",
+          "Pt SAC"
+        ],
+        "formula": "Pt",
+        "properties": {
+          "oxidation_state": {
+            "value": "II",
+            "unit": "valence"
+          },
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Dissolution-Precipitation and Carbonization",
+        "procedure": "A necessary amount of a metal precursor was completely dissolved in 15 mL deionized water (DIW) to reach a concentration of 0.0704 M. For platinum group metals (Ru, Pd, Ir, Pt) concentrations of 0.02 M were targeted instead. A separate solution containing completely dissolved glucose (0.4 M) and hydroxylammonium chloride (4.969 M) was prepared in DIW. Subsequently, 2 mL of the glucose solution was mixed with the metal solution volume required to reach the desired precursor ratio. The mixtures were placed on a shaker operated at 170 rpm for 1 h after which the solvent was evaporated at 80 °C under reduced pressure for 16 h. Finally, the precipitated solid was carbonized in a tubular oven at 600 °C for 4 h (5 °C min−1 ramp) under N2 flow.",
+        "method": "dissolution-precipitation and carbonization",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Dissolution",
+            "method": "Stirring/Dissolving",
+            "conditions": {
+              "metal_precursor_concentration": {
+                "value": "0.0704 or 0.02",
+                "unit": "M"
+              },
+              "glucose_concentration": {
+                "value": 0.4,
+                "unit": "M"
+              },
+              "hydroxylammonium_chloride_concentration": {
+                "value": 4.969,
+                "unit": "M"
+              }
+            },
+            "procedure_snippet": "metal precursor was completely dissolved in 15 mL deionized water... separate solution containing completely dissolved glucose (0.4 M) and hydroxylammonium chloride (4.969 M) was prepared"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Mixing and Shaking",
+            "method": "Shaking",
+            "conditions": {
+              "shaking_speed": {
+                "value": 170,
+                "unit": "rpm"
+              },
+              "time": {
+                "value": 1,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "2 mL of the glucose solution was mixed with the metal solution... placed on a shaker operated at 170 rpm for 1 h"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Solvent Evaporation",
+            "method": "Evaporation under reduced pressure",
+            "conditions": {
+              "temperature": {
+                "value": 80,
+                "unit": "C"
+              },
+              "time": {
+                "value": 16,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "solvent was evaporated at 80 °C under reduced pressure for 16 h"
+          },
+          {
+            "id": "unit_op_1.4",
+            "name": "Carbonization",
+            "method": "Thermal carbonization",
+            "conditions": {
+              "temperature": {
+                "value": 600,
+                "unit": "C"
+              },
+              "time": {
+                "value": 4,
+                "unit": "h"
+              },
+              "heating_rate": {
+                "value": 5,
+                "unit": "C/min"
+              },
+              "atmosphere": {
+                "value": "N2",
+                "unit": "gas"
+              }
+            },
+            "procedure_snippet": "precipitated solid was carbonized in a tubular oven at 600 °C for 4 h (5 °C min−1 ramp) under N2 flow."
+          }
+        ],
+        "conditions": {
+          "carbonization_temperature": {
+            "value": 600,
+            "unit": "C"
+          },
+          "carbonization_time": {
+            "value": 4,
+            "unit": "h"
+          },
+          "precursor_ratio": {
+            "value": "0.03 to 0.9",
+            "unit": "molar ratio"
+          }
+        },
+        "source_text": "Catalyst Synthesis: The catalysts were synthesized by a dissolution-precipitation and carbonization method... precipitated solid was carbonized in a tubular oven at 600 °C for 4 h (5 °C min−1 ramp) under N2 flow."
+      },
+      {
+        "id": "chem_nitrogen_doped_carbon",
+        "type": "chemical",
+        "name": "nitrogen-doped carbon",
+        "aliases": [
+          "NC",
+          "N-doped carbon"
+        ],
+        "properties": {},
+        "related_images": [
+          "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "SACs on NC",
+            "properties": {
+              "description": "Single-atom catalysts on nitrogen-doped carbon",
+              "count": "37 types",
+              "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+            },
+            "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Co_SAC",
+        "type": "chemical",
+        "name": "Co single-atom catalyst",
+        "aliases": [
+          "Co-0.03",
+          "Co SAC"
+        ],
+        "formula": "Co",
+        "composition": {
+          "Co": {
+            "value": "single-atom",
+            "unit": "speciation"
+          }
+        },
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni_SAC",
+        "type": "chemical",
+        "name": "Ni single-atom catalyst",
+        "aliases": [
+          "Ni SAC"
+        ],
+        "formula": "Ni",
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        },
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Nickel on support (0.4 wt%)",
+            "properties": {
+              "metal": "Ni",
+              "loading": "0.4",
+              "classification": "NPC",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Fe_SAC",
+        "type": "chemical",
+        "name": "Fe single-atom catalyst",
+        "aliases": [
+          "Fe SAC"
+        ],
+        "formula": "Fe",
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Iron on support (0.6 wt%)",
+            "properties": {
+              "metal": "Fe",
+              "loading": "0.6",
+              "classification": "NPC",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ru_SAC",
+        "type": "chemical",
+        "name": "Ru single-atom catalyst",
+        "aliases": [
+          "Ru SAC"
+        ],
+        "formula": "Ru"
+      },
+      {
+        "id": "chem_Pd_SAC",
+        "type": "chemical",
+        "name": "Pd single-atom catalyst",
+        "aliases": [
+          "Pd SAC"
+        ],
+        "formula": "Pd",
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Palladium on support (0.07 wt%)",
+            "properties": {
+              "metal": "Pd",
+              "loading": "0.07",
+              "classification": "SAC",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Cu_SAC",
+        "type": "chemical",
+        "name": "Cu single-atom catalyst",
+        "formula": "Cu",
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        },
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Copper on support (0.2 wt%)",
+            "properties": {
+              "metal": "Cu",
+              "loading": "0.2",
+              "classification": "NPC",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Mn_SAC",
+        "type": "chemical",
+        "name": "Mn single-atom catalyst",
+        "formula": "Mn",
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        },
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Manganese on support (0.5 wt%)",
+            "properties": {
+              "metal": "Mn",
+              "loading": "0.5",
+              "classification": "NPC",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ir_SAC",
+        "type": "chemical",
+        "name": "Ir single-atom catalyst",
+        "formula": "Ir",
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        },
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Iridium on support (0.06 wt%)",
+            "properties": {
+              "metal": "Ir",
+              "loading": "0.06",
+              "classification": "SAC",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Sc_SAC",
+        "type": "chemical",
+        "name": "Sc single-atom catalyst",
+        "formula": "Sc",
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Scandium on support (0.3 wt%)",
+            "properties": {
+              "metal": "Sc",
+              "loading": "0.3",
+              "classification": "SAC (False Negative)",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Y_SAC",
+        "type": "chemical",
+        "name": "Y single-atom catalyst",
+        "formula": "Y",
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Yttrium on support (0.2 wt%)",
+            "properties": {
+              "metal": "Y",
+              "loading": "0.2",
+              "classification": "SAC",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Yttrium on support (0.3 wt%)",
+            "properties": {
+              "metal": "Y",
+              "loading": "0.3",
+              "classification": "SAC (False Negative)",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Co",
+        "type": "chemical",
+        "name": "Co",
+        "aliases": [
+          "cobalt"
+        ],
+        "formula": "Co",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "status": "Stable",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Cu",
+        "type": "chemical",
+        "name": "Cu",
+        "aliases": [
+          "copper"
+        ],
+        "formula": "Cu",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Copper",
+            "properties": {
+              "symbol": "Cu",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Copper",
+            "properties": {
+              "symbol": "Cu",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Copper",
+            "properties": {
+              "symbol": "Cu",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Copper",
+            "properties": {
+              "symbol": "Cu",
+              "status": "Stable",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Copper",
+            "properties": {
+              "symbol": "Cu",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Copper",
+            "properties": {
+              "symbol": "Cu",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Fe",
+        "type": "chemical",
+        "name": "Fe",
+        "aliases": [
+          "iron"
+        ],
+        "formula": "Fe",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Iron",
+            "properties": {
+              "symbol": "Fe",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iron",
+            "properties": {
+              "symbol": "Fe",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iron",
+            "properties": {
+              "symbol": "Fe",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iron",
+            "properties": {
+              "symbol": "Fe",
+              "status": "Stable",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iron",
+            "properties": {
+              "symbol": "Fe",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iron",
+            "properties": {
+              "symbol": "Fe",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ir",
+        "type": "chemical",
+        "name": "Ir",
+        "aliases": [
+          "iridium"
+        ],
+        "formula": "Ir",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Iridium",
+            "properties": {
+              "symbol": "Ir",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium",
+            "properties": {
+              "symbol": "Ir",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium",
+            "properties": {
+              "symbol": "Ir",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium",
+            "properties": {
+              "symbol": "Ir",
+              "status": "Stable",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium",
+            "properties": {
+              "symbol": "Ir",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium",
+            "properties": {
+              "symbol": "Ir",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Mn",
+        "type": "chemical",
+        "name": "Mn",
+        "aliases": [
+          "manganese"
+        ],
+        "formula": "Mn",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Manganese",
+            "properties": {
+              "symbol": "Mn",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Manganese",
+            "properties": {
+              "symbol": "Mn",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Manganese",
+            "properties": {
+              "symbol": "Mn",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Manganese",
+            "properties": {
+              "symbol": "Mn",
+              "status": "Unstable (Low U_D)",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Manganese",
+            "properties": {
+              "symbol": "Mn",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Manganese",
+            "properties": {
+              "symbol": "Mn",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ni",
+        "type": "chemical",
+        "name": "Ni",
+        "aliases": [
+          "nickel"
+        ],
+        "formula": "Ni",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Nickel",
+            "properties": {
+              "symbol": "Ni",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nickel",
+            "properties": {
+              "symbol": "Ni",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nickel",
+            "properties": {
+              "symbol": "Ni",
+              "observation": "Highest OER activity at 1.7V",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nickel",
+            "properties": {
+              "symbol": "Ni",
+              "status": "Stable",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nickel",
+            "properties": {
+              "symbol": "Ni",
+              "role": "catalyst active site",
+              "relative_activity": "highest",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nickel",
+            "properties": {
+              "symbol": "Ni",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Pd",
+        "type": "chemical",
+        "name": "Pd",
+        "aliases": [
+          "palladium"
+        ],
+        "formula": "Pd",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Palladium",
+            "properties": {
+              "symbol": "Pd",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Palladium",
+            "properties": {
+              "symbol": "Pd",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Palladium",
+            "properties": {
+              "symbol": "Pd",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Palladium",
+            "properties": {
+              "symbol": "Pd",
+              "status": "Stable",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Palladium",
+            "properties": {
+              "symbol": "Pd",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Palladium",
+            "properties": {
+              "symbol": "Pd",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Pt",
+        "type": "chemical",
+        "name": "Pt",
+        "aliases": [
+          "platinum"
+        ],
+        "formula": "Pt",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg",
+          "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Platinum",
+            "properties": {
+              "symbol": "Pt",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Platinum",
+            "properties": {
+              "symbol": "Pt",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Platinum",
+            "properties": {
+              "symbol": "Pt",
+              "observation": "Highest HER activity at -0.1V",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Platinum",
+            "properties": {
+              "symbol": "Pt",
+              "status": "Stable",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Platinum",
+            "properties": {
+              "symbol": "Pt",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Platinum",
+            "properties": {
+              "symbol": "Pt",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          },
+          {
+            "type": "chemical_element",
+            "name": "Platinum",
+            "properties": {
+              "symbol": "Pt",
+              "role": "Absorbing atom",
+              "extracted_from_image": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+            },
+            "source_image_file": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ru",
+        "type": "chemical",
+        "name": "Ru",
+        "aliases": [
+          "ruthenium"
+        ],
+        "formula": "Ru",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ruthenium",
+            "properties": {
+              "symbol": "Ru",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ruthenium",
+            "properties": {
+              "symbol": "Ru",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ruthenium",
+            "properties": {
+              "symbol": "Ru",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ruthenium",
+            "properties": {
+              "symbol": "Ru",
+              "status": "Unstable (High E_B)",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ruthenium",
+            "properties": {
+              "symbol": "Ru",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ruthenium",
+            "properties": {
+              "symbol": "Ru",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Sc",
+        "type": "chemical",
+        "name": "Sc",
+        "aliases": [
+          "scandium"
+        ],
+        "formula": "Sc",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Scandium",
+            "properties": {
+              "symbol": "Sc",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Scandium",
+            "properties": {
+              "symbol": "Sc",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Scandium",
+            "properties": {
+              "symbol": "Sc",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Scandium",
+            "properties": {
+              "symbol": "Sc",
+              "status": "Unstable (Low U_D)",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Scandium",
+            "properties": {
+              "symbol": "Sc",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Scandium",
+            "properties": {
+              "symbol": "Sc",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Y",
+        "type": "chemical",
+        "name": "Y",
+        "aliases": [
+          "yttrium"
+        ],
+        "formula": "Y",
+        "properties": {},
+        "related_images": [
+          "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Yttrium",
+            "properties": {
+              "symbol": "Y",
+              "role": "catalyst",
+              "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+            },
+            "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Yttrium",
+            "properties": {
+              "symbol": "Y",
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Yttrium",
+            "properties": {
+              "symbol": "Y",
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Yttrium",
+            "properties": {
+              "symbol": "Y",
+              "status": "Unstable (Low U_D)",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Yttrium",
+            "properties": {
+              "symbol": "Y",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Yttrium",
+            "properties": {
+              "symbol": "Y",
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_metal_precursor_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_metal_precursor",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_glucose_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_glucose",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "amount": {
+            "value": 2,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_hydroxylammonium_chloride_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_hydroxylammonium_chloride",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_input_chem_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_nitrogen_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nitrogen",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "atmosphere"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Pt_SAC",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Pt_SAC",
+        "properties": {
+          "form": "calcined solid",
+          "role": "catalyst"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_nitrogen_doped_carbon",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_nitrogen_doped_carbon",
+        "properties": {
+          "role": "support",
+          "form": "calcined carbonaceous solid"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Ru_SAC",
+      "chem_Mn_SAC",
+      "chem_Co_SAC",
+      "chem_Ir_SAC",
+      "chem_Y_SAC",
+      "chem_Cu_SAC",
+      "chem_Pd_SAC",
+      "chem_Sc_SAC",
+      "chem_Ni_SAC",
+      "chem_Fe_SAC"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Co_SAC",
+        "type": "chemical",
+        "name": "Co single-atom catalyst",
+        "aliases": [
+          "Co-0.03",
+          "Co SAC"
+        ],
+        "formula": "Co",
+        "composition": {
+          "Co": {
+            "value": "single-atom",
+            "unit": "speciation"
+          }
+        },
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni_SAC",
+        "type": "chemical",
+        "name": "Ni single-atom catalyst",
+        "aliases": [
+          "Ni SAC"
+        ],
+        "formula": "Ni",
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        }
+      },
+      {
+        "id": "chem_Pt_SAC",
+        "type": "chemical",
+        "name": "Pt single-atom catalyst",
+        "aliases": [
+          "Pt-0.07",
+          "Pt SAC"
+        ],
+        "formula": "Pt",
+        "properties": {
+          "oxidation_state": {
+            "value": "II",
+            "unit": "valence"
+          },
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        }
+      },
+      {
+        "id": "chem_Fe_SAC",
+        "type": "chemical",
+        "name": "Fe single-atom catalyst",
+        "aliases": [
+          "Fe SAC"
+        ],
+        "formula": "Fe"
+      },
+      {
+        "id": "chem_Ru_SAC",
+        "type": "chemical",
+        "name": "Ru single-atom catalyst",
+        "aliases": [
+          "Ru SAC"
+        ],
+        "formula": "Ru"
+      },
+      {
+        "id": "chem_Pd_SAC",
+        "type": "chemical",
+        "name": "Pd single-atom catalyst",
+        "aliases": [
+          "Pd SAC"
+        ],
+        "formula": "Pd"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Ni_SAC",
+        "description": "General OER testing protocol and comparative performance",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "polished graphite rotating disk electrode",
+            "unit": "type"
+          },
+          "rotation_speed": {
+            "value": 1800,
+            "unit": "rpm"
+          },
+          "reference_electrode": {
+            "value": "saturated Ag/AgCl",
+            "unit": "electrode"
+          },
+          "catalyst_loading": {
+            "value": 1.5,
+            "unit": "mg/cm2"
+          },
+          "scan_rate_CV": {
+            "value": 0.1,
+            "unit": "V/s"
+          },
+          "scan_rate_LSV": {
+            "value": 0.001,
+            "unit": "V/s"
+          },
+          "gas_environment": {
+            "value": "N2 bubbled",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {
+          "molar_current_density_Ni_at_peak": {
+            "value": 1.2,
+            "unit": "A/mmol_M"
+          },
+          "molar_current_density_Co_at_peak": {
+            "value": 0.9,
+            "unit": "A/mmol_M"
+          },
+          "OER_top_performers": {
+            "value": "Ni, Co, Pt, Ru",
+            "unit": "catalyst_ids"
+          },
+          "stability_OER": {
+            "value": "Ni and Fe required time to stabilize",
+            "unit": "observation"
+          }
+        },
+        "source_text": "The rotating disk electrode was mounted on the rotor and lowered into a 0.1 M KOH electrolyte solution... A scan rate of 0.1 V/s was applied in the cyclic voltammetry... The sweep rate was lowered to 0.001 V/s in either the OER or HER potential ranges for the linear sweeping voltammetry... For OER, Ni, Co, Pt, and Ru were top performers at 1.5 to 1.7 V... Ni and Co SACs, yielding the highest current density between 0.9 to 1.2 Ammol_M^-1.",
+        "related_images": [
+          "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg",
+          "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg",
+          "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg",
+          "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg",
+          "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg",
+          "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg",
+          "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg",
+          "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg",
+          "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Parity Plot of Predicted vs Theoretical Gibbs Free Energy",
+            "properties": {
+              "x_axis": "Theoretical ΔG_OH* and ΔG_H* / eV",
+              "y_axis": "Predicted ΔG_OH* and ΔG_H* / eV",
+              "description": "Correlation plot comparing machine learning predicted adsorption energies against theoretical values for OER and HER intermediates.",
+              "extracted_from_image": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+            },
+            "source_image_file": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Metal Investigation Matrix",
+            "properties": {
+              "description": "A dot plot showing the investigation of various metals across different PR (Pressure Ratio or Purity Ratio) values.",
+              "y_axis": "PR / -",
+              "y_axis_values": [
+                0.02,
+                0.05,
+                0.1,
+                1.0
+              ],
+              "x_axis": "Metals investigated",
+              "legend_colors": {
+                "teal": "Successful/Investigated",
+                "orange": "Unsuccessful/Not investigated"
+              },
+              "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+            },
+            "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Electrocatalytic Activity Bar Chart",
+            "properties": {
+              "y_axis": "Current density (j / A mmol_M^-1)",
+              "x_axis": "Metal",
+              "processes": [
+                "OER (Oxygen Evolution Reaction)",
+                "HER (Hydrogen Evolution Reaction)"
+              ],
+              "potentials_OER": [
+                "1.5 V",
+                "1.7 V"
+              ],
+              "potentials_HER": [
+                "-0.1 V",
+                "-0.2 V"
+              ],
+              "extracted_from_image": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+            },
+            "source_image_file": "582a831228d176c5f7ca90e7be083ae3ac5c964e26703caeda0b7938b20f95c9.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Stability Plot of Metal Elements",
+            "properties": {
+              "x_axis": "Binding Energy (E_B / eV)",
+              "y_axis": "Dissolution Potential (U_D / V)",
+              "highlighted_region": "Stable region (E_B < 0 and U_D > 0)",
+              "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+            },
+            "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "ROC Curve",
+            "properties": {
+              "figure_label": "d",
+              "x_axis": "False positive rate",
+              "y_axis": "True positive rate",
+              "x_range": [
+                0.0,
+                1.0
+              ],
+              "y_range": [
+                0.0,
+                1.0
+              ],
+              "extracted_from_image": "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg"
+            },
+            "source_image_file": "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SHAP Feature Importance Bar Chart",
+            "properties": {
+              "description": "Normalized SHAP values for different descriptors in OER and HER processes",
+              "x_axis": "Normalized SHAP values",
+              "y_axis": "Descriptors",
+              "legend": [
+                "OER (Oxygen Evolution Reaction)",
+                "HER (Hydrogen Evolution Reaction)"
+              ],
+              "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+            },
+            "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Volcano Plot of OER Activity",
+            "properties": {
+              "x_axis": "X_M * E_S / eV",
+              "y_axis": "log (j_OER / A mmol_M^-1)",
+              "r_squared": "0.88",
+              "description": "Relationship between Oxygen Evolution Reaction (OER) activity and a descriptor based on metal electronegativity and surface energy.",
+              "extracted_from_image": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+            },
+            "source_image_file": "bd3676acffc4d4f389c805ee683c5711c793c3abfea560acaee1798d9fe855d2.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Confusion Matrix of Nanostructure Prediction",
+            "properties": {
+              "description": "A 2x2 confusion matrix comparing actual vs predicted nanostructures.",
+              "metric_type": "Classification Accuracy",
+              "total_samples": 27,
+              "extracted_from_image": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+            },
+            "source_image_file": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Phase Stability Chart",
+            "properties": {
+              "x_axis": "PR / -",
+              "legend": [
+                "SAC (Single-Atom Catalyst)",
+                "NPC (Nanoparticle Catalyst)",
+                "Transition from SAC to NPC"
+              ],
+              "extracted_from_image": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+            },
+            "source_image_file": "c50bea4f62906eb4738ca6586961c1458e9705e672ea10e52e3b66f2a7687737.jpg"
+          }
+        ]
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Pt_SAC",
+        "description": "HER performance evaluation in alkaline media",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Hydrogen Evolution Reaction",
+            "unit": "type"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "scan_rate_LSV": {
+            "value": 0.001,
+            "unit": "V/s"
+          }
+        },
+        "results_json": {
+          "performance_region": {
+            "value": "-0.1 to -0.2 V",
+            "unit": "V vs RHE"
+          },
+          "stability": {
+            "value": "stable after 3 cycles",
+            "unit": "LSV cycles"
+          }
+        },
+        "source_text": "Pt, Pd, Fe, and Ru excelled in HER between -0.1 to -0.2 V. ... Stable performance was reached after around three initial cycles for Pt and Fe in HER",
+        "related_images": [
+          "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "dataset",
+            "name": "Test set",
+            "properties": {
+              "total_count": 27,
+              "npc_count": 12,
+              "sac_count": 15,
+              "extracted_from_image": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+            },
+            "source_image_file": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Cu_SAC",
+        "type": "chemical",
+        "name": "Cu single-atom catalyst",
+        "formula": "Cu",
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        }
+      },
+      {
+        "id": "chem_Mn_SAC",
+        "type": "chemical",
+        "name": "Mn single-atom catalyst",
+        "formula": "Mn",
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        }
+      },
+      {
+        "id": "chem_Ir_SAC",
+        "type": "chemical",
+        "name": "Ir single-atom catalyst",
+        "formula": "Ir",
+        "properties": {
+          "coordination_environment": {
+            "value": "N4",
+            "unit": "site"
+          }
+        }
+      },
+      {
+        "id": "chem_Sc_SAC",
+        "type": "chemical",
+        "name": "Sc single-atom catalyst",
+        "formula": "Sc"
+      },
+      {
+        "id": "chem_Y_SAC",
+        "type": "chemical",
+        "name": "Y single-atom catalyst",
+        "formula": "Y"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_Ni_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ni_SAC",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_Pt_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Pt_SAC",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_Co_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Co_SAC",
+        "target_id": "test_1"
+      },
+      {
+        "id": "edge_tested_Ru_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ru_SAC",
+        "target_id": "test_1"
+      },
+      {
+        "id": "edge_tested_Pt_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Pt_SAC",
+        "target_id": "test_1"
+      },
+      {
+        "id": "edge_tested_Fe_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Fe_SAC",
+        "target_id": "test_2"
+      },
+      {
+        "id": "edge_tested_Pd_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Pd_SAC",
+        "target_id": "test_2"
+      },
+      {
+        "id": "edge_tested_Ru_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Ru_SAC",
+        "target_id": "test_2"
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Co",
+        "type": "chemical",
+        "name": "Co",
+        "aliases": [
+          "cobalt"
+        ],
+        "formula": "Co",
+        "properties": {}
+      },
+      {
+        "id": "chem_Cu",
+        "type": "chemical",
+        "name": "Cu",
+        "aliases": [
+          "copper"
+        ],
+        "formula": "Cu",
+        "properties": {}
+      },
+      {
+        "id": "chem_Fe",
+        "type": "chemical",
+        "name": "Fe",
+        "aliases": [
+          "iron"
+        ],
+        "formula": "Fe",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ir",
+        "type": "chemical",
+        "name": "Ir",
+        "aliases": [
+          "iridium"
+        ],
+        "formula": "Ir",
+        "properties": {}
+      },
+      {
+        "id": "chem_Mn",
+        "type": "chemical",
+        "name": "Mn",
+        "aliases": [
+          "manganese"
+        ],
+        "formula": "Mn",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni",
+        "type": "chemical",
+        "name": "Ni",
+        "aliases": [
+          "nickel"
+        ],
+        "formula": "Ni",
+        "properties": {}
+      },
+      {
+        "id": "chem_Pd",
+        "type": "chemical",
+        "name": "Pd",
+        "aliases": [
+          "palladium"
+        ],
+        "formula": "Pd",
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt",
+        "type": "chemical",
+        "name": "Pt",
+        "aliases": [
+          "platinum"
+        ],
+        "formula": "Pt",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ru",
+        "type": "chemical",
+        "name": "Ru",
+        "aliases": [
+          "ruthenium"
+        ],
+        "formula": "Ru",
+        "properties": {}
+      },
+      {
+        "id": "chem_Sc",
+        "type": "chemical",
+        "name": "Sc",
+        "aliases": [
+          "scandium"
+        ],
+        "formula": "Sc",
+        "properties": {}
+      },
+      {
+        "id": "chem_Y",
+        "type": "chemical",
+        "name": "Y",
+        "aliases": [
+          "yttrium"
+        ],
+        "formula": "Y",
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "XRD was used to identify samples with nanoparticles and elucidate the nanostructure of the 11 transition metals.",
+        "evidence_snippet": "Analysis of the metal speciation ... using X-ray diffraction (XRD) and transmission electron microscopy (TEM) enabled us to identify samples with nanoparticles above 4 nm in diameter",
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "X-Ray Diffraction",
+            "properties": {
+              "x_axis": "2-theta (degrees)",
+              "range": "30-70",
+              "markers": [
+                "MOx (Metal Oxide)",
+                "M (Metal)"
+              ],
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "HAADF-STEM and TEM were used to identify samples with nanoparticles above 4 nm and confirm the atomic dispersion of SACs for Co, Cu, Fe, Ir, Mn, Ni, Pd, Pt, Ru, Sc, and Y.",
+        "evidence_snippet": "Analysis of the metal speciation ... using X-ray diffraction (XRD) and transmission electron microscopy (TEM) enabled us to identify samples with nanoparticles above 4 nm in diameter ... Selected insets of aberration-corrected HAADF-STEM images ... confirm the formation of SACs and NPCs.",
+        "related_images": [
+          "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Scanning Transmission Electron Microscopy",
+            "properties": {
+              "scale_bar": "2 nm",
+              "purpose": "Visualizing atomic dispersion vs clustering",
+              "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+            },
+            "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XANES",
+        "is_reported": true,
+        "characterization_summary": "Pt K-edge XANES confirms the reduction of Pt(IV) precursor to Pt(II) in an N4-environment.",
+        "evidence_snippet": "The white line intensity of the XANES confirms the reduction of the Pt(IV) precursor used to Pt(II) ... resemble the tetraamine platinum nitrate (Pt(II) in N4-environment) reference."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "EXAFS",
+        "is_reported": true,
+        "characterization_summary": "Fourier-transformed EXAFS shows scattering paths for C, N, and O, while Pt-Cl and Pt-Pt paths are absent, supporting N4 coordination.",
+        "evidence_snippet": "The Fourier-transformed EXAFS further supports these observations ... main electron scattering paths associated with Pt-Cl and Pt-Pt are absent in the Pt SAC instead showing paths associated with 2nd period elements like C, N, and O.",
+        "related_images": [
+          "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "EXAFS Fourier Transform Spectrum",
+            "properties": {
+              "y_axis": "|χ(R)| / Å⁻⁴",
+              "x_axis": "R - δ / Å",
+              "technique": "Extended X-ray Absorption Fine Structure (EXAFS)",
+              "space": "R-space (radial distribution function)",
+              "extracted_from_image": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+            },
+            "source_image_file": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "ICP-OES",
+        "is_reported": true,
+        "characterization_summary": "Used to determine the metal loading/content of the catalysts.",
+        "evidence_snippet": "Inductively coupled plasma-optical emission spectrometry (ICP-OES) was carried out ... to determine the metal content of the catalysts."
+      },
+      {
+        "id": "model_crisp",
+        "type": "computational_model",
+        "name": "CRISP",
+        "properties": {
+          "description": "Chemical model for predicting material properties",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "model_spiro",
+        "type": "computational_model",
+        "name": "SPIRO",
+        "properties": {
+          "description": "Chemical model for predicting material properties",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_std_red_pot",
+        "type": "chemical_descriptor",
+        "name": "Standard reduction potential",
+        "properties": {
+          "symbol": "E°",
+          "units": "V",
+          "category": "Bulk",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_pauling_en",
+        "type": "chemical_descriptor",
+        "name": "Pauling's electronegativity",
+        "properties": {
+          "symbol": "χ",
+          "units": "dimensionless",
+          "category": "Bulk",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_cohesive_energy",
+        "type": "chemical_descriptor",
+        "name": "Cohesive energy",
+        "properties": {
+          "symbol": "Ec",
+          "units": "eV",
+          "category": "Bulk",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_work_function",
+        "type": "chemical_descriptor",
+        "name": "Work function",
+        "properties": {
+          "symbol": "Ew",
+          "units": "eV",
+          "category": "Bulk",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_covalent_radius",
+        "type": "chemical_descriptor",
+        "name": "Covalent radius",
+        "properties": {
+          "symbol": "Rc",
+          "units": "Å",
+          "category": "Bulk",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_precursor_ratio",
+        "type": "synthetic_descriptor",
+        "name": "Precursor ratio",
+        "properties": {
+          "symbol": "PR",
+          "units": "dimensionless",
+          "category": "Synthetic",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_interatomic_dist",
+        "type": "chemical_descriptor",
+        "name": "Interatomic distance",
+        "properties": {
+          "symbol": "d",
+          "units": "Å",
+          "category": "Bulk",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_avg_en",
+        "type": "chemical_descriptor",
+        "name": "Average electronegativity",
+        "properties": {
+          "symbol": "χM",
+          "units": "dimensionless",
+          "category": "Atomic",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_binding_energy",
+        "type": "chemical_descriptor",
+        "name": "Binding energy",
+        "properties": {
+          "symbol": "Eb",
+          "units": "eV",
+          "category": "Atomic",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_stability_energy",
+        "type": "chemical_descriptor",
+        "name": "Stability energy",
+        "properties": {
+          "symbol": "Es",
+          "units": "eV",
+          "category": "Atomic",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_dissolution_pot",
+        "type": "chemical_descriptor",
+        "name": "Dissolution potential",
+        "properties": {
+          "symbol": "Ud",
+          "units": "V",
+          "category": "Atomic",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "desc_diffusion_energy",
+        "type": "chemical_descriptor",
+        "name": "Diffusion energy",
+        "properties": {
+          "symbol": "Ea",
+          "units": "eV",
+          "category": "Atomic",
+          "extracted_from_image": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+        },
+        "source_image_file": "070443f1f4abf63115c5756246972037f64e01888d74b7f252e9eb7a3233c0f7.jpg"
+      },
+      {
+        "id": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1_1",
+        "type": "chemical_structure",
+        "name": "TM-N4-C Single-Atom Catalyst",
+        "properties": {
+          "description": "Transition metal atom coordinated with four nitrogen atoms embedded in a carbon lattice",
+          "geometry": "Planar",
+          "lattice_type": "Graphene-like",
+          "extracted_from_image": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+        },
+        "source_image_file": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+      },
+      {
+        "id": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1_2",
+        "type": "element",
+        "name": "Transition Metal (TM)",
+        "properties": {
+          "color_code": "Silver/Grey sphere",
+          "role": "Active catalytic site",
+          "extracted_from_image": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+        },
+        "source_image_file": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+      },
+      {
+        "id": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1_3",
+        "type": "element",
+        "name": "Nitrogen (N)",
+        "properties": {
+          "color_code": "Blue sphere",
+          "role": "Coordinating ligand",
+          "extracted_from_image": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+        },
+        "source_image_file": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+      },
+      {
+        "id": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1_4",
+        "type": "element",
+        "name": "Carbon (C)",
+        "properties": {
+          "color_code": "Dark grey sphere",
+          "role": "Support substrate",
+          "extracted_from_image": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+        },
+        "source_image_file": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+      },
+      {
+        "id": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1_5",
+        "type": "characterization",
+        "name": "Atomic Model Diagram",
+        "properties": {
+          "figure_label": "a",
+          "technique": "Computational/Schematic representation",
+          "extracted_from_image": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+        },
+        "source_image_file": "0fea7eb47ff047d655548d7b380d178678056e8ffc982ec1e9185becee28c8e1.jpg"
+      },
+      {
+        "id": "chart_f",
+        "type": "characterization",
+        "name": "Volcano Plot of HER Activity",
+        "properties": {
+          "y_axis": "log (j_HER / A mmol_M^-1)",
+          "x_axis": "X_M * E_S * E_C^-1",
+          "r_squared": "0.71",
+          "description": "Correlation between Hydrogen Evolution Reaction (HER) activity and a multi-parameter descriptor for various metal catalysts.",
+          "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+        },
+        "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+      },
+      {
+        "id": "HER",
+        "type": "reaction",
+        "name": "Hydrogen Evolution Reaction",
+        "properties": {
+          "abbreviation": "HER",
+          "extracted_from_image": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+        },
+        "source_image_file": "1f43dff69a88d30d9e790fafc9fcaa8f674493fb82494981a7e470d78ae7d27d.jpg"
+      },
+      {
+        "id": "SAC",
+        "type": "nanostructure_class",
+        "name": "Single-Atom Catalyst",
+        "properties": {
+          "description": "Isolated metal atoms dispersed on a support",
+          "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        },
+        "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+      },
+      {
+        "id": "NPC",
+        "type": "nanostructure_class",
+        "name": "Nanoparticle/Cluster",
+        "properties": {
+          "description": "Aggregated metal atoms or metal oxides",
+          "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        },
+        "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+      },
+      {
+        "id": "Confusion_Matrix",
+        "type": "analysis",
+        "name": "Prediction Performance Matrix",
+        "properties": {
+          "True_Positives": 7,
+          "True_Negatives": 12,
+          "False_Positives": 0,
+          "False_Negatives": 3,
+          "extracted_from_image": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+        },
+        "source_image_file": "1f513802d9315f4c901b0ca0015bd2255e14617f7565ff9d8ba1f15ae13ee12d.jpg"
+      },
+      {
+        "id": "chem_01",
+        "type": "chemical",
+        "name": "OH*",
+        "properties": {
+          "description": "Hydroxyl intermediate adsorbed on catalyst surface",
+          "relevance": "Oxygen Evolution Reaction (OER)",
+          "extracted_from_image": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+        },
+        "source_image_file": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+      },
+      {
+        "id": "chem_02",
+        "type": "chemical",
+        "name": "H*",
+        "properties": {
+          "description": "Hydrogen intermediate adsorbed on catalyst surface",
+          "relevance": "Hydrogen Evolution Reaction (HER)",
+          "extracted_from_image": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+        },
+        "source_image_file": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+      },
+      {
+        "id": "stat_01",
+        "type": "statistical_metric",
+        "name": "R²_OER",
+        "properties": {
+          "value": 0.91,
+          "description": "Coefficient of determination for OER intermediate predictions",
+          "extracted_from_image": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+        },
+        "source_image_file": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+      },
+      {
+        "id": "stat_02",
+        "type": "statistical_metric",
+        "name": "R²_HER",
+        "properties": {
+          "value": 0.85,
+          "description": "Coefficient of determination for HER intermediate predictions",
+          "extracted_from_image": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+        },
+        "source_image_file": "2b98acd29f8956a816667ab3aae27bdd1fa70836e4071adaa053c142aa02d7ff.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_2",
+        "type": "data_source",
+        "name": "Published literature",
+        "properties": {
+          "process": "Data extraction",
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_3",
+        "type": "dataset",
+        "name": "Curated dataset",
+        "properties": {
+          "data_points": 180,
+          "features": [
+            "Synthetic parameters",
+            "Geometric properties",
+            "Electronic properties"
+          ],
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_4",
+        "type": "model",
+        "name": "CRISP model",
+        "properties": {
+          "function": "Classification",
+          "output": "Decision rules based on heuristics",
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_5",
+        "type": "model",
+        "name": "SPIRO model",
+        "properties": {
+          "function": "Regression",
+          "output": "Empirical descriptor",
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_6",
+        "type": "characterization",
+        "name": "Synthesis & characterization",
+        "properties": {
+          "workflow": "Experimental",
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_7",
+        "type": "characterization",
+        "name": "Performance evaluation",
+        "properties": {
+          "metric": "Activity",
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_8",
+        "type": "chart",
+        "name": "Classification Plot",
+        "properties": {
+          "x_axis": "Chemical space B",
+          "y_axis": "Chemical space A",
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_9",
+        "type": "chart",
+        "name": "Feature ranking",
+        "properties": {
+          "metric": "Sensitivity score",
+          "variables": "x1, x2, x4, xn",
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3_10",
+        "type": "chart",
+        "name": "Regression Plot",
+        "properties": {
+          "function": "f(x1, x2, x3...xn)",
+          "y_axis": "Activity",
+          "extracted_from_image": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+        },
+        "source_image_file": "4c39aaace2ac662a2885eaac2e29c0586d110f5f0112127013f73e9c0c55d2f3.jpg"
+      },
+      {
+        "id": "metal_group",
+        "type": "chemical_group",
+        "name": "Investigated Metals",
+        "properties": {
+          "elements": [
+            "Ag",
+            "Al",
+            "Au",
+            "Ba",
+            "Bi",
+            "Ca",
+            "Cd",
+            "Ce",
+            "Co",
+            "Cr",
+            "Cu",
+            "Fe",
+            "Ga",
+            "Hf",
+            "In",
+            "Ir",
+            "K",
+            "Lu",
+            "Mn",
+            "Mo",
+            "Nb",
+            "Ni",
+            "Pb",
+            "Pd",
+            "Pt",
+            "Rh",
+            "Ru",
+            "Sb",
+            "Sc",
+            "Sn",
+            "Sr",
+            "Ti",
+            "V",
+            "W",
+            "Y",
+            "Zn",
+            "Zr"
+          ],
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Ag",
+        "type": "chemical",
+        "name": "Silver",
+        "properties": {
+          "symbol": "Ag",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Al",
+        "type": "chemical",
+        "name": "Aluminum",
+        "properties": {
+          "symbol": "Al",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Au",
+        "type": "chemical",
+        "name": "Gold",
+        "properties": {
+          "symbol": "Au",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Ba",
+        "type": "chemical",
+        "name": "Barium",
+        "properties": {
+          "symbol": "Ba",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Bi",
+        "type": "chemical",
+        "name": "Bismuth",
+        "properties": {
+          "symbol": "Bi",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Ca",
+        "type": "chemical",
+        "name": "Calcium",
+        "properties": {
+          "symbol": "Ca",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Cd",
+        "type": "chemical",
+        "name": "Cadmium",
+        "properties": {
+          "symbol": "Cd",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Ce",
+        "type": "chemical",
+        "name": "Cerium",
+        "properties": {
+          "symbol": "Ce",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Cr",
+        "type": "chemical",
+        "name": "Chromium",
+        "properties": {
+          "symbol": "Cr",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Ga",
+        "type": "chemical",
+        "name": "Gallium",
+        "properties": {
+          "symbol": "Ga",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Hf",
+        "type": "chemical",
+        "name": "Hafnium",
+        "properties": {
+          "symbol": "Hf",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "In",
+        "type": "chemical",
+        "name": "Indium",
+        "properties": {
+          "symbol": "In",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "K",
+        "type": "chemical",
+        "name": "Potassium",
+        "properties": {
+          "symbol": "K",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Lu",
+        "type": "chemical",
+        "name": "Lutetium",
+        "properties": {
+          "symbol": "Lu",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Mo",
+        "type": "chemical",
+        "name": "Molybdenum",
+        "properties": {
+          "symbol": "Mo",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Nb",
+        "type": "chemical",
+        "name": "Niobium",
+        "properties": {
+          "symbol": "Nb",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Pb",
+        "type": "chemical",
+        "name": "Lead",
+        "properties": {
+          "symbol": "Pb",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Rh",
+        "type": "chemical",
+        "name": "Rhodium",
+        "properties": {
+          "symbol": "Rh",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Sb",
+        "type": "chemical",
+        "name": "Antimony",
+        "properties": {
+          "symbol": "Sb",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Sn",
+        "type": "chemical",
+        "name": "Tin",
+        "properties": {
+          "symbol": "Sn",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Sr",
+        "type": "chemical",
+        "name": "Strontium",
+        "properties": {
+          "symbol": "Sr",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Ti",
+        "type": "chemical",
+        "name": "Titanium",
+        "properties": {
+          "symbol": "Ti",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "V",
+        "type": "chemical",
+        "name": "Vanadium",
+        "properties": {
+          "symbol": "V",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "W",
+        "type": "chemical",
+        "name": "Tungsten",
+        "properties": {
+          "symbol": "W",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Zn",
+        "type": "chemical",
+        "name": "Zinc",
+        "properties": {
+          "symbol": "Zn",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "Zr",
+        "type": "chemical",
+        "name": "Zirconium",
+        "properties": {
+          "symbol": "Zr",
+          "extracted_from_image": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+        },
+        "source_image_file": "4ce7b632c5988876589546fa2128f79e64986b4212b7063f36ed2aa36bd9213e.jpg"
+      },
+      {
+        "id": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f_root_node",
+        "type": "decision_node",
+        "name": "PR / -",
+        "properties": {
+          "description": "Primary descriptor for classification",
+          "threshold_split": 0.3,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f_node_e0",
+        "type": "decision_node",
+        "name": "E0 / V",
+        "properties": {
+          "description": "Standard reduction potential in Volts",
+          "threshold_split": 0.2,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f_node_ec",
+        "type": "decision_node",
+        "name": "Ec / eV",
+        "properties": {
+          "description": "Cohesive energy in electronvolts",
+          "threshold_split": 1.54,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f_node_chi",
+        "type": "decision_node",
+        "name": "X / -",
+        "properties": {
+          "description": "Electronegativity descriptor",
+          "threshold_split": 1.28,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f_node_pr_secondary",
+        "type": "decision_node",
+        "name": "PR / -",
+        "properties": {
+          "description": "Secondary PR descriptor split",
+          "threshold_split": 0.09,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "sac_class",
+        "type": "chemical_entity_class",
+        "name": "SAC",
+        "properties": {
+          "full_name": "Single-Atom Catalyst",
+          "color_code": "teal",
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "npc_class",
+        "type": "chemical_entity_class",
+        "name": "NPC",
+        "properties": {
+          "full_name": "Nanoparticle Catalyst",
+          "color_code": "orange",
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "terminal_1",
+        "type": "terminal_node",
+        "name": "Leaf 1",
+        "properties": {
+          "sac_count": 7,
+          "npc_count": 5,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "terminal_2",
+        "type": "terminal_node",
+        "name": "Leaf 2",
+        "properties": {
+          "sac_count": 41,
+          "npc_count": 0,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "terminal_3",
+        "type": "terminal_node",
+        "name": "Leaf 3",
+        "properties": {
+          "sac_count": 4,
+          "npc_count": 15,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "terminal_4",
+        "type": "terminal_node",
+        "name": "Leaf 4",
+        "properties": {
+          "sac_count": 9,
+          "npc_count": 0,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "terminal_5",
+        "type": "terminal_node",
+        "name": "Leaf 5",
+        "properties": {
+          "sac_count": 1,
+          "npc_count": 2,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "terminal_6",
+        "type": "terminal_node",
+        "name": "Leaf 6",
+        "properties": {
+          "sac_count": 0,
+          "npc_count": 23,
+          "extracted_from_image": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+        },
+        "source_image_file": "53cdc64b3a6cd7533926637e2bb1c6c6525a7f695e62308c86b6df2e87af347f.jpg"
+      },
+      {
+        "id": "reaction_OER",
+        "type": "chemical_process",
+        "name": "Oxygen Evolution Reaction",
+        "properties": {
+          "abbreviation": "OER",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "reaction_HER",
+        "type": "chemical_process",
+        "name": "Hydrogen Evolution Reaction",
+        "properties": {
+          "abbreviation": "HER",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7_1",
+        "type": "chemical_category",
+        "name": "NPC",
+        "properties": {
+          "full_name": "Nanoparticle Catalyst",
+          "color_code": "orange",
+          "extracted_from_image": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+        },
+        "source_image_file": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+      },
+      {
+        "id": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7_2",
+        "type": "chemical_category",
+        "name": "SAC",
+        "properties": {
+          "full_name": "Single-Atom Catalyst",
+          "color_code": "teal",
+          "extracted_from_image": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+        },
+        "source_image_file": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+      },
+      {
+        "id": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7_3",
+        "type": "dataset",
+        "name": "Master set",
+        "properties": {
+          "total_count": 134,
+          "npc_count": 55,
+          "sac_count": 79,
+          "extracted_from_image": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+        },
+        "source_image_file": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+      },
+      {
+        "id": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7_4",
+        "type": "dataset",
+        "name": "Train set",
+        "properties": {
+          "total_count": 107,
+          "npc_count": 43,
+          "sac_count": 64,
+          "extracted_from_image": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+        },
+        "source_image_file": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+      },
+      {
+        "id": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7_6",
+        "type": "characterization",
+        "name": "Donut Chart Distribution",
+        "properties": {
+          "description": "Data splitting visualization for machine learning model training",
+          "extracted_from_image": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+        },
+        "source_image_file": "7a4e0987cb05ec07e3b6053753aa6d43910941d3d58c1d654772ffa5534f2fd7.jpg"
+      },
+      {
+        "id": "metal_rh",
+        "type": "chemical",
+        "name": "Rhodium",
+        "properties": {
+          "symbol": "Rh",
+          "status": "Stable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_zn",
+        "type": "chemical",
+        "name": "Zinc",
+        "properties": {
+          "symbol": "Zn",
+          "status": "Stable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_au",
+        "type": "chemical",
+        "name": "Gold",
+        "properties": {
+          "symbol": "Au",
+          "status": "Unstable (High E_B)",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_os",
+        "type": "chemical",
+        "name": "Osmium",
+        "properties": {
+          "symbol": "Os",
+          "status": "Unstable (High E_B)",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_ti",
+        "type": "chemical",
+        "name": "Titanium",
+        "properties": {
+          "symbol": "Ti",
+          "status": "Unstable (Low U_D)",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_cr",
+        "type": "chemical",
+        "name": "Chromium",
+        "properties": {
+          "symbol": "Cr",
+          "status": "Unstable (Low U_D)",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_v",
+        "type": "chemical",
+        "name": "Vanadium",
+        "properties": {
+          "symbol": "V",
+          "status": "Unstable (Low U_D)",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_zr",
+        "type": "chemical",
+        "name": "Zirconium",
+        "properties": {
+          "symbol": "Zr",
+          "status": "Unstable (Low U_D)",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_hf",
+        "type": "chemical",
+        "name": "Hafnium",
+        "properties": {
+          "symbol": "Hf",
+          "status": "Unstable (Low U_D)",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_cd",
+        "type": "chemical",
+        "name": "Cadmium",
+        "properties": {
+          "symbol": "Cd",
+          "status": "Unstable (Low U_D)",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_ag",
+        "type": "chemical",
+        "name": "Silver",
+        "properties": {
+          "symbol": "Ag",
+          "status": "Unstable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_ta",
+        "type": "chemical",
+        "name": "Tantalum",
+        "properties": {
+          "symbol": "Ta",
+          "status": "Unstable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_nb",
+        "type": "chemical",
+        "name": "Niobium",
+        "properties": {
+          "symbol": "Nb",
+          "status": "Unstable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_w",
+        "type": "chemical",
+        "name": "Tungsten",
+        "properties": {
+          "symbol": "W",
+          "status": "Unstable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_mo",
+        "type": "chemical",
+        "name": "Molybdenum",
+        "properties": {
+          "symbol": "Mo",
+          "status": "Unstable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_tc",
+        "type": "chemical",
+        "name": "Technetium",
+        "properties": {
+          "symbol": "Tc",
+          "status": "Unstable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "metal_re",
+        "type": "chemical",
+        "name": "Rhenium",
+        "properties": {
+          "symbol": "Re",
+          "status": "Unstable",
+          "extracted_from_image": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+        },
+        "source_image_file": "7e2d928b6799ee8657c1448d7ae16122073a9ef2b5e714481792115167a79c64.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_1",
+        "type": "computational_method",
+        "name": "Descriptor Selection and Modeling",
+        "properties": {
+          "figure_label": "d",
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_2",
+        "type": "chemical_descriptor",
+        "name": "UD",
+        "properties": {
+          "description": "Top four descriptor 1",
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_3",
+        "type": "chemical_descriptor",
+        "name": "XM",
+        "properties": {
+          "description": "Top four descriptor 2",
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_4",
+        "type": "chemical_descriptor",
+        "name": "ES",
+        "properties": {
+          "description": "Top four descriptor 3",
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_5",
+        "type": "chemical_descriptor",
+        "name": "EC",
+        "properties": {
+          "description": "Top four descriptor 4",
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_6",
+        "type": "mathematical_operator",
+        "name": "Multiplication",
+        "properties": {
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_7",
+        "type": "mathematical_operator",
+        "name": "Division",
+        "properties": {
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_8",
+        "type": "mathematical_operator",
+        "name": "Logarithmic",
+        "properties": {
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_9",
+        "type": "mathematical_operator",
+        "name": "Square-term",
+        "properties": {
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_10",
+        "type": "mathematical_operator",
+        "name": "Square-root",
+        "properties": {
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_11",
+        "type": "statistical_metric",
+        "name": "R2",
+        "properties": {
+          "full_name": "Coefficient of determination",
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423_12",
+        "type": "chart",
+        "name": "Volcano Plot / Linear Relationship",
+        "properties": {
+          "x_axis": "x",
+          "y_axis": "y",
+          "left_equation": "αx + c",
+          "right_equation": "β(x - ψ)H(x - ψ) + ε",
+          "extracted_from_image": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+        },
+        "source_image_file": "7e960c3fda2b8a528ba293c68a33d21175be8ce0ad0efb9c0f55364656b42423.jpg"
+      },
+      {
+        "id": "metric_01",
+        "type": "performance_metric",
+        "name": "Train AUC",
+        "properties": {
+          "value": 0.98,
+          "color": "blue",
+          "extracted_from_image": "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg"
+        },
+        "source_image_file": "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg"
+      },
+      {
+        "id": "metric_02",
+        "type": "performance_metric",
+        "name": "Test AUC",
+        "properties": {
+          "value": 0.85,
+          "color": "red",
+          "extracted_from_image": "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg"
+        },
+        "source_image_file": "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg"
+      },
+      {
+        "id": "baseline_01",
+        "type": "reference_line",
+        "name": "Random Classifier Baseline",
+        "properties": {
+          "style": "dashed",
+          "slope": 1.0,
+          "extracted_from_image": "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg"
+        },
+        "source_image_file": "92c6d2b6ef5e9b020347bb135b1c3faab36d8e07561071dab80697f357ee2108.jpg"
+      },
+      {
+        "id": "desc_UD",
+        "type": "descriptor",
+        "name": "UD",
+        "properties": {
+          "description": "Potential descriptor",
+          "OER_importance": "High (~0.29)",
+          "HER_importance": "Medium (~0.18)",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "desc_XM",
+        "type": "descriptor",
+        "name": "XM",
+        "properties": {
+          "description": "Electronegativity or related metal property",
+          "OER_importance": "High (~0.26)",
+          "HER_importance": "Low (~0.08)",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "desc_d",
+        "type": "descriptor",
+        "name": "d",
+        "properties": {
+          "description": "Distance or d-band related property",
+          "OER_importance": "Medium-Low (~0.11)",
+          "HER_importance": "Low (~0.07)",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "desc_ES",
+        "type": "descriptor",
+        "name": "ES",
+        "properties": {
+          "description": "Energy-related descriptor (Surface energy)",
+          "OER_importance": "Low (~0.10)",
+          "HER_importance": "Low (~0.11)",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "desc_EC",
+        "type": "descriptor",
+        "name": "EC",
+        "properties": {
+          "description": "Energy-related descriptor (Cohesive energy)",
+          "OER_importance": "Low (~0.08)",
+          "HER_importance": "Very High (~0.38)",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "desc_EB",
+        "type": "descriptor",
+        "name": "EB",
+        "properties": {
+          "description": "Energy-related descriptor (Binding energy)",
+          "OER_importance": "Low (~0.08)",
+          "HER_importance": "Low (~0.09)",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "desc_EA",
+        "type": "descriptor",
+        "name": "EA",
+        "properties": {
+          "description": "Energy-related descriptor (Adsorption energy)",
+          "OER_importance": "Low (~0.07)",
+          "HER_importance": "Low (~0.09)",
+          "extracted_from_image": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+        },
+        "source_image_file": "9a214f08938459cbb9ddc2477edc4e39954adedd36bf4f7ceec75d712d29f9fc.jpg"
+      },
+      {
+        "id": "fig_a",
+        "type": "characterization",
+        "name": "Correlation Matrix Heatmap",
+        "properties": {
+          "description": "A triangular correlation matrix showing the relationship between various physical and thermodynamic descriptors.",
+          "color_scale": "Yellow (-ve) to Purple (+ve)",
+          "marker_type": "Bubble size represents magnitude of correlation",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "d",
+        "type": "descriptor",
+        "name": "d",
+        "properties": {
+          "description": "Likely d-band center or distance parameter",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "Ec",
+        "type": "descriptor",
+        "name": "Ec",
+        "properties": {
+          "description": "Cohesive energy or characteristic energy",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "Eb",
+        "type": "descriptor",
+        "name": "Eb",
+        "properties": {
+          "description": "Binding energy",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "Es",
+        "type": "descriptor",
+        "name": "Es",
+        "properties": {
+          "description": "Surface energy",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "Ud",
+        "type": "descriptor",
+        "name": "Ud",
+        "properties": {
+          "description": "Internal energy or d-orbital related potential",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "Ea",
+        "type": "descriptor",
+        "name": "Ea",
+        "properties": {
+          "description": "Adsorption energy or activation energy",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "Xm",
+        "type": "descriptor",
+        "name": "Xm",
+        "properties": {
+          "description": "Electronegativity or molar fraction",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "delta_G_H",
+        "type": "thermodynamic_property",
+        "name": "ΔG_H*",
+        "properties": {
+          "description": "Gibbs free energy of hydrogen adsorption",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "delta_G_OH",
+        "type": "thermodynamic_property",
+        "name": "ΔG_OH*",
+        "properties": {
+          "description": "Gibbs free energy of hydroxyl adsorption",
+          "extracted_from_image": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+        },
+        "source_image_file": "ba2c72db7b9f8bea49988f1143ee13bb3d03e97dc66eca600512a1ffa894e840.jpg"
+      },
+      {
+        "id": "entity_sac",
+        "type": "chemical_structure_class",
+        "name": "SAC",
+        "properties": {
+          "full_name": "Single-Atom Catalyst",
+          "description": "Isolated metal atoms anchored on a support.",
+          "extracted_from_image": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+        },
+        "source_image_file": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+      },
+      {
+        "id": "entity_npc",
+        "type": "chemical_structure_class",
+        "name": "NPC",
+        "properties": {
+          "full_name": "Nanoparticle/Cluster",
+          "description": "Aggregated metal atoms forming particles or clusters.",
+          "extracted_from_image": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+        },
+        "source_image_file": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+      },
+      {
+        "id": "result_tp_sac",
+        "type": "data_point",
+        "name": "True Positive SAC",
+        "properties": {
+          "value": 14,
+          "actual": "SAC",
+          "predicted": "SAC",
+          "extracted_from_image": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+        },
+        "source_image_file": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+      },
+      {
+        "id": "result_fn_sac",
+        "type": "data_point",
+        "name": "False Negative SAC",
+        "properties": {
+          "value": 1,
+          "actual": "SAC",
+          "predicted": "NPC",
+          "extracted_from_image": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+        },
+        "source_image_file": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+      },
+      {
+        "id": "result_fp_sac",
+        "type": "data_point",
+        "name": "False Positive SAC",
+        "properties": {
+          "value": 3,
+          "actual": "NPC",
+          "predicted": "SAC",
+          "extracted_from_image": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+        },
+        "source_image_file": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+      },
+      {
+        "id": "result_tn_sac",
+        "type": "data_point",
+        "name": "True Negative SAC",
+        "properties": {
+          "value": 9,
+          "actual": "NPC",
+          "predicted": "NPC",
+          "extracted_from_image": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+        },
+        "source_image_file": "c01edf6efc45953dd8c0c67b9dcb967c2f21671394822a44263c787ff6cd5cf2.jpg"
+      },
+      {
+        "id": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df_2",
+        "type": "chemical_bond",
+        "name": "Pt-C/N/O",
+        "properties": {
+          "approximate_distance_R_delta": "1.9 Å",
+          "description": "First shell coordination of Platinum with light elements (Carbon, Nitrogen, or Oxygen)",
+          "extracted_from_image": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+        },
+        "source_image_file": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+      },
+      {
+        "id": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df_3",
+        "type": "chemical_bond",
+        "name": "Pt-Cl",
+        "properties": {
+          "approximate_distance_R_delta": "2.3 Å",
+          "description": "Coordination of Platinum with Chlorine",
+          "extracted_from_image": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+        },
+        "source_image_file": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+      },
+      {
+        "id": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df_4",
+        "type": "chemical_bond",
+        "name": "Pt-Pt",
+        "properties": {
+          "approximate_distance_R_delta": "2.8 Å",
+          "description": "Metallic Platinum-Platinum coordination",
+          "extracted_from_image": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+        },
+        "source_image_file": "e6ee020f60c18ebd5e19c4ccdf75ea12044b1b1c6aac760b03b44a00426db7df.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_char_Co_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Co",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Cu_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Cu",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Fe_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Fe",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Ir_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Ir",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Mn_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Mn",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Ni_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Ni",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Pd_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Pd",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Pt_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Pt",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Ru_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Ru",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Sc_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Sc",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Y_XRD",
+        "type": "characterized_in",
+        "source_id": "chem_Y",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Pt_XANES",
+        "type": "characterized_in",
+        "source_id": "chem_Pt",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_char_Pt_EXAFS",
+        "type": "characterized_in",
+        "source_id": "chem_Pt",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Co",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Cu",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Fe_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Fe",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ir_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ir",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mn_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Mn",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ni",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pd_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Pd",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Pt",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ru_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ru",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Sc_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Sc",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Y_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Y",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Co",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Ni",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "source_id": "model_crisp",
+        "target_id": "desc_std_red_pot",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_crisp",
+        "target_id": "desc_pauling_en",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_crisp",
+        "target_id": "desc_cohesive_energy",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_crisp",
+        "target_id": "desc_work_function",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_crisp",
+        "target_id": "desc_covalent_radius",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_crisp",
+        "target_id": "desc_precursor_ratio",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_spiro",
+        "target_id": "desc_interatomic_dist",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_spiro",
+        "target_id": "desc_cohesive_energy",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_spiro",
+        "target_id": "desc_avg_en",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_spiro",
+        "target_id": "desc_binding_energy",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_spiro",
+        "target_id": "desc_stability_energy",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_spiro",
+        "target_id": "desc_dissolution_pot",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "model_spiro",
+        "target_id": "desc_diffusion_energy",
+        "type": "uses_descriptor"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "coordinated_to"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "bonded_to"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "5",
+        "target_id": "1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Pt",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Pd",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Ru",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Ir",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Fe",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Cu",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Co",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Mn",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Ni",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Sc",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chem_Y",
+        "target_id": "chart_f",
+        "type": "data_point_in"
+      },
+      {
+        "source_id": "chart_f",
+        "target_id": "HER",
+        "type": "measures_activity_of"
+      },
+      {
+        "source_id": "chem_Y_SAC",
+        "target_id": "char_2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Pd_SAC",
+        "target_id": "char_2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ir_SAC",
+        "target_id": "char_2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni_SAC",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Fe_SAC",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Cu_SAC",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Mn_SAC",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Y_SAC",
+        "target_id": "SAC",
+        "type": "instance_of"
+      },
+      {
+        "source_id": "chem_Ni_SAC",
+        "target_id": "NPC",
+        "type": "instance_of"
+      },
+      {
+        "source_id": "Confusion_Matrix",
+        "target_id": "SAC",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "Confusion_Matrix",
+        "target_id": "NPC",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_01",
+        "type": "measures_property_of"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_02",
+        "type": "measures_property_of"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "stat_01",
+        "type": "contains_metric"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "stat_02",
+        "type": "contains_metric"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "extracted_to"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "input_to"
+      },
+      {
+        "source_id": "3",
+        "target_id": "5",
+        "type": "input_to"
+      },
+      {
+        "source_id": "4",
+        "target_id": "6",
+        "type": "guides"
+      },
+      {
+        "source_id": "6",
+        "target_id": "7",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "7",
+        "target_id": "10",
+        "type": "provides_data_for"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "5",
+        "target_id": "9",
+        "type": "performs"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "metal_group",
+        "type": "analyzes"
+      },
+      {
+        "source_id": "metal_group",
+        "target_id": "Ag",
+        "type": "contains"
+      },
+      {
+        "source_id": "metal_group",
+        "target_id": "Al",
+        "type": "contains"
+      },
+      {
+        "source_id": "metal_group",
+        "target_id": "Au",
+        "type": "contains"
+      },
+      {
+        "source_id": "metal_group",
+        "target_id": "Zn",
+        "type": "contains"
+      },
+      {
+        "source_id": "metal_group",
+        "target_id": "Zr",
+        "type": "contains"
+      },
+      {
+        "source_id": "root_node",
+        "target_id": "node_e0",
+        "type": "split_condition_le_0.30"
+      },
+      {
+        "source_id": "root_node",
+        "target_id": "node_ec",
+        "type": "split_condition_gt_0.30"
+      },
+      {
+        "source_id": "node_e0",
+        "target_id": "node_chi",
+        "type": "split_condition_le_0.20"
+      },
+      {
+        "source_id": "node_e0",
+        "target_id": "node_pr_secondary",
+        "type": "split_condition_gt_0.20"
+      },
+      {
+        "source_id": "node_chi",
+        "target_id": "terminal_1",
+        "type": "split_condition_le_1.28"
+      },
+      {
+        "source_id": "node_chi",
+        "target_id": "terminal_2",
+        "type": "split_condition_gt_1.28"
+      },
+      {
+        "source_id": "node_pr_secondary",
+        "target_id": "terminal_3",
+        "type": "split_condition_le_0.09"
+      },
+      {
+        "source_id": "node_pr_secondary",
+        "target_id": "terminal_4",
+        "type": "split_condition_gt_0.09"
+      },
+      {
+        "source_id": "node_ec",
+        "target_id": "terminal_5",
+        "type": "split_condition_le_1.54"
+      },
+      {
+        "source_id": "node_ec",
+        "target_id": "terminal_6",
+        "type": "split_condition_gt_1.54"
+      },
+      {
+        "source_id": "chem_Co",
+        "target_id": "test_1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Ni",
+        "target_id": "test_1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Pt",
+        "target_id": "test_1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "reaction_OER",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "reaction_HER",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "chem_Ni",
+        "target_id": "reaction_OER",
+        "type": "catalyzes"
+      },
+      {
+        "source_id": "chem_Pt",
+        "target_id": "reaction_HER",
+        "type": "catalyzes"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "split_into"
+      },
+      {
+        "source_id": "3",
+        "target_id": "5",
+        "type": "split_into"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "component_of"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "component_of"
+      },
+      {
+        "source_id": "1",
+        "target_id": "5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "2",
+        "target_id": "5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "chem_Pt",
+        "target_id": "test_1",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "chem_Pd",
+        "target_id": "test_1",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "chem_Ir",
+        "target_id": "test_1",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "chem_Cu",
+        "target_id": "test_1",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "chem_Ni",
+        "target_id": "test_1",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "metal_au",
+        "target_id": "test_1",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "chem_Sc",
+        "target_id": "test_1",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "utilizes_descriptor"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "utilizes_descriptor"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "utilizes_descriptor"
+      },
+      {
+        "source_id": "1",
+        "target_id": "5",
+        "type": "utilizes_descriptor"
+      },
+      {
+        "source_id": "1",
+        "target_id": "6",
+        "type": "applies_operator"
+      },
+      {
+        "source_id": "1",
+        "target_id": "7",
+        "type": "applies_operator"
+      },
+      {
+        "source_id": "1",
+        "target_id": "8",
+        "type": "applies_operator"
+      },
+      {
+        "source_id": "1",
+        "target_id": "9",
+        "type": "applies_operator"
+      },
+      {
+        "source_id": "1",
+        "target_id": "10",
+        "type": "applies_operator"
+      },
+      {
+        "source_id": "1",
+        "target_id": "11",
+        "type": "evaluated_by"
+      },
+      {
+        "source_id": "1",
+        "target_id": "12",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "metric_01",
+        "type": "displays"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "metric_02",
+        "type": "displays"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "baseline_01",
+        "type": "contains_reference"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "desc_UD",
+        "type": "contains_data_for"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "desc_XM",
+        "type": "contains_data_for"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "desc_EC",
+        "type": "contains_data_for"
+      },
+      {
+        "source_id": "desc_UD",
+        "target_id": "reaction_OER",
+        "type": "influences"
+      },
+      {
+        "source_id": "desc_XM",
+        "target_id": "reaction_OER",
+        "type": "influences"
+      },
+      {
+        "source_id": "desc_EC",
+        "target_id": "reaction_HER",
+        "type": "strongly_influences"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "d",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "Ec",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "Eb",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "Es",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "Ud",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "Ea",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "Xm",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "delta_G_H",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "fig_a",
+        "target_id": "delta_G_OH",
+        "type": "contains_variable"
+      },
+      {
+        "source_id": "delta_G_H",
+        "target_id": "delta_G_OH",
+        "type": "correlated_with"
+      },
+      {
+        "source_id": "Ea",
+        "target_id": "Eb",
+        "type": "correlated_with"
+      },
+      {
+        "source_id": "chem_Ni",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Co",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Fe",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Cu",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Pd",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Mn",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Sc",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Y",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Pt",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Ru",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Ir",
+        "target_id": "test_1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "entity_sac",
+        "type": "evaluates_class"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "entity_npc",
+        "type": "evaluates_class"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "result_tp_sac",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "result_fn_sac",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "result_fp_sac",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "result_tn_sac",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Sc",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Mn",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Fe",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Co",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Ni",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Cu",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Y",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Ru",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Pd",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Ir",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "test_1",
+        "target_id": "chem_Pt",
+        "type": "analyzes_stability"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "identifies_peak"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "identifies_peak"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "identifies_peak"
+      },
+      {
+        "source_id": "2",
+        "target_id": "5",
+        "type": "involves_element"
+      },
+      {
+        "source_id": "3",
+        "target_id": "5",
+        "type": "involves_element"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "involves_element"
+      }
+    ]
+  }
+}

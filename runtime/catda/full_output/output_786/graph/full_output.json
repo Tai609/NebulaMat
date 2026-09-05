@@ -1,0 +1,4953 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "nodes": [
+          {
+            "id": "chem_ti_mesh",
+            "type": "chemical",
+            "name": "Titanium mesh",
+            "aliases": [
+              "Ti mesh"
+            ],
+            "formula": "Ti",
+            "properties": {
+              "pore_diameter": {
+                "value": 0.15,
+                "unit": "mm"
+              },
+              "thickness": {
+                "value": 0.2,
+                "unit": "mm"
+              },
+              "size": {
+                "value": "15 mm × 10 mm",
+                "unit": ""
+              }
+            }
+          },
+          {
+            "id": "chem_acetone",
+            "type": "chemical",
+            "name": "Acetone",
+            "aliases": [
+              "C3H6O"
+            ],
+            "formula": "C3H6O",
+            "properties": {}
+          },
+          {
+            "id": "chem_ethanol",
+            "type": "chemical",
+            "name": "Absolute ethanol",
+            "aliases": [
+              "C2H6O"
+            ],
+            "formula": "C2H5OH",
+            "properties": {}
+          },
+          {
+            "id": "chem_oxalic_acid",
+            "type": "chemical",
+            "name": "Oxalic acid dihydrate",
+            "aliases": [
+              "H2C2O4·H2O",
+              "C2H2O4·H2O"
+            ],
+            "formula": "C2H2O4·H2O",
+            "properties": {}
+          },
+          {
+            "id": "chem_h2so4",
+            "type": "chemical",
+            "name": "Sulfuric acid",
+            "aliases": [
+              "H2SO4"
+            ],
+            "formula": "H2SO4",
+            "properties": {}
+          },
+          {
+            "id": "chem_nh4_2_moo4",
+            "type": "chemical",
+            "name": "Ammonium molybdate",
+            "aliases": [
+              "(NH4)2MoO4"
+            ],
+            "formula": "(NH4)2MoO4",
+            "properties": {}
+          },
+          {
+            "id": "chem_nh4ircl6",
+            "type": "chemical",
+            "name": "Ammonium hexachloroiridate",
+            "aliases": [
+              "(NH4)IrCl6"
+            ],
+            "formula": "(NH4)IrCl6",
+            "properties": {}
+          },
+          {
+            "id": "chem_citric_acid",
+            "type": "chemical",
+            "name": "Citric acid",
+            "aliases": [
+              "C6H8O7"
+            ],
+            "formula": "C6H8O7",
+            "properties": {}
+          },
+          {
+            "id": "chem_di_water",
+            "type": "chemical",
+            "name": "Deionized water",
+            "aliases": [],
+            "formula": "H2O",
+            "properties": {}
+          },
+          {
+            "id": "chem_ti_etched",
+            "type": "chemical",
+            "name": "Ti mesh with porous surface",
+            "aliases": [
+              "Ti"
+            ],
+            "properties": {}
+          },
+          {
+            "id": "chem_moo3_precursor_ti",
+            "type": "chemical",
+            "name": "Ti-supported molybdenum oxide precursor",
+            "aliases": [],
+            "properties": {}
+          },
+          {
+            "id": "chem_moo3_ti",
+            "type": "chemical",
+            "name": "MoO3/Ti",
+            "aliases": [
+              "MoO3/Ti-200"
+            ],
+            "formula": "MoO3/Ti",
+            "properties": {}
+          },
+          {
+            "id": "chem_ir_precursor_solution",
+            "type": "chemical",
+            "name": "0.005 M Ir precursor solution",
+            "aliases": [],
+            "properties": {
+              "concentration": {
+                "value": 0.005,
+                "unit": "M"
+              }
+            }
+          },
+          {
+            "id": "chem_c_ir_ox_moo3_ti",
+            "type": "chemical",
+            "name": "c-IrOx-MoO3/Ti",
+            "aliases": [
+              "c-IrOx-MoO3/Ti-200"
+            ],
+            "formula": "c-IrOx-MoO3/Ti",
+            "properties": {
+              "ir_loading": {
+                "value": 28.35,
+                "unit": "μg_Ir cm^-2"
+              }
+            }
+          },
+          {
+            "id": "synth_step_1",
+            "type": "synthesis",
+            "name": "Ti mesh pretreatment",
+            "procedure": "Ti mesh with size of 15 mm×10 mm×0.2 mm was washed ultrasonically with acetone, absolute ethanol and deionized water for 10 min in sequence, and then soaked in 50 mL 10% H2C2O4 at 90°C for 60 min to achieve chemical etching process for the surface of Ti substrate. The substrate after etching was cleaned ultrasonically in deionized water to finally obtain Ti mesh with porous surface (referred as Ti).",
+            "method": "Chemical etching",
+            "conditions": {
+              "temperature": {
+                "value": 90,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 60,
+                "unit": "min"
+              },
+              "ultrasonic_washing_time": {
+                "value": 10,
+                "unit": "min"
+              }
+            },
+            "source_text": "Firstly, Ti mesh with size of 15 mm×10 mm×0.2 mm was washed ultrasonically with acetone... to finally obtain Ti mesh with porous surface"
+          },
+          {
+            "id": "synth_step_2",
+            "type": "synthesis",
+            "name": "Electrodeposition of Mo precursor",
+            "procedure": "Ti mesh after etching was used as the working electrode, a Pt electrode as the counter electrode and a Hg/Hg2SO4 electrode as the reference. The electrolyte was composed of 0.01 M (NH4)2MoO4 and 0.002 M H2SO4. The electrodeposition was carried out at the constant potential of -1.43 V versus Hg/Hg2SO4 for 200 s to obtain Ti-supported molybdenum oxide precursor.",
+            "method": "Potentiostatic electrodeposition",
+            "conditions": {
+              "potential": {
+                "value": -1.43,
+                "unit": "V vs Hg/Hg2SO4"
+              },
+              "time": {
+                "value": 200,
+                "unit": "s"
+              },
+              "electrolyte_concentration_nh4_2_moo4": {
+                "value": 0.01,
+                "unit": "M"
+              },
+              "electrolyte_concentration_h2so4": {
+                "value": 0.002,
+                "unit": "M"
+              }
+            },
+            "source_text": "The electrodeposition was carried out at the constant potential of -1.43 V versus Hg/Hg2SO4 for 200 s..."
+          },
+          {
+            "id": "synth_step_3",
+            "type": "synthesis",
+            "name": "Thermal oxidation to MoO3/Ti",
+            "procedure": "Subsequently, the precursor was transferred into a crucible and heated to 400°C in a muffle furnace with a heating rate of 10°C min^-1 in ambient atmosphere. After heating at 400°C for 5 h, the precursor was successfully transformed into MoO3/Ti.",
+            "method": "Thermal oxidation",
+            "conditions": {
+              "temperature": {
+                "value": 400,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 5,
+                "unit": "h"
+              },
+              "heating_rate": {
+                "value": 10,
+                "unit": "°C min^-1"
+              }
+            },
+            "unit_operations": [
+              {
+                "id": "unit_op_3.1",
+                "name": "Heating",
+                "method": "Ramp heating",
+                "conditions": {
+                  "heating_rate": {
+                    "value": 10,
+                    "unit": "°C min^-1"
+                  }
+                },
+                "procedure_snippet": "heated to 400°C in a muffle furnace with a heating rate of 10°C min^-1"
+              },
+              {
+                "id": "unit_op_3.2",
+                "name": "Annealing",
+                "method": "Isothermal annealing",
+                "conditions": {
+                  "temperature": {
+                    "value": 400,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 5,
+                    "unit": "h"
+                  }
+                },
+                "procedure_snippet": "After heating at 400°C for 5 h"
+              }
+            ],
+            "source_text": "Subsequently, the precursor was transferred into a crucible and heated to 400°C..."
+          },
+          {
+            "id": "synth_step_4",
+            "type": "synthesis",
+            "name": "Ir precursor solution preparation",
+            "procedure": "11 mg (NH4)2IrCl6 and 48 mg C6H8O7 were mixed in 5 mL deionized water to get 0.005 M Ir precursor solution. Then, the solution was stirred magnetically for 24 h at ambient temperature.",
+            "method": "Solution mixing",
+            "conditions": {
+              "stirring_time": {
+                "value": 24,
+                "unit": "h"
+              },
+              "temperature": {
+                "value": "ambient",
+                "unit": ""
+              }
+            },
+            "source_text": "11 mg (NH4)2IrCl6 and 48 mg C6H8O7 were mixed in 5 mL deionized water..."
+          },
+          {
+            "id": "synth_step_5",
+            "type": "synthesis",
+            "name": "Citric acid-assisted impregnation-pyrolysis",
+            "procedure": "The as-prepared MoO3/Ti was immersed into the above solution for 30 min. After being dried at 80°C for 5 min, the immersed MoO3/Ti was heated to 400°C at a heating rate of 10°C min^-1 in a muffle furnace in ambient atmosphere and kept for 5 h to finally obtain c-IrOx-MoO3/Ti.",
+            "method": "Impregnation-pyrolysis",
+            "conditions": {
+              "immersion_time": {
+                "value": 30,
+                "unit": "min"
+              },
+              "drying_temperature": {
+                "value": 80,
+                "unit": "°C"
+              },
+              "drying_time": {
+                "value": 5,
+                "unit": "min"
+              },
+              "pyrolysis_temperature": {
+                "value": 400,
+                "unit": "°C"
+              },
+              "pyrolysis_time": {
+                "value": 5,
+                "unit": "h"
+              },
+              "heating_rate": {
+                "value": 10,
+                "unit": "°C min^-1"
+              }
+            },
+            "unit_operations": [
+              {
+                "id": "unit_op_5.1",
+                "name": "Impregnation",
+                "method": "Solution immersion",
+                "conditions": {
+                  "immersion_time": {
+                    "value": 30,
+                    "unit": "min"
+                  }
+                },
+                "procedure_snippet": "the as-prepared MoO3/Ti was immersed into the above solution for 30 min"
+              },
+              {
+                "id": "unit_op_5.2",
+                "name": "Drying",
+                "method": "Convective drying",
+                "conditions": {
+                  "temperature": {
+                    "value": 80,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 5,
+                    "unit": "min"
+                  }
+                },
+                "procedure_snippet": "After being dried at 80°C for 5 min"
+              },
+              {
+                "id": "unit_op_5.3",
+                "name": "Pyrolysis",
+                "method": "Thermal decomposition",
+                "conditions": {
+                  "temperature": {
+                    "value": 400,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 5,
+                    "unit": "h"
+                  },
+                  "heating_rate": {
+                    "value": 10,
+                    "unit": "°C min^-1"
+                  }
+                },
+                "procedure_snippet": "heated to 400°C... and kept for 5 h"
+              }
+            ],
+            "source_text": "the as-prepared MoO3/Ti was immersed into the above solution for 30 min..."
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge_input_chem_ti_mesh_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_ti_mesh",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "substrate"
+            }
+          },
+          {
+            "id": "edge_input_chem_acetone_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_acetone",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "solvent"
+            }
+          },
+          {
+            "id": "edge_input_chem_ethanol_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_ethanol",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "solvent"
+            }
+          },
+          {
+            "id": "edge_input_chem_di_water_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_di_water",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "solvent"
+            }
+          },
+          {
+            "id": "edge_input_chem_oxalic_acid_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_oxalic_acid",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "etchant",
+              "concentration": "10%"
+            }
+          }
+        ],
+        "id": "edge_output_synth_step_1_chem_ti_etched",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_ti_etched",
+        "properties": {
+          "form": "porous surface"
+        }
+      },
+      {
+        "id": "edge_input_chem_ti_etched_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ti_etched",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "working_electrode"
+        }
+      },
+      {
+        "id": "edge_input_chem_h2so4_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_h2so4",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "electrolyte",
+          "concentration": "0.002 M"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_moo3_precursor_ti",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_moo3_precursor_ti",
+        "properties": {
+          "form": "electrodeposited film"
+        }
+      },
+      {
+        "id": "edge_input_chem_moo3_precursor_ti_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_moo3_precursor_ti",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_moo3_ti",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_moo3_ti",
+        "properties": {
+          "form": "calcined electrode"
+        }
+      },
+      {
+        "id": "edge_input_chem_citric_acid_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_citric_acid",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "complexing_agent",
+          "amount": "48 mg"
+        }
+      },
+      {
+        "id": "edge_input_chem_di_water_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_di_water",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "solvent",
+          "volume": "5 mL"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_chem_ir_precursor_solution",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_ir_precursor_solution",
+        "properties": {
+          "form": "solution"
+        }
+      },
+      {
+        "id": "edge_input_chem_ir_precursor_solution_synth_step_5",
+        "type": "synthesis_input",
+        "source_id": "chem_ir_precursor_solution",
+        "target_id": "synth_step_5",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_5_chem_c_ir_ox_moo3_ti",
+        "type": "synthesis_output",
+        "source_id": "synth_step_5",
+        "target_id": "chem_c_ir_ox_moo3_ti",
+        "properties": {
+          "form": "nano-heterostructure electrode"
+        }
+      },
+      {
+        "id": "chem_ir_ox_ti",
+        "type": "chemical",
+        "name": "c-IrOx/Ti",
+        "aliases": [
+          "c-IrOx/Ti"
+        ],
+        "formula": "c-IrOx/Ti",
+        "properties": {
+          "ir_loading": {
+            "value": 26.46,
+            "unit": "μg_Ir cm^-2"
+          }
+        }
+      },
+      {
+        "id": "chem_pt_electrode",
+        "type": "chemical",
+        "name": "Pt electrode",
+        "aliases": [],
+        "formula": "Pt",
+        "properties": {}
+      },
+      {
+        "id": "chem_hg_hg2so4",
+        "type": "chemical",
+        "name": "Hg/Hg2SO4 electrode",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_commercial_IrO2",
+        "type": "chemical",
+        "name": "commercial IrO2",
+        "aliases": [
+          "IrO2"
+        ],
+        "formula": "IrO2",
+        "related_images": [
+          "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "hkl": "(101)",
+              "extracted_from_image": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+            },
+            "source_image_file": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_c-IrOx_Ti",
+        "type": "chemical",
+        "name": "c-IrOx/Ti",
+        "aliases": [
+          "c- IrO_x / Ti"
+        ],
+        "formula": "IrO_x/Ti",
+        "related_images": [
+          "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg",
+          "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg",
+          "3c48a648eb83b5c516716e8fbcad8f3b7f3f08472e96dca7045ae855a42ecf1f.jpg",
+          "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg",
+          "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg",
+          "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg",
+          "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg",
+          "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg",
+          "9c2b8784115e86cecd205f8e9c3019e3b03a8d23edc75a81406545da1238db5a.jpg",
+          "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg",
+          "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg",
+          "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg",
+          "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg",
+          "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg",
+          "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg",
+          "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg",
+          "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg",
+          "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "c-IrO2/Ti",
+            "properties": {
+              "description": "Crystalline IrO2 on Ti support",
+              "extracted_from_image": "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg"
+            },
+            "source_image_file": "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2/Ti",
+            "properties": {
+              "description": "Cyclic IrO2 on Ti substrate",
+              "extracted_from_image": "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg"
+            },
+            "source_image_file": "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM image",
+            "properties": {
+              "technique": "Transmission Electron Microscopy",
+              "scale_bar": "50 nm",
+              "description": "Image showing dispersed nanoparticles labeled as Ir",
+              "extracted_from_image": "3c48a648eb83b5c516716e8fbcad8f3b7f3f08472e96dca7045ae855a42ecf1f.jpg"
+            },
+            "source_image_file": "3c48a648eb83b5c516716e8fbcad8f3b7f3f08472e96dca7045ae855a42ecf1f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "O2",
+            "properties": {
+              "formula": "O2",
+              "role": "product",
+              "extracted_from_image": "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg"
+            },
+            "source_image_file": "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2",
+            "properties": {
+              "description": "Crystalline IrO2",
+              "extracted_from_image": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+            },
+            "source_image_file": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "MoS2",
+            "properties": {
+              "description": "Molybdenum disulfide, cathode catalyst",
+              "extracted_from_image": "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg"
+            },
+            "source_image_file": "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2/Ti/PtC",
+            "properties": {
+              "current_density": "100 mA cm⁻²",
+              "extracted_from_image": "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg"
+            },
+            "source_image_file": "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrOTi",
+            "properties": {
+              "phase": "cubic IrOTi",
+              "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+            },
+            "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "size_scale": "50 nm",
+              "morphology": "aggregated, cloudy clusters",
+              "extracted_from_image": "9c2b8784115e86cecd205f8e9c3019e3b03a8d23edc75a81406545da1238db5a.jpg"
+            },
+            "source_image_file": "9c2b8784115e86cecd205f8e9c3019e3b03a8d23edc75a81406545da1238db5a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2-MoO2/Ti",
+            "properties": {
+              "description": "IrO2-MoO2 on Ti substrate",
+              "capacitance": "9.43 mF cm⁻²",
+              "extracted_from_image": "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg"
+            },
+            "source_image_file": "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe₃O₄",
+            "properties": {
+              "formula": "Fe₃O₄",
+              "extracted_from_image": "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg"
+            },
+            "source_image_file": "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO/Ti",
+            "properties": {
+              "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+            },
+            "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "loading": "2 mg/cm²",
+              "extracted_from_image": "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg"
+            },
+            "source_image_file": "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2-MoO/Ti",
+            "properties": {
+              "description": "Amorphous or non-crystalline IrO2-MoO on Ti substrate",
+              "extracted_from_image": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+            },
+            "source_image_file": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2-MO3/Ti",
+            "properties": {
+              "description": "Amorphous IrO2 with MO3 on Ti substrate",
+              "extracted_from_image": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+            },
+            "source_image_file": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2-MoO2/Ti",
+            "properties": {
+              "description": "IrO2-MoO2 on Ti support",
+              "extracted_from_image": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+            },
+            "source_image_file": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrOx/Ti/PVC",
+            "properties": {
+              "description": "Crystalline iridium oxide on Ti supported on PVC",
+              "extracted_from_image": "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg"
+            },
+            "source_image_file": "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanostructured Material",
+            "properties": {
+              "description": "Porous or aggregated nanoparticles with irregular morphology",
+              "particle_size_approx": "<1 μm",
+              "scale": "500 nm",
+              "extracted_from_image": "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+            },
+            "source_image_file": "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_IrO2_Ti",
+        "type": "chemical",
+        "name": "IrO2/Ti",
+        "aliases": [
+          "IrO2/Ti"
+        ],
+        "properties": {
+          "Ir_loading": {
+            "value": 0.85,
+            "unit": "mg_Ir/cm^2"
+          }
+        },
+        "related_images": [
+          "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "IrO₂",
+            "properties": {
+              "phase": "IrO₂",
+              "PDF": "15-0870",
+              "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+            },
+            "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_c-IrOx-MoO3_Ti",
+        "type": "chemical",
+        "name": "c-IrOx-MoO3/Ti",
+        "aliases": [
+          "c- IrO_x - MoO_3 / Ti"
+        ],
+        "formula": "IrO_x-MoO_3/Ti",
+        "properties": {
+          "Ir loading": {
+            "value": 28.35,
+            "unit": "μg/cm²"
+          },
+          "Ir content": {
+            "value": 4,
+            "unit": "wt%"
+          }
+        },
+        "related_images": [
+          "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg",
+          "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg",
+          "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg",
+          "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg",
+          "3c48a648eb83b5c516716e8fbcad8f3b7f3f08472e96dca7045ae855a42ecf1f.jpg",
+          "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg",
+          "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg",
+          "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg",
+          "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg",
+          "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg",
+          "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg",
+          "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg",
+          "9c2b8784115e86cecd205f8e9c3019e3b03a8d23edc75a81406545da1238db5a.jpg",
+          "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg",
+          "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg",
+          "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg",
+          "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg",
+          "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg",
+          "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg",
+          "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg",
+          "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg",
+          "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg",
+          "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "material",
+            "name": "c-IrO₂MoTi",
+            "properties": {
+              "description": "Final composite with IrO₂ overlayer",
+              "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+            },
+            "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Initial",
+            "properties": {
+              "description": "Initial material or state",
+              "extracted_from_image": "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg"
+            },
+            "source_image_file": "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO_x-MoO_y-Ti",
+            "properties": {
+              "extracted_from_image": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+            },
+            "source_image_file": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2-MoO3/Ti",
+            "properties": {
+              "description": "Cyclic IrO2-MoO3 on Ti substrate",
+              "extracted_from_image": "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg"
+            },
+            "source_image_file": "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir",
+            "properties": {
+              "formula": "Ir",
+              "description": "Iridium nanoparticles",
+              "extracted_from_image": "3c48a648eb83b5c516716e8fbcad8f3b7f3f08472e96dca7045ae855a42ecf1f.jpg"
+            },
+            "source_image_file": "3c48a648eb83b5c516716e8fbcad8f3b7f3f08472e96dca7045ae855a42ecf1f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "H2O",
+            "properties": {
+              "formula": "H2O",
+              "role": "reactant",
+              "extracted_from_image": "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg"
+            },
+            "source_image_file": "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium",
+            "properties": {
+              "color": "yellow",
+              "symbol": "Ir",
+              "extracted_from_image": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+            },
+            "source_image_file": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Molybdenum",
+            "properties": {
+              "color": "blue",
+              "symbol": "Mo",
+              "extracted_from_image": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+            },
+            "source_image_file": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2/MoO3",
+            "properties": {
+              "description": "c-IrO2 with MoO3",
+              "extracted_from_image": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+            },
+            "source_image_file": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+          },
+          {
+            "type": "element",
+            "name": "Ir",
+            "properties": {
+              "description": "Iridium",
+              "extracted_from_image": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+            },
+            "source_image_file": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "TiO2",
+            "properties": {
+              "description": "Titanium dioxide, likely on anode side",
+              "extracted_from_image": "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg"
+            },
+            "source_image_file": "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2/PtC",
+            "properties": {
+              "current_density": "100 mA cm⁻²",
+              "extracted_from_image": "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg"
+            },
+            "source_image_file": "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir-Mo-O",
+            "properties": {
+              "composition": "Ir: 3.6 wt%, Mo: 69.5 wt%, O: 26.9 wt%",
+              "extracted_from_image": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+            },
+            "source_image_file": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium",
+            "properties": {
+              "wt%": "3.6",
+              "extracted_from_image": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+            },
+            "source_image_file": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Molybdenum",
+            "properties": {
+              "wt%": "69.5",
+              "extracted_from_image": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+            },
+            "source_image_file": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO₂MoTi",
+            "properties": {
+              "phase": "cubic IrO₂MoTi",
+              "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+            },
+            "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir",
+            "properties": {
+              "phase": "Ir",
+              "PDF": "05-0685",
+              "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+            },
+            "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Mo",
+            "properties": {
+              "phase": "Mo",
+              "PDF": "42-1120",
+              "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+            },
+            "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "label": "(g)",
+              "scale_bar": "50 nm",
+              "description": "High-resolution transmission electron microscopy image showing nanostructure with cloudy, aggregated morphology",
+              "extracted_from_image": "9c2b8784115e86cecd205f8e9c3019e3b03a8d23edc75a81406545da1238db5a.jpg"
+            },
+            "source_image_file": "9c2b8784115e86cecd205f8e9c3019e3b03a8d23edc75a81406545da1238db5a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2-MoO2/Ti",
+            "properties": {
+              "description": "Carbon-coated IrO2-MoO2 on Ti substrate",
+              "capacitance": "20.7 mF cm⁻²",
+              "extracted_from_image": "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg"
+            },
+            "source_image_file": "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FeO_x",
+            "properties": {
+              "formula": "FeO_x",
+              "extracted_from_image": "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg"
+            },
+            "source_image_file": "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO-MO/Ti",
+            "properties": {
+              "label": "c-IrO-MO/Ti (This work)",
+              "symbol": "★",
+              "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+            },
+            "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "loading": "2 mg/cm²",
+              "extracted_from_image": "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg"
+            },
+            "source_image_file": "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2-MoO/Ti",
+            "properties": {
+              "description": "Crystalline IrO2-MoO on Ti substrate",
+              "extracted_from_image": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+            },
+            "source_image_file": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2-MO3/Ti",
+            "properties": {
+              "description": "Crystalline IrO2 with MO3 on Ti substrate",
+              "extracted_from_image": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+            },
+            "source_image_file": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Material Sample",
+            "properties": {
+              "description": "Granular/porous material with rough surface texture",
+              "extracted_from_image": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+            },
+            "source_image_file": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2-MoO2/Ti",
+            "properties": {
+              "description": "Carbon-coated IrO2-MoO2 on Ti support",
+              "extracted_from_image": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+            },
+            "source_image_file": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2/PVC",
+            "properties": {
+              "description": "Iridia oxide supported on PVC",
+              "extracted_from_image": "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg"
+            },
+            "source_image_file": "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "label": "(c)",
+              "description": "Scanning Electron Microscopy image showing nanostructured material",
+              "scale_bar": "500 nm",
+              "extracted_from_image": "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+            },
+            "source_image_file": "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_MoO3_Ti",
+        "type": "chemical",
+        "name": "MoO3/Ti",
+        "aliases": [
+          "MoO₃/Ti"
+        ],
+        "formula": "MoO3/Ti",
+        "related_images": [
+          "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg",
+          "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg",
+          "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg",
+          "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg",
+          "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg",
+          "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg",
+          "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg",
+          "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg",
+          "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg",
+          "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg",
+          "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg",
+          "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg",
+          "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg",
+          "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg",
+          "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg",
+          "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg",
+          "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg",
+          "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "material",
+            "name": "MoO₂Ti",
+            "properties": {
+              "description": "MoO₂ deposited on porous Ti",
+              "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+            },
+            "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2/Ti",
+            "properties": {
+              "description": "Amorphous or polycrystalline IrO2 on Ti support",
+              "extracted_from_image": "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg"
+            },
+            "source_image_file": "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "MoO3",
+            "properties": {
+              "hkl": "(021)",
+              "extracted_from_image": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+            },
+            "source_image_file": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "MoO3/Ti",
+            "properties": {
+              "description": "MoO3 on Ti substrate",
+              "extracted_from_image": "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg"
+            },
+            "source_image_file": "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "H+",
+            "properties": {
+              "formula": "H+",
+              "role": "proton",
+              "extracted_from_image": "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg"
+            },
+            "source_image_file": "3dbc73a7a628de2ca19f596fc6aea35045a39484defa5e23209195908f8d5bc7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "MoO3",
+            "properties": {
+              "description": "Molybdenum trioxide",
+              "extracted_from_image": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+            },
+            "source_image_file": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nafion 117",
+            "properties": {
+              "description": "Proton exchange membrane",
+              "extracted_from_image": "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg"
+            },
+            "source_image_file": "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2-MoO3/Ti/PtC",
+            "properties": {
+              "current_density": "500 mA cm⁻²",
+              "extracted_from_image": "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg"
+            },
+            "source_image_file": "78a1383b8a4d3c705e0d96222802cc0c31473cac9464eebd60f23209d88ccedf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "MoO₃",
+            "properties": {
+              "phase": "MoO₃",
+              "PDF": "76-1003",
+              "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+            },
+            "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Mo₂Ti",
+            "properties": {
+              "phase": "Mo₂Ti",
+              "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+            },
+            "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2-MoO2/Ti-IrO2",
+            "properties": {
+              "description": "IrO2-MoO2/Ti with additional IrO2 layer",
+              "capacitance": "3.71 mF cm⁻²",
+              "extracted_from_image": "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg"
+            },
+            "source_image_file": "a266bb4b09db099f48802560726f2940814dacb3d759d8f17cbc0a453ef2d28c.jpg"
+          },
+          {
+            "type": "value",
+            "name": "4.9688",
+            "properties": {
+              "value": "4.9688",
+              "unit": "cm³/mol",
+              "extracted_from_image": "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg"
+            },
+            "source_image_file": "a41558b3d4feb10746e8c5ef44f4f8d57a11720ba4b06e9f3d5ee443ed65c480.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO NPs",
+            "properties": {
+              "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+            },
+            "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO2-IrO2",
+            "properties": {
+              "loading": "2 mg/cm²",
+              "extracted_from_image": "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg"
+            },
+            "source_image_file": "b273e3c0fb75d7d4d4ef4d686234170476d0754e3af8bc6881d9c397c2b192fe.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2/Ti",
+            "properties": {
+              "description": "Crystalline IrO2 on Ti substrate",
+              "extracted_from_image": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+            },
+            "source_image_file": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrO2/Ti",
+            "properties": {
+              "description": "Crystalline IrO2 on Ti substrate",
+              "extracted_from_image": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+            },
+            "source_image_file": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2/Ti",
+            "properties": {
+              "description": "IrO2 on Ti support",
+              "extracted_from_image": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+            },
+            "source_image_file": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "c-IrOx-Mo3/Ti/PVC",
+            "properties": {
+              "description": "Crystalline iridium oxide-molybdenum oxide on Ti supported on PVC",
+              "extracted_from_image": "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg"
+            },
+            "source_image_file": "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg"
+          },
+          {
+            "type": "scale_bar",
+            "name": "500 nm Scale Bar",
+            "properties": {
+              "length": "500 nm",
+              "extracted_from_image": "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+            },
+            "source_image_file": "fe322a52b1dbacbf94d933d11f83ae5b179c6008ec38b653788f60a2094b90b7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_IrOx_Ti",
+        "type": "chemical",
+        "name": "IrOx/Ti",
+        "aliases": [
+          "IrO_x / Ti"
+        ],
+        "formula": "IrO_x/Ti"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_pt_electrode_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_pt_electrode",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "counter_electrode"
+        }
+      },
+      {
+        "id": "edge_input_chem_hg_hg2so4_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_hg_hg2so4",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "reference_electrode"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_IrO2_Ti",
+      "chem_commercial_IrO2",
+      "chem_c-IrOx_Ti"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_commercial_IrO2",
+        "type": "chemical",
+        "name": "commercial IrO2",
+        "aliases": [
+          "IrO2"
+        ],
+        "formula": "IrO2"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_c-IrOx-MoO3_Ti",
+        "description": "OER performance in 0.5 M H2SO4 three-electrode setup",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H2SO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": "acidic",
+            "unit": "condition"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "self-supported catalysts",
+            "unit": "1 cm^2"
+          },
+          "reference_electrode": {
+            "value": "Hg/Hg2SO4 (calibrated to RHE)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt",
+            "unit": "electrode"
+          },
+          "scan_rate_LSV": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "90%",
+            "unit": "compensation"
+          },
+          "atmosphere": {
+            "value": "Ar-saturated",
+            "unit": "gas"
+          },
+          "temperature": {
+            "value": "ambient",
+            "unit": "room temperature"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm2": {
+            "value": 200,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA_cm2": {
+            "value": 290,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 58.6,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance_Cdl": {
+            "value": 20,
+            "unit": "mF/cm^2"
+          },
+          "mass_activity_at_1.5V_RHE": {
+            "value": 2.45,
+            "unit": "A/mg_Ir"
+          }
+        },
+        "source_text": "All electrochemical measurements were carried out in a standard three-electrode system... in Ar-saturated 0.5 M H2SO4 solution... LSV measurements were performed at a scan rate of 1 mV s−1 with 90% iR compensation... c-IrOx-MoO3/Ti drops to ∼200 mV... ∼290 mV at 100 mA cm−2... Tafel slope (58.6 mV dec−1)... Cdl of 20 mF cm−2... mass activity of 2.45 A mgir−1"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_c-IrOx-MoO3_Ti",
+        "description": "OER stability chronopotentiometry at 10 mA/cm2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm^2"
+          },
+          "duration": {
+            "value": ">130",
+            "unit": "h"
+          },
+          "electrolyte": {
+            "value": "0.5 M H2SO4",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_increase": {
+            "value": 45,
+            "unit": "mV"
+          },
+          "stability_duration": {
+            "value": ">130",
+            "unit": "h"
+          }
+        },
+        "source_text": "the OER overpotential at the current density of 10 mA cm−2 increases only about 45 mV after a long-term operation of longer than 130 h"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_c-IrOx-MoO3_Ti",
+        "description": "OER stability chronopotentiometry at 100 mA/cm2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "current_density": {
+            "value": 100,
+            "unit": "mA/cm^2"
+          },
+          "duration": {
+            "value": ">130",
+            "unit": "h"
+          },
+          "electrolyte": {
+            "value": "0.5 M H2SO4",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": ">130",
+            "unit": "h"
+          }
+        },
+        "source_text": "the catalyst still retains its catalytic activity for the same stability test duration even at the higher current density of 100 mA cm−2"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_c-IrOx-MoO3_Ti",
+        "description": "Faradaic efficiency at 50 mA/cm2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "current_density": {
+            "value": 50,
+            "unit": "mA/cm^2"
+          },
+          "duration": {
+            "value": "30 min pre-run",
+            "unit": "stabilization"
+          },
+          "setup": {
+            "value": "H-cell with Nafion 117",
+            "unit": "configuration"
+          }
+        },
+        "results_json": {
+          "Faradaic_efficiency_O2": {
+            "value": 100,
+            "unit": "%"
+          }
+        },
+        "source_text": "the amount of O2 actually generated from OER at the current density of 50 mA cm−2 is very close to the theoretical value... Faradaic efficiency of approximately 100%"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_c-IrOx-MoO3_Ti",
+        "description": "PEMWE single cell performance 1 cm2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "PEMWE"
+          },
+          "cell_area": {
+            "value": 1,
+            "unit": "cm^2"
+          },
+          "temperature": {
+            "value": 80,
+            "unit": "°C"
+          },
+          "pressure": {
+            "value": "ambient",
+            "unit": "atm"
+          },
+          "anolyte_feed": {
+            "value": "15 mL/min DI water",
+            "unit": "flow rate"
+          },
+          "cathode": {
+            "value": "20 wt% Pt/C",
+            "unit": "catalyst"
+          },
+          "Pt_loading": {
+            "value": 0.8,
+            "unit": "mg_Pt/cm^2"
+          },
+          "Ir_loading": {
+            "value": 28.35,
+            "unit": "μg_Ir/cm^2"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_1A_cm2": {
+            "value": "<1.8",
+            "unit": "V"
+          },
+          "stability_duration_at_500mA_cm2": {
+            "value": ">24",
+            "unit": "h"
+          }
+        },
+        "source_text": "c-IrOx-MoO3/Ti reaches the industrial level current intensity of 1 A cm−2 at lower than 1.8 V... retains the catalytic activity for longer than 24 h under... 500 mA cm−2"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_IrO2_Ti",
+        "description": "OER performance benchmark in 0.5 M H2SO4",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H2SO4",
+            "unit": "solution"
+          },
+          "Ir_loading": {
+            "value": 0.85,
+            "unit": "mg_Ir/cm^2"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm2": {
+            "value": 390,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 84.8,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance_Cdl": {
+            "value": 1.23,
+            "unit": "mF/cm^2"
+          }
+        },
+        "source_text": "commercial IrO2 (∼390 mV)... commercial IrO2 (84.8 mV dec−1)... IrO2 (1.23 mF cm−2)"
+      },
+      {
+        "id": "chem_c-IrOx_Ti",
+        "type": "chemical",
+        "name": "c-IrOx/Ti",
+        "aliases": [
+          "c-IrOx / Ti"
+        ],
+        "properties": {
+          "Ir_loading": {
+            "value": 26.46,
+            "unit": "μg_Ir/cm^2"
+          }
+        }
+      },
+      {
+        "id": "chem_IrO2_Ti",
+        "type": "chemical",
+        "name": "IrO2/Ti",
+        "aliases": [
+          "IrO2/Ti"
+        ],
+        "properties": {
+          "Ir_loading": {
+            "value": 0.85,
+            "unit": "mg_Ir/cm^2"
+          }
+        }
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_c-IrOx_Ti",
+        "description": "PEMWE single cell performance 1 cm2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "PEMWE"
+          },
+          "cell_area": {
+            "value": 1,
+            "unit": "cm^2"
+          },
+          "temperature": {
+            "value": 80,
+            "unit": "°C"
+          },
+          "pressure": {
+            "value": "ambient",
+            "unit": "atm"
+          },
+          "anolyte_feed": {
+            "value": "15 mL/min DI water",
+            "unit": "flow rate"
+          },
+          "Ir_loading": {
+            "value": 26.46,
+            "unit": "μg_Ir/cm^2"
+          }
+        },
+        "results_json": {},
+        "source_text": "c-IrOx/Ti... corresponding Ir loadings of 28.35 μgIr cm−2, 26.46 μgIr cm−2 and 0.85 mgir cm−2"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_IrO2_Ti",
+        "description": "PEMWE single cell performance 1 cm2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "PEMWE"
+          },
+          "cell_area": {
+            "value": 1,
+            "unit": "cm^2"
+          },
+          "temperature": {
+            "value": 80,
+            "unit": "°C"
+          },
+          "pressure": {
+            "value": "ambient",
+            "unit": "atm"
+          },
+          "anolyte_feed": {
+            "value": "15 mL/min DI water",
+            "unit": "flow rate"
+          },
+          "Ir_loading": {
+            "value": 0.85,
+            "unit": "mg_Ir/cm^2"
+          }
+        },
+        "results_json": {},
+        "source_text": "IrO2/Ti... corresponding Ir loadings of 28.35 μgIr cm−2, 26.46 μgIr cm−2 and 0.85 mgir cm−2"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_c-IrOx-MoO3_Ti_test_1",
+        "type": "tested_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_c-IrOx-MoO3_Ti_test_2",
+        "type": "tested_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_c-IrOx-MoO3_Ti_test_3",
+        "type": "tested_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_c-IrOx-MoO3_Ti_test_4",
+        "type": "tested_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_c-IrOx-MoO3_Ti_test_5",
+        "type": "tested_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_c-IrOx_Ti_test_7",
+        "type": "tested_in",
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IrO2_Ti_test_8",
+        "type": "tested_in",
+        "source_id": "chem_IrO2_Ti",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IrO2_Ti_test_6",
+        "type": "tested_in",
+        "source_id": "chem_IrO2_Ti",
+        "target_id": "test_6",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_c-IrOx-MoO3_Ti",
+        "type": "chemical",
+        "name": "c-IrOx-MoO3/Ti",
+        "aliases": [
+          "c- IrO_x - MoO_3 / Ti"
+        ],
+        "formula": "IrO_x-MoO_3/Ti",
+        "properties": {
+          "Ir loading": {
+            "value": 28.35,
+            "unit": "μg/cm²"
+          },
+          "Ir content": {
+            "value": 4,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_MoO3_Ti",
+        "type": "chemical",
+        "name": "MoO3/Ti",
+        "aliases": [
+          "MoO₃/Ti"
+        ],
+        "formula": "MoO3/Ti"
+      },
+      {
+        "id": "chem_c-IrOx_Ti",
+        "type": "chemical",
+        "name": "c-IrOx/Ti",
+        "aliases": [
+          "c- IrO_x / Ti"
+        ],
+        "formula": "IrO_x/Ti"
+      },
+      {
+        "id": "chem_IrOx_Ti",
+        "type": "chemical",
+        "name": "IrOx/Ti",
+        "aliases": [
+          "IrO_x / Ti"
+        ],
+        "formula": "IrO_x/Ti"
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "XRD patterns show crystalline MoO3 (PDF#76-1003) and Ti (PDF#44-1294) phases for c-IrOx-MoO3/Ti and MoO3/Ti; no Ir oxide or metallic Ir signals detected due to low Ir loading.",
+        "evidence_snippet": "As illustrated in Fig. 2a, X-ray diffraction (XRD) patterns of c- IrO_x MoO_3 / Ti and MoO_3 / Ti show two type of crystalline structures that could be assigned to the crystal phase of MoO3 PDF#76-1003) and Ti (PDF#44-1294), respectively.",
+        "related_images": [
+          "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "type": "X-ray Diffraction",
+              "figure_label": "(a)",
+              "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+            },
+            "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "SEM images of c-IrO_x-MoO_3/Ti show intertwined sheets with highly dispersed nanoparticles of 5–10 nm, different from fish-scale accumulative MoO3/Ti morphology.",
+        "evidence_snippet": "SEM images of c-IrO_x -MoO_3/ Ti indicate that the fish-scale accumulative formation of the original MoO3/Ti is replaced completely by intertwined sheets, and highly dispersed nanoparticles with the size of about 5–10 nm are distributed on these sheets.",
+        "related_images": [
+          "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "description": "High-resolution image showing nanostructured material with circled features",
+              "extracted_from_image": "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+            },
+            "source_image_file": "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM confirms intertwined MoO3 structure with IrOx nanoparticles in c-IrO_x-MoO_3/Ti; HRTEM shows lattice spacings of 0.326 nm (MoO3 (021)) and 0.256 nm (IrO2 (101)).",
+        "evidence_snippet": "The high-resolution TEM images of c-IrO_x -MoO_3/ Ti reveal two types of crystal plane spacings, i.e., 0.326 nm and 0.256 nm, which are further confirmed to belong to the planes of MoO3 (021) and IrO2 (101)."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "HAADF-STEM",
+        "data_reported": true,
+        "characterization_summary": "HAADF-STEM and EDS mapping show uniform distribution of Mo, O, Ir elements in c-IrO_x-MoO_3/Ti with Ir mass percentage close to 4 wt%.",
+        "evidence_snippet": "HAADF-STEM and EDS results of c-IrO_x -MoO_3/ Ti also indicate the uniform distribution of Mo, O, Ir elements in the samples."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "Raman",
+        "data_reported": true,
+        "characterization_summary": "Raman of c-IrO_x-MoO_3/Ti shows peaks from MoO3 (P_I ~820 cm⁻¹, P_II ~995 cm⁻¹), rutile IrO2 (E_g ~550 cm⁻¹, B_{2g} ~720 cm⁻¹), and amorphous IrO_x(OH)_y (α ~450 cm⁻¹, β ~605 cm⁻¹ with 30 cm⁻¹ red shift).",
+        "evidence_snippet": "As illustrated in the Raman spectra of c- IrO_x - MoO_3 / Ti, the markedly scattering peaks including α and β peaks originate from IrO_x(OH)_y, E_g and B_{2g} peaks from rutile IrO2, and P_I and P_II peaks as well as peaks at < 400 cm⁻¹ from MoO3.",
+        "related_images": [
+          "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum",
+            "properties": {
+              "x_axis": "Raman shift (cm⁻¹)",
+              "y_axis": "Intensity (a.u.)",
+              "range": "200-1000 cm⁻¹",
+              "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+            },
+            "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "XPS of c-IrOx-MoO3/Ti: O1s peaks at 529.91 eV (lattice O), 530.55 eV (defective O ~40%), 532.17 eV (hydroxy O); Mo3d Mo⁶⁺/Mo⁵⁺ ratio 0.14 with Mo⁶⁺ shift to lower BE; Ir4f Ir³⁺/Ir⁴⁺ ratio 2.70 with Ir³⁺ shift +0.08 eV indicating MoO3-IrOx electronic interaction.",
+        "evidence_snippet": "The valence states of different elements in the catalysts are analyzed by X-ray photoelectron spectroscopy (XPS). As shown in Fig. 3b, the O1s spectra of c- IrO_x - MoO_3 / Ti appears to have three peaks at 529.91 eV, 530.55 eV and 532.17 eV... These changes further confirm the electronic interaction between IrO_x and MoO_3.",
+        "related_images": [
+          "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg",
+          "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg",
+          "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg",
+          "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg",
+          "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg",
+          "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "experiment",
+            "name": "Linear Sweep Voltammetry (LSV)",
+            "properties": {
+              "reference": "RHE",
+              "correction": "iR corrected",
+              "context": "OER electrocatalysis",
+              "extracted_from_image": "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg"
+            },
+            "source_image_file": "04fe955c8fbe29fc197c555d65d75b9807b86f750c63904e6166b858d4f12192.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "technique": "XPS",
+              "region": "Mo 3d",
+              "binding_energy_range": "228-238 eV",
+              "intensity_unit": "a.u.",
+              "extracted_from_image": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+            },
+            "source_image_file": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS O 1s Spectrum",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy",
+              "region": "O 1s",
+              "binding_energy_range": "526-536 eV",
+              "extracted_from_image": "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg"
+            },
+            "source_image_file": "30ad1a001373809c4e1c13575ae154d8edab1c78ec17e617ee7e60add54f4eb2.jpg"
+          },
+          {
+            "type": "component",
+            "name": "Gas diffusion layer (anode)",
+            "properties": {
+              "extracted_from_image": "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg"
+            },
+            "source_image_file": "7899d78afc85d1d5270d8cc57dc3eb614fbe3f22d8254e1111cf1cadb264160c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "1T-IrO2",
+            "properties": {
+              "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+            },
+            "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum c-IrO-MoO/Ti",
+            "properties": {
+              "type": "XPS",
+              "x_axis": "Binding Energy (eV)",
+              "y_axis": "Intensity (a.u.)",
+              "peaks": [
+                "Ir⁴⁺ 4f"
+              ],
+              "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+            },
+            "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "ICP-OES",
+        "data_reported": true,
+        "characterization_summary": "ICP-OES quantifies ultra-low Ir loading (<35 μg_Ir cm⁻²) and Ir content (<6 wt%) in catalytic layer; Mo content increases with deposition time.",
+        "evidence_snippet": "The mass concentrations of Ir and Mo in the obtained products with various position times are measured by ICP-OES (Table S1)."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "data_reported": true,
+        "characterization_summary": "HRTEM of c-IrOx-MoO3/Ti shows MoO3 (021) 0.326 nm and IrO2 (101) 0.256 nm lattice spacings with blurry regions indicating amorphous IrOx; MoO3/Ti shows 0.326 nm (021), 0.381 nm (110), 0.265 nm (111) planes.",
+        "evidence_snippet": "From the high-resolution TEM image of MoO3/Ti, three types of crystal plane spacings including 0.326 nm, 0.381 nm and 0.265 nm could be clearly observed which attribute to the (021), (110) and (111) planes of MoO3, respectively... The high-resolution TEM images of c-IrO_x -MoO_3/ Ti reveal two types of crystal plane spacings, i.e., 0.326 nm and 0.256 nm."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "EDX",
+        "data_reported": true,
+        "characterization_summary": "EDX confirms elemental homogeneity; c-IrOx-MoO3/Ti shows ~4 wt% Ir; MoO3/Ti shows Mo/O ratio matching ICP-OES.",
+        "evidence_snippet": "HAADF-STEM image as well as the elemental mapping results based on the energy-dispersive X-ray (EDX) further prove that both Mo and O elements are uniformly distributed on MoO3/Ti... Notably, the extremely low mass percentage of Ir in c-IrO_x -MoO_3/ Ti (close to 4 wt%) implies a significant reduction of material cost for this catalyst."
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_1",
+        "type": "material",
+        "name": "Pristine Ti mesh",
+        "properties": {
+          "description": "Starting titanium mesh material",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_2",
+        "type": "material",
+        "name": "Porous Ti surface",
+        "properties": {
+          "description": "Ti mesh after chemical etching",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_3",
+        "type": "process",
+        "name": "Chemical etching",
+        "properties": {
+          "reagents": [
+            "HCl",
+            "H₂C₂O₄"
+          ],
+          "description": "Process to create porous Ti surface",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_4",
+        "type": "chemical",
+        "name": "HCl",
+        "properties": {
+          "formula": "HCl",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_5",
+        "type": "chemical",
+        "name": "H₂C₂O₄",
+        "properties": {
+          "formula": "H₂C₂O₄",
+          "name": "Oxalic acid",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_7",
+        "type": "process",
+        "name": "Potentiostatic deposition",
+        "properties": {
+          "conditions": "48°C",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_9",
+        "type": "process",
+        "name": "Impregnation",
+        "properties": {
+          "conditions": "40°C",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_10",
+        "type": "chemical",
+        "name": "(NH₄)₂MoO₄",
+        "properties": {
+          "formula": "(NH₄)₂MoO₄",
+          "name": "Ammonium molybdate",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_11",
+        "type": "chemical",
+        "name": "H₂SO₄",
+        "properties": {
+          "formula": "H₂SO₄",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_12",
+        "type": "chemical",
+        "name": "NH₄Cl",
+        "properties": {
+          "formula": "NH₄Cl",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_13",
+        "type": "chemical",
+        "name": "IrCl₃",
+        "properties": {
+          "formula": "IrCl₃",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_14",
+        "type": "chemical",
+        "name": "C₂H₅OH",
+        "properties": {
+          "formula": "C₂H₅OH",
+          "name": "Ethanol",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e_15",
+        "type": "material",
+        "name": "Overlayered Disperse IrO₂ on tangled MoO₂ sheets",
+        "properties": {
+          "description": "Intermediate structure before final product",
+          "extracted_from_image": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+        },
+        "source_image_file": "0142bd9849160dc9b821ee163b703e8f1ec6a94269342fb03cde0eb328539d3e.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "characterization",
+        "name": "LSV Plot",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Current density (mA cm⁻²)",
+          "y_axis": "Cell voltage (V)",
+          "range_x": [
+            0,
+            1200
+          ],
+          "range_y": [
+            1.4,
+            2.0
+          ],
+          "extracted_from_image": "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg"
+        },
+        "source_image_file": "ec2d7caa4e32320df82af586e7c0b2ba75c5d20429413493401fc6f53859d91e.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "chemical",
+        "name": "MoO3/Ti",
+        "properties": {
+          "description": "MoO3 on Ti support",
+          "extracted_from_image": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+        },
+        "source_image_file": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "chemical",
+        "name": "TiO2",
+        "properties": {
+          "description": "Titanium dioxide",
+          "extracted_from_image": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+        },
+        "source_image_file": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "characterization",
+        "name": "LSV Plot",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Potential (iR-corrected, V vs RHE)",
+          "y_axis": "Current Density (mA/cm²)",
+          "range_x": [
+            1.3,
+            1.7
+          ],
+          "range_y": [
+            0,
+            300
+          ],
+          "extracted_from_image": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+        },
+        "source_image_file": "e99468306bd2760fcef8daa51d6d94892e199e08b570cd7b9a1db60b03f631cf.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chemical",
+        "name": "Ti",
+        "properties": {
+          "description": "Titanium substrate",
+          "extracted_from_image": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+        },
+        "source_image_file": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "characterization",
+        "name": "XRD Pattern",
+        "properties": {
+          "technique": "X-ray Diffraction",
+          "x_axis": "2θ (Å⁻¹)",
+          "y_axis": "Intensity (a.u.)",
+          "range_2theta": "0-30°",
+          "extracted_from_image": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+        },
+        "source_image_file": "d3bd0eae6f693a1f07df9d99748798d5fd59f31c103d66fdcff8f37a46553ba7.jpg"
+      },
+      {
+        "id": "Mo6+3d3/2",
+        "type": "chemical",
+        "name": "Mo⁶⁺ 3d₃/₂",
+        "properties": {
+          "binding_energy": "232.5 eV (approx)",
+          "extracted_from_image": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+        },
+        "source_image_file": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+      },
+      {
+        "id": "Mo6+3d5/2",
+        "type": "chemical",
+        "name": "Mo⁶⁺ 3d₅/₂",
+        "properties": {
+          "binding_energy": "229.5 eV (approx)",
+          "extracted_from_image": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+        },
+        "source_image_file": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+      },
+      {
+        "id": "Mo5+3d3/2",
+        "type": "chemical",
+        "name": "Mo⁵⁺ 3d₃/₂",
+        "properties": {
+          "binding_energy": "231.5 eV (approx)",
+          "extracted_from_image": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+        },
+        "source_image_file": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+      },
+      {
+        "id": "Mo5+3d5/2",
+        "type": "chemical",
+        "name": "Mo⁵⁺ 3d₅/₂",
+        "properties": {
+          "binding_energy": "228.5 eV (approx)",
+          "extracted_from_image": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+        },
+        "source_image_file": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+      },
+      {
+        "id": "Mo3d3/2",
+        "type": "chemical",
+        "name": "Mo 3d₃/₂",
+        "properties": {
+          "extracted_from_image": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+        },
+        "source_image_file": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+      },
+      {
+        "id": "Mo3d5/2",
+        "type": "chemical",
+        "name": "Mo 3d₅/₂",
+        "properties": {
+          "extracted_from_image": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+        },
+        "source_image_file": "15da10d951005e074b6319f308870c3b3cb57dcead2dae31896d4556b21f14b3.jpg"
+      },
+      {
+        "id": "image_f",
+        "type": "characterization",
+        "name": "Figure (f)",
+        "properties": {
+          "type": "SAED pattern",
+          "description": "Selected Area Electron Diffraction pattern showing diffraction rings",
+          "extracted_from_image": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+        },
+        "source_image_file": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+      },
+      {
+        "id": "moo3_ring",
+        "type": "characterization",
+        "name": "MoO3 (021) ring",
+        "properties": {
+          "type": "diffraction ring",
+          "color": "pink",
+          "hkl": "(021)",
+          "extracted_from_image": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+        },
+        "source_image_file": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+      },
+      {
+        "id": "iro2_ring",
+        "type": "characterization",
+        "name": "IrO2 (101) ring",
+        "properties": {
+          "type": "diffraction ring",
+          "color": "cyan",
+          "hkl": "(101)",
+          "extracted_from_image": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+        },
+        "source_image_file": "17a5f39dd874fcdb45bde25a1c061d7fe5a4e7dfe4cce34985083ac65f0e1d85.jpg"
+      },
+      {
+        "id": "image_d",
+        "type": "image",
+        "name": "Figure (d)",
+        "properties": {
+          "label": "(d)",
+          "scale_bar": "20 nm",
+          "extracted_from_image": "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+        },
+        "source_image_file": "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+      },
+      {
+        "id": "nanomaterial",
+        "type": "chemical",
+        "name": "Nanostructured Material",
+        "properties": {
+          "morphology": "irregular clusters and particles",
+          "scale": "20 nm",
+          "extracted_from_image": "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+        },
+        "source_image_file": "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+      },
+      {
+        "id": "circled_features",
+        "type": "feature",
+        "name": "Circled Regions",
+        "properties": {
+          "count": "12",
+          "description": "Highlighted areas of interest, likely nanoparticles or defects",
+          "extracted_from_image": "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+        },
+        "source_image_file": "2371824cbd344e1a0df909579924de2d8266fbf25b33550574afd631a1764b71.jpg"
+      },
+      {
+        "id": "mo",
+        "type": "chemical",
+        "name": "Mo",
+        "properties": {
+          "description": "Molybdenum nanoparticles or material",
+          "extracted_from_image": "50a5e6f113803361a89a87fceffb288a9e4a3bb40ea1dfb70c48ed460bdb8820.jpg"
+        },
+        "source_image_file": "50a5e6f113803361a89a87fceffb288a9e4a3bb40ea1dfb70c48ed460bdb8820.jpg"
+      },
+      {
+        "id": "image",
+        "type": "image",
+        "name": "SEM Image (b)",
+        "properties": {
+          "label": "(b)",
+          "description": "Scanning Electron Microscopy image of a material",
+          "extracted_from_image": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+        },
+        "source_image_file": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+      },
+      {
+        "id": "model1",
+        "type": "chemical",
+        "name": "Model I",
+        "properties": {
+          "description": "Molecular structure model shown in ball-and-stick representation with red oxygen atoms, yellow central atoms, blue and green atoms",
+          "extracted_from_image": "e4b32ea02e9bcc7dce698dc3381ecad075eb771a58aa50a57184997a26c91f06.jpg"
+        },
+        "source_image_file": "e4b32ea02e9bcc7dce698dc3381ecad075eb771a58aa50a57184997a26c91f06.jpg"
+      },
+      {
+        "id": "model2",
+        "type": "chemical",
+        "name": "Model II - IrO-MoO3",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "O",
+        "type": "chemical",
+        "name": "Oxygen",
+        "properties": {
+          "wt%": "26.9",
+          "extracted_from_image": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+        },
+        "source_image_file": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+      },
+      {
+        "id": "H",
+        "type": "chemical",
+        "name": "Hydrogen",
+        "properties": {
+          "color": "light red",
+          "symbol": "H",
+          "extracted_from_image": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+        },
+        "source_image_file": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+      },
+      {
+        "id": "O_Mo_vacancy",
+        "type": "defect",
+        "name": "O_Mo Vacancy",
+        "properties": {
+          "location": "Mo site",
+          "model": "Model I",
+          "extracted_from_image": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+        },
+        "source_image_file": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+      },
+      {
+        "id": "O_M-H-O_vacancy",
+        "type": "defect",
+        "name": "O_M-H-O Vacancy",
+        "properties": {
+          "location": "Mo-H-O configuration",
+          "model": "Model II",
+          "extracted_from_image": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+        },
+        "source_image_file": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+      },
+      {
+        "id": "hydrogen_bond",
+        "type": "interaction",
+        "name": "Hydrogen Bond",
+        "properties": {
+          "model": "Model II",
+          "indicated": "dashed line",
+          "extracted_from_image": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+        },
+        "source_image_file": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+      },
+      {
+        "id": "figure_a",
+        "type": "figure",
+        "name": "Figure (a)",
+        "properties": {
+          "type": "structural models",
+          "caption": "Model I - O_Mo Vacancy  Model II - O_M-H-O Vacancy",
+          "extracted_from_image": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+        },
+        "source_image_file": "5ebeee259489390a87bc8cd60497cd2884208f6b17b20c25d363499a87879514.jpg"
+      },
+      {
+        "id": "image_e",
+        "type": "image",
+        "name": "Figure (e)",
+        "properties": {
+          "description": "High-resolution TEM image with scale bar",
+          "extracted_from_image": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+        },
+        "source_image_file": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+      },
+      {
+        "id": "scalebar_5nm",
+        "type": "scalebar",
+        "name": "5 nm scale bar",
+        "properties": {
+          "length": "5 nm",
+          "extracted_from_image": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+        },
+        "source_image_file": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+      },
+      {
+        "id": "lattice_0.256nm",
+        "type": "lattice_spacing",
+        "name": "0.256 nm lattice fringe",
+        "properties": {
+          "distance": "0.256 nm",
+          "extracted_from_image": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+        },
+        "source_image_file": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+      },
+      {
+        "id": "lattice_0.326nm",
+        "type": "lattice_spacing",
+        "name": "0.326 nm lattice fringe",
+        "properties": {
+          "distance": "0.326 nm",
+          "extracted_from_image": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+        },
+        "source_image_file": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+      },
+      {
+        "id": "nanostructure",
+        "type": "material",
+        "name": "Nanocrystalline structure",
+        "properties": {
+          "description": "Granular morphology with lattice fringes",
+          "extracted_from_image": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+        },
+        "source_image_file": "63a83301a56c313d2355ad8db17329a937f0dc4156889d8a7e17fccc774f7025.jpg"
+      },
+      {
+        "id": "structure_left",
+        "type": "structure",
+        "name": "Model II Structure",
+        "properties": {
+          "representation": "3D ball-and-stick model",
+          "elements": [
+            "Fe (yellow)",
+            "O (red)",
+            "C (gray)",
+            "N (blue)",
+            "other ligands"
+          ],
+          "extracted_from_image": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+        },
+        "source_image_file": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+      },
+      {
+        "id": "delta_e",
+        "type": "characterization",
+        "name": "ΔE Plot",
+        "properties": {
+          "type": "energy difference spectrum",
+          "x_axis": "Z (Å)",
+          "range": "0 to 30 Å",
+          "y_axis": "ΔE (eV)",
+          "scale": "10^{-1} eV",
+          "peaks": "peaks at ~2Å, ~10Å, ~20Å",
+          "extracted_from_image": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+        },
+        "source_image_file": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+      },
+      {
+        "id": "fe_atoms",
+        "type": "chemical",
+        "name": "Fe Atoms",
+        "properties": {
+          "color": "yellow",
+          "count": "multiple",
+          "central": "true",
+          "extracted_from_image": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+        },
+        "source_image_file": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+      },
+      {
+        "id": "o_atoms",
+        "type": "chemical",
+        "name": "O Atoms",
+        "properties": {
+          "color": "red",
+          "role": "oxygen ligands",
+          "extracted_from_image": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+        },
+        "source_image_file": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+      },
+      {
+        "id": "c_atoms",
+        "type": "chemical",
+        "name": "C Atoms",
+        "properties": {
+          "color": "gray",
+          "role": "organic framework",
+          "extracted_from_image": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+        },
+        "source_image_file": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+      },
+      {
+        "id": "n_atoms",
+        "type": "chemical",
+        "name": "N Atoms",
+        "properties": {
+          "color": "blue",
+          "role": "nitrogen ligands",
+          "extracted_from_image": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+        },
+        "source_image_file": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+      },
+      {
+        "id": "z_axis",
+        "type": "parameter",
+        "name": "Z (Å)",
+        "properties": {
+          "unit": "Ångstroms",
+          "range": "0-30",
+          "extracted_from_image": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+        },
+        "source_image_file": "698e09c32370d3959cedd66ed4c828fcb2bf68cafd3f56f3dc01098427a4f821.jpg"
+      },
+      {
+        "id": "model3",
+        "type": "chemical",
+        "name": "Model III - IrO_x",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "pdos_plot",
+        "type": "characterization",
+        "name": "PDOS Plot",
+        "properties": {
+          "description": "Projected Density of States",
+          "x_axis": "E - EF (eV)",
+          "range": [
+            -8,
+            6
+          ],
+          "y_axis": "Density of States (a.u.)",
+          "extracted_from_image": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+        },
+        "source_image_file": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+      },
+      {
+        "id": "EF",
+        "type": "property",
+        "name": "EF",
+        "properties": {
+          "description": "Fermi Level",
+          "extracted_from_image": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+        },
+        "source_image_file": "71905bed707d23fb0eb86a0e23182ba56875347c19879e43d2ad2acc0afd37b9.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "Ir NS",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "IrOx",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chemical",
+        "name": "Ir30AuCP",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "chemical",
+        "name": "IrO/TiN",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "nanoparticles",
+        "type": "chemical",
+        "name": "Nanoparticles",
+        "properties": {
+          "size": "50 nm scale bar",
+          "appearance": "green fluorescent spots",
+          "morphology": "spherical/aggregated",
+          "extracted_from_image": "7f78954adb16c6bf732896d619cea716b828cae82df1358479de6fcd63e9f708.jpg"
+        },
+        "source_image_file": "7f78954adb16c6bf732896d619cea716b828cae82df1358479de6fcd63e9f708.jpg"
+      },
+      {
+        "id": "o_label",
+        "type": "label",
+        "name": "O",
+        "properties": {
+          "position": "top-left",
+          "interpretation": "likely oxygen-related nanoparticle or fluorescent label",
+          "extracted_from_image": "7f78954adb16c6bf732896d619cea716b828cae82df1358479de6fcd63e9f708.jpg"
+        },
+        "source_image_file": "7f78954adb16c6bf732896d619cea716b828cae82df1358479de6fcd63e9f708.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "measurement",
+        "name": "50 nm Scale Bar",
+        "properties": {
+          "length": "50 nm",
+          "position": "bottom-right",
+          "extracted_from_image": "7f78954adb16c6bf732896d619cea716b828cae82df1358479de6fcd63e9f708.jpg"
+        },
+        "source_image_file": "7f78954adb16c6bf732896d619cea716b828cae82df1358479de6fcd63e9f708.jpg"
+      },
+      {
+        "id": "pie_chart",
+        "type": "characterization",
+        "name": "Elemental Composition Pie Chart",
+        "properties": {
+          "label": "(h)",
+          "extracted_from_image": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+        },
+        "source_image_file": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+      },
+      {
+        "id": "eds_spectrum",
+        "type": "characterization",
+        "name": "EDS Spectrum",
+        "properties": {
+          "x_axis": "keV (0-20)",
+          "peaks": [
+            "C",
+            "O",
+            "Ir",
+            "Mo"
+          ],
+          "extracted_from_image": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+        },
+        "source_image_file": "881404b6eb26ce9793cc611d6b091ae33751d997b421c056527bb34dc0745053.jpg"
+      },
+      {
+        "id": "Ti",
+        "type": "chemical",
+        "name": "Ti",
+        "properties": {
+          "phase": "Ti",
+          "PDF": "44-1294",
+          "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+        },
+        "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+      },
+      {
+        "id": "PDF_MoO3",
+        "type": "reference",
+        "name": "PDF 76-1003",
+        "properties": {
+          "database": "PDF",
+          "code": "76-1003",
+          "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+        },
+        "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+      },
+      {
+        "id": "PDF_Ti",
+        "type": "reference",
+        "name": "PDF 44-1294",
+        "properties": {
+          "database": "PDF",
+          "code": "44-1294",
+          "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+        },
+        "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+      },
+      {
+        "id": "PDF_IrO2",
+        "type": "reference",
+        "name": "PDF 15-0870",
+        "properties": {
+          "database": "PDF",
+          "code": "15-0870",
+          "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+        },
+        "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+      },
+      {
+        "id": "PDF_Ir",
+        "type": "reference",
+        "name": "PDF 05-0685",
+        "properties": {
+          "database": "PDF",
+          "code": "05-0685",
+          "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+        },
+        "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+      },
+      {
+        "id": "PDF_Mo",
+        "type": "reference",
+        "name": "PDF 42-1120",
+        "properties": {
+          "database": "PDF",
+          "code": "42-1120",
+          "extracted_from_image": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+        },
+        "source_image_file": "96deccea6d8035eaafde17343a6307251f59cf7ece7dd524e4e696b0fd01783e.jpg"
+      },
+      {
+        "id": "h2o",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "oh",
+        "type": "chemical",
+        "name": "OH*",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "o",
+        "type": "chemical",
+        "name": "O*",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "hoo",
+        "type": "chemical",
+        "name": "HOO*",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "o2",
+        "type": "chemical",
+        "name": "O2",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Free Energy Diagram",
+        "properties": {
+          "type": "Gibbs free energy vs reaction coordinate",
+          "U": "1.23 V",
+          "PDS_values": [
+            "0.907 V",
+            "1.021 V",
+            "1.449 V"
+          ],
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "pd1",
+        "type": "property",
+        "name": "PDS = 0.907 V",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "pd2",
+        "type": "property",
+        "name": "PDS = 1.021 V",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "pd3",
+        "type": "property",
+        "name": "PDS = 1.449 V",
+        "properties": {
+          "extracted_from_image": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+        },
+        "source_image_file": "9c05bcefa132920ed57900a15d6d6798c60985f262de3a4497ce27b2a6266a89.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "chemical",
+        "name": "TiNInO3.15VRE",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "chemical",
+        "name": "H/VIO",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "chemical",
+        "name": "IrOx(TiO2)0.6",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n18",
+        "type": "chemical",
+        "name": "IrO/N,S co-doped",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n19",
+        "type": "chemical",
+        "name": "IrOx-NiO",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n20",
+        "type": "chemical",
+        "name": "Ir@TiN",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n21",
+        "type": "chemical",
+        "name": "TiNInO2-31",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n22",
+        "type": "chemical",
+        "name": "IrO",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n23",
+        "type": "chemical",
+        "name": "IrO2-NbOx",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n24",
+        "type": "chemical",
+        "name": "IrOx-BiOI",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n25",
+        "type": "chemical",
+        "name": "IrO8@Ce0.6",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n26",
+        "type": "chemical",
+        "name": "IrO2-V2O6",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n27",
+        "type": "chemical",
+        "name": "IrOx@TiN",
+        "properties": {
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n28",
+        "type": "characterization",
+        "name": "Activity",
+        "properties": {
+          "axis": "y",
+          "unit": "Mass Activity at 10 mA/cm² (A/mg)",
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n29",
+        "type": "characterization",
+        "name": "Overpotential",
+        "properties": {
+          "axis": "x",
+          "unit": "mV at 10 mA/cm²",
+          "range": "200-400 mV",
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "n30",
+        "type": "chart",
+        "name": "OER Performance Comparison",
+        "properties": {
+          "type": "scatter plot",
+          "figure_label": "(d)",
+          "extracted_from_image": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+        },
+        "source_image_file": "ad2d5b3c36e36a850d78266aba0e5a297d7f41ace359d4b014506074418e87fe.jpg"
+      },
+      {
+        "id": "c-IrO-MoO-Ti",
+        "type": "chemical",
+        "name": "c-IrO-MoO/Ti",
+        "properties": {
+          "description": "Cubic IrO and MoO on Ti substrate",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "c-IrO-Ti",
+        "type": "chemical",
+        "name": "c-IrO/Ti",
+        "properties": {
+          "description": "Cubic IrO on Ti substrate",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "MoO-Ti",
+        "type": "chemical",
+        "name": "MoO/Ti",
+        "properties": {
+          "description": "MoO on Ti substrate",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "alpha-peak",
+        "type": "peak",
+        "name": "α",
+        "properties": {
+          "raman_shift": "approx 400-500 cm⁻¹",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "beta-peak",
+        "type": "peak",
+        "name": "β",
+        "properties": {
+          "raman_shift": "approx 600-700 cm⁻¹",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "E-peak",
+        "type": "peak",
+        "name": "E",
+        "properties": {
+          "raman_shift": "approx 550 cm⁻¹",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "Eg-peak",
+        "type": "peak",
+        "name": "E_g",
+        "properties": {
+          "raman_shift": "approx 450 cm⁻¹",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "B2g-peak",
+        "type": "peak",
+        "name": "B_{2g}",
+        "properties": {
+          "raman_shift": "approx 650 cm⁻¹",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "P1-peak",
+        "type": "peak",
+        "name": "P_I",
+        "properties": {
+          "raman_shift": "approx 900 cm⁻¹",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "P2-peak",
+        "type": "peak",
+        "name": "P_{II}",
+        "properties": {
+          "raman_shift": "approx 950 cm⁻¹",
+          "extracted_from_image": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+        },
+        "source_image_file": "bb7d3c5167f5287f891c26c1438791b116d9e65f2f17c3bffb942665ab5016d3.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "performance",
+        "name": "84.7 mV dec⁻¹",
+        "properties": {
+          "value": "84.7 mV/dec",
+          "associated_with": "c-IrO2-MoO/Ti",
+          "extracted_from_image": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+        },
+        "source_image_file": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "performance",
+        "name": "84.8 mV dec⁻¹",
+        "properties": {
+          "value": "84.8 mV/dec",
+          "associated_with": "IrO2-MoO/Ti",
+          "extracted_from_image": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+        },
+        "source_image_file": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "performance",
+        "name": "62.7 mV dec⁻¹",
+        "properties": {
+          "value": "62.7 mV/dec",
+          "associated_with": "c-IrO2/Ti",
+          "extracted_from_image": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+        },
+        "source_image_file": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+      },
+      {
+        "id": "p4",
+        "type": "performance",
+        "name": "63.7 mV dec⁻¹",
+        "properties": {
+          "value": "63.7 mV/dec",
+          "associated_with": "IrO2/Ti",
+          "extracted_from_image": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+        },
+        "source_image_file": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+      },
+      {
+        "id": "p5",
+        "type": "performance",
+        "name": "56.8 mV dec⁻¹",
+        "properties": {
+          "value": "56.8 mV/dec",
+          "associated_with": "IrO3/Ti",
+          "extracted_from_image": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+        },
+        "source_image_file": "c70f273305c6cf9de693c617022b939a5142f45609ac4c0b17ebd7ac51a75bd7.jpg"
+      },
+      {
+        "id": "scalebar",
+        "type": "characterization",
+        "name": "Scale Bar",
+        "properties": {
+          "length": "50 μm",
+          "position": "bottom right",
+          "extracted_from_image": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+        },
+        "source_image_file": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+      },
+      {
+        "id": "roi1",
+        "type": "characterization",
+        "name": "Region of Interest 1",
+        "properties": {
+          "description": "White rectangular outline in upper right",
+          "shape": "rectangle",
+          "extracted_from_image": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+        },
+        "source_image_file": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+      },
+      {
+        "id": "roi2",
+        "type": "characterization",
+        "name": "Region of Interest 2",
+        "properties": {
+          "description": "White rectangular outline in center-left",
+          "shape": "rectangle",
+          "extracted_from_image": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+        },
+        "source_image_file": "e0f1252d2a89207f534c282ae3afef4848649ddd0d99759c00f79719fa38f45e.jpg"
+      },
+      {
+        "id": "structure_image",
+        "type": "characterization",
+        "name": "Structural Model Image",
+        "properties": {
+          "type": "3D model",
+          "visualization": "ball-and-stick",
+          "atoms": [
+            "O (red)",
+            "central (yellow)",
+            "others (blue, green)"
+          ],
+          "extracted_from_image": "e4b32ea02e9bcc7dce698dc3381ecad075eb771a58aa50a57184997a26c91f06.jpg"
+        },
+        "source_image_file": "e4b32ea02e9bcc7dce698dc3381ecad075eb771a58aa50a57184997a26c91f06.jpg"
+      },
+      {
+        "id": "rdf_plot",
+        "type": "characterization",
+        "name": "Radial Distribution Function Plot",
+        "properties": {
+          "x_label": "Z (Å)",
+          "x_range": [
+            0,
+            30
+          ],
+          "y_label": "Δρ (10³ e Å⁻³)",
+          "y_range": [
+            -20,
+            20
+          ],
+          "unit": "0.005 e Å³",
+          "peaks": [
+            "~10 Å (yellow)",
+            "~20 Å (blue)"
+          ],
+          "extracted_from_image": "e4b32ea02e9bcc7dce698dc3381ecad075eb771a58aa50a57184997a26c91f06.jpg"
+        },
+        "source_image_file": "e4b32ea02e9bcc7dce698dc3381ecad075eb771a58aa50a57184997a26c91f06.jpg"
+      },
+      {
+        "id": "material1",
+        "type": "chemical",
+        "name": "c-IrO-MoO/Ti",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "material2",
+        "type": "chemical",
+        "name": "c-IrO/Ti",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "Ir_4f_1",
+        "type": "chemical",
+        "name": "Ir⁴⁺ 4f",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "Ir_4f_2",
+        "type": "chemical",
+        "name": "Ir⁴⁺ 4f",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "Ir_4f_3",
+        "type": "chemical",
+        "name": "Ir⁴⁺ 4f",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "Ir_4f_4",
+        "type": "chemical",
+        "name": "Ir⁴⁺ 4f",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "Ir_4f_5",
+        "type": "chemical",
+        "name": "Ir⁴⁺ 4f",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "Ir_4f_6",
+        "type": "chemical",
+        "name": "Ir⁴⁺ 4f",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "Ir_4f_7",
+        "type": "chemical",
+        "name": "Ir⁴⁺ 4f",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "Ir_4f_8",
+        "type": "chemical",
+        "name": "Ir⁴⁺ 4f",
+        "properties": {
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "chart2",
+        "type": "characterization",
+        "name": "XPS Spectrum c-IrO/Ti",
+        "properties": {
+          "type": "XPS",
+          "x_axis": "Binding Energy (eV)",
+          "y_axis": "Intensity (a.u.)",
+          "peaks": [
+            "Ir⁴⁺ 4f"
+          ],
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      },
+      {
+        "id": "energy_shift_1",
+        "type": "characterization",
+        "name": "0.8 eV shift",
+        "properties": {
+          "value": "0.8 eV",
+          "extracted_from_image": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+        },
+        "source_image_file": "ea4654ff12c5c7f7d41cad2e9e13ac9a66038b95faca7faf043a0260624ff20c.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoO3_Ti_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx_Ti_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx_Ti_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoO3_Ti_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-IrOx-MoO3_Ti_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoO3_Ti_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "produced_by"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "3",
+        "target_id": "2",
+        "type": "produces"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "uses"
+      },
+      {
+        "source_id": "3",
+        "target_id": "5",
+        "type": "uses"
+      },
+      {
+        "source_id": "2",
+        "target_id": "6",
+        "type": "modified_to"
+      },
+      {
+        "source_id": "6",
+        "target_id": "7",
+        "type": "produced_by"
+      },
+      {
+        "source_id": "7",
+        "target_id": "6",
+        "type": "produces"
+      },
+      {
+        "source_id": "7",
+        "target_id": "10",
+        "type": "uses"
+      },
+      {
+        "source_id": "7",
+        "target_id": "11",
+        "type": "uses"
+      },
+      {
+        "source_id": "6",
+        "target_id": "8",
+        "type": "modified_to"
+      },
+      {
+        "source_id": "15",
+        "target_id": "9",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "9",
+        "target_id": "8",
+        "type": "produces"
+      },
+      {
+        "source_id": "9",
+        "target_id": "12",
+        "type": "uses"
+      },
+      {
+        "source_id": "9",
+        "target_id": "13",
+        "type": "uses"
+      },
+      {
+        "source_id": "9",
+        "target_id": "14",
+        "type": "uses"
+      },
+      {
+        "source_id": "6",
+        "target_id": "15",
+        "type": "becomes"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n4",
+        "type": "treated_to"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "Mo6+3d3/2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "Mo6+3d5/2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "Mo5+3d3/2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "Mo5+3d5/2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "Mo6+3d3/2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "Mo6+3d5/2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "Mo5+3d3/2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "Mo5+3d5/2",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "chem_MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "chem_commercial_IrO2",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "moo3_ring",
+        "type": "displays"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "iro2_ring",
+        "type": "displays"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "moo3_ring",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "chem_commercial_IrO2",
+        "target_id": "iro2_ring",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "char_2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "nanomaterial",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "circled_features",
+        "type": "highlights"
+      },
+      {
+        "source_id": "nanomaterial",
+        "target_id": "circled_features",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n4",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "chem_c-IrOx_Ti",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n7",
+        "type": "reacts_on"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_c-IrOx_Ti",
+        "type": "produces"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_MoO3_Ti",
+        "type": "produces"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "component"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "component"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n8",
+        "type": "reactant_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "chem_c-IrOx_Ti",
+        "type": "produces"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "chem_MoO3_Ti",
+        "type": "produces"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "catalyzes"
+      },
+      {
+        "source_id": "mo",
+        "target_id": "image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "mo",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "O_Mo_vacancy",
+        "type": "contains"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "O",
+        "type": "contains"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "O_M-H-O_vacancy",
+        "type": "contains"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "hydrogen_bond",
+        "type": "contains"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "O",
+        "type": "contains"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "H",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_a",
+        "target_id": "model1",
+        "type": "displays"
+      },
+      {
+        "source_id": "figure_a",
+        "target_id": "model2",
+        "type": "displays"
+      },
+      {
+        "source_id": "O_M-H-O_vacancy",
+        "target_id": "hydrogen_bond",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "image_e",
+        "target_id": "scalebar_5nm",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_e",
+        "target_id": "lattice_0.256nm",
+        "type": "shows"
+      },
+      {
+        "source_id": "image_e",
+        "target_id": "lattice_0.326nm",
+        "type": "shows"
+      },
+      {
+        "source_id": "image_e",
+        "target_id": "nanostructure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "nanostructure",
+        "target_id": "lattice_0.256nm",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "nanostructure",
+        "target_id": "lattice_0.326nm",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "nanostructure",
+        "target_id": "scalebar_5nm",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "structure_left",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "delta_e",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "structure_left",
+        "target_id": "fe_atoms",
+        "type": "contains"
+      },
+      {
+        "source_id": "structure_left",
+        "target_id": "o_atoms",
+        "type": "contains"
+      },
+      {
+        "source_id": "structure_left",
+        "target_id": "c_atoms",
+        "type": "contains"
+      },
+      {
+        "source_id": "structure_left",
+        "target_id": "n_atoms",
+        "type": "contains"
+      },
+      {
+        "source_id": "delta_e",
+        "target_id": "z_axis",
+        "type": "uses_axis"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "projects_to"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "projects_to"
+      },
+      {
+        "source_id": "model3",
+        "target_id": "chem_c-IrOx_Ti",
+        "type": "projects_to"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "pdos_plot",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "pdos_plot",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "model3",
+        "target_id": "pdos_plot",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "pdos_plot",
+        "type": "projects_to"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "pdos_plot",
+        "type": "projects_to"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "model3",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "chem_MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "pdos_plot",
+        "target_id": "EF",
+        "type": "references"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "char_6",
+        "type": "on"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n11",
+        "type": "on"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n8",
+        "type": "separated_by"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n9",
+        "type": "separated_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n13",
+        "type": "material_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_6",
+        "type": "substrate_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n11",
+        "type": "substrate_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "current_collector"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "flow_field"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n8",
+        "type": "flow_field"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n8",
+        "type": "end_plate"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n9",
+        "type": "end_plate"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "image",
+        "target_id": "nanoparticles",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "o_label",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "nanoparticles",
+        "target_id": "scale_bar",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "nanoparticles",
+        "target_id": "o_label",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "O",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "pie_chart",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "eds_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "pie_chart",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "pie_chart",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "pie_chart",
+        "target_id": "O",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "eds_spectrum",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "detects"
+      },
+      {
+        "source_id": "eds_spectrum",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "detects"
+      },
+      {
+        "source_id": "eds_spectrum",
+        "target_id": "O",
+        "type": "detects"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_MoO3_Ti",
+        "type": "contains_phase"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "Ti",
+        "type": "contains_phase"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "contains_phase"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_MoO3_Ti",
+        "type": "contains_phase"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_c-IrOx_Ti",
+        "type": "contains_phase"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_IrO2_Ti",
+        "type": "contains_phase"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "PDF_MoO3",
+        "type": "references"
+      },
+      {
+        "source_id": "Ti",
+        "target_id": "PDF_Ti",
+        "type": "references"
+      },
+      {
+        "source_id": "chem_IrO2_Ti",
+        "target_id": "PDF_IrO2",
+        "type": "references"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "PDF_Ir",
+        "type": "references"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "PDF_Mo",
+        "type": "references"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "chart",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "model2",
+        "target_id": "chart",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "model3",
+        "target_id": "chart",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "h2o",
+        "target_id": "oh",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "oh",
+        "target_id": "o",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "o",
+        "target_id": "hoo",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "hoo",
+        "target_id": "o2",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "pd1",
+        "target_id": "chart",
+        "type": "has_property"
+      },
+      {
+        "source_id": "pd2",
+        "target_id": "chart",
+        "type": "has_property"
+      },
+      {
+        "source_id": "pd3",
+        "target_id": "chart",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "chem_c-IrOx_Ti",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "chem_c-IrOx_Ti",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "chem_MoO3_Ti",
+        "type": "has_molar_volume"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n4",
+        "type": "references_value"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n5",
+        "type": "has_density"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n6",
+        "type": "references_density"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n7",
+        "type": "achieves_purity"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n30",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n16",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n17",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n18",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n19",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n20",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n21",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n22",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n23",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n24",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n25",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n26",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n27",
+        "target_id": "n30",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n28",
+        "target_id": "n30",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "n29",
+        "target_id": "n30",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "c-IrO-MoO-Ti",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "c-IrO-Ti",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "MoO-Ti",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "c-IrO-MoO-Ti",
+        "target_id": "alpha-peak",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "c-IrO-MoO-Ti",
+        "target_id": "beta-peak",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "c-IrO-Ti",
+        "target_id": "E-peak",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "c-IrO-Ti",
+        "target_id": "Eg-peak",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "c-IrO-Ti",
+        "target_id": "B2g-peak",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "MoO-Ti",
+        "target_id": "P1-peak",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "MoO-Ti",
+        "target_id": "P2-peak",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "alpha-peak",
+        "target_id": "char_5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "beta-peak",
+        "target_id": "char_5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "E-peak",
+        "target_id": "char_5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "Eg-peak",
+        "target_id": "char_5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "B2g-peak",
+        "target_id": "char_5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "P1-peak",
+        "target_id": "char_5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "P2-peak",
+        "target_id": "char_5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "p1",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "p2",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "p3",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p4",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "p5",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n8",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n8",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n8",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "image",
+        "target_id": "chem_c-IrOx-MoO3_Ti",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scalebar",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "roi1",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "roi2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "scalebar",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "roi1",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "roi2",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "structure_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "model1",
+        "target_id": "rdf_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "structure_image",
+        "target_id": "rdf_plot",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n7",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n7",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n7",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "material1",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material2",
+        "target_id": "chart2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material1",
+        "target_id": "Ir_4f_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "material1",
+        "target_id": "Ir_4f_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "material1",
+        "target_id": "Ir_4f_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "material1",
+        "target_id": "Ir_4f_4",
+        "type": "contains"
+      },
+      {
+        "source_id": "material2",
+        "target_id": "Ir_4f_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "material2",
+        "target_id": "Ir_4f_6",
+        "type": "contains"
+      },
+      {
+        "source_id": "material2",
+        "target_id": "Ir_4f_7",
+        "type": "contains"
+      },
+      {
+        "source_id": "material2",
+        "target_id": "Ir_4f_8",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "energy_shift_1",
+        "type": "shows"
+      },
+      {
+        "source_id": "chart2",
+        "target_id": "energy_shift_1",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MoO3_Ti",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "chem_c-IrOx_Ti",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_c-IrOx-MoO3_Ti",
+        "target_id": "chem_MoO3_Ti",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_c-IrOx_Ti",
+        "target_id": "chem_MoO3_Ti",
+        "type": "scaled_by"
+      }
+    ]
+  }
+}

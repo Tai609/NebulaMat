@@ -1,0 +1,43 @@
+schema_version: 1
+id: T003
+title: Critique validated result and classify claim
+role: scientific-critic
+role_contract: procedures/research-orchestrator/references/roles.md#scientific-critic
+skill: comp-chem-workflow
+status: accepted
+depends_on: []
+approval: none
+inputs: []
+can_read:
+  - artifact_type: parser-result
+can_write:
+  - artifact_type: gate-verdict
+  - artifact_type: scientific-claim
+cannot:
+  - edit raw parser outputs
+  - write final reports
+outputs_expected:
+  - artifact_id: result-gate
+    type: gate-verdict
+    path: work/reviews/result_gate.yaml
+  - artifact_id: scientific-claim
+    type: scientific-claim
+    path: work/claims/claim.md
+success_criteria:
+  - result gate supports the recorded claim outcome
+knowledge_required: []
+required_refs:
+  - procedures/research-orchestrator/references/gate-contract.md
+  - procedures/research-orchestrator/references/critic-contract.md
+required_checks:
+  - uv run {repo_root}/procedures/research-orchestrator/scripts/check_pre_accept_claim.py {project_root}/.research scientific-claim --outcome addresses --gate-artifact result-gate
+release_gates:
+  - result_gate
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: true
+assumptions:
+  - Fixture claim is illustrative and not a scientific result.
+provenance:
+  - work/reviews/result_gate.yaml
+  - work/claims/claim.md

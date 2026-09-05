@@ -1,0 +1,33 @@
+schema_version: 1
+id: T001
+title: Register method fingerprint
+role: literature-method
+role_contract: procedures/research-orchestrator/references/roles.md#literature-method
+skill: comp-chem-workflow
+status: accepted
+depends_on: []
+approval: none
+inputs: []
+can_read: []
+can_write:
+  - artifact_type: method-fingerprint
+cannot:
+  - submit HPC jobs
+outputs_expected:
+  - artifact_id: method-fingerprint
+    type: method-fingerprint
+    path: work/method-fingerprint.md
+success_criteria:
+  - method assumptions are explicit
+knowledge_required: []
+required_refs:
+  - procedures/comp-chem-workflow/SKILL.md
+required_checks: []
+release_gates: []
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions:
+  - Fixture state is not a real calculation.
+provenance:
+  - work/method-fingerprint.md

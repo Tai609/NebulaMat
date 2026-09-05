@@ -1,0 +1,1463 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_Pt",
+        "type": "chemical",
+        "name": "polycrystalline Pt disk",
+        "aliases": [
+          "Pt",
+          "Pt disk"
+        ],
+        "formula": "Pt",
+        "properties": {
+          "electrochemical surface area": {
+            "value": 0.42,
+            "unit": "cm²_Pt"
+          },
+          "roughness factor": {
+            "value": 2.1,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Pt disk polishing and cleaning",
+        "procedure": "Before use, the Pt disk was polished with 1 and 0.05 μm alumina polishing slurries and cleaned with deionized water.",
+        "method": "Polishing and cleaning",
+        "conditions": {},
+        "source_text": "Before use, the Pt disk was polished with 1 and 0.05 μm alumina polishing slurries and cleaned with deionized water.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Polishing",
+            "method": "Alumina slurry polishing",
+            "conditions": {},
+            "procedure_snippet": "polished with 1 and 0.05 μm alumina polishing slurries"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Cleaning",
+            "method": "Deionized water rinse",
+            "conditions": {},
+            "procedure_snippet": "cleaned with deionized water"
+          }
+        ]
+      },
+      {
+        "id": "chem_polycrystalline_Pt",
+        "type": "chemical",
+        "name": "polycrystalline platinum",
+        "aliases": [
+          "Pt",
+          "Pt disk"
+        ],
+        "formula": "Pt",
+        "properties": {
+          "electrochemical_surface_area": {
+            "value": 0.42,
+            "unit": "cm²_Pt"
+          },
+          "roughness_factor": {
+            "value": 2.1,
+            "unit": "dimensionless"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_Pt_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Pt",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Pt",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Pt",
+        "properties": {
+          "form": "polished and cleaned disk"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_polycrystalline_Pt"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_polycrystalline_Pt",
+        "type": "chemical",
+        "name": "polycrystalline platinum",
+        "aliases": [
+          "Pt",
+          "Pt disk"
+        ],
+        "formula": "Pt",
+        "properties": {
+          "electrochemical_surface_area": {
+            "value": 0.42,
+            "unit": "cm²_Pt"
+          },
+          "roughness_factor": {
+            "value": 2.1,
+            "unit": "dimensionless"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_polycrystalline_Pt",
+        "description": "HOR/HER performance using RDE in H₂-saturated buffer solutions pH 0-13",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR/HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.2 M buffer solutions",
+            "unit": "H₂-saturated"
+          },
+          "pH_range": {
+            "value": "0-13",
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "polycrystalline Pt disk (5 mm diameter)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "spiral Pt wire",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "SCE (saturated calomel electrode)",
+            "unit": "electrode"
+          },
+          "rotation_speed": {
+            "value": 1600,
+            "unit": "r.p.m."
+          },
+          "sweep_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "a.c.-impedance spectroscopy"
+          }
+        },
+        "results_json": {
+          "HOR_exchange_current_density_0.1M_KOH": {
+            "value": 0.53,
+            "unit": "mA/cm²_Pt"
+          },
+          "HOR_exchange_current_density_pH10.7": {
+            "value": 0.63,
+            "unit": "mA/cm²_Pt"
+          },
+          "HER_overpotential_at_-1mA_cm²_disk_pH0": {
+            "value": -3,
+            "unit": "mV"
+          },
+          "HER_overpotential_at_-1mA_cm²_disk_pH10-13": {
+            "value": -20,
+            "unit": "mV"
+          },
+          "HOR_half-wave_potential_pH<6": {
+            "value": 9,
+            "unit": "mV"
+          },
+          "HOR_plateau_shift": {
+            "value": 0.2,
+            "unit": "V (pH 0.2→12.8)"
+          }
+        },
+        "source_text": "Steady state positive-going sweeps of HOR polarization curves of Pt collected in selected H₂-saturated buffer solutions. The sweep rate is 10 mV s⁻¹ and the rotating speed is 1,600 r.p.m. The polarization curves have been corrected for solution resistance."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_polycrystalline_Pt",
+        "description": "Hydrogen binding energy measurement via CV in Ar-saturated buffer solutions pH 0-13",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "cyclic voltammetry H_UPD",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "Ar-saturated buffer solutions",
+            "unit": "solution"
+          },
+          "pH_range": {
+            "value": "0-13",
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "polycrystalline Pt disk",
+            "unit": "electrode"
+          },
+          "sweep_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "solution resistance"
+          }
+        },
+        "results_json": {
+          "HBE_Pt(110)_vs_pH_slope": {
+            "value": -10,
+            "unit": "meV/pH"
+          },
+          "HBE_Pt(100)_vs_pH_slope": {
+            "value": -8,
+            "unit": "meV/pH"
+          },
+          "H_ads_des_peak_shift": {
+            "value": 0.15,
+            "unit": "V (pH 0→13)"
+          },
+          "HBE_Pt(100)_slope_excl_strong_acid": {
+            "value": -12,
+            "unit": "meV/pH"
+          }
+        },
+        "source_text": "Steady state CVs of Pt collected in selected Ar-saturated electrolytes at a sweep rate of 50 mV s⁻¹. The CV curves have been corrected for solution resistance. Both peaks shift positively by ∼0.15 V when the solution pH changes from 0 to 13."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_polycrystalline_Pt_test_1",
+        "type": "tested_in",
+        "source_id": "chem_polycrystalline_Pt",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_polycrystalline_Pt_test_2",
+        "type": "tested_in",
+        "source_id": "chem_polycrystalline_Pt",
+        "target_id": "test_2",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Pt",
+        "type": "chemical",
+        "name": "polycrystalline Pt disk",
+        "aliases": [
+          "Pt",
+          "Pt disk"
+        ],
+        "formula": "Pt",
+        "properties": {
+          "electrochemical surface area": {
+            "value": 0.42,
+            "unit": "cm²_Pt"
+          },
+          "roughness factor": {
+            "value": 2.1,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "CVs show H adsorption/desorption peaks at Pt(110) (weakly bonded H, lower potential) and Pt(100) (strongly bonded H, higher potential) that shift positively by ~0.15 V from pH 0 to 13. HBE increases linearly with pH at -10 meV/pH for Pt(110) and -8 meV/pH for Pt(100).",
+        "evidence_snippet": "The peak at lower potential in the H_UPD region corresponds to the H adsorption/desorption at the Pt(110) surface region (weakly bonded H), and the one at higher potential relates to the same process at Pt(100) (strongly bonded H). Both peaks shift positively by ∼0.15 V when the solution pH changes from 0 to 13."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "RDE",
+        "is_reported": true,
+        "characterization_summary": "RDE method shows HOR/HER activity decreases with increasing pH. Half-wave potential shifts positively by 0.2 V from pH 0.2 (1 M HClO4) to pH 12.8 (0.1 M KOH). Exchange current densities: 0.53 mA cm⁻²_Pt (0.1 M KOH, α=0.51), 0.63 mA cm⁻²_Pt (bicarbonate/carbonate buffer pH 10.7).",
+        "evidence_snippet": "The starting point of the HOR plateau shifts positively by 0.2 V from the 1 M HClO4 solution (pH=0.2) to the 0.1 M KOH solution (pH=12.8), suggesting decreasing reaction rates with solution pH. The exchange current density for 0.1 M KOH is determined to be 0.53 mA cm⁻²_Pt (α=0.51).",
+        "related_images": [
+          "0e5889c6e03b04236139fefd2969aad11beb987f1fb83e9f93826502db6f0436.jpg",
+          "117b571f286f6c72ce20a648174a3bfd10925bc748a5108fc9fdf68eb4e52f18.jpg",
+          "31d5f3bccee5cedb3203242cfd4953a53151aab3c1e9630c73574e0277fceedb.jpg",
+          "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg",
+          "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chart",
+            "name": "HER Performance Plot",
+            "properties": {
+              "type": "line_scatter_plot",
+              "x_axis": "Solution pH",
+              "x_range": [
+                0,
+                14
+              ],
+              "y_axis": "η (V)",
+              "y_label": "η (V)",
+              "y_range": [
+                -0.045,
+                0
+              ],
+              "condition": "i_RHE = -1 mA cm⁻²",
+              "extracted_from_image": "0e5889c6e03b04236139fefd2969aad11beb987f1fb83e9f93826502db6f0436.jpg"
+            },
+            "source_image_file": "0e5889c6e03b04236139fefd2969aad11beb987f1fb83e9f93826502db6f0436.jpg"
+          },
+          {
+            "type": "chart",
+            "name": "RHE vs pH Plot",
+            "properties": {
+              "title": "RHE",
+              "x_axis": "solution pH",
+              "y_axis": "RHE (V)",
+              "x_range": [
+                0,
+                14
+              ],
+              "y_range": [
+                0,
+                0.05
+              ],
+              "extracted_from_image": "117b571f286f6c72ce20a648174a3bfd10925bc748a5108fc9fdf68eb4e52f18.jpg"
+            },
+            "source_image_file": "117b571f286f6c72ce20a648174a3bfd10925bc748a5108fc9fdf68eb4e52f18.jpg"
+          },
+          {
+            "type": "dataset",
+            "name": "Purple Diamonds Dataset",
+            "properties": {
+              "marker": "◆",
+              "color": "purple",
+              "extracted_from_image": "117b571f286f6c72ce20a648174a3bfd10925bc748a5108fc9fdf68eb4e52f18.jpg"
+            },
+            "source_image_file": "117b571f286f6c72ce20a648174a3bfd10925bc748a5108fc9fdf68eb4e52f18.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "HClO buffer",
+            "properties": {
+              "pH": 2.0,
+              "extracted_from_image": "31d5f3bccee5cedb3203242cfd4953a53151aab3c1e9630c73574e0277fceedb.jpg"
+            },
+            "source_image_file": "31d5f3bccee5cedb3203242cfd4953a53151aab3c1e9630c73574e0277fceedb.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV plot",
+            "properties": {
+              "x_label": "E_RHE-free (V versus RHE)",
+              "y_label": "j (mA cm^-2)",
+              "figure_label": "a",
+              "extracted_from_image": "31d5f3bccee5cedb3203242cfd4953a53151aab3c1e9630c73574e0277fceedb.jpg"
+            },
+            "source_image_file": "31d5f3bccee5cedb3203242cfd4953a53151aab3c1e9630c73574e0277fceedb.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "HClO4 (pH=0.2)",
+            "properties": {
+              "pH": 0.2,
+              "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+            },
+            "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+          },
+          {
+            "type": "electrode",
+            "name": "Working Electrode",
+            "properties": {
+              "i": "0.5 mA/cm²",
+              "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+            },
+            "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV Plot",
+            "properties": {
+              "type": "Linear Sweep Voltammetry",
+              "x_axis": "E_iR-free (V vs RHE)",
+              "y_axis": "j (mA/cm²)",
+              "range_x": [
+                0,
+                1.2
+              ],
+              "range_y": [
+                -40,
+                40
+              ],
+              "extracted_from_image": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+            },
+            "source_image_file": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "KOH",
+            "properties": {
+              "pH": "12.8",
+              "extracted_from_image": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+            },
+            "source_image_file": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "a.c.-impedance spectroscopy used to measure solution resistances for iR correction of all polarization curves.",
+        "evidence_snippet": "Solution resistances (R) were measured using the a.c.-impedance spectroscopy method."
+      },
+      {
+        "id": "HER",
+        "type": "electrochemical_reaction",
+        "name": "Hydrogen Evolution Reaction",
+        "properties": {
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "OER",
+        "type": "electrochemical_reaction",
+        "name": "Oxygen Evolution Reaction",
+        "properties": {
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "Al",
+        "type": "chemical",
+        "name": "Aluminum",
+        "properties": {
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "LSV_plot",
+        "type": "characterization",
+        "name": "Linear Sweep Voltammetry Plot",
+        "properties": {
+          "x_axis": "E_IR-free (V vs RHE)",
+          "y_axis": "j (mA cm⁻²)",
+          "description": "Current density vs potential in different electrolytes",
+          "extracted_from_image": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+        },
+        "source_image_file": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+      },
+      {
+        "id": "facet_100",
+        "type": "surface_facet",
+        "name": "(100)",
+        "properties": {
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "facet_110",
+        "type": "surface_facet",
+        "name": "(110)",
+        "properties": {
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "HER_100",
+        "type": "dataset",
+        "name": "HER on (100) facet",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "HER_110",
+        "type": "dataset",
+        "name": "HER on (110) facet",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "OER_100",
+        "type": "dataset",
+        "name": "OER on (100) facet",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "OER_110",
+        "type": "dataset",
+        "name": "OER on (110) facet",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+        },
+        "source_image_file": "0b6ed87c5e02ee460de925a41076cb9562bedbe1622534f2e20bab0ffcf4d51b.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "electrolyte",
+        "name": "HClO4",
+        "properties": {
+          "pH": "1-2",
+          "extracted_from_image": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+        },
+        "source_image_file": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "electrolyte",
+        "name": "Acetate buffer",
+        "properties": {
+          "pH": "5-6",
+          "extracted_from_image": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+        },
+        "source_image_file": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "electrolyte",
+        "name": "Phosphate buffer",
+        "properties": {
+          "pH": "6-7",
+          "extracted_from_image": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+        },
+        "source_image_file": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "electrolyte",
+        "name": "Bicarbonate buffer",
+        "properties": {
+          "pH": "7-8",
+          "extracted_from_image": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+        },
+        "source_image_file": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "characterization",
+        "name": "LSV Curve (HClO4)",
+        "properties": {
+          "color": "black",
+          "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+        },
+        "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "characterization",
+        "name": "LSV Curve (Acetate)",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+        },
+        "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "characterization",
+        "name": "LSV Curve (Phosphate)",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+        },
+        "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "characterization",
+        "name": "LSV Curve (Bicarbonate)",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+        },
+        "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "characterization",
+        "name": "LSV Curve (KOH)",
+        "properties": {
+          "color": "purple",
+          "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+        },
+        "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "characterization",
+        "name": "Diffusion Overpotential",
+        "properties": {
+          "color": "black dashed",
+          "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+        },
+        "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "pH-dependent HBE plot",
+        "properties": {
+          "description": "Plot of Half-Band Edge (HBE) potential vs solution pH",
+          "x_axis": "Solution pH",
+          "y_axis": "HBE (eV)",
+          "y_range": "-0.1 to -0.4 eV",
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "(100)",
+        "type": "crystal_facet",
+        "name": "(100) facet",
+        "properties": {
+          "symbol": "(100)",
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "(110)",
+        "type": "crystal_facet",
+        "name": "(110) facet",
+        "properties": {
+          "symbol": "(110)",
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "green_symbol",
+        "type": "dataset",
+        "name": "Green data points",
+        "properties": {
+          "color": "green",
+          "markers": [
+            "square",
+            "triangle"
+          ],
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "pink_symbol",
+        "type": "dataset",
+        "name": "Pink data points",
+        "properties": {
+          "color": "pink",
+          "markers": [
+            "diamond",
+            "triangle"
+          ],
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "blue_symbol",
+        "type": "dataset",
+        "name": "Blue data points",
+        "properties": {
+          "color": "blue",
+          "markers": [
+            "triangle",
+            "diamond"
+          ],
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "red_symbol",
+        "type": "dataset",
+        "name": "Red data points",
+        "properties": {
+          "color": "red",
+          "markers": [
+            "triangle"
+          ],
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "orange_symbol",
+        "type": "dataset",
+        "name": "Orange data points",
+        "properties": {
+          "color": "orange",
+          "markers": [
+            "diamond"
+          ],
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "star_symbol",
+        "type": "special_point",
+        "name": "Star marker",
+        "properties": {
+          "color": "purple/black",
+          "position": "low pH, low HBE",
+          "extracted_from_image": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+        },
+        "source_image_file": "21be88363b3a395883fa08fe489d1ff92cc87f61c003ad2dffa030f7f313fd95.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "scale": "E_ir-free (V vs RHE)",
+          "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+        },
+        "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "chart",
+        "name": "iR-free LSV",
+        "properties": {
+          "x_axis": "E_ir-free (V vs RHE)",
+          "y_axis": "i/i_0",
+          "current_density": "0.5 mA/cm²",
+          "extracted_from_image": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+        },
+        "source_image_file": "8ecdac638f61ba9e299277202285972dc53ecbd8aa00e5ae5b96bccf2e1be64f.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "i/i_lim vs E_IR-free Plot",
+        "properties": {
+          "description": "Plot of normalized current density (i/i_lim) versus IR-free potential (V vs RHE)",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "xaxis",
+        "type": "axis",
+        "name": "E_IR-free (V versus RHE)",
+        "properties": {
+          "range": [
+            0.0,
+            0.05,
+            0.1,
+            0.15,
+            0.2,
+            0.25,
+            0.3
+          ],
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "yaxis",
+        "type": "axis",
+        "name": "i/i_lim",
+        "properties": {
+          "range": [
+            0.0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1.0
+          ],
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "curve_ilim25",
+        "type": "curve",
+        "name": "i/i_lim → 25",
+        "properties": {
+          "style": "solid thick",
+          "label": "i/i_lim → 25",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "curve_ilim025",
+        "type": "curve",
+        "name": "i/i_lim = 0.25",
+        "properties": {
+          "style": "dashed",
+          "label": "i/i_lim = 0.25",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "curve_ilim05",
+        "type": "curve",
+        "name": "i/i_lim = 0.5",
+        "properties": {
+          "style": "dashed",
+          "label": "i/i_lim = 0.5",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "curve_ilim25_low",
+        "type": "curve",
+        "name": "i/i_lim = 2.5",
+        "properties": {
+          "style": "dotted",
+          "label": "i/i_lim = 2.5",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "curve_ilim5",
+        "type": "curve",
+        "name": "i/i_lim = 5",
+        "properties": {
+          "style": "dotted",
+          "label": "i/i_lim = 5",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "curve_ilim25_lowest",
+        "type": "curve",
+        "name": "i/i_lim = 25",
+        "properties": {
+          "style": "dot-dashed",
+          "label": "i/i_lim = 25",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "diffusion_ovp",
+        "type": "curve",
+        "name": "Diffusion Overpotential",
+        "properties": {
+          "style": "solid black",
+          "label": "Diffusion overpotential",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "rhe",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode reference",
+          "extracted_from_image": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+        },
+        "source_image_file": "aaf9a9ca615eb8067d6572076515b44c49d0fa873247b90850a192c67ad14c34.jpg"
+      },
+      {
+        "id": "HClO",
+        "type": "chemical",
+        "name": "HClO (pH=2)",
+        "properties": {
+          "description": "Perchloric acid solution at pH 2",
+          "extracted_from_image": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+        },
+        "source_image_file": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+      },
+      {
+        "id": "acetate",
+        "type": "chemical",
+        "name": "Acetate buffer (pH=5.2)",
+        "properties": {
+          "description": "Acetate buffer solution at pH 5.2",
+          "extracted_from_image": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+        },
+        "source_image_file": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+      },
+      {
+        "id": "phosphate",
+        "type": "chemical",
+        "name": "Phosphate buffer (pH=7)",
+        "properties": {
+          "description": "Phosphate buffer solution at pH 7",
+          "extracted_from_image": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+        },
+        "source_image_file": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+      },
+      {
+        "id": "bicarbonate",
+        "type": "chemical",
+        "name": "Bicarbonate buffer (pH=10.7)",
+        "properties": {
+          "description": "Bicarbonate buffer solution at pH 10.7",
+          "extracted_from_image": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+        },
+        "source_image_file": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+      },
+      {
+        "id": "KOH",
+        "type": "chemical",
+        "name": "KOH (pH=12.8)",
+        "properties": {
+          "description": "Potassium hydroxide solution at pH 12.8",
+          "extracted_from_image": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+        },
+        "source_image_file": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+      },
+      {
+        "id": "electrode",
+        "type": "material",
+        "name": "Working Electrode",
+        "properties": {
+          "description": "Material under electrochemical characterization",
+          "extracted_from_image": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+        },
+        "source_image_file": "d1350d8558fd0dca0bef3a470d5d3be6183f93fcd1afc338a6a53f4573a27856.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "peak",
+        "name": "(110) peak",
+        "properties": {
+          "position": "approx 0.3 V",
+          "extracted_from_image": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+        },
+        "source_image_file": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "peak",
+        "name": "(100) peak",
+        "properties": {
+          "position": "approx 0.4 V",
+          "extracted_from_image": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+        },
+        "source_image_file": "e897437da14284cf0c0e2057908c9c57db0dfc72c7d0e2e24768b930002ec516.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Pt_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Pt",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Pt",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Pt",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "source_id": "Al",
+        "target_id": "facet_100",
+        "type": "has_facet"
+      },
+      {
+        "source_id": "Al",
+        "target_id": "facet_110",
+        "type": "has_facet"
+      },
+      {
+        "source_id": "facet_100",
+        "target_id": "HER_100",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "facet_110",
+        "target_id": "HER_110",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "facet_100",
+        "target_id": "OER_100",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "facet_110",
+        "target_id": "OER_110",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "HER",
+        "target_id": "HER_100",
+        "type": "dataset_of"
+      },
+      {
+        "source_id": "HER",
+        "target_id": "HER_110",
+        "type": "dataset_of"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "OER_100",
+        "type": "dataset_of"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "OER_110",
+        "type": "dataset_of"
+      },
+      {
+        "source_id": "LSV_plot",
+        "target_id": "HER_100",
+        "type": "contains"
+      },
+      {
+        "source_id": "LSV_plot",
+        "target_id": "HER_110",
+        "type": "contains"
+      },
+      {
+        "source_id": "LSV_plot",
+        "target_id": "OER_100",
+        "type": "contains"
+      },
+      {
+        "source_id": "LSV_plot",
+        "target_id": "OER_110",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n2",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n3",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n4",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n5",
+        "type": "labeled_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "at_current"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n3",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n4",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n5",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n7",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n8",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n11",
+        "type": "contains_legend"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n12",
+        "type": "represents_condition"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "(100)",
+        "type": "contains_facet"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "(110)",
+        "type": "contains_facet"
+      },
+      {
+        "source_id": "(100)",
+        "target_id": "green_symbol",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "(110)",
+        "target_id": "pink_symbol",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "(100)",
+        "target_id": "blue_symbol",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "(110)",
+        "target_id": "red_symbol",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "orange_symbol",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "star_symbol",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n10",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n11",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n14",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n14",
+        "type": "x_axis_scale"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "xaxis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "yaxis",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve_ilim25",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve_ilim025",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve_ilim05",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve_ilim25_low",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve_ilim5",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve_ilim25_lowest",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "diffusion_ovp",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "xaxis",
+        "target_id": "rhe",
+        "type": "versus_reference"
+      },
+      {
+        "source_id": "yaxis",
+        "target_id": "curve_ilim25",
+        "type": "measures"
+      },
+      {
+        "source_id": "yaxis",
+        "target_id": "curve_ilim025",
+        "type": "measures"
+      },
+      {
+        "source_id": "yaxis",
+        "target_id": "curve_ilim05",
+        "type": "measures"
+      },
+      {
+        "source_id": "yaxis",
+        "target_id": "curve_ilim25_low",
+        "type": "measures"
+      },
+      {
+        "source_id": "yaxis",
+        "target_id": "curve_ilim5",
+        "type": "measures"
+      },
+      {
+        "source_id": "yaxis",
+        "target_id": "curve_ilim25_lowest",
+        "type": "measures"
+      },
+      {
+        "source_id": "xaxis",
+        "target_id": "curve_ilim25",
+        "type": "versus"
+      },
+      {
+        "source_id": "xaxis",
+        "target_id": "curve_ilim025",
+        "type": "versus"
+      },
+      {
+        "source_id": "xaxis",
+        "target_id": "curve_ilim05",
+        "type": "versus"
+      },
+      {
+        "source_id": "xaxis",
+        "target_id": "curve_ilim25_low",
+        "type": "versus"
+      },
+      {
+        "source_id": "xaxis",
+        "target_id": "curve_ilim5",
+        "type": "versus"
+      },
+      {
+        "source_id": "xaxis",
+        "target_id": "curve_ilim25_lowest",
+        "type": "versus"
+      },
+      {
+        "source_id": "xaxis",
+        "target_id": "diffusion_ovp",
+        "type": "versus"
+      },
+      {
+        "source_id": "HClO",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "acetate",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "phosphate",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "bicarbonate",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "KOH",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrode",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n4",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n5",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "p1",
+        "type": "features"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "p2",
+        "type": "features"
+      }
+    ]
+  }
+}

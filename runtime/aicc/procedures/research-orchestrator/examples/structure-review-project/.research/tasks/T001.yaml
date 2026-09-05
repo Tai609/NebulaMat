@@ -1,0 +1,45 @@
+schema_version: 1
+id: T001
+title: Review surface precedent for adsorption model
+role: surface-literature-reviewer
+role_contract: procedures/research-orchestrator/references/roles.md#surface-literature-reviewer
+skill: literature-to-calculation
+status: accepted
+depends_on: []
+approval: none
+inputs:
+  - type: source-document
+    path: inputs/source.md
+can_read:
+  - path: inputs/source.md
+can_write:
+  - artifact_type: surface-literature-review
+cannot:
+  - generate structure coordinates
+  - edit candidate structures
+  - submit HPC jobs
+outputs_expected:
+  - artifact_id: surface-literature-review
+    type: surface-literature-review
+    path: work/surface-literature-review.md
+success_criteria:
+  - Miller index and termination precedent are recorded or labeled exploratory
+  - slab size, coverage, and adsorption motif precedent are checked when available
+  - no direct precedent is allowed for niche systems if search scope is recorded
+  - recommendation is approve, request_revision, or block
+knowledge_required:
+  - knowledge/surface-thermodynamics.md
+  - knowledge/periodic-dft-modeling.md
+required_refs:
+  - procedures/research-orchestrator/references/model-structure-review.md
+  - procedures/literature-to-calculation/SKILL.md
+required_checks: []
+release_gates:
+  - surface-literature-review
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: true
+assumptions:
+  - Fixture literature review is illustrative, not a real citation search.
+provenance:
+  - inputs/source.md

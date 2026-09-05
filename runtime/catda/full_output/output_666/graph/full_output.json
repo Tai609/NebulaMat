@@ -1,0 +1,1203 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_nickel_foam",
+        "type": "chemical",
+        "name": "Nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "properties": {
+          "area_density": {
+            "value": 420,
+            "unit": "g/m²"
+          },
+          "pores_per_square_inch": {
+            "value": 110,
+            "unit": "ppi"
+          },
+          "thickness": {
+            "value": 2.1,
+            "unit": "mm"
+          }
+        }
+      },
+      {
+        "id": "chem_thiourea",
+        "type": "chemical",
+        "name": "Thiourea",
+        "formula": "CH₄N₂S",
+        "properties": {}
+      },
+      {
+        "id": "chem_sodium_molybdate",
+        "type": "chemical",
+        "name": "Sodium molybdate dihydrate",
+        "formula": "Na₂MoO₄·2H₂O",
+        "composition": {
+          "purity": {
+            "value": 99.0,
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_P123",
+        "type": "chemical",
+        "name": "Polyethylene-polypropylene glycol",
+        "aliases": [
+          "P123"
+        ],
+        "properties": {
+          "average_molecular_weight": {
+            "value": 5800,
+            "unit": "g/mol"
+          }
+        }
+      },
+      {
+        "id": "chem_DI_water",
+        "type": "chemical",
+        "name": "DI water",
+        "formula": "H₂O",
+        "properties": {}
+      },
+      {
+        "id": "chem_ethanol",
+        "type": "chemical",
+        "name": "Ethanol",
+        "formula": "C₂H₅OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_MoS2_Ni3S2_NW_NF",
+        "type": "chemical",
+        "name": "MoS₂/Ni₃S₂ NW-NF",
+        "aliases": [
+          "MoS₂/Ni₃S₂ co-axial heterostructure nanowires on NF",
+          "MoS₂/Ni₃S₂ NW-NF catalyst"
+        ],
+        "formula": "MoS₂/Ni₃S₂",
+        "composition": {
+          "MoS₂": {
+            "value": 34.9,
+            "unit": "mg/cm²"
+          },
+          "Ni₃S₂": {
+            "value": 82.7,
+            "unit": "mg"
+          }
+        },
+        "properties": {
+          "nanowire diameter": {
+            "value": 84,
+            "unit": "nm"
+          },
+          "nanowire length": {
+            "value": "tens",
+            "unit": "μm"
+          },
+          "inner diameter": {
+            "value": 66,
+            "unit": "nm"
+          },
+          "outer layer thickness": {
+            "value": 20,
+            "unit": "nm"
+          },
+          "mass loading": {
+            "value": 34.9,
+            "unit": "mg/cm²"
+          }
+        },
+        "related_images": [
+          "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "MoS₂/Ni₃S₂ nanowire nanoflake",
+            "properties": {
+              "formula": "MoS₂/Ni₃S₂",
+              "structure": "NW-NF",
+              "extracted_from_image": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+            },
+            "source_image_file": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Hydrothermal synthesis and annealing",
+        "procedure": "A cleaned NF (1.95×3 cm²) was first immersed in 30 mL DI water containing 5 mmol thiourea, 0.2 mmol sodium molybdate and 200 mg P123 in a 50 mL Teflon-lined autoclave and kept at 200°C for 12 h. After naturally cooling down to room temperature, the black product was taken out, rinsed with DI water and ethanol in sequence for six times and dried in vacuum at 60°C for 24 h. Finally, the obtained product was heated to 350°C at a heating rate of 10°C min⁻¹ and kept in a gas mixture of H₂ (40 sccm) and Ar (200 sccm) for 1 h.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Hydrothermal reaction",
+            "method": "Hydrothermal",
+            "conditions": {
+              "temperature": {
+                "value": 200,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 12,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "kept at 200°C for 12 h"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Washing and drying",
+            "method": "Washing and vacuum drying",
+            "conditions": {
+              "drying_temperature": {
+                "value": 60,
+                "unit": "°C"
+              },
+              "drying_time": {
+                "value": 24,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "rinsed with DI water and ethanol in sequence for six times and dried in vacuum at 60°C for 24 h"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Annealing",
+            "method": "Annealing",
+            "conditions": {
+              "temperature": {
+                "value": 350,
+                "unit": "°C"
+              },
+              "heating_rate": {
+                "value": 10,
+                "unit": "°C/min"
+              },
+              "time": {
+                "value": 1,
+                "unit": "h"
+              },
+              "atmosphere": {
+                "value": "H₂ (40 sccm) + Ar (200 sccm)",
+                "unit": ""
+              }
+            },
+            "procedure_snippet": "heated to 350°C at a heating rate of 10°C min⁻¹ and kept in a gas mixture of H₂ (40 sccm) and Ar (200 sccm) for 1 h"
+          }
+        ],
+        "method": "Hydrothermal-annealing",
+        "conditions": {
+          "hydrothermal_temperature": {
+            "value": 200,
+            "unit": "°C"
+          },
+          "hydrothermal_time": {
+            "value": 12,
+            "unit": "h"
+          },
+          "drying_temperature": {
+            "value": 60,
+            "unit": "°C"
+          },
+          "drying_time": {
+            "value": 24,
+            "unit": "h"
+          },
+          "annealing_temperature": {
+            "value": 350,
+            "unit": "°C"
+          },
+          "annealing_time": {
+            "value": 1,
+            "unit": "h"
+          }
+        },
+        "source_text": "As shown in Fig. 1a, dense MoS₂/Ni₃S₂ co-axial heterostructure nanowires were synthesized on NF by a one-step hydrothermal method... Finally, the obtained product was heated to 350°C..."
+      },
+      {
+        "id": "chem_H2",
+        "type": "chemical",
+        "name": "Hydrogen gas",
+        "formula": "H₂",
+        "properties": {},
+        "related_images": [
+          "39fc902bf1e19a13ca6c1092697c16c1d2caf6c28b8eaa5e5f9dd595c5f67aa2.jpg",
+          "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "H2",
+            "properties": {
+              "description": "Hydrogen gas product",
+              "extracted_from_image": "39fc902bf1e19a13ca6c1092697c16c1d2caf6c28b8eaa5e5f9dd595c5f67aa2.jpg"
+            },
+            "source_image_file": "39fc902bf1e19a13ca6c1092697c16c1d2caf6c28b8eaa5e5f9dd595c5f67aa2.jpg"
+          },
+          {
+            "type": "setting",
+            "name": "Laboratory",
+            "properties": {
+              "description": "Modern lab with computer monitor displaying images (possibly food thumbnails), window blinds, lab equipment like microscope or sewing machine",
+              "extracted_from_image": "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+            },
+            "source_image_file": "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ar",
+        "type": "chemical",
+        "name": "Argon gas",
+        "formula": "Ar",
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt_C_NF",
+        "type": "chemical",
+        "name": "Pt/C-NF",
+        "aliases": [
+          "Pt/C-NF"
+        ],
+        "properties": {
+          "mass_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "double_layer_capacitance": {
+            "value": 13.33,
+            "unit": "mF/cm²"
+          },
+          "ECSA": {
+            "value": 272.0,
+            "unit": "cm²"
+          },
+          "contact_angle": {
+            "value": 126,
+            "unit": "°"
+          }
+        },
+        "related_images": [
+          "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Pt/C nanoflake",
+            "properties": {
+              "formula": "Pt/C",
+              "structure": "NF",
+              "extracted_from_image": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+            },
+            "source_image_file": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF",
+          "pure NF"
+        ],
+        "properties": {
+          "area_density": {
+            "value": 420,
+            "unit": "g/m²"
+          },
+          "pore_per_square_inch": {
+            "value": 110,
+            "unit": "ppi"
+          },
+          "thickness": {
+            "value": 2.1,
+            "unit": "mm"
+          },
+          "double_layer_capacitance": {
+            "value": 0.049,
+            "unit": "mF/cm²"
+          },
+          "contact_angle": {
+            "value": 137,
+            "unit": "°"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "Ni_source_and_substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_thiourea_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_thiourea",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "sulfur_source",
+          "amount": "5 mmol"
+        }
+      },
+      {
+        "id": "edge_input_chem_sodium_molybdate_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_sodium_molybdate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "molybdenum_source",
+          "amount": "0.2 mmol"
+        }
+      },
+      {
+        "id": "edge_input_chem_P123_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_P123",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "surfactant",
+          "amount": "200 mg"
+        }
+      },
+      {
+        "id": "edge_input_chem_DI_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_DI_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "volume": "30 mL"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "rinsing_solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_MoS2_Ni3S2_NW_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_MoS2_Ni3S2_NW_NF",
+        "properties": {
+          "form": "black product (annealed nanowires on NF)"
+        }
+      },
+      {
+        "id": "edge_input_chem_H2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_H2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reducing_gas",
+          "flow_rate": "40 sccm"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ar_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Ar",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "carrier_gas",
+          "flow_rate": "200 sccm"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Pt_C_NF",
+      "chem_NF"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_MoS2_Ni3S2_NW_NF",
+        "type": "chemical",
+        "name": "MoS₂/Ni₃S₂ NW-NF",
+        "aliases": [
+          "MoS₂/Ni₃S₂ co-axial heterostructure nanowires on nickel foam",
+          "MoS₂/Ni₃S₂ NW-NF catalyst"
+        ],
+        "formula": "MoS₂/Ni₃S₂",
+        "properties": {
+          "mass_loading": {
+            "value": 34.9,
+            "unit": "mg/cm²"
+          },
+          "nanowire_diameter": {
+            "value": 84,
+            "unit": "nm"
+          },
+          "nanowire_length": {
+            "value": "tens of",
+            "unit": "μm"
+          },
+          "inner_diameter": {
+            "value": 66,
+            "unit": "nm"
+          },
+          "outer_layer_thickness": {
+            "value": 20,
+            "unit": "nm"
+          },
+          "double_layer_capacitance": {
+            "value": 92.4,
+            "unit": "mF/cm²"
+          },
+          "ECSA": {
+            "value": 1885.7,
+            "unit": "cm²"
+          },
+          "contact_angle": {
+            "value": 0,
+            "unit": "°"
+          }
+        }
+      },
+      {
+        "id": "chem_Pt_C_NF",
+        "type": "chemical",
+        "name": "Pt/C-NF",
+        "aliases": [
+          "Pt/C-NF"
+        ],
+        "properties": {
+          "mass_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "double_layer_capacitance": {
+            "value": 13.33,
+            "unit": "mF/cm²"
+          },
+          "ECSA": {
+            "value": 272.0,
+            "unit": "cm²"
+          },
+          "contact_angle": {
+            "value": 126,
+            "unit": "°"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_MoS2_Ni3S2_NW_NF",
+        "description": "HER performance in 1 mol L⁻¹ KOH at various current densities",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 mol L⁻¹ KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13.9,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "saturated calomel electrode (SCE)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "95%",
+            "unit": "IR compensation"
+          },
+          "N2_saturation": {
+            "value": "yes",
+            "unit": "atmosphere"
+          },
+          "potential_conversion": {
+            "value": "E_RHE = E_SCE + 0.242 V + 0.059×pH",
+            "unit": "RHE scale"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 70,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA/cm²": {
+            "value": 137,
+            "unit": "mV"
+          },
+          "overpotential_at_500_mA/cm²": {
+            "value": 182,
+            "unit": "mV"
+          },
+          "overpotential_at_1000_mA/cm²": {
+            "value": 200,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 58.9,
+            "unit": "mV/dec"
+          },
+          "exchange_current_density_j0": {
+            "value": 0.63,
+            "unit": "mA/cm²"
+          },
+          "stability_at_200_mA/cm²": {
+            "value": "-11",
+            "unit": "mV change after 12 h"
+          },
+          "stability_at_500_mA/cm²": {
+            "value": "-20",
+            "unit": "mV change after 12 h"
+          },
+          "stability_at_1000_mA/cm²": {
+            "value": "-23",
+            "unit": "mV change after 12 h"
+          },
+          "CV_stability": {
+            "value": "negligible change",
+            "unit": "after 2000 cycles"
+          },
+          "chronoamperometry_stability": {
+            "value": "almost constant",
+            "unit": "150 h at 100 mA/cm²"
+          }
+        },
+        "source_text": "All HER measurements were carried out in 1 mol L⁻¹ KOH solution (pH 13.9)... three electrodes system... SCE... graphite rod... LSV test was employed at a scan rate of 2 mV s⁻¹... 95% IR compensation... our MoS₂/Ni₃S₂ NW-NF catalyst only needs overpotentials of 70 and 137 mV for current density of 10 and 100 mA cm⁻²... 182 and 200 mV overpotentials to achieve current density of 500 and 1000 mA cm⁻²... Tafel slope of 58.9 mV dec⁻¹... j₀... 0.63 mA cm⁻²... decreases only by 11, 20 and 23 mV after 12 h tests at 200, 500 and 1000 mA cm⁻²... potential remains almost the same... 150 h... 100 mA cm⁻²"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Pt_C_NF",
+        "description": "HER performance benchmark in 1 mol L⁻¹ KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 mol L⁻¹ KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13.9,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "saturated calomel electrode (SCE)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "95%",
+            "unit": "IR compensation"
+          },
+          "N2_saturation": {
+            "value": "yes",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {
+          "overpotential_at_100_mA/cm²": {
+            "value": 110,
+            "unit": "mV"
+          },
+          "overpotential_at_500_mA/cm²": {
+            "value": 281,
+            "unit": "mV"
+          },
+          "overpotential_at_1000_mA/cm²": {
+            "value": 444,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 31.0,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "Pt/C-NF (281 and 444 mV)... overpotential for current density of 100 mA cm⁻² is close to that of Pt/C-NF (110 mV)... Pt/C-NF has the lowest one of 31.0 mV dec⁻¹"
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF",
+          "pure NF"
+        ],
+        "properties": {
+          "area_density": {
+            "value": 420,
+            "unit": "g/m²"
+          },
+          "pore_per_square_inch": {
+            "value": 110,
+            "unit": "ppi"
+          },
+          "thickness": {
+            "value": 2.1,
+            "unit": "mm"
+          },
+          "double_layer_capacitance": {
+            "value": 0.049,
+            "unit": "mF/cm²"
+          },
+          "contact_angle": {
+            "value": 137,
+            "unit": "°"
+          }
+        }
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_NF",
+        "description": "HER performance benchmark of bare nickel foam",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 mol L⁻¹ KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13.9,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "saturated calomel electrode (SCE)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "95%",
+            "unit": "IR compensation"
+          },
+          "N2_saturation": {
+            "value": "yes",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 219,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA/cm²": {
+            "value": 374,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 120.4,
+            "unit": "mV/dec"
+          },
+          "exchange_current_density_j0": {
+            "value": 0.33,
+            "unit": "mA/cm²"
+          }
+        },
+        "source_text": "LSV curves indicate that the electrocatalytic activity of pure NF is very poor, where the overpotential for current density of 10 and 100 mA cm⁻² is as large as 219 and 374 mV, respectively... pure NF shows the largest Tafel slope of 120.4 mV dec⁻¹... j₀... 0.33 mA cm⁻²"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_MoS2_Ni3S2_NW_NF",
+        "description": "EIS measurement for HER kinetics",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "EIS",
+            "unit": "impedance"
+          },
+          "electrolyte": {
+            "value": "1 mol L⁻¹ KOH",
+            "unit": "solution"
+          },
+          "overpotential": {
+            "value": 135,
+            "unit": "mV"
+          },
+          "frequency_range": {
+            "value": "100 kHz to 0.01 Hz",
+            "unit": "frequency"
+          },
+          "amplitude": {
+            "value": 10,
+            "unit": "mV"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance_Rct": {
+            "value": "much lower than Ni₇S₆ & Ni₃S₂-NF",
+            "unit": "ohm"
+          }
+        },
+        "source_text": "EIS analysis was also carried out at -135 mV... MoS₂/Ni₃S₂ NW-NF catalyst shows much lower R_ct than that of Ni₇S₆ & Ni₃S₂-NF"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_MoS2_Ni3S2_NW_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Pt_C_NF_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Pt_C_NF",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_test_4",
+        "type": "tested_in",
+        "source_id": "chem_NF",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_MoS2_Ni3S2_NW_NF_test_5",
+        "type": "tested_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "test_5",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_MoS2_Ni3S2_NW_NF",
+        "type": "chemical",
+        "name": "MoS₂/Ni₃S₂ NW-NF",
+        "aliases": [
+          "MoS₂/Ni₃S₂ co-axial heterostructure nanowires on NF",
+          "MoS₂/Ni₃S₂ NW-NF catalyst"
+        ],
+        "formula": "MoS₂/Ni₃S₂",
+        "composition": {
+          "MoS₂": {
+            "value": 34.9,
+            "unit": "mg/cm²"
+          },
+          "Ni₃S₂": {
+            "value": 82.7,
+            "unit": "mg"
+          }
+        },
+        "properties": {
+          "nanowire diameter": {
+            "value": 84,
+            "unit": "nm"
+          },
+          "nanowire length": {
+            "value": "tens",
+            "unit": "μm"
+          },
+          "inner diameter": {
+            "value": 66,
+            "unit": "nm"
+          },
+          "outer layer thickness": {
+            "value": 20,
+            "unit": "nm"
+          },
+          "mass loading": {
+            "value": 34.9,
+            "unit": "mg/cm²"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "High-magnification SEM images show the surface of NF covered with very dense nanowires with length of tens of micrometers and average diameter of ~84 nm.",
+        "evidence_snippet": "high-magnification SEM images show that the surface of NF is covered with very dense nanowires (Fig. 1c,d), which have a length of tens of micrometers and average diameter of ∼84 nm (Fig. 1e)."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "Dark-field TEM shows nanowire co-axial heterostructure with inner diameter ~66 nm and outer layer thickness ~20 nm.",
+        "evidence_snippet": "Fig. 2a clearly shows that the nanowire has a co-axial heterostructure, in which the inner part has a diameter of ∼66 nm and the outer layer has an average thickness of ∼20 nm."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "data_reported": true,
+        "characterization_summary": "HRTEM shows lattice fringes of 0.62 nm for MoS₂ (002) facet and 0.41 nm for Ni₃S₂ (101) facet.",
+        "evidence_snippet": "The outer and inner parts show lattice fringes with distance of 0.62 and 0.41 nm, respectively, which are assigned to the (002) facet of MoS₂ and (101) facet of Ni₃S₂."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "EDX",
+        "data_reported": true,
+        "characterization_summary": "EDX elemental mappings show S uniformly distributed over the whole nanowire while Mo and Ni are dominantly distributed at peripheral and center regions; mass ratio Mo:S is 107:104.",
+        "evidence_snippet": "EDX elemental mappings show that S is uniformly distributed over the whole nanowire while Mo and Ni are dominantly distributed at the peripheral and center regions, respectively (Fig. 2e-h)."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "XRD shows strong sharp peaks of hexagonal Ni₃S₂ at 21.754°, 31.104°, 37.779°, 44.330°, 49.733°, 55.161° and weak broadened MoS₂ (002) peak at 14.197° plus Ni peaks.",
+        "evidence_snippet": "the strong and sharp XRD peaks at 21.754°, 31.104°, 37.779°, 44.330°, 49.733° and 55.161° are attributed to the (101), (110), (003), (202), (113) and (122) facets of high crystalline hexagonal Ni₃S₂ ... The XRD peak at 14.197° is related to the (002) facet of MoS₂."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "XPS shows Mo 3d peaks at 228.9 eV (5/2) and 232.1 eV (3/2) of MoS₂ with upshift indicating electronic interaction; Ni 2p shows mixed Ni⁰ (852.7, 870.2 eV), Ni²⁺ (853.7, 873.3 eV), Ni³⁺ (856.4 eV); S 2p at 161.7 eV (3/2) and 162.9 eV (1/2).",
+        "evidence_snippet": "The peaks at 228.9 and 232.1 eV are assigned to Mo 3d₅/₂ and Mo 3d₃/₂ of MoS₂, respectively ... the 852.7 and 870.2 eV peaks are assigned to Ni 2p₃/₂ and 2p₁/₂ of Ni⁰, while 853.7 and 873.3 eV peaks are attributed to Ni²⁺ ... The peaks at 161.7 and 162.9 eV are assigned to S 2p₃/₂ and 2p₁/₂."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "contact angle",
+        "data_reported": true,
+        "characterization_summary": "Contact angle measurement shows superhydrophilicity with CA of 0° for 1 mol L⁻¹ KOH droplet.",
+        "evidence_snippet": "NF, Pt/C-NF, Ni₇S₆ & Ni₃S₂-NF and MoS₂/Ni₃S₂ NW-NF show CAs of 137°, 126°, 98° and 0°, respectively."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "CV",
+        "data_reported": true,
+        "characterization_summary": "CV from 0.465 to 0.565 V vs RHE at scan rates 40-120 mV/s gives double-layer capacitance Cdl of 92.40 mF/cm² used to calculate ECSA of 1885.7 cm².",
+        "evidence_snippet": "To evaluate the electrochemical active surface areas (ECSA) of the catalysts, CV was obtained from 0.465 to 0.565 V versus RHE at a series of scan rates of 40, 60, 80, 100 and 120 mV s⁻¹ ... MoS₂/Ni₃S₂ NW-NF catalyst shows a Cdl of 92.40 mF cm⁻² ... The ECSA of MoS₂/Ni₃S₂ NW-NF ... is 1885.7 ... cm²."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "EIS",
+        "data_reported": true,
+        "characterization_summary": "EIS at -135 mV shows much lower Rct for MoS₂/Ni₃S₂ NW-NF than Ni₇S₆ & Ni₃S₂-NF.",
+        "evidence_snippet": "the MoS₂/Ni₃S₂ NW-NF catalyst shows much lower Rct than that of Ni₇S₆ & Ni₃S₂-NF."
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "Raman",
+        "data_reported": true,
+        "characterization_summary": "Raman spectra show almost identical features for different samples with disordered carbon observed.",
+        "evidence_snippet": "the almost same Raman spectra indicate that their HER performance differences should not be attributed to the existence of carbon."
+      },
+      {
+        "id": "n1",
+        "type": "person",
+        "name": "Asian male researcher",
+        "properties": {
+          "description": "Young man with short black hair, glasses, wearing black hoodie with red strings and 'Talented Society' logo, in a lab setting with computer and equipment",
+          "extracted_from_image": "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+        },
+        "source_image_file": "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "clothing",
+        "name": "Talented Society hoodie",
+        "properties": {
+          "description": "Black hoodie with red drawstrings and embroidered 'Talented Society' logo featuring stylized 'X S'",
+          "extracted_from_image": "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+        },
+        "source_image_file": "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "logo",
+        "name": "Talented Society",
+        "properties": {
+          "description": "Embroidered logo on hoodie with artistic 'X S' design",
+          "extracted_from_image": "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+        },
+        "source_image_file": "8d9d969071e80b26459a451d580ad923b9b9fdb69d156d1209f5625c1f4f0994.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "particle",
+        "name": "e-",
+        "properties": {
+          "description": "Electron",
+          "extracted_from_image": "39fc902bf1e19a13ca6c1092697c16c1d2caf6c28b8eaa5e5f9dd595c5f67aa2.jpg"
+        },
+        "source_image_file": "39fc902bf1e19a13ca6c1092697c16c1d2caf6c28b8eaa5e5f9dd595c5f67aa2.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "structure",
+        "name": "Core-shell structure",
+        "properties": {
+          "description": "3D molecular model showing central black core with green branches, likely Ni3S2@MoS2",
+          "extracted_from_image": "39fc902bf1e19a13ca6c1092697c16c1d2caf6c28b8eaa5e5f9dd595c5f67aa2.jpg"
+        },
+        "source_image_file": "39fc902bf1e19a13ca6c1092697c16c1d2caf6c28b8eaa5e5f9dd595c5f67aa2.jpg"
+      },
+      {
+        "id": "image",
+        "type": "image",
+        "name": "Portrait Photograph",
+        "properties": {
+          "description": "Headshot of an Asian man in his 40s with short black hair, wearing thin rimless glasses, a light blue dress shirt, and dark suit jacket against a blue background",
+          "extracted_from_image": "59142bda51c2ae3eab1e303a8a96a6d531fd7964a62351e91de86d4767354671.jpg"
+        },
+        "source_image_file": "59142bda51c2ae3eab1e303a8a96a6d531fd7964a62351e91de86d4767354671.jpg"
+      },
+      {
+        "id": "person",
+        "type": "person",
+        "name": "Unknown Author",
+        "properties": {
+          "description": "Male, East Asian appearance, professional attire",
+          "extracted_from_image": "59142bda51c2ae3eab1e303a8a96a6d531fd7964a62351e91de86d4767354671.jpg"
+        },
+        "source_image_file": "59142bda51c2ae3eab1e303a8a96a6d531fd7964a62351e91de86d4767354671.jpg"
+      },
+      {
+        "id": "PtS2Ni3S2-NW-NF",
+        "type": "chemical",
+        "name": "PtS₂/Ni₃S₂ nanowire nanoflake",
+        "properties": {
+          "formula": "PtS₂/Ni₃S₂",
+          "structure": "NW-NF",
+          "extracted_from_image": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+        },
+        "source_image_file": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+      },
+      {
+        "id": "Pt-NF",
+        "type": "chemical",
+        "name": "Pt nanoflake",
+        "properties": {
+          "formula": "Pt",
+          "structure": "NF",
+          "extracted_from_image": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+        },
+        "source_image_file": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+      },
+      {
+        "id": "LSV",
+        "type": "characterization",
+        "name": "Linear Sweep Voltammetry",
+        "properties": {
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "range_x": [
+            -0.6,
+            0.0
+          ],
+          "range_y": [
+            -1000,
+            0
+          ],
+          "extracted_from_image": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+        },
+        "source_image_file": "a5fc5b99af308e7ecdaae91e301e174da105e4d8639d293380c7fa760e82a619.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_9",
+        "properties": {
+          "overpotential": {
+            "value": 135,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_MoS2_Ni3S2_NW_NF_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "core_composition"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "shell_composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "heterostructure"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "reactant"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "accepts"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chem_H2",
+        "type": "produces"
+      },
+      {
+        "source_id": "image",
+        "target_id": "person",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "wears"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_H2",
+        "type": "located_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "features"
+      },
+      {
+        "source_id": "chem_MoS2_Ni3S2_NW_NF",
+        "target_id": "LSV",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "PtS2Ni3S2-NW-NF",
+        "target_id": "LSV",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Pt_C_NF",
+        "target_id": "LSV",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Pt-NF",
+        "target_id": "LSV",
+        "type": "characterized_by"
+      }
+    ]
+  }
+}

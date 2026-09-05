@@ -1,0 +1,59 @@
+schema_version: 1
+id: T003
+title: Critique first-wave evidence and propose follow-up
+role: scientific-critic
+role_contract: procedures/research-orchestrator/references/roles.md#scientific-critic
+skill: comp-chem-workflow
+status: accepted
+depends_on:
+  - T001
+  - T002
+approval: none
+inputs:
+  - artifact_id: method-fingerprint
+    min_status: accepted
+  - artifact_id: parser-result-wave1
+    min_status: validated
+can_read:
+  - artifact_id: method-fingerprint
+  - artifact_id: parser-result-wave1
+can_write:
+  - artifact_type: scientific-claim
+  - artifact_type: gate-verdict
+  - artifact_type: follow-up-proposal
+cannot:
+  - edit parser outputs
+  - write final report artifacts
+evidence_packet:
+  - artifact_id: method-fingerprint
+    min_status: accepted
+    why: fixes the method assumptions
+  - artifact_id: parser-result-wave1
+    min_status: validated
+    why: carries first-wave technical validation
+outputs_expected:
+  - artifact_id: scientific-claim-wave1
+    type: scientific-claim
+    path: work/claims/claim-wave1.md
+  - artifact_id: result-gate-wave1
+    type: gate-verdict
+    path: work/reviews/result_gate_wave1.yaml
+  - artifact_id: follow-up-proposal
+    type: follow-up-proposal
+    path: work/followups/follow-up-proposal.yaml
+success_criteria:
+  - unsupported claim is classified as needs-follow-up
+  - concrete next task is recorded
+knowledge_required: []
+required_refs:
+  - procedures/research-orchestrator/references/critic-contract.md
+  - procedures/research-orchestrator/references/evidence-packets.md
+required_checks: []
+release_gates:
+  - result_gate
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: true
+assumptions: []
+provenance:
+  - parser-result-wave1

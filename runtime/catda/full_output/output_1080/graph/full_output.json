@@ -1,0 +1,5104 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_mof_precursor",
+        "type": "chemical",
+        "name": "Ir-impregnated metal-organic frameworks",
+        "aliases": [
+          "MOFs",
+          "Ir-impregnated MOFs"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_icm",
+        "type": "chemical",
+        "name": "Ir-doped CoMn₂O₄ spinel oxide",
+        "aliases": [
+          "ICM"
+        ],
+        "formula": "Ir-doped CoMn₂O₄",
+        "composition": {
+          "Ir": {
+            "value": 5.6,
+            "unit": "wt%"
+          },
+          "particle_size": {
+            "value": 21,
+            "unit": "nm"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_h2so4_0.05M",
+        "type": "chemical",
+        "name": "0.05 M H₂SO₄",
+        "aliases": [
+          "acidic electrolyte"
+        ],
+        "formula": "0.05 M H₂SO₄",
+        "properties": {}
+      },
+      {
+        "id": "chem_icm_activated",
+        "type": "chemical",
+        "name": "ICM_activated",
+        "aliases": [
+          "ICM_{\\text{activated}}",
+          "activated Ir-doped CoMn₂O₄"
+        ],
+        "formula": "IrO_x/γ-MnO₂",
+        "composition": {
+          "Ir": {
+            "value": 11.3,
+            "unit": "wt%"
+          },
+          "IrO_x_cluster_size": {
+            "value": 1.63,
+            "unit": "nm"
+          }
+        },
+        "properties": {
+          "Ir_mass_activity": {
+            "value": 3562,
+            "unit": "A g_{Ir}^{-1} @ 1.53 V"
+          },
+          "overpotential": {
+            "value": 232,
+            "unit": "mV @ 10 mA cm^{-2}"
+          },
+          "Tafel_slope": {
+            "value": 54.5,
+            "unit": "mV dec^{-1}"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Calcination of Ir-impregnated MOFs",
+        "procedure": "Ir-doped CoMn₂O₄ spinel oxide (ICM), in which Ir single atoms are dispersed in Mn-Co bimetallic oxide nanoparticles, was synthesized by calcinating Ir-impregnated metal-organic frameworks (MOFs) in air (for a detailed description on the synthesis of ICM, see Note S1 and Figures S1-S5).",
+        "method": "MOF calcination",
+        "conditions": {
+          "atmosphere": {
+            "value": "air",
+            "unit": "atmosphere"
+          }
+        },
+        "source_text": "Ir-doped CoMn₂O₄ spinel oxide (ICM)... was synthesized by calcinating Ir-impregnated metal-organic frameworks (MOFs) in air"
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Acidic activation of ICM",
+        "procedure": "The ICM was dispersed in acidic electrolyte (0.05 M H₂SO₄) and heated at 90°C for 24 h for the activation, and was named as ICM_activated.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Thermal activation",
+            "method": "Heating in acidic electrolyte",
+            "conditions": {
+              "temperature": {
+                "value": 90,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 24,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "The ICM was dispersed in acidic electrolyte (0.05 M H₂SO₄) and heated at 90°C for 24 h"
+          }
+        ],
+        "method": "Acidic thermal activation",
+        "conditions": {
+          "temperature": {
+            "value": 90,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 24,
+            "unit": "h"
+          },
+          "H2SO4_concentration": {
+            "value": 0.05,
+            "unit": "M"
+          }
+        },
+        "source_text": "The ICM was dispersed in acidic electrolyte (0.05 M H₂SO₄) and heated at 90°C for 24 h for the activation"
+      },
+      {
+        "id": "chem_surf_icm",
+        "type": "chemical",
+        "name": "surface-deposited Ir single atoms on CoMn₂O₄",
+        "aliases": [
+          "surf-ICM"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_im",
+        "type": "chemical",
+        "name": "Ir-doped Mn₂O₃",
+        "aliases": [
+          "IM"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_surf_icm_activated",
+        "type": "chemical",
+        "name": "activated surf-ICM",
+        "aliases": [
+          "surf-ICM_activated"
+        ],
+        "properties": {
+          "Ir_mass_activity": {
+            "value": 526,
+            "unit": "A g_{Ir}^{-1}"
+          }
+        }
+      },
+      {
+        "id": "chem_im_activated",
+        "type": "chemical",
+        "name": "activated Ir-doped Mn₂O₃",
+        "aliases": [
+          "IM_activated"
+        ],
+        "properties": {
+          "Ir_mass_activity": {
+            "value": 460,
+            "unit": "A g_{Ir}^{-1}"
+          }
+        }
+      },
+      {
+        "id": "chem_gamma_mno2",
+        "type": "chemical",
+        "name": "γ-MnO₂",
+        "aliases": [
+          "γ-MnO₂"
+        ],
+        "formula": "γ-MnO₂",
+        "properties": {},
+        "related_images": [
+          "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg",
+          "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg",
+          "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "γ-MnO₂",
+            "properties": {
+              "formula": "MnO₂",
+              "phase": "gamma",
+              "extracted_from_image": "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg"
+            },
+            "source_image_file": "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "γ-MnO₂",
+            "properties": {
+              "Tafel_slope": "80.2 mV dec⁻¹",
+              "extracted_from_image": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+            },
+            "source_image_file": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "γ-MnO₂",
+            "properties": {
+              "formula": "γ-MnO₂",
+              "reference": "JCPDS 14-0644",
+              "role": "standard reference pattern",
+              "extracted_from_image": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+            },
+            "source_image_file": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "R-MnO₂",
+            "properties": {
+              "formula": "R-MnO₂",
+              "reference": "JCPDS 82-2169",
+              "role": "standard reference pattern",
+              "extracted_from_image": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+            },
+            "source_image_file": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Synthesis of surf-ICM",
+        "procedure": "Surface-deposited Ir single atoms on CoMn₂O₄ (surf-ICM) (for a detailed description on the synthesis of surf-ICM... see Note S2 and Figures S12-S21).",
+        "method": "Surface Ir deposition",
+        "conditions": {},
+        "source_text": "surface-deposited Ir single atoms on CoMn₂O₄ (surf-ICM) and Ir-doped Mn₂O₃ (IM) (for a detailed description on the synthesis of surf-ICM and IM, see Note S2 and Figures S12-S21)"
+      },
+      {
+        "id": "synth_step_4",
+        "type": "synthesis",
+        "name": "Synthesis of IM",
+        "procedure": "Ir-doped Mn₂O₃ (IM) (for a detailed description on the synthesis of surf-ICM and IM, see Note S2 and Figures S12-S21).",
+        "method": "Ir doping of Mn₂O₃",
+        "conditions": {},
+        "source_text": "surface-deposited Ir single atoms on CoMn₂O₄ (surf-ICM) and Ir-doped Mn₂O₃ (IM) (for a detailed description on the synthesis of surf-ICM and IM, see Note S2 and Figures S12-S21)"
+      },
+      {
+        "id": "synth_step_5",
+        "type": "synthesis",
+        "name": "Activation of surf-ICM",
+        "procedure": "Activation of ICM with that of surface-deposited Ir single atoms on CoMn₂O₄ (surf-ICM)... (for the detailed discussion on the formation... see Note S3 and Figures S22-S26).",
+        "method": "Acidic activation",
+        "conditions": {
+          "temperature": {
+            "value": 90,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 24,
+            "unit": "h"
+          },
+          "H2SO4_concentration": {
+            "value": 0.05,
+            "unit": "M"
+          }
+        },
+        "source_text": "comparing the activation of ICM with that of surface-deposited Ir single atoms on CoMn₂O₄ (surf-ICM)"
+      },
+      {
+        "id": "synth_step_6",
+        "type": "synthesis",
+        "name": "Activation of IM",
+        "procedure": "Activation of ICM with that of... Ir-doped Mn₂O₃ (IM) (for a detailed description... see Note S2 and Figures S12-S21).",
+        "method": "Acidic activation",
+        "conditions": {
+          "temperature": {
+            "value": 90,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 24,
+            "unit": "h"
+          },
+          "H2SO4_concentration": {
+            "value": 0.05,
+            "unit": "M"
+          }
+        },
+        "source_text": "Ir-doped Mn₂O₃ (IM) (for a detailed description on the synthesis of surf-ICM and IM, see Note S2 and Figures S12-S21)"
+      },
+      {
+        "id": "synth_step_7",
+        "type": "synthesis",
+        "name": "Synthesis of γ-MnO₂",
+        "procedure": "γ-MnO₂, which was synthesized by the same method as ICM_activated without iridium.",
+        "method": "MOF calcination without Ir",
+        "conditions": {
+          "atmosphere": {
+            "value": "air",
+            "unit": "atmosphere"
+          }
+        },
+        "source_text": "γ-MnO₂, which was synthesized by the same method as ICM_activated without iridium"
+      },
+      {
+        "id": "chem_IrO2",
+        "type": "chemical",
+        "name": "IrO2",
+        "aliases": [
+          "commercial IrO2"
+        ],
+        "formula": "IrO2",
+        "related_images": [
+          "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg",
+          "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg",
+          "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg",
+          "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg",
+          "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "IrO₂",
+            "properties": {
+              "Tafel_slope": "106.5 mV dec⁻¹",
+              "extracted_from_image": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+            },
+            "source_image_file": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium dioxide reference material",
+              "extracted_from_image": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+            },
+            "source_image_file": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium oxide reference catalyst",
+              "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+            },
+            "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium dioxide",
+              "extracted_from_image": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+            },
+            "source_image_file": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium dioxide",
+              "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+            },
+            "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_gamma_MnO2",
+        "type": "chemical",
+        "name": "γ-MnO2",
+        "aliases": [
+          "γ-MnO2"
+        ],
+        "formula": "MnO2"
+      },
+      {
+        "id": "chem_ICM",
+        "type": "chemical",
+        "name": "Ir-doped CoMn₂O₄",
+        "aliases": [
+          "ICM"
+        ],
+        "formula": "Ir-CoMn₂O₄",
+        "composition": {
+          "Ir": {
+            "value": 5.6,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "average particle size": {
+            "value": 21,
+            "unit": "nm"
+          }
+        },
+        "related_images": [
+          "022b067f8d30ea1558d5638aa3ed8245fe5cb73e29bd7c7ba8448e07d1b7e8d7.jpg",
+          "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg",
+          "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg",
+          "1754d90d8dfccaf77171166c302def2b2fa9f77eccad9bfa463d601396e23aff.jpg",
+          "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg",
+          "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg",
+          "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg",
+          "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg",
+          "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg",
+          "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg",
+          "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg",
+          "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg",
+          "4f483e0b45d3b328d611b7788c16181f1b087d65ba6626673b6b771fd2c2d36d.jpg",
+          "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg",
+          "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg",
+          "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg",
+          "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg",
+          "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg",
+          "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg",
+          "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg",
+          "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg",
+          "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg",
+          "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg",
+          "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg",
+          "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg",
+          "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg",
+          "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "description": "Granular nanostructures visible in TEM image",
+              "scale": "nanometer range",
+              "extracted_from_image": "022b067f8d30ea1558d5638aa3ed8245fe5cb73e29bd7c7ba8448e07d1b7e8d7.jpg"
+            },
+            "source_image_file": "022b067f8d30ea1558d5638aa3ed8245fe5cb73e29bd7c7ba8448e07d1b7e8d7.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cell Potential Degradation Plot",
+            "properties": {
+              "type": "graph",
+              "x_axis": "Time (h)",
+              "y_axis": "Cell Potential (V)",
+              "conditions": "250 mA/cm²",
+              "extracted_from_image": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+            },
+            "source_image_file": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM_activated",
+            "properties": {
+              "description": "Activated form of the ICM catalyst",
+              "extracted_from_image": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+            },
+            "source_image_file": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "description": "Cluster of spherical nanoparticles",
+              "size_scale": "~2 nm scale bar",
+              "extracted_from_image": "1754d90d8dfccaf77171166c302def2b2fa9f77eccad9bfa463d601396e23aff.jpg"
+            },
+            "source_image_file": "1754d90d8dfccaf77171166c302def2b2fa9f77eccad9bfa463d601396e23aff.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium oxide reference",
+              "extracted_from_image": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+            },
+            "source_image_file": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Chemical entity referred to as ICM",
+              "extracted_from_image": "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg"
+            },
+            "source_image_file": "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Material or catalyst labeled ICM",
+              "extracted_from_image": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+            },
+            "source_image_file": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cell Potential vs Time Plot",
+            "properties": {
+              "type": "graph",
+              "x_axis": "Time (h)",
+              "y_axis": "Cell Potential (V)",
+              "conditions": [
+                "0.5 mA/cm²",
+                "80°C"
+              ],
+              "extracted_from_image": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+            },
+            "source_image_file": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "ICM-activated catalyst",
+              "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+            },
+            "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Base ICM material",
+              "extracted_from_image": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+            },
+            "source_image_file": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+          },
+          {
+            "type": "material",
+            "name": "ICM",
+            "properties": {
+              "description": "ICM-activated electrode",
+              "extracted_from_image": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+            },
+            "source_image_file": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "description": "ICM-activated material",
+              "extracted_from_image": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+            },
+            "source_image_file": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticle aggregate",
+            "properties": {
+              "shape": "diamond with four arms",
+              "morphology": "fuzzy, clustered nanoparticles",
+              "technique": "TEM",
+              "extracted_from_image": "4f483e0b45d3b328d611b7788c16181f1b087d65ba6626673b6b771fd2c2d36d.jpg"
+            },
+            "source_image_file": "4f483e0b45d3b328d611b7788c16181f1b087d65ba6626673b6b771fd2c2d36d.jpg"
+          },
+          {
+            "type": "process",
+            "name": "PEMMWE operation",
+            "properties": {
+              "description": "Proton Exchange Membrane Multielectrolyte Water Electrolyzer operation",
+              "extracted_from_image": "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg"
+            },
+            "source_image_file": "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Iridium-based catalyst material",
+              "extracted_from_image": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+            },
+            "source_image_file": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium oxide",
+              "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+            },
+            "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "technique": "TEM",
+              "scale_bar": "present",
+              "features": "spherical nanoparticles with textured surface",
+              "extracted_from_image": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+            },
+            "source_image_file": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "technique": "X-ray Diffraction",
+              "x_axis": "2θ (°)",
+              "x_range": [
+                20,
+                70
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "extracted_from_image": "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg"
+            },
+            "source_image_file": "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg"
+          },
+          {
+            "type": "atom",
+            "name": "Carbon atoms",
+            "properties": {
+              "color": "gray",
+              "count": "multiple",
+              "representation": "large gray spheres",
+              "extracted_from_image": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+            },
+            "source_image_file": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+          },
+          {
+            "type": "material",
+            "name": "ICM",
+            "properties": {
+              "description": "Initial Catalyst Material",
+              "extracted_from_image": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+            },
+            "source_image_file": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium oxide reference material",
+              "extracted_from_image": "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg"
+            },
+            "source_image_file": "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "formula": "IrO₂",
+              "description": "Iridium dioxide reference",
+              "extracted_from_image": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+            },
+            "source_image_file": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nafion 212",
+            "properties": {
+              "description": "membrane",
+              "extracted_from_image": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+            },
+            "source_image_file": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Initial catalyst material",
+              "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+            },
+            "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Iridium complex monolayer on purple substrate",
+              "extracted_from_image": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+            },
+            "source_image_file": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Initial cluster model",
+              "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+            },
+            "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Initial catalyst or material",
+              "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+            },
+            "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_ICM_activated",
+        "type": "chemical",
+        "name": "ICM_activated",
+        "aliases": [
+          "activated Ir-doped CoMn₂O₄",
+          "IrO_x/γ-MnO₂"
+        ],
+        "formula": "IrO_x/γ-MnO₂",
+        "composition": {
+          "Ir": {
+            "value": 11.3,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "average IrO_x nanocluster size": {
+            "value": 1.63,
+            "unit": "nm"
+          }
+        },
+        "related_images": [
+          "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg",
+          "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg",
+          "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg",
+          "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg",
+          "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg",
+          "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg",
+          "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg",
+          "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg",
+          "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg",
+          "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg",
+          "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg",
+          "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg",
+          "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg",
+          "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg",
+          "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg",
+          "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg",
+          "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg",
+          "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg",
+          "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg",
+          "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg",
+          "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg",
+          "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "condition",
+            "name": "250 mA/cm²",
+            "properties": {
+              "description": "Current density",
+              "extracted_from_image": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+            },
+            "source_image_file": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium oxide reference catalyst",
+              "extracted_from_image": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+            },
+            "source_image_file": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Iridium coordination material or catalyst",
+              "extracted_from_image": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+            },
+            "source_image_file": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM (activated)",
+            "properties": {
+              "description": "Activated form of ICM after activation process",
+              "extracted_from_image": "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg"
+            },
+            "source_image_file": "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "Tafel_slope": "52.1 mV dec⁻¹",
+              "extracted_from_image": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+            },
+            "source_image_file": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "description": "Activated form of ICM",
+              "extracted_from_image": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+            },
+            "source_image_file": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "Current Density 0.5 mA/cm²",
+            "properties": {
+              "extracted_from_image": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+            },
+            "source_image_file": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium(IV) oxide reference",
+              "extracted_from_image": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+            },
+            "source_image_file": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum - Pristine",
+            "properties": {
+              "time": "0 h",
+              "color": "dark blue",
+              "extracted_from_image": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+            },
+            "source_image_file": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image after PEMMWE operation",
+              "technique": "SEM",
+              "condition": "post-operation",
+              "features": [
+                "morphology",
+                "circled regions of interest"
+              ],
+              "extracted_from_image": "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg"
+            },
+            "source_image_file": "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "description": "Activated ICM",
+              "extracted_from_image": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+            },
+            "source_image_file": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrCoO4",
+            "properties": {
+              "description": "Iridium cobalt oxide",
+              "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+            },
+            "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "morphology": "spherical",
+              "surface": "rough/textured",
+              "aggregation": "clustered",
+              "size": "nanoscale",
+              "extracted_from_image": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+            },
+            "source_image_file": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+          },
+          {
+            "type": "reference",
+            "name": "JCPDS 77-0471",
+            "properties": {
+              "database": "JCPDS",
+              "card_number": "77-0471",
+              "extracted_from_image": "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg"
+            },
+            "source_image_file": "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg"
+          },
+          {
+            "type": "atom",
+            "name": "Oxygen atoms",
+            "properties": {
+              "color": "red",
+              "count": "several",
+              "representation": "orange-red spheres",
+              "extracted_from_image": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+            },
+            "source_image_file": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+          },
+          {
+            "type": "material",
+            "name": "ICM activated",
+            "properties": {
+              "description": "Activated ICM after varying activation times",
+              "extracted_from_image": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+            },
+            "source_image_file": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Left Panel",
+            "properties": {
+              "type": "Cell Potential vs Current Density",
+              "x_label": "Current Density (A/g)",
+              "y_label": "Cell Potential (V)",
+              "units": "V vs A/g",
+              "extracted_from_image": "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg"
+            },
+            "source_image_file": "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "γ-MnO2",
+            "properties": {
+              "formula": "γ-MnO₂",
+              "description": "Gamma manganese dioxide reference",
+              "extracted_from_image": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+            },
+            "source_image_file": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+          },
+          {
+            "type": "material",
+            "name": "ICM-activated",
+            "properties": {
+              "color": "red",
+              "temperature": "50°C",
+              "extracted_from_image": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+            },
+            "source_image_file": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "description": "Activated initial catalyst material",
+              "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+            },
+            "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "description": "Activated ICM with red IrO2 nanoclusters on purple substrate",
+              "extracted_from_image": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+            },
+            "source_image_file": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM-activated",
+            "properties": {
+              "description": "ICM activated state",
+              "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+            },
+            "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_mof_precursor_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_mof_precursor",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_icm",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_icm",
+        "properties": {
+          "form": "nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_icm_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_icm",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_h2so4_0.05M_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_h2so4_0.05M",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_icm_activated",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_icm_activated",
+        "properties": {
+          "form": "IrO_x nanoclusters on γ-MnO₂"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_surf_icm",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_surf_icm",
+        "properties": {
+          "form": "surface-deposited"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_chem_im",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_im",
+        "properties": {}
+      },
+      {
+        "id": "edge_input_chem_surf_icm_synth_step_5",
+        "type": "synthesis_input",
+        "source_id": "chem_surf_icm",
+        "target_id": "synth_step_5",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_h2so4_0.05M_synth_step_5",
+        "type": "synthesis_input",
+        "source_id": "chem_h2so4_0.05M",
+        "target_id": "synth_step_5",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_5_chem_surf_icm_activated",
+        "type": "synthesis_output",
+        "source_id": "synth_step_5",
+        "target_id": "chem_surf_icm_activated",
+        "properties": {
+          "form": "activated nanoclusters"
+        }
+      },
+      {
+        "id": "edge_input_chem_im_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_im",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_h2so4_0.05M_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_h2so4_0.05M",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_6_chem_im_activated",
+        "type": "synthesis_output",
+        "source_id": "synth_step_6",
+        "target_id": "chem_im_activated",
+        "properties": {
+          "form": "activated structure"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_7_chem_gamma_mno2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_7",
+        "target_id": "chem_gamma_mno2",
+        "properties": {}
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_gamma_MnO2",
+      "chem_ICM",
+      "chem_IrO2",
+      "chem_ICM_activated"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_IrO2",
+        "type": "chemical",
+        "name": "IrO2",
+        "aliases": [
+          "commercial IrO2"
+        ],
+        "formula": "IrO2"
+      },
+      {
+        "id": "chem_gamma_MnO2",
+        "type": "chemical",
+        "name": "γ-MnO2",
+        "aliases": [
+          "γ-MnO2"
+        ],
+        "formula": "MnO2"
+      },
+      {
+        "id": "chem_ICM",
+        "type": "chemical",
+        "name": "ICM",
+        "aliases": [
+          "Ir-doped CoMn2O4"
+        ],
+        "formula": "Ir-CoMn2O4",
+        "composition": {
+          "Ir": {
+            "value": 5.6,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 21,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_ICM_activated",
+        "type": "chemical",
+        "name": "ICM_activated",
+        "aliases": [
+          "ICMactivated",
+          "activated ICM"
+        ],
+        "formula": "IrOx/γ-MnO2",
+        "composition": {
+          "Ir": {
+            "value": 11.3,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "IrOx_nanocluster_size": {
+            "value": 1.63,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_ICM_activated",
+        "description": "OER LSV performance in 0.05 M H2SO4 (three-electrode setup)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "normalization": {
+            "value": "geometric area",
+            "unit": "geo"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm2_geo": {
+            "value": 232,
+            "unit": "mV"
+          },
+          "onset_potential": {
+            "value": 1.403,
+            "unit": "V_vs_RHE"
+          },
+          "Tafel_slope": {
+            "value": 54.5,
+            "unit": "mV/dec"
+          },
+          "mass_activity_at_1.53V": {
+            "value": 3562,
+            "unit": "A/g_Ir"
+          },
+          "TOF_at_1.53V": {
+            "value": 1.774,
+            "unit": "s^-1"
+          }
+        },
+        "source_text": "Figure 3a and Figure S37 present the LSV performance normalized by geometric area... ICM_activated exhibited an overpotential of 232 mV at 10 mA cm^-2 geo and an onset potential of 1.403 V... mass activity and TOF were calculated at 1.53 V based on iridium contents, ICM_activated exhibit 3562 A g_Ir^-1 and 1.774 s^-1"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_ICM_activated",
+        "description": "OER chronopotentiometry stability at 10 mA/cm2 geo in 0.05 M H2SO4",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm2_geo"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "stability_criterion": {
+            "value": ">10% degradation",
+            "unit": "DOE guideline"
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": ">250",
+            "unit": "h"
+          },
+          "degradation_rate": {
+            "value": 0.602,
+            "unit": "mV/h"
+          }
+        },
+        "source_text": "chronopotentiometry was performed at 10 mA cm^-2 geo... ICM_activated demonstrated stable operation for over 250 h, with a degradation rate of 0.602 mV h^-1. The criterion for stable operation was defined to be the point where the performance is degraded by more than 10% of the initial performance"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_ICM",
+        "description": "OER LSV performance in 0.05 M H2SO4 (three-electrode setup)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm2": {
+            "value": 292,
+            "unit": "mV"
+          },
+          "onset_potential": {
+            "value": 1.441,
+            "unit": "V_vs_RHE"
+          },
+          "mass_activity_at_1.53V": {
+            "value": 1438,
+            "unit": "A/g_Ir"
+          },
+          "TOF_at_1.53V": {
+            "value": 0.716,
+            "unit": "s^-1"
+          }
+        },
+        "source_text": "those of ICM (292 mV, 1.441 V)... ICM (1438 A g_Ir^-1, 0.716 s^-1)"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_IrO2",
+        "description": "OER LSV performance in 0.05 M H2SO4 (three-electrode setup)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm2": {
+            "value": 334,
+            "unit": "mV"
+          },
+          "onset_potential": {
+            "value": 1.47,
+            "unit": "V_vs_RHE"
+          },
+          "mass_activity_at_1.53V": {
+            "value": 38,
+            "unit": "A/g_Ir"
+          },
+          "TOF_at_1.53V": {
+            "value": 0.0187,
+            "unit": "s^-1"
+          }
+        },
+        "source_text": "commercial IrO2 (334 mV, 1.470 V)... commercial IrO2 (38 A g_Ir^-1, 0.0187 s^-1)"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_gamma_MnO2",
+        "description": "OER LSV performance in 0.05 M H2SO4 (three-electrode setup)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "current_density_at_2V": {
+            "value": 4,
+            "unit": "mA/cm2"
+          },
+          "Tafel_slope": {
+            "value": 552.1,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "γ-MnO2... displayed considerably lower performance with a current density of 4 mA cm^-2 at 2 V and a Tafel slope of 552.1 mV dec^-1"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_ICM_activated",
+        "description": "PEMWE polarization curve performance",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "PEMWE",
+            "unit": "electrochemical"
+          },
+          "temperature": {
+            "value": "50 or 80",
+            "unit": "°C"
+          },
+          "anode_catalyst_loading": {
+            "value": 0.28,
+            "unit": "mg_Ir/cm2"
+          },
+          "cathode": {
+            "value": "Pt/C",
+            "unit": "commercial"
+          },
+          "membrane": {
+            "value": "Nafion",
+            "unit": "membrane"
+          },
+          "electrolyte_flow": {
+            "value": "anode side only",
+            "unit": "flow cell"
+          }
+        },
+        "results_json": {
+          "current_density_at_2V": {
+            "value": 1.78,
+            "unit": "A/cm2"
+          },
+          "cell_potential_at_1A/cm2": {
+            "value": 1.748,
+            "unit": "V"
+          },
+          "mass_activity_at_2V": {
+            "value": 15946,
+            "unit": "A/g_Ir"
+          }
+        },
+        "source_text": "All cell evaluations were conducted at 50°C or 80°C, with the electrolyte flowing only on the anode side... At 2 V, ICM_activated exhibited a current density of 1.78 A cm^-2... cell potential of 1.748 V to reach 1 A cm^-2... mass activity of 15946 A g_Ir^-1"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_ICM_activated",
+        "description": "PEMWE stability at 250 mA/cm2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "PEMWE",
+            "unit": "electrochemical"
+          },
+          "current_density": {
+            "value": 250,
+            "unit": "mA/cm2"
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": ">1000",
+            "unit": "h"
+          },
+          "degradation_rate": {
+            "value": 0.013,
+            "unit": "mV/h"
+          }
+        },
+        "source_text": "sustained stable operation for a duration exceeding 1000 h at a current density of 250 mA cm^-2, showcasing an exceptionally low voltage degradation rate of 0.013 mV h^-1"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_ICM_activated",
+        "description": "PEMWE stability at 1000 mA/cm2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "PEMWE",
+            "unit": "electrochemical"
+          },
+          "current_density": {
+            "value": 1000,
+            "unit": "mA/cm2"
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": ">400",
+            "unit": "h"
+          },
+          "degradation_rate": {
+            "value": 0.042,
+            "unit": "mV/h"
+          }
+        },
+        "source_text": "when tested at a higher current density of 1000 mA cm^-2, ICM_activated continued to operate stably for over 400 h, exhibiting a degradation rate of just 0.042 mV h^-1"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_ICM",
+        "description": "PEMWE single-cell LSV - rapid deactivation",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "PEMWE",
+            "unit": "electrochemical"
+          },
+          "test_type": {
+            "value": "LSV scans",
+            "unit": "multiple cycles"
+          }
+        },
+        "results_json": {
+          "performance": {
+            "value": "rapid deactivation",
+            "unit": "significant current density decrease"
+          }
+        },
+        "source_text": "we evaluated its catalytic performance through linear sweep voltammetry (LSV) scans of a single-cell PEMWE. However, the stable LSV curves could not be successfully obtained due to the significant decrease in the current density of a single-cell after several cycles of LSV scans (Figure S9)"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_ICM_activated_test_1",
+        "type": "tested_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_ICM_activated_test_2",
+        "type": "tested_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_ICM_test_3",
+        "type": "tested_in",
+        "source_id": "chem_ICM",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IrO2_test_4",
+        "type": "tested_in",
+        "source_id": "chem_IrO2",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_gamma_MnO2_test_5",
+        "type": "tested_in",
+        "source_id": "chem_gamma_MnO2",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_ICM_activated_test_6",
+        "type": "tested_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_ICM_activated_test_7",
+        "type": "tested_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_ICM_activated_test_8",
+        "type": "tested_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "test_8",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_ICM",
+        "type": "chemical",
+        "name": "Ir-doped CoMn₂O₄",
+        "aliases": [
+          "ICM"
+        ],
+        "formula": "Ir-CoMn₂O₄",
+        "composition": {
+          "Ir": {
+            "value": 5.6,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "average particle size": {
+            "value": 21,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_ICM_activated",
+        "type": "chemical",
+        "name": "ICM_activated",
+        "aliases": [
+          "activated Ir-doped CoMn₂O₄",
+          "IrO_x/γ-MnO₂"
+        ],
+        "formula": "IrO_x/γ-MnO₂",
+        "composition": {
+          "Ir": {
+            "value": 11.3,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "average IrO_x nanocluster size": {
+            "value": 1.63,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "STEM",
+        "data_reported": true,
+        "characterization_summary": "STEM image shows ICM nanoparticles assembled into octahedral shape with average size ~21 nm.",
+        "evidence_snippet": "The average size of the ICM nanoparticles is approximately 21 nm, and they are assembled into an octahedral shape, as shown in the scanning transmission electron microscopy (STEM) image of Figure 1a...",
+        "related_images": [
+          "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg",
+          "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Figure a",
+            "properties": {
+              "type": "micrograph",
+              "technique": "likely TEM or HRTEM",
+              "scale_bar": "present",
+              "extracted_from_image": "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg"
+            },
+            "source_image_file": "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Panel a",
+            "properties": {
+              "description": "Progression: Bulk IrO2 → ICM → ICM activated",
+              "extracted_from_image": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+            },
+            "source_image_file": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "HAADF-STEM",
+        "data_reported": true,
+        "characterization_summary": "Cs-corrected HAADF-STEM shows lattice spacings of 3.0 Å and 4.9 Å corresponding to (200) and (011) facets of CoMn₂O₄ spinel; bright dots confirm Ir single atoms.",
+        "evidence_snippet": "The observed lattice spacings of 3.0 and 4.9Å correspond to the (200) and (011) facets of the CoMn₂O₄ tetragonal spinel structure. The bright dots in the HAADF-STEM images of Figure 1b...",
+        "related_images": [
+          "022b067f8d30ea1558d5638aa3ed8245fe5cb73e29bd7c7ba8448e07d1b7e8d7.jpg",
+          "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg",
+          "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg",
+          "1754d90d8dfccaf77171166c302def2b2fa9f77eccad9bfa463d601396e23aff.jpg",
+          "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg",
+          "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg",
+          "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg",
+          "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg",
+          "4f483e0b45d3b328d611b7788c16181f1b087d65ba6626673b6b771fd2c2d36d.jpg",
+          "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg",
+          "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg",
+          "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg",
+          "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg",
+          "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg",
+          "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg",
+          "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg",
+          "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "type": "Transmission Electron Microscopy",
+              "scale_bar": "5 nm",
+              "extracted_from_image": "022b067f8d30ea1558d5638aa3ed8245fe5cb73e29bd7c7ba8448e07d1b7e8d7.jpg"
+            },
+            "source_image_file": "022b067f8d30ea1558d5638aa3ed8245fe5cb73e29bd7c7ba8448e07d1b7e8d7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PEM",
+            "properties": {
+              "description": "Proton Exchange Membrane",
+              "extracted_from_image": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+            },
+            "source_image_file": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Initial state of the catalyst",
+              "extracted_from_image": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+            },
+            "source_image_file": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "technique": "Transmission Electron Microscopy",
+              "scale_bar": "2 nm",
+              "extracted_from_image": "1754d90d8dfccaf77171166c302def2b2fa9f77eccad9bfa463d601396e23aff.jpg"
+            },
+            "source_image_file": "1754d90d8dfccaf77171166c302def2b2fa9f77eccad9bfa463d601396e23aff.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir 4f",
+            "properties": {
+              "description": "Ir 4f XPS peak",
+              "extracted_from_image": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+            },
+            "source_image_file": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PEME",
+            "properties": {
+              "description": "Likely a polymer electrolyte membrane",
+              "extracted_from_image": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+            },
+            "source_image_file": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "description": "Activated form of ICM material",
+              "extracted_from_image": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+            },
+            "source_image_file": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Pristine",
+            "properties": {
+              "description": "Pristine material (untreated)",
+              "extracted_from_image": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+            },
+            "source_image_file": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM image",
+            "properties": {
+              "label": "a",
+              "description": "Transmission Electron Microscopy image showing diamond-shaped nanoparticle aggregate with four prominent arms and fuzzy white boundaries on dark background",
+              "scale_bar": "present",
+              "extracted_from_image": "4f483e0b45d3b328d611b7788c16181f1b087d65ba6626673b6b771fd2c2d36d.jpg"
+            },
+            "source_image_file": "4f483e0b45d3b328d611b7788c16181f1b087d65ba6626673b6b771fd2c2d36d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM",
+            "properties": {
+              "description": "Ion-conducting membrane",
+              "extracted_from_image": "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg"
+            },
+            "source_image_file": "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM_activated (Our work)",
+            "properties": {
+              "description": "Activated catalyst from our work",
+              "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+            },
+            "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+          },
+          {
+            "type": "image",
+            "name": "TEM image panel b",
+            "properties": {
+              "label": "b",
+              "technique": "Transmission Electron Microscopy",
+              "description": "High-resolution image showing nanostructured particles",
+              "extracted_from_image": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+            },
+            "source_image_file": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoMnO4",
+            "properties": {
+              "formula": "CoMnO4",
+              "extracted_from_image": "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg"
+            },
+            "source_image_file": "90b07351f3b99b4b69153247f226b247a66e795f59e66d98be7048e2e76f538d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Molecule",
+            "properties": {
+              "description": "3D molecular structure with multiple atoms",
+              "visualization": "ball-and-stick model",
+              "extracted_from_image": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+            },
+            "source_image_file": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM-activated",
+            "properties": {
+              "description": "ICM-activated material (likely catalyst)",
+              "extracted_from_image": "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg"
+            },
+            "source_image_file": "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "description": "ICM-activated material (likely catalyst)",
+              "extracted_from_image": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+            },
+            "source_image_file": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Polarization Curve",
+            "properties": {
+              "type": "electrochemical",
+              "x_axis": "Current density (A cm⁻²)",
+              "y_axis": "Cell Potential (V)",
+              "range_x": [
+                0,
+                2.0
+              ],
+              "range_y": [
+                1.4,
+                2.0
+              ],
+              "extracted_from_image": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+            },
+            "source_image_file": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EDS",
+        "data_reported": true,
+        "characterization_summary": "EDS elemental mapping of ICM confirms uniform dispersion of Ir single atoms without elemental segregation.",
+        "evidence_snippet": "The bright dots in the HAADF-STEM images of Figure 1b and Figure S8 and the EDS elemental mapping of Figure 1c confirm the uniform dispersion of Ir single atoms inside the lattice..."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "XRD pattern of ICM verifies CoMn₂O₄ tetragonal spinel crystal structure.",
+        "evidence_snippet": "The X-ray diffraction (XRD) pattern of ICM in Figure 1d further verifies the crystal structure of CoMn₂O₄, which is consistent with the HAADF-STEM results."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "ICP-AES",
+        "data_reported": true,
+        "characterization_summary": "ICP-AES determines Ir content of ICM as 5.6 wt%.",
+        "evidence_snippet": "The Ir content of ICM was determined to be 5.6 wt% by inductively coupled plasma atomic emission spectrometry (ICP-AES)."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "STEM",
+        "data_reported": true,
+        "characterization_summary": "STEM image shows Ir single atoms in ICM reconstructed to 1-2 nm IrO_x nanoclusters in ICM_activated.",
+        "evidence_snippet": "the Ir single atoms in ICM were reconstructed to 1-2 nm IrO_x nanoclusters in a controlled manner during the activation as shown in the STEM image of ICM_activated in Figure 1f.",
+        "related_images": [
+          "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Figure f",
+            "properties": {
+              "description": "Microscopy image showing morphology after activation of ICM",
+              "technique": "likely SEM or TEM",
+              "caption": "After activation of ICM (ICM activated)",
+              "scale_bar": "present",
+              "extracted_from_image": "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg"
+            },
+            "source_image_file": "2d63f8ea3ee205a463da480aaec39a51ee0c52736f5a9dc38257c4043611ce16.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "XRD pattern of ICM_activated shows γ-MnO₂ crystal structure with minor R-MnO₂ contribution.",
+        "evidence_snippet": "The support material of ICM_activated on which IrO_x nanoclusters were grown has the crystal structure of γ-MnO₂, according to its XRD pattern, with a minor contribution of R-MnO₂...",
+        "related_images": [
+          "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "description": "X-ray diffraction pattern with intensity vs 2θ",
+              "x_axis": "2θ (degrees)",
+              "y_axis": "Intensity (a.u.)",
+              "peaks": "Multiple peaks marked with stars",
+              "extracted_from_image": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+            },
+            "source_image_file": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "ICP-AES",
+        "data_reported": true,
+        "characterization_summary": "ICP-AES shows Ir content increase from 5.6 to 11.3 wt% in ICM_activated due to Co leaching.",
+        "evidence_snippet": "During the activation, a complete leaching of Co and a partial leaching of Mn were detected with ICP-AES, while the Ir content was found to remain in the catalyst, leading to an increase in the Ir content from 5.6 to 11.3 wt% in ICM_activated..."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "HAADF-STEM",
+        "data_reported": true,
+        "characterization_summary": "Cs-corrected HAADF-STEM reveals intergrowth of ramsdellite (1×2 tunnel) and pyrolusite (1×1 tunnel) characteristic of γ-MnO₂ structure in ICM_activated.",
+        "evidence_snippet": "The intergrowth of ramsdellite (1×2 tunnel) and pyrolusite (1×1 tunnel), which is a characteristic feature of the structure of γ-MnO₂, is directly observed in Figure 2a..."
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "EDS",
+        "data_reported": true,
+        "characterization_summary": "EDS line scan on HAADF-STEM image of ICM_activated verifies formation of IrO_x nanoclusters on γ-MnO₂ surface.",
+        "evidence_snippet": "The strong Ir signals detected on the EDS line scan of bright atomic clusters in the HAADF-STEM image additionally verifies the formation of IrO_x nanoclusters on the surface of γ-MnO₂..."
+      },
+      {
+        "id": "char_11",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM imaging determines average size of IrO_x nanoclusters in ICM_activated as 1.63 nm.",
+        "evidence_snippet": "The average size of IrO_x nanoclusters was determined to be 1.63 nm based on the TEM imaging (Figure S27)."
+      },
+      {
+        "id": "char_12",
+        "type": "characterization",
+        "method_name": "Ir L₃-edge FT-EXAFS",
+        "data_reported": true,
+        "characterization_summary": "FT-EXAFS shows significantly reduced second shell scattering and shorter Ir-O bond length in ICM_activated vs ICM, indicating Ir transformation to disordered IrO_x nanoclusters.",
+        "evidence_snippet": "the FT-EXAFS of ICM_activated shows significantly reduced second shell scattering compared to that of ICM (Figure 2d). ... the bond length of Ir-O in ICM_activated in Figure 2d is noticeably shorter than that of ICM..."
+      },
+      {
+        "id": "char_13",
+        "type": "characterization",
+        "method_name": "Ir L₃-edge XANES",
+        "data_reported": true,
+        "characterization_summary": "Ir L₃-edge XANES shows positive shift and increased white line intensity in ICM_activated indicating higher Ir oxidation state (>4+) vs ICM.",
+        "evidence_snippet": "the positive shift, increased intensity of Ir L₃-edge XANES white line ... demonstrate a higher oxidation state of Ir (>4+) in ICM_activated compared to ICM"
+      },
+      {
+        "id": "char_14",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "Ir 4f XPS shows increased binding energy in ICM_activated indicating higher Ir oxidation state (>4+) compared to ICM.",
+        "evidence_snippet": "the increased binding energy of Ir 4f XPS demonstrate a higher oxidation state of Ir (>4+) in ICM_activated compared to ICM",
+        "related_images": [
+          "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg",
+          "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg",
+          "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg",
+          "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg",
+          "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg",
+          "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg",
+          "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg",
+          "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg",
+          "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg",
+          "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg",
+          "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg",
+          "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg",
+          "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "condition",
+            "name": "0.13 mV/h",
+            "properties": {
+              "description": "Degradation rate",
+              "extracted_from_image": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+            },
+            "source_image_file": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "50°C",
+            "properties": {
+              "description": "Temperature",
+              "extracted_from_image": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+            },
+            "source_image_file": "0c93ceb2bf84696d1ba6b53a457e18cf98461325135226651245ad0924bf7db8.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Mass Activity",
+            "properties": {
+              "unit": "A/g at 1.53 V",
+              "values": {
+                "ICM": 500,
+                "ICM_activated": 4000,
+                "IrO2": 1500
+              },
+              "extracted_from_image": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+            },
+            "source_image_file": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TOF",
+            "properties": {
+              "unit": "s^-1 at 1.53 V",
+              "values": {
+                "ICM": 0.04,
+                "ICM_activated": 1.6,
+                "IrO2": 0.8
+              },
+              "extracted_from_image": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+            },
+            "source_image_file": "0f11536c2ff7de560d8bba058d140173d83a59ca52afd1567d2f8466c82d3240.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ICM activated",
+            "properties": {
+              "description": "Activated form of ICM",
+              "extracted_from_image": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+            },
+            "source_image_file": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy",
+              "region": "Ir 4f",
+              "binding_energy_range": "52-64 eV",
+              "x_axis": "Binding Energy (eV)",
+              "y_axis": "Intensity",
+              "extracted_from_image": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+            },
+            "source_image_file": "2b459f26d8d6a40b3bcb133cbbd53f39b0d616a1c35e8bc1a33582a059f6e061.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "Temperature 80°C",
+            "properties": {
+              "extracted_from_image": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+            },
+            "source_image_file": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "Degradation Rate 0.02 mV/h",
+            "properties": {
+              "value": "0.02 mV/h",
+              "extracted_from_image": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+            },
+            "source_image_file": "361b2bb30f9de873df9b459ab0fb4d73e3a7489f321591bf750e12f278ef9b17.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir metal",
+            "properties": {
+              "description": "Iridium metal reference",
+              "extracted_from_image": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+            },
+            "source_image_file": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XANES spectrum",
+            "properties": {
+              "technique": "X-ray Absorption Near Edge Structure",
+              "x_axis": "Energy (eV)",
+              "x_range": [
+                11180,
+                11300
+              ],
+              "y_axis": "Normalized absorption (a.u.)",
+              "label": "Figure e",
+              "extracted_from_image": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+            },
+            "source_image_file": "3cee28bdedfb2c77af5dff116a99fac053da652709a65e7e44d46df9a51f5f96.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum - 12h",
+            "properties": {
+              "time": "12 h",
+              "color": "light blue",
+              "extracted_from_image": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+            },
+            "source_image_file": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum - 24h",
+            "properties": {
+              "time": "24 h",
+              "color": "cyan",
+              "extracted_from_image": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+            },
+            "source_image_file": "4eef09bcf3b6aba834278513c69afb1adf18a632c7f368ad1cba127ceeb0f8c0.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "ICM after PEMMWE",
+            "properties": {
+              "description": "Ion-conducting membrane after electrolyzer operation",
+              "visual_features": [
+                "white fluffy/porous structures",
+                "multiple highlighted regions"
+              ],
+              "extracted_from_image": "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg"
+            },
+            "source_image_file": "5597c6ca7f476cc1985252f2215609aec7d934a5963241a798513ea76bd5d256.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir0.9Co0.9O4",
+            "properties": {
+              "description": "Iridium cobalt oxide with specific stoichiometry",
+              "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+            },
+            "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir-NiO2",
+            "properties": {
+              "description": "Iridium nickel oxide",
+              "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+            },
+            "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Highlighted Particle",
+            "properties": {
+              "location": "white dashed rectangle",
+              "description": "magnified spherical nanoparticle with distinct surface texture",
+              "extracted_from_image": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+            },
+            "source_image_file": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+          },
+          {
+            "type": "scale",
+            "name": "Scale Bar",
+            "properties": {
+              "position": "bottom right",
+              "purpose": "size reference for nanoparticles",
+              "extracted_from_image": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+            },
+            "source_image_file": "8f62007ae1d8e19e909c0049f7e8a50aa68ddf53067854717a306d65b2aac3c7.jpg"
+          },
+          {
+            "type": "atom",
+            "name": "Nitrogen atoms",
+            "properties": {
+              "color": "blue",
+              "count": "few",
+              "representation": "blue spheres",
+              "extracted_from_image": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+            },
+            "source_image_file": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+          },
+          {
+            "type": "bond",
+            "name": "Covalent bonds",
+            "properties": {
+              "representation": "white cylindrical sticks",
+              "type": "single/double bonds",
+              "extracted_from_image": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+            },
+            "source_image_file": "9fcaf03494636029ece11fad52e767bd4a3f81b4418c34537a768ca3fc038c99.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Right Panel",
+            "properties": {
+              "type": "Mass Activity vs Current Density",
+              "x_label": "Current Density (A/g)",
+              "y_label": "Mass Activity (A/g at 1.6V)",
+              "units": "A/g @ 1.6V vs A/g",
+              "extracted_from_image": "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg"
+            },
+            "source_image_file": "c29698005fd5432f89d6074326d81f9ca25a5fe92364aa921451ede6d4c1c491.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV curve (ICM activated)",
+            "properties": {
+              "color": "red",
+              "data_type": "current density vs potential",
+              "extracted_from_image": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+            },
+            "source_image_file": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV curve (ICM)",
+            "properties": {
+              "color": "blue",
+              "data_type": "current density vs potential",
+              "extracted_from_image": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+            },
+            "source_image_file": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+          },
+          {
+            "type": "material",
+            "name": "IrO₂",
+            "properties": {
+              "color": "black",
+              "extracted_from_image": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+            },
+            "source_image_file": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "50°C",
+            "properties": {
+              "extracted_from_image": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+            },
+            "source_image_file": "d73df373257652c1ab9882878aa0a9271b99727bf3dedc4f264671a87c3cf388.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_15",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM determines average IrO_x nanocluster size in ICM_activated as 1.63 nm.",
+        "evidence_snippet": "The average size of IrO_x nanoclusters was determined to be 1.63 nm based on the TEM imaging (Figure S27)."
+      },
+      {
+        "id": "hkl_101",
+        "type": "crystallographic",
+        "name": "[101]",
+        "properties": {
+          "miller_index": "[101]",
+          "orientation": "zone axis",
+          "extracted_from_image": "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg"
+        },
+        "source_image_file": "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg"
+      },
+      {
+        "id": "nanoparticles",
+        "type": "morphology",
+        "name": "Nanoparticles",
+        "properties": {
+          "description": "hexagonal/rod-like nanoparticles",
+          "arrangement": "dense array",
+          "extracted_from_image": "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg"
+        },
+        "source_image_file": "06ccc03f9c466dfa2ef1d3618bd3ed7af2470d5dfd3f4526b6480fe5f75db392.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "characterization",
+        "name": "LSV curve (IrO2)",
+        "properties": {
+          "color": "black",
+          "data_type": "current density vs potential",
+          "extracted_from_image": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+        },
+        "source_image_file": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+      },
+      {
+        "id": "activation_process",
+        "type": "process",
+        "name": "Activation Process",
+        "properties": {
+          "duration": "0-25 hours",
+          "extracted_from_image": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+        },
+        "source_image_file": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+      },
+      {
+        "id": "plot",
+        "type": "characterization",
+        "name": "Tafel Plot",
+        "properties": {
+          "x_axis": "Log j (mA cm⁻²)",
+          "y_axis": "Potential (V vs. RHE)",
+          "description": "Linear region slopes indicated",
+          "extracted_from_image": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+        },
+        "source_image_file": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+      },
+      {
+        "id": "slope_54.5",
+        "type": "characterization",
+        "name": "54.5 mV dec⁻¹",
+        "properties": {
+          "value": "54.5 mV dec⁻¹",
+          "extracted_from_image": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+        },
+        "source_image_file": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+      },
+      {
+        "id": "slope_552.1",
+        "type": "characterization",
+        "name": "552.1 mV dec⁻¹",
+        "properties": {
+          "value": "552.1 mV dec⁻¹",
+          "extracted_from_image": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+        },
+        "source_image_file": "3086b36680c58a3cfdda1856e575e4a7dc67100f4a4785ea0e3e5bc08ae51210.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Metal Composition Chart",
+        "properties": {
+          "type": "line graph",
+          "x_axis": "Time of activation (hr)",
+          "y_axis": "Metal composition (wt%)",
+          "x_range": [
+            0,
+            25
+          ],
+          "y_range": [
+            0,
+            60
+          ],
+          "extracted_from_image": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+        },
+        "source_image_file": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+      },
+      {
+        "id": "ICM_curve",
+        "type": "data",
+        "name": "ICM Performance Curve",
+        "properties": {
+          "color": "red",
+          "trend": "Stable then rising",
+          "extracted_from_image": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+        },
+        "source_image_file": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+      },
+      {
+        "id": "ICM_activated_curve",
+        "type": "data",
+        "name": "ICM activated Performance Curve",
+        "properties": {
+          "color": "blue",
+          "trend": "Initial stability, then sharp rise",
+          "extracted_from_image": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+        },
+        "source_image_file": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+      },
+      {
+        "id": "IrO2_curve",
+        "type": "data",
+        "name": "IrO2 Performance Curve",
+        "properties": {
+          "color": "black",
+          "trend": "Gradual rise",
+          "extracted_from_image": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+        },
+        "source_image_file": "34a8b91e83dd5314b0febce988ee504a8828be69605edf628f13445c0960b27d.jpg"
+      },
+      {
+        "id": "ICM-activated",
+        "type": "chemical",
+        "name": "ICM-activated",
+        "properties": {
+          "description": "ICM-activated form of catalyst",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "bare",
+        "type": "chemical",
+        "name": "* (bare)",
+        "properties": {
+          "description": "Bare active site",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "OH",
+        "type": "chemical",
+        "name": "*OH",
+        "properties": {
+          "description": "Hydroxyl intermediate",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "O",
+        "type": "element",
+        "name": "O",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "OOH",
+        "type": "chemical",
+        "name": "*OOH",
+        "properties": {
+          "description": "Perhydroxyl intermediate",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "*O2",
+        "properties": {
+          "description": "Oxygen molecule product",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "OER",
+        "type": "process",
+        "name": "Oxygen Evolution Reaction",
+        "properties": {
+          "description": "Electrocatalytic process",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "deltaG_ICM_045eV",
+        "type": "property",
+        "name": "+0.45 eV",
+        "properties": {
+          "description": "Overpotential for ICM",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "deltaG_IrO2_115eV",
+        "type": "property",
+        "name": "+1.15 eV",
+        "properties": {
+          "description": "Overpotential for IrO2",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "deltaG_125eV",
+        "type": "property",
+        "name": "+1.25 eV",
+        "properties": {
+          "description": "Reference overpotential value",
+          "extracted_from_image": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+        },
+        "source_image_file": "3a37b6a59a38c4acf8d16f6f81370f1234de235291afa0d68b7b694dc349714b.jpg"
+      },
+      {
+        "id": "graph_g",
+        "type": "figure",
+        "name": "Figure g",
+        "properties": {
+          "description": "Bar chart of total metal contents in electrodes after OER operation",
+          "extracted_from_image": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+        },
+        "source_image_file": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+      },
+      {
+        "id": "oer",
+        "type": "process",
+        "name": "OER",
+        "properties": {
+          "description": "Oxygen Evolution Reaction",
+          "extracted_from_image": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+        },
+        "source_image_file": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+      },
+      {
+        "id": "mn",
+        "type": "chemical",
+        "name": "Mn",
+        "properties": {
+          "description": "Manganese metal",
+          "extracted_from_image": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+        },
+        "source_image_file": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+      },
+      {
+        "id": "ir",
+        "type": "chemical",
+        "name": "Ir",
+        "properties": {
+          "description": "Iridium metal",
+          "extracted_from_image": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+        },
+        "source_image_file": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+      },
+      {
+        "id": "co",
+        "type": "chemical",
+        "name": "Co",
+        "properties": {
+          "description": "Cobalt metal",
+          "extracted_from_image": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+        },
+        "source_image_file": "b22023953b291a4d0fd9667eab76489d94d8c678f779b190f97e1fa082a36d95.jpg"
+      },
+      {
+        "id": "t0",
+        "type": "timepoint",
+        "name": "0 h",
+        "properties": {
+          "description": "Initial time point",
+          "extracted_from_image": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+        },
+        "source_image_file": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+      },
+      {
+        "id": "t250",
+        "type": "timepoint",
+        "name": "250 h",
+        "properties": {
+          "description": "After 250 hours of operation",
+          "extracted_from_image": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+        },
+        "source_image_file": "3fbdef2b69f7a4fbb2d7c9c08d8aaffa59c5bb538c523e33031ad6c4310ae4f2.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "characterization",
+        "name": "LSV curve (γ-MnO2)",
+        "properties": {
+          "color": "green",
+          "data_type": "current density vs potential",
+          "extracted_from_image": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+        },
+        "source_image_file": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "experiment",
+        "name": "LSV measurement",
+        "properties": {
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "range_x": [
+            1.2,
+            1.6
+          ],
+          "range_y": [
+            0,
+            80
+          ],
+          "extracted_from_image": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+        },
+        "source_image_file": "cd4599e90ec7b403c45a82e35ef0cff0a2d3588fc0ae8a2fb211fc741842e083.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "chemical",
+        "name": "IrW-SnOx",
+        "properties": {
+          "description": "Iridium tungsten tin oxide",
+          "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+        },
+        "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+      },
+      {
+        "id": "red_particle",
+        "type": "chemical",
+        "name": "Red Particle",
+        "properties": {
+          "color": "red",
+          "count": 28,
+          "description": "Dominant spherical particles, likely quantum dots or nanoparticles emitting red fluorescence",
+          "extracted_from_image": "52e685f573886fefe5165e9f07009587513155a525a30680aa09002741aca958.jpg"
+        },
+        "source_image_file": "52e685f573886fefe5165e9f07009587513155a525a30680aa09002741aca958.jpg"
+      },
+      {
+        "id": "blue_particle",
+        "type": "chemical",
+        "name": "Blue Particle",
+        "properties": {
+          "color": "blue",
+          "count": 16,
+          "description": "Spherical particles emitting blue fluorescence",
+          "extracted_from_image": "52e685f573886fefe5165e9f07009587513155a525a30680aa09002741aca958.jpg"
+        },
+        "source_image_file": "52e685f573886fefe5165e9f07009587513155a525a30680aa09002741aca958.jpg"
+      },
+      {
+        "id": "green_particle",
+        "type": "chemical",
+        "name": "Green Particle",
+        "properties": {
+          "color": "green",
+          "count": 6,
+          "description": "Spherical particles emitting green fluorescence",
+          "extracted_from_image": "52e685f573886fefe5165e9f07009587513155a525a30680aa09002741aca958.jpg"
+        },
+        "source_image_file": "52e685f573886fefe5165e9f07009587513155a525a30680aa09002741aca958.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "EDX Elemental Mapping",
+        "properties": {
+          "description": "Color-coded elemental distribution map from electron dispersive X-ray spectroscopy",
+          "extracted_from_image": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+        },
+        "source_image_file": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+      },
+      {
+        "id": "nanoparticle_ensemble",
+        "type": "chemical",
+        "name": "Multicolor Nanoparticle Ensemble",
+        "properties": {
+          "composition": "Red (56%), Blue (32%), Green (12%)",
+          "structure": "uniform spherical nanoparticles",
+          "extracted_from_image": "52e685f573886fefe5165e9f07009587513155a525a30680aa09002741aca958.jpg"
+        },
+        "source_image_file": "52e685f573886fefe5165e9f07009587513155a525a30680aa09002741aca958.jpg"
+      },
+      {
+        "id": "micrograph",
+        "type": "characterization",
+        "name": "TEM/SEM Micrograph",
+        "properties": {
+          "type": "microscopy",
+          "features": "nanoparticles with yellow line scan path",
+          "scale": "nanometer range",
+          "extracted_from_image": "55253823c319b80d7a330b32612baf2b51c926a793f0d736c8d7de0b317d6b47.jpg"
+        },
+        "source_image_file": "55253823c319b80d7a330b32612baf2b51c926a793f0d736c8d7de0b317d6b47.jpg"
+      },
+      {
+        "id": "line_scan",
+        "type": "characterization",
+        "name": "EDS Line Scan",
+        "properties": {
+          "technique": "Energy Dispersive Spectroscopy",
+          "path": "yellow line across nanoparticles",
+          "extracted_from_image": "55253823c319b80d7a330b32612baf2b51c926a793f0d736c8d7de0b317d6b47.jpg"
+        },
+        "source_image_file": "55253823c319b80d7a330b32612baf2b51c926a793f0d736c8d7de0b317d6b47.jpg"
+      },
+      {
+        "id": "Ir",
+        "type": "chemical",
+        "name": "Iridium",
+        "properties": {
+          "color": "red",
+          "element": "Ir",
+          "extracted_from_image": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+        },
+        "source_image_file": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+      },
+      {
+        "id": "Mn",
+        "type": "element",
+        "name": "Mn",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "characterization",
+        "name": "Distance Axis",
+        "properties": {
+          "unit": "nm",
+          "range": "0-6 nm",
+          "extracted_from_image": "55253823c319b80d7a330b32612baf2b51c926a793f0d736c8d7de0b317d6b47.jpg"
+        },
+        "source_image_file": "55253823c319b80d7a330b32612baf2b51c926a793f0d736c8d7de0b317d6b47.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "characterization",
+        "name": "Intensity Axis",
+        "properties": {
+          "unit": "a.u.",
+          "label": "Intensity (a.u.)",
+          "extracted_from_image": "55253823c319b80d7a330b32612baf2b51c926a793f0d736c8d7de0b317d6b47.jpg"
+        },
+        "source_image_file": "55253823c319b80d7a330b32612baf2b51c926a793f0d736c8d7de0b317d6b47.jpg"
+      },
+      {
+        "id": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d_1",
+        "type": "chemical",
+        "name": "Nafion Membrane",
+        "properties": {
+          "description": "Proton exchange membrane",
+          "extracted_from_image": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+        },
+        "source_image_file": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+      },
+      {
+        "id": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d_2",
+        "type": "chemical",
+        "name": "Pt/C",
+        "properties": {
+          "description": "Platinum on carbon catalyst",
+          "extracted_from_image": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+        },
+        "source_image_file": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+      },
+      {
+        "id": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d_3",
+        "type": "chemical",
+        "name": "ICM activated",
+        "properties": {
+          "description": "Ion-conducting material activated catalyst",
+          "extracted_from_image": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+        },
+        "source_image_file": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+      },
+      {
+        "id": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d_4",
+        "type": "component",
+        "name": "Platinized Titanium Flow Field",
+        "properties": {
+          "description": "Anode flow field plate",
+          "extracted_from_image": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+        },
+        "source_image_file": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+      },
+      {
+        "id": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d_5",
+        "type": "component",
+        "name": "Graphite Flow Field",
+        "properties": {
+          "description": "Cathode flow field plate",
+          "extracted_from_image": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+        },
+        "source_image_file": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+      },
+      {
+        "id": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d_6",
+        "type": "component",
+        "name": "PTFE Gasket",
+        "properties": {
+          "description": "Sealing gasket",
+          "extracted_from_image": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+        },
+        "source_image_file": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+      },
+      {
+        "id": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d_7",
+        "type": "component",
+        "name": "Platinized Titanium GDL",
+        "properties": {
+          "description": "Gas diffusion layer on anode side",
+          "extracted_from_image": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+        },
+        "source_image_file": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+      },
+      {
+        "id": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d_8",
+        "type": "component",
+        "name": "Carbon GDL with MPL",
+        "properties": {
+          "description": "Gas diffusion layer with microporous layer on cathode side",
+          "extracted_from_image": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+        },
+        "source_image_file": "6bf3e27e6b1b34930100c20e8c6727f7463529b0addb0f7e30197fc76781b43d.jpg"
+      },
+      {
+        "id": "IrO2_potential",
+        "type": "data",
+        "name": "IrO2 dissolution potential",
+        "properties": {
+          "value": "~0.45 V",
+          "color": "dark gray",
+          "extracted_from_image": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+        },
+        "source_image_file": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+      },
+      {
+        "id": "ICM_potential",
+        "type": "data",
+        "name": "ICM dissolution potential",
+        "properties": {
+          "value": "~0.65 V",
+          "color": "blue",
+          "extracted_from_image": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+        },
+        "source_image_file": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+      },
+      {
+        "id": "ICM_activated_potential",
+        "type": "data",
+        "name": "ICM activated dissolution potential",
+        "properties": {
+          "value": "~1.5 V",
+          "color": "red",
+          "extracted_from_image": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+        },
+        "source_image_file": "7cadb2c7d755325fb2e504b2ccefeb6b92c5f3ded93d950116406968e54fd342.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "IrO@Tb2",
+        "properties": {
+          "description": "Iridium oxide on terbium support",
+          "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+        },
+        "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "IrNiIrO",
+        "properties": {
+          "description": "Iridium nickel iridium oxide",
+          "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+        },
+        "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "Commercial IrO2",
+        "properties": {
+          "description": "Commercial iridium oxide",
+          "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+        },
+        "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "Mass activity vs Overpotential",
+        "properties": {
+          "x_axis": "Overpotential at 10 mA cm^-2 (mV)",
+          "y_axis": "Mass activity (A g^-1)",
+          "x_range": [
+            200,
+            340
+          ],
+          "y_range": [
+            0,
+            4000
+          ],
+          "extracted_from_image": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+        },
+        "source_image_file": "80e8ed1fca4ea517019ff663681aecbf0f26a1a09c68c9c6145e18bab1b09279.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node1",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "technique": "X-ray Photoelectron Spectroscopy",
+          "axis_x": "Binding energy (eV)",
+          "axis_y": "Intensity (a.u.)",
+          "range": "56-70 eV",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node2",
+        "type": "chemical",
+        "name": "Ir 4f",
+        "properties": {
+          "element": "Ir",
+          "orbital": "4f",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node3",
+        "type": "chemical",
+        "name": "IrF₂",
+        "properties": {
+          "formula": "IrF₂",
+          "color": "red",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node4",
+        "type": "chemical",
+        "name": "IrF₅",
+        "properties": {
+          "formula": "IrF₅",
+          "color": "red",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node5",
+        "type": "chemical",
+        "name": "IrF₆",
+        "properties": {
+          "formula": "IrF₆",
+          "color": "red",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node6",
+        "type": "chemical",
+        "name": "Co 3p",
+        "properties": {
+          "element": "Co",
+          "orbital": "3p",
+          "color": "blue",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node7",
+        "type": "chemical",
+        "name": "ICM-activated",
+        "properties": {
+          "description": "ICM-activated material",
+          "color": "blue",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node8",
+        "type": "chemical",
+        "name": "ICM",
+        "properties": {
+          "description": "ICM material",
+          "color": "blue",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767_node9",
+        "type": "chemical",
+        "name": "IrO₂",
+        "properties": {
+          "formula": "IrO₂",
+          "color": "black",
+          "extracted_from_image": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+        },
+        "source_image_file": "91d7e8d591bb50e7c555ee4985affcdeb682d6f77b038a6d017b93996befd767.jpg"
+      },
+      {
+        "id": "JCPDS_14_0644",
+        "type": "database",
+        "name": "JCPDS 14-0644",
+        "properties": {
+          "database": "JCPDS",
+          "card_number": "14-0644",
+          "associated_with": "γ-MnO₂",
+          "extracted_from_image": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+        },
+        "source_image_file": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+      },
+      {
+        "id": "JCPDS_82_2169",
+        "type": "database",
+        "name": "JCPDS 82-2169",
+        "properties": {
+          "database": "JCPDS",
+          "card_number": "82-2169",
+          "associated_with": "R-MnO₂",
+          "extracted_from_image": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+        },
+        "source_image_file": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+      },
+      {
+        "id": "sample",
+        "type": "chemical",
+        "name": "Sample",
+        "properties": {
+          "description": "Experimental XRD sample showing match with MnO₂ standards",
+          "extracted_from_image": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+        },
+        "source_image_file": "d20f6d6487648bf4307d8c9322b8eed339f9ff1df021eba0f9dc1f41525d9ea7.jpg"
+      },
+      {
+        "id": "JACS",
+        "type": "journal",
+        "name": "Journal of the American Chemical Society (JACS)",
+        "properties": {
+          "publisher": "ACS Publications",
+          "extracted_from_image": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+        },
+        "source_image_file": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+      },
+      {
+        "id": "cover_image",
+        "type": "image",
+        "name": "Journal Cover Image",
+        "properties": {
+          "description": "Artistic representation featuring molecular structures",
+          "extracted_from_image": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+        },
+        "source_image_file": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+      },
+      {
+        "id": "mol1",
+        "type": "chemical",
+        "name": "Molecule 1",
+        "properties": {
+          "description": "Purple polycyclic aromatic structure (left side)",
+          "visualization": "3D rendered",
+          "extracted_from_image": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+        },
+        "source_image_file": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+      },
+      {
+        "id": "mol2",
+        "type": "chemical",
+        "name": "Molecule 2",
+        "properties": {
+          "description": "Yellow highlighted core structure (center)",
+          "visualization": "3D rendered",
+          "extracted_from_image": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+        },
+        "source_image_file": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+      },
+      {
+        "id": "mol3",
+        "type": "chemical",
+        "name": "Molecule 3",
+        "properties": {
+          "description": "Red polycyclic structure (right side)",
+          "visualization": "3D rendered",
+          "extracted_from_image": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+        },
+        "source_image_file": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+      },
+      {
+        "id": "sphere",
+        "type": "visual_element",
+        "name": "Glowing Sphere",
+        "properties": {
+          "description": "White luminous orb behind molecules",
+          "position": "background center",
+          "extracted_from_image": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+        },
+        "source_image_file": "d30642247733566499bc6c9d6cf5f0c15e67cf4cadeec119ae5723b710c165dd.jpg"
+      },
+      {
+        "id": "Co",
+        "type": "element",
+        "name": "Co",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "overlay",
+        "type": "characterization",
+        "name": "Elemental Overlay",
+        "properties": {
+          "description": "Composite map showing all elements superimposed",
+          "extracted_from_image": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+        },
+        "source_image_file": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+      },
+      {
+        "id": "material",
+        "type": "chemical",
+        "name": "Ir-Mn-Co-O Nanomaterial",
+        "properties": {
+          "composition": "Ir, Mn, Co, O containing nanoparticles",
+          "extracted_from_image": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+        },
+        "source_image_file": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+      },
+      {
+        "id": "scalebar",
+        "type": "annotation",
+        "name": "Scale Bar",
+        "properties": {
+          "description": "Reference scale in bottom left image",
+          "extracted_from_image": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+        },
+        "source_image_file": "dd9384425b22c46c0cbe4c04602baeb73cf3ae207b46b21b4013ef265fd9c39a.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "characterization",
+        "name": "Panel b",
+        "properties": {
+          "description": "Structural model with Ir nanocluster, single atom, and 0.3 nm label",
+          "extracted_from_image": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+        },
+        "source_image_file": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+      },
+      {
+        "id": "nanomaterial",
+        "type": "chemical",
+        "name": "Nanocrystalline material",
+        "properties": {
+          "description": "Nanoparticles or nanocrystals with ordered lattice structure",
+          "extracted_from_image": "dde1a85ca3383604f5bbadd5ee764e6b4a225247c51633dd035c26f5ed702b82.jpg"
+        },
+        "source_image_file": "dde1a85ca3383604f5bbadd5ee764e6b4a225247c51633dd035c26f5ed702b82.jpg"
+      },
+      {
+        "id": "lattice_fringes",
+        "type": "structural_feature",
+        "name": "Lattice fringes",
+        "properties": {
+          "description": "Periodic atomic planes visible in HRTEM image indicating crystallinity",
+          "extracted_from_image": "dde1a85ca3383604f5bbadd5ee764e6b4a225247c51633dd035c26f5ed702b82.jpg"
+        },
+        "source_image_file": "dde1a85ca3383604f5bbadd5ee764e6b4a225247c51633dd035c26f5ed702b82.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "annotation",
+        "name": "Scale bar",
+        "properties": {
+          "description": "White scale bar in lower right, likely indicating 5 nm or 10 nm scale",
+          "extracted_from_image": "dde1a85ca3383604f5bbadd5ee764e6b4a225247c51633dd035c26f5ed702b82.jpg"
+        },
+        "source_image_file": "dde1a85ca3383604f5bbadd5ee764e6b4a225247c51633dd035c26f5ed702b82.jpg"
+      },
+      {
+        "id": "Ir_5d",
+        "type": "chemical",
+        "name": "Ir 5d",
+        "properties": {
+          "description": "Iridium 5d orbitals",
+          "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+        },
+        "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+      },
+      {
+        "id": "d-band_center",
+        "type": "feature",
+        "name": "d-band center",
+        "properties": {
+          "description": "d-band center energy level",
+          "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+        },
+        "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+      },
+      {
+        "id": "total_band_center",
+        "type": "feature",
+        "name": "Total band center",
+        "properties": {
+          "description": "Total density of states band center",
+          "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+        },
+        "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+      },
+      {
+        "id": "DOS_spectrum_IrO2",
+        "type": "characterization",
+        "name": "DOS spectrum IrO2",
+        "properties": {
+          "type": "Density of States",
+          "energy_range": "-20 to 5 eV",
+          "features": [
+            "IrO2 peaks",
+            "d-band center",
+            "total band center"
+          ],
+          "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+        },
+        "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+      },
+      {
+        "id": "DOS_spectrum_ICM",
+        "type": "characterization",
+        "name": "DOS spectrum ICM",
+        "properties": {
+          "type": "Density of States",
+          "energy_range": "-100 to 100 states/eV",
+          "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+        },
+        "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+      },
+      {
+        "id": "DOS_spectrum_ICM_activated",
+        "type": "characterization",
+        "name": "DOS spectrum ICM activated",
+        "properties": {
+          "type": "Density of States",
+          "energy_range": "-100 to 100 states/eV",
+          "extracted_from_image": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+        },
+        "source_image_file": "df154d605ecf495a7ffcaf6a9dc7cccab5eb92d523c0f10f014f33c01103858c.jpg"
+      },
+      {
+        "id": "IrO2_bulk",
+        "type": "chemical",
+        "name": "Bulk IrO2",
+        "properties": {
+          "description": "Bulk iridium oxide particles shown as red rods",
+          "extracted_from_image": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+        },
+        "source_image_file": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+      },
+      {
+        "id": "IrO2_nanocluster",
+        "type": "chemical",
+        "name": "IrO2 nanocluster",
+        "properties": {
+          "description": "Red spherical IrO2 nanocluster structure",
+          "extracted_from_image": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+        },
+        "source_image_file": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+      },
+      {
+        "id": "Ir_single_atom",
+        "type": "chemical",
+        "name": "Ir single atom",
+        "properties": {
+          "description": "Single iridium atom (green sphere)",
+          "extracted_from_image": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+        },
+        "source_image_file": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+      },
+      {
+        "id": "substrate",
+        "type": "material",
+        "name": "Substrate",
+        "properties": {
+          "description": "Purple surface in TEM images",
+          "extracted_from_image": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+        },
+        "source_image_file": "e0478caedcef0a4392af045d01881685e89c25d4f676e5a4e52a13bebe947b6e.jpg"
+      },
+      {
+        "id": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9_node1",
+        "type": "characterization",
+        "name": "FT Magnitude Plot",
+        "properties": {
+          "description": "Fourier Transform magnitude vs R (Å)",
+          "x_axis": "R (Å)",
+          "y_axis": "FT Magnitude (a.u.)",
+          "range_x": [
+            0,
+            4
+          ],
+          "extracted_from_image": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9.jpg"
+        },
+        "source_image_file": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9.jpg"
+      },
+      {
+        "id": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9_node2",
+        "type": "material",
+        "name": "IrO2",
+        "properties": {
+          "description": "Reference material",
+          "color": "black_dashed",
+          "extracted_from_image": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9.jpg"
+        },
+        "source_image_file": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9.jpg"
+      },
+      {
+        "id": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9_node3",
+        "type": "material",
+        "name": "ICM",
+        "properties": {
+          "description": "Material",
+          "color": "blue",
+          "extracted_from_image": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9.jpg"
+        },
+        "source_image_file": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9.jpg"
+      },
+      {
+        "id": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9_node4",
+        "type": "material",
+        "name": "ICM activated",
+        "properties": {
+          "description": "Activated form of ICM",
+          "color": "red",
+          "extracted_from_image": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9.jpg"
+        },
+        "source_image_file": "e2a01d6961b1b75ddc68d0130847ba00bf261060d057ca9f20203a229a45ffa9.jpg"
+      },
+      {
+        "id": "e_g",
+        "type": "chemical",
+        "name": "e_g",
+        "properties": {
+          "description": "e_g state or energy level",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "single_heteroatom",
+        "type": "chemical",
+        "name": "Single Heteroatom",
+        "properties": {
+          "description": "Single heteroatom adsorption/relaxation state",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "cluster_relaxation",
+        "type": "chemical",
+        "name": "Cluster Relaxation",
+        "properties": {
+          "description": "Heteroatom cluster relaxation state",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "ir_o",
+        "type": "chemical",
+        "name": "Ir-O",
+        "properties": {
+          "description": "Iridium-oxygen bond or site",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "o_zp",
+        "type": "chemical",
+        "name": "O_ZP",
+        "properties": {
+          "description": "Oxygen zero-point or adsorbate",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "o_zp_activity",
+        "type": "chemical",
+        "name": "O_ZP Activity",
+        "properties": {
+          "description": "O_ZP activity state",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "t2g",
+        "type": "chemical",
+        "name": "t2g",
+        "properties": {
+          "description": "t2g state or energy level",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "ir_o2",
+        "type": "chemical",
+        "name": "IrO2",
+        "properties": {
+          "description": "Iridium dioxide surface or catalyst",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "adsorbate",
+        "type": "chemical",
+        "name": "Adsorbate",
+        "properties": {
+          "description": "General adsorbate (O_ZP)",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "activity",
+        "type": "property",
+        "name": "Activity",
+        "properties": {
+          "description": "Catalytic activity",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "stability",
+        "type": "property",
+        "name": "Stability",
+        "properties": {
+          "description": "Structural or thermodynamic stability",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "lattice",
+        "type": "property",
+        "name": "Lattice",
+        "properties": {
+          "description": "Lattice stability",
+          "extracted_from_image": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+        },
+        "source_image_file": "f3515c3b26ed0a3402735df66a0b38fc4292a35c89bef5cd9e8e6fecc7adb596.jpg"
+      },
+      {
+        "id": "Mn_nanoclusters",
+        "type": "chemical",
+        "name": "Mn nanoclusters",
+        "properties": {
+          "description": "Manganese nanoclusters",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "VOx",
+        "type": "chemical",
+        "name": "VOx",
+        "properties": {
+          "description": "Vanadium oxide",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "Mn3O4",
+        "type": "chemical",
+        "name": "Mn3O4",
+        "properties": {
+          "description": "Manganese oxide",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "ICM_Mn",
+        "type": "chemical",
+        "name": "ICM-Mn",
+        "properties": {
+          "description": "ICM with Mn nanoclusters",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "catalyst",
+        "type": "chemical",
+        "name": "Catalyst",
+        "properties": {
+          "description": "Central catalyst structure",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "ICM_after_PEMWE",
+        "type": "chemical",
+        "name": "ICM after PEMWE",
+        "properties": {
+          "description": "ICM after PEMWE operation (stable)",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "uncontrolled_VOx",
+        "type": "chemical",
+        "name": "Uncontrolled growth of VOx",
+        "properties": {
+          "description": "Uncontrolled VOx growth (deactivated)",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "acidic_DEM",
+        "type": "condition",
+        "name": "Acidic DER condition",
+        "properties": {
+          "description": "Acidic differential electrochemical mass spectrometry condition",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "PEMWE",
+        "type": "process",
+        "name": "PEMWE operation",
+        "properties": {
+          "description": "Proton exchange membrane water electrolysis",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "controlled_growth",
+        "type": "process",
+        "name": "Controlled growth",
+        "properties": {
+          "description": "Controlled growth of Mn nanoclusters",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "uncontrolled_growth",
+        "type": "process",
+        "name": "Uncontrolled growth",
+        "properties": {
+          "description": "Uncontrolled growth of VOx",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "stable_operation",
+        "type": "state",
+        "name": "Stable operation",
+        "properties": {
+          "description": "Stable catalyst operation after PEMWE",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      },
+      {
+        "id": "deactivation",
+        "type": "state",
+        "name": "Deactivation",
+        "properties": {
+          "description": "Catalyst deactivation",
+          "extracted_from_image": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+        },
+        "source_image_file": "fc118184e59c77b15870b5985a99682f3dd361376790bc861750d6f42e875472.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_ICM_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_ICM",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_ICM",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_ICM",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_ICM",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_ICM",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_11",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_12",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_12",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_13",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_13",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_14",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_char_12",
+        "type": "characterized_in",
+        "source_id": "chem_ICM",
+        "target_id": "char_12",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_char_13",
+        "type": "characterized_in",
+        "source_id": "chem_ICM",
+        "target_id": "char_13",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_char_14",
+        "type": "characterized_in",
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ICM_activated_char_15",
+        "type": "characterized_in",
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_15",
+        "properties": {}
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_gamma_mno2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "hkl_101",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_gamma_mno2",
+        "target_id": "hkl_101",
+        "type": "has_orientation"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "nanoparticles",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_gamma_mno2",
+        "target_id": "nanoparticles",
+        "type": "consists_of"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "shows_degradation_rate"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "at_temperature"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "exhibits_rate"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "has_property"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "type": "has_property"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n6",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "n6",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "n6",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "n6",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "n6",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "activation_state"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "char_14",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "type": "activation"
+      },
+      {
+        "source_id": "activation_process",
+        "target_id": "chem_ICM",
+        "type": "applied_to"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "activation_process",
+        "target_id": "char_6",
+        "type": "depicts_result_of"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "plot",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "plot",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_gamma_mno2",
+        "target_id": "plot",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "slope_552.1",
+        "type": "has_Tafel_slope"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "slope_106.5",
+        "type": "has_Tafel_slope"
+      },
+      {
+        "source_id": "chem_gamma_mno2",
+        "target_id": "slope_80.2",
+        "type": "has_Tafel_slope"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "ICM_curve",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "ICM_activated_curve",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "IrO2_curve",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "ICM_curve",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "ICM_activated_curve",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "IrO2_curve",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "activation_variant"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "chem_ICM",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "chem_ICM",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "chem_ICM",
+        "type": "property_of"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM_activated",
+        "type": "tested_under"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "tested_under"
+      },
+      {
+        "source_id": "ICM-activated",
+        "target_id": "OER",
+        "type": "performs"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "OER",
+        "type": "performs"
+      },
+      {
+        "source_id": "ICM-activated",
+        "target_id": "chart",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "chart",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "ICM-activated",
+        "target_id": "deltaG_ICM_045eV",
+        "type": "has_overpotential"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "deltaG_IrO2_115eV",
+        "type": "has_overpotential"
+      },
+      {
+        "source_id": "bare",
+        "target_id": "OH",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "OH",
+        "target_id": "O",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "O",
+        "target_id": "OOH",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "OOH",
+        "target_id": "O2",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "bare",
+        "type": "involves"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "OH",
+        "type": "involves"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "O",
+        "type": "involves"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "OOH",
+        "type": "involves"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "O2",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "ICM-activated",
+        "type": "activates"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "char_14",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "graph_g",
+        "target_id": "chart",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "oer",
+        "type": "measures"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chart",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "mn",
+        "target_id": "chart",
+        "type": "quantified"
+      },
+      {
+        "source_id": "ir",
+        "target_id": "chart",
+        "type": "quantified"
+      },
+      {
+        "source_id": "co",
+        "target_id": "chart",
+        "type": "quantified"
+      },
+      {
+        "source_id": "t0",
+        "target_id": "chart",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "t250",
+        "target_id": "chart",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "oer",
+        "type": "used_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM_activated",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "n9",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "n9",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "n9",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "activation_treatment"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "depicts"
+      },
+      {
+        "source_id": "red_particle",
+        "target_id": "image",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "blue_particle",
+        "target_id": "image",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "green_particle",
+        "target_id": "image",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "red_particle",
+        "target_id": "nanoparticle_ensemble",
+        "type": "component"
+      },
+      {
+        "source_id": "blue_particle",
+        "target_id": "nanoparticle_ensemble",
+        "type": "component"
+      },
+      {
+        "source_id": "green_particle",
+        "target_id": "nanoparticle_ensemble",
+        "type": "component"
+      },
+      {
+        "source_id": "image",
+        "target_id": "micrograph",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "line_scan",
+        "type": "contains"
+      },
+      {
+        "source_id": "line_scan",
+        "target_id": "Ir",
+        "type": "measures"
+      },
+      {
+        "source_id": "line_scan",
+        "target_id": "Mn",
+        "type": "measures"
+      },
+      {
+        "source_id": "line_scan",
+        "target_id": "O",
+        "type": "measures"
+      },
+      {
+        "source_id": "line_scan",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "line_scan",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "micrograph",
+        "target_id": "line_scan",
+        "type": "includes_path"
+      },
+      {
+        "source_id": "Ir",
+        "target_id": "micrograph",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "Mn",
+        "target_id": "micrograph",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "O",
+        "target_id": "micrograph",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "produces"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "chem_ICM_activated",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "chem_ICM",
+        "type": "depicts_after"
+      },
+      {
+        "source_id": "4",
+        "target_id": "1",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "1",
+        "target_id": "5",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "6",
+        "target_id": "1",
+        "type": "seals"
+      },
+      {
+        "source_id": "7",
+        "target_id": "3",
+        "type": "supports"
+      },
+      {
+        "source_id": "3",
+        "target_id": "1",
+        "type": "contacts"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "contacts"
+      },
+      {
+        "source_id": "2",
+        "target_id": "8",
+        "type": "supported_by"
+      },
+      {
+        "source_id": "7",
+        "target_id": "4",
+        "type": "contacts"
+      },
+      {
+        "source_id": "8",
+        "target_id": "5",
+        "type": "contacts"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "IrO2_potential",
+        "type": "has_potential"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "ICM_potential",
+        "type": "has_potential"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "ICM_activated_potential",
+        "type": "has_potential"
+      },
+      {
+        "source_id": "IrO2_potential",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ICM_potential",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "ICM_activated_potential",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "activated_to"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "highlights"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "includes"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "type": "instance_of"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "matches"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM_activated",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "contains"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node3",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node4",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node8",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node9",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM_activated",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "connected_by"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n6",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "linked_by"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "type": "linked_by"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "char_14",
+        "type": "linked_by"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "mn",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "co",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "ir",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "activation_process",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "activation_process",
+        "target_id": "chem_ICM_activated",
+        "type": "produces"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "mn",
+        "type": "measures"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "co",
+        "type": "measures"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ir",
+        "type": "measures"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "activation_process",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM_activated",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "n6",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_14",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_gamma_mno2",
+        "type": "matches"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_gamma_mno2",
+        "type": "matches"
+      },
+      {
+        "source_id": "chem_gamma_mno2",
+        "target_id": "JCPDS_14_0644",
+        "type": "referenced_by"
+      },
+      {
+        "source_id": "chem_gamma_mno2",
+        "target_id": "JCPDS_82_2169",
+        "type": "referenced_by"
+      },
+      {
+        "source_id": "sample",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample",
+        "target_id": "chem_gamma_mno2",
+        "type": "consistent_with"
+      },
+      {
+        "source_id": "sample",
+        "target_id": "chem_gamma_mno2",
+        "type": "consistent_with"
+      },
+      {
+        "source_id": "cover_image",
+        "target_id": "JACS",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "cover_image",
+        "target_id": "mol1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "cover_image",
+        "target_id": "mol2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "cover_image",
+        "target_id": "mol3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "cover_image",
+        "target_id": "sphere",
+        "type": "contains"
+      },
+      {
+        "source_id": "mol1",
+        "target_id": "mol2",
+        "type": "spatially_adjacent"
+      },
+      {
+        "source_id": "mol2",
+        "target_id": "mol3",
+        "type": "spatially_adjacent"
+      },
+      {
+        "source_id": "mol2",
+        "target_id": "sphere",
+        "type": "overlays"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM",
+        "type": "uses"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "chem_ICM_activated",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_14",
+        "type": "plots"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_14",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "with"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_14",
+        "type": "with"
+      },
+      {
+        "source_id": "image",
+        "target_id": "Ir",
+        "type": "contains_map"
+      },
+      {
+        "source_id": "image",
+        "target_id": "Mn",
+        "type": "contains_map"
+      },
+      {
+        "source_id": "image",
+        "target_id": "Co",
+        "type": "contains_map"
+      },
+      {
+        "source_id": "image",
+        "target_id": "O",
+        "type": "contains_map"
+      },
+      {
+        "source_id": "image",
+        "target_id": "overlay",
+        "type": "contains"
+      },
+      {
+        "source_id": "Ir",
+        "target_id": "material",
+        "type": "component"
+      },
+      {
+        "source_id": "Mn",
+        "target_id": "material",
+        "type": "component"
+      },
+      {
+        "source_id": "Co",
+        "target_id": "material",
+        "type": "component"
+      },
+      {
+        "source_id": "O",
+        "target_id": "material",
+        "type": "component"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scalebar",
+        "type": "contains"
+      },
+      {
+        "source_id": "overlay",
+        "target_id": "Ir",
+        "type": "overlays"
+      },
+      {
+        "source_id": "overlay",
+        "target_id": "Mn",
+        "type": "overlays"
+      },
+      {
+        "source_id": "overlay",
+        "target_id": "Co",
+        "type": "overlays"
+      },
+      {
+        "source_id": "overlay",
+        "target_id": "O",
+        "type": "overlays"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "nanomaterial",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "lattice_fringes",
+        "type": "shows"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "nanomaterial",
+        "target_id": "lattice_fringes",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "DOS_spectrum_IrO2",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "d-band_center",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_IrO2",
+        "target_id": "total_band_center",
+        "type": "contains"
+      },
+      {
+        "source_id": "Ir_5d",
+        "target_id": "DOS_spectrum_IrO2",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "DOS_spectrum_ICM",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "DOS_spectrum_ICM_activated",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "d-band_center",
+        "target_id": "DOS_spectrum_IrO2",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "total_band_center",
+        "target_id": "DOS_spectrum_IrO2",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "IrO2_bulk",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "IrO2_nanocluster",
+        "target_id": "image_b",
+        "type": "depicts"
+      },
+      {
+        "source_id": "Ir_single_atom",
+        "target_id": "image_b",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "substrate",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "substrate",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "IrO2_nanocluster",
+        "target_id": "chem_ICM_activated",
+        "type": "contains"
+      },
+      {
+        "source_id": "Ir_single_atom",
+        "target_id": "IrO2_nanocluster",
+        "type": "part_of"
+      },
+      {
+        "source_id": "IrO2_bulk",
+        "target_id": "IrO2_nanocluster",
+        "type": "precursor_to"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "activation_relation"
+      },
+      {
+        "source_id": "e_g",
+        "target_id": "single_heteroatom",
+        "type": "relaxation"
+      },
+      {
+        "source_id": "single_heteroatom",
+        "target_id": "cluster_relaxation",
+        "type": "progression"
+      },
+      {
+        "source_id": "cluster_relaxation",
+        "target_id": "chem_ICM",
+        "type": "model"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "chem_ICM_activated",
+        "type": "activation"
+      },
+      {
+        "source_id": "chem_ICM_activated",
+        "target_id": "ir_o",
+        "type": "bonding"
+      },
+      {
+        "source_id": "ir_o",
+        "target_id": "o_zp",
+        "type": "adsorption"
+      },
+      {
+        "source_id": "o_zp",
+        "target_id": "o_zp_activity",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "t2g",
+        "target_id": "cluster_relaxation",
+        "type": "energy_state"
+      },
+      {
+        "source_id": "ir_o2",
+        "target_id": "chem_ICM",
+        "type": "substrate"
+      },
+      {
+        "source_id": "o_zp_activity",
+        "target_id": "activity",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "ir_o",
+        "target_id": "stability",
+        "type": "affects"
+      },
+      {
+        "source_id": "o_zp",
+        "target_id": "stability",
+        "type": "affects"
+      },
+      {
+        "source_id": "stability",
+        "target_id": "lattice",
+        "type": "structural"
+      },
+      {
+        "source_id": "adsorbate",
+        "target_id": "o_zp",
+        "type": "equivalent"
+      },
+      {
+        "source_id": "ir_o2",
+        "target_id": "activity",
+        "type": "catalyst_for"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "Mn_nanoclusters",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_ICM",
+        "target_id": "controlled_growth",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "controlled_growth",
+        "target_id": "ICM_Mn",
+        "type": "produces"
+      },
+      {
+        "source_id": "ICM_Mn",
+        "target_id": "acidic_DEM",
+        "type": "tested_under"
+      },
+      {
+        "source_id": "ICM_Mn",
+        "target_id": "catalyst",
+        "type": "becomes"
+      },
+      {
+        "source_id": "catalyst",
+        "target_id": "PEMWE",
+        "type": "operates_in"
+      },
+      {
+        "source_id": "PEMWE",
+        "target_id": "ICM_after_PEMWE",
+        "type": "results_in"
+      },
+      {
+        "source_id": "ICM_after_PEMWE",
+        "target_id": "stable_operation",
+        "type": "achieves"
+      },
+      {
+        "source_id": "catalyst",
+        "target_id": "VOx",
+        "type": "forms"
+      },
+      {
+        "source_id": "VOx",
+        "target_id": "uncontrolled_growth",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "uncontrolled_growth",
+        "target_id": "uncontrolled_VOx",
+        "type": "produces"
+      },
+      {
+        "source_id": "uncontrolled_VOx",
+        "target_id": "deactivation",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "Mn3O4",
+        "type": "related_to",
+        "target_id": "Mn_nanoclusters"
+      },
+      {
+        "source_id": "catalyst",
+        "target_id": "Mn",
+        "type": "contains"
+      },
+      {
+        "source_id": "catalyst",
+        "target_id": "Co",
+        "type": "contains"
+      },
+      {
+        "source_id": "catalyst",
+        "target_id": "O",
+        "type": "contains"
+      }
+    ]
+  }
+}

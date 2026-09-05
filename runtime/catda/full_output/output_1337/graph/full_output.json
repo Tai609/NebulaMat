@@ -1,0 +1,3082 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_cfc",
+        "type": "chemical",
+        "name": "carbon fiber cloth",
+        "aliases": [
+          "CFC"
+        ],
+        "properties": {
+          "size": {
+            "value": "5 cm × 5 cm",
+            "unit": "dimensionless"
+          }
+        }
+      },
+      {
+        "id": "chem_eth",
+        "type": "chemical",
+        "name": "ethanol",
+        "aliases": [],
+        "formula": "C2H5OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_di_water",
+        "type": "chemical",
+        "name": "Millipore water",
+        "aliases": [
+          "DI-H2O"
+        ],
+        "formula": "H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_hno3",
+        "type": "chemical",
+        "name": "HNO3",
+        "aliases": [],
+        "formula": "HNO3",
+        "properties": {}
+      },
+      {
+        "id": "chem_c_cfc",
+        "type": "chemical",
+        "name": "carboxylated CFC",
+        "aliases": [
+          "c-CFC"
+        ],
+        "properties": {
+          "contact_angle": {
+            "value": 125.1,
+            "unit": "°"
+          },
+          "I_D/I_G_ratio": {
+            "value": 0.88,
+            "unit": "dimensionless"
+          },
+          "double-layer_capacitance": {
+            "value": 2.2,
+            "unit": "mF cm^-2"
+          },
+          "ECSA": {
+            "value": 55,
+            "unit": "cm^2"
+          },
+          "mass_loading": {
+            "value": 1.3,
+            "unit": "mg cm^-2"
+          }
+        }
+      },
+      {
+        "id": "chem_nh4oh",
+        "type": "chemical",
+        "name": "ammonium hydroxide solution",
+        "aliases": [
+          "28% NH3 in H2O"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_a_cfc",
+        "type": "chemical",
+        "name": "amide-functionalized CFC",
+        "aliases": [
+          "A-CFC"
+        ],
+        "properties": {
+          "contact_angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "I_D/I_G_ratio": {
+            "value": 0.97,
+            "unit": "dimensionless"
+          },
+          "double-layer_capacitance": {
+            "value": 9.4,
+            "unit": "mF cm^-2"
+          },
+          "ECSA": {
+            "value": 235,
+            "unit": "cm^2"
+          },
+          "mass_loading": {
+            "value": 1.25,
+            "unit": "mg cm^-2"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "CFC Cleaning",
+        "procedure": "A piece of carbon fiber cloth 5 cm × 5 cm, CFC) was subsequently cleaned with ethanol, Millipore water and ethanol under ultrasonic, and dried in an oven before use.",
+        "method": "Ultrasonic cleaning",
+        "conditions": {},
+        "source_text": "Preparation of amide-functionalized CFC (A-CFC). The A-CFC was synthesized through a simple carboxylation-amidation strategy. In a typical procedure, a piece of carbon fiber cloth 5 cm × 5 cm , CFC) was subsequently cleaned with ethanol, Millipore water and ethanol under ultrasonic, and dried in an oven before use."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Carboxylation",
+        "procedure": "The freshly cleaned CFC was then added into a stainless steel autoclave (50 mL) containing HNO3 (40 mL), and was hold at 120 °C for 20 h. The resulted c-CFC was then washed thoroughly with Millipore water.",
+        "method": "Hydrothermal carboxylation",
+        "conditions": {
+          "temperature": {
+            "value": 120,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 20,
+            "unit": "h"
+          },
+          "volume": {
+            "value": 40,
+            "unit": "mL"
+          },
+          "autoclave_volume": {
+            "value": 50,
+            "unit": "mL"
+          }
+        },
+        "source_text": "The freshly cleaned CFC was then added into a stainless steel autoclave (50 mL) containing HNO3 (40 mL), and was hold at 120 °C for 20 h. The resulted c-CFC was then washed thoroughly with Millipore water."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Amidation",
+        "procedure": "The freshly-prepared c-CFC was immediately [added] into another Autoclave (50 mL) containing 40 mL ammonium hydroxide solution (28% NH3 in H2O). After 20 min standing, the sealed Autoclave was placed at 150 °C for 10 h, then was naturally cooled to room temperature and washed thoroughly with Millipore water, followed by being dried in a vacuum oven for 2 h. The A-CFC was obtained.",
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Standing",
+            "method": "Standing",
+            "conditions": {
+              "time": {
+                "value": 20,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "After 20 min standing"
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Hydrothermal amidation",
+            "method": "Autoclave heating",
+            "conditions": {
+              "temperature": {
+                "value": 150,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 10,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "the sealed Autoclave was placed at 150 °C for 10 h"
+          },
+          {
+            "id": "unit_op_3.3",
+            "name": "Vacuum drying",
+            "method": "Vacuum oven drying",
+            "conditions": {
+              "time": {
+                "value": 2,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "dried in a vacuum oven for 2 h"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 150,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 10,
+            "unit": "h"
+          },
+          "volume": {
+            "value": 40,
+            "unit": "mL"
+          },
+          "autoclave_volume": {
+            "value": 50,
+            "unit": "mL"
+          },
+          "concentration": {
+            "value": 28,
+            "unit": "%"
+          }
+        },
+        "source_text": "The freshly-prepared c-CFC was immediately into another Autoclave (50 mL) containing 40 mL ammonium hydroxide solution (28% NH3 in H2O). After 20 min standing, the sealed Autoclave was placed at 150 °C for 10 h... The A-CFC was obtained."
+      },
+      {
+        "id": "chem_A-CFC",
+        "type": "chemical",
+        "name": "A-CFC",
+        "aliases": [
+          "amide-functionalized carbon fiber cloth",
+          "amide-functionalized CFC"
+        ],
+        "formula": null,
+        "composition": null,
+        "properties": {
+          "ID/IG ratio": {
+            "value": 0.97,
+            "unit": "dimensionless"
+          },
+          "contact angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "double-layer capacitance": {
+            "value": 9.4,
+            "unit": "mF cm⁻²"
+          },
+          "electrochemical surface area": {
+            "value": 235,
+            "unit": "cm²"
+          },
+          "charge transfer resistance": {
+            "value": 0.69,
+            "unit": "Ω"
+          }
+        },
+        "related_images": [
+          "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg",
+          "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg",
+          "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg",
+          "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "A-CFC",
+            "properties": {
+              "description": "A-CFC material",
+              "extracted_from_image": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+            },
+            "source_image_file": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "A-CFC",
+            "properties": {
+              "description": "Amorphous Carbon Film Composite or similar catalyst material",
+              "extracted_from_image": "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg"
+            },
+            "source_image_file": "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "A-CFC",
+            "properties": {
+              "description": "Amine-functionalized carbon fiber composite or similar material",
+              "extracted_from_image": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+            },
+            "source_image_file": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "A-CFC",
+            "properties": {
+              "description": "A-CFC material",
+              "extracted_from_image": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+            },
+            "source_image_file": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_c-CFC",
+        "type": "chemical",
+        "name": "c-CFC",
+        "aliases": [
+          "carboxylated CFC",
+          "pure carboxylated CFC"
+        ],
+        "formula": null,
+        "composition": null,
+        "properties": {
+          "ID/IG ratio": {
+            "value": 0.88,
+            "unit": "dimensionless"
+          },
+          "contact angle": {
+            "value": 125.1,
+            "unit": "°"
+          },
+          "double-layer capacitance": {
+            "value": 2.2,
+            "unit": "mF cm⁻²"
+          },
+          "electrochemical surface area": {
+            "value": 55,
+            "unit": "cm²"
+          },
+          "charge transfer resistance": {
+            "value": 0.81,
+            "unit": "Ω"
+          }
+        },
+        "related_images": [
+          "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg",
+          "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg",
+          "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "C-CFC",
+            "properties": {
+              "description": "C-CFC material",
+              "extracted_from_image": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+            },
+            "source_image_file": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-CFC",
+            "properties": {
+              "description": "Crystalline Carbon Film Composite or similar catalyst material",
+              "extracted_from_image": "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg"
+            },
+            "source_image_file": "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-CFC",
+            "properties": {
+              "description": "C-CFC material",
+              "extracted_from_image": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+            },
+            "source_image_file": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_CFC",
+        "type": "chemical",
+        "name": "CFC",
+        "aliases": [
+          "carbon fiber cloth",
+          "pristine CFC"
+        ],
+        "formula": null,
+        "composition": null,
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt/C",
+        "type": "chemical",
+        "name": "20 wt% Pt/C",
+        "aliases": [
+          "commercial 20 wt% Pt/C"
+        ],
+        "formula": "",
+        "composition": {
+          "Pt": {
+            "value": 20,
+            "unit": "wt%"
+          }
+        },
+        "properties": {},
+        "related_images": [
+          "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg",
+          "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg",
+          "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "20 wt% PVC",
+            "properties": {
+              "description": "20 wt% PVC material",
+              "extracted_from_image": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+            },
+            "source_image_file": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "20 wt% Pt/C",
+            "properties": {
+              "description": "Commercial 20 weight percent Platinum on Carbon catalyst",
+              "extracted_from_image": "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg"
+            },
+            "source_image_file": "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "20 wt% PVC PNC",
+            "properties": {
+              "description": "20 wt% Polyvinyl Chloride Polymer Nanocomposite",
+              "extracted_from_image": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+            },
+            "source_image_file": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_cfc_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_cfc",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_eth_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_eth",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_di_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_di_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_cfc",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_cfc",
+        "properties": {
+          "form": "cleaned"
+        }
+      },
+      {
+        "id": "edge_input_chem_cfc_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_cfc",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_hno3_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_hno3",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "reagent",
+          "amount": {
+            "value": 40,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_c_cfc",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_c_cfc",
+        "properties": {
+          "form": "washed solid"
+        }
+      },
+      {
+        "id": "edge_input_chem_c_cfc_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_c_cfc",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_nh4oh_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_nh4oh",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "reagent",
+          "amount": {
+            "value": 40,
+            "unit": "mL"
+          },
+          "concentration": {
+            "value": 28,
+            "unit": "% NH3 in H2O"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_a_cfc",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_a_cfc",
+        "properties": {
+          "form": "dried solid"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_A-CFC",
+      "chem_CFC",
+      "chem_Pt/C",
+      "chem_c-CFC"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_A-CFC",
+        "type": "chemical",
+        "name": "A-CFC",
+        "aliases": [
+          "amide-functionalized carbon fiber cloth",
+          "amide group functionalized CFC"
+        ],
+        "formula": "",
+        "properties": {
+          "double-layer_capacitance": {
+            "value": 9.4,
+            "unit": "mF/cm²"
+          },
+          "electrochemical_surface_area": {
+            "value": 235,
+            "unit": "cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_c-CFC",
+        "type": "chemical",
+        "name": "c-CFC",
+        "aliases": [
+          "pure carboxylated CFC",
+          "carboxylated CFC"
+        ],
+        "formula": "",
+        "properties": {
+          "double-layer_capacitance": {
+            "value": 2.2,
+            "unit": "mF/cm²"
+          },
+          "electrochemical_surface_area": {
+            "value": 55,
+            "unit": "cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_CFC",
+        "type": "chemical",
+        "name": "CFC",
+        "aliases": [
+          "pristine CFC",
+          "carbon fiber cloth"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt/C",
+        "type": "chemical",
+        "name": "20 wt% Pt/C",
+        "aliases": [
+          "commercial 20 wt% Pt/C"
+        ],
+        "formula": "",
+        "composition": {
+          "Pt": {
+            "value": 20,
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_A-CFC",
+        "description": "HER performance in 0.5 M H₂SO₄",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H₂SO₄",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "SCE",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "100%",
+            "unit": "compensation"
+          },
+          "mass_loading": {
+            "value": 1.25,
+            "unit": "mg/cm²"
+          },
+          "geometric_area": {
+            "value": 0.1,
+            "unit": "cm²"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 78,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 37,
+            "unit": "mV/dec"
+          },
+          "exchange_current_density": {
+            "value": 0.1,
+            "unit": "mA/cm²"
+          },
+          "stability_cycles": {
+            "value": 13000,
+            "unit": "cycles"
+          },
+          "durability": {
+            "value": "stable over 28 h",
+            "unit": "chronoamperometry"
+          },
+          "Faradaic_efficiency": {
+            "value": ">97",
+            "unit": "%"
+          },
+          "turnover_frequency_at_100mV": {
+            "value": 0.86,
+            "unit": "s⁻¹"
+          },
+          "solution_resistance_Rs": {
+            "value": 3.14,
+            "unit": "Ω"
+          },
+          "charge_transfer_resistance_Rct": {
+            "value": 0.69,
+            "unit": "Ω"
+          },
+          "hydrogen_adsorption_resistance_Rh": {
+            "value": "much smaller than c-CFC",
+            "unit": "Ω"
+          }
+        },
+        "source_text": "The HER performance of A-CFC... in H₂-saturated acidic condition (0.5 M H₂SO₄) using a typical three-electrode system... scan rate is set to 1 mV s⁻¹... overpotential of 78 mV at 10 mA cm⁻²... Tafel slope of 37 mV dec⁻¹... j₀ of A-CFC was calculated to be 0.1 mA cm⁻²... after 13,000 continuous cycles... stabilized over 28 h... Faradaic efficiencies over 97%... The A-CFC shows much smaller Rs (3.14 Ω) and Rct (0.69 Ω)"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_A-CFC",
+        "description": "HER performance in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "SCE",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "100%",
+            "unit": "compensation"
+          },
+          "mass_loading": {
+            "value": 1.25,
+            "unit": "mg/cm²"
+          },
+          "geometric_area": {
+            "value": 0.1,
+            "unit": "cm²"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 71,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 54.5,
+            "unit": "mV/dec"
+          },
+          "exchange_current_density": {
+            "value": 0.73,
+            "unit": "mA/cm²"
+          },
+          "stability_cycles": {
+            "value": 18000,
+            "unit": "cycles"
+          },
+          "durability": {
+            "value": "stable over 9 h at -1.1 V vs SCE",
+            "unit": "chronoamperometry"
+          },
+          "Faradaic_efficiency": {
+            "value": ">97",
+            "unit": "%"
+          },
+          "turnover_frequency_at_100mV": {
+            "value": 0.41,
+            "unit": "s⁻¹"
+          }
+        },
+        "source_text": "in H₂-saturated alkaline electrolyte (1.0 M KOH)... overpotential of 71 mV at j₁₀ₘAcm⁻²... Tafel slope value of A-CFC (54.5 mV dec⁻¹)... j₀ 0.73 mA cm⁻²... after 18,000 continuous cycles... durability test... for more than 9 h (inset in Fig. 5f)... Faradaic efficiencies over 97%"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_A-CFC",
+        "description": "HER performance in 1 M PBS (pH 7)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M PBS",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "overpotential_at_2_mA/cm²": {
+            "value": 230.8,
+            "unit": "mV"
+          },
+          "overpotential_at_10_mA/cm²": {
+            "value": 436,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 263.8,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "Additionally, the catalytic performance of the electrocatalysts have been determined in neutral conditions (1 M PBS, pH 7)... A-CFC exhibits small overpotentials of 230.8 and 436 mV at the current densities of 2 and 10 mA cm⁻², respectively, and Tafel slope of 263.8 mV dec⁻¹"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_c-CFC",
+        "description": "HER performance in 0.5 M H₂SO₄",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H₂SO₄",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "mass_loading": {
+            "value": 1.3,
+            "unit": "mg/cm²"
+          },
+          "geometric_area": {
+            "value": 0.1,
+            "unit": "cm²"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 457,
+            "unit": "mV"
+          },
+          "exchange_current_density": {
+            "value": "3.6×10⁻⁴",
+            "unit": "mA/cm²"
+          },
+          "solution_resistance_Rs": {
+            "value": 5.39,
+            "unit": "Ω"
+          },
+          "charge_transfer_resistance_Rct": {
+            "value": 0.81,
+            "unit": "Ω"
+          }
+        },
+        "source_text": "pure c-CFC (Fig. 5a) show... overpotentials of 457 mV at... 10 mA cm⁻²... 278 times higher than c-CFC (3.6×10⁻⁴ mA cm⁻²)... A-CFC shows much smaller Rs=5.39 Ω; Rct=0.81 Ω"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_c-CFC",
+        "description": "HER performance in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 530,
+            "unit": "mV"
+          },
+          "turnover_frequency_at_100mV": {
+            "value": 0.14,
+            "unit": "s⁻¹"
+          }
+        },
+        "source_text": "c-CFC (Fig. 5d) require large overpotentials of 530 mV to achieve j₁₀ₘAcm⁻²... TOF... c-CFC: 0.14 s⁻¹ in 1.0 M KOH"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_CFC",
+        "description": "HER performance in 0.5 M H₂SO₄",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H₂SO₄",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 577,
+            "unit": "mV"
+          }
+        },
+        "source_text": "Pristine CFC... show negligible HER activities with large overpotentials of 577... at the current density of 10 mA cm⁻²"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_CFC",
+        "description": "HER performance in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 611,
+            "unit": "mV"
+          }
+        },
+        "source_text": "Pristine CFC... require large overpotentials of 611 mV"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_Pt/C",
+        "description": "HER performance in 0.5 M H₂SO₄",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H₂SO₄",
+            "unit": "solution"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "Tafel_slope": {
+            "value": 30.7,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "20 wt% Pt/C was used for comparison... Tafel slope... close to that of Pt/C 30.7 mV dec⁻¹"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_Pt/C",
+        "description": "HER performance in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 79,
+            "unit": "mV"
+          }
+        },
+        "source_text": "which is smaller than 20 wt% Pt/C (79 mV)"
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_c-CFC",
+        "description": "HER performance in 1 M PBS (pH 7)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M PBS",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7,
+            "unit": "pH"
+          }
+        },
+        "results_json": {
+          "overpotential_at_2_mA/cm²": {
+            "value": 570,
+            "unit": "mV"
+          },
+          "overpotential_at_4_mA/cm²": {
+            "value": 791,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 730.4,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "These values are better than that of c-CFC (570 and 791 mV at 2 and 4 mA cm⁻², respectively; Tafel slope: 730.4 mV dec⁻¹)"
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_CFC",
+        "description": "HER performance in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 611,
+            "unit": "mV"
+          }
+        },
+        "source_text": "Pristine CFC (Supplementary Fig. 10a) and c-CFC... require large overpotentials of 611 mV and 530 mV"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_A-CFC_test_1",
+        "type": "tested_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_A-CFC_test_2",
+        "type": "tested_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_A-CFC_test_3",
+        "type": "tested_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_c-CFC_test_4",
+        "type": "tested_in",
+        "source_id": "chem_c-CFC",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_c-CFC_test_5",
+        "type": "tested_in",
+        "source_id": "chem_c-CFC",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_CFC_test_6",
+        "type": "tested_in",
+        "source_id": "chem_CFC",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_CFC_test_7",
+        "type": "tested_in",
+        "source_id": "chem_CFC",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Pt/C_test_8",
+        "type": "tested_in",
+        "source_id": "chem_Pt/C",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Pt/C_test_9",
+        "type": "tested_in",
+        "source_id": "chem_Pt/C",
+        "target_id": "test_9",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_A-CFC",
+        "type": "chemical",
+        "name": "A-CFC",
+        "aliases": [
+          "amide-functionalized carbon fiber cloth",
+          "amide-functionalized CFC"
+        ],
+        "formula": null,
+        "composition": null,
+        "properties": {
+          "ID/IG ratio": {
+            "value": 0.97,
+            "unit": "dimensionless"
+          },
+          "contact angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "double-layer capacitance": {
+            "value": 9.4,
+            "unit": "mF cm⁻²"
+          },
+          "electrochemical surface area": {
+            "value": 235,
+            "unit": "cm²"
+          },
+          "charge transfer resistance": {
+            "value": 0.69,
+            "unit": "Ω"
+          }
+        }
+      },
+      {
+        "id": "chem_c-CFC",
+        "type": "chemical",
+        "name": "c-CFC",
+        "aliases": [
+          "carboxylated CFC",
+          "pure carboxylated CFC"
+        ],
+        "formula": null,
+        "composition": null,
+        "properties": {
+          "ID/IG ratio": {
+            "value": 0.88,
+            "unit": "dimensionless"
+          },
+          "contact angle": {
+            "value": 125.1,
+            "unit": "°"
+          },
+          "double-layer capacitance": {
+            "value": 2.2,
+            "unit": "mF cm⁻²"
+          },
+          "electrochemical surface area": {
+            "value": 55,
+            "unit": "cm²"
+          },
+          "charge transfer resistance": {
+            "value": 0.81,
+            "unit": "Ω"
+          }
+        }
+      },
+      {
+        "id": "chem_CFC",
+        "type": "chemical",
+        "name": "CFC",
+        "aliases": [
+          "carbon fiber cloth",
+          "pristine CFC"
+        ],
+        "formula": null,
+        "composition": null,
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "A-CFC possesses a rougher, bumpy surface with deepened grooves indicating formation of more defective sites after amidation.",
+        "evidence_snippet": "It can be seen from the SEM images that pure carboxylated CFC (c-CFC, Fig. 3c, d) has a smooth surface with shallow grooves, while the A-CFC possesses a rougher, bumpy surface with deepened grooves (Fig. 3f, g)"
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "Raman",
+        "data_reported": true,
+        "characterization_summary": "Both c-CFC and A-CFC exhibit peaks at 1365.5 (D), 1594.3 (G), 2727.3 (2D) cm⁻¹; A-CFC ID/IG=0.97 > c-CFC 0.88 confirming higher defect density.",
+        "evidence_snippet": "In Raman spectra, both c-CFC and A-CFC exhibit three prominent peaks at 1365.5 (D peak), 1594.3 (G peak) and 2727.3 (2D peak), respectively (Supplementary Fig. 2). The larger intensity ratio of D-peaks and G-peaks (ID/IG) for A-CFC (0.97) than c-CFC (0.88) confirms the higher defect density of the A-CFC"
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "contact angle",
+        "data_reported": true,
+        "characterization_summary": "Pristine c-CFC is hydrophobic with CA of 125.1±1.5° while A-CFC becomes complete wetting with CA of 0°.",
+        "evidence_snippet": "pristine c-CFC is hydrophobic with a contact angle (CA) of 125.1±1.5° (Fig. 3e); after amidation, the obtained A-CFC becomes complete wetting with a CA of 0°"
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "data_reported": true,
+        "characterization_summary": "A-CFC shows defect-rich edges with curved streaks spacing of 3.39 Å.",
+        "evidence_snippet": "High-resolution TEM images (Fig. 4a, b) further corroborated the defect-rich edges of A-CFC and showed that the A-CFC had curved streaks with the spacing distance of 3.39 Å"
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "STEM-EDS",
+        "data_reported": true,
+        "characterization_summary": "N elements uniformly distributed throughout the nanofibers of A-CFC.",
+        "evidence_snippet": "Scanning TEM image and energy dispersive spectroscopy (EDS) mapping analysis (Fig. 4c) revealed the N elements uniformly distributed throughout the nanofibers"
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "A-CFC survey shows C, N, O elements (c-CFC: C, O only); N 1s: 399.5 eV (neutral amine N), 401.7 eV (ammonium ions); C 1s: 284.4 (C-C,H), 285.2 (C-N), 286.9 (O=C), 288.8 (O=C-N), 290.9 eV (π-π*) confirming amide groups.",
+        "evidence_snippet": "XPS survey of A-CFC shows the presence of C, N, and O elements (Fig. 4d), while the XPS survey of c-CFC has only C and O elements. ... high-resolution N 1s spectrum showed two peaks at 399.5 and 401.7 eV corresponding to neutral amine nitrogen and ammonium ions ... C1s peak can be fitted into five peaks at 284.4, 285.2, 286.9, 288.8, and 290.9 eV, respectively, corresponding to aliphatic carbon chains (C–C,H), amine groups (C–N), carbonyl (O=C), carboxyl carbon (O=C-N), and the π-π* transitions in amides",
+        "related_images": [
+          "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg",
+          "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg",
+          "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "C 1s XPS peak",
+            "properties": {
+              "binding_energy": "~285 eV",
+              "intensity": "high",
+              "extracted_from_image": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+            },
+            "source_image_file": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "N 1s XPS peak",
+            "properties": {
+              "binding_energy": "~400 eV",
+              "intensity": "present in A-CFC",
+              "note": "No peak in c-CFC",
+              "extracted_from_image": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+            },
+            "source_image_file": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "O 1s XPS peak",
+            "properties": {
+              "binding_energy": "~532 eV",
+              "intensity": "present",
+              "extracted_from_image": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+            },
+            "source_image_file": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Survey Spectrum",
+            "properties": {
+              "technique": "XPS",
+              "x_axis": "Binding energy (eV)",
+              "x_range": "0-800 eV",
+              "y_axis": "Intensity (a.u.)",
+              "extracted_from_image": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+            },
+            "source_image_file": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS C 1s Spectrum",
+            "properties": {
+              "type": "X-ray Photoelectron Spectroscopy",
+              "region": "C 1s",
+              "x_axis": "Binding energy (eV)",
+              "x_range": [
+                291,
+                288,
+                285,
+                282
+              ],
+              "peaks": [
+                "π-π* transition",
+                "C-C",
+                "C-H",
+                "C-O",
+                "C-N"
+              ],
+              "extracted_from_image": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+            },
+            "source_image_file": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "π-π* transition",
+            "properties": {
+              "binding_energy": "~291 eV",
+              "description": "Shake-up satellite peak from π-π* transition in conjugated carbon systems",
+              "extracted_from_image": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+            },
+            "source_image_file": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-C",
+            "properties": {
+              "binding_energy": "~288 eV",
+              "description": "Carbon-carbon sp2/sp3 bonding",
+              "extracted_from_image": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+            },
+            "source_image_file": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-H",
+            "properties": {
+              "binding_energy": "~285 eV",
+              "description": "Carbon-hydrogen bonding",
+              "extracted_from_image": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+            },
+            "source_image_file": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-O",
+            "properties": {
+              "binding_energy": "~286 eV",
+              "description": "Carbon-oxygen bonding (alcohol, ether)",
+              "extracted_from_image": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+            },
+            "source_image_file": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-N",
+            "properties": {
+              "binding_energy": "~286 eV",
+              "description": "Carbon-nitrogen bonding (amine, amide)",
+              "extracted_from_image": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+            },
+            "source_image_file": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "N=C=O",
+            "properties": {
+              "binding_energy": "~288 eV",
+              "description": "Isocyanate functional group",
+              "extracted_from_image": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+            },
+            "source_image_file": "82ce6e9d9e437521636c2e2a5396c8fd44ee3a3d9182379594add84e1268cf02.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "N 1s XPS Spectrum",
+            "properties": {
+              "technique": "XPS",
+              "region": "N 1s",
+              "x_axis": "Binding energy (eV)",
+              "y_axis": "Intensity (a.u.)",
+              "range": [
+                389,
+                405
+              ],
+              "extracted_from_image": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+            },
+            "source_image_file": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ammonium",
+            "properties": {
+              "binding_energy": "~402 eV",
+              "color": "blue",
+              "extracted_from_image": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+            },
+            "source_image_file": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Amide N-(C=O)",
+            "properties": {
+              "binding_energy": "~400 eV",
+              "color": "red",
+              "extracted_from_image": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+            },
+            "source_image_file": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "N peak at 399 eV",
+            "properties": {
+              "binding_energy": "399 eV",
+              "color": "black",
+              "extracted_from_image": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+            },
+            "source_image_file": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "EIS",
+        "data_reported": true,
+        "characterization_summary": "A-CFC: Rs=3.14 Ω, Rct=0.69 Ω; c-CFC: Rs=5.39 Ω, Rct=0.81 Ω indicating facilitated charge transfer and HER kinetics for A-CFC.",
+        "evidence_snippet": "The A-CFC shows much smaller Rs (3.14 Ω) and Rct (0.69 Ω) than that of pure c-CFC (Rs=5.39 Ω; Rct=0.81 Ω), suggesting the facilitated HER kinetics"
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "CV",
+        "data_reported": true,
+        "characterization_summary": "A-CFC Cdl=9.4 mF cm⁻² (ECSA=235 cm²), c-CFC Cdl=2.2 mF cm⁻² (ECSA=55 cm²).",
+        "evidence_snippet": "the Cdl of A-CFC is 9.4 mF cm⁻² which is about 4.3 times than that of pure c-CFC (2.2 mF cm⁻²). As a result, the ECSAs of A-CFC and c-CFC were calculated to be 235 and 55 cm²",
+        "related_images": [
+          "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg",
+          "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry Plot",
+            "properties": {
+              "x_axis": "E (V vs. RHE)",
+              "y_axis": "j (mA/cm²)",
+              "range_x": "-1.5 to 0.0 V vs. RHE",
+              "range_y": "-200 to 0 mA/cm²",
+              "extracted_from_image": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+            },
+            "source_image_file": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry Plot",
+            "properties": {
+              "type": "graph",
+              "x_axis": "Scan rate (mV s⁻¹)",
+              "y_axis": "Δj (mA cm⁻²)",
+              "extracted_from_image": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+            },
+            "source_image_file": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "c-CFC has smooth surface with shallow grooves.",
+        "evidence_snippet": "pure carboxylated CFC (c-CFC, Fig. 3c, d) has a smooth surface with shallow grooves"
+      },
+      {
+        "id": "RHE",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+        },
+        "source_image_file": "10fe9583d729a079641dfe55a3d7b5cd1ac6b60031902dc00a38947f13c0bc8d.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "MOF Structure",
+        "properties": {
+          "description": "Metal-Organic Framework with blue polyhedra (likely metal nodes) and white spheres (likely oxygen or carbon atoms)",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "Metal Node",
+        "properties": {
+          "color": "blue",
+          "description": "Octahedral coordination polyhedra, likely Zr or similar metal clusters",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "chemical",
+        "name": "Organic Linker",
+        "properties": {
+          "color": "white spheres",
+          "description": "Linear or angular organic struts connecting metal nodes",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "chemical",
+        "name": "Pore",
+        "properties": {
+          "description": "Hexagonal pores in the framework",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "chemical",
+        "name": "Water Molecule",
+        "properties": {
+          "color": "red (oxygen), white (hydrogen)",
+          "description": "Explicit water molecules shown in pores",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "chemical",
+        "name": "Guest Molecule",
+        "properties": {
+          "color": "green",
+          "description": "Solvate or guest species in green color",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "visualization",
+        "name": "Panel b Top View",
+        "properties": {
+          "description": "Top view showing periodic MOF layer with protruding clusters",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "visualization",
+        "name": "Panel b Side View 1",
+        "properties": {
+          "description": "Side view with pores, water molecules (red/white), and linkers",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "visualization",
+        "name": "Panel b Side View 2",
+        "properties": {
+          "description": "Close-up showing metal nodes (blue), water (red/white), and green guest molecules",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "LSV_plot",
+        "type": "characterization",
+        "name": "Linear Sweep Voltammetry Plot",
+        "properties": {
+          "x_axis": "E (V vs RHE)",
+          "y_axis": "j (mA cm⁻²)",
+          "range_x": "-1.2 to 0.0 V",
+          "range_y": "-600 to 0 mA cm⁻²",
+          "extracted_from_image": "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg"
+        },
+        "source_image_file": "2cd466da6d678342275ae86619b985fb92fd8303aeff12ecf38b9c28b7e06c13.jpg"
+      },
+      {
+        "id": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74_node1",
+        "type": "characterization",
+        "name": "Initial CV Curve",
+        "properties": {
+          "description": "Black line showing initial cyclic voltammetry curve",
+          "current_range": "-200 to 0 mA/cm²",
+          "potential_range": "-1.2 to 0.0 V vs RHE",
+          "extracted_from_image": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74.jpg"
+        },
+        "source_image_file": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74.jpg"
+      },
+      {
+        "id": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74_node2",
+        "type": "characterization",
+        "name": "18000th Cycle CV Curve",
+        "properties": {
+          "description": "Red line showing cyclic voltammetry curve after 18,000 cycles",
+          "current_range": "-150 to 0 mA/cm²",
+          "potential_range": "-1.2 to 0.0 V vs RHE",
+          "stability": "High stability indicated by overlapping curve with initial",
+          "extracted_from_image": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74.jpg"
+        },
+        "source_image_file": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74.jpg"
+      },
+      {
+        "id": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74_node3",
+        "type": "experiment",
+        "name": "Cyclic Voltammetry Test",
+        "properties": {
+          "figure_label": "f",
+          "x_axis": "E (V vs RHE), range: -1.2 to 0.0 V",
+          "y_axis": "j (mA/cm²), range: -200 to 0 mA/cm²",
+          "time_axis": "Time (h), range: 0 to 10 h",
+          "cycles_tested": "18,000 cycles",
+          "reference_electrode": "RHE",
+          "extracted_from_image": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74.jpg"
+        },
+        "source_image_file": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74.jpg"
+      },
+      {
+        "id": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74_node4",
+        "type": "material",
+        "name": "Tested Electrocatalyst",
+        "properties": {
+          "context": "Electrocatalyst showing excellent stability over 18,000 CV cycles",
+          "performance_metric": "Stable current density retention",
+          "extracted_from_image": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74.jpg"
+        },
+        "source_image_file": "3c35f249132ccb1a034c8a07197e9bfd114d5d73b0e87c7e92435ef75375ab74.jpg"
+      },
+      {
+        "id": "N",
+        "type": "chemical",
+        "name": "N",
+        "properties": {
+          "description": "Nitrogen or N-doped structure",
+          "extracted_from_image": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+        },
+        "source_image_file": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+      },
+      {
+        "id": "CONH2",
+        "type": "chemical",
+        "name": "CONH₂",
+        "properties": {
+          "description": "Amide group or CONH₂-functionalized structure",
+          "extracted_from_image": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+        },
+        "source_image_file": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+      },
+      {
+        "id": "2CN",
+        "type": "chemical",
+        "name": "2-CN",
+        "properties": {
+          "description": "Dicyano or 2-CN structure",
+          "extracted_from_image": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+        },
+        "source_image_file": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+      },
+      {
+        "id": "C3N",
+        "type": "chemical",
+        "name": "C₃N",
+        "properties": {
+          "description": "C3N structure or carbon nitride variant",
+          "extracted_from_image": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+        },
+        "source_image_file": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+      },
+      {
+        "id": "3N",
+        "type": "chemical",
+        "name": "3N",
+        "properties": {
+          "description": "Tri-nitrogen or 3N structure",
+          "extracted_from_image": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+        },
+        "source_image_file": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+      },
+      {
+        "id": "H",
+        "type": "chemical",
+        "name": "H",
+        "properties": {
+          "description": "Hydrogen reference state",
+          "extracted_from_image": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+        },
+        "source_image_file": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+      },
+      {
+        "id": "2H",
+        "type": "chemical",
+        "name": "2H",
+        "properties": {
+          "description": "2H reference state",
+          "extracted_from_image": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+        },
+        "source_image_file": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Energy Diagram",
+        "properties": {
+          "type": "plot",
+          "x_axis": "H to 2H",
+          "y_axis": "Energy (eV)",
+          "range_y": "-2 to 2 eV",
+          "extracted_from_image": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+        },
+        "source_image_file": "3ff9a24cccef0a58ca7645fdc14b8d71de5d5d4aa01b3530d761f115e9e20c4c.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "visualization",
+        "name": "Panel b Side View 3",
+        "properties": {
+          "description": "Framework with pores containing water and coordinated species",
+          "extracted_from_image": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+        },
+        "source_image_file": "d06bc4b6ef8016ddb32cfca338ab3e9d9b46974b2689e51e2bec32ab38d8aebc.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "*OH(H)",
+        "properties": {
+          "extracted_from_image": "7ad47534b8156e6917340709429022313dce90048193a3b2333fabd74ae65136.jpg"
+        },
+        "source_image_file": "7ad47534b8156e6917340709429022313dce90048193a3b2333fabd74ae65136.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "*OH⁺(Hₙ)",
+        "properties": {
+          "energy": "0.65 eV",
+          "extracted_from_image": "7ad47534b8156e6917340709429022313dce90048193a3b2333fabd74ae65136.jpg"
+        },
+        "source_image_file": "7ad47534b8156e6917340709429022313dce90048193a3b2333fabd74ae65136.jpg"
+      },
+      {
+        "id": "A-FCC",
+        "type": "chemical",
+        "name": "A-FCC",
+        "properties": {
+          "description": "Amorphous FCC material",
+          "extracted_from_image": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+        },
+        "source_image_file": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+      },
+      {
+        "id": "c-FCC",
+        "type": "chemical",
+        "name": "c-FCC",
+        "properties": {
+          "description": "Crystalline FCC material",
+          "extracted_from_image": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+        },
+        "source_image_file": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+      },
+      {
+        "id": "A-FCC_2mFcm2",
+        "type": "data_point",
+        "name": "A-FCC capacitance at 200 mV/s",
+        "properties": {
+          "value": "2 mF cm⁻²",
+          "scan_rate": "200 mV s⁻¹",
+          "extracted_from_image": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+        },
+        "source_image_file": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+      },
+      {
+        "id": "c-FCC_9.4mFcm2",
+        "type": "data_point",
+        "name": "c-FCC capacitance at 200 mV/s",
+        "properties": {
+          "value": "9.4 mF cm⁻²",
+          "scan_rate": "200 mV s⁻¹",
+          "extracted_from_image": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+        },
+        "source_image_file": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+      },
+      {
+        "id": "A-FCC_9mFcm2",
+        "type": "data_point",
+        "name": "A-FCC capacitance marker",
+        "properties": {
+          "value": "9 mF cm⁻²",
+          "extracted_from_image": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+        },
+        "source_image_file": "61e3aa4e4335375027dddc205f258607b3bf88bec462e51f741d589d30a47b04.jpg"
+      },
+      {
+        "id": "c-CFC",
+        "type": "chemical",
+        "name": "c-CFC",
+        "properties": {
+          "description": "Control or pristine carbon fiber composite",
+          "extracted_from_image": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+        },
+        "source_image_file": "6b22e96d2e18d0c956b286bd2e17a23613334b6e65f0c04d63ab8c36e49af2e5.jpg"
+      },
+      {
+        "id": "rs",
+        "type": "electrical",
+        "name": "Rs",
+        "properties": {
+          "description": "Series resistance",
+          "extracted_from_image": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+        },
+        "source_image_file": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+      },
+      {
+        "id": "rct",
+        "type": "electrical",
+        "name": "Rct",
+        "properties": {
+          "description": "Charge transfer resistance",
+          "extracted_from_image": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+        },
+        "source_image_file": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+      },
+      {
+        "id": "qct",
+        "type": "electrical",
+        "name": "Qct",
+        "properties": {
+          "description": "Constant phase element for charge transfer",
+          "extracted_from_image": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+        },
+        "source_image_file": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+      },
+      {
+        "id": "qh",
+        "type": "electrical",
+        "name": "Qh",
+        "properties": {
+          "description": "Constant phase element for diffusion",
+          "extracted_from_image": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+        },
+        "source_image_file": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+      },
+      {
+        "id": "rh",
+        "type": "electrical",
+        "name": "Rh",
+        "properties": {
+          "description": "Warburg resistance or diffusion resistance",
+          "extracted_from_image": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+        },
+        "source_image_file": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+      },
+      {
+        "id": "model",
+        "type": "model",
+        "name": "2TPE Model",
+        "properties": {
+          "description": "Two Time Constant Porous Electrode Model",
+          "extracted_from_image": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+        },
+        "source_image_file": "73f9f3dccbb2851f2cf89be068f1f871d20ff3b8cff62cc3e95c3973d5e2ba1b.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chemical",
+        "name": "OH⁻(H)",
+        "properties": {
+          "extracted_from_image": "7ad47534b8156e6917340709429022313dce90048193a3b2333fabd74ae65136.jpg"
+        },
+        "source_image_file": "7ad47534b8156e6917340709429022313dce90048193a3b2333fabd74ae65136.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "chart",
+        "name": "Energy Diagram",
+        "properties": {
+          "type": "potential energy surface",
+          "unit": "eV",
+          "extracted_from_image": "7ad47534b8156e6917340709429022313dce90048193a3b2333fabd74ae65136.jpg"
+        },
+        "source_image_file": "7ad47534b8156e6917340709429022313dce90048193a3b2333fabd74ae65136.jpg"
+      },
+      {
+        "id": "figure_label",
+        "type": "annotation",
+        "name": "Figure e",
+        "properties": {
+          "extracted_from_image": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+        },
+        "source_image_file": "8f5e0ad4b219034b45d3f02ba9d3ff088a9e5f0a0f3d5183bde06909857070d6.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "characterization",
+        "name": "Energy Chart",
+        "properties": {
+          "type": "DOS/electronic structure",
+          "x_label": "Chemical systems",
+          "y_label": "Energy (eV)",
+          "y_range": [
+            -2,
+            3
+          ],
+          "extracted_from_image": "cb808a0147df6ee8e30fbbd582fb92d464aed6b88e52c710c735cb76a7d0262c.jpg"
+        },
+        "source_image_file": "cb808a0147df6ee8e30fbbd582fb92d464aed6b88e52c710c735cb76a7d0262c.jpg"
+      },
+      {
+        "id": "figure_b",
+        "type": "characterization",
+        "name": "Figure b",
+        "properties": {
+          "type": "Tafel plot",
+          "x_axis": "Log|j| (mA cm⁻²)",
+          "y_axis": "Overpotential (V)",
+          "extracted_from_image": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+        },
+        "source_image_file": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+      },
+      {
+        "id": "A-CFC_performance",
+        "type": "characterization",
+        "name": "A-CFC Tafel slope",
+        "properties": {
+          "slope": "37 mV dec⁻¹",
+          "extracted_from_image": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+        },
+        "source_image_file": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+      },
+      {
+        "id": "C-CFC_performance",
+        "type": "characterization",
+        "name": "C-CFC Tafel slope",
+        "properties": {
+          "slope": "37 mV dec⁻¹",
+          "extracted_from_image": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+        },
+        "source_image_file": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+      },
+      {
+        "id": "PVCPNC_performance",
+        "type": "characterization",
+        "name": "20 wt% PVC PNC Tafel slope",
+        "properties": {
+          "slope": "30.7 mV dec⁻¹",
+          "extracted_from_image": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+        },
+        "source_image_file": "b363ee2fcf82c627b1b523917674eca38452e892629ca71923c569acd0278339.jpg"
+      },
+      {
+        "id": "nh",
+        "type": "chemical",
+        "name": "N-H",
+        "properties": {
+          "label": "N-H",
+          "extracted_from_image": "cb808a0147df6ee8e30fbbd582fb92d464aed6b88e52c710c735cb76a7d0262c.jpg"
+        },
+        "source_image_file": "cb808a0147df6ee8e30fbbd582fb92d464aed6b88e52c710c735cb76a7d0262c.jpg"
+      },
+      {
+        "id": "oh",
+        "type": "chemical",
+        "name": "O-H",
+        "properties": {
+          "label": "O-H",
+          "extracted_from_image": "cb808a0147df6ee8e30fbbd582fb92d464aed6b88e52c710c735cb76a7d0262c.jpg"
+        },
+        "source_image_file": "cb808a0147df6ee8e30fbbd582fb92d464aed6b88e52c710c735cb76a7d0262c.jpg"
+      },
+      {
+        "id": "image_panel_c",
+        "type": "image",
+        "name": "Figure Panel C",
+        "properties": {
+          "description": "Four-panel TEM/fluorescence microscopy image labeled C",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "tem_dark",
+        "type": "characterization",
+        "name": "TEM Dark Field Image",
+        "properties": {
+          "panel": "top-left",
+          "description": "Dark grayscale image showing nanoparticle aggregate with scale bar",
+          "technique": "TEM (dark field)",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "tem_bright",
+        "type": "characterization",
+        "name": "TEM Bright Field Image",
+        "properties": {
+          "panel": "top-right",
+          "description": "Bright image with red overlapping annotation on nanoparticle aggregate",
+          "technique": "TEM",
+          "annotation": "Overlapping",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "fluorescence_red",
+        "type": "characterization",
+        "name": "Red Fluorescence Image",
+        "properties": {
+          "panel": "bottom-left",
+          "description": "Red-colored nanoparticle aggregate",
+          "technique": "Fluorescence microscopy",
+          "channel": "Red",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "fluorescence_green",
+        "type": "characterization",
+        "name": "Green Fluorescence Image",
+        "properties": {
+          "panel": "bottom-right",
+          "description": "Green-colored dispersed nanoparticles",
+          "technique": "Fluorescence microscopy",
+          "channel": "Green",
+          "label": "N (nanoparticles)",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "nanoparticles_aggregate",
+        "type": "material",
+        "name": "Nanoparticle Aggregate",
+        "properties": {
+          "description": "Clustered nanoparticles observed in TEM and red fluorescence",
+          "location": "C region",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "nanoparticles_dispersed",
+        "type": "material",
+        "name": "Dispersed Nanoparticles",
+        "properties": {
+          "description": "Individual nanoparticles labeled N, green fluorescence",
+          "location": "N region",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "label_c",
+        "type": "annotation",
+        "name": "Label C",
+        "properties": {
+          "position": "top-left and bottom-left panels",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "label_n",
+        "type": "annotation",
+        "name": "Label N",
+        "properties": {
+          "position": "bottom-right panel",
+          "meaning": "nanoparticles",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "annotation",
+        "name": "Scale Bar",
+        "properties": {
+          "panel": "top-left",
+          "description": "White scale bar in TEM image",
+          "extracted_from_image": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+        },
+        "source_image_file": "d09558ab0df4247b07090cdb82be1ccd001fc695cf0df82a7626059a998f4869.jpg"
+      },
+      {
+        "id": "image_a",
+        "type": "characterization",
+        "name": "SEM image (a)",
+        "properties": {
+          "description": "Scanning Electron Microscopy image labeled (a)",
+          "scale_bar": "present",
+          "annotations": "green arrows highlighting features",
+          "extracted_from_image": "da0a5cef5db5e12019757d914eb714cb0f1f64e198e062ea98fa1c2a3cb38d81.jpg"
+        },
+        "source_image_file": "da0a5cef5db5e12019757d914eb714cb0f1f64e198e062ea98fa1c2a3cb38d81.jpg"
+      },
+      {
+        "id": "defective_edges",
+        "type": "feature",
+        "name": "Defective Edges",
+        "properties": {
+          "description": "Defects observed along edges in the material",
+          "highlighted": "green arrows",
+          "location": "edges of the sample",
+          "extracted_from_image": "da0a5cef5db5e12019757d914eb714cb0f1f64e198e062ea98fa1c2a3cb38d81.jpg"
+        },
+        "source_image_file": "da0a5cef5db5e12019757d914eb714cb0f1f64e198e062ea98fa1c2a3cb38d81.jpg"
+      },
+      {
+        "id": "material_surface",
+        "type": "material",
+        "name": "Material Surface",
+        "properties": {
+          "description": "Wrinkled or textured surface observed in SEM",
+          "morphology": "rough, wavy texture",
+          "extracted_from_image": "da0a5cef5db5e12019757d914eb714cb0f1f64e198e062ea98fa1c2a3cb38d81.jpg"
+        },
+        "source_image_file": "da0a5cef5db5e12019757d914eb714cb0f1f64e198e062ea98fa1c2a3cb38d81.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_A-CFC_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_A-CFC_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_A-CFC_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_A-CFC_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_A-CFC_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_A-CFC_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_A-CFC_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_A-CFC_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_A-CFC",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-CFC_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_c-CFC",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-CFC_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_c-CFC",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-CFC_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_c-CFC",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-CFC_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_c-CFC",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-CFC_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_c-CFC",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_c-CFC_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_c-CFC",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "source_id": "chem_A-CFC",
+        "target_id": "char_8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-CFC",
+        "target_id": "char_8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Pt/C",
+        "target_id": "char_8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "RHE",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "represented_by_black_line"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "represented_by_red_line"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "represented_by_upper_black_line"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "represented_by_upper_red_line"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "reference_level"
+      },
+      {
+        "source_id": "chem_A-CFC",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-CFC",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Pt/C",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node1",
+        "type": "contains"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node2",
+        "type": "contains"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node1",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node2",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "N",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "CONH2",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "2CN",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "C3N",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "3N",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "H",
+        "target_id": "chart",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "2H",
+        "target_id": "chart",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "includes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "includes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "processed_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "functionalized_with"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "functionalized_with"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "contains_group"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "contains_group"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n10",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n11",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n12",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "A-FCC",
+        "target_id": "char_8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "c-FCC",
+        "target_id": "char_8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "A-FCC",
+        "target_id": "A-FCC_2mFcm2",
+        "type": "has_data"
+      },
+      {
+        "source_id": "c-FCC",
+        "target_id": "c-FCC_9.4mFcm2",
+        "type": "has_data"
+      },
+      {
+        "source_id": "A-FCC",
+        "target_id": "A-FCC_9mFcm2",
+        "type": "has_data"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "A-FCC_2mFcm2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "c-FCC_9.4mFcm2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "A-FCC_9mFcm2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_A-CFC",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "c-CFC",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_A-CFC",
+        "target_id": "char_6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "c-CFC",
+        "target_id": "char_6",
+        "type": "lacks_peak"
+      },
+      {
+        "source_id": "chem_A-CFC",
+        "target_id": "char_6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "c-CFC",
+        "target_id": "char_6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "chem_A-CFC",
+        "target_id": "char_6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "c-CFC",
+        "target_id": "char_6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_6",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_6",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_6",
+        "type": "contains"
+      },
+      {
+        "source_id": "model",
+        "target_id": "rs",
+        "type": "contains"
+      },
+      {
+        "source_id": "model",
+        "target_id": "rct",
+        "type": "contains"
+      },
+      {
+        "source_id": "model",
+        "target_id": "qct",
+        "type": "contains"
+      },
+      {
+        "source_id": "rct",
+        "target_id": "qct",
+        "type": "parallel"
+      },
+      {
+        "source_id": "model",
+        "target_id": "qh",
+        "type": "contains"
+      },
+      {
+        "source_id": "model",
+        "target_id": "rh",
+        "type": "contains"
+      },
+      {
+        "source_id": "rh",
+        "target_id": "qh",
+        "type": "parallel"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "property_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n7",
+        "type": "reference_point"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "deprotonation"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "protonation"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "hydrogenation"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "hydrogenation"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "protonation"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "dehydrogenation"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "hydrogenation"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "dehydrogenation"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "deprotonation"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "hydrogenation"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n12",
+        "type": "protonation"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n13",
+        "type": "deprotonation"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n14",
+        "type": "depicts"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "figure_label",
+        "target_id": "char_6",
+        "type": "labels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chart1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chart1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chart1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chart1",
+        "type": "corresponds_to_peak"
+      },
+      {
+        "source_id": "chem_A-CFC",
+        "target_id": "figure_b",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_A-CFC",
+        "target_id": "A-CFC_performance",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_c-CFC",
+        "target_id": "figure_b",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_c-CFC",
+        "target_id": "C-CFC_performance",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_Pt/C",
+        "target_id": "figure_b",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Pt/C",
+        "target_id": "PVCPNC_performance",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "A-CFC_performance",
+        "target_id": "figure_b",
+        "type": "part_of"
+      },
+      {
+        "source_id": "C-CFC_performance",
+        "target_id": "figure_b",
+        "type": "part_of"
+      },
+      {
+        "source_id": "PVCPNC_performance",
+        "target_id": "figure_b",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chart1",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chart1",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chart1",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chart1",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chart1",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "nh",
+        "target_id": "chart1",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "oh",
+        "target_id": "chart1",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "hosts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "hosts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "shows"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n6",
+        "type": "shows"
+      },
+      {
+        "source_id": "image_panel_c",
+        "target_id": "tem_dark",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_panel_c",
+        "target_id": "tem_bright",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_panel_c",
+        "target_id": "fluorescence_red",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_panel_c",
+        "target_id": "fluorescence_green",
+        "type": "contains"
+      },
+      {
+        "source_id": "tem_dark",
+        "target_id": "nanoparticles_aggregate",
+        "type": "depicts"
+      },
+      {
+        "source_id": "tem_bright",
+        "target_id": "nanoparticles_aggregate",
+        "type": "depicts"
+      },
+      {
+        "source_id": "fluorescence_red",
+        "target_id": "nanoparticles_aggregate",
+        "type": "depicts"
+      },
+      {
+        "source_id": "fluorescence_green",
+        "target_id": "nanoparticles_dispersed",
+        "type": "depicts"
+      },
+      {
+        "source_id": "tem_dark",
+        "target_id": "label_c",
+        "type": "has_annotation"
+      },
+      {
+        "source_id": "fluorescence_red",
+        "target_id": "label_c",
+        "type": "has_annotation"
+      },
+      {
+        "source_id": "fluorescence_green",
+        "target_id": "label_n",
+        "type": "has_annotation"
+      },
+      {
+        "source_id": "tem_dark",
+        "target_id": "scale_bar",
+        "type": "has_feature"
+      },
+      {
+        "source_id": "tem_bright",
+        "target_id": "nanoparticles_aggregate",
+        "type": "has_annotation_overlapping"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "defective_edges",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "material_surface",
+        "type": "shows"
+      },
+      {
+        "source_id": "defective_edges",
+        "target_id": "material_surface",
+        "type": "part_of"
+      }
+    ]
+  }
+}

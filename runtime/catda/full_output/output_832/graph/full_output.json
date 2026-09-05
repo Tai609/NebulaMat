@@ -1,0 +1,827 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_nico_pba",
+        "type": "chemical",
+        "name": "NiCo-PBA",
+        "aliases": [
+          "NiCo-PBA",
+          "core crystals of NiCo-PBA"
+        ],
+        "formula": "Ni3[Co(CN)6]2·xH2O",
+        "properties": {
+          "particle_size": {
+            "value": 277,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_nico_a_nico_pba",
+        "type": "chemical",
+        "name": "NiCo@A-NiCo-PBA",
+        "aliases": [
+          "NiCo@A-NiCo-PBA"
+        ],
+        "properties": {
+          "particle_size": {
+            "value": 311,
+            "unit": "nm"
+          },
+          "core_particle_size": {
+            "value": 277,
+            "unit": "nm"
+          },
+          "shell_thickness": {
+            "value": 25,
+            "unit": "nm"
+          },
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 45.33,
+            "unit": "m²/g"
+          },
+          "pore_volume": {
+            "value": 0.0283,
+            "unit": "cm³/g"
+          }
+        }
+      },
+      {
+        "id": "chem_fto",
+        "type": "chemical",
+        "name": "FTO substrate",
+        "aliases": [
+          "FTO"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_naoh_1m",
+        "type": "chemical",
+        "name": "1 M NaOH",
+        "aliases": [
+          "1M NaOH electrolyte"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "chem_nico_a_nico_pba_aa",
+        "type": "chemical",
+        "name": "NiCo@A-NiCo-PBA-AA",
+        "aliases": [
+          "NiCo@A-NiCo-PBA-AA",
+          "fully activated catalyst"
+        ],
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 179.12,
+            "unit": "m²/g"
+          },
+          "BJH pore size": {
+            "value": 3.44,
+            "unit": "nm"
+          },
+          "pore_volume": {
+            "value": 0.0518,
+            "unit": "cm³/g"
+          }
+        }
+      },
+      {
+        "synth_step_1": {
+          "id": "synth_step_1",
+          "type": "synthesis",
+          "name": "Topological growth of amorphous shell",
+          "procedure": "Core crystals of NiCo-PBA were placed in a fresh solution containing metal ions, cyanogen linker, and citrate dihydrate capping agent for the in situ growth of A-NiCo-PBA shell to form the NiCo@A-NiCo-PBA composite.",
+          "method": "topological growth",
+          "conditions": {},
+          "source_text": "NiCo@A-NiCo-PBA was prepared by a facile topological growth method. Core crystals of NiCo-PBA were placed in a fresh solution containing metal ions, cyanogen linker, and citrate dihydrate capping agent..."
+        }
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Drop-coating and anodization activation",
+        "procedure": "NiCo@A-NiCo-PBA was drop-coated onto a clean FTO substrate and activated by anodization in 1M NaOH electrolyte at an applied voltage of 1.55V versus RHE. During anodization the current density dramatically decreased over the first minute and then maintained nearly a constant value for the remaining time. The sample after activation was denoted NiCo@A-NiCo-PBA-AA.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Drop-coating",
+            "method": "Drop-coating",
+            "conditions": {},
+            "procedure_snippet": "NiCo@A-NiCo-PBA was drop-coated onto a clean FTO substrate"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Anodization",
+            "method": "Electrochemical anodization",
+            "conditions": {
+              "voltage": {
+                "value": 1.55,
+                "unit": "V vs RHE"
+              },
+              "electrolyte": {
+                "value": "1 M",
+                "unit": "NaOH"
+              },
+              "time": {
+                "value": 10,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "activated by anodization in 1M NaOH electrolyte at an applied voltage of 1.55V versus RHE"
+          }
+        ],
+        "method": "anodization activation",
+        "conditions": {
+          "voltage": {
+            "value": 1.55,
+            "unit": "V vs RHE"
+          },
+          "electrolyte": {
+            "value": "1 M",
+            "unit": "NaOH"
+          }
+        },
+        "source_text": "Subsequently, NiCo@A-NiCo-PBA was drop-coated onto a clean FTO substrate and activated by anodization in 1M NaOH electrolyte at an applied voltage of 1.55V versus RHE..."
+      },
+      {
+        "id": "chem_citrate_dihydrate",
+        "type": "chemical",
+        "name": "citrate dihydrate",
+        "aliases": [
+          "citrate dihydrate capping agent"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_metal_ions",
+        "type": "chemical",
+        "name": "metal ions",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_cyanogen_linker",
+        "type": "chemical",
+        "name": "cyanogen linker",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_NiCo_A_NiCo_PBA_AA",
+        "type": "chemical",
+        "name": "NiCo@A-NiCo-PBA-AA",
+        "aliases": [
+          "anodized NiCo@A-NiCo-PBA",
+          "fully activated catalyst",
+          "transformed core-shell PBA"
+        ],
+        "formula": "Ni(OH)2",
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 179.12,
+            "unit": "m²/g"
+          },
+          "pore volume": {
+            "value": 0.0518,
+            "unit": "cm³/g"
+          }
+        }
+      },
+      {
+        "id": "chem_NiCo_PBA_AA",
+        "type": "chemical",
+        "name": "NiCo-PBA-AA",
+        "aliases": [
+          "anodized NiCo-PBA"
+        ],
+        "formula": "Ni(OH)2"
+      },
+      {
+        "id": "chem_NiCo@A-NiCo-PBA",
+        "type": "chemical",
+        "name": "NiCo@A-NiCo-PBA",
+        "aliases": [
+          "core-shell PBA"
+        ],
+        "formula": "Ni3[Co(CN)6]2·xH2O",
+        "properties": {
+          "particle_size": {
+            "value": 311,
+            "unit": "nm"
+          },
+          "shell_thickness": {
+            "value": 25,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_NiCo-PBA",
+        "type": "chemical",
+        "name": "NiCo-PBA",
+        "aliases": [
+          "core PBA"
+        ],
+        "formula": "Ni3[Co(CN)6]2·xH2O",
+        "properties": {
+          "particle_size": {
+            "value": 277,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_NiCo@A-NiCo-PBA-AA",
+        "type": "chemical",
+        "name": "NiCo@A-NiCo-PBA-AA",
+        "aliases": [
+          "fully activated catalyst",
+          "anodized core-shell PBA"
+        ],
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 179.12,
+            "unit": "m²/g"
+          },
+          "pore_volume": {
+            "value": 0.0518,
+            "unit": "cm³/g"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_nico_pba_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nico_pba",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "core precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_nico_a_nico_pba",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_nico_a_nico_pba",
+        "properties": {
+          "form": "core-shell nanocubes"
+        }
+      },
+      {
+        "id": "edge_input_chem_nico_a_nico_pba_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_nico_a_nico_pba",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_fto_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_fto",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_naoh_1m_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_naoh_1m",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "electrolyte"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_nico_a_nico_pba_aa",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_nico_a_nico_pba_aa",
+        "properties": {
+          "form": "anodized amorphous Ni(OH)2"
+        }
+      },
+      {
+        "id": "edge_input_chem_metal_ions_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_metal_ions",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_cyanogen_linker_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_cyanogen_linker",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "linker"
+        }
+      },
+      {
+        "id": "edge_input_chem_citrate_dihydrate_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_citrate_dihydrate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "capping agent"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_NiCo_PBA_AA",
+      "chem_NiCo_A_NiCo_PBA_AA"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_NiCo_A_NiCo_PBA_AA",
+        "type": "chemical",
+        "name": "NiCo@A-NiCo-PBA-AA",
+        "aliases": [
+          "anodized NiCo@A-NiCo-PBA",
+          "fully activated catalyst",
+          "transformed core-shell PBA"
+        ],
+        "formula": "Ni(OH)2",
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 179.12,
+            "unit": "m²/g"
+          },
+          "pore volume": {
+            "value": 0.0518,
+            "unit": "cm³/g"
+          }
+        }
+      },
+      {
+        "id": "chem_NiCo_PBA_AA",
+        "type": "chemical",
+        "name": "NiCo-PBA-AA",
+        "aliases": [
+          "anodized NiCo-PBA"
+        ],
+        "formula": "Ni(OH)2"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_NiCo_A_NiCo_PBA_AA",
+        "description": "OER performance in 1 M NaOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M NaOH",
+            "unit": "solution"
+          },
+          "reference_electrode": {
+            "value": "RHE",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": null,
+            "unit": "various"
+          },
+          "iR_correction": {
+            "value": "not specified",
+            "unit": "method"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 276,
+            "unit": "mV"
+          },
+          "overpotential_at_50_mA/cm²": {
+            "value": 443,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA/cm²": {
+            "value": 544,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": null,
+            "unit": "mV/dec"
+          },
+          "mass_activity_at_280mV": {
+            "value": 54.1,
+            "unit": "A/g"
+          },
+          "double_layer_capacitance": {
+            "value": 2.26,
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "chronopotentiometry test was performed ... stabilized at 1.506 V ... accurate η₁₀ is 276 mV ... overpotentials of NiCo@A-NiCo-PBA-AA at current densities of 50 and 100 mA cm⁻² ... 443 and 544 mV ... mass activity of NiCo@A-NiCo-PBA-AA is 54.1 A g⁻¹ at ... 0.28 V ... double-layer capacitance (Cdl) ... 2.26 mF cm⁻²"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_NiCo_A_NiCo_PBA_AA",
+        "description": "HER performance in 1 M NaOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M NaOH",
+            "unit": "solution"
+          },
+          "reference_electrode": {
+            "value": "RHE",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "onset_overpotential": {
+            "value": 37,
+            "unit": "mV"
+          },
+          "overpotential_at_10_mA/cm²": {
+            "value": 173,
+            "unit": "mV"
+          },
+          "overpotential_at_50_mA/cm²": {
+            "value": null,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA/cm²": {
+            "value": null,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 74.1,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "exhibits an onset potential of 37 mV ... overpotential of 173 mV was required ... to offer a cathodic current density of 10 mA cm⁻² ... Tafel slope ... 74.1 mV dec⁻¹"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_NiCo_PBA_AA",
+        "description": "OER performance comparison in 1 M NaOH - ECSA measurement",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M NaOH",
+            "unit": "solution"
+          },
+          "reference_electrode": {
+            "value": "RHE",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "double_layer_capacitance": {
+            "value": 3.92,
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "The slopes of NiCo@A-NiCo-PBA and NiCo@A-NiCo-PBA-AA are 7.83 and 4.52, respectively, where double-layer capacitance (Cdl) is half of the value, that is, 3.92 and 2.26 mF cm⁻²"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_NiCo_PBA_AA",
+        "description": "HER performance comparison in 1 M NaOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M NaOH",
+            "unit": "solution"
+          },
+          "reference_electrode": {
+            "value": "RHE",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "onset_overpotential": {
+            "value": 178,
+            "unit": "mV"
+          },
+          "overpotential_at_10_mA/cm²": {
+            "value": 292,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 104.3,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "onset potential of 37 mV which is much less than the core PBA (178 mV) ... NiCo-PBA-AA required an overpotential of 292 mV ... Tafel slope ... of the core PBA (104.3 mV dec⁻¹)"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_NiCo_A_NiCo_PBA_AA",
+        "description": "OER stability test - multi-step chronoamperometry",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M NaOH",
+            "unit": "solution"
+          },
+          "applied_potentials": {
+            "value": "1.49 V, 1.68 V, 1.73 V",
+            "unit": "vs RHE"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "current density remains constant, returns to initial level",
+            "unit": "multi-step"
+          }
+        },
+        "source_text": "Multistep chronoamperometry was also carried out at potentials of 1.49, 1.68, and 1.73 V ... current density at NiCo@A-NiCo-PBA-AA remains constant at each applied potential ... returns to the initial level"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_NiCo_A_NiCo_PBA_AA",
+        "description": "HER stability test - chronoamperometry",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M NaOH",
+            "unit": "solution"
+          },
+          "applied_potential": {
+            "value": -0.18,
+            "unit": "V vs RHE"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "no obvious performance degradation",
+            "unit": "40 h"
+          }
+        },
+        "source_text": "Chronoamperometry measurement of NiCo@A-NiCo-PBA-AA at an anodic voltage -0.18 V (vs RHE) ... showed excellent stability with no obvious performance degradation over 40 h"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_NiCo_A_NiCo_PBA_AA_test_1",
+        "type": "tested_in",
+        "source_id": "chem_NiCo_A_NiCo_PBA_AA",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiCo_A_NiCo_PBA_AA_test_2",
+        "type": "tested_in",
+        "source_id": "chem_NiCo_A_NiCo_PBA_AA",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiCo_PBA_AA_test_4",
+        "type": "tested_in",
+        "source_id": "chem_NiCo_PBA_AA",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiCo_PBA_AA_test_5",
+        "type": "tested_in",
+        "source_id": "chem_NiCo_PBA_AA",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiCo_A_NiCo_PBA_AA_test_6",
+        "type": "tested_in",
+        "source_id": "chem_NiCo_A_NiCo_PBA_AA",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiCo_A_NiCo_PBA_AA_test_7",
+        "type": "tested_in",
+        "source_id": "chem_NiCo_A_NiCo_PBA_AA",
+        "target_id": "test_7",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_NiCo@A-NiCo-PBA",
+        "type": "chemical",
+        "name": "NiCo@A-NiCo-PBA",
+        "aliases": [
+          "core-shell PBA"
+        ],
+        "formula": "Ni3[Co(CN)6]2·xH2O",
+        "properties": {
+          "particle_size": {
+            "value": 311,
+            "unit": "nm"
+          },
+          "shell_thickness": {
+            "value": 25,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_NiCo-PBA",
+        "type": "chemical",
+        "name": "NiCo-PBA",
+        "aliases": [
+          "core PBA"
+        ],
+        "formula": "Ni3[Co(CN)6]2·xH2O",
+        "properties": {
+          "particle_size": {
+            "value": 277,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_NiCo@A-NiCo-PBA-AA",
+        "type": "chemical",
+        "name": "NiCo@A-NiCo-PBA-AA",
+        "aliases": [
+          "fully activated catalyst",
+          "anodized core-shell PBA"
+        ],
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 179.12,
+            "unit": "m²/g"
+          },
+          "pore_volume": {
+            "value": 0.0518,
+            "unit": "cm³/g"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "NiCo-PBA shows regular cubic morphology with sharper corners; NiCo@A-NiCo-PBA shows core-shell structure with single-crystal core and amorphous shell ≈25 nm thick.",
+        "evidence_snippet": "TEM was employed to investigate the structure of NiCo-PBA (Figure 2a,b) and NiCo@A-NiCo-PBA (Figure 2c,d). It is observed that the PBA precursors possess regular cubic morphology, with NiCo-PBA exhibiting sharper corners compared to NiCo@A-NiCo-PBA. Moreover, the core-shell structure of NiCo@A-NiCo-PBA is clearly distinguishable. The thickness of the shell is ≈25 nm."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "FESEM",
+        "data_reported": true,
+        "characterization_summary": "NiCo@A-NiCo-PBA shows narrow size distribution with mean particle dimension of 311 nm.",
+        "evidence_snippet": "According to the FESEM image (Figure 2e), the size distribution of NiCo@A-NiCo-PBA is narrow. ... The mean particle dimension of NiCo-PBA is 277 nm while it was increased to 311 nm after the addition of the shell."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "BET",
+        "data_reported": true,
+        "characterization_summary": "NiCo@A-NiCo-PBA-AA has BET surface area of 179.12 m²g⁻¹ (vs 45.33 m²g⁻¹ for parent) and pore volume of 0.0518 cm³g⁻¹ (vs 0.0283 cm³g⁻¹); type II isotherm indicates micro/mesopores.",
+        "evidence_snippet": "Anodized NiCo@A-NiCo-PBA-AA has a BET surface area of 179.12 m²g⁻¹, which is much larger than that of the parent NiCo@A-NiCo-PBA (45.33 m²g⁻¹). The pore volume of the PBA after activation was raised from the 0.0283 cm³g⁻¹ for NiCo@A-NiCo-PBA to 0.0518 cm³g⁻¹ for the anodized sample."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "NiCo@A-NiCo-PBA-AA fully transformed to hexagonal Ni(OH)₂ (JCPDS 14-0117) with decreased crystallinity indicating amorphization.",
+        "evidence_snippet": "When the anodization time was increased to 10 min, the transformation was complete, the NiCo@A-NiCo-PBA was fully converted to Ni(OH)₂. In addition, the degree of crystallinity decreased with the anodization time, suggesting amorphization happens during the transformation."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "FT-IR",
+        "data_reported": true,
+        "characterization_summary": "C≡N peak at 2203 cm⁻¹ disappears and Ni(OH)₂ O-H peaks at 2116 and 1390 cm⁻¹ strengthen in NiCo@A-NiCo-PBA-AA.",
+        "evidence_snippet": "Over an anodization time from 0 to 10 min, it was observed that the C≡N peak of Ni₃[Co(CN)₆]₂ at 2203 cm⁻¹ was significantly reduced and eventually disappeared, while the O-H peaks assigned to the stretching and bending vibrations in Ni(OH)₂ at 2116 and 1390 cm⁻¹, respectively, were strengthened."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "NiCo@A-NiCo-PBA-AA shows Ni³⁺/Ni⁴⁺ with peaks at 860.9/878.1 eV, emergence of C-O-C at 289.1 eV, hydroxyl groups at 531.9 eV, and oxygen vacancies at 533.3 eV; N and Co signals absent.",
+        "evidence_snippet": "With the anodization time raised to 10 min, new peaks at 860.9 and 878.1 eV, attributed to Ni⁴⁺ emerge. The N 1s and Co 2p XPS spectral peaks after 10 min anodization were both absent owing to the dramatic loss of Ni₃[Co(CN)₆]₂ in the sample."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "HAADF-STEM EDS",
+        "data_reported": true,
+        "characterization_summary": "NiCo@A-NiCo-PBA-AA shows even distribution of Ni and O, almost no N and Co signals confirming complete degradation of pristine PBA structure.",
+        "evidence_snippet": "After the electrochemical treatment, an even distribution of Ni and O elements on the residual catalyst is observed, while almost no N and Co signals were detected. These findings suggest that the pristine core-shell PBA structure completely degraded into a partially amorphous structure containing Ni and O under anodization."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "SAED",
+        "data_reported": true,
+        "characterization_summary": "NiCo@A-NiCo-PBA-AA shell ≈30 nm thick shows typical amorphous pattern in SAED and HRTEM.",
+        "evidence_snippet": "TEM (Figure S2e,f, Supporting Information) shows that initial cubic morphology was transformed to a spherical shape with irregular edges. About 30 nm from the edge of the nanoparticle is amorphous... The SAED pattern and the HRTEM image (Figure S2f, Supporting Information, inset) exhibited a typical amorphous pattern."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_NiCo@A-NiCo-PBA_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo@A-NiCo-PBA",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCo-PBA_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo-PBA",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCo@A-NiCo-PBA_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo@A-NiCo-PBA",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCo@A-NiCo-PBA-AA_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo@A-NiCo-PBA-AA",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCo@A-NiCo-PBA-AA_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo@A-NiCo-PBA-AA",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCo@A-NiCo-PBA-AA_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo@A-NiCo-PBA-AA",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCo@A-NiCo-PBA-AA_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo@A-NiCo-PBA-AA",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCo@A-NiCo-PBA-AA_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo@A-NiCo-PBA-AA",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCo@A-NiCo-PBA-AA_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_NiCo@A-NiCo-PBA-AA",
+        "target_id": "char_8",
+        "properties": {}
+      }
+    ]
+  }
+}

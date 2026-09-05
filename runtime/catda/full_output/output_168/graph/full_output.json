@@ -1,0 +1,4755 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_Ni3_BTC_2",
+        "type": "chemical",
+        "name": "Ni₃(BTC)₂",
+        "aliases": [
+          "Ni₃(BTC)₂ precursor"
+        ],
+        "formula": "Ni₃(BTC)₂",
+        "properties": {}
+      },
+      {
+        "id": "chem_C_rich_Ni",
+        "type": "chemical",
+        "name": "C_rich-Ni",
+        "aliases": [
+          "LC_{0.60}-Ni"
+        ],
+        "composition": {
+          "C": {
+            "value": 39.7,
+            "unit": "wt%"
+          },
+          "LC": {
+            "value": 0.6,
+            "unit": "C/Ni ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 3.8,
+            "unit": "nm"
+          },
+          "micro-strain": {
+            "value": 3.67,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_C_less_Ni",
+        "type": "chemical",
+        "name": "C_less-Ni",
+        "aliases": [
+          "LC_{0.44}-Ni"
+        ],
+        "composition": {
+          "C": {
+            "value": null,
+            "unit": "wt%"
+          },
+          "LC": {
+            "value": 0.44,
+            "unit": "C/Ni ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 4.6,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_C_clean_Ni",
+        "type": "chemical",
+        "name": "C_clean-Ni",
+        "aliases": [
+          "LC_{0.03}-Ni"
+        ],
+        "composition": {
+          "C": {
+            "value": 12.6,
+            "unit": "wt%"
+          },
+          "LC": {
+            "value": 0.03,
+            "unit": "C/Ni ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 11.8,
+            "unit": "nm"
+          },
+          "micro-strain": {
+            "value": 0.72,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Pyrolytic reduction in pure Ar",
+        "procedure": "Ni₃(BTC)₂ precursor is pyrolyzed in pure Ar atmosphere with 10°C/min ramp rate. Decomposition begins at 200°C releasing water (O-H at 3490 cm⁻¹, H₂O at 3802 cm⁻¹), CO₂ (C=O at 1745 cm⁻¹), and Ni-O (540 cm⁻¹) from -COO⁻…Ni²⁺ structure. At 250-300°C amorphous Ni-O structure forms. At 300°C C-O (1123 cm⁻¹) appears as Ni²⁺ reduces to Ni⁰. From 300-390°C Ni-O fades as Ni fully reduces and stabilizes with carbon atoms. C-H (3100 cm⁻¹) appears at 300°C, disappears after 30 min at 390°C. Hold at 390°C for 60 min results in 22.6% mass loss and 39.7 wt% carbon content (C_rich-Ni, LC_{0.60}-Ni).",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Decomposition",
+            "method": "Thermal decomposition",
+            "conditions": {
+              "temperature": {
+                "value": 200,
+                "unit": "°C"
+              },
+              "temperature_end": {
+                "value": 350,
+                "unit": "°C"
+              },
+              "ramp_rate": {
+                "value": 10,
+                "unit": "°C/min"
+              }
+            },
+            "procedure_snippet": "Ni₃(BTC)₂ starts to decompose at 200°C... From 100°C to 350°C there are obvious infrared signal peaks regarding O-H at 3490 cm⁻¹ and water at 3802 cm⁻¹"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Ni reduction",
+            "method": "Pyrolytic reduction",
+            "conditions": {
+              "temperature": {
+                "value": 300,
+                "unit": "°C"
+              },
+              "temperature_end": {
+                "value": 390,
+                "unit": "°C"
+              }
+            },
+            "procedure_snippet": "at 300°C vibration peak of C-O at 1123 cm⁻¹ emerged... Ni²⁺ has been reduced into Ni⁰"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Atomic rearrangement",
+            "method": "Isothermal annealing",
+            "conditions": {
+              "temperature": {
+                "value": 390,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 60,
+                "unit": "min"
+              },
+              "atmosphere": {
+                "value": "Ar",
+                "unit": "pure"
+              }
+            },
+            "procedure_snippet": "the sample obtained at 390°C for 60 min... mass decreased by 22.6% during the 390°C holding stage in Ar atmosphere"
+          }
+        ],
+        "method": "pyrolysis in pure Ar",
+        "conditions": {
+          "final_temperature": {
+            "value": 390,
+            "unit": "°C"
+          },
+          "ramp_rate": {
+            "value": 10,
+            "unit": "°C/min"
+          },
+          "holding_time": {
+            "value": 60,
+            "unit": "min"
+          },
+          "atmosphere": {
+            "value": "Ar",
+            "unit": "pure"
+          },
+          "mass_loss": {
+            "value": 22.6,
+            "unit": "%"
+          }
+        },
+        "source_text": "pyrolytic reduction process in different H₂/Ar atmosphere... in Ar atmosphere, the mass decreased by 22.6% during the 390°C holding stage... C_rich-Ni (obtained in pure Ar)"
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Pyrolytic reduction in 4% H₂/Ar",
+        "procedure": "Ni₃(BTC)₂ precursor follows same decomposition/reduction pathway as Ar pyrolysis through 390°C, then holds at 390°C in 4% H₂/Ar atmosphere. Hydrogen acts as lattice carbon scavenger enabling 28.4% total mass loss (vs 22.6% in Ar) producing C_less-Ni with LC_{0.44}-Ni (0.44 C/Ni ratio).",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Pre-reduction pyrolysis",
+            "method": "Ar pyrolysis",
+            "conditions": {
+              "temperature": {
+                "value": 390,
+                "unit": "°C"
+              }
+            },
+            "procedure_snippet": "same decomposition sequence as Ar atmosphere up to 390°C"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "H₂-assisted decarburization",
+            "method": "H₂ scavenging",
+            "conditions": {
+              "temperature": {
+                "value": 390,
+                "unit": "°C"
+              },
+              "atmosphere": {
+                "value": "4% H₂/Ar",
+                "unit": "gas"
+              },
+              "mass_loss": {
+                "value": 28.4,
+                "unit": "%"
+              }
+            },
+            "procedure_snippet": "when 4% H₂ was introduced during this stage... mass decreased by 28.4%"
+          }
+        ],
+        "method": "pyrolysis in 4% H₂/Ar",
+        "conditions": {
+          "final_temperature": {
+            "value": 390,
+            "unit": "°C"
+          },
+          "atmosphere": {
+            "value": "4% H₂/Ar",
+            "unit": "gas"
+          },
+          "mass_loss": {
+            "value": 28.4,
+            "unit": "%"
+          }
+        },
+        "source_text": "C_less-Ni (obtained in 4% H₂/Ar)... mass decreased by 28.4% when 4% H₂ was introduced during this stage"
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Pyrolytic reduction in 8% H₂/Ar",
+        "procedure": "Ni₃(BTC)₂ precursor pyrolyzed following standard decomposition/reduction to 390°C, then held in 8% H₂/Ar atmosphere achieving maximum lattice carbon removal (12.6 wt% C, LC_{0.03}-Ni with 0.03 C/Ni ratio, best crystallinity, largest 11.8 nm particles).",
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Maximum decarburization",
+            "method": "High H₂ pyrolysis",
+            "conditions": {
+              "temperature": {
+                "value": 390,
+                "unit": "°C"
+              },
+              "atmosphere": {
+                "value": "8% H₂/Ar",
+                "unit": "gas"
+              },
+              "carbon_content": {
+                "value": 12.6,
+                "unit": "wt%"
+              }
+            },
+            "procedure_snippet": "carbon content... to 12.6% (in 8% H₂/Ar)... C_clean-Ni (obtained in 8% H₂/Ar)"
+          }
+        ],
+        "method": "pyrolysis in 8% H₂/Ar",
+        "conditions": {
+          "final_temperature": {
+            "value": 390,
+            "unit": "°C"
+          },
+          "atmosphere": {
+            "value": "8% H₂/Ar",
+            "unit": "gas"
+          },
+          "carbon_content": {
+            "value": 12.6,
+            "unit": "wt%"
+          }
+        },
+        "source_text": "carbon content of catalysts decreases from 39.7% (in Ar) to 12.6% (in 8% H₂/Ar) with H₂ concentration increases... C_clean-Ni (obtained in 8% H₂/Ar)"
+      },
+      {
+        "id": "chem_C_rich-Ni",
+        "type": "chemical",
+        "name": "C_rich-Ni",
+        "aliases": [
+          "LC_0.60-Ni"
+        ],
+        "formula": "Ni",
+        "composition": {
+          "C": {
+            "value": 0.6,
+            "unit": "C-Ni bonds ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 3.8,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_C_less-Ni",
+        "type": "chemical",
+        "name": "C_less-Ni",
+        "aliases": [
+          "LC_0.44-Ni"
+        ],
+        "formula": "Ni",
+        "composition": {
+          "C": {
+            "value": 0.44,
+            "unit": "C-Ni bonds ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 4.6,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_C_clean-Ni",
+        "type": "chemical",
+        "name": "C_clean-Ni",
+        "aliases": [
+          "LC_0.03-Ni"
+        ],
+        "formula": "Ni",
+        "composition": {
+          "C": {
+            "value": 0.03,
+            "unit": "C-Ni bonds ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 11.8,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_Crich-Ni",
+        "type": "chemical",
+        "name": "C_rich-Ni",
+        "aliases": [
+          "LC_{0.60}-Ni"
+        ],
+        "formula": "Ni (LC 0.60)",
+        "properties": {
+          "particle_size": {
+            "value": 3.8,
+            "unit": "nm"
+          },
+          "lattice_carbon_content": {
+            "value": 0.6,
+            "unit": "ratio"
+          },
+          "micro-strain": {
+            "value": 3.67,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_Cless-Ni",
+        "type": "chemical",
+        "name": "C_less-Ni",
+        "aliases": [
+          "LC_{0.44}-Ni"
+        ],
+        "formula": "Ni (LC 0.44)",
+        "properties": {
+          "particle_size": {
+            "value": 4.6,
+            "unit": "nm"
+          },
+          "lattice_carbon_content": {
+            "value": 0.44,
+            "unit": "ratio"
+          },
+          "micro-strain": {
+            "value": 0.72,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_Cclean-Ni",
+        "type": "chemical",
+        "name": "C_clean-Ni",
+        "aliases": [
+          "LC_{0.03}-Ni"
+        ],
+        "formula": "Ni (LC 0.03)",
+        "properties": {
+          "particle_size": {
+            "value": 11.8,
+            "unit": "nm"
+          },
+          "lattice_carbon_content": {
+            "value": 0.03,
+            "unit": "ratio"
+          },
+          "micro-strain": {
+            "value": 0.72,
+            "unit": "%"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_Ni3_BTC_2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni3_BTC_2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_C_rich_Ni",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_C_rich_Ni",
+        "properties": {
+          "form": "Ni nanoparticles with carbon layer",
+          "carbon_content": {
+            "value": 39.7,
+            "unit": "wt%"
+          },
+          "LC_content": {
+            "value": 0.6,
+            "unit": "C/Ni ratio"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni3_BTC_2_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni3_BTC_2",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_C_less_Ni",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_C_less_Ni",
+        "properties": {
+          "form": "Ni nanoparticles with carbon layer",
+          "LC_content": {
+            "value": 0.44,
+            "unit": "C/Ni ratio"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni3_BTC_2_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni3_BTC_2",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_C_clean_Ni",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_C_clean_Ni",
+        "properties": {
+          "form": "Ni nanoparticles",
+          "carbon_content": {
+            "value": 12.6,
+            "unit": "wt%"
+          },
+          "LC_content": {
+            "value": 0.03,
+            "unit": "C/Ni ratio"
+          }
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_C_less-Ni",
+      "chem_C_clean-Ni",
+      "chem_C_rich-Ni"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_C_rich-Ni",
+        "type": "chemical",
+        "name": "C_rich-Ni",
+        "aliases": [
+          "LC_0.60-Ni"
+        ],
+        "formula": "Ni",
+        "composition": {
+          "C": {
+            "value": 0.6,
+            "unit": "C-Ni bonds ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 3.8,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_C_less-Ni",
+        "type": "chemical",
+        "name": "C_less-Ni",
+        "aliases": [
+          "LC_0.44-Ni"
+        ],
+        "formula": "Ni",
+        "composition": {
+          "C": {
+            "value": 0.44,
+            "unit": "C-Ni bonds ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 4.6,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_C_clean-Ni",
+        "type": "chemical",
+        "name": "C_clean-Ni",
+        "aliases": [
+          "LC_0.03-Ni"
+        ],
+        "formula": "Ni",
+        "composition": {
+          "C": {
+            "value": 0.03,
+            "unit": "C-Ni bonds ratio"
+          }
+        },
+        "properties": {
+          "particle_size": {
+            "value": 11.8,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_C_less-Ni",
+        "description": "Alkaline HOR performance evaluation using RDE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "electrode_type": {
+            "value": "RDE",
+            "unit": "rotating disk electrode"
+          },
+          "rotation_speed": {
+            "value": 2500,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "gas_saturation": {
+            "value": "H2",
+            "unit": "saturated"
+          }
+        },
+        "results_json": {
+          "kinetic_current_density": {
+            "value": 24.39,
+            "unit": "mA/cm²"
+          },
+          "kinetic_current_density_at_50mV": {
+            "value": 24.39,
+            "unit": "mA/cm²"
+          },
+          "kinetic_mass_activity": {
+            "value": 77,
+            "unit": "A/g"
+          },
+          "exchange_current_density": {
+            "value": 3.45,
+            "unit": "mA/cm²"
+          },
+          "exchange_current_density_ECSA": {
+            "value": 70,
+            "unit": "μA/cm²"
+          },
+          "failure_potential": {
+            "value": 0.21,
+            "unit": "V"
+          },
+          "Koutecky-Levich_slope": {
+            "value": 4.86,
+            "unit": "cm² mA⁻¹ s¹ᐟ²"
+          }
+        },
+        "source_text": "Figure 4a shows the HOR polarization curves at 2500 rpm and 1 mVs⁻¹... the geometric kinetic current density (j_k) of 24.39 mA cm⁻² at 50 mV was calculated... the obtained jk,m for the catalysts is 77 A g⁻¹ for C_less-Ni... C_less-Ni presents a j₀ of 3.45 mAcm⁻²... j_{0,s} of 70 μAcm⁻²... exhibits a higher failure potential (0.21 V)"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_C_rich-Ni",
+        "description": "Alkaline HOR performance evaluation using RDE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "electrode_type": {
+            "value": "RDE",
+            "unit": "rotating disk electrode"
+          },
+          "rotation_speed": {
+            "value": 2500,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "gas_saturation": {
+            "value": "H2",
+            "unit": "saturated"
+          }
+        },
+        "results_json": {
+          "kinetic_mass_activity": {
+            "value": 37.6,
+            "unit": "A/g"
+          },
+          "exchange_current_density": {
+            "value": 2.1,
+            "unit": "mA/cm²"
+          },
+          "exchange_current_density_ECSA": {
+            "value": 41,
+            "unit": "μA/cm²"
+          }
+        },
+        "source_text": "the obtained jk,m for the catalysts is ... 37.6 A g⁻¹ for C_rich-Ni (LC_0.60-Ni)... superior to 2.1 mAcm⁻² of C_rich-Ni (LC_0.60-Ni)... 1.7 times that of C_rich-Ni (LC_0.60-Ni) (41 μAcm⁻²)"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_C_clean-Ni",
+        "description": "Alkaline HOR performance evaluation using RDE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "electrode_type": {
+            "value": "RDE",
+            "unit": "rotating disk electrode"
+          },
+          "rotation_speed": {
+            "value": 2500,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV/s"
+          },
+          "gas_saturation": {
+            "value": "H2",
+            "unit": "saturated"
+          }
+        },
+        "results_json": {
+          "kinetic_mass_activity": {
+            "value": 3.4,
+            "unit": "A/g"
+          },
+          "exchange_current_density": {
+            "value": 1.28,
+            "unit": "mA/cm²"
+          },
+          "exchange_current_density_ECSA": {
+            "value": 36,
+            "unit": "μA/cm²"
+          }
+        },
+        "source_text": "and 3.4 A g⁻¹ for C_clean-Ni (LC_0.03-Ni)... and 1.28 mAcm⁻² of C_clean-Ni (LC_0.03-Ni)... ~2 times that of C_clean-Ni (LC_0.03-Ni) (36 μAcm⁻²)"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_C_less-Ni",
+        "description": "HOR accelerated durability test (ADT)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR durability",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "gas_saturation": {
+            "value": "Ar-saturated",
+            "unit": "atmosphere"
+          },
+          "potential_window": {
+            "value": "-0.1 to 0.4",
+            "unit": "V vs RHE"
+          },
+          "cycle_number": {
+            "value": 1000,
+            "unit": "CV cycles"
+          }
+        },
+        "results_json": {
+          "j0_disk_retention": {
+            "value": 89,
+            "unit": "%"
+          },
+          "ECSA_retention": {
+            "value": 96,
+            "unit": "%"
+          }
+        },
+        "source_text": "the durability of LC-modified Ni is also verified by cyclic voltammetry (CV) accelerated durability test (ADT), which is conducted by 1,000 CVs within -0.1 V to 0.4 V (vs. RHE) in an Ar-saturated 0.1 M KOH electrolyte... C_less-Ni (LC_0.44-Ni) can maintain both j_{0,disk} and ECSA better than C_clean-Ni (LC_0.03-Ni) with 89% of j_{0,disk} (61% for C_clean-Ni (LC_0.03-Ni)) and 96% of ECSA (89% for C_clean-Ni (LC_0.03-Ni)) maintained."
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_C_clean-Ni",
+        "description": "HOR accelerated durability test (ADT)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR durability",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "gas_saturation": {
+            "value": "Ar-saturated",
+            "unit": "atmosphere"
+          },
+          "potential_window": {
+            "value": "-0.1 to 0.4",
+            "unit": "V vs RHE"
+          },
+          "cycle_number": {
+            "value": 1000,
+            "unit": "CV cycles"
+          }
+        },
+        "results_json": {
+          "j0_disk_retention": {
+            "value": 61,
+            "unit": "%"
+          },
+          "ECSA_retention": {
+            "value": 89,
+            "unit": "%"
+          }
+        },
+        "source_text": "C_less-Ni (LC_0.44-Ni) can maintain both j_{0,disk} and ECSA better than C_clean-Ni (LC_0.03-Ni) with 89% of j_{0,disk} (61% for C_clean-Ni (LC_0.03-Ni)) and 96% of ECSA (89% for C_clean-Ni (LC_0.03-Ni)) maintained."
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_C_less-Ni",
+        "description": "HOR chronoamperometry stability",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR stability",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "gas_saturation": {
+            "value": "H2-saturated",
+            "unit": "atmosphere"
+          },
+          "potential": {
+            "value": 0.1,
+            "unit": "V"
+          }
+        },
+        "results_json": {
+          "current_retention_after_60h": {
+            "value": 87,
+            "unit": "%"
+          }
+        },
+        "source_text": "The long-term potentiostatic polarization operation in H₂ condition also verified this phenomenon, where C_less-Ni (LC_0.44-Ni) is able to maintain 87% of its current density after 60 hours of operation at 0.1 V polarization"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_C_clean-Ni",
+        "description": "HOR chronoamperometry stability",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR stability",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "gas_saturation": {
+            "value": "H2-saturated",
+            "unit": "atmosphere"
+          },
+          "potential": {
+            "value": 0.1,
+            "unit": "V"
+          }
+        },
+        "results_json": {
+          "current_retention": {
+            "value": "near-complete loss",
+            "unit": "after 10h"
+          }
+        },
+        "source_text": "whereas C_clean-Ni (LC_0.03-Ni) shows a near-complete loss of current after only 10 hours."
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_C_rich-Ni",
+        "description": "OH- oxidative adsorption",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OH- adsorption",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "gas_saturation": {
+            "value": "Ar-saturated",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {
+          "OH_adsorption_peak_potential": {
+            "value": 0.249,
+            "unit": "V"
+          }
+        },
+        "source_text": "Figure 5f shows the oxidation adsorption of OH⁻ for C_rich-Ni (LC_0.60-Ni) C_less-Ni (LC_0.44-Ni) and C_clean-Ni (LC_0.03-Ni) in Ar saturation 0.1 M KOH solution. The OH⁻ oxidation adsorption peaks located at 0.249, 0.203 and 0.153 V for C_rich-Ni (LC_0.60-Ni)"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_C_less-Ni",
+        "description": "OH- oxidative adsorption",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OH- adsorption",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "gas_saturation": {
+            "value": "Ar-saturated",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {
+          "OH_adsorption_peak_potential": {
+            "value": 0.203,
+            "unit": "V"
+          }
+        },
+        "source_text": "The OH⁻ oxidation adsorption peaks located at 0.249, 0.203... for C_less-Ni (LC_0.44-Ni)"
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_C_clean-Ni",
+        "description": "OH- oxidative adsorption",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OH- adsorption",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "gas_saturation": {
+            "value": "Ar-saturated",
+            "unit": "atmosphere"
+          }
+        },
+        "results_json": {
+          "OH_adsorption_peak_potential": {
+            "value": 0.153,
+            "unit": "V"
+          }
+        },
+        "source_text": "The OH⁻ oxidation adsorption peaks located at 0.249, 0.203 and 0.153 V for ... C_clean-Ni (LC_0.03-Ni)"
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_C_less-Ni",
+        "description": "HOR Tafel slope analysis",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "analysis_region": {
+            "value": "intensely polarized region",
+            "unit": "HOR side"
+          }
+        },
+        "results_json": {
+          "Tafel_slope": {
+            "value": 102,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "the Tafel slope at intensely polarized region was calculated to be 102 mVdec⁻¹ on the HOR side"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_C_less-Ni_test_1",
+        "type": "tested_in",
+        "source_id": "chem_C_less-Ni",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_rich-Ni_test_2",
+        "type": "tested_in",
+        "source_id": "chem_C_rich-Ni",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_clean-Ni_test_3",
+        "type": "tested_in",
+        "source_id": "chem_C_clean-Ni",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_less-Ni_test_4",
+        "type": "tested_in",
+        "source_id": "chem_C_less-Ni",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_clean-Ni_test_5",
+        "type": "tested_in",
+        "source_id": "chem_C_clean-Ni",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_less-Ni_test_6",
+        "type": "tested_in",
+        "source_id": "chem_C_less-Ni",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_clean-Ni_test_7",
+        "type": "tested_in",
+        "source_id": "chem_C_clean-Ni",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_rich-Ni_test_8",
+        "type": "tested_in",
+        "source_id": "chem_C_rich-Ni",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_less-Ni_test_9",
+        "type": "tested_in",
+        "source_id": "chem_C_less-Ni",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_clean-Ni_test_10",
+        "type": "tested_in",
+        "source_id": "chem_C_clean-Ni",
+        "target_id": "test_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_C_less-Ni_test_11",
+        "type": "tested_in",
+        "source_id": "chem_C_less-Ni",
+        "target_id": "test_11",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Crich-Ni",
+        "type": "chemical",
+        "name": "C_rich-Ni",
+        "aliases": [
+          "LC_{0.60}-Ni"
+        ],
+        "formula": "Ni (LC 0.60)",
+        "properties": {
+          "particle_size": {
+            "value": 3.8,
+            "unit": "nm"
+          },
+          "lattice_carbon_content": {
+            "value": 0.6,
+            "unit": "ratio"
+          },
+          "micro-strain": {
+            "value": 3.67,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_Cless-Ni",
+        "type": "chemical",
+        "name": "C_less-Ni",
+        "aliases": [
+          "LC_{0.44}-Ni"
+        ],
+        "formula": "Ni (LC 0.44)",
+        "properties": {
+          "particle_size": {
+            "value": 4.6,
+            "unit": "nm"
+          },
+          "lattice_carbon_content": {
+            "value": 0.44,
+            "unit": "ratio"
+          },
+          "micro-strain": {
+            "value": 0.72,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_Cclean-Ni",
+        "type": "chemical",
+        "name": "C_clean-Ni",
+        "aliases": [
+          "LC_{0.03}-Ni"
+        ],
+        "formula": "Ni (LC 0.03)",
+        "properties": {
+          "particle_size": {
+            "value": 11.8,
+            "unit": "nm"
+          },
+          "lattice_carbon_content": {
+            "value": 0.03,
+            "unit": "ratio"
+          },
+          "micro-strain": {
+            "value": 0.72,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "All samples exhibit characteristic peaks of metallic fcc Ni (PDF#04-0850) without phase transformation; higher H2 concentration shows better crystallinity and micro-strain decreases from 3.67% to 0.72%.",
+        "evidence_snippet": "As illustrated in Figure 2a, although all the samples exhibit characteristic peaks of metallic fcc Ni without any phase transformation (PDF#04-0850), the catalyst obtained in higher H2 concentration shows better crystallinity...",
+        "related_images": [
+          "02694cd1340b19b56e733c30f160db341075afcd30946a743bdedef84b05998d.jpg",
+          "2149b551354a6ff986bb2d4f81a91af4925ca0fd447b48cb05cfe50f6f52b783.jpg",
+          "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg",
+          "38ad2e4775f4c5178557ea63b44ad6a63cd5373ed326d150a22848fe568a75b0.jpg",
+          "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg",
+          "3d6b112ee9949fb39a767ab9c3b9e7ee2b83f567894885829a9cf6f39a5562b4.jpg",
+          "3d81d212ff9c81bfd9aa0f3df70702149f460219566e1253eda61b2f2b744840.jpg",
+          "44b3d99ffdf7c1ed7ddb34719f918c96dae1c6586550aa48bfa6d77d996c1722.jpg",
+          "5c4e531f5857fbc899a1c64186cfd3e82bcc19e906cb6cb14a123db1884bcb06.jpg",
+          "71fc03ed160dc2365556ee422b281c0812018d22827229ce8b9c6584996da2c4.jpg",
+          "77dfa83a635e9e551eb3edf71948278b9286a369fcf8a24830ec37ddc1e56ad4.jpg",
+          "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg",
+          "7bfd040ca9892adcc51b35e3a23ba8bf5109bad8462a35bcc89496eabe52d28f.jpg",
+          "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg",
+          "b5b0818d48ac518e7e2b4b6ddc787fb91b2965ec0e8b6f898669429d8e0b0164.jpg",
+          "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg",
+          "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg",
+          "c7f77f63a46eba6e9845fe0ebbc1eee5a19df56c685ae7752214cb10850a68bc.jpg",
+          "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg",
+          "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ni@",
+            "properties": {
+              "description": "Nickel core-shell structure",
+              "extracted_from_image": "02694cd1340b19b56e733c30f160db341075afcd30946a743bdedef84b05998d.jpg"
+            },
+            "source_image_file": "02694cd1340b19b56e733c30f160db341075afcd30946a743bdedef84b05998d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cless-Ni",
+            "properties": {
+              "description": "Chlorine-free Nickel material or nanoparticle",
+              "extracted_from_image": "2149b551354a6ff986bb2d4f81a91af4925ca0fd447b48cb05cfe50f6f52b783.jpg"
+            },
+            "source_image_file": "2149b551354a6ff986bb2d4f81a91af4925ca0fd447b48cb05cfe50f6f52b783.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "O-H",
+            "properties": {
+              "description": "O-H bond, associated with H2O",
+              "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+            },
+            "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Chronopotentiometry Plot",
+            "properties": {
+              "description": "Time-dependent potential plot under constant current",
+              "x_axis": "Time (min)",
+              "y_axis": "Potential (V vs. Li/Li+)",
+              "extracted_from_image": "38ad2e4775f4c5178557ea63b44ad6a63cd5373ed326d150a22848fe568a75b0.jpg"
+            },
+            "source_image_file": "38ad2e4775f4c5178557ea63b44ad6a63cd5373ed326d150a22848fe568a75b0.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "type": "X-ray diffraction",
+              "peaks": [
+                2.24,
+                2.54,
+                2.08,
+                2.07
+              ],
+              "units": "Å",
+              "description": "Intensity vs Distance plot with labeled peaks at specific distances",
+              "extracted_from_image": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+            },
+            "source_image_file": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cr-rich Ni",
+            "properties": {
+              "description": "Chromium-rich Nickel phase or region",
+              "extracted_from_image": "3d6b112ee9949fb39a767ab9c3b9e7ee2b83f567894885829a9cf6f39a5562b4.jpg"
+            },
+            "source_image_file": "3d6b112ee9949fb39a767ab9c3b9e7ee2b83f567894885829a9cf6f39a5562b4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni",
+            "properties": {
+              "description": "Nickel material",
+              "extracted_from_image": "3d81d212ff9c81bfd9aa0f3df70702149f460219566e1253eda61b2f2b744840.jpg"
+            },
+            "source_image_file": "3d81d212ff9c81bfd9aa0f3df70702149f460219566e1253eda61b2f2b744840.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Sample",
+            "properties": {
+              "description": "Unspecified material sample under TGA analysis",
+              "extracted_from_image": "44b3d99ffdf7c1ed7ddb34719f918c96dae1c6586550aa48bfa6d77d996c1722.jpg"
+            },
+            "source_image_file": "44b3d99ffdf7c1ed7ddb34719f918c96dae1c6586550aa48bfa6d77d996c1722.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "type": "X-ray diffraction",
+              "description": "Intensity vs Distance plot showing periodic peaks",
+              "extracted_from_image": "5c4e531f5857fbc899a1c64186cfd3e82bcc19e906cb6cb14a123db1884bcb06.jpg"
+            },
+            "source_image_file": "5c4e531f5857fbc899a1c64186cfd3e82bcc19e906cb6cb14a123db1884bcb06.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "77 Å⁻¹",
+            "properties": {
+              "description": "Reference or maximum value",
+              "extracted_from_image": "71fc03ed160dc2365556ee422b281c0812018d22827229ce8b9c6584996da2c4.jpg"
+            },
+            "source_image_file": "71fc03ed160dc2365556ee422b281c0812018d22827229ce8b9c6584996da2c4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cless-Ni",
+            "properties": {
+              "description": "Chlorine-free Nickel material or catalyst",
+              "extracted_from_image": "77dfa83a635e9e551eb3edf71948278b9286a369fcf8a24830ec37ddc1e56ad4.jpg"
+            },
+            "source_image_file": "77dfa83a635e9e551eb3edf71948278b9286a369fcf8a24830ec37ddc1e56ad4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni",
+            "properties": {
+              "extracted_from_image": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+            },
+            "source_image_file": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni",
+            "properties": {
+              "description": "Nickel atom or cluster",
+              "extracted_from_image": "7bfd040ca9892adcc51b35e3a23ba8bf5109bad8462a35bcc89496eabe52d28f.jpg"
+            },
+            "source_image_file": "7bfd040ca9892adcc51b35e3a23ba8bf5109bad8462a35bcc89496eabe52d28f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Initial MOF",
+            "properties": {
+              "description": "Green polyhedra (likely Ni-centered clusters), red spheres (O), gray spheres (C), white (H)",
+              "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+            },
+            "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-Ni rich",
+            "properties": {
+              "description": "Carbon-nickel rich composition",
+              "extracted_from_image": "b5b0818d48ac518e7e2b4b6ddc787fb91b2965ec0e8b6f898669429d8e0b0164.jpg"
+            },
+            "source_image_file": "b5b0818d48ac518e7e2b4b6ddc787fb91b2965ec0e8b6f898669429d8e0b0164.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni",
+            "properties": {
+              "description": "Nickel-rich structure",
+              "extracted_from_image": "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg"
+            },
+            "source_image_file": "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-rich Ni",
+            "properties": {
+              "description": "Carbon-rich Nickel surface",
+              "extracted_from_image": "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg"
+            },
+            "source_image_file": "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "8% H₂/Ar (C-Ni)",
+            "properties": {
+              "composition": "8% H₂ in Ar",
+              "ligand": "C-Ni",
+              "label": "8% H₂/Ar (C-Ni)",
+              "extracted_from_image": "c7f77f63a46eba6e9845fe0ebbc1eee5a19df56c685ae7752214cb10850a68bc.jpg"
+            },
+            "source_image_file": "c7f77f63a46eba6e9845fe0ebbc1eee5a19df56c685ae7752214cb10850a68bc.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "N-precursor",
+            "properties": {
+              "description": "Nitrogen-containing precursor molecule with green ligands",
+              "extracted_from_image": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+            },
+            "source_image_file": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-Ni rich",
+            "properties": {
+              "description": "Carbon-Nickel rich material",
+              "extracted_from_image": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+            },
+            "source_image_file": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "All samples show nickel nanoparticles separated by thin carbon layer; particle sizes are 3.8 nm for C_rich-Ni, 4.6 nm for C_less-Ni, and 11.8 nm for C_clean-Ni.",
+        "evidence_snippet": "Transmission electron microscopy (TEM) was then adopted to probe the structure changes... Specifically, C_rich-Ni have a mean size of 3.8 nm, evidently smaller than that of C_less-Ni (4.6 nm) and C_clean-Ni (11.8 nm)."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "data_reported": true,
+        "characterization_summary": "C_rich-Ni shows disordered Ni atom arrangement and expanded Ni(111) plane spacing in outer layers; C_less-Ni shows more ordered arrangement with localized expansion; C_clean-Ni shows well crystallinity with homogeneous Ni(111) spacing.",
+        "evidence_snippet": "The high-resolution TEM (HR-TEM) was further performed to observe the detailed structures of the catalysts. In C_rich-Ni, the arrangement of Ni atoms appears to be disordered... In contrast, the C_clean-Ni shows well crystallinity..."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "Ni 2p3/2 XPS shows peaks at 853 eV (Ni0) and 855.5 eV (Ni2+); C_rich-Ni main peak shifted to higher energy (Niδ+ like Ni3C); LC content ratios 0.60, 0.44, 0.03 for C_rich-Ni, C_less-Ni, C_clean-Ni.",
+        "evidence_snippet": "in X-ray photoelectron spectroscopy (XPS) spectra of Ni2p3/2, the peaks located at 853 eV and 855.5 eV belong to Ni0 and Ni2+, respectively. However... main peak in Crich-Ni is significantly shifted towards higher energy... Quantitative analysis (Table S2) shows that C_rich-Ni (LC0.60-Ni) has the highest C-Ni bonds ratio of 0.60..."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "XANES",
+        "data_reported": true,
+        "characterization_summary": "Ni K-edge XANES shows positive shift and stronger white line for C_rich-Ni (LC0.60-Ni) and C_less-Ni (LC0.44-Ni) vs C_clean-Ni (LC0.03-Ni), indicating higher average Ni valence state due to LC.",
+        "evidence_snippet": "Figure 3b presents the X-ray absorption near-edge structure (XANES) spectra of the samples at the Ni K-edge. The C_rich-Ni (LC0.60-Ni) and C_less-Ni (LC0.44-Ni) show a positive shift relative to C_clean-Ni (LC0.03-Ni), indicating an increase in the average valence state of Ni..."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "EXAFS",
+        "data_reported": true,
+        "characterization_summary": "Ni K-edge EXAFS shows Ni-Ni coordination at ~2.11 Å; C_rich-Ni shows expanded Ni-Ni bond length and Ni-C coordination at 1.47 Å; Ni-C coordination also observed in C_less-Ni confirming residual lattice C.",
+        "evidence_snippet": "Figure 3c presents the Fourier transformed Ni K-edge EXAFS oscillation... A major peak at ∼2.11 Å... is ascribed to the metallic Ni-Ni coordination. It is evident that C_rich-Ni (LC0.60-Ni) shows the expanded Ni-Ni bond length... And coordination of Ni-C at 1.47 Å has been observed in C_rich-Ni..."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "TG",
+        "data_reported": true,
+        "characterization_summary": "Carbon content decreases from 39.7% (Ar) to 12.6% (8% H2/Ar); 390°C holding stage mass loss 22.6% (Ar) vs 28.4% (4% H2/Ar).",
+        "evidence_snippet": "The TG results for the obtained catalysts confirm this change of carbon content (Figure S3 and Figure S4). The results show that the carbon content of catalysts decreases from 39.7% (in Ar) to 12.6% (in 8% H2/Ar)...",
+        "related_images": [
+          "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "C-Ni",
+            "properties": {
+              "description": "Carbon-Nickel material/electrocatalyst",
+              "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+            },
+            "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "UPS",
+        "data_reported": true,
+        "characterization_summary": "UPS shows work function (WF) of Ni increases with LC presence, confirming electron transfer from Ni to C atoms.",
+        "evidence_snippet": "The ultraviolet photoelectron spectroscopy (UPS) analysis shows that the work function (WF) of Ni increases when the LC presents (Figure 5a and Figure S24), further demonstrates the electron interaction between LC atoms and Ni."
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "C-Ni lean",
+        "properties": {
+          "description": "Carbon-Nickel lean material",
+          "extracted_from_image": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+        },
+        "source_image_file": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "characterization",
+        "name": "LSV curve (C-Ni rich)",
+        "properties": {
+          "color": "magenta",
+          "onset_potential": "0.21 V vs RHE",
+          "extracted_from_image": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+        },
+        "source_image_file": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "characterization",
+        "name": "LSV curve (C-Ni rich, 0.1V)",
+        "properties": {
+          "color": "gold",
+          "potential": "0.1 V vs RHE",
+          "extracted_from_image": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+        },
+        "source_image_file": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "characterization",
+        "name": "LSV curve (C-Ni lean)",
+        "properties": {
+          "color": "gray",
+          "extracted_from_image": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+        },
+        "source_image_file": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "experiment",
+        "name": "Linear Sweep Voltammetry (LSV)",
+        "properties": {
+          "x_axis": "E (V vs RHE)",
+          "y_axis": "j (mA/cm²)",
+          "range_x": [
+            0.0,
+            0.25
+          ],
+          "reference_electrode": "RHE",
+          "extracted_from_image": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+        },
+        "source_image_file": "dd464c31e00f11e3ee8222ad66a6d1cbc710203e205ea305e0e5870c512234ec.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "characterization",
+        "name": "Figure T",
+        "properties": {
+          "type": "LSV plot",
+          "x_axis": "E (V vs. RHE)",
+          "y_axis": "j (mA cm⁻² disk)",
+          "potential_range": "0 to 0.4 V",
+          "extracted_from_image": "b5b0818d48ac518e7e2b4b6ddc787fb91b2965ec0e8b6f898669429d8e0b0164.jpg"
+        },
+        "source_image_file": "b5b0818d48ac518e7e2b4b6ddc787fb91b2965ec0e8b6f898669429d8e0b0164.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chemical",
+        "name": "LC_{0.9}Ni",
+        "properties": {
+          "description": "Nickel complex with 0.9 LC content",
+          "extracted_from_image": "71fc03ed160dc2365556ee422b281c0812018d22827229ce8b9c6584996da2c4.jpg"
+        },
+        "source_image_file": "71fc03ed160dc2365556ee422b281c0812018d22827229ce8b9c6584996da2c4.jpg"
+      },
+      {
+        "id": "raman_spectrum",
+        "type": "characterization",
+        "name": "Raman Spectrum",
+        "properties": {
+          "type": "Raman spectroscopy",
+          "x_axis": "Raman shift (cm⁻¹)",
+          "x_range": "800-4000",
+          "y_axis": "Intensity (a.u.)",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "d_band",
+        "type": "peak",
+        "name": "D Band",
+        "properties": {
+          "position": "around 1350 cm⁻¹",
+          "description": "Defect-related peak in carbon materials",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "g_band",
+        "type": "peak",
+        "name": "G Band",
+        "properties": {
+          "position": "around 1580 cm⁻¹",
+          "description": "Graphitic sp² carbon peak",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "ni_oh",
+        "type": "peak",
+        "name": "Ni-OH",
+        "properties": {
+          "position": "low wavenumber region",
+          "description": "Nickel hydroxide related peak",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spectrum_100c",
+        "type": "spectrum",
+        "name": "100°C Spectrum",
+        "properties": {
+          "color": "black",
+          "conditions": "100°C",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spectrum_200c",
+        "type": "spectrum",
+        "name": "200°C Spectrum",
+        "properties": {
+          "color": "dark gray",
+          "conditions": "200°C",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spectrum_250c",
+        "type": "spectrum",
+        "name": "250°C Spectrum",
+        "properties": {
+          "color": "light blue",
+          "conditions": "250°C",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spectrum_300c",
+        "type": "spectrum",
+        "name": "300°C Spectrum",
+        "properties": {
+          "color": "blue",
+          "conditions": "300°C",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spectrum_350c_1min",
+        "type": "spectrum",
+        "name": "350°C 1min Spectrum",
+        "properties": {
+          "color": "cyan",
+          "conditions": "350°C, 1 min",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spectrum_390c_30min",
+        "type": "spectrum",
+        "name": "390°C 30min Spectrum",
+        "properties": {
+          "color": "orange",
+          "conditions": "390°C, 30 min",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spectrum_390c_60min",
+        "type": "spectrum",
+        "name": "390°C 60min Spectrum (I_D/I_G=2.26)",
+        "properties": {
+          "color": "red",
+          "conditions": "390°C, 60 min",
+          "id_ig_ratio": 2.26,
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spectrum_390c_60min_4h",
+        "type": "spectrum",
+        "name": "390°C 60min (4%H₂) Spectrum (I_D/I_G=1.95)",
+        "properties": {
+          "color": "pink",
+          "conditions": "390°C, 60 min (4%H₂)",
+          "id_ig_ratio": 1.95,
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "carbon_material",
+        "type": "chemical",
+        "name": "Carbon material",
+        "properties": {
+          "features": "D and G bands present, graphitization process",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "ni_oh_material",
+        "type": "chemical",
+        "name": "Ni-OH material",
+        "properties": {
+          "composition": "Nickel hydroxide",
+          "extracted_from_image": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+        },
+        "source_image_file": "1e2ce1e676c5f35d264d7235dc1f48867c45b7069af0145fc88a4f93c30f6f36.jpg"
+      },
+      {
+        "id": "spec_100C",
+        "type": "characterization",
+        "name": "FTIR Spectrum at 100°C",
+        "properties": {
+          "peaks": [
+            "O-H"
+          ],
+          "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+        },
+        "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+      },
+      {
+        "id": "spec_200C",
+        "type": "characterization",
+        "name": "FTIR Spectrum at 200°C",
+        "properties": {
+          "peaks": [
+            "O-H",
+            "H2O"
+          ],
+          "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+        },
+        "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+      },
+      {
+        "id": "spec_250C",
+        "type": "characterization",
+        "name": "FTIR Spectrum at 250°C",
+        "properties": {
+          "peaks": [
+            "C=O"
+          ],
+          "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+        },
+        "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+      },
+      {
+        "id": "spec_300C",
+        "type": "characterization",
+        "name": "FTIR Spectrum at 300°C",
+        "properties": {
+          "peaks": [
+            "C-H"
+          ],
+          "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+        },
+        "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+      },
+      {
+        "id": "spec_350C",
+        "type": "characterization",
+        "name": "FTIR Spectrum at 350°C",
+        "properties": {
+          "peaks": [
+            "C=O"
+          ],
+          "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+        },
+        "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+      },
+      {
+        "id": "spec_390C_0min",
+        "type": "characterization",
+        "name": "FTIR Spectrum at 390°C 0 min",
+        "properties": {
+          "peaks": [
+            "Ni-O",
+            "C-O"
+          ],
+          "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+        },
+        "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+      },
+      {
+        "id": "spec_390C_30min",
+        "type": "characterization",
+        "name": "FTIR Spectrum at 390°C 30 min",
+        "properties": {
+          "peaks": [
+            "Ni-O",
+            "C-O"
+          ],
+          "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+        },
+        "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+      },
+      {
+        "id": "spec_390C_C-30min",
+        "type": "characterization",
+        "name": "FTIR Spectrum at 390°C C-30 min",
+        "properties": {
+          "peaks": [
+            "Ni-O",
+            "C-O"
+          ],
+          "extracted_from_image": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+        },
+        "source_image_file": "25a7caa0370e61ea4bb64825794c83dce4419f5254987762c2dff0712296cec2.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Free Energy Profile",
+        "properties": {
+          "type": "energy_diagram",
+          "x_axis": "Reaction Coordinate",
+          "y_axis": "Free Energy (eV)",
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      },
+      {
+        "id": "Ni",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "description": "Nickel material/electrocatalyst",
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "C-Ni_initial",
+        "type": "chemical",
+        "name": "C-Ni (initial)",
+        "properties": {
+          "description": "C-Ni before cycling",
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "C-Ni_after_1000CVs",
+        "type": "chemical",
+        "name": "C-Ni (after 1000 CVs)",
+        "properties": {
+          "description": "C-Ni after 1000 cyclic voltammograms",
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "Ni_after_1000CVs",
+        "type": "chemical",
+        "name": "Ni (after 1000 CVs)",
+        "properties": {
+          "description": "Ni after 1000 cyclic voltammograms",
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "LSV_C-Ni",
+        "type": "characterization",
+        "name": "LSV C-Ni",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "current_range": "0 to 4 mA/cm²",
+          "potential_range": "0.00 to 0.15 V vs RHE",
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "LSV_Ni",
+        "type": "characterization",
+        "name": "LSV Ni",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "current_range": "0 to 3 mA/cm²",
+          "potential_range": "0.00 to 0.15 V vs RHE",
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "bar_C-Ni",
+        "type": "characterization",
+        "name": "C-Ni performance bars",
+        "properties": {
+          "type": "Bar chart",
+          "values": [
+            "88%",
+            "96%"
+          ],
+          "metrics": [
+            "j (mA/cm²)",
+            "EGSA"
+          ],
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "bar_Ni",
+        "type": "characterization",
+        "name": "Ni performance bars",
+        "properties": {
+          "type": "Bar chart",
+          "values": [
+            "91%",
+            "67%"
+          ],
+          "metrics": [
+            "j (mA/cm²)",
+            "EGSA"
+          ],
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "CV_1000cycles",
+        "type": "characterization",
+        "name": "1000 CV cycles",
+        "properties": {
+          "type": "Cyclic Voltammetry",
+          "cycles": 1000,
+          "extracted_from_image": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+        },
+        "source_image_file": "32f05d4ee584ba850fd66149c75ab9af0e3c4dbfcb020d1197796e68b7c61e80.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "peak",
+        "name": "Peak 2.24 Å",
+        "properties": {
+          "position": 2.24,
+          "units": "Å",
+          "extracted_from_image": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+        },
+        "source_image_file": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "peak",
+        "name": "Peak 2.54 Å",
+        "properties": {
+          "position": 2.54,
+          "units": "Å",
+          "extracted_from_image": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+        },
+        "source_image_file": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "peak",
+        "name": "Peak 2.08 Å",
+        "properties": {
+          "position": 2.08,
+          "units": "Å",
+          "extracted_from_image": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+        },
+        "source_image_file": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+      },
+      {
+        "id": "p4",
+        "type": "peak",
+        "name": "Peak 2.07 Å",
+        "properties": {
+          "position": 2.07,
+          "units": "Å",
+          "extracted_from_image": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+        },
+        "source_image_file": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+      },
+      {
+        "id": "xaxis",
+        "type": "axis",
+        "name": "Distance Axis",
+        "properties": {
+          "label": "Distance (Å)",
+          "range": [
+            0,
+            18
+          ],
+          "extracted_from_image": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+        },
+        "source_image_file": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+      },
+      {
+        "id": "yaxis",
+        "type": "axis",
+        "name": "Intensity Axis",
+        "properties": {
+          "label": "Intensity (a.u.)",
+          "extracted_from_image": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+        },
+        "source_image_file": "39d6a7cb9fb40764c81fa754c51d101971171d65256d381df267c0065b4ce515.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "condition",
+        "name": "200-250°C",
+        "properties": {
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "condition",
+        "name": "250-300°C (N₂)",
+        "properties": {
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "g1",
+        "type": "graph",
+        "name": "E_OHE vs E_OHE_peak plot",
+        "properties": {
+          "x_axis": "E_OHE (V)",
+          "y_axis": "E_OHE_peak (V)",
+          "data_points": [
+            {
+              "x": -0.2,
+              "y": -0.35,
+              "material": "Ni"
+            },
+            {
+              "x": -0.25,
+              "y": -0.3,
+              "material": "C_less-Ni"
+            },
+            {
+              "x": -0.25,
+              "y": -0.3,
+              "material": "C_rich-Ni"
+            }
+          ],
+          "extracted_from_image": "3d81d212ff9c81bfd9aa0f3df70702149f460219566e1253eda61b2f2b744840.jpg"
+        },
+        "source_image_file": "3d81d212ff9c81bfd9aa0f3df70702149f460219566e1253eda61b2f2b744840.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "data_point",
+        "name": "Mass Loss 28.4%",
+        "properties": {
+          "value": "-28.4%",
+          "extracted_from_image": "44b3d99ffdf7c1ed7ddb34719f918c96dae1c6586550aa48bfa6d77d996c1722.jpg"
+        },
+        "source_image_file": "44b3d99ffdf7c1ed7ddb34719f918c96dae1c6586550aa48bfa6d77d996c1722.jpg"
+      },
+      {
+        "id": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3_node1",
+        "type": "chemical",
+        "name": "C-Ni lean",
+        "properties": {
+          "description": "Carbon-Nickel lean composition",
+          "extracted_from_image": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+        },
+        "source_image_file": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+      },
+      {
+        "id": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3_node2",
+        "type": "chemical",
+        "name": "C-Ni less",
+        "properties": {
+          "description": "Carbon-Nickel less composition",
+          "extracted_from_image": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+        },
+        "source_image_file": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+      },
+      {
+        "id": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3_node3",
+        "type": "chemical",
+        "name": "C-Ni rich",
+        "properties": {
+          "description": "Carbon-Nickel rich composition",
+          "extracted_from_image": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+        },
+        "source_image_file": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+      },
+      {
+        "id": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3_node4",
+        "type": "characterization",
+        "name": "XPS Spectrum - C-Ni lean",
+        "properties": {
+          "work_function_Wf": "4.07 eV",
+          "cutoff_energy_Ecutoff": "17.15 eV",
+          "extracted_from_image": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+        },
+        "source_image_file": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+      },
+      {
+        "id": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3_node5",
+        "type": "characterization",
+        "name": "XPS Spectrum - C-Ni less",
+        "properties": {
+          "work_function_Wf": "4.19 eV",
+          "cutoff_energy_Ecutoff": "17.03 eV",
+          "extracted_from_image": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+        },
+        "source_image_file": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+      },
+      {
+        "id": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3_node6",
+        "type": "characterization",
+        "name": "XPS Spectrum - C-Ni rich",
+        "properties": {
+          "work_function_Wf": "4.26 eV",
+          "cutoff_energy_Ecutoff": "16.96 eV",
+          "extracted_from_image": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+        },
+        "source_image_file": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+      },
+      {
+        "id": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3_node7",
+        "type": "technique",
+        "name": "XPS",
+        "properties": {
+          "description": "X-ray Photoelectron Spectroscopy",
+          "x_axis": "Binding energy (eV)",
+          "y_axis": "Intensity (a.u.)",
+          "range": "0-20 eV",
+          "extracted_from_image": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+        },
+        "source_image_file": "4e231320d8b5a90a096b05472d20c35dd93d88c16be7ea2a683ec43ec960d5a3.jpg"
+      },
+      {
+        "id": "clean_ni",
+        "type": "chemical",
+        "name": "Clean Ni",
+        "properties": {
+          "description": "Clean nickel surface or nanoparticle",
+          "extracted_from_image": "8ead0473fa05e1645931d1d2952703121c90788948a471d9dfa7d05ed0b17178.jpg"
+        },
+        "source_image_file": "8ead0473fa05e1645931d1d2952703121c90788948a471d9dfa7d05ed0b17178.jpg"
+      },
+      {
+        "id": "image_d",
+        "type": "characterization",
+        "name": "Figure d",
+        "properties": {
+          "type": "TEM",
+          "scale": "5 nm",
+          "description": "High-resolution transmission electron microscopy image showing atomic lattice fringes of clean nickel",
+          "extracted_from_image": "4f977974c945c1c57ed86df384168c45786e49ccb3caf77a58501d3440f709b2.jpg"
+        },
+        "source_image_file": "4f977974c945c1c57ed86df384168c45786e49ccb3caf77a58501d3440f709b2.jpg"
+      },
+      {
+        "id": "ni_111",
+        "type": "chemical",
+        "name": "Ni(111)",
+        "properties": {
+          "description": "Nickel (111) crystal plane",
+          "extracted_from_image": "548a93707f6647108ff0f438aaff3669c3c3cc35270c4b3df4bc711345d3b99c.jpg"
+        },
+        "source_image_file": "548a93707f6647108ff0f438aaff3669c3c3cc35270c4b3df4bc711345d3b99c.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "STM Image",
+        "properties": {
+          "technique": "Scanning Tunneling Microscopy",
+          "scale": "5 nm",
+          "extracted_from_image": "548a93707f6647108ff0f438aaff3669c3c3cc35270c4b3df4bc711345d3b99c.jpg"
+        },
+        "source_image_file": "548a93707f6647108ff0f438aaff3669c3c3cc35270c4b3df4bc711345d3b99c.jpg"
+      },
+      {
+        "id": "distance_2.05A",
+        "type": "measurement",
+        "name": "2.05 Å",
+        "properties": {
+          "value": "2.05 Å",
+          "description": "Interatomic distance on Ni(111) surface",
+          "extracted_from_image": "548a93707f6647108ff0f438aaff3669c3c3cc35270c4b3df4bc711345d3b99c.jpg"
+        },
+        "source_image_file": "548a93707f6647108ff0f438aaff3669c3c3cc35270c4b3df4bc711345d3b99c.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "type": "XPS",
+          "x_axis": "Binding Energy (eV)",
+          "x_range": [
+            852,
+            864
+          ],
+          "y_axis": "Intensity (a.u.)",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "d1",
+        "type": "distance",
+        "name": "2.08 Å",
+        "properties": {
+          "value": "2.08",
+          "unit": "Å",
+          "extracted_from_image": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+        },
+        "source_image_file": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+      },
+      {
+        "id": "d2",
+        "type": "distance",
+        "name": "2.53 Å",
+        "properties": {
+          "value": "2.53",
+          "unit": "Å",
+          "extracted_from_image": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+        },
+        "source_image_file": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+      },
+      {
+        "id": "img1",
+        "type": "characterization",
+        "name": "TEM image",
+        "properties": {
+          "scale": "2 nm",
+          "extracted_from_image": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+        },
+        "source_image_file": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+      },
+      {
+        "id": "feat1",
+        "type": "feature",
+        "name": "disordered arrangement",
+        "properties": {
+          "extracted_from_image": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+        },
+        "source_image_file": "781fe272982c3a690b9e3a69f084591475d54abe51f3bfb083ec3abc49d95fd1.jpg"
+      },
+      {
+        "id": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d_node1",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "description": "Pure Nickel",
+          "HBE": "-0.56 eV",
+          "extracted_from_image": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+        },
+        "source_image_file": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+      },
+      {
+        "id": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d_node2",
+        "type": "chemical",
+        "name": "C-Ni_less",
+        "properties": {
+          "description": "Carbon-Nickel with less carbon",
+          "HBE": "-0.37 eV",
+          "extracted_from_image": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+        },
+        "source_image_file": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+      },
+      {
+        "id": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d_node3",
+        "type": "chemical",
+        "name": "C-Ni_rich",
+        "properties": {
+          "description": "Carbon-Nickel with rich carbon",
+          "HBE": "-0.36 eV",
+          "extracted_from_image": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+        },
+        "source_image_file": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+      },
+      {
+        "id": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d_node4",
+        "type": "characterization",
+        "name": "Bar Chart",
+        "properties": {
+          "type": "HBE plot",
+          "x-axis": "Materials",
+          "y-axis": "HBE (eV)",
+          "values": [
+            "-0.56",
+            "-0.37",
+            "-0.36"
+          ],
+          "extracted_from_image": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+        },
+        "source_image_file": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+      },
+      {
+        "id": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d_node5",
+        "type": "structure",
+        "name": "Ni Structure",
+        "properties": {
+          "description": "Atomic structure inset for Ni (gray spheres with green highlights)",
+          "extracted_from_image": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+        },
+        "source_image_file": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+      },
+      {
+        "id": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d_node6",
+        "type": "structure",
+        "name": "C-Ni_less Structure",
+        "properties": {
+          "description": "Atomic structure inset for C-Ni_less (framework with green atoms)",
+          "extracted_from_image": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+        },
+        "source_image_file": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+      },
+      {
+        "id": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d_node7",
+        "type": "structure",
+        "name": "C-Ni_rich Structure",
+        "properties": {
+          "description": "Atomic structure inset for C-Ni_rich (framework with yellow highlights)",
+          "extracted_from_image": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+        },
+        "source_image_file": "805204215b1e980f1e50f2f6f7274fc95f3e5f5bbf33f1a2dee7b44697e16f0d.jpg"
+      },
+      {
+        "id": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62_node1",
+        "type": "characterization",
+        "name": "XANES Spectrum",
+        "properties": {
+          "technique": "X-ray Absorption Near Edge Structure",
+          "element": "Ni",
+          "x_axis": "Energy (eV)",
+          "x_range": [
+            8320,
+            8440
+          ],
+          "y_axis": "Normalized Intensity (a.u.)",
+          "extracted_from_image": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+        },
+        "source_image_file": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+      },
+      {
+        "id": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62_node2",
+        "type": "chemical",
+        "name": "Ni foil",
+        "properties": {
+          "description": "Nickel foil reference",
+          "extracted_from_image": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+        },
+        "source_image_file": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+      },
+      {
+        "id": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62_node3",
+        "type": "chemical",
+        "name": "NiO",
+        "properties": {
+          "description": "Nickel oxide reference",
+          "extracted_from_image": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+        },
+        "source_image_file": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+      },
+      {
+        "id": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62_node4",
+        "type": "chemical",
+        "name": "C_lean Ni",
+        "properties": {
+          "description": "Clean nickel surface sample",
+          "extracted_from_image": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+        },
+        "source_image_file": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+      },
+      {
+        "id": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62_node5",
+        "type": "chemical",
+        "name": "C_less Ni",
+        "properties": {
+          "description": "Low carbon content nickel sample",
+          "extracted_from_image": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+        },
+        "source_image_file": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+      },
+      {
+        "id": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62_node6",
+        "type": "chemical",
+        "name": "C_rich Ni",
+        "properties": {
+          "description": "High carbon content nickel sample",
+          "extracted_from_image": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+        },
+        "source_image_file": "8d961d404e52791a2df1585be8f28ff3fd5b047e131a94bad1ccfddef1944c62.jpg"
+      },
+      {
+        "id": "xrd_pattern",
+        "type": "characterization",
+        "name": "XRD Pattern",
+        "properties": {
+          "type": "2D scattering pattern",
+          "axes": {
+            "x": "k (Å⁻¹)",
+            "y": "q + k (Å)"
+          },
+          "color_scale": "intensity (blue low, red high)",
+          "extracted_from_image": "8ead0473fa05e1645931d1d2952703121c90788948a471d9dfa7d05ed0b17178.jpg"
+        },
+        "source_image_file": "8ead0473fa05e1645931d1d2952703121c90788948a471d9dfa7d05ed0b17178.jpg"
+      },
+      {
+        "id": "peak_7.18",
+        "type": "characterization",
+        "name": "Scattering Peak",
+        "properties": {
+          "position": "7.18 Å⁻¹",
+          "type": "k-space peak",
+          "extracted_from_image": "8ead0473fa05e1645931d1d2952703121c90788948a471d9dfa7d05ed0b17178.jpg"
+        },
+        "source_image_file": "8ead0473fa05e1645931d1d2952703121c90788948a471d9dfa7d05ed0b17178.jpg"
+      },
+      {
+        "id": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2_node1",
+        "type": "material",
+        "name": "Ni",
+        "properties": {
+          "description": "Nickel material",
+          "extracted_from_image": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+        },
+        "source_image_file": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+      },
+      {
+        "id": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2_node2",
+        "type": "material",
+        "name": "C-poor Ni",
+        "properties": {
+          "description": "Carbon-poor Nickel material",
+          "extracted_from_image": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+        },
+        "source_image_file": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+      },
+      {
+        "id": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2_node3",
+        "type": "material",
+        "name": "C-rich Ni",
+        "properties": {
+          "description": "Carbon-rich Nickel material",
+          "extracted_from_image": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+        },
+        "source_image_file": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+      },
+      {
+        "id": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2_node4",
+        "type": "characterization",
+        "name": "XPS OHE BBE Spectrum",
+        "properties": {
+          "type": "XPS",
+          "region": "OHE BBE",
+          "unit": "eV",
+          "peaks": [
+            {
+              "position": -0.32,
+              "material": "Ni",
+              "color": "gray"
+            },
+            {
+              "position": -0.27,
+              "material": "C-poor Ni",
+              "color": "pink"
+            },
+            {
+              "position": -0.24,
+              "material": "C-rich Ni",
+              "color": "gold"
+            }
+          ],
+          "extracted_from_image": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+        },
+        "source_image_file": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+      },
+      {
+        "id": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2_node5",
+        "type": "image",
+        "name": "Ni SEM/Structure",
+        "properties": {
+          "description": "Gray nanostructure with diamond-like lattice",
+          "position": "left inset",
+          "extracted_from_image": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+        },
+        "source_image_file": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+      },
+      {
+        "id": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2_node6",
+        "type": "image",
+        "name": "C-poor Ni SEM/Structure",
+        "properties": {
+          "description": "Pink/yellow triangular lattice structure",
+          "position": "middle inset",
+          "extracted_from_image": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+        },
+        "source_image_file": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+      },
+      {
+        "id": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2_node7",
+        "type": "image",
+        "name": "C-rich Ni SEM/Structure",
+        "properties": {
+          "description": "Gold/red complex lattice structure",
+          "position": "right inset",
+          "extracted_from_image": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+        },
+        "source_image_file": "9f3903d1b7b4ce53ad7ecac0c63f786c9efff9269c50cca04d0ea271d65961d2.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "condition",
+        "name": "300-350°C (N₂)",
+        "properties": {
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "c4",
+        "type": "condition",
+        "name": "350°C / 30 min",
+        "properties": {
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "el1",
+        "type": "element",
+        "name": "Ni",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "el2",
+        "type": "element",
+        "name": "O",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "el3",
+        "type": "element",
+        "name": "C",
+        "properties": {
+          "color": "gray",
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "el4",
+        "type": "element",
+        "name": "N",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "el5",
+        "type": "element",
+        "name": "H",
+        "properties": {
+          "color": "white",
+          "extracted_from_image": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+        },
+        "source_image_file": "a0636a5f978458941368f7eb9431be23f7cfadf9f120bbcb008e214306533d4b.jpg"
+      },
+      {
+        "id": "b482eb9423f46a1042bfb4cb396bd98b166f1f73ef9b5557ac497768624f4d2c_node1",
+        "type": "characterization",
+        "name": "Pair Distribution Function (PDF)",
+        "properties": {
+          "type": "PDF spectrum",
+          "x_label": "Distance (Å)",
+          "y_label": "Intensity (a.u.)",
+          "peaks": [
+            2.1,
+            2.34
+          ],
+          "extracted_from_image": "b482eb9423f46a1042bfb4cb396bd98b166f1f73ef9b5557ac497768624f4d2c.jpg"
+        },
+        "source_image_file": "b482eb9423f46a1042bfb4cb396bd98b166f1f73ef9b5557ac497768624f4d2c.jpg"
+      },
+      {
+        "id": "peak1",
+        "type": "peak",
+        "name": "2.34 Å Peak",
+        "properties": {
+          "position": 2.34,
+          "unit": "Å",
+          "description": "First coordination shell distance",
+          "extracted_from_image": "b482eb9423f46a1042bfb4cb396bd98b166f1f73ef9b5557ac497768624f4d2c.jpg"
+        },
+        "source_image_file": "b482eb9423f46a1042bfb4cb396bd98b166f1f73ef9b5557ac497768624f4d2c.jpg"
+      },
+      {
+        "id": "peak2",
+        "type": "peak",
+        "name": "2.10 Å Peak",
+        "properties": {
+          "position": 2.1,
+          "unit": "Å",
+          "description": "Metal-oxygen or metal-metal distance",
+          "extracted_from_image": "b482eb9423f46a1042bfb4cb396bd98b166f1f73ef9b5557ac497768624f4d2c.jpg"
+        },
+        "source_image_file": "b482eb9423f46a1042bfb4cb396bd98b166f1f73ef9b5557ac497768624f4d2c.jpg"
+      },
+      {
+        "id": "struct1",
+        "type": "structure",
+        "name": "Easy structure",
+        "properties": {
+          "visual": "gray nanoparticle with red oxygen atoms",
+          "E_peak": "-4.36 eV (vs RHE)",
+          "extracted_from_image": "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg"
+        },
+        "source_image_file": "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg"
+      },
+      {
+        "id": "struct2",
+        "type": "structure",
+        "name": "Depressed structure",
+        "properties": {
+          "visual": "gray nanoparticle with orange/red oxygen atoms and cyan arrow",
+          "E_peak": "-3.34 eV (vs RHE)",
+          "extracted_from_image": "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg"
+        },
+        "source_image_file": "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg"
+      },
+      {
+        "id": "o_atoms",
+        "type": "chemical",
+        "name": "O atoms",
+        "properties": {
+          "description": "Red spheres representing oxygen atoms on nanoparticle surfaces",
+          "extracted_from_image": "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg"
+        },
+        "source_image_file": "bebe5d40d0e3294eaeabfaf6253001d38e09dd2bf9e5787dea928c34fad8a4ff.jpg"
+      },
+      {
+        "id": "this_work",
+        "type": "chemical",
+        "name": "This work C-Ni",
+        "properties": {
+          "symbol": "C-Ni",
+          "performance": "highlighted",
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "NiB",
+        "type": "chemical",
+        "name": "NiB",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni-NC",
+        "type": "chemical",
+        "name": "Ni-NC",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni-N-C",
+        "type": "chemical",
+        "name": "Ni-N-C",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni@BC",
+        "type": "chemical",
+        "name": "Ni@BC",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "NiBC-300",
+        "type": "chemical",
+        "name": "NiBC-300",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni3C",
+        "type": "chemical",
+        "name": "Ni₃C",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "NiO",
+        "type": "chemical",
+        "name": "NiO",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni-IO-C",
+        "type": "chemical",
+        "name": "Ni-IO-C",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni-NH2-NH3",
+        "type": "chemical",
+        "name": "Ni-NH₂-NH₃",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "NiCu@NC",
+        "type": "chemical",
+        "name": "NiCu@NC",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni-NH3-NH2",
+        "type": "chemical",
+        "name": "Ni-NH₃-NH₂",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni@C",
+        "type": "chemical",
+        "name": "Ni@C",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni-N-GFs",
+        "type": "chemical",
+        "name": "Ni/N/N-GFs",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "NiVC",
+        "type": "chemical",
+        "name": "NiVC",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni2P",
+        "type": "chemical",
+        "name": "Ni₂P",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "NIV2O3",
+        "type": "chemical",
+        "name": "NiV₂O₃",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "NiMoNi-N-C",
+        "type": "chemical",
+        "name": "NiMoNi-N-C",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "MoNi4",
+        "type": "chemical",
+        "name": "MoNi₄",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni-Pt-Ni",
+        "type": "chemical",
+        "name": "Ni-Pt-Ni",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "Ni-OH-Ni",
+        "type": "chemical",
+        "name": "Ni-OH-Ni",
+        "properties": {
+          "extracted_from_image": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+        },
+        "source_image_file": "bfdf6f27ca9cb82e55fd7098472c05a0055ebf8a75831cbe77457f9a83d2d15e.jpg"
+      },
+      {
+        "id": "peak_crni_1.28",
+        "type": "peak",
+        "name": "-1.28 eV peak (C-rich Ni)",
+        "properties": {
+          "energy": -1.28,
+          "intensity": "high",
+          "extracted_from_image": "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg"
+        },
+        "source_image_file": "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg"
+      },
+      {
+        "id": "peak_clni_1.19",
+        "type": "peak",
+        "name": "-1.19 eV peak (C-less Ni)",
+        "properties": {
+          "energy": -1.19,
+          "intensity": "high",
+          "extracted_from_image": "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg"
+        },
+        "source_image_file": "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg"
+      },
+      {
+        "id": "peak_ni_1.27",
+        "type": "peak",
+        "name": "-1.27 eV peak (Ni)",
+        "properties": {
+          "energy": -1.27,
+          "intensity": "high",
+          "extracted_from_image": "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg"
+        },
+        "source_image_file": "c6c604d1880a466e32d765d737c65e23d9dba97fc0b13b69ea5507120da9b525.jpg"
+      },
+      {
+        "id": "ar",
+        "type": "chemical",
+        "name": "Ar",
+        "properties": {
+          "description": "Argon gas",
+          "extracted_from_image": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+        },
+        "source_image_file": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+      },
+      {
+        "id": "h4",
+        "type": "chemical",
+        "name": "4H",
+        "properties": {
+          "description": "4 equivalents of H (hydrogen source)",
+          "extracted_from_image": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+        },
+        "source_image_file": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+      },
+      {
+        "id": "h8",
+        "type": "chemical",
+        "name": "8H",
+        "properties": {
+          "description": "8 equivalents of H (hydrogen source)",
+          "extracted_from_image": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+        },
+        "source_image_file": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+      },
+      {
+        "id": "ch",
+        "type": "chemical",
+        "name": "CH",
+        "properties": {
+          "description": "CH ligand or group",
+          "extracted_from_image": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+        },
+        "source_image_file": "d58204d9f97114e0c5e11fff02a4a23c09743cb1407c7c394de9b9aaf92955c2.jpg"
+      },
+      {
+        "id": "sample1",
+        "type": "chemical",
+        "name": "Ni-8% H₂Ar (Clean-Ni)",
+        "properties": {
+          "description": "Nickel sample with 8% hydrogen in argon, clean nickel surface",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample2",
+        "type": "chemical",
+        "name": "Ni⁺",
+        "properties": {
+          "description": "Nickel monocation peak",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample3",
+        "type": "chemical",
+        "name": "Ni⁰ and Ni'",
+        "properties": {
+          "description": "Neutral nickel and modified nickel species peaks",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample4",
+        "type": "chemical",
+        "name": "Ni-6% H₂/Ar",
+        "properties": {
+          "description": "Nickel sample with 6% hydrogen in argon",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample5",
+        "type": "chemical",
+        "name": "Ni-4% H₂/Ar (C-less Ni)",
+        "properties": {
+          "description": "Nickel sample with 4% hydrogen in argon, carbon-less nickel",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample6",
+        "type": "chemical",
+        "name": "Ni-2% H₂/Ar",
+        "properties": {
+          "description": "Nickel sample with 2% hydrogen in argon",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample7",
+        "type": "chemical",
+        "name": "Ni-Ar (C-Ni)",
+        "properties": {
+          "description": "Nickel-argon with carbon-nickel",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample8",
+        "type": "chemical",
+        "name": "Ni-Ar (Rich)",
+        "properties": {
+          "description": "Nickel-argon rich sample",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample9",
+        "type": "chemical",
+        "name": "Ni C",
+        "properties": {
+          "description": "Nickel carbide",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "sample10",
+        "type": "chemical",
+        "name": "Ni C rich",
+        "properties": {
+          "description": "Nickel carbide rich",
+          "extracted_from_image": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+        },
+        "source_image_file": "e41e61d4f759e790c1a94d5c8c58bbd80de3767981b93fb938969a961d91aebe.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node1",
+        "type": "characterization",
+        "name": "EXAFS Spectrum",
+        "properties": {
+          "technique": "FT k²-weighted EXAFS",
+          "unit": "(a.u.)",
+          "x_axis": "R + α (Å)",
+          "x_range": [
+            0,
+            6
+          ],
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node2",
+        "type": "chemical",
+        "name": "Ni-Ni",
+        "properties": {
+          "color": "pink",
+          "peak_position": "around 2.0 Å",
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node3",
+        "type": "chemical",
+        "name": "Ni-C",
+        "properties": {
+          "color": "gold",
+          "peak_position": "around 1.5 Å",
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node4",
+        "type": "chemical",
+        "name": "Ni-O",
+        "properties": {
+          "color": "dark red",
+          "peak_position": "around 1.8 Å",
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node5",
+        "type": "chemical",
+        "name": "Ni foil",
+        "properties": {
+          "color": "light gray",
+          "reference": true,
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node6",
+        "type": "chemical",
+        "name": "NiO",
+        "properties": {
+          "color": "dark gray",
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node7",
+        "type": "chemical",
+        "name": "C_lean-Ni",
+        "properties": {
+          "color": "gray",
+          "description": "Clean Ni surface",
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node8",
+        "type": "chemical",
+        "name": "C_less-Ni",
+        "properties": {
+          "color": "pink",
+          "description": "Ni with less carbon",
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node9",
+        "type": "chemical",
+        "name": "C_ni-Ni",
+        "properties": {
+          "color": "gold",
+          "description": "Carbon-rich Ni",
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f_node10",
+        "type": "chemical",
+        "name": "C_ni-Ni",
+        "properties": {
+          "color": "gray",
+          "description": "Carbon-nickel",
+          "extracted_from_image": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+        },
+        "source_image_file": "ef645fccfbe1599c7705f0fa765d4d24b513a32bfcd7c758204197f38b84082f.jpg"
+      },
+      {
+        "id": "initial_state",
+        "type": "chemical",
+        "name": "H⁺ + OH⁻",
+        "properties": {
+          "energy": "0 eV",
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      },
+      {
+        "id": "ts1",
+        "type": "chemical",
+        "name": "Transition State 1",
+        "properties": {
+          "energy": "1.08 eV",
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      },
+      {
+        "id": "intermediate",
+        "type": "chemical",
+        "name": "Ni-CₙNi Intermediate",
+        "properties": {
+          "energy": "-0.4 eV",
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      },
+      {
+        "id": "ts2",
+        "type": "chemical",
+        "name": "Transition State 2",
+        "properties": {
+          "energy": "1.36 eV",
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      },
+      {
+        "id": "ts3",
+        "type": "chemical",
+        "name": "Transition State 3",
+        "properties": {
+          "energy": "1.49 eV",
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      },
+      {
+        "id": "final_state",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "energy": "0 eV",
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      },
+      {
+        "id": "cn_ni",
+        "type": "chemical",
+        "name": "Cₙ-Ni",
+        "properties": {
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      },
+      {
+        "id": "ni",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "extracted_from_image": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+        },
+        "source_image_file": "f9c693e45c2f9fd1ba7da6792b55a30848307eb63c8ae33be6ebd3a015498823.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Crich-Ni_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Crich-Ni",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cless-Ni_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Cless-Ni",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cclean-Ni_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Cclean-Ni",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Crich-Ni_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Crich-Ni",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cless-Ni_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Cless-Ni",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cclean-Ni_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Cclean-Ni",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Crich-Ni_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Crich-Ni",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cless-Ni_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Cless-Ni",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cclean-Ni_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Cclean-Ni",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Crich-Ni_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Crich-Ni",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cless-Ni_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Cless-Ni",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cclean-Ni_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Cclean-Ni",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Crich-Ni_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Crich-Ni",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cless-Ni_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Cless-Ni",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cclean-Ni_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Cclean-Ni",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Crich-Ni_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Crich-Ni",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cless-Ni_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Cless-Ni",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cclean-Ni_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Cclean-Ni",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Crich-Ni_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Crich-Ni",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cless-Ni_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Cless-Ni",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cclean-Ni_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Cclean-Ni",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n3",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "includes_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "coated"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "d_band",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "g_band",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "ni_oh",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "spectrum_100c",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "spectrum_200c",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "spectrum_250c",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "spectrum_300c",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "spectrum_350c_1min",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "spectrum_390c_30min",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "spectrum_390c_60min",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "raman_spectrum",
+        "target_id": "spectrum_390c_60min_4h",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "carbon_material",
+        "target_id": "d_band",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "carbon_material",
+        "target_id": "g_band",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "ni_oh_material",
+        "target_id": "ni_oh",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "spectrum_390c_60min",
+        "target_id": "carbon_material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "spectrum_390c_60min_4h",
+        "target_id": "carbon_material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "spectrum_100c",
+        "target_id": "ni_oh_material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "spec_100C",
+        "target_id": "char_1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_200C",
+        "target_id": "char_1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_200C",
+        "target_id": "n6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_250C",
+        "target_id": "n3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_300C",
+        "target_id": "n2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_350C",
+        "target_id": "n3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_390C_0min",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_390C_0min",
+        "target_id": "n5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_390C_30min",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_390C_30min",
+        "target_id": "n5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_390C_C-30min",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_390C_C-30min",
+        "target_id": "n5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "spec_100C",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "spec_200C",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "spec_250C",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "spec_300C",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "spec_350C",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "spec_390C_0min",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "spec_390C_30min",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "spec_390C_C-30min",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "LSV_C-Ni",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ni",
+        "target_id": "LSV_Ni",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "bar_C-Ni",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ni",
+        "target_id": "bar_Ni",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "C-Ni_after_1000CVs",
+        "type": "stability_test"
+      },
+      {
+        "source_id": "Ni",
+        "target_id": "Ni_after_1000CVs",
+        "type": "stability_test"
+      },
+      {
+        "source_id": "CV_1000cycles",
+        "target_id": "C-Ni_after_1000CVs",
+        "type": "produced_by"
+      },
+      {
+        "source_id": "CV_1000cycles",
+        "target_id": "Ni_after_1000CVs",
+        "type": "produced_by"
+      },
+      {
+        "source_id": "C-Ni_initial",
+        "target_id": "char_7",
+        "type": "same_as"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n3",
+        "type": "shows"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_1",
+        "type": "data_for"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_1",
+        "type": "data_for"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "p1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "p2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "p3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "p4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "xaxis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "yaxis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "g1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "g1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "g1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "g1",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "g1",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "analyzed_under"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n3",
+        "type": "analyzed_under"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "at_temperature"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "in_atmosphere"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "in_atmosphere"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "in_atmosphere"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "transition_to"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node7",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node7",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node7",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "clean_ni",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image",
+        "target_id": "clean_ni",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "ni_111",
+        "type": "shows"
+      },
+      {
+        "source_id": "ni_111",
+        "target_id": "distance_2.05A",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "clean_ni",
+        "target_id": "ni_111",
+        "type": "surface_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n5",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chart1",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chart1",
+        "type": "peak_at"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chart1",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chart1",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chart1",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "chart1",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chart1",
+        "type": "y_max"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains_measurement"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "contains_measurement"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_1",
+        "type": "property_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_1",
+        "type": "property_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "d1",
+        "type": "has_distance"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "d2",
+        "type": "has_distance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "d1",
+        "type": "has_distance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "d2",
+        "type": "has_distance"
+      },
+      {
+        "source_id": "img1",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "img1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "img1",
+        "target_id": "d1",
+        "type": "shows"
+      },
+      {
+        "source_id": "img1",
+        "target_id": "d2",
+        "type": "shows"
+      },
+      {
+        "source_id": "img1",
+        "target_id": "feat1",
+        "type": "describes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node4",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node6",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node7",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "related_material"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node3",
+        "type": "related_material"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "clean_ni",
+        "target_id": "xrd_pattern",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "xrd_pattern",
+        "target_id": "peak_7.18",
+        "type": "contains"
+      },
+      {
+        "source_id": "clean_ni",
+        "target_id": "peak_7.18",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node4",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node6",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node7",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node5",
+        "type": "contains_image"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node6",
+        "type": "contains_image"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node7",
+        "type": "contains_image"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "c1",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c2",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c3",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c4",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "el1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "el2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "el3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "el1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "el2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "el3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "el4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "el1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "el2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "el1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "el2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "el3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "el1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "el2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "el3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "el4",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "peak1",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "peak2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "struct1",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "struct2",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "struct2",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "struct1",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "struct2",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chart",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chart",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chart",
+        "type": "x_axis_label"
+      },
+      {
+        "source_id": "struct1",
+        "target_id": "o_atoms",
+        "type": "contains"
+      },
+      {
+        "source_id": "struct2",
+        "target_id": "o_atoms",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "this_work",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "NiB",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-NC",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-N-C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni@BC",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "NiBC-300",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni3C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "NiO",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-IO-C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-NH2-NH3",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "NiCu@NC",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-NH3-NH2",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni@C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-N-GFs",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "NiVC",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-N-C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni2P",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "NIV2O3",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "NiMoNi-N-C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "MoNi4",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-Pt-Ni",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni-OH-Ni",
+        "type": "compares"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "peak_crni_1.28",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "peak_clni_1.19",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "peak_ni_1.27",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chart1",
+        "type": "reference_pattern"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "transforms_into"
+      },
+      {
+        "source_id": "ar",
+        "target_id": "n2",
+        "type": "under_conditions"
+      },
+      {
+        "source_id": "h4",
+        "target_id": "n2",
+        "type": "under_conditions"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "transforms_into"
+      },
+      {
+        "source_id": "h8",
+        "target_id": "n3",
+        "type": "under_conditions"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "transforms_into"
+      },
+      {
+        "source_id": "ch",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "ch",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "ch",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n3",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n6",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "sample1",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample4",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample5",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample6",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample7",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample8",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample9",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample10",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "sample2",
+        "target_id": "chart1",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "sample3",
+        "target_id": "chart1",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "contains_reference"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node8",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node9",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node10",
+        "type": "contains_spectrum"
+      },
+      {
+        "source_id": "initial_state",
+        "target_id": "ts1",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "ts1",
+        "target_id": "intermediate",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "intermediate",
+        "target_id": "ts2",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "ts2",
+        "target_id": "ts3",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "ts3",
+        "target_id": "final_state",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "cn_ni",
+        "target_id": "intermediate",
+        "type": "part_of"
+      },
+      {
+        "source_id": "ni",
+        "target_id": "intermediate",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "initial_state",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ts1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "intermediate",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ts2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ts3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "final_state",
+        "type": "depicts"
+      }
+    ]
+  }
+}

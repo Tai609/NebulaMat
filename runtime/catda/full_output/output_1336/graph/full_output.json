@@ -1,0 +1,1295 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_FTO_glass",
+        "type": "chemical",
+        "name": "FTO-coated glass",
+        "aliases": [
+          "FTO glass",
+          "fluorine-doped tin oxide glass"
+        ],
+        "formula": "FTO",
+        "properties": {
+          "planar_size": {
+            "value": "1.5 cm × 2.5 cm",
+            "unit": "dimensions"
+          }
+        }
+      },
+      {
+        "id": "chem_tungsten_target",
+        "type": "chemical",
+        "name": "tungsten target",
+        "aliases": [
+          "tungsten target (>99.9%)"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_acetone",
+        "type": "chemical",
+        "name": "acetone",
+        "formula": "C3H6O",
+        "properties": {}
+      },
+      {
+        "id": "chem_ethanol",
+        "type": "chemical",
+        "name": "ethanol",
+        "formula": "C2H5OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_distilled_water",
+        "type": "chemical",
+        "name": "distilled water",
+        "formula": "H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_argon",
+        "type": "chemical",
+        "name": "argon",
+        "formula": "Ar",
+        "properties": {}
+      },
+      {
+        "id": "chem_oxygen",
+        "type": "chemical",
+        "name": "oxygen",
+        "formula": "O2",
+        "properties": {}
+      },
+      {
+        "id": "chem_WO3_pristine",
+        "type": "chemical",
+        "name": "pristine tungsten oxide film",
+        "aliases": [
+          "pristine uncolored film",
+          "as-sputtered tungsten oxide films"
+        ],
+        "formula": "WO3",
+        "properties": {
+          "thickness": {
+            "value": 300,
+            "unit": "nm"
+          },
+          "coral_like_structure_size": {
+            "value": "200-400",
+            "unit": "nm"
+          },
+          "W5plus_content": {
+            "value": 11.6,
+            "unit": "at%"
+          },
+          "W6plus_content": {
+            "value": 88.4,
+            "unit": "at%"
+          },
+          "electron_density_Nd": {
+            "value": "0.78×10^20",
+            "unit": "cm^-3"
+          },
+          "flat_band_potential": {
+            "value": 0.09,
+            "unit": "V vs Ag/AgCl"
+          }
+        }
+      },
+      {
+        "id": "chem_AlCl3",
+        "type": "chemical",
+        "name": "AlCl3 aqueous solution",
+        "aliases": [
+          "AlCl3",
+          "1 M AlCl3"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "pH": {
+            "value": 2.96,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_WO3_Al_intercalated",
+        "type": "chemical",
+        "name": "Al-intercalated tungsten oxide film",
+        "aliases": [
+          "colored tungsten oxide film",
+          "blue-colored film",
+          "Al_xWO3"
+        ],
+        "formula": "Al_xWO3",
+        "properties": {
+          "Al_W_molar_ratio_range": {
+            "value": "0.188-8.67",
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "chem_HCl",
+        "type": "chemical",
+        "name": "HCl aqueous solution",
+        "aliases": [
+          "1 M HCl"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "pH": {
+            "value": 0.01,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_LiCl",
+        "type": "chemical",
+        "name": "LiCl aqueous solution",
+        "aliases": [
+          "1 M LiCl"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "pH": {
+            "value": 6.03,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_NiO_pristine",
+        "type": "chemical",
+        "name": "pristine NiO film",
+        "formula": "NiO",
+        "properties": {}
+      },
+      {
+        "synth_step_1": "type\": \"synthesis",
+        "name": "FTO glass cleaning",
+        "procedure": "Slabs of FTO-coated glass with planar sizes of 1.5 cm × 2.5 cm were used as substrates, which were cleaned beforehand in acetone, ethanol, and distilled water successively under sonication for 20 min before drying at 60 °C.",
+        "method": "Ultrasonic cleaning",
+        "conditions": {
+          "sonication_time": {
+            "value": 20,
+            "unit": "min"
+          },
+          "drying_temperature": {
+            "value": 60,
+            "unit": "°C"
+          }
+        },
+        "source_text": "Film fabrication. To fabricate electrochromic film substrates for SERS tests, slabs of FTO-coated glass... before drying at 60 °C."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Reactive DC magnetron sputtering",
+        "procedure": "The tungsten oxide thin films on FTO glass were prepared by reactive DC magnetron sputtering at room temperature. The background pressure of the sputtering cavity was evacuated to 8 × 10^-4 Pa before deposition. Then, the DC power of the tungsten target (>99.9%) was kept at 200 W for 10 min, with the ratio of Ar:O2 fixed as 80:20 sccm and the pressure maintained at 0.2 Pa during sputtering.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Chamber evacuation",
+            "method": "Vacuum pumping",
+            "conditions": {
+              "background_pressure": {
+                "value": "8×10^-4",
+                "unit": "Pa"
+              }
+            },
+            "procedure_snippet": "The background pressure of the sputtering cavity was evacuated to 8 × 10^-4 Pa before deposition."
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "DC magnetron sputtering",
+            "method": "Reactive sputtering",
+            "conditions": {
+              "DC_power": {
+                "value": 200,
+                "unit": "W"
+              },
+              "sputtering_time": {
+                "value": 10,
+                "unit": "min"
+              },
+              "gas_ratio_Ar_O2": {
+                "value": "80:20",
+                "unit": "sccm"
+              },
+              "working_pressure": {
+                "value": 0.2,
+                "unit": "Pa"
+              },
+              "temperature": {
+                "value": "room",
+                "unit": "temperature"
+              }
+            },
+            "procedure_snippet": "the DC power of the tungsten target (>99.9%) was kept at 200 W for 10 min, with the ratio of Ar:O2 fixed as 80:20 sccm and the pressure maintained at 0.2 Pa during sputtering."
+          }
+        ],
+        "conditions": {
+          "DC_power": {
+            "value": 200,
+            "unit": "W"
+          },
+          "sputtering_time": {
+            "value": 10,
+            "unit": "min"
+          },
+          "gas_flow_Ar": {
+            "value": 80,
+            "unit": "sccm"
+          },
+          "gas_flow_O2": {
+            "value": 20,
+            "unit": "sccm"
+          },
+          "working_pressure": {
+            "value": 0.2,
+            "unit": "Pa"
+          },
+          "background_pressure": {
+            "value": "8×10^-4",
+            "unit": "Pa"
+          },
+          "temperature": {
+            "value": "room",
+            "unit": "temperature"
+          }
+        },
+        "source_text": "The tungsten oxide thin films on FTO glass were prepared by reactive DC magnetron sputtering at room temperature... pressure maintained at 0.2 Pa during sputtering."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Al3+ electrochromic intercalation",
+        "procedure": "Colored films as SERS substrates were obtained after discharging potentiostatically for 180 s at certain potentials (-0.1 to -0.6 V) in 1 M aqueous AlCl3 solution using a three-electrode cell setup (with Pt wire as the counter electrode, Ag/AgCl as the reference electrode).",
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Potentiostatic discharge",
+            "method": "Electrochemical intercalation",
+            "conditions": {
+              "potential_range": {
+                "value": "-0.1 to -0.6",
+                "unit": "V vs Ag/AgCl"
+              },
+              "intercalation_time": {
+                "value": 180,
+                "unit": "s"
+              }
+            },
+            "procedure_snippet": "discharging potentiostatically for 180 s at certain potentials in 1 M aqueous AlCl3 solution."
+          }
+        ],
+        "conditions": {
+          "electrolyte_concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "intercalation_time": {
+            "value": 180,
+            "unit": "s"
+          },
+          "potential_range": {
+            "value": "-0.1 to -0.6",
+            "unit": "V vs Ag/AgCl"
+          }
+        },
+        "source_text": "Colored films as SERS substrates were obtained after discharging potentiostatically for 180 s at certain potentials in 1 M aqueous AlCl3 solution."
+      },
+      {
+        "id": "chem_Pt_wire",
+        "type": "chemical",
+        "name": "Pt wire",
+        "aliases": [
+          "platinum wire"
+        ],
+        "formula": "Pt",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ag_AgCl",
+        "type": "chemical",
+        "name": "Ag/AgCl electrode",
+        "aliases": [
+          "Ag/AgCl/KCl"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_HCl",
+        "type": "chemical",
+        "name": "HCl aqueous solution",
+        "aliases": [
+          "1 M HCl"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "pH": {
+            "value": 0.01,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_LiCl",
+        "type": "chemical",
+        "name": "LiCl aqueous solution",
+        "aliases": [
+          "1 M LiCl"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "pH": {
+            "value": 6.03,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_NaCl",
+        "type": "chemical",
+        "name": "NaCl aqueous solution",
+        "aliases": [
+          "1 M NaCl"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "pH": {
+            "value": 9.15,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_KCl",
+        "type": "chemical",
+        "name": "KCl aqueous solution",
+        "aliases": [
+          "1 M KCl"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "pH": {
+            "value": 4.1,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_MgCl2",
+        "type": "chemical",
+        "name": "MgCl2 aqueous solution",
+        "aliases": [
+          "1 M MgCl2"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          },
+          "pH": {
+            "value": 5.12,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_NiO_pristine",
+        "type": "chemical",
+        "name": "pristine NiO film",
+        "formula": "NiO",
+        "properties": {}
+      },
+      {
+        "id": "chem_tungsten_oxide",
+        "type": "chemical",
+        "name": "tungsten oxide",
+        "aliases": [
+          "WO3",
+          "tungsten oxide film",
+          "pristine uncolored film",
+          "colored films",
+          "Al-intercalated tungsten oxide films"
+        ],
+        "formula": "WO3",
+        "properties": {
+          "thickness": {
+            "value": 300,
+            "unit": "nm"
+          },
+          "coral-like_structure_size": {
+            "value": "200-400",
+            "unit": "nm"
+          },
+          "W5+_atomic_percentage": {
+            "value": 11.6,
+            "unit": "%"
+          },
+          "W6+_atomic_percentage": {
+            "value": 88.4,
+            "unit": "%"
+          },
+          "electron_density_pristine": {
+            "value": 0.78,
+            "unit": "10^20 cm^-3"
+          }
+        }
+      },
+      {
+        "id": "chem_nickel_oxide",
+        "type": "chemical",
+        "name": "NiO",
+        "aliases": [
+          "nickel oxide",
+          "NiO films"
+        ],
+        "formula": "NiO"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_FTO_glass_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_FTO_glass",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_acetone_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_acetone",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_distilled_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_distilled_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_FTO_glass_cleaned",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_FTO_glass",
+        "properties": {
+          "form": "cleaned substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_FTO_glass_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_FTO_glass",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_tungsten_target_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_tungsten_target",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "sputtering_target"
+        }
+      },
+      {
+        "id": "edge_input_chem_argon_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_argon",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "sputtering_gas",
+          "flow_rate": {
+            "value": 80,
+            "unit": "sccm"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_oxygen_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_oxygen",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "reactive_gas",
+          "flow_rate": {
+            "value": 20,
+            "unit": "sccm"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_WO3_pristine",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_WO3_pristine",
+        "properties": {
+          "form": "thin film"
+        }
+      },
+      {
+        "id": "edge_input_chem_WO3_pristine_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_WO3_pristine",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "working_electrode"
+        }
+      },
+      {
+        "id": "edge_input_chem_AlCl3_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_AlCl3",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "electrolyte"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_WO3_Al_intercalated",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_WO3_Al_intercalated",
+        "properties": {
+          "form": "colored film"
+        }
+      },
+      {
+        "id": "edge_input_chem_Pt_wire_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Pt_wire",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "counter_electrode"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ag_AgCl_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Ag_AgCl",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "reference_electrode"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_tungsten_oxide",
+      "chem_nickel_oxide"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_tungsten_oxide",
+        "type": "chemical",
+        "name": "tungsten oxide",
+        "aliases": [
+          "WO3",
+          "tungsten oxide film",
+          "pristine uncolored film",
+          "colored films",
+          "Al-intercalated tungsten oxide films"
+        ],
+        "formula": "WO3",
+        "properties": {
+          "thickness": {
+            "value": 300,
+            "unit": "nm"
+          },
+          "coral-like_structure_size": {
+            "value": "200-400",
+            "unit": "nm"
+          },
+          "W5+_atomic_percentage": {
+            "value": 11.6,
+            "unit": "%"
+          },
+          "W6+_atomic_percentage": {
+            "value": 88.4,
+            "unit": "%"
+          },
+          "electron_density_pristine": {
+            "value": 0.78,
+            "unit": "10^20 cm^-3"
+          }
+        }
+      },
+      {
+        "id": "chem_nickel_oxide",
+        "type": "chemical",
+        "name": "NiO",
+        "aliases": [
+          "nickel oxide",
+          "NiO films"
+        ],
+        "formula": "NiO"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_tungsten_oxide",
+        "description": "SERS measurement of R6G (10^-4 M) on Al-intercalated tungsten oxide films at different coloration degrees (-0.1 to -0.6 V)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "SERS",
+            "unit": "spectroscopy"
+          },
+          "analyte": {
+            "value": "R6G",
+            "unit": "10^-4 M"
+          },
+          "excitation_wavelength": {
+            "value": 532,
+            "unit": "nm"
+          },
+          "electrolyte": {
+            "value": "1 M AlCl3",
+            "unit": "aqueous"
+          },
+          "intercalation_potentials": {
+            "value": "-0.1, -0.2, -0.3, -0.4, -0.5, -0.6",
+            "unit": "V vs Ag/AgCl"
+          },
+          "intercalation_time": {
+            "value": 180,
+            "unit": "s"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "enhancement_factor_range": {
+            "value": "up to 2.66",
+            "unit": "×10^4"
+          },
+          "characteristic_R6G_bands": {
+            "value": "612, 773, 1360, 1650",
+            "unit": "cm^-1"
+          },
+          "linear_correlation_R2": {
+            "value": 0.96,
+            "unit": "dimensionless"
+          },
+          "EF_improvement_vs_uncolored": {
+            "value": 28,
+            "unit": "times"
+          },
+          "absorbance_range_max_EF": {
+            "value": "0.3-1.2",
+            "unit": "a.u."
+          }
+        },
+        "source_text": "all six colored films obtained at various negative potentials (-0.1, -0.2, -0.3, -0.4, -0.5, and -0.6 V)... EF is found to increase almost linearly up to 2.66 × 10^4, reaching a maximum within the absorbance range of 0.3–1.2, nearly 28 times greater than that of the pristine uncolored film"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_tungsten_oxide",
+        "description": "SERS uniformity testing on single Al-5 substrate",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "SERS",
+            "unit": "spectroscopy"
+          },
+          "analyte": {
+            "value": "R6G",
+            "unit": "1×10^-4 M"
+          },
+          "excitation_wavelength": {
+            "value": 532,
+            "unit": "nm"
+          },
+          "step_size": {
+            "value": 20,
+            "unit": "nm"
+          },
+          "spots_tested": {
+            "value": 100,
+            "unit": "spots"
+          }
+        },
+        "results_json": {
+          "spot-to-spot_RSD_612cm-1": {
+            "value": 7.86,
+            "unit": "%"
+          }
+        },
+        "source_text": "The RSD of the SERS peak at around 612 cm^-1 is used to further assess the uniformity of the SERS signals on each substrate. The value of the spot-to-spot RSD is calculated to be 7.86%"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_tungsten_oxide",
+        "description": "Batch-to-batch reproducibility testing across 50 batches of Al-5 substrates",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "SERS",
+            "unit": "spectroscopy"
+          },
+          "analyte": {
+            "value": "R6G",
+            "unit": "10^-4 M"
+          },
+          "intercalation_potential": {
+            "value": -0.5,
+            "unit": "V"
+          },
+          "batches_tested": {
+            "value": 50,
+            "unit": "batches"
+          },
+          "positions_tested": {
+            "value": 500,
+            "unit": "positions"
+          }
+        },
+        "results_json": {
+          "batch-to-batch_RSD_612cm-1": {
+            "value": 6.79,
+            "unit": "%"
+          }
+        },
+        "source_text": "the batch-to-batch RSD of the vibration at 612 cm^-1 is calculated to have a record low value of 6.79%"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_tungsten_oxide",
+        "description": "Renewability testing through 5 cycles of electrochromic coloring/decoloring",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "SERS",
+            "unit": "spectroscopy"
+          },
+          "analyte": {
+            "value": "R6G",
+            "unit": "concentration not specified"
+          },
+          "cycles": {
+            "value": 5,
+            "unit": "coloring-decoloring cycles"
+          }
+        },
+        "results_json": {
+          "run-to-run_RSD_612cm-1": {
+            "value": 2.52,
+            "unit": "%"
+          }
+        },
+        "source_text": "The value of the run-to-run RSD for the vibration at 612 cm^-1 is 2.52%"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_tungsten_oxide",
+        "description": "Comparative SERS enhancement for different cation intercalations at fixed -0.5 V",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "SERS",
+            "unit": "spectroscopy"
+          },
+          "analyte": {
+            "value": "R6G",
+            "unit": "10^-4 M"
+          },
+          "excitation_wavelength": {
+            "value": 532,
+            "unit": "nm"
+          },
+          "intercalation_potential": {
+            "value": -0.5,
+            "unit": "V vs Ag/AgCl"
+          },
+          "intercalation_time": {
+            "value": 180,
+            "unit": "s"
+          },
+          "electrolytes": {
+            "value": "1 M HCl, LiCl, NaCl, KCl, MgCl2, AlCl3",
+            "unit": "aqueous"
+          },
+          "pH_values": {
+            "value": "HCl:0.01, LiCl:6.03, NaCl:9.15, KCl:4.10, MgCl2:5.12, AlCl3:2.96",
+            "unit": ""
+          }
+        },
+        "results_json": {
+          "max_EF_Li+": {
+            "value": 8.86,
+            "unit": "×10^4"
+          },
+          "SERS_activity_rank": {
+            "value": "Li+ > Mg2+ > Na+ > K+ > Al3+ > H+",
+            "unit": "relative"
+          }
+        },
+        "source_text": "greatly improved SERS performances are observed for these colored tungsten oxide films when intercalated with all five of the above cations... The Li+ ion-intercalated film produces the largest SERS enhancement, with the increased EF reaching a maximum value of 8.86 × 10^4... rank order of SERS activity... Li+ > Mg2+ > Na+ > K+ > Al3+ > H+"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_nickel_oxide",
+        "description": "SERS testing on cation-intercalated NiO films",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "SERS",
+            "unit": "spectroscopy"
+          },
+          "cations": {
+            "value": "H+, Li+, Na+, K+, Mg2+, Al3+",
+            "unit": "ions"
+          }
+        },
+        "results_json": {
+          "SERS_activity_order": {
+            "value": "Al3+ > Mg2+ > H+ > Li+ > Na+ > K+",
+            "unit": "relative"
+          }
+        },
+        "source_text": "All six NiO films electrochemically activated by intercalation with different cations... give a different rank order for the SERS activity: Al3+ > Mg2+ > H+ > Li+ > Na+ > K+"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_tungsten_oxide",
+        "description": "Raman measurement conditions - general setup for all SERS tests",
+        "conditions_json": {
+          "excitation_wavelength": {
+            "value": 532.8,
+            "unit": "nm"
+          },
+          "objective_lens": {
+            "value": "×50 L",
+            "unit": "magnification"
+          },
+          "acquisition_time": {
+            "value": 15,
+            "unit": "s"
+          },
+          "laser_power": {
+            "value": 0.3,
+            "unit": "mW"
+          },
+          "spot_diameter": {
+            "value": 1,
+            "unit": "μm"
+          },
+          "analyte_preparation": {
+            "value": "50 μL dropped and dried 2h",
+            "unit": "protocol"
+          },
+          "analyte_concentrations": {
+            "value": "10^-4 to 10^-6",
+            "unit": "M in ethanol"
+          }
+        },
+        "results_json": {},
+        "source_text": "Raman spectra were subsequently acquired on a high-resolution confocal Raman spectrometer (LabRAM HR-800) with an excitation laser of 532 nm. The spectra were collected by using a ×50 L objective lens for 15 s with a laser spot diameter of about 1 μm and power of 0.3 mW for all acquisitions."
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_tungsten_oxide",
+        "description": "Photocatalytic renewability comparison control",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "SERS",
+            "unit": "spectroscopy"
+          },
+          "renewal_method": {
+            "value": "photocatalytic UV irradiation",
+            "unit": "method"
+          },
+          "cycles": {
+            "value": 5,
+            "unit": "cycles"
+          }
+        },
+        "results_json": {
+          "initial_EF": {
+            "value": 1.87,
+            "unit": "10^4"
+          },
+          "final_EF_after_5_cycles": {
+            "value": 0.26,
+            "unit": "10^4"
+          }
+        },
+        "source_text": "the EF values continuously decrease from 1.87 × 10^4 to 0.26 × 10^4 after five cycles of photocatalytic treatment"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_tungsten_oxide_test_1",
+        "type": "tested_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_tungsten_oxide_test_2",
+        "type": "tested_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_tungsten_oxide_test_3",
+        "type": "tested_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_tungsten_oxide_test_4",
+        "type": "tested_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_tungsten_oxide_test_5",
+        "type": "tested_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_nickel_oxide_test_6",
+        "type": "tested_in",
+        "source_id": "chem_nickel_oxide",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_tungsten_oxide_test_7",
+        "type": "tested_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_tungsten_oxide_test_8",
+        "type": "tested_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "test_8",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_tungsten_oxide",
+        "type": "chemical",
+        "name": "tungsten oxide",
+        "aliases": [
+          "pristine uncolored film",
+          "pristine tungsten oxide film",
+          "WO3"
+        ],
+        "formula": "WO3",
+        "properties": {
+          "thickness": {
+            "value": 300,
+            "unit": "nm"
+          },
+          "W5+ atomic percentage": {
+            "value": 11.6,
+            "unit": "%"
+          },
+          "W6+ atomic percentage": {
+            "value": 88.4,
+            "unit": "%"
+          },
+          "electron density": {
+            "value": 0.78,
+            "unit": "10^20 cm^-3"
+          }
+        }
+      },
+      {
+        "id": "chem_nickel_oxide",
+        "type": "chemical",
+        "name": "NiO",
+        "aliases": [
+          "nickel oxide"
+        ],
+        "formula": "NiO"
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "Pristine tungsten oxide film shows uniform and dense surface with closely packed coral-like structures in 200-400 nm size range; thickness ~300 nm.",
+        "evidence_snippet": "Morphologically, the pristine uncolored film on FTO glass shows a rather uniform and dense surface in the top-view SEM images... thickness of the sputtered film over FTO glass is estimated to be around 300 nm, as measured from the cross-sectional SEM image (Fig. 1b)."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "Pristine tungsten oxide film shows two broad peaks at 25° and 55°, indicating amorphous nature.",
+        "evidence_snippet": "The structural identification of the pristine uncolored film is first performed by XRD analysis, in which two broad and overlapping peaks with intensity maxima at 25° and at 55° are clearly visible, implying the amorphous nature of the pristine film."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "Raman",
+        "is_reported": true,
+        "characterization_summary": "Amorphous tungsten oxide shows strong W=O stretching band at 950 cm^-1; lacks crystalline WO3 bands at 717 cm^-1 and 807 cm^-1.",
+        "evidence_snippet": "Raman analysis further verifies its amorphous nature... a strong band assigned to the W=O stretching vibration mode can be found at 950 cm^-1, ascribed to the abundance of terminal O atoms in the amorphous structure."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "Pristine tungsten oxide film W 4f core-level shows W^6+ (88.4%) and W^5+ (11.6%) mixed states; survey confirms mainly W and O elements.",
+        "evidence_snippet": "The XPS survey spectrum clearly suggests that the film mainly consists of only two elements: W and O (Supplementary Fig. 4). Specifically, the W 4f core-level XPS spectrum can be deconvoluted into two doublets (W^6+, W^5+) with atomic percentages of W^5+ and W^6+ fitted to be 11.6% and 88.4%, indicating the presence of mixed tungsten states in the film (Supplementary Fig. 5)."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "Al-intercalated blue-colored tungsten oxide films show almost flat surface morphology nearly unchanged from pristine films.",
+        "evidence_snippet": "As shown in Fig. 1c, an almost flat surface morphology for the colored films can be clearly observed in the SEM image, which is nearly unchanged compared with the pristine tungsten oxide films."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "EDS",
+        "is_reported": true,
+        "characterization_summary": "EDS elemental mapping confirms uniform distribution of Al, W, and O in colored tungsten oxide films.",
+        "evidence_snippet": "EDS elemental mapping further confirms the uniform distribution of Al, W, and O in the colored films, satisfying a prerequisite for the homogeneous distribution of SERS-active sites in the colored films."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "AFM",
+        "is_reported": true,
+        "characterization_summary": "AFM shows low variation in surface roughness of uniform sputtered tungsten oxide films.",
+        "evidence_snippet": "the uniform coverage of the substrate by the dense film, with low variation in the surface roughness, as shown by the AFM measurements (Supplementary Fig. 1)"
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "Different batches of Al-intercalated colored tungsten oxide films show similar W^5+/W^6+ atomic ratios, indicating reproducible chemical composition.",
+        "evidence_snippet": "XPS measurements give further evidence of control over the chemical composition of colored films in different batches... different batches of colored films produced using the same synthetic conditions have similar atomic ratios of W^5+/W^6+."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "Colored tungsten oxide films show broad anodic peak at -0.1 V for W^6+/W^5+ redox with Al^3+ intercalation/extraction; CV curves unchanged after 50 coloring/bleaching cycles.",
+        "evidence_snippet": "Figure 1d illustrates the typical CV curves of the colored films, showing a broad anodic peak around -0.1 V associated with the redox reactions between W^6+ and W^5+ accompanied by Al^3+ intercalation/extraction into the lattice of tungsten oxide."
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "UV-Vis",
+        "is_reported": true,
+        "characterization_summary": "Tungsten oxide films show reversible color change between bleached (transparent) and colored (blue) states with identical absorption changes each cycle at 532 nm.",
+        "evidence_snippet": "UV–Vis spectroscopy is also used to investigate the temporal change in the composition of the colored films by evaluating their optical properties. As depicted by the change in absorption (monitored at 532 nm) against voltages alternating between -0.5 and 0.2 V, the film changes color repeatedly between the bleached (transparent) and colored (blue) states."
+      },
+      {
+        "id": "char_11",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "Valence band XPS of colored tungsten oxide shows O 2p peak at 7.39 eV and W 5d conduction band peak intensity increasing with Al/W ratio.",
+        "evidence_snippet": "As shown in Fig. 4b, the XPS valence spectra of the colored SERS substrates show a two-region structure: a broad peak situated at a binding energy of about 7.39 eV due to the O 2p state, and a small peak centered at 0.83 eV below the Fermi level."
+      },
+      {
+        "id": "char_12",
+        "type": "characterization",
+        "method_name": "Mott-Schottky",
+        "is_reported": true,
+        "characterization_summary": "Pristine WO3 has electron density 0.78×10^20 cm^-3; Al-intercalated colored films show up to 7x higher electron density (0.79×10^20 to 5.43×10^20 cm^-3) with flat-band potential shift up to 0.26 eV.",
+        "evidence_snippet": "the electron density (N_d) for the pristine uncolored tungsten oxide... is estimated to be 0.78×10^20 cm^-3... while the N_d values of the colored samples are found to be up to seven times larger... ranging from 0.79×10^20 to 5.43×10^20 cm^-3."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_5",
+        "properties": {
+          "intercalation": {
+            "value": "Al3+",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_6",
+        "properties": {
+          "intercalation": {
+            "value": "Al3+",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_8",
+        "properties": {
+          "intercalation": {
+            "value": "Al3+",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_9",
+        "properties": {
+          "intercalation": {
+            "value": "Al3+",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_10",
+        "properties": {
+          "intercalation": {
+            "value": "Al3+",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_11",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_11",
+        "properties": {
+          "intercalation": {
+            "value": "Al3+",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_tungsten_oxide_char_12",
+        "type": "characterized_in",
+        "source_id": "chem_tungsten_oxide",
+        "target_id": "char_12",
+        "properties": {
+          "intercalation": {
+            "value": "Al3+",
+            "unit": ""
+          }
+        }
+      }
+    ]
+  }
+}

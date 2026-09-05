@@ -1,0 +1,38 @@
+schema_version: 1
+id: T002
+title: Execute first calculation wave
+role: engine-runner
+role_contract: procedures/research-orchestrator/references/roles.md#engine-runner
+skill: vasp
+status: accepted
+depends_on:
+  - T001
+approval: none
+inputs:
+  - artifact_id: method-fingerprint
+    min_status: accepted
+can_read:
+  - artifact_id: method-fingerprint
+can_write:
+  - artifact_type: parser-result
+cannot:
+  - treat parser validation as scientific acceptance
+outputs_expected:
+  - artifact_id: parser-result-wave1
+    type: parser-result
+    path: work/run-wave1/parser-result.json
+success_criteria:
+  - parser result records units and provenance
+knowledge_required: []
+required_refs:
+  - tools/vasp/SKILL.md
+required_checks: []
+release_gates:
+  - engine-parser-validation
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions:
+  - Fixture parser output is illustrative.
+provenance:
+  - work/method-fingerprint.md

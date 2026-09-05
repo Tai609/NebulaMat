@@ -1,0 +1,340 @@
+---
+name: research-pipeline
+description: "Full end-to-end research pipeline: from a broad research direction through idea discovery, experiments, and review all the way to a polished paper PDF. Use when user says \"全流程\", \"full pipeline\", \"从找idea到投稿\", \"end-to-end research\", or wants the complete autonomous research lifecycle."
+---
+
+# Full Research Pipeline: Idea → Experiments → Submission
+
+> **External cadence is fire-control only.** An overnight scheduler may check
+> process/file progress, update a heartbeat, and nudge a stalled phase. It must
+> never rerun or replace a reviewer verdict. Register the state file with
+> `watchdog.py`, unregister on completion, and use `iteration_log.py` to trigger
+> structural pivots after repeated no-progress iterations. See
+> [`external-cadence.md`](../shared-references/external-cadence.md).
+
+End-to-end autonomous research workflow for: **$ARGUMENTS**
+
+## Constants
+
+- **AUTO_PROCEED = true** — When `true`, every selection checkpoint is informational: report the choice and continue in the same turn. When `false`, ask for explicit user confirmation and end the turn at the checkpoint.
+- **ARXIV_DOWNLOAD = false** — When `true`, `/research-lit` downloads the top relevant arXiv PDFs during literature survey. When `false` (default), only fetches metadata via arXiv API. Passed through to `/idea-discovery` → `/research-lit`.
+- **HUMAN_CHECKPOINT = false** — When `true`, the auto-review loops (Stage 3) pause after each round's review to let you see the score and provide custom modification instructions before fixes are implemented. When `false` (default), loops run fully autonomously. Passed through to `/auto-review-loop`.
+- **REVIEWER_DIFFICULTY = medium** — How adversarial the reviewer is. `medium` (default): standard MCP review. `hard`: adds **Reviewer Memory** + **Debate Protocol**. `nightmare`: GPT reads repo directly via `codex exec` + memory + debate. Passed through to `/auto-review-loop`.
+- **CODE_REVIEW = true** — GPT-5.6-Sol xhigh reviews experiment code before deployment. Catches logic bugs before wasting GPU hours. Set `false` to skip. Passed through to `/experiment-bridge`.
+- **BASE_REPO = false** — GitHub repo URL to use as base codebase. When set, `/experiment-bridge` clones the repo first and implements experiments on top of it. When `false` (default), writes code from scratch or reuses existing project files. Passed through to `/experiment-bridge`.
+- **COMPACT = false** — When `true`, generates compact summary files for short-context models and session recovery. Passed through to `/idea-discovery` and `/experiment-bridge`.
+- **AUTO_WRITE = false** — When `true`, automatically invoke Workflow 3 (`/paper-writing`) after Stage 4. Requires `VENUE` to be set. When `false` (default), Stage 4 generates `NARRATIVE_REPORT.md` and stops — user invokes `/paper-writing` manually.
+- **VENUE = ICLR** — Target venue for paper writing (Stage 5). Only used when `AUTO_WRITE=true`. Options: `ICLR`, `NeurIPS`, `ICML`, `CVPR`, `ACL`, `AAAI`, `ACM`, `IEEE_CONF`, `IEEE_JOURNAL`.
+- **RENDER_HTML = true** — When `true` (default), auto-render `NARRATIVE_REPORT.md` to HTML at Stage 4 completion via `/render-html`. Uses `--no-review` because Stage 3 already produced a traced same-family provisional review. Set `false` to skip. Rendering failure is non-blocking.
+- **RESUMABLE = true** — Record per-stage state under `.aris/runs/` and resume
+  from the first non-terminal phase. Same-family Codex review produces
+  `provisional`; deterministic or overlay gates produce `accepted`.
+
+> 💡 Override via argument, e.g., `/research-pipeline "topic" — AUTO_PROCEED: false, human checkpoint: true, difficulty: nightmare, code review: false, base repo: https://github.com/org/project, auto_write: true, venue: NeurIPS`.
+
+## Checkpoint execution rule
+
+Resolve `AUTO_PROCEED` once from `$ARGUMENTS` before Stage 1 and pass that
+resolved value to nested workflows.
+
+- **`AUTO_PROCEED=true` is non-blocking.** A checkpoint is a progress update,
+  not a question. State the result and the automatically selected next action,
+  then continue executing in the **same turn**. Do not ask for confirmation,
+  request user input, sleep, wait for silence, or end the turn at a checkpoint.
+- **`AUTO_PROCEED=false` is blocking.** Present the options, ask the user, and
+  end the turn. Resume only after an explicit reply.
+
+Never implement auto-proceed as “ask, then continue if there is no response.”
+Once a turn ends, silence cannot resume the pipeline. The user can still
+interrupt a non-blocking run at any time.
+
+This rule governs only `AUTO_PROCEED`-controlled selection checkpoints. If the
+user explicitly enables a Feishu **interactive** gate, that external approval
+or reply is an intentional blocking exception; wait for that user-controlled
+gate rather than treating it as a silence timeout. Feishu off/push-only modes
+remain non-blocking under `AUTO_PROCEED=true`.
+
+## Overview
+
+This skill chains the entire research lifecycle into a single pipeline:
+
+```
+/idea-discovery → /experiment-bridge → /auto-review-loop → /paper-writing (optional)
+├── Workflow 1 ──┤├── Workflow 1.5 ──┤├── Workflow 2 ───┤ ├── Workflow 3 ──┤
+```
+
+It orchestrates up to four major workflows in sequence. Workflow 3 (paper writing) is optional and controlled by `AUTO_WRITE`.
+
+## Resumable runs and heartbeat
+
+When `RESUMABLE=true`, resolve helpers through the Codex manifest:
+
+```bash
+if [ -z "${ARIS_REPO:-}" ] && [ -f .aris/installed-skills-codex.txt ]; then
+  ARIS_REPO=$(awk -F'\t' '$1=="repo_root"{print $2; exit}' .aris/installed-skills-codex.txt 2>/dev/null) || true
+fi
+RUN_STATE=""
+ITER_LOG=""
+WATCHDOG=""
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/run_state.py" ] && RUN_STATE="$ARIS_REPO/tools/run_state.py"
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/iteration_log.py" ] && ITER_LOG="$ARIS_REPO/tools/iteration_log.py"
+[ -n "${ARIS_REPO:-}" ] && [ -f "$ARIS_REPO/tools/watchdog.py" ] && WATCHDOG="$ARIS_REPO/tools/watchdog.py"
+[ -z "$RUN_STATE" ] && [ -f tools/run_state.py ] && RUN_STATE="tools/run_state.py"
+[ -z "$ITER_LOG" ] && [ -f tools/iteration_log.py ] && ITER_LOG="tools/iteration_log.py"
+[ -z "$WATCHDOG" ] && [ -f tools/watchdog.py ] && WATCHDOG="tools/watchdog.py"
+```
+
+Warn-and-skip state tracking if `RUN_STATE` cannot be resolved; never pretend it
+was persisted. Phases are `idea-discovery,experiment-bridge,auto-review-loop,summary,paper-writing`.
+
+- New run: `python3 "$RUN_STATE" start . "$RUN_ID" --executor codex-gpt-5.6-sol --provisional-advances --phases "idea-discovery,experiment-bridge,auto-review-loop,summary,paper-writing"` (the `--provisional-advances` policy is what lets a same-family provisional verdict close a phase for resume — without it, mainline semantics apply and provisional phases stay open).
+- Resume: `python3 "$RUN_STATE" resume . "$RUN_ID"`; restart the returned phase.
+- Each phase: mark `running`, then `done --artifact <path>`.
+- A fresh Codex reviewer PASS uses `mark-provisional --reviewer gpt-5.6-sol
+  --verdict-id <trace-or-agent-id>`. This is terminal for resume but not accepted.
+- A cross-family overlay or deterministic verifier uses `accept`.
+- If `AUTO_WRITE=false`, mark `paper-writing` as `skipped` after summary.
+
+| Phase | Terminal record |
+|---|---|
+| idea-discovery | base Codex → provisional; overlay jury → accepted |
+| experiment-bridge | deterministic job/result completion → accepted |
+| auto-review-loop | base Codex positive STOP → provisional; overlay → accepted |
+| summary | deterministic file/render result → accepted |
+| paper-writing | verifier report; `overall_assurance=provisional` stays provisional |
+
+For an unattended loop, touch the run state at the start of every tick, register
+it once with `watchdog.py --register` as type `loop`, and unregister on
+completion. After each tick run `iteration_log.py note <root> <run_id> <phase>
+<new-finding-count>`: `pivot=structural` requires a genuinely different approach;
+`pivot=human` surfaces the stall. Neither result is a quality verdict. See
+[`resumable-runs.md`](../shared-references/resumable-runs.md).
+
+## Pipeline
+
+### Stage 1: Idea Discovery (Workflow 1)
+
+If `RESEARCH_BRIEF.md` exists in the project root, it will be automatically loaded as detailed context (replaces one-line prompt). See `templates/RESEARCH_BRIEF_TEMPLATE.md`.
+
+Invoke the idea discovery pipeline:
+
+```
+/idea-discovery "$ARGUMENTS" — AUTO_PROCEED: $AUTO_PROCEED
+```
+
+This internally runs: `/research-lit` → `/idea-creator` → `/novelty-check` → `/research-review`
+
+**Output:** `idea-stage/IDEA_REPORT.md` with ranked, validated, pilot-tested ideas.
+
+**Review Tracing** follows the downstream review skills. Stage 1 and Stage 3 preserve reviewer prompts/responses through their own trace protocols so the final handoff can be audited.
+
+**🚦 Gate 1 — Idea Selection:**
+
+After `idea-stage/IDEA_REPORT.md` is generated, present the top ideas.
+
+**If `AUTO_PROCEED=true` (non-blocking):** report the selection and continue
+immediately in the same turn. Do not phrase the update as a question:
+
+```
+📋 Idea Discovery complete. Top ideas:
+
+1. [Idea 1 title] — Pilot: POSITIVE (+X%), Novelty: CONFIRMED
+2. [Idea 2 title] — Pilot: WEAK POSITIVE (+Y%), Novelty: CONFIRMED
+3. [Idea 3 title] — Pilot: NEGATIVE, eliminated
+
+AUTO_PROCEED: selected Idea 1 — [title]. Continuing to Stage 2.
+```
+
+**If `AUTO_PROCEED=false` (blocking):** present the same ranking, ask
+`Recommended: Idea 1. Shall I proceed with implementation?`, then end the turn.
+The user may:
+- **Approve the idea** → proceed to Stage 2. `/experiment-bridge` reads `refine-logs/EXPERIMENT_PLAN.md` already generated by `/idea-discovery`.
+- **Request changes** (e.g., "combine Idea 1 and 3", "focus more on X") → update the idea prompt with user feedback, re-run `/idea-discovery` with refined constraints, and present again.
+- **Reject all ideas** → collect feedback on what's missing, re-run Stage 1 with adjusted research direction. Repeat until the user commits to an idea.
+- **Stop here** → save current state to `idea-stage/IDEA_REPORT.md` for future reference.
+
+> ⚠️ **This gate waits for user confirmation when AUTO_PROCEED=false.** When `true`, it auto-proceeds after presenting results. The rest of the pipeline (Stages 2-3) is expensive (GPU time + multiple review rounds), so set `AUTO_PROCEED=false` if you want a final review checkpoint before committing GPU resources.
+
+### Stage 2: Experiment Bridge (Workflow 1.5)
+
+Once the idea is selected (automatically or by the user), delegate implementation and deployment to `/experiment-bridge`:
+
+```
+/experiment-bridge "$CHOSEN_IDEA_TITLE" — code review: $CODE_REVIEW, base repo: $BASE_REPO, compact: $COMPACT
+```
+
+> 💡 **Queue routing is automatic**: `/experiment-bridge` Phase 4 routes each milestone by job count — ≤5 jobs → `/run-experiment`, ≥10 jobs or teacher→student phase dependencies → `/experiment-queue` (with OOM retry, wave gating, crash-safe state). No manual override is needed.
+
+**What this does (fully autonomous):**
+1. Parses `refine-logs/EXPERIMENT_PLAN.md` — extracts milestones, run order, compute budget
+2. Implements experiment code — extends pilot to full scale, follows existing codebase conventions
+3. **Fresh-agent code review** — GPT-5.6-Sol xhigh reviews the implementation in a new context; base result is same-family provisional
+4. **Sanity check** — runs the smallest experiment first to verify the environment; auto-debugs failures (up to 3 attempts, with `/codex:rescue` fallback)
+5. Deploys full experiments — auto-routes by job count (≤5 → `/run-experiment`, ≥10 → `/experiment-queue` with OOM retry, wave gating, crash-safe state)
+6. Collects initial results — parses outputs, updates `refine-logs/EXPERIMENT_TRACKER.md`, runs `/training-check` if W&B is configured
+7. Auto-plans ablations via `/ablation-planner` if main results are positive
+
+**Output:**
+- `refine-logs/EXPERIMENT_RESULTS.md` — structured results by milestone
+- `refine-logs/EXPERIMENT_TRACKER.md` — updated run-by-run status
+- `EXPERIMENT_LOG.md` (when `COMPACT=true`) — session-recovery-friendly log
+
+**Monitor progress** (while experiments run):
+
+```
+/monitor-experiment [server]
+```
+
+Wait for `/experiment-bridge` to complete and report its handoff summary before proceeding.
+
+### Stage 3: Auto Review Loop (Workflow 2)
+
+Once initial results are in, start the autonomous improvement loop:
+
+```
+/auto-review-loop "$ARGUMENTS — [chosen idea title], difficulty: $REVIEWER_DIFFICULTY"
+```
+
+**What this does (up to 4 rounds):**
+1. GPT-5.6-Sol xhigh reviews the work (score, weaknesses, minimum fixes)
+2. Claude Code implements fixes (code changes, new experiments, reframing)
+3. Deploy fixes, collect new results
+4. Re-review → repeat until score ≥ 6/10 or 4 rounds reached
+
+**Output:** `review-stage/AUTO_REVIEW.md` with full review history and final assessment.
+
+### Stage 4: Research Summary & Writing Handoff
+
+After the auto-review loop completes, prepare the handoff for paper writing.
+
+**Step 1:** Write a final research status report (same as before).
+
+**Step 2:** Generate `NARRATIVE_REPORT.md` from:
+- `IDEA_REPORT.md` (chosen idea, hypothesis, novelty justification)
+- Implementation details from the repo
+- Experiment configs and final results
+- `AUTO_REVIEW.md` (review history, weaknesses fixed, remaining limitations)
+
+The narrative report must contain:
+- Problem statement and core claim
+- Method summary
+- Key quantitative results with evidence for each claim
+- Figure/table inventory (which exist, which need manual creation)
+- Limitations and remaining follow-up items
+
+**Output:** `NARRATIVE_REPORT.md` + research pipeline report.
+
+```markdown
+# Research Pipeline Report
+
+**Direction**: $ARGUMENTS
+**Chosen Idea**: [title]
+**Date**: [start] → [end]
+**Pipeline**: idea-discovery → experiment-bridge → auto-review-loop
+
+## Journey Summary
+- Ideas generated: X → filtered to Y → piloted Z → chose 1
+- Implementation: [brief description of what was built]
+- Experiments: [number of GPU experiments, total compute time]
+- Review rounds: N/4, final score: X/10
+
+## Writing Handoff
+- NARRATIVE_REPORT.md: ✅ generated
+- Venue: [VENUE or "not set — run /paper-writing manually"]
+- Manual figures needed: [list or "none"]
+
+## Remaining TODOs (if any)
+- [items flagged by reviewer that weren't addressed]
+```
+
+### Stage 5 / Stage 6: Paper Writing (Workflow 3 — Optional)
+
+This is the **Stage 6: Paper Writing** handoff in the broader research lifecycle; it is numbered Stage 5 here because this consolidated pipeline counts the writing handoff after the Stage 4 narrative report.
+
+**Skip this stage if `AUTO_WRITE=false` (default).** Present the `/paper-writing` command for manual use:
+
+```
+📝 Research complete. To write the paper:
+/paper-writing "NARRATIVE_REPORT.md" — venue: ICLR, AUTO_PROCEED: $AUTO_PROCEED
+```
+
+**If `AUTO_WRITE=true`:**
+
+🚦 **Gate 2 — Writing Checkpoint:**
+
+```
+📝 Research pipeline complete. Ready for Workflow 3.
+
+- Venue: [VENUE]
+- Input: NARRATIVE_REPORT.md
+- Manual figures required: [list or none]
+- Next step: /paper-writing "NARRATIVE_REPORT.md" — venue: [VENUE], AUTO_PROCEED: $AUTO_PROCEED
+
+Proceeding with paper writing...
+```
+
+Checks before proceeding:
+- If `VENUE` is missing → stop and ask. Do NOT silently use a default venue.
+- If manual figures are required → pause and list them. Wait for user to add them.
+
+Then invoke:
+
+```
+/paper-writing "NARRATIVE_REPORT.md" — venue: $VENUE, AUTO_PROCEED: $AUTO_PROCEED
+```
+
+Pass the resolved `AUTO_PROCEED` explicitly so Workflow 3 cannot silently
+fall back to its own default mode.
+
+This delegates to Workflow 3 which handles its own phases:
+`/paper-plan → /paper-figure → /paper-write → /paper-compile → /auto-paper-improvement-loop`
+
+When Workflow 3 finishes, update the pipeline report with:
+- Paper writing completion status
+- Final PDF path (`paper/main.pdf`)
+- Improvement scores (round 0 → round N)
+- Remaining issues
+
+**Output:** `paper/` directory with LaTeX source, compiled PDF, and `PAPER_IMPROVEMENT_LOG.md`.
+
+## Render HTML view (auto, when `RENDER_HTML = true`)
+
+After Stage 4 finalizes `NARRATIVE_REPORT.md` (before paper writing branches), invoke `/render-html` on the narrative report:
+
+```
+/render-html "NARRATIVE_REPORT.md" --no-review
+```
+
+`--no-review` is intentional: this is an internal handoff doc, not reviewer-facing — the claims already received a traced same-family provisional review in Stage 3. Output: `NARRATIVE_REPORT.html` next to the MD, with embedded source SHA256.
+
+**Non-blocking**: if `/render-html` fails (helper missing, file write error, etc.), log the failure and continue Stage 4 — the HTML view is a convenience artifact, not a pipeline prerequisite.
+
+Skip this step if `RENDER_HTML = false`.
+
+## Output Protocols
+
+> Follow these shared protocols for all output files:
+> - **[Output Versioning Protocol](../shared-references/output-versioning.md)** — write timestamped file first, then copy to fixed name
+> - **[Output Manifest Protocol](../shared-references/output-manifest.md)** — log every output to MANIFEST.md
+> - **[Output Language Protocol](../shared-references/output-language.md)** — respect the project's language setting
+
+## Key Rules
+
+- **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
+
+- **The Stage 1 checkpoint is controlled by AUTO_PROCEED.** When `false`, do not proceed without user confirmation. When `true`, report the top selection and continue in the same turn without asking or waiting.
+- **Stages 2-3 can run autonomously** once the idea is selected. This is the "sleep and wake up to results" part.
+- **If Stage 3 ends at round 4 without positive assessment**, stop and report remaining issues. Do not loop forever.
+- **Budget awareness**: Track total GPU-hours across the pipeline. Flag if approaching user-defined limits.
+- **Documentation**: Every stage updates its own output file. The full history should be self-contained.
+- **Fail gracefully**: If any stage fails (no good ideas, experiments crash, review loop stuck), report clearly and suggest alternatives rather than forcing forward.
+
+## Typical Timeline
+
+| Stage | Duration | Can sleep? |
+|-------|----------|------------|
+| 1. Idea Discovery | 30-60 min | Yes if AUTO_PROCEED=true |
+| 2. Experiment Bridge | 30-120 min (implement + review + deploy + collect) | Yes ✅ |
+| 3. Auto Review | 1-4 hours (depends on experiments) | Yes ✅ |
+
+**Sweet spot**: Run Stage 1 in the evening, launch Stage 2-3 before bed, wake up to a reviewed paper.

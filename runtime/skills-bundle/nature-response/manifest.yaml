@@ -1,0 +1,52 @@
+name: nature-response
+version: 1.6.0
+description: >
+  Declarative manifest for the static/dynamic split. SKILL.md uses this to
+  decide which fragments and templates to load for a reviewer-response or
+  revision-cover-letter request.
+
+# Design note: nature-response is a linear, parameterised workflow (intake ->
+# extract editor/reviewer items -> classify -> strategise -> draft -> map ->
+# QA -> package). Its variation — task mode (draft/audit/revise/triage/cover-letter/
+# revision-package/latex-template/appeal),
+# decision type, user language — is identified at runtime, mainly by
+# references/intake-and-routing.md, not by loading different large content
+# bodies. There is therefore no content axis; the split is core (always loaded)
+# plus the existing on-demand references. nature-response does not use the
+# prose-oriented nature-shared layer (it has its own response-specific stance and
+# source basis).
+
+always_load:
+  - static/core/stance.md
+  - static/core/workflow.md
+
+references:
+  on_demand:
+    - condition: before drafting — identify task mode, enforce the Major/Minor decision-type gate, parse pasted decision emails, minimum inputs, editor IDs, readiness state, and clarifying-question need
+      path: references/intake-and-routing.md
+    - condition: source hierarchy, rule provenance, or policy-vs-advice boundaries
+      path: references/source-basis.md
+    - condition: the response package format, mutually blind reviewer separation, point-by-point letter anatomy, cover-letter anatomy, marked-manuscript rules, or LaTeX deliverable routing
+      path: references/response-structure.md
+    - condition: the user requests a LaTeX cover-letter template, LaTeX response-to-reviewers template, red-marked manuscript template, or filled .tex revision package
+      path: references/latex-templates.md
+    - condition: classify reviewer comments by category and severity
+      path: references/comment-taxonomy.md
+    - condition: action labels, per-item work status, tracker fields, blocking state, and missing-input states
+      path: references/action-mapping.md
+    - condition: recommended language, forbidden phrasing, disagreement tone, or a reviewer missed material already present in the manuscript
+      path: references/tone-and-stance.md
+    - condition: the user writes in Chinese or provides Chinese author notes
+      path: references/chinese-author-alignment.md
+    - condition: impossible experiments, factual errors, conflicting or repeated reviewer requests, reviewer-visibility isolation, citations, statistics, compliance, transfer, or appeal-like cases
+      path: references/difficult-cases.md
+    - condition: before finalizing an output or auditing a draft response
+      path: references/qa-checklist.md
+    - condition: the manuscript is being edited alongside the letter, the package has been through more than one editing round, or the package is about to be compiled and delivered — verbatim quote synchronization, red-marking baseline, deletion ripple, volatile page references, manuscript numeric self-consistency, terminology sweeps, and the clean/marked delivery gate
+      path: references/package-consistency-audit.md
+
+quality_tools:
+  package_consistency_script: scripts/check_package_consistency.py
+  use_when: after the first complete LaTeX revision package, after every manuscript edit, and immediately before delivery
+  purpose: expand static LaTeX inputs, check response-letter quotes and declared rendered substitutions against the manuscript, pair reviewer comments with author responses, and compare clean and marked manuscript text after additions and deletions are normalized
+  script_resolution: resolve relative to the loaded SKILL.md directory, never the user working directory

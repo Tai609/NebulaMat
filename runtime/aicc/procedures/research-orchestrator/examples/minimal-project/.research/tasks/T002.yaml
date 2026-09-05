@@ -1,0 +1,33 @@
+schema_version: 1
+id: T002
+title: Accept model and observable decision
+role: literature-method
+skill: comp-chem-workflow
+status: accepted
+depends_on:
+  - T001
+approval: scientific_model_choice
+inputs:
+  - artifact_id: method-fingerprint
+    min_status: accepted
+outputs_expected:
+  - artifact_id: model-observable-decision
+    type: model-observable-decision
+    path: work/model-observable-decision.md
+success_criteria:
+  - model realizes the stated claim
+  - observable is discriminating
+knowledge_required:
+  - knowledge/surface-thermodynamics.md
+  - knowledge/electronic-structure.md
+required_refs:
+  - procedures/comp-chem-workflow/SKILL.md
+required_checks: []
+release_gates:
+  - model-observable
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions: []
+provenance:
+  - work/method-fingerprint.md

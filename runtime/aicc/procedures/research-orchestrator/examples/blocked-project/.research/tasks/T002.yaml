@@ -1,0 +1,29 @@
+schema_version: 1
+id: T002
+title: Submit expensive job without approval
+role: engine-runner
+skill: vasp
+status: approved
+depends_on:
+  - T001
+approval: expensive_hpc_submission
+inputs:
+  - artifact_id: plan
+    min_status: accepted
+outputs_expected:
+  - artifact_id: job-record
+    type: job-record
+    path: work/run/
+success_criteria:
+  - approval exists
+knowledge_required: []
+required_refs:
+  - tools/vasp/SKILL.md
+required_checks: []
+release_gates:
+  - engine-preflight
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions: []
+provenance: []

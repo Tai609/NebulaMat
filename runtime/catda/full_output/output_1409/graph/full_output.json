@@ -1,0 +1,3035 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_FTO",
+        "type": "chemical",
+        "name": "FTO substrate",
+        "aliases": [
+          "FTO-coated glass",
+          "fluorine doped tin oxide substrate"
+        ],
+        "formula": "FTO",
+        "properties": {
+          "surface_resistivity": {
+            "value": 7,
+            "unit": "Ω per sq"
+          }
+        }
+      },
+      {
+        "id": "chem_Mn_NO3_2",
+        "type": "chemical",
+        "name": "Mn(NO3)2",
+        "aliases": [
+          "Mn(NO3)2 solution",
+          "manganese nitrate"
+        ],
+        "formula": "Mn(NO3)2",
+        "properties": {}
+      },
+      {
+        "id": "chem_MnO2_FTO",
+        "type": "chemical",
+        "name": "MnO2",
+        "aliases": [
+          "MnO2 on FTO substrate",
+          "MnO2 electrode"
+        ],
+        "formula": "MnO2",
+        "properties": {
+          "geometric_surface_area": {
+            "value": 1,
+            "unit": "cm2"
+          }
+        },
+        "related_images": [
+          "22e3cf240c67a32904d6e0386c954d05438831463c379cc6c76bf1db9552fa46.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "dataset",
+            "name": "MnO₄⁻ generation data",
+            "properties": {
+              "color": "orange",
+              "initial_value": 0,
+              "trend": "increasing then plateau",
+              "extracted_from_image": "22e3cf240c67a32904d6e0386c954d05438831463c379cc6c76bf1db9552fa46.jpg"
+            },
+            "source_image_file": "22e3cf240c67a32904d6e0386c954d05438831463c379cc6c76bf1db9552fa46.jpg"
+          },
+          {
+            "type": "dataset",
+            "name": "MnO₄⁻ data",
+            "properties": {
+              "color": "pink/light",
+              "initial_value": 10,
+              "trend": "low and stable",
+              "extracted_from_image": "22e3cf240c67a32904d6e0386c954d05438831463c379cc6c76bf1db9552fa46.jpg"
+            },
+            "source_image_file": "22e3cf240c67a32904d6e0386c954d05438831463c379cc6c76bf1db9552fa46.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_QCM_quartz",
+        "type": "chemical",
+        "name": "QCM quartz crystal",
+        "aliases": [
+          "platinum-coated QCM quartz",
+          "QCM electrode"
+        ],
+        "properties": {
+          "frequency": {
+            "value": 10,
+            "unit": "MHz"
+          },
+          "piezo_area": {
+            "value": 0.07,
+            "unit": "cm2"
+          },
+          "mass_sensitivity": {
+            "value": 0.31,
+            "unit": "ng Hz-1"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Drop-casting and Calcination",
+        "procedure": "0.5 ml of 2 M Mn(NO3)2 was dropped onto a clean FTO-coated glass and then calcined on a hot plate at 250°C in air for 6 h. The resulting electrode was rinsed with Milli-Q ultra-pure water (18.2 MΩ cm at 25°C, Merck Millipore), sonicated for 10 s and then dried at 40°C before measurements.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Drop-casting",
+            "method": "Drop-casting",
+            "conditions": {
+              "volume": {
+                "value": 0.5,
+                "unit": "ml"
+              },
+              "concentration": {
+                "value": 2,
+                "unit": "M"
+              }
+            },
+            "procedure_snippet": "0.5 ml of 2 M Mn(NO3)2 was dropped onto a clean FTO-coated glass"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Calcination",
+            "method": "Hot plate calcination",
+            "conditions": {
+              "temperature": {
+                "value": 250,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 6,
+                "unit": "h"
+              },
+              "atmosphere": {
+                "value": "air",
+                "unit": ""
+              }
+            },
+            "procedure_snippet": "then calcined on a hot plate at 250°C in air for 6 h"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Washing and drying",
+            "method": "Rinse/sonicate/dry",
+            "conditions": {
+              "sonication_time": {
+                "value": 10,
+                "unit": "s"
+              },
+              "drying_temperature": {
+                "value": 40,
+                "unit": "°C"
+              }
+            },
+            "procedure_snippet": "The resulting electrode was rinsed with Milli-Q ultra-pure water (18.2 MΩ cm at 25°C, Merck Millipore), sonicated for 10 s and then dried at 40°C"
+          }
+        ],
+        "method": "Thermal decomposition",
+        "conditions": {
+          "calcination_temperature": {
+            "value": 250,
+            "unit": "°C"
+          },
+          "calcination_time": {
+            "value": 6,
+            "unit": "h"
+          },
+          "drying_temperature": {
+            "value": 40,
+            "unit": "°C"
+          },
+          "precursor_concentration": {
+            "value": 2,
+            "unit": "M"
+          },
+          "precursor_volume": {
+            "value": 0.5,
+            "unit": "ml"
+          },
+          "atmosphere": {
+            "value": "air",
+            "unit": ""
+          }
+        },
+        "source_text": "MnO2 on an FTO substrate (7 Ω per sq surface resistivity, NPV-CFT2-7, AsOne) was synthesized via a thermal decomposition method. Briefly, 0.5 ml of 2 M Mn(NO3)2 was dropped onto a clean FTO-coated glass and then calcined on a hot plate at 250°C in air for 6 h. The resulting electrode was rinsed with Milli-Q ultra-pure water..."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Spray Pyrolysis",
+        "procedure": "An Mn(NO3)2 solution (4 M) was sprayed onto clean QCM quartz crystals (platinum-coated, 10 MHz, Hokuto Denko Corp.), which were then heated at 250°C for 12 h. MnO2 was deposited only within the platinum coated area (defined using a mask) of the QCM quartz crystal.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Spray deposition",
+            "method": "Spray deposition",
+            "conditions": {
+              "concentration": {
+                "value": 4,
+                "unit": "M"
+              }
+            },
+            "procedure_snippet": "An Mn(NO3)2 solution (4 M) was sprayed onto clean QCM quartz crystals"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Annealing",
+            "method": "Thermal annealing",
+            "conditions": {
+              "temperature": {
+                "value": 250,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 12,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "which were then heated at 250°C for 12 h"
+          }
+        ],
+        "method": "Spray pyrolysis",
+        "conditions": {
+          "annealing_temperature": {
+            "value": 250,
+            "unit": "°C"
+          },
+          "annealing_time": {
+            "value": 12,
+            "unit": "h"
+          },
+          "precursor_concentration": {
+            "value": 4,
+            "unit": "M"
+          }
+        },
+        "source_text": "A QCM electrode was prepared using a spray deposition method. Briefly, an Mn(NO3)2 solution (4 M) was sprayed onto clean QCM quartz crystals (platinum-coated, 10 MHz, Hokuto Denko Corp.), which were then heated at 250°C for 12 h."
+      },
+      {
+        "id": "chem_MilliQ_water",
+        "type": "chemical",
+        "name": "Milli-Q ultra-pure water",
+        "aliases": [
+          "Milli-Q water"
+        ],
+        "properties": {
+          "resistivity": {
+            "value": 18.2,
+            "unit": "MΩ cm"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          }
+        }
+      },
+      {
+        "id": "chem_MnO2",
+        "type": "chemical",
+        "name": "MnO2",
+        "aliases": [
+          "manganese oxide",
+          "Mn oxide"
+        ],
+        "formula": "MnO2",
+        "related_images": [
+          "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Manganese",
+            "properties": {
+              "symbol": "Mn",
+              "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+            },
+            "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Co3O4",
+        "type": "chemical",
+        "name": "Co3O4",
+        "aliases": [
+          "cobalt oxide"
+        ],
+        "formula": "Co3O4",
+        "related_images": [
+          "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg",
+          "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "description": "Cobalt catalyst or electrode",
+              "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+            },
+            "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+            },
+            "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Fe2O3",
+        "type": "chemical",
+        "name": "Fe2O3",
+        "aliases": [
+          "iron oxide"
+        ],
+        "formula": "Fe2O3",
+        "related_images": [
+          "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg",
+          "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Iron",
+            "properties": {
+              "description": "Iron catalyst or electrode",
+              "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+            },
+            "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iron",
+            "properties": {
+              "symbol": "Fe",
+              "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+            },
+            "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_NiO",
+        "type": "chemical",
+        "name": "NiO",
+        "aliases": [
+          "nickel oxide"
+        ],
+        "formula": "NiO",
+        "related_images": [
+          "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg",
+          "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Nickel",
+            "properties": {
+              "description": "Nickel catalyst or electrode",
+              "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+            },
+            "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Nickel",
+            "properties": {
+              "symbol": "Ni",
+              "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+            },
+            "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_FTO_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_FTO",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_Mn_NO3_2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Mn_NO3_2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 2,
+            "unit": "M"
+          },
+          "volume": {
+            "value": 0.5,
+            "unit": "ml"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_MnO2_FTO",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_MnO2_FTO",
+        "properties": {
+          "form": "calcined film"
+        }
+      },
+      {
+        "id": "edge_input_chem_QCM_quartz_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_QCM_quartz",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_Mn_NO3_2_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Mn_NO3_2",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 4,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_MnO2_FTO",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_MnO2_FTO",
+        "properties": {
+          "form": "spray-deposited film"
+        }
+      },
+      {
+        "id": "edge_input_chem_MilliQ_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_MilliQ_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "rinsing solvent"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Fe2O3",
+      "chem_Co3O4",
+      "chem_NiO",
+      "chem_MnO2"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_MnO2",
+        "type": "chemical",
+        "name": "MnO2",
+        "aliases": [
+          "manganese oxide",
+          "Mn oxide",
+          "MnO2 electrode"
+        ],
+        "formula": "MnO2"
+      },
+      {
+        "id": "chem_Co3O4",
+        "type": "chemical",
+        "name": "Co3O4",
+        "aliases": [
+          "cobalt oxide"
+        ],
+        "formula": "Co3O4"
+      },
+      {
+        "id": "chem_Fe2O3",
+        "type": "chemical",
+        "name": "Fe2O3",
+        "aliases": [
+          "iron oxide"
+        ],
+        "formula": "Fe2O3"
+      },
+      {
+        "id": "chem_NiO",
+        "type": "chemical",
+        "name": "NiO",
+        "aliases": [
+          "nickel oxide"
+        ],
+        "formula": "NiO"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_MnO2",
+        "description": "OER stability under voltage fluctuation without phosphate in pH 2 sulfuric acid (two-electrode cell)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "sulfuric acid",
+            "unit": "pH 2"
+          },
+          "pH": {
+            "value": 2,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "separator": {
+            "value": "proton exchange membrane",
+            "unit": "Nafion 117"
+          },
+          "working_electrode": {
+            "value": "MnO2 on FTO",
+            "unit": "1 cm2 geometric area"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "voltage_protocol": {
+            "value": "3.00 V (8 min) ↔ 1.68 V (180 min)",
+            "unit": "cycling"
+          },
+          "QCM_protocol": {
+            "value": "3.00 V (20 s) ↔ 1.68 V (300 s)",
+            "unit": "for mass measurement"
+          }
+        },
+        "results_json": {
+          "initial_current_density": {
+            "value": 280,
+            "unit": "mA/cm²"
+          },
+          "current_retention": {
+            "value": "<10%",
+            "unit": "after <200 cycles"
+          },
+          "Mn7+_accumulation": {
+            "value": "significant",
+            "unit": "UV-Vis at 545 nm"
+          },
+          "electrolyte_color": {
+            "value": "intense pink",
+            "unit": "due to MnO4-"
+          },
+          "mass_change_rate_3.00V": {
+            "value": -54.0,
+            "unit": "ng/s ±1.5 ng/s"
+          },
+          "degradation_cycles": {
+            "value": "<200",
+            "unit": "cycles"
+          }
+        },
+        "source_text": "When the voltage was alternated between 3.00 (8 min) and 1.68 V (180 min), the OER current from Mn oxide decreased by over 90% in less than 200 cycles from the initial current density of 280 mA cm−2... QCM... showed a significant decrease in the MnO2 electrode mass (−54.0±1.5 ng s−1) at 3.00 V"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_MnO2",
+        "description": "OER stability under voltage fluctuation with 1.0 M phosphate ions at pH 2 (two-electrode cell)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M phosphate + sulfuric acid",
+            "unit": "pH 2"
+          },
+          "pH": {
+            "value": 2,
+            "unit": "pH ±0.02"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "separator": {
+            "value": "proton exchange membrane",
+            "unit": "Nafion 117"
+          },
+          "working_electrode": {
+            "value": "MnO2 on FTO",
+            "unit": "1 cm²"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "voltage_protocol": {
+            "value": "3.00 V (8 min, 4.5% time) ↔ 1.68 V (180 min, 95.5% time)",
+            "unit": "cycling"
+          },
+          "temperature": {
+            "value": "25",
+            "unit": "±2 °C"
+          }
+        },
+        "results_json": {
+          "operation_time": {
+            "value": ">2100",
+            "unit": "hours"
+          },
+          "stability_cycles": {
+            "value": ">600",
+            "unit": "cycles"
+          },
+          "activity_retention": {
+            "value": "90%",
+            "unit": "after 2100 h"
+          },
+          "current_density_1.68V": {
+            "value": "~5",
+            "unit": "mA/cm²"
+          },
+          "current_density_3.00V": {
+            "value": "~250",
+            "unit": "mA/cm²"
+          },
+          "mass_change_rate_3.00V": {
+            "value": -36.6,
+            "unit": "ng/s ±1.5"
+          },
+          "mass_change_rate_1.68V": {
+            "value": 1.0,
+            "unit": "ng/s ±0.2"
+          },
+          "stability_number": {
+            "value": "1.2×10⁴",
+            "unit": "per cycle (15x improvement)"
+          },
+          "Mn_oxidation_state_change": {
+            "value": "<+0.02",
+            "unit": "after 50 h"
+          }
+        },
+        "source_text": "Mn oxide exhibited a mass loss rate of −36.6±1.5 ng s−1 at 3.00 V and a mass gain rate of 1.0±0.2 ng s−1 at 1.68 V... The OER on MnO2 persisted for more than 600 cycles, corresponding to over 2,100 h of operation, with only a 10% loss in activity... stability number... 1.2×10⁴, about 15 times higher"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4",
+        "description": "OER stability comparison in sulfuric acid pH 2 under voltage fluctuation",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "sulfuric acid",
+            "unit": "pH 2"
+          },
+          "pH": {
+            "value": 2,
+            "unit": "pH"
+          },
+          "voltage_protocol": {
+            "value": "same as MnO2 (Figs 3,4)",
+            "unit": "3.00 V ↔ 1.68 V"
+          }
+        },
+        "results_json": {
+          "initial_current_density": {
+            "value": 330,
+            "unit": "mA/cm²"
+          },
+          "deactivation_cycles": {
+            "value": 20,
+            "unit": "voltage pulses"
+          }
+        },
+        "source_text": "cobalt oxide showed a higher initial OER current (330 mA cm−2) than MnO2 (280 mA cm−2), but the OER activity was completely diminished after only 20 voltage pulses."
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4",
+        "description": "OER stability comparison in phosphoric acid pH 2 under voltage fluctuation",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "phosphoric acid",
+            "unit": "pH 2 (with phosphate)"
+          },
+          "pH": {
+            "value": 2,
+            "unit": "pH"
+          },
+          "voltage_protocol": {
+            "value": "same voltage conditions",
+            "unit": "as Figs. 3 and 4"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "no sustained OER activity",
+            "unit": "even with phosphate"
+          }
+        },
+        "source_text": "none of these materials demonstrated sustained OER activity under voltage fluctuations even in the presence of phosphate."
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_Fe2O3",
+        "description": "OER stability comparison in sulfuric acid pH 2 under voltage fluctuation",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "sulfuric acid",
+            "unit": "pH 2"
+          },
+          "pH": {
+            "value": 2,
+            "unit": "pH"
+          },
+          "voltage_protocol": {
+            "value": "same as MnO2",
+            "unit": "fluctuating"
+          }
+        },
+        "results_json": {
+          "lifetime": {
+            "value": "shorter than Co3O4",
+            "unit": "voltage pulses"
+          }
+        },
+        "source_text": "The lifetimes of iron and nickel oxides were even shorter"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_Fe2O3",
+        "description": "OER stability comparison in phosphoric acid pH 2 under voltage fluctuation",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "phosphoric acid",
+            "unit": "pH 2"
+          },
+          "voltage_protocol": {
+            "value": "same conditions",
+            "unit": "as Fig. 5b"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "poor",
+            "unit": "no improvement with phosphate"
+          }
+        },
+        "source_text": "none of these materials demonstrated sustained OER activity under voltage fluctuations even in the presence of phosphate (Fig. 5)."
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_NiO",
+        "description": "OER stability comparison in sulfuric acid pH 2 under voltage fluctuation",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "sulfuric acid",
+            "unit": "pH 2"
+          },
+          "pH": {
+            "value": 2,
+            "unit": "pH"
+          },
+          "voltage_protocol": {
+            "value": "same as MnO2",
+            "unit": "fluctuating"
+          }
+        },
+        "results_json": {
+          "lifetime": {
+            "value": "shorter than Co3O4",
+            "unit": "voltage pulses"
+          }
+        },
+        "source_text": "The lifetimes of iron and nickel oxides were even shorter"
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_NiO",
+        "description": "OER stability comparison in phosphoric acid pH 2 under voltage fluctuation",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "phosphoric acid",
+            "unit": "pH 2"
+          },
+          "voltage_protocol": {
+            "value": "same conditions",
+            "unit": "as Fig. 5b"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "poor",
+            "unit": "no improvement with phosphate"
+          }
+        },
+        "source_text": "none of these materials demonstrated sustained OER activity under voltage fluctuations even in the presence of phosphate."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_MnO2_test_1",
+        "type": "tested_in",
+        "source_id": "chem_MnO2",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_MnO2_test_2",
+        "type": "tested_in",
+        "source_id": "chem_MnO2",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co3O4_test_3",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co3O4_test_7",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Fe2O3_test_8",
+        "type": "tested_in",
+        "source_id": "chem_Fe2O3",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Fe2O3_test_9",
+        "type": "tested_in",
+        "source_id": "chem_Fe2O3",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiO_test_10",
+        "type": "tested_in",
+        "source_id": "chem_NiO",
+        "target_id": "test_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiO_test_11",
+        "type": "tested_in",
+        "source_id": "chem_NiO",
+        "target_id": "test_11",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_MnO2",
+        "type": "chemical",
+        "name": "MnO2",
+        "aliases": [
+          "manganese oxide",
+          "Mn oxide"
+        ],
+        "formula": "MnO2"
+      },
+      {
+        "id": "chem_Co3O4",
+        "type": "chemical",
+        "name": "Co3O4",
+        "aliases": [
+          "cobalt oxide"
+        ],
+        "formula": "Co3O4"
+      },
+      {
+        "id": "chem_Fe2O3",
+        "type": "chemical",
+        "name": "Fe2O3",
+        "aliases": [
+          "iron oxide"
+        ],
+        "formula": "Fe2O3"
+      },
+      {
+        "id": "chem_NiO",
+        "type": "chemical",
+        "name": "NiO",
+        "aliases": [
+          "nickel oxide"
+        ],
+        "formula": "NiO"
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "Synchrotron radiation powder XRD patterns after 50 h electrolysis confirm no new crystal phases formed for MnO2 catalyst.",
+        "evidence_snippet": "The synchrotron radiation powder X-ray diffraction (Supplementary Fig. 7a) patterns of the catalyst after 50 h of electrolysis at pH 2 with 1.0 M phosphate ion confirmed that no new crystal phases were formed during electrolysis."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM confirms no significant changes in the morphology of the MnO2 catalyst.",
+        "evidence_snippet": "Transmission electron microscopy (Supplementary Fig. 7b,c) also confirmed that there were no significant changes in the morphology of the catalyst."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XANES",
+        "data_reported": true,
+        "characterization_summary": "X-ray absorption near edge structure spectroscopy shows minimal change in oxidation state of Mn (less than +0.02) for the catalyst.",
+        "evidence_snippet": "The minimal change in the oxidation state of Mn (less than +0.02 ⋅) was observed via X-ray absorption spectroscopy and X-ray photoelectron spectroscopy, indicating that the redeposition process via the Guyard reaction can preserve the oxidation state of Mn species (Supplementary Figs. 8 and 9)."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "XPS shows minimal change in oxidation state of Mn (less than +0.02).",
+        "evidence_snippet": "The minimal change in the oxidation state of Mn (less than +0.02) was observed via X-ray absorption spectroscopy and X-ray photoelectron spectroscopy..."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "operando resonant Raman",
+        "data_reported": true,
+        "characterization_summary": "Operando resonant Raman shows new peak at 838 cm⁻¹ assigned to Mn⁷⁺ at 1.8 V vs RHE, which disappears within 30 min after phosphate addition.",
+        "evidence_snippet": "When the potential was increased to approximately 1.8 V vs. RHE, a new Raman peak assigned to Mn⁷⁺ was observed at 838 cm⁻¹ after 15 min. However, this Raman peak disappeared completely within 30 min of adding phosphate..."
+      },
+      {
+        "id": "cw_eprr_spectrum",
+        "type": "characterization",
+        "name": "CW-EPRR Spectrum",
+        "properties": {
+          "type": "Continuous Wave Electron Paramagnetic Resonance",
+          "intensity_unit": "a.u.",
+          "magnetic_field_unit": "mT",
+          "field_range": [
+            20,
+            140
+          ],
+          "extracted_from_image": "04237a2e8dfa8a77f83b9dc920edd8b73218fa8fc52e861db75fa3bad7eb8fde.jpg"
+        },
+        "source_image_file": "04237a2e8dfa8a77f83b9dc920edd8b73218fa8fc52e861db75fa3bad7eb8fde.jpg"
+      },
+      {
+        "id": "mn7",
+        "type": "chemical",
+        "name": "Mn7+",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+        },
+        "source_image_file": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+      },
+      {
+        "id": "mn",
+        "type": "chemical",
+        "name": "Mn+",
+        "properties": {
+          "charge": "+",
+          "label_position": "mid field",
+          "extracted_from_image": "04237a2e8dfa8a77f83b9dc920edd8b73218fa8fc52e861db75fa3bad7eb8fde.jpg"
+        },
+        "source_image_file": "04237a2e8dfa8a77f83b9dc920edd8b73218fa8fc52e861db75fa3bad7eb8fde.jpg"
+      },
+      {
+        "id": "d0_s_o",
+        "type": "chemical",
+        "name": "d⁰(S=O)",
+        "properties": {
+          "description": "d⁰ configuration with S=O moiety",
+          "label_position": "high field",
+          "extracted_from_image": "04237a2e8dfa8a77f83b9dc920edd8b73218fa8fc52e861db75fa3bad7eb8fde.jpg"
+        },
+        "source_image_file": "04237a2e8dfa8a77f83b9dc920edd8b73218fa8fc52e861db75fa3bad7eb8fde.jpg"
+      },
+      {
+        "id": "b0_parallel_b1",
+        "type": "characterization",
+        "name": "B₀ ∥ B₁",
+        "properties": {
+          "description": "Magnetic field B₀ parallel to microwave field B₁",
+          "extracted_from_image": "04237a2e8dfa8a77f83b9dc920edd8b73218fa8fc52e861db75fa3bad7eb8fde.jpg"
+        },
+        "source_image_file": "04237a2e8dfa8a77f83b9dc920edd8b73218fa8fc52e861db75fa3bad7eb8fde.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "Mn³⁺",
+        "properties": {
+          "description": "Trivalent manganese ion",
+          "extracted_from_image": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+        },
+        "source_image_file": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "Mn",
+        "properties": {
+          "description": "Manganese (likely metallic or reduced state)",
+          "extracted_from_image": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+        },
+        "source_image_file": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "characterization",
+        "name": "XANES Spectrum",
+        "properties": {
+          "type": "X-ray Absorption Near Edge Structure",
+          "x_axis": "Energy (eV)",
+          "x_range": [
+            6540,
+            6580
+          ],
+          "y_axis": "Norm. abs. (a.u.)",
+          "y_range": [
+            0,
+            2.0
+          ],
+          "peaks": [
+            "Mn³⁺ peak",
+            "Mn peak"
+          ],
+          "extracted_from_image": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+        },
+        "source_image_file": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "peak",
+        "name": "Mn³⁺ Peak",
+        "properties": {
+          "energy_position": "approx. 6560 eV",
+          "intensity": "high",
+          "extracted_from_image": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+        },
+        "source_image_file": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+      },
+      {
+        "id": "manganese_phosphoric_acid",
+        "type": "chemical",
+        "name": "Mn Phosphoric Acid",
+        "properties": {
+          "description": "Manganese in phosphoric acid system",
+          "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+        },
+        "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+      },
+      {
+        "id": "chart_cobalt",
+        "type": "characterization",
+        "name": "Cobalt Current Density Chart",
+        "properties": {
+          "type": "line chart",
+          "x_axis": "Time (h)",
+          "y_axis": "Current Density (mA/cm²)",
+          "color": "orange",
+          "peak": "high initial current decaying over time",
+          "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+        },
+        "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+      },
+      {
+        "id": "chart_iron",
+        "type": "characterization",
+        "name": "Iron Current Density Chart",
+        "properties": {
+          "type": "line chart",
+          "x_axis": "Time (h)",
+          "y_axis": "Current Density (mA/cm²)",
+          "color": "cyan",
+          "stable": "low stable current",
+          "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+        },
+        "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+      },
+      {
+        "id": "chart_nickel",
+        "type": "characterization",
+        "name": "Nickel Current Density Chart",
+        "properties": {
+          "type": "line chart",
+          "x_axis": "Time (h)",
+          "y_axis": "Current Density (mA/cm²)",
+          "color": "blue",
+          "stable": "low stable current",
+          "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+        },
+        "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+      },
+      {
+        "id": "chart_mn_phosphoric_acid_1",
+        "type": "characterization",
+        "name": "Mn Phosphoric Acid Chart 1",
+        "properties": {
+          "type": "line chart",
+          "x_axis": "Time (h)",
+          "y_axis": "Current Density (mA/cm²)",
+          "color": "gray",
+          "stable": "very low current",
+          "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+        },
+        "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+      },
+      {
+        "id": "chart_mn_phosphoric_acid_2",
+        "type": "characterization",
+        "name": "Mn Phosphoric Acid Chart 2",
+        "properties": {
+          "type": "line chart",
+          "x_axis": "Time (h)",
+          "y_axis": "Current Density (mA/cm²)",
+          "color": "gray",
+          "stable": "very low current",
+          "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+        },
+        "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+      },
+      {
+        "id": "figure_label_b",
+        "type": "annotation",
+        "name": "Figure b",
+        "properties": {
+          "extracted_from_image": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+        },
+        "source_image_file": "084408330fc9beac27a126505d9e4f393c495580f5023101de38dbd85c2922ac.jpg"
+      },
+      {
+        "id": "mn4",
+        "type": "chemical",
+        "name": "Mn4+",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+        },
+        "source_image_file": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+      },
+      {
+        "id": "mn3",
+        "type": "chemical",
+        "name": "Mn3+",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+        },
+        "source_image_file": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+      },
+      {
+        "id": "mn2",
+        "type": "chemical",
+        "name": "Mn2+",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+        },
+        "source_image_file": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+      },
+      {
+        "id": "oer",
+        "type": "process",
+        "name": "OER",
+        "properties": {
+          "reaction": "2H2O → O2 + 4H+",
+          "extracted_from_image": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+        },
+        "source_image_file": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+      },
+      {
+        "id": "cd",
+        "type": "process",
+        "name": "CD",
+        "properties": {
+          "extracted_from_image": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+        },
+        "source_image_file": "116852d944a3518cad5e94f9c3ed8a4af74f65d64d71ff0504f852b2a8d98730.jpg"
+      },
+      {
+        "id": "study_protocol",
+        "type": "table_row",
+        "name": "Study Protocol",
+        "properties": {
+          "related": "Clinical trial: Not related",
+          "extracted_from_image": "18a2156c9b33cd06fc5043b03ef91978e7507e2d1a27ebf116420375cf1a2398.jpg"
+        },
+        "source_image_file": "18a2156c9b33cd06fc5043b03ef91978e7507e2d1a27ebf116420375cf1a2398.jpg"
+      },
+      {
+        "id": "data_collection",
+        "type": "table_row",
+        "name": "Data Collection",
+        "properties": {
+          "related": "Clinical trial: Not related",
+          "extracted_from_image": "18a2156c9b33cd06fc5043b03ef91978e7507e2d1a27ebf116420375cf1a2398.jpg"
+        },
+        "source_image_file": "18a2156c9b33cd06fc5043b03ef91978e7507e2d1a27ebf116420375cf1a2398.jpg"
+      },
+      {
+        "id": "outcomes",
+        "type": "table_row",
+        "name": "Outcomes",
+        "properties": {
+          "related": "Clinical trial: Not related",
+          "extracted_from_image": "18a2156c9b33cd06fc5043b03ef91978e7507e2d1a27ebf116420375cf1a2398.jpg"
+        },
+        "source_image_file": "18a2156c9b33cd06fc5043b03ef91978e7507e2d1a27ebf116420375cf1a2398.jpg"
+      },
+      {
+        "id": "clinical_trial",
+        "type": "category",
+        "name": "Clinical Trial",
+        "properties": {
+          "extracted_from_image": "18a2156c9b33cd06fc5043b03ef91978e7507e2d1a27ebf116420375cf1a2398.jpg"
+        },
+        "source_image_file": "18a2156c9b33cd06fc5043b03ef91978e7507e2d1a27ebf116420375cf1a2398.jpg"
+      },
+      {
+        "id": "d2",
+        "type": "dataset",
+        "name": "MnO₄²⁻ data",
+        "properties": {
+          "color": "cyan",
+          "initial_value": 10,
+          "trend": "decreasing",
+          "extracted_from_image": "22e3cf240c67a32904d6e0386c954d05438831463c379cc6c76bf1db9552fa46.jpg"
+        },
+        "source_image_file": "22e3cf240c67a32904d6e0386c954d05438831463c379cc6c76bf1db9552fa46.jpg"
+      },
+      {
+        "id": "sample_prep",
+        "type": "method",
+        "name": "Sample preparation",
+        "properties": {
+          "relation": "Not related",
+          "extracted_from_image": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+        },
+        "source_image_file": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+      },
+      {
+        "id": "instrument",
+        "type": "method",
+        "name": "Instrument",
+        "properties": {
+          "relation": "Not related",
+          "extracted_from_image": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+        },
+        "source_image_file": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+      },
+      {
+        "id": "software",
+        "type": "method",
+        "name": "Software",
+        "properties": {
+          "relation": "Not related",
+          "extracted_from_image": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+        },
+        "source_image_file": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+      },
+      {
+        "id": "cell_pop_abundance",
+        "type": "characterization",
+        "name": "Cell population abundance",
+        "properties": {
+          "relation": "Not related",
+          "extracted_from_image": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+        },
+        "source_image_file": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+      },
+      {
+        "id": "gating_strategy",
+        "type": "method",
+        "name": "Gating strategy",
+        "properties": {
+          "relation": "Not related",
+          "extracted_from_image": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+        },
+        "source_image_file": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+      },
+      {
+        "id": "col1",
+        "type": "column",
+        "name": "Sample preparation column",
+        "properties": {
+          "value": "Not related",
+          "extracted_from_image": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+        },
+        "source_image_file": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+      },
+      {
+        "id": "col2",
+        "type": "column",
+        "name": "Instrument column",
+        "properties": {
+          "value": "Not related",
+          "extracted_from_image": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+        },
+        "source_image_file": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+      },
+      {
+        "id": "col3",
+        "type": "column",
+        "name": "Software column",
+        "properties": {
+          "value": "Not related",
+          "extracted_from_image": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+        },
+        "source_image_file": "3312e0c4f1f5099fb7fac96ea4cd2d18caf56705c64cdb13958e494003c3a7af.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "peak",
+        "name": "Mn Peak",
+        "properties": {
+          "energy_position": "higher energy edge",
+          "intensity": "rising edge",
+          "extracted_from_image": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+        },
+        "source_image_file": "ff1ffffd72b9519e986144f62428992fec7317164628d54f52e85b16ae59ff19.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "parameter",
+        "name": "A",
+        "properties": {
+          "value": "90 G",
+          "extracted_from_image": "be32505ed94be7451de56ed9d7f0de45b39b9c4d5bd2babe43f5126855de7346.jpg"
+        },
+        "source_image_file": "be32505ed94be7451de56ed9d7f0de45b39b9c4d5bd2babe43f5126855de7346.jpg"
+      },
+      {
+        "id": "related",
+        "type": "status",
+        "name": "Related",
+        "properties": {
+          "extracted_from_image": "36f70c2251d0f30211e86d31d6cec2a3d38af13c7b23bc3ac1668fdf38292cd4.jpg"
+        },
+        "source_image_file": "36f70c2251d0f30211e86d31d6cec2a3d38af13c7b23bc3ac1668fdf38292cd4.jpg"
+      },
+      {
+        "id": "not_related",
+        "type": "status",
+        "name": "Not related",
+        "properties": {
+          "extracted_from_image": "36f70c2251d0f30211e86d31d6cec2a3d38af13c7b23bc3ac1668fdf38292cd4.jpg"
+        },
+        "source_image_file": "36f70c2251d0f30211e86d31d6cec2a3d38af13c7b23bc3ac1668fdf38292cd4.jpg"
+      },
+      {
+        "id": "sulfuric_acid",
+        "type": "chemical",
+        "name": "Sulfuric acid",
+        "properties": {
+          "formula": "H2SO4",
+          "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        },
+        "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "characterization",
+        "name": "Current density vs time for Cobalt",
+        "properties": {
+          "x_axis": "Time (h)",
+          "y_axis": "Current density (mA/cm²)",
+          "description": "Orange line with sharp decay",
+          "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        },
+        "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+      },
+      {
+        "id": "chart2",
+        "type": "characterization",
+        "name": "Current density vs time for Mn/sulfuric acid",
+        "properties": {
+          "x_axis": "Time (h)",
+          "y_axis": "Current density (mA/cm²)",
+          "description": "White/gray line with low current",
+          "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        },
+        "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+      },
+      {
+        "id": "chart3",
+        "type": "characterization",
+        "name": "Current density vs time for Mn/sulfuric acid (second)",
+        "properties": {
+          "x_axis": "Time (h)",
+          "y_axis": "Current density (mA/cm²)",
+          "description": "Cyan line with moderate current",
+          "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        },
+        "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+      },
+      {
+        "id": "chart4",
+        "type": "characterization",
+        "name": "Current density vs time for Nickel",
+        "properties": {
+          "x_axis": "Time (h)",
+          "y_axis": "Current density (mA/cm²)",
+          "description": "Blue line with decay",
+          "extracted_from_image": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+        },
+        "source_image_file": "3b6233f2c29011209621fa823ffaef4ac2728b32d0fb2b0a98a653d67ea0ce8a.jpg"
+      },
+      {
+        "id": "Mn4",
+        "type": "chemical",
+        "name": "Mn⁴⁺",
+        "properties": {
+          "extracted_from_image": "3e2155275a4374364b7cf520a915ff4f7304816d0ed1235eee78719138939f22.jpg"
+        },
+        "source_image_file": "3e2155275a4374364b7cf520a915ff4f7304816d0ed1235eee78719138939f22.jpg"
+      },
+      {
+        "id": "Mn3a",
+        "type": "chemical",
+        "name": "Mn³⁺",
+        "properties": {
+          "extracted_from_image": "3e2155275a4374364b7cf520a915ff4f7304816d0ed1235eee78719138939f22.jpg"
+        },
+        "source_image_file": "3e2155275a4374364b7cf520a915ff4f7304816d0ed1235eee78719138939f22.jpg"
+      },
+      {
+        "id": "Mn2",
+        "type": "chemical",
+        "name": "Mn²⁺",
+        "properties": {
+          "extracted_from_image": "3e2155275a4374364b7cf520a915ff4f7304816d0ed1235eee78719138939f22.jpg"
+        },
+        "source_image_file": "3e2155275a4374364b7cf520a915ff4f7304816d0ed1235eee78719138939f22.jpg"
+      },
+      {
+        "id": "Mn3b",
+        "type": "chemical",
+        "name": "Mn³⁺",
+        "properties": {
+          "extracted_from_image": "3e2155275a4374364b7cf520a915ff4f7304816d0ed1235eee78719138939f22.jpg"
+        },
+        "source_image_file": "3e2155275a4374364b7cf520a915ff4f7304816d0ed1235eee78719138939f22.jpg"
+      },
+      {
+        "id": "OER",
+        "type": "process",
+        "name": "Oxygen Evolution Reaction",
+        "properties": {
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "CD",
+        "type": "process",
+        "name": "Charge/Discharge",
+        "properties": {
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "Time Series Plot",
+        "properties": {
+          "type": "chart",
+          "x_axis": "Time (h)",
+          "x_range": [
+            0,
+            9
+          ],
+          "y_axis": "MnO/MnO2 Generation",
+          "description": "Plot showing evolution of MnO and MnO2 over 9 hours",
+          "extracted_from_image": "f7ee833c7554f2f6260a04b8ba9995ff417a753e617602a3b5b7f4e15a2f847f.jpg"
+        },
+        "source_image_file": "f7ee833c7554f2f6260a04b8ba9995ff417a753e617602a3b5b7f4e15a2f847f.jpg"
+      },
+      {
+        "id": "field-conditions",
+        "type": "label",
+        "name": "Field conditions",
+        "properties": {
+          "extracted_from_image": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+        },
+        "source_image_file": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+      },
+      {
+        "id": "not-related-1",
+        "type": "label",
+        "name": "Not related",
+        "properties": {
+          "extracted_from_image": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+        },
+        "source_image_file": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+      },
+      {
+        "id": "location",
+        "type": "label",
+        "name": "Location",
+        "properties": {
+          "extracted_from_image": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+        },
+        "source_image_file": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+      },
+      {
+        "id": "not-related-2",
+        "type": "label",
+        "name": "Not related",
+        "properties": {
+          "extracted_from_image": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+        },
+        "source_image_file": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+      },
+      {
+        "id": "access-import-export",
+        "type": "label",
+        "name": "Access/import/export",
+        "properties": {
+          "extracted_from_image": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+        },
+        "source_image_file": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+      },
+      {
+        "id": "not-related-3",
+        "type": "label",
+        "name": "Not related",
+        "properties": {
+          "extracted_from_image": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+        },
+        "source_image_file": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+      },
+      {
+        "id": "disturbance",
+        "type": "label",
+        "name": "Disturbance",
+        "properties": {
+          "extracted_from_image": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+        },
+        "source_image_file": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+      },
+      {
+        "id": "not-related-4",
+        "type": "label",
+        "name": "Not related",
+        "properties": {
+          "extracted_from_image": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+        },
+        "source_image_file": "57ef7b9622faa18bbaf23d507342f3324d4b2ddcff60875e564f46add8ab2400.jpg"
+      },
+      {
+        "id": "Mn7+",
+        "type": "chemical",
+        "name": "Mn7+",
+        "properties": {
+          "oxidation_state": 7,
+          "color": "orange",
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "Mn4+",
+        "type": "chemical",
+        "name": "Mn4+",
+        "properties": {
+          "oxidation_state": 4,
+          "color": "blue",
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "Mn3+",
+        "type": "chemical",
+        "name": "Mn3+",
+        "properties": {
+          "oxidation_state": 3,
+          "color": "blue",
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "Mn2+",
+        "type": "chemical",
+        "name": "Mn2+",
+        "properties": {
+          "oxidation_state": 2,
+          "color": "blue",
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "role": "reactant",
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "O2",
+        "properties": {
+          "role": "product",
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "H+",
+        "type": "chemical",
+        "name": "H+",
+        "properties": {
+          "role": "product",
+          "extracted_from_image": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+        },
+        "source_image_file": "5b680528b7daad436077c233a0bb104691cda3c3a07e2aa4914cdacea509004a.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "parameter",
+        "name": "g",
+        "properties": {
+          "value": "2.00",
+          "extracted_from_image": "be32505ed94be7451de56ed9d7f0de45b39b9c4d5bd2babe43f5126855de7346.jpg"
+        },
+        "source_image_file": "be32505ed94be7451de56ed9d7f0de45b39b9c4d5bd2babe43f5126855de7346.jpg"
+      },
+      {
+        "id": "design-spec",
+        "type": "annotation",
+        "name": "Design specifications",
+        "properties": {
+          "description": "Checkbox form element labeled 'Design specifications' with 'Not related' option",
+          "extracted_from_image": "b876cbaaf81c370616e0ec9ca4ca4da62f9a5e08a4035536e37724352e09c85d.jpg"
+        },
+        "source_image_file": "b876cbaaf81c370616e0ec9ca4ca4da62f9a5e08a4035536e37724352e09c85d.jpg"
+      },
+      {
+        "id": "design-checkbox",
+        "type": "annotation",
+        "name": "Not related (Design)",
+        "properties": {
+          "description": "Unchecked checkbox next to 'Not related' under Design specifications",
+          "extracted_from_image": "b876cbaaf81c370616e0ec9ca4ca4da62f9a5e08a4035536e37724352e09c85d.jpg"
+        },
+        "source_image_file": "b876cbaaf81c370616e0ec9ca4ca4da62f9a5e08a4035536e37724352e09c85d.jpg"
+      },
+      {
+        "id": "behavior-spec",
+        "type": "annotation",
+        "name": "Behavioral performance measures",
+        "properties": {
+          "description": "Checkbox form element labeled 'Behavioral performance measures' with 'Not related' option",
+          "extracted_from_image": "b876cbaaf81c370616e0ec9ca4ca4da62f9a5e08a4035536e37724352e09c85d.jpg"
+        },
+        "source_image_file": "b876cbaaf81c370616e0ec9ca4ca4da62f9a5e08a4035536e37724352e09c85d.jpg"
+      },
+      {
+        "id": "behavior-checkbox",
+        "type": "annotation",
+        "name": "Not related (Behavioral)",
+        "properties": {
+          "description": "Unchecked checkbox next to 'Not related' under Behavioral performance measures",
+          "extracted_from_image": "b876cbaaf81c370616e0ec9ca4ca4da62f9a5e08a4035536e37724352e09c85d.jpg"
+        },
+        "source_image_file": "b876cbaaf81c370616e0ec9ca4ca4da62f9a5e08a4035536e37724352e09c85d.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "characterization",
+        "name": "EPR Spectrum",
+        "properties": {
+          "x_axis": "Magnetic Field (mT)",
+          "x_range": [
+            250,
+            450
+          ],
+          "features": [
+            "Mn²⁺ signal",
+            "d⁵ (S=5/2) hyperfine structure",
+            "B₀ L B₁"
+          ],
+          "extracted_from_image": "be32505ed94be7451de56ed9d7f0de45b39b9c4d5bd2babe43f5126855de7346.jpg"
+        },
+        "source_image_file": "be32505ed94be7451de56ed9d7f0de45b39b9c4d5bd2babe43f5126855de7346.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "Current Density vs Time Graph",
+        "properties": {
+          "type": "line_chart",
+          "x_axis": "Time (h)",
+          "y_axis": "Current Density (mA/cm²)",
+          "max_y": 400,
+          "extracted_from_image": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+        },
+        "source_image_file": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+      },
+      {
+        "id": "curve1",
+        "type": "characterization",
+        "name": "1st Pulse",
+        "properties": {
+          "color": "black",
+          "label": "1st pulse",
+          "peak_annotation": "196th pulse",
+          "extracted_from_image": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+        },
+        "source_image_file": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+      },
+      {
+        "id": "curve2",
+        "type": "characterization",
+        "name": "2nd Pulse",
+        "properties": {
+          "color": "blue",
+          "label": "2nd pulse",
+          "peak_annotation": "197th pulse",
+          "extracted_from_image": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+        },
+        "source_image_file": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+      },
+      {
+        "id": "curve3",
+        "type": "characterization",
+        "name": "3rd Pulse",
+        "properties": {
+          "color": "red",
+          "label": "3rd pulse",
+          "peak_annotation": "198th pulse",
+          "extracted_from_image": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+        },
+        "source_image_file": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+      },
+      {
+        "id": "pulse196",
+        "type": "event",
+        "name": "196th Pulse",
+        "properties": {
+          "sequence": 196,
+          "context": "1st pulse curve",
+          "extracted_from_image": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+        },
+        "source_image_file": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+      },
+      {
+        "id": "pulse197",
+        "type": "event",
+        "name": "197th Pulse",
+        "properties": {
+          "sequence": 197,
+          "context": "2nd pulse curve",
+          "extracted_from_image": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+        },
+        "source_image_file": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+      },
+      {
+        "id": "pulse198",
+        "type": "event",
+        "name": "198th Pulse",
+        "properties": {
+          "sequence": 198,
+          "context": "3rd pulse curve",
+          "extracted_from_image": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+        },
+        "source_image_file": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+      },
+      {
+        "id": "efficiency",
+        "type": "property",
+        "name": "92% Efficiency",
+        "properties": {
+          "value": "92%",
+          "context": "overall performance metric",
+          "extracted_from_image": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+        },
+        "source_image_file": "c06923f1575e13bfea697f88f5517bf11036abb495cca46cc297c12769ec14fa.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "phase",
+        "name": "MnO Generation (Initial)",
+        "properties": {
+          "time_period": "0-~2h",
+          "color": "yellow",
+          "extracted_from_image": "f7ee833c7554f2f6260a04b8ba9995ff417a753e617602a3b5b7f4e15a2f847f.jpg"
+        },
+        "source_image_file": "f7ee833c7554f2f6260a04b8ba9995ff417a753e617602a3b5b7f4e15a2f847f.jpg"
+      },
+      {
+        "id": "t0",
+        "type": "timepoint",
+        "name": "0 h",
+        "properties": {
+          "time": 0,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t1",
+        "type": "timepoint",
+        "name": "1 h",
+        "properties": {
+          "time": 1,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t2",
+        "type": "timepoint",
+        "name": "2 h",
+        "properties": {
+          "time": 2,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t3",
+        "type": "timepoint",
+        "name": "3 h",
+        "properties": {
+          "time": 3,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t4",
+        "type": "timepoint",
+        "name": "4 h",
+        "properties": {
+          "time": 4,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t5",
+        "type": "timepoint",
+        "name": "5 h",
+        "properties": {
+          "time": 5,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t6",
+        "type": "timepoint",
+        "name": "6 h",
+        "properties": {
+          "time": 6,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t7",
+        "type": "timepoint",
+        "name": "7 h",
+        "properties": {
+          "time": 7,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t8",
+        "type": "timepoint",
+        "name": "8 h",
+        "properties": {
+          "time": 8,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "t9",
+        "type": "timepoint",
+        "name": "9 h",
+        "properties": {
+          "time": 9,
+          "unit": "hours",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "Image sequence 2",
+        "properties": {
+          "position": "second image set",
+          "description": "Visual observation of MnO formation",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "Image sequence 3",
+        "properties": {
+          "position": "third image set",
+          "description": "Visual observation of MnO formation",
+          "extracted_from_image": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+        },
+        "source_image_file": "e4b96fc0926c91e7a6bc06c6649e7f4b9bcea2d6a0689245fc0cba6c51ec5044.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "phase",
+        "name": "Mixed MnO/MnO2 Generation",
+        "properties": {
+          "time_period": "~2-7h",
+          "color": "orange",
+          "extracted_from_image": "f7ee833c7554f2f6260a04b8ba9995ff417a753e617602a3b5b7f4e15a2f847f.jpg"
+        },
+        "source_image_file": "f7ee833c7554f2f6260a04b8ba9995ff417a753e617602a3b5b7f4e15a2f847f.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "phase",
+        "name": "MnO2 Generation (Final)",
+        "properties": {
+          "time_period": "~7-9h",
+          "color": "red",
+          "extracted_from_image": "f7ee833c7554f2f6260a04b8ba9995ff417a753e617602a3b5b7f4e15a2f847f.jpg"
+        },
+        "source_image_file": "f7ee833c7554f2f6260a04b8ba9995ff417a753e617602a3b5b7f4e15a2f847f.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_MnO2_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_MnO2",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MnO2_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_MnO2",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MnO2_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_MnO2",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MnO2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_MnO2",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MnO2_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_MnO2",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "source_id": "cw_eprr_spectrum",
+        "target_id": "mn7",
+        "type": "features"
+      },
+      {
+        "source_id": "cw_eprr_spectrum",
+        "target_id": "mn",
+        "type": "features"
+      },
+      {
+        "source_id": "cw_eprr_spectrum",
+        "target_id": "d0_s_o",
+        "type": "features"
+      },
+      {
+        "source_id": "cw_eprr_spectrum",
+        "target_id": "b0_parallel_b1",
+        "type": "measurement_condition"
+      },
+      {
+        "source_id": "mn7",
+        "target_id": "d0_s_o",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "represents_source"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "modulates"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chart_cobalt",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "chem_Fe2O3",
+        "target_id": "chart_iron",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "chem_NiO",
+        "target_id": "chart_nickel",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "manganese_phosphoric_acid",
+        "target_id": "chart_mn_phosphoric_acid_1",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "manganese_phosphoric_acid",
+        "target_id": "chart_mn_phosphoric_acid_2",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "figure_label_b",
+        "target_id": "chart_cobalt",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_label_b",
+        "target_id": "chart_iron",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_label_b",
+        "target_id": "chart_nickel",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_label_b",
+        "target_id": "chart_mn_phosphoric_acid_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_label_b",
+        "target_id": "chart_mn_phosphoric_acid_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "mn7",
+        "target_id": "oer",
+        "type": "involves"
+      },
+      {
+        "source_id": "oer",
+        "target_id": "mn4",
+        "type": "produces"
+      },
+      {
+        "source_id": "mn4",
+        "target_id": "mn3",
+        "type": "reduces_to"
+      },
+      {
+        "source_id": "mn3",
+        "target_id": "mn2",
+        "type": "reduces_to"
+      },
+      {
+        "source_id": "mn2",
+        "target_id": "cd",
+        "type": "involves"
+      },
+      {
+        "source_id": "cd",
+        "target_id": "mn3",
+        "type": "produces"
+      },
+      {
+        "source_id": "mn3",
+        "target_id": "mn4",
+        "type": "oxidizes_to"
+      },
+      {
+        "source_id": "mn4",
+        "target_id": "mn7",
+        "type": "oxidizes_to"
+      },
+      {
+        "source_id": "mn7",
+        "target_id": "mn2",
+        "type": "cycle"
+      },
+      {
+        "source_id": "study_protocol",
+        "target_id": "clinical_trial",
+        "type": "not_related"
+      },
+      {
+        "source_id": "data_collection",
+        "target_id": "clinical_trial",
+        "type": "not_related"
+      },
+      {
+        "source_id": "outcomes",
+        "target_id": "clinical_trial",
+        "type": "not_related"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_MnO2_FTO",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "d2",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chem_MnO2_FTO",
+        "type": "product_of"
+      },
+      {
+        "source_id": "chem_MnO2_FTO",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "d2",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_MnO2_FTO",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "reduces_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "generates"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "sample_prep",
+        "target_id": "col1",
+        "type": "has_value"
+      },
+      {
+        "source_id": "instrument",
+        "target_id": "col2",
+        "type": "has_value"
+      },
+      {
+        "source_id": "software",
+        "target_id": "col3",
+        "type": "has_value"
+      },
+      {
+        "source_id": "cell_pop_abundance",
+        "target_id": "col1",
+        "type": "has_value"
+      },
+      {
+        "source_id": "cell_pop_abundance",
+        "target_id": "col2",
+        "type": "has_value"
+      },
+      {
+        "source_id": "cell_pop_abundance",
+        "target_id": "col3",
+        "type": "has_value"
+      },
+      {
+        "source_id": "gating_strategy",
+        "target_id": "col1",
+        "type": "has_value"
+      },
+      {
+        "source_id": "gating_strategy",
+        "target_id": "col2",
+        "type": "has_value"
+      },
+      {
+        "source_id": "gating_strategy",
+        "target_id": "col3",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "not_related",
+        "type": "has_status"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "not_related",
+        "type": "has_status"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "not_related",
+        "type": "has_status"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "not_related",
+        "type": "has_status"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "not_related",
+        "type": "has_status"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "not_related",
+        "type": "has_status"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chart1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MnO2",
+        "target_id": "chart2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MnO2",
+        "target_id": "sulfuric_acid",
+        "type": "in_medium"
+      },
+      {
+        "source_id": "chart2",
+        "target_id": "sulfuric_acid",
+        "type": "in_medium"
+      },
+      {
+        "source_id": "chem_MnO2",
+        "target_id": "chart3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chart3",
+        "target_id": "sulfuric_acid",
+        "type": "in_medium"
+      },
+      {
+        "source_id": "chem_NiO",
+        "target_id": "chart4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_MnO2",
+        "target_id": "chem_NiO",
+        "type": "compared_with"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_MnO2",
+        "type": "compared_with"
+      },
+      {
+        "source_id": "chem_Fe2O3",
+        "target_id": "chem_MnO2",
+        "type": "compared_with"
+      },
+      {
+        "source_id": "Mn4",
+        "target_id": "Mn3a",
+        "type": "OER"
+      },
+      {
+        "source_id": "Mn3a",
+        "target_id": "Mn2",
+        "type": "CD"
+      },
+      {
+        "source_id": "Mn2",
+        "target_id": "Mn3b",
+        "type": "CD"
+      },
+      {
+        "source_id": "Mn3b",
+        "target_id": "Mn4",
+        "type": "OER"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c1",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c1",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "generates"
+      },
+      {
+        "source_id": "field-conditions",
+        "target_id": "not-related-1",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "location",
+        "target_id": "not-related-2",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "access-import-export",
+        "target_id": "not-related-3",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "disturbance",
+        "target_id": "not-related-4",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "H2O",
+        "target_id": "OER",
+        "type": "reactant_of"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "O2",
+        "type": "produces"
+      },
+      {
+        "source_id": "OER",
+        "target_id": "H+",
+        "type": "produces"
+      },
+      {
+        "source_id": "Mn7+",
+        "target_id": "OER",
+        "type": "catalyst"
+      },
+      {
+        "source_id": "Mn7+",
+        "target_id": "Mn4+",
+        "type": "reduces_to"
+      },
+      {
+        "source_id": "Mn4+",
+        "target_id": "Mn3+",
+        "type": "reduces_to"
+      },
+      {
+        "source_id": "Mn3+",
+        "target_id": "Mn2+",
+        "type": "reduces_to"
+      },
+      {
+        "source_id": "Mn2+",
+        "target_id": "Mn3+",
+        "type": "oxidizes_to"
+      },
+      {
+        "source_id": "Mn3+",
+        "target_id": "Mn4+",
+        "type": "oxidizes_to"
+      },
+      {
+        "source_id": "Mn4+",
+        "target_id": "Mn7+",
+        "type": "oxidizes_to"
+      },
+      {
+        "source_id": "Mn2+",
+        "target_id": "CD",
+        "type": "participant_in"
+      },
+      {
+        "source_id": "Mn3+",
+        "target_id": "CD",
+        "type": "participant_in"
+      },
+      {
+        "source_id": "Mn4+",
+        "target_id": "CD",
+        "type": "participant_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "shows"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "precedes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "status"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "status"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "authentication_method"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "design-spec",
+        "target_id": "design-checkbox",
+        "type": "contains"
+      },
+      {
+        "source_id": "behavior-spec",
+        "target_id": "behavior-checkbox",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "describes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "labeled_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "labeled_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "labeled_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "parameter_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "parameter_of"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve1",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve2",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve3",
+        "type": "contains"
+      },
+      {
+        "source_id": "curve1",
+        "target_id": "pulse196",
+        "type": "includes"
+      },
+      {
+        "source_id": "curve2",
+        "target_id": "pulse197",
+        "type": "includes"
+      },
+      {
+        "source_id": "curve3",
+        "target_id": "pulse198",
+        "type": "includes"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "efficiency",
+        "type": "indicates"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "n1",
+        "type": "produces"
+      },
+      {
+        "source_id": "t0",
+        "target_id": "c1",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t1",
+        "target_id": "c1",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t2",
+        "target_id": "c1",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t3",
+        "target_id": "c2",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t4",
+        "target_id": "c2",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t5",
+        "target_id": "c2",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t6",
+        "target_id": "c3",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t7",
+        "target_id": "c3",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t8",
+        "target_id": "c3",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "t9",
+        "target_id": "c3",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t0",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t1",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t2",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t3",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t4",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t5",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t6",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t7",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t8",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "t9",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c2",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c3",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "produced"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "precedes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "n1",
+        "type": "generates"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "c1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "n1",
+        "type": "generates"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "n2",
+        "type": "generates"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "c1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "p3",
+        "target_id": "n2",
+        "type": "generates"
+      },
+      {
+        "source_id": "p3",
+        "target_id": "c1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "p2",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "p3",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_by"
+      }
+    ]
+  }
+}

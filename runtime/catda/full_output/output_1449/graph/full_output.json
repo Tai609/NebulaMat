@@ -1,0 +1,5028 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "nodes": [
+          {
+            "id": "chem_CC",
+            "type": "chemical",
+            "name": "carbon cloth",
+            "aliases": [
+              "CC"
+            ],
+            "properties": {}
+          },
+          {
+            "id": "chem_HNO3",
+            "type": "chemical",
+            "name": "concentrated HNO3",
+            "formula": "HNO3",
+            "properties": {}
+          },
+          {
+            "id": "chem_Co(NO3)2_6H2O",
+            "type": "chemical",
+            "name": "Co(NO3)2·6H2O",
+            "formula": "Co(NO3)2·6H2O",
+            "properties": {}
+          },
+          {
+            "id": "chem_CO(NH2)2",
+            "type": "chemical",
+            "name": "CO(NH2)2",
+            "formula": "CH4N2O",
+            "aliases": [
+              "urea"
+            ],
+            "properties": {}
+          },
+          {
+            "id": "chem_NH4F",
+            "type": "chemical",
+            "name": "NH4F",
+            "formula": "NH4F",
+            "properties": {}
+          },
+          {
+            "id": "chem_2MIM",
+            "type": "chemical",
+            "name": "2-methylimidazole",
+            "aliases": [
+              "2-MIM"
+            ],
+            "properties": {}
+          },
+          {
+            "id": "chem_RuCl3",
+            "type": "chemical",
+            "name": "RuCl3",
+            "formula": "RuCl3",
+            "properties": {}
+          },
+          {
+            "id": "chem_CoO",
+            "type": "chemical",
+            "name": "CoO nanocones",
+            "aliases": [
+              "CoO"
+            ],
+            "formula": "CoO",
+            "properties": {}
+          },
+          {
+            "id": "chem_CoO_ZIF67",
+            "type": "chemical",
+            "name": "CoO@ZIF-67",
+            "aliases": [
+              "CoO wrapped with ZIF-67"
+            ],
+            "properties": {}
+          },
+          {
+            "id": "chem_Co3O4_CoRuOx",
+            "type": "chemical",
+            "name": "Co3O4@CoRuOx",
+            "aliases": [
+              "Co3O4@CoRuOx nanocones",
+              "cobalt-doped RuOx frameworks on Co3O4 nanocones"
+            ],
+            "formula": "Co3O4@CoRuOx",
+            "composition": {
+              "Ru": {
+                "value": 3.7,
+                "unit": "wt%"
+              }
+            },
+            "properties": {
+              "Ru content": {
+                "value": 3.7,
+                "unit": "wt%"
+              },
+              "Ru mass": {
+                "value": 0.081,
+                "unit": "mg cm^-2"
+              },
+              "total mass": {
+                "value": 2.2,
+                "unit": "mg"
+              }
+            }
+          },
+          {
+            "id": "synth_step_1",
+            "type": "synthesis",
+            "name": "CC pretreatment and CoO hydrothermal synthesis",
+            "procedure": "The purchased CC was soaked in concentrated HNO3 at 25°C for 24 h to modify its surface with rich oxygen-containing functional groups and then washed with deionized water several times. Afterward, the cleaned CC (4.0×3.0 cm^-1) was immersed into a well-premixed aqueous solution (40 mL) containing Co(NO3)2·6H2O (0.582 g), CO(NH2)2 (0.440 g) and NH4F (0.297 g). Immediately, the above solution was sealed into a 50 mL Teflon-lined stainless-steel autoclave and kept in an oven at 120°C for 8 h. After cooling to room temperature, the as-deposited CC was rinsed with water and ethanol for three times, and dried overnight in an oven at 60°C. Subsequently, the as-deposited CC was calcined under N2 atmosphere at 300°C for 2 h with a ramp rate of 10°C min^-1, resulting in CoO nanocones on CC (labeled as CoO).",
+            "unit_operations": [
+              {
+                "id": "unit_op_1.1",
+                "name": "Acid pretreatment",
+                "method": "HNO3 soaking",
+                "conditions": {
+                  "temperature": {
+                    "value": 25,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 24,
+                    "unit": "h"
+                  }
+                },
+                "procedure_snippet": "The purchased CC was soaked in concentrated HNO3 at 25°C for 24 h"
+              },
+              {
+                "id": "unit_op_1.2",
+                "name": "Hydrothermal synthesis",
+                "method": "Hydrothermal reaction",
+                "conditions": {
+                  "temperature": {
+                    "value": 120,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 8,
+                    "unit": "h"
+                  }
+                },
+                "procedure_snippet": "sealed into a 50 mL Teflon-lined stainless-steel autoclave and kept in an oven at 120°C for 8 h"
+              },
+              {
+                "id": "unit_op_1.3",
+                "name": "Calcination",
+                "method": "N2 calcination",
+                "conditions": {
+                  "temperature": {
+                    "value": 300,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 2,
+                    "unit": "h"
+                  },
+                  "ramp_rate": {
+                    "value": 10,
+                    "unit": "°C min^-1"
+                  }
+                },
+                "procedure_snippet": "calcined under N2 atmosphere at 300°C for 2 h with a ramp rate of 10°C min^-1"
+              }
+            ],
+            "method": "Hydrothermal + N2 calcination",
+            "conditions": {
+              "hydrothermal_temp": {
+                "value": 120,
+                "unit": "°C"
+              },
+              "hydrothermal_time": {
+                "value": 8,
+                "unit": "h"
+              },
+              "calcination_temp": {
+                "value": 300,
+                "unit": "°C"
+              },
+              "calcination_time": {
+                "value": 2,
+                "unit": "h"
+              }
+            },
+            "source_text": "Synthesis of Co3O4@CoRuOx: The Co3O4@CoRuOx was prepared through a three-step process... resulting in CoO nanocones on CC (labeled as CoO)."
+          },
+          {
+            "id": "synth_step_2",
+            "type": "synthesis",
+            "name": "ZIF-67 coordination erosion growth",
+            "procedure": "Next, the obtained CoO was soaked into a 20 mL mixture of water and ethanol (Vwater/Vethanol = 1:1) containing 2-MIM (0.625 g), and kept in water bath at 30°C for 12 h, resulting in CoO wrapped with ZIF-67 on CC (labeled as CoO@ZIF-67).",
+            "unit_operations": [
+              {
+                "id": "unit_op_2.1",
+                "name": "Coordination erosion",
+                "method": "2-MIM treatment",
+                "conditions": {
+                  "temperature": {
+                    "value": 30,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 12,
+                    "unit": "h"
+                  }
+                },
+                "procedure_snippet": "soaked into a 20 mL mixture of water and ethanol (Vwater/Vethanol = 1:1) containing 2-MIM (0.625 g), and kept in water bath at 30°C for 12 h"
+              }
+            ],
+            "method": "Coordination erosion",
+            "conditions": {
+              "temperature": {
+                "value": 30,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 12,
+                "unit": "h"
+              }
+            },
+            "source_text": "Next, the obtained CoO was soaked into a 20 mL mixture of water and ethanol... resulting in CoO wrapped with ZIF-67 on CC (labeled as CoO@ZIF-67)."
+          },
+          {
+            "id": "synth_step_3",
+            "type": "synthesis",
+            "name": "Ru-cation exchange and air annealing",
+            "procedure": "Thereafter, a piece of CoO@ZIF-67 was immersed into 5 mg mL^-1 RuCl₃ aqueous solution, maintained at 30°C for 30 min, and then taken out, rinsed with water and ethanol for three times, and dried overnight at 60°C. Finally, the product was calcined under air atmosphere at 300°C for 2 h with a ramp rate of 5°C min^-1, resulting in Co3O4 wrapped with cobalt-doped RuOx frameworks on CC (labeled as Co3O4@CoRuOx).",
+            "unit_operations": [
+              {
+                "id": "unit_op_3.1",
+                "name": "Ru-cation exchange",
+                "method": "RuCl3 immersion",
+                "conditions": {
+                  "temperature": {
+                    "value": 30,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 30,
+                    "unit": "min"
+                  },
+                  "RuCl3_concentration": {
+                    "value": 5,
+                    "unit": "mg mL^-1"
+                  }
+                },
+                "procedure_snippet": "immersed into 5 mg mL^-1 RuCl₃ aqueous solution, maintained at 30°C for 30 min"
+              },
+              {
+                "id": "unit_op_3.2",
+                "name": "Air calcination",
+                "method": "Air annealing",
+                "conditions": {
+                  "temperature": {
+                    "value": 300,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 2,
+                    "unit": "h"
+                  },
+                  "ramp_rate": {
+                    "value": 5,
+                    "unit": "°C min^-1"
+                  }
+                },
+                "procedure_snippet": "calcined under air atmosphere at 300°C for 2 h with a ramp rate of 5°C min^-1"
+              }
+            ],
+            "method": "Ru-exchange + air calcination",
+            "conditions": {
+              "exchange_temp": {
+                "value": 30,
+                "unit": "°C"
+              },
+              "exchange_time": {
+                "value": 30,
+                "unit": "min"
+              },
+              "calcination_temp": {
+                "value": 300,
+                "unit": "°C"
+              },
+              "calcination_time": {
+                "value": 2,
+                "unit": "h"
+              }
+            },
+            "source_text": "Thereafter, a piece of CoO@ZIF-67 was immersed into 5 mg mL^-1 RuCl₃ aqueous solution... resulting in Co3O4 wrapped with cobalt-doped RuOx frameworks on CC"
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge_input_chem_CC_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_CC",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "support"
+            }
+          },
+          {
+            "id": "edge_input_chem_HNO3_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_HNO3",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "reagent"
+            }
+          },
+          {
+            "id": "edge_input_chem_Co(NO3)2_6H2O_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_Co(NO3)2_6H2O",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "precursor",
+              "amount": {
+                "value": 0.582,
+                "unit": "g"
+              }
+            }
+          }
+        ],
+        "id": "edge_input_chem_CO(NH2)2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_CO(NH2)2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "amount": {
+            "value": 0.44,
+            "unit": "g"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_NH4F_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_NH4F",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "additive",
+          "amount": {
+            "value": 0.297,
+            "unit": "g"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_CoO",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_CoO",
+        "properties": {
+          "form": "nanocones on CC"
+        }
+      },
+      {
+        "id": "edge_input_chem_CoO_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_CoO",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "template"
+        }
+      },
+      {
+        "id": "edge_input_chem_2MIM_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_2MIM",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "amount": {
+            "value": 0.625,
+            "unit": "g"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_CoO_ZIF67",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_CoO_ZIF67",
+        "properties": {
+          "form": "core-shell nanocones"
+        }
+      },
+      {
+        "id": "edge_input_chem_CoO_ZIF67_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_CoO_ZIF67",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_RuCl3_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_RuCl3",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 5,
+            "unit": "mg mL^-1"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_Co3O4_CoRuOx",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "properties": {
+          "form": "core-shell nanocones on CC"
+        }
+      },
+      {
+        "id": "chem_water",
+        "type": "chemical",
+        "name": "water",
+        "aliases": [
+          "deionized water",
+          "aqueous solution"
+        ],
+        "formula": "H2O",
+        "properties": {},
+        "related_images": [
+          "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Hydroxyl group",
+            "properties": {
+              "formula": "OH",
+              "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+            },
+            "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Water",
+            "properties": {
+              "formula": "H2O",
+              "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+            },
+            "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_ethanol",
+        "type": "chemical",
+        "name": "ethanol",
+        "formula": "C2H5OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_Co3O4_CoRuOx",
+        "type": "chemical",
+        "name": "Co₃O₄@CoRuOₓ",
+        "aliases": [
+          "Co₃O₄@CoRuOₓ"
+        ],
+        "composition": {
+          "Ru": {
+            "value": 3.7,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "Ru_mass_loading": {
+            "value": 0.081,
+            "unit": "mg/cm²"
+          }
+        },
+        "related_images": [
+          "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg",
+          "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg",
+          "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg",
+          "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg",
+          "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg",
+          "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg",
+          "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg",
+          "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg",
+          "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg",
+          "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg",
+          "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg",
+          "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg",
+          "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg",
+          "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg",
+          "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg",
+          "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg",
+          "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg",
+          "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg",
+          "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg",
+          "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg",
+          "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Pt/C",
+            "properties": {
+              "context": "1 M KOH",
+              "extracted_from_image": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+            },
+            "source_image_file": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1.0 M KOH",
+            "properties": {
+              "concentration": "1.0 M",
+              "solvent": "KOH",
+              "extracted_from_image": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+            },
+            "source_image_file": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ZIF-67",
+            "properties": {
+              "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+            },
+            "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@CoRuOₓ",
+            "properties": {
+              "formula": "Co₃O₄@CoRuOₓ",
+              "extracted_from_image": "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg"
+            },
+            "source_image_file": "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3+",
+            "properties": {
+              "extracted_from_image": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+            },
+            "source_image_file": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+          },
+          {
+            "type": "annotation",
+            "name": "White box region",
+            "properties": {
+              "color": "white",
+              "shape": "rectangle",
+              "purpose": "magnification or specific area of interest",
+              "extracted_from_image": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+            },
+            "source_image_file": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1.0 M KOH",
+            "properties": {
+              "description": "Alkaline electrolyte solution",
+              "extracted_from_image": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+            },
+            "source_image_file": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+          },
+          {
+            "type": "label",
+            "name": "d",
+            "properties": {
+              "description": "Figure label",
+              "extracted_from_image": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+            },
+            "source_image_file": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Pt/C",
+            "properties": {
+              "formula": "Pt/C",
+              "extracted_from_image": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+            },
+            "source_image_file": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "0.5 M H₂SO₄",
+            "properties": {
+              "concentration": "0.5 M",
+              "formula": "H₂SO₄",
+              "extracted_from_image": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+            },
+            "source_image_file": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Overpotential at 10 mA/cm²",
+            "properties": {
+              "Co3O4@CoRuOx": 167,
+              "Co3O4@RuOx": 190,
+              "Co3O4": 233,
+              "RuO2": 268,
+              "extracted_from_image": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+            },
+            "source_image_file": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "*OH",
+            "properties": {
+              "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+            },
+            "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+          },
+          {
+            "type": "material",
+            "name": "CoRu",
+            "properties": {
+              "description": "Cobalt-Ruthenium bimetallic system",
+              "extracted_from_image": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+            },
+            "source_image_file": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru 3p1/2",
+            "properties": {
+              "description": "Ruthenium 3p1/2 spin-orbit component",
+              "extracted_from_image": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+            },
+            "source_image_file": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoRuO nanoparticle",
+            "properties": {
+              "description": "Core-shell structured nanoparticle with elemental distribution",
+              "extracted_from_image": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+            },
+            "source_image_file": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Co3O4 (400) Fringe",
+            "properties": {
+              "d_spacing": "0.203 nm",
+              "extracted_from_image": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+            },
+            "source_image_file": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄",
+            "properties": {
+              "peak_position": "42-1467",
+              "extracted_from_image": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+            },
+            "source_image_file": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+          },
+          {
+            "type": "bond",
+            "name": "Ru-O",
+            "properties": {
+              "description": "Ruthenium-oxygen bond",
+              "extracted_from_image": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+            },
+            "source_image_file": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1.0 M KOH",
+            "properties": {
+              "description": "Potassium hydroxide electrolyte",
+              "extracted_from_image": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+            },
+            "source_image_file": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4@CoRuOx",
+            "properties": {
+              "onset_potential": "0.10 eV",
+              "extracted_from_image": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+            },
+            "source_image_file": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4@CoRuOx",
+            "properties": {
+              "description": "Core-shell with mixed oxide shell",
+              "O 1s deconvolutions": [
+                "58.4%"
+              ],
+              "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+            },
+            "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Co3O4_RuOx",
+        "type": "chemical",
+        "name": "Co₃O₄/RuOₓ",
+        "aliases": [
+          "Co₃O₄/RuOₓ"
+        ],
+        "properties": {},
+        "related_images": [
+          "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg",
+          "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg",
+          "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg",
+          "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg",
+          "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg",
+          "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg",
+          "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg",
+          "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg",
+          "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg",
+          "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg",
+          "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg",
+          "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg",
+          "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg",
+          "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg",
+          "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg",
+          "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg",
+          "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg",
+          "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg",
+          "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg",
+          "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg",
+          "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg",
+          "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Co3S4",
+            "properties": {
+              "context": "1 M KOH",
+              "extracted_from_image": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+            },
+            "source_image_file": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanocrystalline Material",
+            "properties": {
+              "morphology": "needle-like crystals or nanofibers",
+              "arrangement": "bundled and aligned",
+              "size_scale": "micrometer range",
+              "extracted_from_image": "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg"
+            },
+            "source_image_file": "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄",
+            "properties": {
+              "formula": "Co₃O₄",
+              "extracted_from_image": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+            },
+            "source_image_file": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "2-MeIM",
+            "properties": {
+              "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+            },
+            "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co2p3/2",
+            "properties": {
+              "extracted_from_image": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+            },
+            "source_image_file": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanostructured material",
+            "properties": {
+              "description": "dark contrast sheets with branching morphology",
+              "extracted_from_image": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+            },
+            "source_image_file": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄",
+            "properties": {
+              "description": "Cobalt oxide",
+              "extracted_from_image": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+            },
+            "source_image_file": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "CoRuOx Crystal Structure",
+            "properties": {
+              "representation": "3D ball-and-stick model",
+              "colors": {
+                "blue": "likely Co or N",
+                "yellow": "likely Ru or S",
+                "red": "likely O",
+                "green": "likely another metal"
+              },
+              "features": "layered framework with octahedral coordination",
+              "extracted_from_image": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+            },
+            "source_image_file": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄",
+            "properties": {
+              "formula": "Co₃O₄",
+              "extracted_from_image": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+            },
+            "source_image_file": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄",
+            "properties": {
+              "formula": "Co₃O₄",
+              "extracted_from_image": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+            },
+            "source_image_file": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4",
+            "properties": {
+              "extracted_from_image": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+            },
+            "source_image_file": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru-site in RuO_2",
+            "properties": {
+              "color": "green",
+              "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+            },
+            "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "O",
+            "properties": {
+              "description": "Oxygen",
+              "extracted_from_image": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+            },
+            "source_image_file": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "description": "Ruthenium dioxide reference",
+              "extracted_from_image": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+            },
+            "source_image_file": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "HRTEM Image",
+            "properties": {
+              "scale_bar": "5 nm",
+              "extracted_from_image": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+            },
+            "source_image_file": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanowires",
+            "properties": {
+              "description": "Dark branched filamentous structures, length scale ~1 μm",
+              "morphology": "branched, interwoven",
+              "extracted_from_image": "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg"
+            },
+            "source_image_file": "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄",
+            "properties": {
+              "extracted_from_image": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+            },
+            "source_image_file": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄",
+            "properties": {
+              "description": "Cobalt(II,III) oxide",
+              "extracted_from_image": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+            },
+            "source_image_file": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+          },
+          {
+            "type": "image_feature",
+            "name": "Main View",
+            "properties": {
+              "scale": "20 μm",
+              "description": "Overview of dense nanostructure mat",
+              "extracted_from_image": "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg"
+            },
+            "source_image_file": "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4",
+            "properties": {
+              "description": "Cobalt(II,III) oxide",
+              "extracted_from_image": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+            },
+            "source_image_file": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4/RuOx",
+            "properties": {
+              "onset_potential": "0.17 eV",
+              "extracted_from_image": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+            },
+            "source_image_file": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4/RuOx",
+            "properties": {
+              "description": "Composite material",
+              "O 1s deconvolutions": [
+                "46.7%"
+              ],
+              "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+            },
+            "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Co3O4",
+        "type": "chemical",
+        "name": "Co₃O₄",
+        "aliases": [
+          "Co₃O₄"
+        ],
+        "formula": "Co₃O₄",
+        "properties": {},
+        "related_images": [
+          "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg",
+          "16ef3db5dbed5b8b32112a258826539ac4de5979552ae77395fce093ad95eef9.jpg",
+          "1d3546d7b425d0e416dcaf80b99e18e55340594bc11d7855d27d001487aff59f.jpg",
+          "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg",
+          "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg",
+          "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg",
+          "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg",
+          "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg",
+          "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg",
+          "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg",
+          "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg",
+          "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg",
+          "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg",
+          "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg",
+          "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg",
+          "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg",
+          "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg",
+          "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg",
+          "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg",
+          "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg",
+          "d613efbe04c15566e49353dc3b8da267bd1430c4cd425c89205692e8b93cfc06.jpg",
+          "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg",
+          "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg",
+          "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg",
+          "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg",
+          "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg",
+          "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg",
+          "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "context": "1 M KOH",
+              "extracted_from_image": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+            },
+            "source_image_file": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru",
+            "properties": {
+              "description": "Ruthenium element or nanoparticle",
+              "symbol": "Ru",
+              "extracted_from_image": "16ef3db5dbed5b8b32112a258826539ac4de5979552ae77395fce093ad95eef9.jpg"
+            },
+            "source_image_file": "16ef3db5dbed5b8b32112a258826539ac4de5979552ae77395fce093ad95eef9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cobalt",
+            "properties": {
+              "symbol": "Co",
+              "description": "Elemental cobalt material",
+              "extracted_from_image": "1d3546d7b425d0e416dcaf80b99e18e55340594bc11d7855d27d001487aff59f.jpg"
+            },
+            "source_image_file": "1d3546d7b425d0e416dcaf80b99e18e55340594bc11d7855d27d001487aff59f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image (Low Magnification)",
+            "properties": {
+              "description": "Large field of view showing fibrous or needle-like structures arranged in bundles",
+              "scale_bar": "20 μm",
+              "extracted_from_image": "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg"
+            },
+            "source_image_file": "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@CoRuOₓ",
+            "properties": {
+              "formula": "Co₃O₄@CoRuOₓ",
+              "extracted_from_image": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+            },
+            "source_image_file": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄",
+            "properties": {
+              "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+            },
+            "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NH₄F",
+            "properties": {
+              "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+            },
+            "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co2p",
+            "properties": {
+              "binding_energy_range": "780-810 eV",
+              "extracted_from_image": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+            },
+            "source_image_file": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+          },
+          {
+            "type": "image",
+            "name": "TEM image labeled f",
+            "properties": {
+              "label": "f",
+              "scale_bar": "50 nm",
+              "extracted_from_image": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+            },
+            "source_image_file": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@CoRuOₓ",
+            "properties": {
+              "description": "Core-shell structured catalyst",
+              "extracted_from_image": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+            },
+            "source_image_file": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoRuOx",
+            "properties": {
+              "formula": "CoRuOx",
+              "description": "Ruthenium oxide with cobalt doping",
+              "extracted_from_image": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+            },
+            "source_image_file": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@CoRuOₓ",
+            "properties": {
+              "formula": "Co₃O₄@CoRuOₓ",
+              "extracted_from_image": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+            },
+            "source_image_file": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@CoRuOₓ",
+            "properties": {
+              "formula": "Co₃O₄@CoRuOₓ",
+              "extracted_from_image": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+            },
+            "source_image_file": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4@CoRuOx",
+            "properties": {
+              "extracted_from_image": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+            },
+            "source_image_file": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co-site in CoRuO_x",
+            "properties": {
+              "color": "red",
+              "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+            },
+            "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co",
+            "properties": {
+              "description": "Cobalt",
+              "extracted_from_image": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+            },
+            "source_image_file": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4@CoRuOx",
+            "properties": {
+              "description": "Core-shell structured material",
+              "extracted_from_image": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+            },
+            "source_image_file": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cobalt (Co)",
+            "properties": {
+              "color": "magenta",
+              "description": "Cobalt elemental mapping, likely in core region",
+              "extracted_from_image": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+            },
+            "source_image_file": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "miller_index": "(101)",
+              "lattice_spacing": "0.241 nm",
+              "extracted_from_image": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+            },
+            "source_image_file": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "label": "e",
+              "scale_bar": "1 μm",
+              "extracted_from_image": "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg"
+            },
+            "source_image_file": "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoRu",
+            "properties": {
+              "formula": "CoRu",
+              "description": "Bimetallic CoRu material or alloy",
+              "extracted_from_image": "d613efbe04c15566e49353dc3b8da267bd1430c4cd425c89205692e8b93cfc06.jpg"
+            },
+            "source_image_file": "d613efbe04c15566e49353dc3b8da267bd1430c4cd425c89205692e8b93cfc06.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@CoRuOₓ",
+            "properties": {
+              "label": "Co₃O₄@CoRuOₓ (a.u.)",
+              "extracted_from_image": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+            },
+            "source_image_file": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co",
+            "properties": {
+              "description": "Cobalt",
+              "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+            },
+            "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@CoRuOₓ",
+            "properties": {
+              "description": "Core-shell structure with Co₃O₄ core and CoRuOₓ shell",
+              "extracted_from_image": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+            },
+            "source_image_file": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale_bar_20um": true,
+              "inset_scale": "1 μm",
+              "label": "a",
+              "extracted_from_image": "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg"
+            },
+            "source_image_file": "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4@CoRuOx",
+            "properties": {
+              "description": "Core-shell structured cobalt ruthenate oxide",
+              "extracted_from_image": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+            },
+            "source_image_file": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4",
+            "properties": {
+              "extracted_from_image": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+            },
+            "source_image_file": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4",
+            "properties": {
+              "description": "Cobalt oxide reference",
+              "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+            },
+            "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "commercial RuO₂",
+        "aliases": [
+          "RuO₂",
+          "commercial RuO₂"
+        ],
+        "formula": "RuO₂",
+        "properties": {},
+        "related_images": [
+          "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg",
+          "16ef3db5dbed5b8b32112a258826539ac4de5979552ae77395fce093ad95eef9.jpg",
+          "1d3546d7b425d0e416dcaf80b99e18e55340594bc11d7855d27d001487aff59f.jpg",
+          "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg",
+          "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg",
+          "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg",
+          "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg",
+          "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg",
+          "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg",
+          "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg",
+          "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg",
+          "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg",
+          "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg",
+          "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg",
+          "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg",
+          "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg",
+          "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg",
+          "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg",
+          "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg",
+          "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg",
+          "d613efbe04c15566e49353dc3b8da267bd1430c4cd425c89205692e8b93cfc06.jpg",
+          "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg",
+          "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg",
+          "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg",
+          "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg",
+          "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg",
+          "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg",
+          "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ni3S2",
+            "properties": {
+              "context": "1 M KOH",
+              "extracted_from_image": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+            },
+            "source_image_file": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image showing nanostructured morphology",
+              "features": "irregular, clustered nanoparticles with rough surface texture",
+              "color": "pseudocolored in teal/green",
+              "extracted_from_image": "16ef3db5dbed5b8b32112a258826539ac4de5979552ae77395fce093ad95eef9.jpg"
+            },
+            "source_image_file": "16ef3db5dbed5b8b32112a258826539ac4de5979552ae77395fce093ad95eef9.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image showing purple-colored cobalt nanostructures or nanoparticles with fibrous or sheet-like morphology",
+              "color": "purple",
+              "features": [
+                "nanoparticles",
+                "fibrous morphology",
+                "high surface area appearance"
+              ],
+              "extracted_from_image": "1d3546d7b425d0e416dcaf80b99e18e55340594bc11d7855d27d001487aff59f.jpg"
+            },
+            "source_image_file": "1d3546d7b425d0e416dcaf80b99e18e55340594bc11d7855d27d001487aff59f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image (High Magnification)",
+            "properties": {
+              "description": "Inset close-up of individual needle-like crystals with faceted hexagonal terminations",
+              "scale_bar": "1 μm",
+              "extracted_from_image": "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg"
+            },
+            "source_image_file": "27fe5958d107efbc25ba12f6b1d33b92b9daa33a629c8bf41bab5ba27c012f97.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄/RuOₓ",
+            "properties": {
+              "formula": "Co₃O₄/RuOₓ",
+              "extracted_from_image": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+            },
+            "source_image_file": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO₂",
+            "properties": {
+              "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+            },
+            "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co(CH₃COO)₂",
+            "properties": {
+              "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+            },
+            "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO₂",
+            "properties": {
+              "formula": "RuO₂",
+              "extracted_from_image": "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg"
+            },
+            "source_image_file": "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co2p1/2",
+            "properties": {
+              "extracted_from_image": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+            },
+            "source_image_file": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM image",
+            "properties": {
+              "technique": "Transmission Electron Microscopy",
+              "scale": "50 nm",
+              "features": [
+                "nanostructures",
+                "sheets",
+                "branches",
+                "yellow highlights",
+                "white box highlight"
+              ],
+              "extracted_from_image": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+            },
+            "source_image_file": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄/RuOₓ",
+            "properties": {
+              "description": "Mixed oxide catalyst",
+              "extracted_from_image": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+            },
+            "source_image_file": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "formula": "RuO2",
+              "description": "Ruthenium dioxide",
+              "extracted_from_image": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+            },
+            "source_image_file": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@RuOₓ",
+            "properties": {
+              "formula": "Co₃O₄@RuOₓ",
+              "extracted_from_image": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+            },
+            "source_image_file": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄@RuOₓ",
+            "properties": {
+              "formula": "Co₃O₄@RuOₓ",
+              "extracted_from_image": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+            },
+            "source_image_file": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4@RuOx",
+            "properties": {
+              "extracted_from_image": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+            },
+            "source_image_file": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru-site in RuO_{2-x}",
+            "properties": {
+              "color": "green",
+              "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+            },
+            "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru",
+            "properties": {
+              "description": "Ruthenium",
+              "extracted_from_image": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+            },
+            "source_image_file": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4/RuOx",
+            "properties": {
+              "description": "Composite material",
+              "extracted_from_image": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+            },
+            "source_image_file": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4",
+            "properties": {
+              "miller_index": "(400)",
+              "lattice_spacing": "0.203 nm",
+              "extracted_from_image": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+            },
+            "source_image_file": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "description": "Circular white features on dark background, approximately 100-200 nm diameter",
+              "count": "multiple",
+              "extracted_from_image": "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg"
+            },
+            "source_image_file": "d48bfaad717debf70c571bc3b4f79a4a3ef6c8c2327a6741f57bcc9aabfd16b6.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image showing porous, fluffy, aggregated nanoparticle morphology with purple false color",
+              "scale": "unknown",
+              "features": [
+                "nanoparticles",
+                "aggregation",
+                "porous structure"
+              ],
+              "extracted_from_image": "d613efbe04c15566e49353dc3b8da267bd1430c4cd425c89205692e8b93cfc06.jpg"
+            },
+            "source_image_file": "d613efbe04c15566e49353dc3b8da267bd1430c4cd425c89205692e8b93cfc06.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄/RuOₓ",
+            "properties": {
+              "label": "Co₃O₄/RuOₓ",
+              "extracted_from_image": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+            },
+            "source_image_file": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "description": "Ruthenium dioxide",
+              "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+            },
+            "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co₃O₄/RuOₓ",
+            "properties": {
+              "description": "Composite of Co₃O₄ and RuOₓ",
+              "extracted_from_image": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+            },
+            "source_image_file": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanostructured Material",
+            "properties": {
+              "description": "Hierarchical sheaf-like or needle-like nanostructures",
+              "morphology": "dense mat of aligned nanofibers or nanorods with sharp tips",
+              "extracted_from_image": "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg"
+            },
+            "source_image_file": "e62cc4b528bda584fb89c154a61931e9cf9e3fb7467120cedcc8b2796e0bf879.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co3O4/RuOx",
+            "properties": {
+              "description": "Composite of Co3O4 and RuOx",
+              "extracted_from_image": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+            },
+            "source_image_file": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "extracted_from_image": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+            },
+            "source_image_file": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "RuO2",
+            "properties": {
+              "description": "Ruthenium oxide reference",
+              "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+            },
+            "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_CoRuOx_P",
+        "type": "chemical",
+        "name": "CoRuOₓ-P",
+        "aliases": [
+          "CoRuOₓ-P"
+        ],
+        "properties": {
+          "Ru_content": {
+            "value": 1.2,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_Co3O4@CoRuOx",
+        "type": "chemical",
+        "name": "Co₃O₄@CoRuOₓ",
+        "aliases": [
+          "Co₃O₄@CoRuOₓ nanocones"
+        ],
+        "formula": "Co₃O₄@CoRuOₓ",
+        "composition": {
+          "Ru": {
+            "value": 3.7,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "nanoparticle_size": {
+            "value": 15,
+            "unit": "nm"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_water_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_water",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "volume_ratio": {
+            "value": "1:1",
+            "unit": "Vwater:Vethanol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_water_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_water",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Co3O4",
+      "chem_CoRuOx_P",
+      "chem_Co3O4_CoRuOx",
+      "chem_Co3O4_RuOx",
+      "chem_RuO2"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Co3O4_CoRuOx",
+        "type": "chemical",
+        "name": "Co₃O₄@CoRuOₓ",
+        "aliases": [
+          "Co₃O₄@CoRuOₓ"
+        ],
+        "composition": {
+          "Ru": {
+            "value": 3.7,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "Ru_mass_loading": {
+            "value": 0.081,
+            "unit": "mg/cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_Co3O4_RuOx",
+        "type": "chemical",
+        "name": "Co₃O₄/RuOₓ",
+        "aliases": [
+          "Co₃O₄/RuOₓ"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Co3O4",
+        "type": "chemical",
+        "name": "Co₃O₄",
+        "aliases": [
+          "Co₃O₄"
+        ],
+        "formula": "Co₃O₄",
+        "properties": {}
+      },
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "commercial RuO₂",
+        "aliases": [
+          "RuO₂",
+          "commercial RuO₂"
+        ],
+        "formula": "RuO₂",
+        "properties": {}
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4_CoRuOx",
+        "description": "OER performance in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13.6,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "Co₃O₄@CoRuOₓ on CC",
+            "unit": "1.0×1.5 cm²"
+          },
+          "counter_electrode": {
+            "value": "graphite",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (saturated KCl)",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "95%",
+            "unit": "iR-compensated"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 167,
+            "unit": "mV"
+          },
+          "overpotential_at_50_mA_cm²": {
+            "value": 237,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA_cm²": {
+            "value": 268,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 79.7,
+            "unit": "mV/dec"
+          },
+          "charge_transfer_resistance_R_ct": {
+            "value": 1.6,
+            "unit": "ohm"
+          },
+          "ECSA": {
+            "value": 2557.5,
+            "unit": "cm²"
+          },
+          "TOF_at_270_mV": {
+            "value": 0.35,
+            "unit": "s⁻¹"
+          },
+          "mass_activity_at_270_mV": {
+            "value": 1270.0,
+            "unit": "A/g_Ru"
+          }
+        },
+        "source_text": "Figure 3a shows the iR-compensated OER polarization curves of all the samples in 1.0 M KOH. Co₃O₄@CoRuOₓ acquires a current density of 10 mA cm⁻² at an overpotential of 167 mV (η₁₀) ... The calculated Tafel slope of Co₃O₄@CoRuOₓ (79.7 mV dec⁻¹)"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4_CoRuOx",
+        "description": "OER performance in 1.0 M PBS",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M PBS",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 6.8,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "Co₃O₄@CoRuOₓ on CC",
+            "unit": "1.0×1.5 cm²"
+          },
+          "counter_electrode": {
+            "value": "graphite",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (saturated KCl)",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "95%",
+            "unit": "iR-compensated"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 229,
+            "unit": "mV"
+          },
+          "overpotential_at_50_mA_cm²": {
+            "value": 460,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA_cm²": {
+            "value": 670,
+            "unit": "mV"
+          },
+          "charge_transfer_resistance_R_ct": {
+            "value": 3.7,
+            "unit": "ohm"
+          },
+          "ECSA": {
+            "value": 1448.8,
+            "unit": "cm²"
+          },
+          "TOF_at_270_mV": {
+            "value": 0.035,
+            "unit": "s⁻¹"
+          },
+          "mass_activity_at_270_mV": {
+            "value": 259.9,
+            "unit": "A/g_Ru"
+          }
+        },
+        "source_text": "From the polarization curves corrected by the RHE in neutral and acidic electrolytes (Figure 3c,d), it can be noted that Co₃O₄@CoRuOₓ also exhibited excellent OER activity (neutral electrolyte: η₁₀ = 229 mV)"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4_CoRuOx",
+        "description": "OER performance in 0.5 M H₂SO₄",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H₂SO₄",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 0.48,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "Co₃O₄@CoRuOₓ on CC",
+            "unit": "1.0×1.5 cm²"
+          },
+          "counter_electrode": {
+            "value": "graphite",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (saturated KCl)",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "95%",
+            "unit": "iR-compensated"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 161,
+            "unit": "mV"
+          },
+          "overpotential_at_50_mA_cm²": {
+            "value": 206,
+            "unit": "mV"
+          },
+          "overpotential_at_100_mA_cm²": {
+            "value": 236,
+            "unit": "mV"
+          },
+          "charge_transfer_resistance_R_ct": {
+            "value": 1.1,
+            "unit": "ohm"
+          },
+          "ECSA": {
+            "value": 884.3,
+            "unit": "cm²"
+          },
+          "TOF_at_270_mV": {
+            "value": 0.29,
+            "unit": "s⁻¹"
+          },
+          "mass_activity_at_270_mV": {
+            "value": 2069.0,
+            "unit": "A/g_Ru"
+          }
+        },
+        "source_text": "acidic electrolyte: η₁₀ = 161 mV , η₅₀ = 206 mV , and η₁₀₀ = 236 mV"
+      },
+      {
+        "id": "chem_CoRuOx_P",
+        "type": "chemical",
+        "name": "CoRuOₓ-P",
+        "aliases": [
+          "CoRuOₓ-P"
+        ],
+        "properties": {
+          "Ru_content": {
+            "value": 1.2,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4_CoRuOx",
+        "description": "OER stability in 1.0 M KOH by chronopotentiometry",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13.6,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "test_type": {
+            "value": "chronopotentiometry",
+            "unit": "stability"
+          },
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "no iR-compensation"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "largely undiminished potential",
+            "unit": "dozens of hours"
+          },
+          "current_density_tested": {
+            "value": 200,
+            "unit": "mA/cm²"
+          }
+        },
+        "source_text": "the chronopotentiometry test in all-pH media. More impressively, the Co₃O₄@CoRuOₓ deliveries largely undiminished potential responses throughout the long-term test, even continued operating at 200 mA cm⁻² in 1.0 M KOH"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4_CoRuOx",
+        "description": "OER stability in 1.0 M PBS by chronopotentiometry",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M PBS",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 6.8,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "test_type": {
+            "value": "chronopotentiometry",
+            "unit": "stability"
+          },
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "no iR-compensation"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "largely undiminished potential",
+            "unit": "dozens of hours"
+          },
+          "current_density_tested": {
+            "value": 50,
+            "unit": "mA/cm²"
+          }
+        },
+        "source_text": "even continued operating at ... 50 mA cm⁻² in 1.0 M PBS"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4_CoRuOx",
+        "description": "OER stability in 0.5 M H₂SO₄ by chronopotentiometry",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H₂SO₄",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 0.48,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "test_type": {
+            "value": "chronopotentiometry",
+            "unit": "stability"
+          },
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "no iR-compensation"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "superior tolerance",
+            "unit": "dozens of hours"
+          }
+        },
+        "source_text": "the tolerance of Co₃O₄@CoRuOₓ to the acidic media is significantly better than that of the other catalysts"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_Co3O4_CoRuOx",
+        "description": "Accelerated stability test by 2000 CV cycles in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13.6,
+            "unit": "pH"
+          },
+          "test_type": {
+            "value": "cyclic voltammetry",
+            "unit": "accelerated stability"
+          },
+          "scan_rate": {
+            "value": 100,
+            "unit": "mV/s"
+          },
+          "cycles": {
+            "value": 2000,
+            "unit": "cycles"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "no obvious difference in OER activity",
+            "unit": "before/after 2000 CV cycles"
+          }
+        },
+        "source_text": "In all-pH media, there are no obvious difference in OER activity of Co₃O₄@CoRuOₓ before and after the continuous 2000 CV cycles (Figure 3h)"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Co3O4_CoRuOx_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co3O4_CoRuOx_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co3O4_CoRuOx_test_3",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co3O4_CoRuOx_test_4",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co3O4_CoRuOx_test_5",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co3O4_CoRuOx_test_6",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co3O4_CoRuOx_test_7",
+        "type": "tested_in",
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "test_7",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Co3O4@CoRuOx",
+        "type": "chemical",
+        "name": "Co₃O₄@CoRuOₓ",
+        "aliases": [
+          "Co₃O₄@CoRuOₓ nanocones"
+        ],
+        "formula": "Co₃O₄@CoRuOₓ",
+        "composition": {
+          "Ru": {
+            "value": 3.7,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "nanoparticle_size": {
+            "value": 15,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "SEM images show the core-shell nanocone morphology of Co₃O₄@CoRuOₓ is maintained after Ru exchange and annealing, with slightly rough polyhedral shell.",
+        "evidence_snippet": "The evolution of morphology and structure was investigated in detail by the scanning electron microscopy (SEM) images... the structure and morphology of the nanocones is basically maintained (Figure 1c; Figure S1c, Supporting Information).",
+        "related_images": [
+          "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "image",
+            "name": "SEM Image C",
+            "properties": {
+              "label": "C",
+              "description": "Scanning Electron Microscopy image showing nanostructured material",
+              "extracted_from_image": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+            },
+            "source_image_file": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Low Magnification SEM",
+            "properties": {
+              "scale_bar": "20 μm",
+              "description": "Overview of dense, interconnected fibrillar or needle-like nanostructures forming a porous network",
+              "extracted_from_image": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+            },
+            "source_image_file": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "High Magnification SEM",
+            "properties": {
+              "scale_bar": "1 μm",
+              "description": "Close-up view showing individual fibrillar structures with rough surface texture and some particle attachments",
+              "extracted_from_image": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+            },
+            "source_image_file": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "XRD shows characteristic peaks of Co₃O₄ (JCPDS 42-1467) and RuO₂ (JCPDS 40-1290); RuO₂ (110) and (101) peaks shift to higher angles by ≈0.28° and 0.36° due to Co doping induced lattice contraction.",
+        "evidence_snippet": "The characteristic diffraction peaks assigned to Co₃O₄ (JCPDS Card No. 42-1467) and RuO₂ (JCPDS Card No. 40-1290) emerge in the XRD patterns... the diffraction peaks of RuO₂ (110) and (101) planes move slightly towards a higher angle, ≈0.28° and 0.36° respectively."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM reveals core-shell structure with polyhedrons on Co₃O₄ core and ≈15 nm nanoparticles on shell; interplanar spacings of RuO₂ (110) and (101) decrease from 0.318/0.256 nm to 0.309/0.241 nm confirming lattice contraction.",
+        "evidence_snippet": "The transmission electron microscopy (TEM) images of Co₃O₄@CoRuOₓ show that a shell composed of many polyhedrons is tightly wrapped around Co₃O₄ core... the interplanar spacings of RuO₂ (110) and (101) planes decrease from 0.318 and 0.256 nm (pure RuO₂) to 0.309 and 0.241 nm."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "STEM-EDX",
+        "data_reported": true,
+        "characterization_summary": "STEM-EDX line-scanning confirms core-shell structure with Co/Ru ratio 1:1 in outer shell; elemental mapping shows uniform CoRuOₓ shell coverage on Co₃O₄.",
+        "evidence_snippet": "The TEM-energy-dispersive X-ray spectroscopy (STEM-EDX) line-scanning finely depicts the core-shell structure... The Co/Ru atom ratio at the outer shell is equal to 1:1... The distribution of Co, Ru, and O elements measured by the STEM-EDX mapping further verifies that CoRuOₓ shell uniformly covers the surface.",
+        "related_images": [
+          "48589f213de1f3e227918933aea397b56ef253369f034372036357bfe5daa3af.jpg",
+          "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg",
+          "4db4abc69e5c2de3c1dde4f229a72c24b191f1b00e2789eddfc07054b7d167e6.jpg",
+          "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "label": "j",
+              "scale_bar": "500 nm",
+              "extracted_from_image": "48589f213de1f3e227918933aea397b56ef253369f034372036357bfe5daa3af.jpg"
+            },
+            "source_image_file": "48589f213de1f3e227918933aea397b56ef253369f034372036357bfe5daa3af.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "label": "h",
+              "description": "High-resolution transmission electron microscopy image showing nanostructure",
+              "extracted_from_image": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+            },
+            "source_image_file": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+          },
+          {
+            "type": "image",
+            "name": "SEM image",
+            "properties": {
+              "description": "High-resolution scanning electron microscopy image showing nanostructured material",
+              "label": "O",
+              "color": "yellow-green",
+              "features": "dense, aggregated nanoparticles forming porous, sheet-like morphology",
+              "extracted_from_image": "4db4abc69e5c2de3c1dde4f229a72c24b191f1b00e2789eddfc07054b7d167e6.jpg"
+            },
+            "source_image_file": "4db4abc69e5c2de3c1dde4f229a72c24b191f1b00e2789eddfc07054b7d167e6.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "HAADF-STEM image",
+            "properties": {
+              "description": "High-angle annular dark-field scanning transmission electron microscopy image of nanoparticle",
+              "scale": "500 nm",
+              "extracted_from_image": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+            },
+            "source_image_file": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "ICP-AES",
+        "data_reported": true,
+        "characterization_summary": "ICP-AES determines Ru content as 3.7 wt.% in Co₃O₄@CoRuOₓ.",
+        "evidence_snippet": "The content of Ru species is only 3.7 wt.% analyzed by the inductively coupled plasma-atomic emission spectrometry (ICP-AES, Table S1, Supporting Information)."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "Raman",
+        "data_reported": true,
+        "characterization_summary": "Raman shows characteristic Ru-O and Co-O peaks with synchronous redshift relative to commercial RuO₂ and Co₃O₄, indicating decreased electron density and higher oxidation states of Ru and Co.",
+        "evidence_snippet": "The characteristic Ru-O and Co-O peaks emerge in the Raman spectra... The synchronous redshift of Ru-O and Co-O peaks is worthy of notice relative to the commercial RuO₂ and Co₃O₄."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "High-resolution XPS shows Co 2p peaks shifted 0.75 eV higher (Co³⁺ 779.7 eV, Co²⁺ 781.2 eV), Ru 3p Ru(IV) peaks redshifted 0.8 eV, and O 1s with increased oxygen vacancies (531.2 eV) confirming Co doping effect.",
+        "evidence_snippet": "The high-resolution Co 2p spectrum of Co₃O₄@CoRuOₓ is deconvoluted into six sub-peaks, corresponding to the spin orbitals of Co 2p₃/₂ (Co³⁺ at 779.7 eV, Co²⁺ at 781.2 eV)... shift of ≈0.75 eV to the high binding energy occurs... Only the peaks assigned to Ru (IV) species present a distinct redshift of 0.8 eV... In O 1s XPS of Co₃O₄@CoRuOₓ... Oᵥ (& O-H) (531.2 eV).",
+        "related_images": [
+          "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg",
+          "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg",
+          "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg",
+          "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg",
+          "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg",
+          "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg",
+          "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg",
+          "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg",
+          "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg",
+          "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg",
+          "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg",
+          "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg",
+          "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg",
+          "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg",
+          "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg",
+          "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg",
+          "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg",
+          "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "20% Pt/C",
+            "properties": {
+              "context": "1 M PBS",
+              "extracted_from_image": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+            },
+            "source_image_file": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1.0 M PBS",
+            "properties": {
+              "concentration": "1.0 M",
+              "solvent": "PBS",
+              "extracted_from_image": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+            },
+            "source_image_file": "2f84df8c7dd557b57f3a64eedae51671b061f0000aceaaacd7d5d8a7fdb3a7d4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co@RuO₂",
+            "properties": {
+              "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+            },
+            "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Sat.",
+            "properties": {
+              "description": "Satellite peak",
+              "extracted_from_image": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+            },
+            "source_image_file": "6fdcd575d4145ce03567f998668bfa5fbb936a89265d17d2ff20ece2f161507c.jpg"
+          },
+          {
+            "type": "scale",
+            "name": "50 nm scale bar",
+            "properties": {
+              "length": "50 nm",
+              "position": "bottom right",
+              "extracted_from_image": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+            },
+            "source_image_file": "70eaeca8e4148a955d1110a918e41228f9f88c6fb9b28cfbfb70a691262a3fce.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EIS Nyquist Plot",
+            "properties": {
+              "description": "Electrochemical impedance spectroscopy data",
+              "x_axis": "Z' (ohm)",
+              "y_axis": "-Z'' (ohm)",
+              "components": [
+                "R_s",
+                "R_ct"
+              ],
+              "extracted_from_image": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+            },
+            "source_image_file": "772db6175895c2c5df5c6c5bbd52d08fbd2314dfeb737bfe2304281140127778.jpg"
+          },
+          {
+            "type": "annotation",
+            "name": "Arrow a",
+            "properties": {
+              "description": "Points to structural feature in CoRuOx",
+              "extracted_from_image": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+            },
+            "source_image_file": "7ec51adbb9e7995dbc317d56e7f25cebc3c8af7edfacfef3002e8d0c57e56a73.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "1.0 M PBS",
+            "properties": {
+              "concentration": "1.0 M",
+              "buffer": "PBS",
+              "extracted_from_image": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+            },
+            "source_image_file": "860bcd31d09fd31342db1b336e36a1b94df92f787e956b944eede906843f443e.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV curve Co₃O₄@CoRuOₓ",
+            "properties": {
+              "color": "black",
+              "type": "Linear Sweep Voltammetry",
+              "extracted_from_image": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+            },
+            "source_image_file": "8680e2cd2d07b7425c2d5c2ee929e5d7446d7df2ddefd15f997a08ceacae211a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Overpotential at 50 mA/cm²",
+            "properties": {
+              "Co3O4@CoRuOx": 233,
+              "Co3O4@RuOx": 268,
+              "Co3O4": 323,
+              "RuO2": 365,
+              "extracted_from_image": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+            },
+            "source_image_file": "9b81322fe0449ba0bc989267b6d61591a5dffffc7dc613038a6239efbc52a242.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "M-OOH-OH^{3+}",
+            "properties": {
+              "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+            },
+            "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Plot",
+            "properties": {
+              "type": "graph",
+              "x_axis": "Co/Ru atomic ratio",
+              "y_axis": "Theoretical ηOER (V)",
+              "x_values": [
+                "0/3",
+                "3/15",
+                "5/13",
+                "7/11",
+                "9/7",
+                "11/5",
+                "13/5"
+              ],
+              "color_scale": "O* binding strength (Strong red to Weak blue)",
+              "extracted_from_image": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+            },
+            "source_image_file": "b20d1f4f8d5f34d00e3fe9eb0a7a7cced1a1049634432bbaf88965bf6186a50f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru 3p3/2",
+            "properties": {
+              "description": "Ruthenium 3p3/2 spin-orbit component",
+              "extracted_from_image": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+            },
+            "source_image_file": "c391ce4a36fbdb572f3a91455f7d31ca6e71d97ada31220014cca35963915e24.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SAED Pattern",
+            "properties": {
+              "rings": [
+                "(220)",
+                "(400)",
+                "(440)"
+              ],
+              "scale": "1 nm⁻¹",
+              "extracted_from_image": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+            },
+            "source_image_file": "cc13f13a98aacb4e149e7c8a70c5c32954d55e08e299efb8732ddc00f7c7ec04.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "figure_label": "d",
+              "x_axis": "2θ (degree)",
+              "x_range": [
+                10,
+                70
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "extracted_from_image": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+            },
+            "source_image_file": "dbb27b4a8fa6b565f3c8fb6c8c25713d7aec2926e675057d04c8be31e076f46c.jpg"
+          },
+          {
+            "type": "bond",
+            "name": "Co-O",
+            "properties": {
+              "description": "Cobalt-oxygen bond",
+              "extracted_from_image": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+            },
+            "source_image_file": "e4cde7ca936e7ca8dc5d2c80843e94235bf2e3783ce0d3ec5342797477932916.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV curve Co3O4@CoRuOx",
+            "properties": {
+              "current_density": "211.3 mA/cm²",
+              "potential": "1.55 V vs RHE (approx)",
+              "extracted_from_image": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+            },
+            "source_image_file": "e9a2aac2adff7fe8989deed9f52927c112dfcd1df29727d1103e2c95095fb15d.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS O 1s spectrum",
+            "properties": {
+              "technique": "X-ray Photoelectron Spectroscopy",
+              "region": "O 1s",
+              "binding_energy_range": "525-537 eV",
+              "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+            },
+            "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "EPR",
+        "data_reported": true,
+        "characterization_summary": "EPR shows clear resonance signals confirming oxygen vacancies from Co doping in RuO₂.",
+        "evidence_snippet": "Electron paramagnetic resonance (EPR) spectrum of Co₃O₄@CoRuOₓ correspondingly shows clear resonance signals compared with EPR inactive RuO₂ and EPR low activity Co₃O₄."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "Valence band XPS shows VB maximum at ≈0.05 eV from Fermi level (closest among catalysts), indicating higher electron density near Fermi level for enhanced OER electron transfer.",
+        "evidence_snippet": "The maximum VB value of Co₃O₄@CoRuOₓ is ≈0.05 eV, the closest to the Fermi level (E_f, set to 0 eV) among all catalysts, illustrating a higher electron density around the Fermi level.",
+        "related_images": [
+          "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg",
+          "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg",
+          "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ruthenium center",
+            "properties": {
+              "role": "active metal site",
+              "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+            },
+            "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ruthenium (Ru)",
+            "properties": {
+              "color": "cyan",
+              "description": "Ruthenium elemental mapping, shell distribution",
+              "extracted_from_image": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+            },
+            "source_image_file": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "VB",
+            "properties": {
+              "extracted_from_image": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+            },
+            "source_image_file": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ru",
+            "properties": {
+              "extracted_from_image": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+            },
+            "source_image_file": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "type": "Binding Energy vs Intensity",
+              "x_axis": "Binding Energy (eV)",
+              "y_axis": "Intensity (a.u.)",
+              "range": "0-25 eV",
+              "extracted_from_image": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+            },
+            "source_image_file": "ee7e31c800b87fd685a06d91dee219357075e8adfa2fb007a7e918826edf95c9.jpg"
+          }
+        ]
+      },
+      {
+        "id": "n4",
+        "type": "chemical",
+        "name": "Co3O4@RuOx",
+        "properties": {
+          "description": "Core-shell material",
+          "O 1s deconvolutions": [
+            "55.3%"
+          ],
+          "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        },
+        "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "peak",
+        "name": "Lattice O²⁻",
+        "properties": {
+          "color": "green",
+          "associated_with": [
+            "Co3O4",
+            "RuO2",
+            "composites"
+          ],
+          "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        },
+        "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "peak",
+        "name": "O-H & Ov",
+        "properties": {
+          "color": "light green",
+          "description": "Hydroxyl and oxygen vacancy",
+          "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        },
+        "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "peak",
+        "name": "Oads",
+        "properties": {
+          "color": "blue",
+          "description": "Adsorbed oxygen",
+          "percentages": [
+            "46.7%",
+            "55.3%",
+            "58.4%"
+          ],
+          "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        },
+        "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "peak",
+        "name": "Sat.",
+        "properties": {
+          "color": "red",
+          "description": "Saturated oxygen species",
+          "extracted_from_image": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+        },
+        "source_image_file": "ff8633a53ee0b14267f4455e79bc8f50217a49e828c50fbfced5967dbfb3dda8.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "U = 1.23 V",
+        "properties": {
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "U = 0 V",
+        "properties": {
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chemical",
+        "name": "U = 1.72 eV",
+        "properties": {
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "e1",
+        "type": "characterization",
+        "name": "Tafel plot",
+        "properties": {
+          "electrolyte": "1 M KOH",
+          "x_unit": "overpotential (mV)",
+          "y_unit": "current density (mA/cm²)",
+          "extracted_from_image": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+        },
+        "source_image_file": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+      },
+      {
+        "id": "e2",
+        "type": "characterization",
+        "name": "Tafel plot",
+        "properties": {
+          "electrolyte": "1 M PBS",
+          "x_unit": "overpotential (mV)",
+          "y_unit": "current density (mA/cm²)",
+          "extracted_from_image": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+        },
+        "source_image_file": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+      },
+      {
+        "id": "e3",
+        "type": "characterization",
+        "name": "Tafel plot",
+        "properties": {
+          "electrolyte": "0.5 M H2SO4",
+          "x_unit": "overpotential (mV)",
+          "y_unit": "current density (mA/cm²)",
+          "extracted_from_image": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+        },
+        "source_image_file": "167125106f6ce98cb498b397e82a52001f68502f46511a29ef684255219a19a1.jpg"
+      },
+      {
+        "id": "material",
+        "type": "chemical",
+        "name": "Nanostructured material",
+        "properties": {
+          "description": "Nanoparticulate material with hierarchical morphology",
+          "technique": "SEM",
+          "scale": "nanometer-range particles",
+          "extracted_from_image": "4db4abc69e5c2de3c1dde4f229a72c24b191f1b00e2789eddfc07054b7d167e6.jpg"
+        },
+        "source_image_file": "4db4abc69e5c2de3c1dde4f229a72c24b191f1b00e2789eddfc07054b7d167e6.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "measurement",
+        "name": "500 nm Scale Bar",
+        "properties": {
+          "length": "500 nm",
+          "extracted_from_image": "48589f213de1f3e227918933aea397b56ef253369f034372036357bfe5daa3af.jpg"
+        },
+        "source_image_file": "48589f213de1f3e227918933aea397b56ef253369f034372036357bfe5daa3af.jpg"
+      },
+      {
+        "id": "scale_bar_5nm",
+        "type": "characterization",
+        "name": "5 nm Scale Bar",
+        "properties": {
+          "length": "5 nm",
+          "extracted_from_image": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+        },
+        "source_image_file": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+      },
+      {
+        "id": "region1",
+        "type": "region",
+        "name": "Primary Highlighted Region",
+        "properties": {
+          "description": "Yellow box with diagonal stripes and arrow, showing lattice fringes",
+          "scale": "3.09 Å",
+          "extracted_from_image": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+        },
+        "source_image_file": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+      },
+      {
+        "id": "lattice_spacing_3.09A",
+        "type": "measurement",
+        "name": "3.09 Å Lattice Spacing",
+        "properties": {
+          "value": "3.09 Å",
+          "unit": "angstroms",
+          "context": "interplanar distance from lattice fringes",
+          "extracted_from_image": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+        },
+        "source_image_file": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+      },
+      {
+        "id": "region2",
+        "type": "region",
+        "name": "Secondary Highlighted Region",
+        "properties": {
+          "description": "Smaller yellow box with grid-like pattern",
+          "extracted_from_image": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+        },
+        "source_image_file": "4917be458a80dbf4bc43be1f1e089812a0159aa1fd9bc17d719bb00dd78f2858.jpg"
+      },
+      {
+        "id": "1M-KOH",
+        "type": "electrolyte",
+        "name": "1 M KOH",
+        "properties": {
+          "concentration": "1 M",
+          "solvent": "KOH",
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "3M-KOH",
+        "type": "electrolyte",
+        "name": "3 M KOH",
+        "properties": {
+          "concentration": "3 M",
+          "solvent": "KOH",
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "5M-KOH",
+        "type": "electrolyte",
+        "name": "5 M KOH",
+        "properties": {
+          "concentration": "5 M",
+          "solvent": "KOH",
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "1M-PBS",
+        "type": "electrolyte",
+        "name": "1 M PBS",
+        "properties": {
+          "concentration": "1 M",
+          "solvent": "PBS",
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "Ni3S2",
+        "type": "chemical",
+        "name": "Ni₃S₂",
+        "properties": {
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "Co3S4",
+        "type": "chemical",
+        "name": "Co₃S₄",
+        "properties": {
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "CuCo2S4",
+        "type": "chemical",
+        "name": "CuCo₂S₄",
+        "properties": {
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "CuCo2O4",
+        "type": "chemical",
+        "name": "CuCo₂O₄",
+        "properties": {
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "plot",
+        "type": "characterization",
+        "name": "Chronopotentiometry Plot",
+        "properties": {
+          "x_axis": "Time (h)",
+          "y_axis": "Potential (V)",
+          "current_density": "10 mA cm⁻²",
+          "extracted_from_image": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+        },
+        "source_image_file": "4cae59102d0d26cb1ef3d7b0929f18faab0c8cc4d7406b06889d4e1bd2dcb124.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "process",
+        "name": "Hydrothermal reaction",
+        "properties": {
+          "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+        },
+        "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "process",
+        "name": "Coordination erosion",
+        "properties": {
+          "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+        },
+        "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "process",
+        "name": "Cation exchange",
+        "properties": {
+          "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+        },
+        "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+      },
+      {
+        "id": "p4",
+        "type": "process",
+        "name": "Water bath",
+        "properties": {
+          "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+        },
+        "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+      },
+      {
+        "id": "p5",
+        "type": "process",
+        "name": "Annealing in air",
+        "properties": {
+          "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+        },
+        "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+      },
+      {
+        "id": "p6",
+        "type": "process",
+        "name": "Annealing in N₂",
+        "properties": {
+          "extracted_from_image": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+        },
+        "source_image_file": "512350c97a92de342cbdbc5a15b5dd7ee5011c0e109d148a7ddc48f9dab09841.jpg"
+      },
+      {
+        "id": "AEM",
+        "type": "chemical",
+        "name": "Active Ensemble Model (AEM)",
+        "properties": {
+          "description": "Central Ru-based catalytic site with surrounding ligands",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "LOM",
+        "type": "chemical",
+        "name": "Low Oxygen Coverage Model (LOM)",
+        "properties": {
+          "description": "Surface with oxygen vacancy",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "M1",
+        "type": "chemical",
+        "name": "M1 metal site",
+        "properties": {
+          "count": 4,
+          "role": "supporting metal",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "OOH",
+        "type": "chemical",
+        "name": "Hydroperoxyl group",
+        "properties": {
+          "formula": "OOH",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "OO",
+        "type": "chemical",
+        "name": "Peroxide",
+        "properties": {
+          "formula": "OO",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "O",
+        "type": "chemical",
+        "name": "Oxygen (O)",
+        "properties": {
+          "color": "yellow",
+          "description": "Oxygen elemental mapping",
+          "extracted_from_image": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+        },
+        "source_image_file": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+      },
+      {
+        "id": "CoO",
+        "type": "chemical",
+        "name": "Coordinated oxygen",
+        "properties": {
+          "formula": "M-O",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "Oxygen molecule",
+        "properties": {
+          "formula": "O2",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "H",
+        "type": "chemical",
+        "name": "Proton",
+        "properties": {
+          "formula": "H+",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "e",
+        "type": "chemical",
+        "name": "Electron",
+        "properties": {
+          "charge": "-1",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "Ov",
+        "type": "chemical",
+        "name": "Oxygen vacancy",
+        "properties": {
+          "description": "Surface defect site",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "I",
+        "type": "reaction",
+        "name": "Reaction I",
+        "properties": {
+          "equation": "OH + OH → O* + H2O + e-",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "II",
+        "type": "reaction",
+        "name": "Reaction II",
+        "properties": {
+          "equation": "H2O* → OH* + H+ + e-",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "III",
+        "type": "reaction",
+        "name": "Reaction III",
+        "properties": {
+          "equation": "O* + OH- → OOH- + e-",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "IV",
+        "type": "reaction",
+        "name": "Reaction IV",
+        "properties": {
+          "equation": "OOH- + O2- → HO2- + O + e-",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "V",
+        "type": "reaction",
+        "name": "Reaction V",
+        "properties": {
+          "equation": "H+ → e- + H+",
+          "extracted_from_image": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+        },
+        "source_image_file": "5dae6711fcd275ebef359e1116f12a25fb2786209cd01dc5e0b8880a0dc4d9fd.jpg"
+      },
+      {
+        "id": "g1",
+        "type": "property",
+        "name": "g = 2.001",
+        "properties": {
+          "value": "2.001",
+          "context": "Co₃O₄@CoRuOₓ",
+          "extracted_from_image": "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg"
+        },
+        "source_image_file": "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Magnetization vs Magnetic Field",
+        "properties": {
+          "type": "hysteresis loop",
+          "x_axis": "Magnetic Field (G)",
+          "y_axis": "Intensity (a.u.)",
+          "range_x": [
+            2500,
+            4500
+          ],
+          "extracted_from_image": "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg"
+        },
+        "source_image_file": "68e89273611a66caa4db0fc4aa466708ddfa8ac2c00f56416cfd2143e4e71ced.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "chemical",
+        "name": "O_2 = 0",
+        "properties": {
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "chemical",
+        "name": "*OOH",
+        "properties": {
+          "energy": "1.09 eV",
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "chemical",
+        "name": "M-OH + 3OH^-",
+        "properties": {
+          "energy": "1.72 eV",
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "chemical",
+        "name": "M-O^{2+} + H^-",
+        "properties": {
+          "energy": "0.34 eV",
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "n18",
+        "type": "chemical",
+        "name": "U = 1.23 V",
+        "properties": {
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "n19",
+        "type": "chemical",
+        "name": "U = -1.23 V",
+        "properties": {
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "n20",
+        "type": "chart",
+        "name": "Free Energy Diagram",
+        "properties": {
+          "type": "Pourbaix diagram",
+          "x_axis": "Reaction coordinate",
+          "y_axis": "Free Energy (eV)",
+          "extracted_from_image": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+        },
+        "source_image_file": "9f929c9fe9d44a56bfaff7a1f563cf030a64c8de97ca25fe63cd3206dfc5333e.jpg"
+      },
+      {
+        "id": "scalebar",
+        "type": "annotation",
+        "name": "500 nm scale bar",
+        "properties": {
+          "length": "500 nm",
+          "extracted_from_image": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+        },
+        "source_image_file": "c5dbec28752c4026a70089a5da7859013590854bfa7d4c1cf73a703ee0b5808b.jpg"
+      },
+      {
+        "id": "bonding_states",
+        "type": "electronic_state",
+        "name": "Bonding States",
+        "properties": {
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "antibonding_states",
+        "type": "electronic_state",
+        "name": "Antibonding States",
+        "properties": {
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "energy_co",
+        "type": "energy_level",
+        "name": "E = -1.64 eV",
+        "properties": {
+          "value": "-1.64 eV",
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "energy_ruo2",
+        "type": "energy_level",
+        "name": "E = -3.16 eV",
+        "properties": {
+          "value": "-3.16 eV",
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "delta_e",
+        "type": "energy_difference",
+        "name": "ΔE",
+        "properties": {
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "ad_3_24",
+        "type": "energy_level",
+        "name": "3.24 eV",
+        "properties": {
+          "value": "3.24 eV",
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "ad_2_93",
+        "type": "energy_level",
+        "name": "2.93 eV",
+        "properties": {
+          "value": "2.93 eV",
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "ad_1_81",
+        "type": "energy_level",
+        "name": "-1.81 eV",
+        "properties": {
+          "value": "-1.81 eV",
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "interatomic_distance",
+        "type": "parameter",
+        "name": "Internuclear Distance",
+        "properties": {
+          "unit": "Å",
+          "values": [
+            "3.18 Å"
+          ],
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "chart_left",
+        "type": "characterization",
+        "name": "Co DOS Plot",
+        "properties": {
+          "description": "Density of states for Co, showing bonding and antibonding states",
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "chart_right",
+        "type": "characterization",
+        "name": "RuO2 DOS Plot",
+        "properties": {
+          "description": "Density of states for RuO2, showing bonding and antibonding states",
+          "extracted_from_image": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+        },
+        "source_image_file": "e45e073edd3d304d2fe7953a5cbede1ead75c0bd68e433210a0742a37111ca50.jpg"
+      },
+      {
+        "id": "nanofibers",
+        "type": "material",
+        "name": "Nanofiber Network",
+        "properties": {
+          "morphology": "interconnected fibrillar/needle-like structures",
+          "diameter_range": "sub-micron scale",
+          "arrangement": "dense, porous network",
+          "extracted_from_image": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+        },
+        "source_image_file": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+      },
+      {
+        "id": "nanoparticles",
+        "type": "material",
+        "name": "Surface Nanoparticles",
+        "properties": {
+          "location": "attached to nanofiber tips/surfaces",
+          "size": "nano-scale",
+          "morphology": "spherical/aggregated",
+          "extracted_from_image": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+        },
+        "source_image_file": "f866a18ae543de3af2a7ef15f6869420d967ab4cc3b93b3801e16a15f2d342d6.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4@CoRuOx_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4@CoRuOx",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "e1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "e1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "e1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "e1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "e1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "e2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "e2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "e2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "e1",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "e2",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "e3",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "e3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "e3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "e3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "e3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "inset_of"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "material",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "scale_bar",
+        "target_id": "material",
+        "type": "scales"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "scale_bar_5nm",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "region1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "region2",
+        "type": "contains"
+      },
+      {
+        "source_id": "region1",
+        "target_id": "lattice_spacing_3.09A",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "region1",
+        "target_id": "scale_bar_5nm",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "region2",
+        "target_id": "scale_bar_5nm",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "1M-KOH",
+        "target_id": "plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "3M-KOH",
+        "target_id": "plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "5M-KOH",
+        "target_id": "plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "1M-PBS",
+        "target_id": "plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "plot",
+        "type": "evaluated"
+      },
+      {
+        "source_id": "Co3S4",
+        "target_id": "plot",
+        "type": "evaluated"
+      },
+      {
+        "source_id": "CuCo2S4",
+        "target_id": "plot",
+        "type": "evaluated"
+      },
+      {
+        "source_id": "CuCo2O4",
+        "target_id": "plot",
+        "type": "evaluated"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "plot",
+        "type": "evaluated"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "plot",
+        "type": "reference"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "p1",
+        "type": "used_in"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "p1",
+        "type": "used_in"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "p1",
+        "type": "used_in"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p2",
+        "type": "input_to"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "p3",
+        "type": "input_to"
+      },
+      {
+        "source_id": "p3",
+        "target_id": "char_7",
+        "type": "produces"
+      },
+      {
+        "source_id": "p4",
+        "target_id": "p3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "p5",
+        "type": "input_to"
+      },
+      {
+        "source_id": "p5",
+        "target_id": "n7",
+        "type": "produces"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n7",
+        "type": "substrate_for"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p6",
+        "type": "input_to"
+      },
+      {
+        "source_id": "p6",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "produces"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "char_9",
+        "type": "contains"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "M1",
+        "type": "contains"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "chem_water",
+        "type": "binds"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "OOH",
+        "type": "binds"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "CoO",
+        "type": "binds"
+      },
+      {
+        "source_id": "LOM",
+        "target_id": "Ov",
+        "type": "contains"
+      },
+      {
+        "source_id": "LOM",
+        "target_id": "M1",
+        "type": "contains"
+      },
+      {
+        "source_id": "LOM",
+        "target_id": "chem_water",
+        "type": "binds"
+      },
+      {
+        "source_id": "chem_water",
+        "target_id": "O",
+        "type": "produces"
+      },
+      {
+        "source_id": "I",
+        "target_id": "chem_water",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_water",
+        "target_id": "chem_water",
+        "type": "consumes"
+      },
+      {
+        "source_id": "O",
+        "target_id": "OOH",
+        "type": "produces"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "M1",
+        "type": "coordinated_with"
+      },
+      {
+        "source_id": "AEM",
+        "target_id": "LOM",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "g1",
+        "type": "has_g_factor"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "chart",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chart",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "chem_Co3O4",
+        "type": "features"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "subpeak"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "subpeak"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n7",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n8",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n9",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n10",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n11",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n13",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n14",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "char_7",
+        "type": "includes"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "highlights"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "highlights"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "calibrates"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "chem_Co3O4",
+        "type": "core_component"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Co3O4",
+        "type": "shell_component"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "chem_RuO2",
+        "type": "component"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_RuO2",
+        "type": "component"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "chem_Co3O4",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "chem_RuO2",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "annotates"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n8",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n8",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n8",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n9",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n9",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n9",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "n9",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n8",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n10",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n11",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n12",
+        "type": "has_tafel"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n13",
+        "type": "has_tafel"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n14",
+        "type": "vs_electrode"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n14",
+        "type": "vs_electrode"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n14",
+        "type": "vs_electrode"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n14",
+        "type": "vs_electrode"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_7",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n7",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "char_7",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n7",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "char_7",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n7",
+        "type": "measured"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "measured"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n8",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n8",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n8",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n20",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n20",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n20",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "references"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "n9",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n15",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "char_7",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n10",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n7",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n16",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n16",
+        "target_id": "n8",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n17",
+        "type": "references"
+      },
+      {
+        "source_id": "n19",
+        "target_id": "n17",
+        "type": "references"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n15",
+        "type": "condition"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n16",
+        "type": "condition"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "component"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "component"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "char_7",
+        "type": "measured_property"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "defines"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_7",
+        "type": "condition"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "char_7",
+        "type": "condition"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n4",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_7",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n7",
+        "type": "contains_oxidation_state"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n8",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n4",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n4",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "n9",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n9",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "identified_in"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "scalebar",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "chem_Co3O4",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "char_9",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "O",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "O",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n4",
+        "type": "has_fringe"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "has_fringe"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "char_7",
+        "type": "includes"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "coexists_with"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co3O4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_RuO2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "char_7",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chart_left",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chart_right",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "energy_co",
+        "type": "has_energy_level"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "energy_ruo2",
+        "type": "has_energy_level"
+      },
+      {
+        "source_id": "chart_left",
+        "target_id": "bonding_states",
+        "type": "shows"
+      },
+      {
+        "source_id": "chart_left",
+        "target_id": "antibonding_states",
+        "type": "shows"
+      },
+      {
+        "source_id": "chart_right",
+        "target_id": "bonding_states",
+        "type": "shows"
+      },
+      {
+        "source_id": "chart_right",
+        "target_id": "antibonding_states",
+        "type": "shows"
+      },
+      {
+        "source_id": "bonding_states",
+        "target_id": "antibonding_states",
+        "type": "energy_separation"
+      },
+      {
+        "source_id": "antibonding_states",
+        "target_id": "ad_3_24",
+        "type": "has_level"
+      },
+      {
+        "source_id": "antibonding_states",
+        "target_id": "ad_2_93",
+        "type": "has_level"
+      },
+      {
+        "source_id": "bonding_states",
+        "target_id": "ad_1_81",
+        "type": "has_level"
+      },
+      {
+        "source_id": "chart_left",
+        "target_id": "interatomic_distance",
+        "type": "parameterized_by"
+      },
+      {
+        "source_id": "chart_right",
+        "target_id": "interatomic_distance",
+        "type": "parameterized_by"
+      },
+      {
+        "source_id": "energy_co",
+        "target_id": "energy_ruo2",
+        "type": "compared_by"
+      },
+      {
+        "source_id": "energy_co",
+        "target_id": "delta_e",
+        "type": "part_of"
+      },
+      {
+        "source_id": "energy_ruo2",
+        "target_id": "delta_e",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "shows"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_7",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_RuO2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "chem_RuO2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_RuO2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n8",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "chem_Co3O4_CoRuOx",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n10",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n10",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "chem_Co3O4_RuOx",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_9",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_9",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "char_9",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "char_9",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_9",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "char_9",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "nanofibers",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "nanofibers",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "nanoparticles",
+        "type": "depicts"
+      },
+      {
+        "source_id": "nanofibers",
+        "target_id": "nanoparticles",
+        "type": "decorated_with"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n7",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n8",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n9",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n10",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "chem_Co3O4_RuOx",
+        "target_id": "n9",
+        "type": "has_peak_contribution"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "has_peak_contribution"
+      },
+      {
+        "source_id": "chem_Co3O4_CoRuOx",
+        "target_id": "n9",
+        "type": "has_peak_contribution"
+      },
+      {
+        "source_id": "chem_Co3O4",
+        "target_id": "n7",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "chem_RuO2",
+        "target_id": "n7",
+        "type": "exhibits_peak"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+schema_version: 1
+id: T003
+title: Run approved single-owner calculation
+role: engine-runner
+role_contract: procedures/research-orchestrator/references/roles.md#engine-runner
+skill: vasp
+status: accepted
+depends_on:
+  - T002
+approval: expensive_hpc_submission
+inputs:
+  - artifact_id: model-observable-decision
+    min_status: accepted
+can_read:
+  - artifact_id: model-observable-decision
+can_write:
+  - artifact_type: parser-result
+cannot:
+  - change the accepted model-observable decision
+  - launch competing production submissions for the same objective
+outputs_expected:
+  - artifact_id: parser-result
+    type: parser-result
+    path: work/parser-result.json
+success_criteria:
+  - preflight passed before submit
+  - parser result records convergence status and units
+knowledge_required:
+  - knowledge/periodic-dft-modeling.md
+required_refs:
+  - tools/vasp/SKILL.md
+  - tools/vasp/references/validation.md
+  - tools/hpc-submit/SKILL.md
+required_checks: []
+release_gates:
+  - engine-parser-validation
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions:
+  - Example result is a fixture, not a real VASP calculation.
+provenance:
+  - work/model-observable-decision.md

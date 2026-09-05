@@ -1,0 +1,122 @@
+{
+  "synthesis": {
+    "nodes": [],
+    "edges": [],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [],
+    "edges": []
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "nanoparticles",
+        "type": "chemical",
+        "name": "Metal Nanoparticles",
+        "properties": {
+          "description": "Greenish metallic nanoparticles, likely gold or platinum, depicted as spheres",
+          "extracted_from_image": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+        },
+        "source_image_file": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+      },
+      {
+        "id": "molecule",
+        "type": "chemical",
+        "name": "Tripodal Ligand-Protected Cluster",
+        "properties": {
+          "description": "Central molecular structure with tripod-like legs connecting to central core, black atoms likely carbon, blue atoms likely nitrogen or oxygen",
+          "extracted_from_image": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+        },
+        "source_image_file": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+      },
+      {
+        "id": "central_core",
+        "type": "chemical",
+        "name": "Molecular Core",
+        "properties": {
+          "description": "Bright cyan glowing core where laser interacts with molecule, possibly metal cluster or active site",
+          "extracted_from_image": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+        },
+        "source_image_file": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+      },
+      {
+        "id": "laser",
+        "type": "instrument",
+        "name": "Green Laser",
+        "properties": {
+          "description": "Green laser beam focused on molecular core, likely for activation or spectroscopy",
+          "extracted_from_image": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+        },
+        "source_image_file": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+      },
+      {
+        "id": "bubbles",
+        "type": "phenomenon",
+        "name": "Gas Bubbles",
+        "properties": {
+          "description": "Bubbles emanating from laser-molecule interaction site, indicating catalytic gas evolution (e.g., H2 or O2)",
+          "extracted_from_image": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+        },
+        "source_image_file": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+      },
+      {
+        "id": "pipette",
+        "type": "instrument",
+        "name": "Pipette Dispenser",
+        "properties": {
+          "description": "Dispensing liquid containing nanoparticles and molecules into solution",
+          "extracted_from_image": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+        },
+        "source_image_file": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+      },
+      {
+        "id": "solution",
+        "type": "chemical",
+        "name": "Nanoparticle Dispersion",
+        "properties": {
+          "description": "Aqueous or solvent-based dispersion of ligand-protected nanoparticles",
+          "extracted_from_image": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+        },
+        "source_image_file": "8ba47beae860abf63588ef8a92169fdb8a967e2a47f9c2c5644e60f946e42f30.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "pipette",
+        "target_id": "solution",
+        "type": "dispenses"
+      },
+      {
+        "source_id": "solution",
+        "target_id": "nanoparticles",
+        "type": "contains"
+      },
+      {
+        "source_id": "solution",
+        "target_id": "molecule",
+        "type": "contains"
+      },
+      {
+        "source_id": "nanoparticles",
+        "target_id": "molecule",
+        "type": "surrounds"
+      },
+      {
+        "source_id": "molecule",
+        "target_id": "central_core",
+        "type": "contains"
+      },
+      {
+        "source_id": "laser",
+        "target_id": "central_core",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "central_core",
+        "target_id": "bubbles",
+        "type": "generates"
+      }
+    ]
+  }
+}

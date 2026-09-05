@@ -1,0 +1,1963 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_polycrystalline_Au",
+        "type": "chemical",
+        "name": "polycrystalline gold Au electrode",
+        "aliases": [
+          "Au",
+          "Au working electrode",
+          "Au electrodes"
+        ],
+        "formula": "Au",
+        "properties": {},
+        "related_images": [
+          "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg",
+          "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Electrode Image",
+            "properties": {
+              "figure_part": "b",
+              "description": "Striped electrode structure image",
+              "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+            },
+            "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Au Electrode",
+            "properties": {
+              "description": "Gold electrode surface",
+              "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+            },
+            "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_sodium_phosphate",
+        "type": "chemical",
+        "name": "sodium phosphate",
+        "aliases": [
+          "0.1 M sodium phosphate",
+          "Na₂HPO₄/NaH₂PO₄"
+        ],
+        "composition": {
+          "concentration": {
+            "value": 0.1,
+            "unit": "M"
+          }
+        },
+        "properties": {
+          "pH": {
+            "value": 7.2,
+            "unit": "pH units"
+          }
+        }
+      },
+      {
+        "id": "chem_polycrystalline_Ag",
+        "type": "chemical",
+        "name": "silver working electrode",
+        "aliases": [
+          "silver",
+          "Ag"
+        ],
+        "formula": "Ag",
+        "properties": {}
+      }
+    ],
+    "edges": [],
+    "catalyst_tested_ids": [
+      "chem_polycrystalline_Ag"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_polycrystalline_Au",
+        "type": "chemical",
+        "name": "polycrystalline gold",
+        "aliases": [
+          "Au",
+          "gold electrode",
+          "polycrystalline Au"
+        ],
+        "formula": "Au"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_polycrystalline_Au",
+        "description": "HER performance in neutral 0.1 M sodium phosphate electrolyte (pH 7.2) under silent conditions",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M Na2HPO4/NaH2PO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7.2,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "circular polycrystalline Au",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": "unspecified",
+            "unit": "LSV"
+          },
+          "acoustic_condition": {
+            "value": "silent",
+            "unit": "no SRBW"
+          }
+        },
+        "results_json": {
+          "Tafel_slope": {
+            "value": 0.48,
+            "unit": "V/dec"
+          },
+          "current_density_at_1V": {
+            "value": -11.8,
+            "unit": "mA/cm²"
+          },
+          "overpotential_shift_reference": {
+            "value": 0,
+            "unit": "V"
+          }
+        },
+        "source_text": "Linear sweep voltammograms (LSV) for HER in neutral 0.1 M Na2HPO4/NaH2PO4 electrolyte (pH 7.2) on polycrystalline Au under silent conditions... Tafel slope from 0.480 V dec−1 under silent conditions... at −1 V, the current density... from −11.8 to −164.4 mA cm−2."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_polycrystalline_Au",
+        "description": "HER performance in neutral 0.1 M sodium phosphate (pH 7.2) with SRBW 20 dBm",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M Na2HPO4/NaH2PO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7.2,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "circular polycrystalline Au",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "SRBW_power": {
+            "value": 20,
+            "unit": "dBm"
+          },
+          "SRBW_frequency": {
+            "value": 10,
+            "unit": "MHz"
+          },
+          "scan_rate": {
+            "value": "unspecified",
+            "unit": "LSV"
+          }
+        },
+        "results_json": {
+          "Tafel_slope": {
+            "value": 0.184,
+            "unit": "V/dec"
+          },
+          "current_density_at_1V": {
+            "value": -164.4,
+            "unit": "mA/cm²"
+          },
+          "overpotential_at_1_mA/cm2": {
+            "value": 0.2,
+            "unit": "V"
+          },
+          "overpotential_at_10_mA/cm2": {
+            "value": 0.4,
+            "unit": "V"
+          },
+          "overpotential_shift_at_10_mA/cm2": {
+            "value": -0.52,
+            "unit": "V"
+          },
+          "overpotential_shift_at_100_mA/cm2": {
+            "value": -1.37,
+            "unit": "V"
+          },
+          "current_density_increase_at_1V": {
+            "value": 14,
+            "unit": "fold"
+          }
+        },
+        "source_text": "with 20 dBm SRBW, the system requires a 0.2 V overpotential to reach a current density of −1 mA cm−2... For −10 mA cm−2, the requisite overpotential of 0.4 V... overpotential is reduced... 0.52 and 1.37 V for current densities of −10 and −100 mA cm−2... Tafel slope... 0.184 V dec−1... current density increases by ≈14-fold... from −11.8 to −164.4 mA cm−2."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_polycrystalline_Au",
+        "description": "HER stability test in neutral electrolyte with SRBW",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M sodium phosphate",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "chronopotentiometry",
+            "unit": "stability"
+          },
+          "duration": {
+            "value": 6,
+            "unit": "h"
+          },
+          "acoustic_excitation": {
+            "value": "SRBW",
+            "unit": "present"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "extremely stable",
+            "unit": "6h"
+          }
+        },
+        "source_text": "the electrolytic reaction under the SRBW was extremely stable, as confirmed by the chronopotentiometry results over 6 h in Figure S9."
+      },
+      {
+        "id": "chem_polycrystalline_Ag",
+        "type": "chemical",
+        "name": "polycrystalline silver",
+        "aliases": [
+          "Ag",
+          "silver"
+        ],
+        "formula": "Ag"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_polycrystalline_Ag",
+        "description": "HER performance on polycrystalline Ag with SRBW excitation in neutral electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M sodium phosphate",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7.2,
+            "unit": "pH"
+          },
+          "working_electrode": {
+            "value": "polycrystalline Ag",
+            "unit": "electrode"
+          },
+          "acoustic_excitation": {
+            "value": "SRBW",
+            "unit": "present"
+          }
+        },
+        "results_json": {
+          "performance_trend": {
+            "value": "similar increase in performance",
+            "unit": "qualitative"
+          },
+          "overpotential_reduction": {
+            "value": "observed",
+            "unit": "qualitative"
+          },
+          "current_density_increase": {
+            "value": "observed",
+            "unit": "qualitative"
+          }
+        },
+        "source_text": "experiments performed using silver as the working electrode instead of gold... yield similar increases in electrocatalytic performance and trends under the SRBW excitation, namely a reduction in the overpotential coupled with an increase in current density (Figure S4, Supporting Information)."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_polycrystalline_Au_test_1",
+        "type": "tested_in",
+        "source_id": "chem_polycrystalline_Au",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_polycrystalline_Au_test_2",
+        "type": "tested_in",
+        "source_id": "chem_polycrystalline_Au",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_polycrystalline_Au_test_3",
+        "type": "tested_in",
+        "source_id": "chem_polycrystalline_Au",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_polycrystalline_Ag_test_4",
+        "type": "tested_in",
+        "source_id": "chem_polycrystalline_Ag",
+        "target_id": "test_4",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_polycrystalline_Au",
+        "type": "chemical",
+        "name": "polycrystalline gold Au electrode",
+        "aliases": [
+          "Au",
+          "Au working electrode",
+          "Au electrodes"
+        ],
+        "formula": "Au",
+        "properties": {}
+      },
+      {
+        "id": "chem_polycrystalline_Ag",
+        "type": "chemical",
+        "name": "silver working electrode",
+        "aliases": [
+          "silver",
+          "Ag"
+        ],
+        "formula": "Ag",
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "X-ray diffraction pattern confirms polycrystalline nature of the Au electrode (Figure S1).",
+        "evidence_snippet": "on polycrystalline gold Au electrodes (as confirmed by the x-ray diffraction pattern in Figure S1, Supporting Information)"
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "XPS confirms absence of Pt deposition on the Au working electrode (Figure S6).",
+        "evidence_snippet": "absence of any evidence of Pt deposition on the Au working electrode, as confirmed from the X-ray photoelectron spectroscopy (XPS) measurements on the electrode in Figure S6 (Supporting Information)"
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "Raman",
+        "data_reported": true,
+        "characterization_summary": "Deconvoluted Raman spectra (3000-3800 cm⁻¹) show SRBW excitation increases 'free' water peak (3624 cm⁻¹) by 61.3% and decreases rigid tetrahedral water peak by 25.4% at -8 mA cm⁻² at Au electrode-electrolyte interface.",
+        "evidence_snippet": "Figure 4a,b shows results from the Raman spectra across the wavenumber range 3000 - 3800 cm⁻¹ corresponding to the hydrogen bond structure of the water molecules at the electrode-electrolyte interface under both silent and in situ SRBW conditions.",
+        "related_images": [
+          "022181366d5161868bb1276b56dad209b6efe6dee187b94445b183e6e78fca94.jpg",
+          "4ca09220fd048aeefb2ab496024886158ccb00b6057d13cdef7ee4007df677ff.jpg",
+          "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "ORR Polarization Curve",
+            "properties": {
+              "description": "Tafel plot of log|j| vs potential (V-IR vs RHE)",
+              "x_axis": "log|j| (mA cm⁻²)^(1/2)",
+              "y_axis": "Potential (V-IR vs RHE)",
+              "range_x": [
+                -2.5,
+                0
+              ],
+              "range_y": [
+                -0.4,
+                1.0
+              ],
+              "extracted_from_image": "022181366d5161868bb1276b56dad209b6efe6dee187b94445b183e6e78fca94.jpg"
+            },
+            "source_image_file": "022181366d5161868bb1276b56dad209b6efe6dee187b94445b183e6e78fca94.jpg"
+          },
+          {
+            "type": "dataset",
+            "name": "Silent",
+            "properties": {
+              "color": "black",
+              "description": "Baseline/reference condition",
+              "extracted_from_image": "022181366d5161868bb1276b56dad209b6efe6dee187b94445b183e6e78fca94.jpg"
+            },
+            "source_image_file": "022181366d5161868bb1276b56dad209b6efe6dee187b94445b183e6e78fca94.jpg"
+          },
+          {
+            "type": "dataset",
+            "name": "10 dB",
+            "properties": {
+              "color": "green",
+              "description": "10 decibel condition",
+              "extracted_from_image": "022181366d5161868bb1276b56dad209b6efe6dee187b94445b183e6e78fca94.jpg"
+            },
+            "source_image_file": "022181366d5161868bb1276b56dad209b6efe6dee187b94445b183e6e78fca94.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Silent Water Spectrum",
+            "properties": {
+              "description": "Broad peak around 3400 cm⁻¹",
+              "intensity_scale": "10 cps",
+              "units": "arb. units",
+              "color": "black",
+              "extracted_from_image": "4ca09220fd048aeefb2ab496024886158ccb00b6057d13cdef7ee4007df677ff.jpg"
+            },
+            "source_image_file": "4ca09220fd048aeefb2ab496024886158ccb00b6057d13cdef7ee4007df677ff.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Free Water Peaks",
+            "properties": {
+              "description": "Multiple Gaussian peaks (orange, cyan, light cyan, light orange)",
+              "position": "~3400 cm⁻¹",
+              "type": "deconvoluted peaks",
+              "extracted_from_image": "4ca09220fd048aeefb2ab496024886158ccb00b6057d13cdef7ee4007df677ff.jpg"
+            },
+            "source_image_file": "4ca09220fd048aeefb2ab496024886158ccb00b6057d13cdef7ee4007df677ff.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Sample Spectrum",
+            "properties": {
+              "description": "Black spectrum with deconvoluted peaks",
+              "intensity_scale": "8 mA cm²",
+              "units": "arb. units",
+              "extracted_from_image": "4ca09220fd048aeefb2ab496024886158ccb00b6057d13cdef7ee4007df677ff.jpg"
+            },
+            "source_image_file": "4ca09220fd048aeefb2ab496024886158ccb00b6057d13cdef7ee4007df677ff.jpg"
+          },
+          {
+            "type": "material",
+            "name": "SRBW",
+            "properties": {
+              "description": "Sample or material labeled SRBW",
+              "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+            },
+            "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Free Water",
+            "properties": {
+              "description": "Free water component in SRBW",
+              "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+            },
+            "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "IR Spectrum (Positive)",
+            "properties": {
+              "description": "Upper infrared spectrum panel",
+              "intensity_units": "cps (arbitrary units)",
+              "current_scale": "-1 mA cm⁻²",
+              "wavenumber_range": "3000-3800 cm⁻¹",
+              "peaks": "Multiple peaks around 3200-3400 cm⁻¹",
+              "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+            },
+            "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+          }
+        ]
+      },
+      {
+        "id": "n4",
+        "type": "characterization",
+        "name": "IR Spectrum (Negative)",
+        "properties": {
+          "description": "Lower infrared spectrum panel",
+          "intensity_units": "arbitrary units",
+          "current_scale": "-8 mA cm⁻²",
+          "wavenumber_range": "3000-3800 cm⁻¹",
+          "peaks": "Multiple peaks around 3200-3400 cm⁻¹",
+          "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+        },
+        "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "peak",
+        "name": "SRBW Peak Cluster",
+        "properties": {
+          "wavenumber": "~3200-3400 cm⁻¹",
+          "color": "black",
+          "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+        },
+        "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "peak",
+        "name": "Free Water Peak Cluster",
+        "properties": {
+          "wavenumber": "~3300-3500 cm⁻¹",
+          "color": "orange",
+          "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+        },
+        "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "peak",
+        "name": "Shaded Peak 1",
+        "properties": {
+          "wavenumber": "~3150-3350 cm⁻¹",
+          "color": "dark cyan",
+          "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+        },
+        "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "peak",
+        "name": "Shaded Peak 2",
+        "properties": {
+          "wavenumber": "~3250-3450 cm⁻¹",
+          "color": "cyan",
+          "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+        },
+        "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node1",
+        "type": "condition",
+        "name": "Silent",
+        "properties": {
+          "current_density": "-1 mA cm⁻²",
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node2",
+        "type": "condition",
+        "name": "SRBW",
+        "properties": {
+          "current_density": "-1 mA cm⁻²",
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node3",
+        "type": "condition",
+        "name": "Silent",
+        "properties": {
+          "current_density": "-8 mA cm⁻²",
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node4",
+        "type": "condition",
+        "name": "SRBW",
+        "properties": {
+          "current_density": "-8 mA cm⁻²",
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node5",
+        "type": "peak",
+        "name": "Peak 1",
+        "properties": {
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node6",
+        "type": "peak",
+        "name": "Peak 2",
+        "properties": {
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node7",
+        "type": "peak",
+        "name": "Peak 3",
+        "properties": {
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node8",
+        "type": "peak",
+        "name": "Peak 4",
+        "properties": {
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node9",
+        "type": "peak",
+        "name": "Peak 5",
+        "properties": {
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f_node10",
+        "type": "chart",
+        "name": "Stacked Area Chart",
+        "properties": {
+          "y_axis": "Peak Area (%)",
+          "x_axis": "Current Density",
+          "figure_label": "d",
+          "extracted_from_image": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+        },
+        "source_image_file": "06e8dbb544c951eef41b5c93dcc75b4346a1b7fc60f663e5e3d35a5ec3e90e5f.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "LSV Plot",
+        "properties": {
+          "description": "Linear Sweep Voltammetry plot of ΔPotential vs Current Density",
+          "x_axis": "Current Density (from -10 mA/cm² to -100 mA/cm²)",
+          "y_axis": "ΔPotential (V)",
+          "label": "C",
+          "extracted_from_image": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+        },
+        "source_image_file": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+      },
+      {
+        "id": "10dbm",
+        "type": "condition",
+        "name": "10 dBm",
+        "properties": {
+          "color": "light green",
+          "data_points": [
+            {
+              "current": "-10 mA/cm²",
+              "potential": "0.14 V"
+            },
+            {
+              "current": "-100 mA/cm²",
+              "potential": "1.37 V"
+            }
+          ],
+          "extracted_from_image": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+        },
+        "source_image_file": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+      },
+      {
+        "id": "15dbm",
+        "type": "condition",
+        "name": "15 dBm",
+        "properties": {
+          "color": "pink",
+          "data_points": [
+            {
+              "current": "-10 mA/cm²",
+              "potential": "0.25 V"
+            },
+            {
+              "current": "-100 mA/cm²",
+              "potential": "1.02 V"
+            }
+          ],
+          "extracted_from_image": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+        },
+        "source_image_file": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+      },
+      {
+        "id": "20dbm",
+        "type": "condition",
+        "name": "20 dBm",
+        "properties": {
+          "color": "orange",
+          "data_points": [
+            {
+              "current": "-10 mA/cm²",
+              "potential": "0.14 V"
+            },
+            {
+              "current": "-25 mA/cm²",
+              "potential": "0.52 V"
+            },
+            {
+              "current": "-100 mA/cm²",
+              "potential": "0.55 V"
+            }
+          ],
+          "extracted_from_image": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+        },
+        "source_image_file": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+      },
+      {
+        "id": "power_levels",
+        "type": "parameter",
+        "name": "Power Levels",
+        "properties": {
+          "values": [
+            "10 dBm",
+            "15 dBm",
+            "20 dBm"
+          ],
+          "unit": "dBm",
+          "extracted_from_image": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+        },
+        "source_image_file": "14f592511a1667a84691d9ffe6b85eaa311608ff16dc3a0317613a14d5ad21f1.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "Microscopy Image",
+        "properties": {
+          "description": "Grayscale image showing dark spherical particles on light background",
+          "scale_bar": "present",
+          "extracted_from_image": "b2c01a063ff2b7998f34df354e6406d001f416a72b80a9cb5610d458cf3aa87e.jpg"
+        },
+        "source_image_file": "b2c01a063ff2b7998f34df354e6406d001f416a72b80a9cb5610d458cf3aa87e.jpg"
+      },
+      {
+        "id": "droplets",
+        "type": "chemical",
+        "name": "Liquid Droplets",
+        "properties": {
+          "description": "Multiple spherical droplets visible on substrate surface",
+          "count": "6+",
+          "shape": "circular/spherical",
+          "contrast": "high (dark on light background)",
+          "extracted_from_image": "ad3d0b1a663b89a7f7661b02698df75c67ee6b9049e1629cf3768423196aae0f.jpg"
+        },
+        "source_image_file": "ad3d0b1a663b89a7f7661b02698df75c67ee6b9049e1629cf3768423196aae0f.jpg"
+      },
+      {
+        "id": "substrate",
+        "type": "material",
+        "name": "Substrate Surface",
+        "properties": {
+          "description": "Flat background surface hosting the droplets",
+          "texture": "smooth/gray",
+          "extracted_from_image": "ad3d0b1a663b89a7f7661b02698df75c67ee6b9049e1629cf3768423196aae0f.jpg"
+        },
+        "source_image_file": "ad3d0b1a663b89a7f7661b02698df75c67ee6b9049e1629cf3768423196aae0f.jpg"
+      },
+      {
+        "id": "timepoint",
+        "type": "parameter",
+        "name": "Time Point",
+        "properties": {
+          "value": "0.04 s",
+          "position": "top-left annotation",
+          "extracted_from_image": "ad3d0b1a663b89a7f7661b02698df75c67ee6b9049e1629cf3768423196aae0f.jpg"
+        },
+        "source_image_file": "ad3d0b1a663b89a7f7661b02698df75c67ee6b9049e1629cf3768423196aae0f.jpg"
+      },
+      {
+        "id": "scalebar",
+        "type": "characterization",
+        "name": "Scale Bar",
+        "properties": {
+          "description": "White scale bar in lower right corner",
+          "length": "unknown (not labeled numerically)",
+          "extracted_from_image": "ad3d0b1a663b89a7f7661b02698df75c67ee6b9049e1629cf3768423196aae0f.jpg"
+        },
+        "source_image_file": "ad3d0b1a663b89a7f7661b02698df75c67ee6b9049e1629cf3768423196aae0f.jpg"
+      },
+      {
+        "id": "feature",
+        "type": "feature",
+        "name": "Highlighted circular feature",
+        "properties": {
+          "description": "Orange-circled bright spot, possibly a specific particle or nanoparticle of interest",
+          "extracted_from_image": "2dfefa8706eca5f95f13f8905c3a510c8a5b5f0a1541e42d8000465c312cd667.jpg"
+        },
+        "source_image_file": "2dfefa8706eca5f95f13f8905c3a510c8a5b5f0a1541e42d8000465c312cd667.jpg"
+      },
+      {
+        "id": "particles",
+        "type": "chemical",
+        "name": "Spherical Particles",
+        "properties": {
+          "shape": "spherical",
+          "appearance": "dark blobs suggesting nanoparticles or microspheres",
+          "count": "multiple (approx. 5-6 visible)",
+          "extracted_from_image": "b2c01a063ff2b7998f34df354e6406d001f416a72b80a9cb5610d458cf3aa87e.jpg"
+        },
+        "source_image_file": "b2c01a063ff2b7998f34df354e6406d001f416a72b80a9cb5610d458cf3aa87e.jpg"
+      },
+      {
+        "id": "nanoparticles",
+        "type": "chemical",
+        "name": "Nanoparticles",
+        "properties": {
+          "description": "Multiple nanoparticles visible as dark spots on gray background",
+          "count": "several",
+          "highlighted": "three particles circled in magenta, cyan, and orange",
+          "extracted_from_image": "40292cab1302c8559b36071bcf4f7b6b50f735ddfcadb1bd6b7f66ff9fd5fb06.jpg"
+        },
+        "source_image_file": "40292cab1302c8559b36071bcf4f7b6b50f735ddfcadb1bd6b7f66ff9fd5fb06.jpg"
+      },
+      {
+        "id": "particle_magenta",
+        "type": "chemical",
+        "name": "Highlighted Nanoparticle (Magenta)",
+        "properties": {
+          "color": "magenta circle",
+          "position": "center-left",
+          "extracted_from_image": "40292cab1302c8559b36071bcf4f7b6b50f735ddfcadb1bd6b7f66ff9fd5fb06.jpg"
+        },
+        "source_image_file": "40292cab1302c8559b36071bcf4f7b6b50f735ddfcadb1bd6b7f66ff9fd5fb06.jpg"
+      },
+      {
+        "id": "particle_cyan",
+        "type": "chemical",
+        "name": "Highlighted Nanoparticle (Cyan)",
+        "properties": {
+          "color": "cyan circle",
+          "position": "center",
+          "extracted_from_image": "40292cab1302c8559b36071bcf4f7b6b50f735ddfcadb1bd6b7f66ff9fd5fb06.jpg"
+        },
+        "source_image_file": "40292cab1302c8559b36071bcf4f7b6b50f735ddfcadb1bd6b7f66ff9fd5fb06.jpg"
+      },
+      {
+        "id": "particle_orange",
+        "type": "chemical",
+        "name": "Highlighted Nanoparticle (Orange)",
+        "properties": {
+          "color": "orange circle",
+          "position": "center-right",
+          "extracted_from_image": "40292cab1302c8559b36071bcf4f7b6b50f735ddfcadb1bd6b7f66ff9fd5fb06.jpg"
+        },
+        "source_image_file": "40292cab1302c8559b36071bcf4f7b6b50f735ddfcadb1bd6b7f66ff9fd5fb06.jpg"
+      },
+      {
+        "id": "inset",
+        "type": "characterization",
+        "name": "Magnified Inset",
+        "properties": {
+          "description": "Zoomed view highlighting single particle with arrow and circle annotation",
+          "annotation": "48 μm scale bar",
+          "extracted_from_image": "6fdebc907415a7bbd35d4a8dcf92ff0a5c8c355043bc2078784be10237e4f1f5.jpg"
+        },
+        "source_image_file": "6fdebc907415a7bbd35d4a8dcf92ff0a5c8c355043bc2078784be10237e4f1f5.jpg"
+      },
+      {
+        "id": "droplet1",
+        "type": "chemical",
+        "name": "Primary Droplet",
+        "properties": {
+          "shape": "spherical",
+          "position": "central, largest",
+          "appearance": "dark silhouette with internal feature",
+          "extracted_from_image": "81e30a41a033bf855cdb2f8bdff8609b42ac1fe87df05337f56e7ff645cda0aa.jpg"
+        },
+        "source_image_file": "81e30a41a033bf855cdb2f8bdff8609b42ac1fe87df05337f56e7ff645cda0aa.jpg"
+      },
+      {
+        "id": "droplet2",
+        "type": "chemical",
+        "name": "Secondary Droplet",
+        "properties": {
+          "shape": "spherical",
+          "position": "attached to primary droplet",
+          "size": "smaller than primary",
+          "extracted_from_image": "81e30a41a033bf855cdb2f8bdff8609b42ac1fe87df05337f56e7ff645cda0aa.jpg"
+        },
+        "source_image_file": "81e30a41a033bf855cdb2f8bdff8609b42ac1fe87df05337f56e7ff645cda0aa.jpg"
+      },
+      {
+        "id": "droplet_group",
+        "type": "chemical",
+        "name": "Background Droplet Cluster",
+        "properties": {
+          "description": "Multiple smaller droplets in lower region",
+          "count": "several",
+          "arrangement": "clustered",
+          "extracted_from_image": "81e30a41a033bf855cdb2f8bdff8609b42ac1fe87df05337f56e7ff645cda0aa.jpg"
+        },
+        "source_image_file": "81e30a41a033bf855cdb2f8bdff8609b42ac1fe87df05337f56e7ff645cda0aa.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "peak",
+        "name": "Shaded Peak 3",
+        "properties": {
+          "wavenumber": "~3350-3550 cm⁻¹",
+          "color": "light cyan",
+          "extracted_from_image": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+        },
+        "source_image_file": "a7a386e2a693c57f87adf38b6db36acbd4190c9668e102d67bd94c43284501e0.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_1",
+        "type": "chemical",
+        "name": "LiNbO3",
+        "properties": {
+          "formula": "LiNbO3",
+          "description": "Lithium Niobate",
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_2",
+        "type": "chemical",
+        "name": "IDT",
+        "properties": {
+          "description": "Interdigitated Transducer",
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_3",
+        "type": "chemical",
+        "name": "SRBW",
+        "properties": {
+          "description": "Surface Rayleigh Bulk Wave (possibly)",
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_4",
+        "type": "chemical",
+        "name": "SRBW_s",
+        "properties": {
+          "description": "Surface Rayleigh Bulk Wave s (variant)",
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_5",
+        "type": "electrode",
+        "name": "Working Electrode",
+        "properties": {
+          "description": "Striped electrode structure",
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_6",
+        "type": "electrode",
+        "name": "Reference Electrode",
+        "properties": {
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_7",
+        "type": "electrode",
+        "name": "Counter Electrode",
+        "properties": {
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_8",
+        "type": "electrolyte",
+        "name": "Neutral Electrolyte",
+        "properties": {
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_9",
+        "type": "instrument",
+        "name": "Potentiostat",
+        "properties": {
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_10",
+        "type": "instrument",
+        "name": "RF Source",
+        "properties": {
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836_12",
+        "type": "characterization",
+        "name": "CV Spectrum",
+        "properties": {
+          "figure_part": "c",
+          "description": "Cyclic Voltammetry-like spectrum",
+          "x_axis": "mV x 10^-5",
+          "y_axis": "5 to -5 (current)",
+          "color": "rainbow colormap",
+          "extracted_from_image": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+        },
+        "source_image_file": "af2f31df15e2b75cd43b179f21d65017f7b96c4907290cdd6d48c685c2476836.jpg"
+      },
+      {
+        "id": "t0",
+        "type": "label",
+        "name": "t = 0 s",
+        "properties": {
+          "time_point": "0 seconds",
+          "extracted_from_image": "b2c01a063ff2b7998f34df354e6406d001f416a72b80a9cb5610d458cf3aa87e.jpg"
+        },
+        "source_image_file": "b2c01a063ff2b7998f34df354e6406d001f416a72b80a9cb5610d458cf3aa87e.jpg"
+      },
+      {
+        "id": "silent",
+        "type": "structure",
+        "name": "Silent",
+        "properties": {
+          "description": "Silent water structure at LINO interface",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "srbw",
+        "type": "structure",
+        "name": "SRBW",
+        "properties": {
+          "description": "Structurally Relaxed Bulk Water at LINO interface",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "tetrahedral_network",
+        "type": "chemical",
+        "name": "Tetrahedral Water Network",
+        "properties": {
+          "color": "yellow",
+          "description": "Ordered tetrahedral H-bond network",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "frustrated_clusters",
+        "type": "chemical",
+        "name": "Frustrated Water Clusters",
+        "properties": {
+          "color": "red",
+          "description": "Disordered water clusters with frustrated H-bonds",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "trimeric_chain",
+        "type": "chemical",
+        "name": "Trimeric Water Chain",
+        "properties": {
+          "color": "yellow",
+          "description": "H-bonded chain of three water molecules",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "free_water",
+        "type": "chemical",
+        "name": "Free Water",
+        "properties": {
+          "color": "green",
+          "description": "Uncoordinated/mobile water molecules",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "srw",
+        "type": "chemical",
+        "name": "SRW",
+        "properties": {
+          "color": "green",
+          "description": "Structurally Relaxed Water",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "lino",
+        "type": "material",
+        "name": "LiNO₃",
+        "properties": {
+          "description": "Lithium nitrate electrolyte interface",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "h2o",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "description": "Water molecules (visualized as red/white spheres)",
+          "extracted_from_image": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+        },
+        "source_image_file": "bde5c021acf9729365f1f79ca0350aae3db156356cac4d79198b2ea2b6efb879.jpg"
+      },
+      {
+        "id": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb_node1",
+        "type": "characterization",
+        "name": "Silent condition",
+        "properties": {
+          "color": "black",
+          "description": "Reference curve under silent conditions",
+          "extracted_from_image": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+        },
+        "source_image_file": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+      },
+      {
+        "id": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb_node2",
+        "type": "characterization",
+        "name": "10 dBm ultrasound",
+        "properties": {
+          "color": "cyan",
+          "description": "Current density curve at 10 dBm ultrasound power",
+          "extracted_from_image": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+        },
+        "source_image_file": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+      },
+      {
+        "id": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb_node3",
+        "type": "characterization",
+        "name": "20 dBm ultrasound",
+        "properties": {
+          "color": "orange",
+          "description": "Current density curve at 20 dBm ultrasound power",
+          "extracted_from_image": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+        },
+        "source_image_file": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+      },
+      {
+        "id": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb_node4",
+        "type": "experiment",
+        "name": "LSV (Linear Sweep Voltammetry)",
+        "properties": {
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current Density (mA cm⁻²)",
+          "range_x": [
+            -1,
+            0
+          ],
+          "range_y": [
+            0,
+            10
+          ],
+          "extracted_from_image": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+        },
+        "source_image_file": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+      },
+      {
+        "id": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb_node5",
+        "type": "condition",
+        "name": "Ultrasound-assisted electrolysis",
+        "properties": {
+          "powers": [
+            "silent",
+            "10 dBm",
+            "20 dBm"
+          ],
+          "reference_electrode": "RHE",
+          "extracted_from_image": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+        },
+        "source_image_file": "c35650834bbfcd8b897e421ace6f7f96931ad58667521ee14046783a1551b2eb.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_polycrystalline_Au_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_polycrystalline_Au",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_polycrystalline_Au_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_polycrystalline_Au",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_polycrystalline_Au_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_polycrystalline_Au",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_polycrystalline_Ag_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_polycrystalline_Ag",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n4",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n5",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n6",
+        "type": "extracts_metric"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n7",
+        "type": "extracts_metric"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n8",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_3",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_3",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_3",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_3",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node8",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node9",
+        "type": "contains"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "contains"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node6",
+        "type": "contains"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node7",
+        "type": "contains"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node8",
+        "type": "contains"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node9",
+        "type": "contains"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node5",
+        "type": "contains"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node6",
+        "type": "contains"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node7",
+        "type": "contains"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node8",
+        "type": "contains"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node9",
+        "type": "contains"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node5",
+        "type": "contains"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node6",
+        "type": "contains"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node7",
+        "type": "contains"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node8",
+        "type": "contains"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node9",
+        "type": "contains"
+      },
+      {
+        "source_id": "node10",
+        "target_id": "node1",
+        "type": "displays"
+      },
+      {
+        "source_id": "node10",
+        "target_id": "node2",
+        "type": "displays"
+      },
+      {
+        "source_id": "node10",
+        "target_id": "node3",
+        "type": "displays"
+      },
+      {
+        "source_id": "node10",
+        "target_id": "node4",
+        "type": "displays"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "10dbm",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "15dbm",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "20dbm",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "power_levels",
+        "target_id": "10dbm",
+        "type": "defines"
+      },
+      {
+        "source_id": "power_levels",
+        "target_id": "15dbm",
+        "type": "defines"
+      },
+      {
+        "source_id": "power_levels",
+        "target_id": "20dbm",
+        "type": "defines"
+      },
+      {
+        "source_id": "image",
+        "target_id": "droplets",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "substrate",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "timepoint",
+        "type": "annotated_with"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scalebar",
+        "type": "contains"
+      },
+      {
+        "source_id": "droplets",
+        "target_id": "substrate",
+        "type": "on"
+      },
+      {
+        "source_id": "droplets",
+        "target_id": "timepoint",
+        "type": "at_time"
+      },
+      {
+        "source_id": "image",
+        "target_id": "feature",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "particles",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scalebar",
+        "type": "includes"
+      },
+      {
+        "source_id": "particles",
+        "target_id": "feature",
+        "type": "includes"
+      },
+      {
+        "source_id": "image",
+        "target_id": "nanoparticles",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "timepoint",
+        "type": "labeled_with"
+      },
+      {
+        "source_id": "nanoparticles",
+        "target_id": "particle_magenta",
+        "type": "includes"
+      },
+      {
+        "source_id": "nanoparticles",
+        "target_id": "particle_cyan",
+        "type": "includes"
+      },
+      {
+        "source_id": "nanoparticles",
+        "target_id": "particle_orange",
+        "type": "includes"
+      },
+      {
+        "source_id": "image",
+        "target_id": "particle_magenta",
+        "type": "highlights"
+      },
+      {
+        "source_id": "image",
+        "target_id": "particle_cyan",
+        "type": "highlights"
+      },
+      {
+        "source_id": "image",
+        "target_id": "particle_orange",
+        "type": "highlights"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n6",
+        "type": "generated_by"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "deconvolution_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_3",
+        "type": "represents"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_3",
+        "type": "represents"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n6",
+        "type": "generated_by"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "deconvolution_of"
+      },
+      {
+        "source_id": "image",
+        "target_id": "particles",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "timepoint",
+        "type": "labeled_with"
+      },
+      {
+        "source_id": "image",
+        "target_id": "inset",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "particles",
+        "type": "magnifies"
+      },
+      {
+        "source_id": "inset",
+        "target_id": "scalebar",
+        "type": "contains"
+      },
+      {
+        "source_id": "scalebar",
+        "target_id": "particles",
+        "type": "measures"
+      },
+      {
+        "source_id": "image",
+        "target_id": "droplet1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "droplet2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "droplet_group",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "substrate",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scalebar",
+        "type": "contains"
+      },
+      {
+        "source_id": "droplet1",
+        "target_id": "substrate",
+        "type": "on"
+      },
+      {
+        "source_id": "droplet2",
+        "target_id": "droplet1",
+        "type": "attached_to"
+      },
+      {
+        "source_id": "droplet_group",
+        "target_id": "substrate",
+        "type": "on"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_3",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_3",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_3",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "char_3",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "char_3",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "droplets",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "substrate",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scalebar",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "timepoint",
+        "type": "annotated_with"
+      },
+      {
+        "source_id": "substrate",
+        "target_id": "droplets",
+        "type": "supports"
+      },
+      {
+        "source_id": "timepoint",
+        "target_id": "droplets",
+        "type": "captured_at"
+      },
+      {
+        "source_id": "9",
+        "target_id": "5",
+        "type": "controls"
+      },
+      {
+        "source_id": "9",
+        "target_id": "6",
+        "type": "controls"
+      },
+      {
+        "source_id": "9",
+        "target_id": "7",
+        "type": "controls"
+      },
+      {
+        "source_id": "10",
+        "target_id": "2",
+        "type": "powers"
+      },
+      {
+        "source_id": "2",
+        "target_id": "1",
+        "type": "on_substrate"
+      },
+      {
+        "source_id": "3",
+        "target_id": "1",
+        "type": "propagates_on"
+      },
+      {
+        "source_id": "4",
+        "target_id": "1",
+        "type": "propagates_on"
+      },
+      {
+        "source_id": "5",
+        "target_id": "8",
+        "type": "interfaces_with"
+      },
+      {
+        "source_id": "11",
+        "target_id": "5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "12",
+        "target_id": "5",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "12",
+        "target_id": "8",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image",
+        "target_id": "t0",
+        "type": "has_label"
+      },
+      {
+        "source_id": "image",
+        "target_id": "silent",
+        "type": "has_label"
+      },
+      {
+        "source_id": "image",
+        "target_id": "particles",
+        "type": "depicts"
+      },
+      {
+        "source_id": "silent",
+        "target_id": "tetrahedral_network",
+        "type": "contains"
+      },
+      {
+        "source_id": "silent",
+        "target_id": "trimeric_chain",
+        "type": "contains"
+      },
+      {
+        "source_id": "silent",
+        "target_id": "chem_polycrystalline_Au",
+        "type": "on_surface"
+      },
+      {
+        "source_id": "silent",
+        "target_id": "lino",
+        "type": "at_interface"
+      },
+      {
+        "source_id": "srbw",
+        "target_id": "frustrated_clusters",
+        "type": "contains"
+      },
+      {
+        "source_id": "srbw",
+        "target_id": "free_water",
+        "type": "contains"
+      },
+      {
+        "source_id": "srbw",
+        "target_id": "srw",
+        "type": "contains"
+      },
+      {
+        "source_id": "srbw",
+        "target_id": "chem_polycrystalline_Au",
+        "type": "on_surface"
+      },
+      {
+        "source_id": "srbw",
+        "target_id": "lino",
+        "type": "at_interface"
+      },
+      {
+        "source_id": "tetrahedral_network",
+        "target_id": "h2o",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "frustrated_clusters",
+        "target_id": "h2o",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "trimeric_chain",
+        "target_id": "h2o",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "free_water",
+        "target_id": "h2o",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "srw",
+        "target_id": "h2o",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node4",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node5",
+        "type": "describes"
+      }
+    ]
+  }
+}

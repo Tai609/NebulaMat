@@ -1,0 +1,3021 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_ZrO2_balls",
+        "type": "chemical",
+        "name": "ZrO2 balls",
+        "aliases": [
+          "ZrO2 balls"
+        ],
+        "formula": "ZrO2",
+        "properties": {
+          "diameter": {
+            "value": 5,
+            "unit": "mm"
+          }
+        }
+      },
+      {
+        "id": "chem_ethanol",
+        "type": "chemical",
+        "name": "ethanol",
+        "aliases": [
+          "ethanol"
+        ],
+        "formula": "C2H5OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_alumina_crucible",
+        "type": "chemical",
+        "name": "alumina crucible",
+        "aliases": [
+          "alumina crucible"
+        ],
+        "formula": "Al2O3",
+        "properties": {}
+      },
+      {
+        "id": "chem_alumina_ball_10mm",
+        "type": "chemical",
+        "name": "10-mm alumina ball",
+        "aliases": [
+          "10-mm alumina ball"
+        ],
+        "formula": "Al2O3",
+        "properties": {
+          "diameter": {
+            "value": 10,
+            "unit": "mm"
+          }
+        }
+      },
+      {
+        "id": "chem_precursor_powders",
+        "type": "chemical",
+        "name": "precursor powders",
+        "aliases": [
+          "precursor powders"
+        ],
+        "properties": {
+          "amount": {
+            "value": "50-100",
+            "unit": "g"
+          }
+        },
+        "related_images": [
+          "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Precursor Set 1",
+            "properties": {
+              "description": "First set of precursor chemicals",
+              "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+            },
+            "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Precursor Set 2",
+            "properties": {
+              "description": "Second set of precursor chemicals",
+              "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+            },
+            "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Precursor Set 3",
+            "properties": {
+              "description": "Third set of precursor chemicals",
+              "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+            },
+            "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "A-Lab Solid-State Synthesis Platform",
+        "procedure": "The A-Lab robotic platform automates solid-state synthesis: precursor powders (50-100g bottles) are dispensed by automatic balance into plastic vials, mixed with ethanol and 10×5mm ZrO2 balls in dual asymmetric centrifuge (9 min, ethanol amount calculated by powder density), slurry pipetted into alumina crucibles, dried at 80°C. Dried crucibles robotically loaded into box furnaces, heated to 300°C (2°C/min ramp) then to target synthesis temperature (15°C/min ramp) with 4h dwell, naturally cooled to 100°C +10min room temp cool. Products ground with 10mm alumina ball in vertical shaker, sieved through steel mesh for XRD analysis.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Powder Dispensing",
+            "method": "Automatic Dispenser Balance",
+            "conditions": {},
+            "procedure_snippet": "Prescribed amounts of the precursor powders are dispensed into a plastic vial by an automatic dispenser balance (Quantos, Mettler Toledo)"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Slurry Preparation",
+            "method": "Dual Asymmetric Centrifugation",
+            "conditions": {
+              "time": {
+                "value": 9,
+                "unit": "min"
+              },
+              "mixing_media": {
+                "value": 10,
+                "unit": "5-mm ZrO2 balls"
+              }
+            },
+            "procedure_snippet": "mixed thoroughly with ethanol and ten 5-mm ZrO2 balls in a dual asymmetric centrifuge (Smart DAC250, Hauschild) for 9 min"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Slurry Transfer",
+            "method": "Automated Pipetting",
+            "conditions": {},
+            "procedure_snippet": "The resulting slurry is transferred with an automated pipettor (rLine LH-710969, Sartorius) into an alumina crucible"
+          },
+          {
+            "id": "unit_op_1.4",
+            "name": "Drying",
+            "method": "Closed Evaporation",
+            "conditions": {
+              "temperature": {
+                "value": 80,
+                "unit": "°C"
+              }
+            },
+            "procedure_snippet": "dried at 80°C in a closed evaporation system"
+          },
+          {
+            "id": "unit_op_1.5",
+            "name": "Pre-reaction Heating",
+            "method": "Box Furnace",
+            "conditions": {
+              "temperature": {
+                "value": 300,
+                "unit": "°C"
+              },
+              "ramp_rate": {
+                "value": 2,
+                "unit": "°C/min"
+              }
+            },
+            "procedure_snippet": "heated to 300°C with a slow ramping rate of 2°C min^-1 to raise the likelihood that any phosphate precursor has time to react before it becomes volatile"
+          },
+          {
+            "id": "unit_op_1.6",
+            "name": "Synthesis Annealing",
+            "method": "Box Furnace",
+            "conditions": {
+              "ramp_rate": {
+                "value": 15,
+                "unit": "°C/min"
+              },
+              "dwell_time": {
+                "value": 4,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "then heated to the specified synthesis temperature with a nominal ramp rate of 15°C min^-1, followed by a 4-h dwell"
+          },
+          {
+            "id": "unit_op_1.7",
+            "name": "Controlled Cooling",
+            "method": "Furnace Cooling",
+            "conditions": {
+              "final_temp": {
+                "value": 100,
+                "unit": "°C"
+              },
+              "additional_time": {
+                "value": 10,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "naturally cooled to 100°C, at which point a UR5e arm removes the samples from the furnace and waits another 10 min to allow the samples to cool to room temperature"
+          },
+          {
+            "id": "unit_op_1.8",
+            "name": "Product Grinding",
+            "method": "Vertical Shaker",
+            "conditions": {},
+            "procedure_snippet": "10-mm alumina ball placed in crucible, sent to vertical shaker that grinds samples into fine powders"
+          }
+        ],
+        "method": "Robotic Solid-State Synthesis",
+        "conditions": {
+          "precursor_amount": {
+            "value": "50-100",
+            "unit": "g"
+          },
+          "zirconia_balls": {
+            "value": 10,
+            "unit": "5-mm balls"
+          },
+          "mixing_time": {
+            "value": 9,
+            "unit": "min"
+          },
+          "drying_temp": {
+            "value": 80,
+            "unit": "°C"
+          },
+          "preheat_temp": {
+            "value": 300,
+            "unit": "°C"
+          },
+          "preheat_ramp": {
+            "value": 2,
+            "unit": "°C/min"
+          },
+          "synth_ramp": {
+            "value": 15,
+            "unit": "°C/min"
+          },
+          "dwell_time": {
+            "value": 4,
+            "unit": "h"
+          },
+          "cooling_temp": {
+            "value": 100,
+            "unit": "°C"
+          }
+        },
+        "source_text": "Robotic synthesis and characterization... The average exception rate across all stations in the A-Lab is about 3.9% over 1.5 years of operation"
+      },
+      {
+        "id": "chem_synthesis_products",
+        "type": "chemical",
+        "name": "synthesis products",
+        "aliases": [
+          "synthesis products",
+          "resulting powders"
+        ],
+        "properties": {},
+        "related_images": [
+          "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg",
+          "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg",
+          "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg",
+          "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg",
+          "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg",
+          "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Achieved Target",
+            "properties": {
+              "description": "Successfully achieved target material",
+              "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+            },
+            "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Polymer Samples",
+            "properties": {
+              "description": "Beige-colored samples in trays (likely 3D printed polymers)",
+              "labels": [
+                "16",
+                "17"
+              ],
+              "extracted_from_image": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+            },
+            "source_image_file": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "white sample containers",
+            "properties": {
+              "description": "multiple small white cylindrical containers on turntable",
+              "extracted_from_image": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+            },
+            "source_image_file": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "blue sample containers",
+            "properties": {
+              "description": "multiple blue cylindrical containers on turntable",
+              "extracted_from_image": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+            },
+            "source_image_file": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "chemical samples",
+            "properties": {
+              "description": "white cylindrical objects in holders (likely vials, tubes, or crystallized products)",
+              "count": "multiple (approx 12 visible)",
+              "state": "solid/white",
+              "extracted_from_image": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+            },
+            "source_image_file": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "White sample container 1",
+            "properties": {
+              "description": "White cylindrical container labeled 1, likely holding a chemical sample",
+              "color": "white",
+              "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+            },
+            "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "Shelf rack 2",
+            "properties": {
+              "description": "Rack or shelf labeled 2 containing multiple white containers",
+              "color": "white",
+              "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+            },
+            "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "Shelf rack 3",
+            "properties": {
+              "description": "Rack or shelf labeled 3 containing multiple containers",
+              "color": "mixed",
+              "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+            },
+            "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "White sample vials",
+            "properties": {
+              "description": "Multiple white-capped cylindrical vials arranged in trays",
+              "count": "numerous",
+              "container_type": "vials",
+              "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+            },
+            "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Blue sample racks",
+            "properties": {
+              "description": "Blue racks holding sample vials",
+              "color": "blue",
+              "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+            },
+            "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "Sample Tray",
+            "properties": {
+              "description": "Tray on workstation, possibly containing chemical samples",
+              "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+            },
+            "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_NH4H2PO4",
+        "type": "chemical",
+        "name": "ammonium dihydrogen phosphate",
+        "aliases": [
+          "NH4H2PO4"
+        ],
+        "formula": "NH4H2PO4",
+        "properties": {}
+      },
+      {
+        "id": "chem_NH42HPO4",
+        "type": "chemical",
+        "name": "(NH4)2HPO4",
+        "aliases": [
+          "(NH4)2HPO4"
+        ],
+        "formula": "(NH4)2HPO4",
+        "properties": {
+          "decomposition_temperature": {
+            "value": 450,
+            "unit": "°C"
+          }
+        }
+      },
+      {
+        "id": "chem_CaFe2P2O9",
+        "type": "chemical",
+        "name": "CaFe2P2O9",
+        "aliases": [
+          "CaFe2P2O9"
+        ],
+        "formula": "CaFe2P2O9",
+        "properties": {}
+      },
+      {
+        "id": "chem_FePO",
+        "type": "chemical",
+        "name": "FePO",
+        "aliases": [
+          "FePO"
+        ],
+        "formula": "FePO",
+        "properties": {
+          "driving_force_to_target": {
+            "value": 8,
+            "unit": "meV/atom"
+          }
+        }
+      },
+      {
+        "id": "chem_Ca3PO42",
+        "type": "chemical",
+        "name": "Ca3(PO4)2",
+        "aliases": [
+          "Ca3(PO4)2"
+        ],
+        "formula": "Ca3(PO4)2",
+        "properties": {
+          "driving_force_to_target": {
+            "value": 8,
+            "unit": "meV/atom"
+          }
+        }
+      },
+      {
+        "id": "chem_CaFe3P3O13",
+        "type": "chemical",
+        "name": "CaFe3P3O13",
+        "aliases": [
+          "CaFe3P3O13"
+        ],
+        "formula": "CaFe3P3O13",
+        "properties": {
+          "driving_force_to_target": {
+            "value": 77,
+            "unit": "meV/atom"
+          }
+        }
+      },
+      {
+        "id": "chem_CaO",
+        "type": "chemical",
+        "name": "CaO",
+        "aliases": [
+          "CaO"
+        ],
+        "formula": "CaO",
+        "properties": {}
+      },
+      {
+        "id": "chem_Y3Ga3In2O12",
+        "type": "chemical",
+        "name": "Y3Ga3In2O12",
+        "aliases": [
+          "Y3Ga3In2O12"
+        ],
+        "formula": "Y3Ga3In2O12",
+        "properties": {}
+      },
+      {
+        "id": "chem_Mg3NiO4",
+        "type": "chemical",
+        "name": "Mg3NiO4",
+        "aliases": [
+          "Mg3NiO4"
+        ],
+        "formula": "Mg3NiO4",
+        "properties": {}
+      },
+      {
+        "id": "chem_CaCr2P2O9",
+        "type": "chemical",
+        "name": "CaCr2P2O9",
+        "aliases": [
+          "CaCr2P2O9"
+        ],
+        "formula": "CaCr2P2O9",
+        "properties": {}
+      },
+      {
+        "id": "chem_MoPO35",
+        "type": "chemical",
+        "name": "Mo(PO3)5",
+        "aliases": [
+          "Mo(PO3)5",
+          "MoPO3_5"
+        ],
+        "formula": "Mo(PO3)5",
+        "properties": {
+          "amorphous_energy_above_crystal": {
+            "value": 61,
+            "unit": "meV/atom"
+          }
+        }
+      },
+      {
+        "id": "chem_La5Mn5O16",
+        "type": "chemical",
+        "name": "La5Mn5O16",
+        "aliases": [
+          "La5Mn5O16"
+        ],
+        "formula": "La5Mn5O16",
+        "properties": {}
+      },
+      {
+        "id": "chem_LaMnO3",
+        "type": "chemical",
+        "name": "LaMnO3",
+        "aliases": [
+          "LaMnO3"
+        ],
+        "formula": "LaMnO3",
+        "properties": {
+          "computed_decomposition_energy": {
+            "value": 120,
+            "unit": "meV/atom"
+          }
+        }
+      },
+      {
+        "id": "chem_YbMoO4",
+        "type": "chemical",
+        "name": "YbMoO4",
+        "aliases": [
+          "YbMoO4"
+        ],
+        "formula": "YbMoO4",
+        "properties": {}
+      },
+      {
+        "id": "chem_Yb2O3",
+        "type": "chemical",
+        "name": "Yb2O3",
+        "aliases": [
+          "Yb2O3"
+        ],
+        "formula": "Yb2O3",
+        "properties": {}
+      },
+      {
+        "id": "chem_BaGdCrFeO6",
+        "type": "chemical",
+        "name": "BaGdCrFeO6",
+        "aliases": [
+          "BaGdCrFeO6"
+        ],
+        "formula": "BaGdCrFeO6",
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_precursor_powders_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_precursor_powders",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_ZrO2_balls_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ZrO2_balls",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "grinding_media"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_alumina_crucible_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_alumina_crucible",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "container"
+        }
+      },
+      {
+        "id": "edge_input_chem_alumina_ball_10mm_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_alumina_ball_10mm",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "grinding_media"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_synthesis_products",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_synthesis_products",
+        "properties": {
+          "form": "fine powder"
+        }
+      }
+    ],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [],
+    "edges": []
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "X-ray diffraction (XRD) is used to characterize synthesis products, with phase and weight fractions extracted by ML models and confirmed by automated Rietveld refinement to assess target phase purity and yield.",
+        "evidence_snippet": "The synthesis products are characterized by X-ray diffraction (XRD), with two ML models working together to analyse their patterns."
+      },
+      {
+        "id": "n1",
+        "type": "concept",
+        "name": "Experimental barriers",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "concept",
+        "name": "Amorphous",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "lab",
+        "type": "environment",
+        "name": "Automated chemistry laboratory",
+        "properties": {
+          "description": "Enclosed laboratory with glass panels containing automated sample handling system",
+          "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+        },
+        "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+      },
+      {
+        "id": "robot1",
+        "type": "equipment",
+        "name": "Robotic Arm 8",
+        "properties": {
+          "label": "8",
+          "description": "Universal Robots UR series robotic arm (blue color)",
+          "function": "automation in chemical handling",
+          "extracted_from_image": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+        },
+        "source_image_file": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+      },
+      {
+        "id": "robot2",
+        "type": "equipment",
+        "name": "Robotic Arm 29",
+        "properties": {
+          "label": "29",
+          "description": "Second robotic arm near shelf",
+          "function": "automation",
+          "extracted_from_image": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+        },
+        "source_image_file": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+      },
+      {
+        "id": "device9",
+        "type": "equipment",
+        "name": "Equipment 9",
+        "properties": {
+          "label": "9",
+          "description": "Blue cabinet with power indicator (green LED)",
+          "function": "likely heating or processing unit",
+          "extracted_from_image": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+        },
+        "source_image_file": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+      },
+      {
+        "id": "device10",
+        "type": "equipment",
+        "name": "Equipment 10",
+        "properties": {
+          "label": "10",
+          "description": "Paired blue cabinet devices",
+          "function": "processing units",
+          "extracted_from_image": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+        },
+        "source_image_file": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+      },
+      {
+        "id": "conveyor",
+        "type": "equipment",
+        "name": "Conveyor Belt",
+        "properties": {
+          "description": "Yellow conveyor with transparent tube",
+          "function": "material transport in automated synthesis",
+          "extracted_from_image": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+        },
+        "source_image_file": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+      },
+      {
+        "id": "shelves",
+        "type": "equipment",
+        "name": "Shelving Unit",
+        "properties": {
+          "description": "White shelves with black tubing",
+          "function": "storage of reagents or equipment",
+          "extracted_from_image": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+        },
+        "source_image_file": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+      },
+      {
+        "id": "workbench",
+        "type": "equipment",
+        "name": "Work Bench",
+        "properties": {
+          "description": "Metal workbench with wooden platform",
+          "function": "sample preparation area",
+          "extracted_from_image": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+        },
+        "source_image_file": "0e5ea8252b716989615485bcd659006680797b054adf93ca805fa39bd22420f1.jpg"
+      },
+      {
+        "id": "robotic_arm",
+        "type": "equipment",
+        "name": "Robotic Arm",
+        "properties": {
+          "description": "Universal Robots UR series robotic arm with gripper",
+          "labels": [
+            "12",
+            "13"
+          ],
+          "extracted_from_image": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+        },
+        "source_image_file": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+      },
+      {
+        "id": "gripper",
+        "type": "lab_equipment",
+        "name": "End Effector Gripper",
+        "properties": {
+          "description": "Mechanical gripper on robotic arm",
+          "extracted_from_image": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+        },
+        "source_image_file": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+      },
+      {
+        "id": "lab_setup",
+        "type": "environment",
+        "name": "Laboratory Setup",
+        "properties": {
+          "description": "Cleanroom or chemistry lab with fume extraction and equipment",
+          "extracted_from_image": "1fc75b493c8be9e395e3b6bea024f3e64826fe13fa7e3975933a17e67a3989da.jpg"
+        },
+        "source_image_file": "1fc75b493c8be9e395e3b6bea024f3e64826fe13fa7e3975933a17e67a3989da.jpg"
+      },
+      {
+        "id": "fume_extraction",
+        "type": "equipment",
+        "name": "Fume Extraction Hoses",
+        "properties": {
+          "description": "Flexible hoses for ventilation, black and silver",
+          "extracted_from_image": "1fc75b493c8be9e395e3b6bea024f3e64826fe13fa7e3975933a17e67a3989da.jpg"
+        },
+        "source_image_file": "1fc75b493c8be9e395e3b6bea024f3e64826fe13fa7e3975933a17e67a3989da.jpg"
+      },
+      {
+        "id": "workstation",
+        "type": "setup",
+        "name": "Automated Chemistry Workstation",
+        "properties": {
+          "description": "Integrated robotic synthesis and analysis platform",
+          "extracted_from_image": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+        },
+        "source_image_file": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+      },
+      {
+        "id": "control_cabinet",
+        "type": "equipment",
+        "name": "Control Cabinet",
+        "properties": {
+          "description": "White cabinet with blue cables, likely for robot control",
+          "extracted_from_image": "1fc75b493c8be9e395e3b6bea024f3e64826fe13fa7e3975933a17e67a3989da.jpg"
+        },
+        "source_image_file": "1fc75b493c8be9e395e3b6bea024f3e64826fe13fa7e3975933a17e67a3989da.jpg"
+      },
+      {
+        "id": "test_t1",
+        "type": "experiment",
+        "name": "Test T1",
+        "properties": {
+          "status": "red",
+          "description": "Test experiment at time T1",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "test_t2",
+        "type": "experiment",
+        "name": "Test T2",
+        "properties": {
+          "status": "red",
+          "description": "Test experiment at time T2",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "predict",
+        "type": "experiment",
+        "name": "Predict",
+        "properties": {
+          "status": "light blue",
+          "description": "Predicted experiment outcome",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "avoid",
+        "type": "experiment",
+        "name": "Avoid",
+        "properties": {
+          "status": "light blue",
+          "description": "Experiment to avoid",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "inert_byproducts_set_1",
+        "type": "chemical",
+        "name": "Inert Byproducts Set 1",
+        "properties": {
+          "description": "Inert byproducts from Set 1",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "materials_redundant_path",
+        "type": "chemical",
+        "name": "Materials Redundant Path",
+        "properties": {
+          "description": "Redundant pathway in materials synthesis",
+          "symbol": "loop structure",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "materials_project",
+        "type": "database",
+        "name": "Materials Project",
+        "properties": {
+          "description": "Materials Project database",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "exhausted_set_1",
+        "type": "chemical",
+        "name": "Exhausted Set 1",
+        "properties": {
+          "description": "Exhausted precursor set 1",
+          "color": "blue",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "target_x",
+        "type": "chemical",
+        "name": "Target X",
+        "properties": {
+          "description": "Target material X",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "success_rate_chart",
+        "type": "characterization",
+        "name": "Success Rate Chart",
+        "properties": {
+          "type": "scatter plot",
+          "x_axis": "Number of possible experiments (0-120)",
+          "y_axis": "Success % (0-80)",
+          "description": "Success rates for exhausted (blue) and succeeded (red) experiments",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "free_energy_plot",
+        "type": "characterization",
+        "name": "Free Energy Plot",
+        "properties": {
+          "type": "line plot",
+          "x_axis": "Reaction progress (T1, T2)",
+          "y_axis": "Free Energy",
+          "elements": [
+            "Set 1 (black)",
+            "Set 3 (cyan)",
+            "Target (dashed)",
+            "X (red dashed)"
+          ],
+          "description": "Reaction free energy profiles for precursor sets",
+          "extracted_from_image": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+        },
+        "source_image_file": "22bd4d01f196d1d9272c54f6d8a0d6c96a9a4edbcf1a1603e3c0df67decb77ed.jpg"
+      },
+      {
+        "id": "sample_holder",
+        "type": "equipment",
+        "name": "Sample Holder",
+        "properties": {
+          "description": "Black platform holding multiple sample tubes/cuvettes",
+          "extracted_from_image": "32d37a113b936a28c5f5c902e65d9d0b2c8832434743fddda8bca3d3de423401.jpg"
+        },
+        "source_image_file": "32d37a113b936a28c5f5c902e65d9d0b2c8832434743fddda8bca3d3de423401.jpg"
+      },
+      {
+        "id": "sample_tubes",
+        "type": "samples",
+        "name": "Sample Tubes",
+        "properties": {
+          "description": "Multiple transparent cylindrical tubes/cuvettes in beige holders, one with liquid sample",
+          "count": "several (at least 5 visible)",
+          "extracted_from_image": "32d37a113b936a28c5f5c902e65d9d0b2c8832434743fddda8bca3d3de423401.jpg"
+        },
+        "source_image_file": "32d37a113b936a28c5f5c902e65d9d0b2c8832434743fddda8bca3d3de423401.jpg"
+      },
+      {
+        "id": "lab_bench",
+        "type": "environment",
+        "name": "Laboratory Bench",
+        "properties": {
+          "description": "Cleanroom-style lab setup with equipment racks and monitoring screens",
+          "extracted_from_image": "32d37a113b936a28c5f5c902e65d9d0b2c8832434743fddda8bca3d3de423401.jpg"
+        },
+        "source_image_file": "32d37a113b936a28c5f5c902e65d9d0b2c8832434743fddda8bca3d3de423401.jpg"
+      },
+      {
+        "id": "control_screen",
+        "type": "equipment",
+        "name": "Control Monitor",
+        "properties": {
+          "description": "Computer screen for robotic arm operation",
+          "extracted_from_image": "32d37a113b936a28c5f5c902e65d9d0b2c8832434743fddda8bca3d3de423401.jpg"
+        },
+        "source_image_file": "32d37a113b936a28c5f5c902e65d9d0b2c8832434743fddda8bca3d3de423401.jpg"
+      },
+      {
+        "id": "label_TCl",
+        "type": "chemical_label",
+        "name": "TCl",
+        "properties": {
+          "description": "Label on brown bottle, likely a chemical reagent or compound abbreviation",
+          "extracted_from_image": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+        },
+        "source_image_file": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+      },
+      {
+        "id": "label_MnO2",
+        "type": "chemical_label",
+        "name": "MnO2",
+        "properties": {
+          "description": "Label on brown bottle, manganese dioxide",
+          "extracted_from_image": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+        },
+        "source_image_file": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+      },
+      {
+        "id": "label_CO2",
+        "type": "chemical_label",
+        "name": "CO2",
+        "properties": {
+          "description": "Label on brown bottle, carbon dioxide (possibly dissolved or cartridge)",
+          "extracted_from_image": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+        },
+        "source_image_file": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+      },
+      {
+        "id": "bottle1",
+        "type": "lab_equipment",
+        "name": "Brown Bottle TCl",
+        "properties": {
+          "description": "Brown glass bottle labeled TCl",
+          "extracted_from_image": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+        },
+        "source_image_file": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+      },
+      {
+        "id": "bottle2",
+        "type": "lab_equipment",
+        "name": "Brown Bottle MnO2",
+        "properties": {
+          "description": "Brown glass bottle labeled MnO2",
+          "extracted_from_image": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+        },
+        "source_image_file": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+      },
+      {
+        "id": "bottle3",
+        "type": "lab_equipment",
+        "name": "Brown Bottle CO2",
+        "properties": {
+          "description": "Brown glass bottle labeled CO2",
+          "extracted_from_image": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+        },
+        "source_image_file": "3b0d17aec5959a0454010a5e952642ca98a359b1e51a05a9627a25eb5acb48e1.jpg"
+      },
+      {
+        "id": "universal_robots_screen",
+        "type": "equipment",
+        "name": "Universal Robots Teach Pendant",
+        "properties": {
+          "description": "Control screen for robotic arm",
+          "labels": [
+            "14"
+          ],
+          "extracted_from_image": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+        },
+        "source_image_file": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+      },
+      {
+        "id": "sample_tray",
+        "type": "equipment",
+        "name": "Sample Tray",
+        "properties": {
+          "description": "Tray holding multiple beige samples/trays",
+          "labels": [
+            "16",
+            "17",
+            "20"
+          ],
+          "extracted_from_image": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+        },
+        "source_image_file": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+      },
+      {
+        "id": "analytical_instrument",
+        "type": "equipment",
+        "name": "Analytical Instrument",
+        "properties": {
+          "description": "Yellow-labeled instrument cabinet (likely HPLC/MS or similar)",
+          "labels": [
+            "15"
+          ],
+          "extracted_from_image": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+        },
+        "source_image_file": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+      },
+      {
+        "id": "3d_printer",
+        "type": "equipment",
+        "name": "3D Printer",
+        "properties": {
+          "description": "FDM 3D printer with build platform",
+          "labels": [
+            "19"
+          ],
+          "extracted_from_image": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+        },
+        "source_image_file": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+      },
+      {
+        "id": "control_computer",
+        "type": "equipment",
+        "name": "Control Computer",
+        "properties": {
+          "description": "Computer monitor displaying code/software",
+          "labels": [
+            "18"
+          ],
+          "extracted_from_image": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+        },
+        "source_image_file": "43ce955a2b65a499acd2b530505bbe77d9a2119e5ad871ce003dc5b2478885f7.jpg"
+      },
+      {
+        "id": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd_1",
+        "type": "equipment",
+        "name": "Rotary Sample Tray",
+        "properties": {
+          "description": "Central rotating platform holding sample racks",
+          "extracted_from_image": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+        },
+        "source_image_file": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+      },
+      {
+        "id": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd_2",
+        "type": "equipment",
+        "name": "Blue Sample Racks",
+        "properties": {
+          "description": "Multiple blue trays organizing sample vials",
+          "count": "approx. 6 racks",
+          "extracted_from_image": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+        },
+        "source_image_file": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+      },
+      {
+        "id": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd_3",
+        "type": "equipment",
+        "name": "Black Dividers",
+        "properties": {
+          "description": "Separators between sample racks",
+          "extracted_from_image": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+        },
+        "source_image_file": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+      },
+      {
+        "id": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd_4",
+        "type": "equipment",
+        "name": "White Vials",
+        "properties": {
+          "description": "Majority of sample containers with white caps",
+          "count": "approx. 60+",
+          "extracted_from_image": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+        },
+        "source_image_file": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+      },
+      {
+        "id": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd_5",
+        "type": "equipment",
+        "name": "Blue Vials",
+        "properties": {
+          "description": "Vials with blue caps",
+          "count": "approx. 12",
+          "extracted_from_image": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+        },
+        "source_image_file": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+      },
+      {
+        "id": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd_6",
+        "type": "equipment",
+        "name": "Brown Vials",
+        "properties": {
+          "description": "Amber glass vials on shelf",
+          "count": "2",
+          "extracted_from_image": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+        },
+        "source_image_file": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+      },
+      {
+        "id": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd_7",
+        "type": "equipment",
+        "name": "Pipette/Dispenser",
+        "properties": {
+          "description": "Liquid handling device mounted above",
+          "extracted_from_image": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+        },
+        "source_image_file": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+      },
+      {
+        "id": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd_8",
+        "type": "setting",
+        "name": "Automated Lab Workstation",
+        "properties": {
+          "description": "High-throughput chemistry screening setup with safety enclosure",
+          "extracted_from_image": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+        },
+        "source_image_file": "6dd56294ee5777e90372696d06a7309e2bddbec701511ae5a59b2fea0ddb78fd.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_1",
+        "type": "process",
+        "name": "DeepMind",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_2",
+        "type": "process",
+        "name": "Robotic Synthesis",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_3",
+        "type": "process",
+        "name": "Heating",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_4",
+        "type": "process",
+        "name": "Powder Dosing",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_5",
+        "type": "process",
+        "name": "Characterization",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_6",
+        "type": "process",
+        "name": "Raw Diffraction",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_7",
+        "type": "process",
+        "name": "Phase Identification",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_8",
+        "type": "process",
+        "name": "Materials Project",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_9",
+        "type": "process",
+        "name": "Air-stable Novel Targets",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_10",
+        "type": "process",
+        "name": "Precursors",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_11",
+        "type": "process",
+        "name": "Precursor Reaction Path Prediction",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_12",
+        "type": "process",
+        "name": "Recipe Optimization",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_13",
+        "type": "database",
+        "name": "Structure Databases",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_14",
+        "type": "output",
+        "name": "Predict Phases",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_15",
+        "type": "output",
+        "name": "Target",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_16",
+        "type": "chart",
+        "name": "Probability (%) Chart",
+        "properties": {
+          "description": "Bar chart showing phase probabilities",
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_17",
+        "type": "condition",
+        "name": "600°C",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_18",
+        "type": "condition",
+        "name": "700°C",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_19",
+        "type": "process",
+        "name": "Computations",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_20",
+        "type": "process",
+        "name": "Text Mining",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb_21",
+        "type": "process",
+        "name": "Suggest Recipes",
+        "properties": {
+          "extracted_from_image": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+        },
+        "source_image_file": "955b857900a70ab665fd122ccfe097c650ef61b86d1e814495573c18d12922bb.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "concept",
+        "name": "Amorphous product",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "concept",
+        "name": "Incorrect hull",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "concept",
+        "name": "G",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "concept",
+        "name": "Target",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "concept",
+        "name": "Composition barriers",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "concept",
+        "name": "Computational barriers",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "concept",
+        "name": "Precursors",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "concept",
+        "name": "Slow kinetics",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "concept",
+        "name": "Precursor stable intermediates",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "concept",
+        "name": "Driving force coordinate",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "concept",
+        "name": "Volatile precursor",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "concept",
+        "name": "A",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "concept",
+        "name": "B",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "concept",
+        "name": "AB",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "concept",
+        "name": "T",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem1",
+        "type": "chemical",
+        "name": "Y2GaInO2",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem2",
+        "type": "chemical",
+        "name": "CaSnO3",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem3",
+        "type": "chemical",
+        "name": "CaTiNiO6",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem4",
+        "type": "chemical",
+        "name": "V2O3",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem5",
+        "type": "chemical",
+        "name": "Mg3N2O12",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem6",
+        "type": "chemical",
+        "name": "NaV2O5",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem7",
+        "type": "chemical",
+        "name": "BaIn2S4",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem8",
+        "type": "chemical",
+        "name": "Co2P3O",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem9",
+        "type": "chemical",
+        "name": "La2MnO6",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "chem10",
+        "type": "chemical",
+        "name": "YbGdCrO6",
+        "properties": {
+          "extracted_from_image": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+        },
+        "source_image_file": "963be4aa18ad8314cce8734ec610dd7182103086776f0a9d0c4eed557f6e1fac.jpg"
+      },
+      {
+        "id": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd_1",
+        "type": "equipment",
+        "name": "robotic arm",
+        "properties": {
+          "description": "central robotic arm in automated laboratory setup",
+          "extracted_from_image": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+        },
+        "source_image_file": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+      },
+      {
+        "id": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd_2",
+        "type": "equipment",
+        "name": "sample racks",
+        "properties": {
+          "description": "racks holding multiple sample containers",
+          "extracted_from_image": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+        },
+        "source_image_file": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+      },
+      {
+        "id": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd_5",
+        "type": "equipment",
+        "name": "turntable",
+        "properties": {
+          "description": "rotating platform holding sample trays",
+          "extracted_from_image": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+        },
+        "source_image_file": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+      },
+      {
+        "id": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd_6",
+        "type": "equipment",
+        "name": "automated laboratory system",
+        "properties": {
+          "description": "enclosed robotic chemical synthesis or screening system",
+          "extracted_from_image": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+        },
+        "source_image_file": "aa3a38c9110f0925c64368a6386b36eaffd92217870a7247aaaace322a14bfbd.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "characterization",
+        "name": "Bar Chart",
+        "properties": {
+          "description": "Bar chart showing delta E (energy change) for various chemical targets",
+          "x_axis": "Chemical targets (e.g., LaBO3, MnO3, etc.)",
+          "y_axis": "ΔE (eV)",
+          "range": "[-10, 10] eV",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "pie1",
+        "type": "characterization",
+        "name": "Success Pie Chart",
+        "properties": {
+          "description": "Pie chart breakdown of outcomes",
+          "blue": "86%",
+          "gray": "14%",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "pie2",
+        "type": "characterization",
+        "name": "Total Pie Chart",
+        "properties": {
+          "description": "Pie chart with 1035 total samples",
+          "blue": "686",
+          "gray": "349",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "LaBO3",
+        "type": "chemical",
+        "name": "LaBO₃",
+        "properties": {
+          "formula": "LaBO3",
+          "category": "perovskite",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "MnO3",
+        "type": "chemical",
+        "name": "MnO₃",
+        "properties": {
+          "formula": "MnO3",
+          "category": "oxide",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "CoO3",
+        "type": "chemical",
+        "name": "CoO₃",
+        "properties": {
+          "formula": "CoO3",
+          "category": "oxide",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "success_category",
+        "type": "category",
+        "name": "Success",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "inconclusive_category",
+        "type": "category",
+        "name": "Inconclusive",
+        "properties": {
+          "color": "gray/purple",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "failed_category",
+        "type": "category",
+        "name": "Failed",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "active_category",
+        "type": "category",
+        "name": "Active",
+        "properties": {
+          "color": "light blue",
+          "extracted_from_image": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+        },
+        "source_image_file": "b7e54b5ff92f8d7f0eea3df3576379afeb4354871e4790347afb3f2cb23f1c32.jpg"
+      },
+      {
+        "id": "control_software",
+        "type": "software",
+        "name": "Control Software",
+        "properties": {
+          "description": "Software for controlling the system",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "data_analysis_arrows",
+        "type": "software",
+        "name": "Data Analysis/ARROWS",
+        "properties": {
+          "description": "Data analysis software",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "box_furnace_a",
+        "type": "hardware",
+        "name": "Box Furnace A",
+        "properties": {
+          "description": "Powder box furnace",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "box_furnace_b",
+        "type": "hardware",
+        "name": "Box Furnace B",
+        "properties": {
+          "description": "Box furnace",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "box_furnace_c",
+        "type": "hardware",
+        "name": "Box Furnace C",
+        "properties": {
+          "description": "Box furnace",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "box_furnace_d",
+        "type": "hardware",
+        "name": "Box Furnace D",
+        "properties": {
+          "description": "Box furnace",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "workflow_manager",
+        "type": "software",
+        "name": "Workflow Manager (Control Computer)",
+        "properties": {
+          "description": "Central control computer managing workflows via HTTP and Modbus",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "robot_arm_r1",
+        "type": "hardware",
+        "name": "Robot Arm R1",
+        "properties": {
+          "description": "Robotic arm",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "robot_arm_r2",
+        "type": "hardware",
+        "name": "Robot Arm R2",
+        "properties": {
+          "description": "Robotic arm",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "robot_arm_r3",
+        "type": "hardware",
+        "name": "Robot Arm R3",
+        "properties": {
+          "description": "Robotic arm",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "xrd_machine",
+        "type": "instrument",
+        "name": "XRD Machine",
+        "properties": {
+          "description": "X-ray diffraction instrument for characterization",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "powder_mixing_station",
+        "type": "hardware",
+        "name": "Powder Mixing Station",
+        "properties": {
+          "description": "Station for mixing powders",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "arduino_capper",
+        "type": "hardware",
+        "name": "Arduino Capper",
+        "properties": {
+          "description": "Arduino-controlled capper",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "cap_dispensers",
+        "type": "hardware",
+        "name": "Cap Dispensers",
+        "properties": {
+          "description": "Devices for dispensing caps",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "shaker",
+        "type": "hardware",
+        "name": "Shaker",
+        "properties": {
+          "description": "Shaking device",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "ball_dispensers",
+        "type": "hardware",
+        "name": "Ball Dispensers",
+        "properties": {
+          "description": "Dispensers for balls (likely milling balls)",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "furnace_door_opener",
+        "type": "hardware",
+        "name": "Furnace Door Opener",
+        "properties": {
+          "description": "Device to open furnace doors",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "balance",
+        "type": "instrument",
+        "name": "Balance",
+        "properties": {
+          "description": "Weighing balance",
+          "extracted_from_image": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+        },
+        "source_image_file": "d637a1d6e7d675e3c43c74ef9a0967ff7d29525594aae33c62a731320d1640d2.jpg"
+      },
+      {
+        "id": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b_1",
+        "type": "equipment",
+        "name": "robotic arm",
+        "properties": {
+          "description": "blue robotic arm (likely Universal Robots UR series)",
+          "function": "automation in chemical laboratory",
+          "extracted_from_image": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+        },
+        "source_image_file": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+      },
+      {
+        "id": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b_2",
+        "type": "equipment",
+        "name": "control screen",
+        "properties": {
+          "description": "screen on robotic arm displaying interface",
+          "function": "user interface for robot control",
+          "extracted_from_image": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+        },
+        "source_image_file": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+      },
+      {
+        "id": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b_3",
+        "type": "equipment",
+        "name": "sample tray",
+        "properties": {
+          "description": "black perforated tray with white sample holders",
+          "function": "holding multiple chemical samples or reaction vessels",
+          "extracted_from_image": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+        },
+        "source_image_file": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+      },
+      {
+        "id": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b_5",
+        "type": "equipment",
+        "name": "furnace/oven",
+        "properties": {
+          "description": "gray rectangular heating device with power supply",
+          "function": "thermal treatment of samples",
+          "extracted_from_image": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+        },
+        "source_image_file": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+      },
+      {
+        "id": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b_6",
+        "type": "equipment",
+        "name": "analytical instrument",
+        "properties": {
+          "description": "black tall instrument on right side",
+          "function": "likely spectrometer or chromatography system",
+          "extracted_from_image": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+        },
+        "source_image_file": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+      },
+      {
+        "id": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b_7",
+        "type": "equipment",
+        "name": "computer workstation",
+        "properties": {
+          "description": "monitors displaying code/software",
+          "function": "data analysis and experiment control",
+          "extracted_from_image": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+        },
+        "source_image_file": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+      },
+      {
+        "id": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b_8",
+        "type": "image",
+        "name": "laboratory setup figure",
+        "properties": {
+          "label": "Figure 3",
+          "context": "automated chemical synthesis or high-throughput experimentation",
+          "extracted_from_image": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+        },
+        "source_image_file": "dfb8a9e2c2bcf5c4fb4ef9727f634a3a462a34def45e9e9ae1d6e95b7cee9b9b.jpg"
+      },
+      {
+        "id": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c_4",
+        "type": "equipment",
+        "name": "Robotic arm base 4",
+        "properties": {
+          "description": "Base or platform of robotic arm labeled 4",
+          "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+        },
+        "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+      },
+      {
+        "id": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c_5",
+        "type": "equipment",
+        "name": "Equipment cabinet 5",
+        "properties": {
+          "description": "Cabinet or storage unit labeled 5 in background",
+          "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+        },
+        "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+      },
+      {
+        "id": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c_6",
+        "type": "equipment",
+        "name": "Equipment unit 6",
+        "properties": {
+          "description": "Equipment or storage labeled 6 in background",
+          "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+        },
+        "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+      },
+      {
+        "id": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c_7",
+        "type": "equipment",
+        "name": "Robotic arm 7",
+        "properties": {
+          "description": "Industrial robotic arm labeled 7, white color",
+          "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+        },
+        "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+      },
+      {
+        "id": "robot",
+        "type": "system",
+        "name": "Automated laboratory robot",
+        "properties": {
+          "description": "Central robotic system handling samples in enclosed lab setup",
+          "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+        },
+        "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+      },
+      {
+        "id": "tray_yellow",
+        "type": "container",
+        "name": "Yellow sample tray",
+        "properties": {
+          "description": "Yellow tray holding white sample vials",
+          "color": "yellow",
+          "extracted_from_image": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+        },
+        "source_image_file": "ea0b0dbed2605bc9a8fa833342b3d8d621c9569a25c41e90b2a1afa3f2f3d06c.jpg"
+      },
+      {
+        "id": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518_1",
+        "type": "equipment",
+        "name": "Furnace 1",
+        "properties": {
+          "description": "Blue industrial furnace unit",
+          "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        },
+        "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+      },
+      {
+        "id": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518_2",
+        "type": "equipment",
+        "name": "Furnace 2",
+        "properties": {
+          "description": "Blue industrial furnace unit",
+          "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        },
+        "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+      },
+      {
+        "id": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518_3",
+        "type": "equipment",
+        "name": "Furnace 3",
+        "properties": {
+          "description": "Blue industrial furnace unit",
+          "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        },
+        "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+      },
+      {
+        "id": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518_4",
+        "type": "robot",
+        "name": "Robotic Arm 1",
+        "properties": {
+          "description": "Blue robotic arm interacting with furnace",
+          "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        },
+        "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+      },
+      {
+        "id": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518_5",
+        "type": "robot",
+        "name": "Robotic Arm 2",
+        "properties": {
+          "description": "Blue robotic arm on shelf",
+          "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        },
+        "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+      },
+      {
+        "id": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518_6",
+        "type": "equipment",
+        "name": "Conveyor Belt",
+        "properties": {
+          "description": "Yellow conveyor system at bottom",
+          "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        },
+        "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+      },
+      {
+        "id": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518_7",
+        "type": "equipment",
+        "name": "Workstation",
+        "properties": {
+          "description": "Metal workbench with equipment",
+          "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        },
+        "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+      },
+      {
+        "id": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518_9",
+        "type": "setup",
+        "name": "Automated Lab Setup",
+        "properties": {
+          "description": "Cleanroom laboratory with integrated automation",
+          "extracted_from_image": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+        },
+        "source_image_file": "f476a35cb4c808eaa050a9f7838564891a5c747299598f78a6a1546e4e5ed518.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "robot1",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "robot2",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "device9",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "device10",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "conveyor",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "shelves",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "workbench",
+        "type": "contains"
+      },
+      {
+        "source_id": "robot1",
+        "target_id": "conveyor",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "robot2",
+        "target_id": "shelves",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "device9",
+        "target_id": "workbench",
+        "type": "mounted_on"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "gripper",
+        "type": "has_component"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "lab_setup",
+        "type": "located_in"
+      },
+      {
+        "source_id": "gripper",
+        "target_id": "workstation",
+        "type": "interacting_with"
+      },
+      {
+        "source_id": "lab_setup",
+        "target_id": "fume_extraction",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab_setup",
+        "target_id": "control_cabinet",
+        "type": "contains"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "control_cabinet",
+        "type": "controlled_by"
+      },
+      {
+        "source_id": "chem_precursor_powders",
+        "target_id": "test_t1",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_precursor_powders",
+        "target_id": "test_t2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_precursor_powders",
+        "target_id": "predict",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_precursor_powders",
+        "target_id": "avoid",
+        "type": "contains"
+      },
+      {
+        "source_id": "test_t2",
+        "target_id": "predict",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "inert_byproducts_set_1",
+        "target_id": "materials_redundant_path",
+        "type": "part_of"
+      },
+      {
+        "source_id": "materials_redundant_path",
+        "target_id": "materials_project",
+        "type": "queried_from"
+      },
+      {
+        "source_id": "free_energy_plot",
+        "target_id": "chem_precursor_powders",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "free_energy_plot",
+        "target_id": "inert_byproducts_set_1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "free_energy_plot",
+        "target_id": "target_x",
+        "type": "shows"
+      },
+      {
+        "source_id": "success_rate_chart",
+        "target_id": "exhausted_set_1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "success_rate_chart",
+        "target_id": "chem_synthesis_products",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "gripper",
+        "type": "has_component"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "sample_holder",
+        "type": "interacting_with"
+      },
+      {
+        "source_id": "sample_holder",
+        "target_id": "sample_tubes",
+        "type": "holds"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "lab_bench",
+        "type": "mounted_on"
+      },
+      {
+        "source_id": "control_screen",
+        "target_id": "robotic_arm",
+        "type": "controls"
+      },
+      {
+        "source_id": "label_TCl",
+        "target_id": "bottle1",
+        "type": "labels"
+      },
+      {
+        "source_id": "label_MnO2",
+        "target_id": "bottle2",
+        "type": "labels"
+      },
+      {
+        "source_id": "label_CO2",
+        "target_id": "bottle3",
+        "type": "labels"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "gripper",
+        "type": "has_component"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "bottle1",
+        "type": "nearby"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "bottle2",
+        "type": "nearby"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "bottle3",
+        "type": "nearby"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "universal_robots_screen",
+        "type": "controls"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "sample_tray",
+        "type": "manipulates"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "analytical_instrument",
+        "type": "interfaces"
+      },
+      {
+        "source_id": "control_computer",
+        "target_id": "robotic_arm",
+        "type": "controls"
+      },
+      {
+        "source_id": "3d_printer",
+        "target_id": "chem_synthesis_products",
+        "type": "produces"
+      },
+      {
+        "source_id": "sample_tray",
+        "target_id": "chem_synthesis_products",
+        "type": "holds"
+      },
+      {
+        "source_id": "robotic_arm",
+        "target_id": "workstation",
+        "type": "component"
+      },
+      {
+        "source_id": "analytical_instrument",
+        "target_id": "workstation",
+        "type": "component"
+      },
+      {
+        "source_id": "3d_printer",
+        "target_id": "workstation",
+        "type": "component"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "contains"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "holds"
+      },
+      {
+        "source_id": "2",
+        "target_id": "5",
+        "type": "holds"
+      },
+      {
+        "source_id": "8",
+        "target_id": "1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "8",
+        "target_id": "7",
+        "type": "contains"
+      },
+      {
+        "source_id": "8",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "predicts"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "uses"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "uses"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "5",
+        "target_id": "6",
+        "type": "produces"
+      },
+      {
+        "source_id": "6",
+        "target_id": "7",
+        "type": "analyzed_by"
+      },
+      {
+        "source_id": "8",
+        "target_id": "1",
+        "type": "provides_data_to"
+      },
+      {
+        "source_id": "9",
+        "target_id": "1",
+        "type": "provides_data_to"
+      },
+      {
+        "source_id": "10",
+        "target_id": "11",
+        "type": "input_to"
+      },
+      {
+        "source_id": "11",
+        "target_id": "12",
+        "type": "informs"
+      },
+      {
+        "source_id": "12",
+        "target_id": "2",
+        "type": "guides"
+      },
+      {
+        "source_id": "13",
+        "target_id": "14",
+        "type": "used_for"
+      },
+      {
+        "source_id": "14",
+        "target_id": "15",
+        "type": "predicts"
+      },
+      {
+        "source_id": "7",
+        "target_id": "15",
+        "type": "confirms"
+      },
+      {
+        "source_id": "7",
+        "target_id": "16",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "3",
+        "target_id": "17",
+        "type": "at_temperature"
+      },
+      {
+        "source_id": "3",
+        "target_id": "18",
+        "type": "at_temperature"
+      },
+      {
+        "source_id": "19",
+        "target_id": "1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "20",
+        "target_id": "1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "21",
+        "target_id": "2",
+        "type": "provides"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "targets"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "overcomes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n11",
+        "type": "forms"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n12",
+        "type": "along"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n14",
+        "type": "is"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n15",
+        "type": "with"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "n16",
+        "type": "forms"
+      },
+      {
+        "source_id": "n17",
+        "target_id": "n16",
+        "type": "at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem1",
+        "type": "includes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem2",
+        "type": "includes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem3",
+        "type": "includes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem4",
+        "type": "includes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem5",
+        "type": "includes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem6",
+        "type": "includes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem7",
+        "type": "includes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem8",
+        "type": "includes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem9",
+        "type": "includes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem10",
+        "type": "includes"
+      },
+      {
+        "source_id": "1",
+        "target_id": "6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "2",
+        "target_id": "6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "3",
+        "target_id": "5",
+        "type": "placed_on"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "placed_on"
+      },
+      {
+        "source_id": "5",
+        "target_id": "6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "manipulates"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "manipulates"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "LaBO3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "MnO3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "CoO3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "success_category",
+        "type": "displays"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "inconclusive_category",
+        "type": "displays"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "failed_category",
+        "type": "displays"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "active_category",
+        "type": "displays"
+      },
+      {
+        "source_id": "pie1",
+        "target_id": "success_category",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "pie1",
+        "target_id": "inconclusive_category",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "pie2",
+        "target_id": "success_category",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "pie2",
+        "target_id": "inconclusive_category",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "control_software",
+        "target_id": "data_analysis_arrows",
+        "type": "communicates_via",
+        "properties": {
+          "protocol": "HTTP"
+        }
+      },
+      {
+        "source_id": "control_software",
+        "target_id": "workflow_manager",
+        "type": "controls_via",
+        "properties": {
+          "protocol": "HTTP"
+        }
+      },
+      {
+        "source_id": "data_analysis_arrows",
+        "target_id": "workflow_manager",
+        "type": "communicates_via",
+        "properties": {
+          "protocol": "File & HTTP"
+        }
+      },
+      {
+        "source_id": "box_furnace_a",
+        "target_id": "workflow_manager",
+        "type": "controlled_by",
+        "properties": {
+          "protocol": "Modbus"
+        }
+      },
+      {
+        "source_id": "box_furnace_b",
+        "target_id": "workflow_manager",
+        "type": "controlled_by",
+        "properties": {
+          "protocol": "Modbus"
+        }
+      },
+      {
+        "source_id": "box_furnace_c",
+        "target_id": "workflow_manager",
+        "type": "controlled_by"
+      },
+      {
+        "source_id": "box_furnace_d",
+        "target_id": "workflow_manager",
+        "type": "controlled_by"
+      },
+      {
+        "source_id": "workflow_manager",
+        "target_id": "robot_arm_r1",
+        "type": "controls",
+        "properties": {
+          "protocol": "Socket & HTTP"
+        }
+      },
+      {
+        "source_id": "workflow_manager",
+        "target_id": "xrd_machine",
+        "type": "controls",
+        "properties": {
+          "protocol": "HTTP"
+        }
+      },
+      {
+        "source_id": "workflow_manager",
+        "target_id": "balance",
+        "type": "controls"
+      },
+      {
+        "source_id": "powder_mixing_station",
+        "target_id": "workflow_manager",
+        "type": "controlled_by"
+      },
+      {
+        "source_id": "arduino_capper",
+        "target_id": "workflow_manager",
+        "type": "controlled_by",
+        "properties": {
+          "protocol": "HTTP"
+        }
+      },
+      {
+        "source_id": "cap_dispensers",
+        "target_id": "workflow_manager",
+        "type": "controlled_by",
+        "properties": {
+          "protocol": "HTTP"
+        }
+      },
+      {
+        "source_id": "shaker",
+        "target_id": "workflow_manager",
+        "type": "controlled_by",
+        "properties": {
+          "protocol": "HTTP"
+        }
+      },
+      {
+        "source_id": "ball_dispensers",
+        "target_id": "workflow_manager",
+        "type": "controlled_by",
+        "properties": {
+          "protocol": "HTTP"
+        }
+      },
+      {
+        "source_id": "furnace_door_opener",
+        "target_id": "workflow_manager",
+        "type": "controlled_by",
+        "properties": {
+          "protocol": "HTTP"
+        }
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "has_component"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "holds"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "manipulates"
+      },
+      {
+        "source_id": "5",
+        "target_id": "4",
+        "type": "processes"
+      },
+      {
+        "source_id": "7",
+        "target_id": "1",
+        "type": "controls"
+      },
+      {
+        "source_id": "8",
+        "target_id": "1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "8",
+        "target_id": "3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "8",
+        "target_id": "4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "robot",
+        "target_id": "7",
+        "type": "contains"
+      },
+      {
+        "source_id": "robot",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "robot",
+        "target_id": "1",
+        "type": "handles"
+      },
+      {
+        "source_id": "robot",
+        "target_id": "chem_synthesis_products",
+        "type": "manipulates"
+      },
+      {
+        "source_id": "robot",
+        "target_id": "chem_synthesis_products",
+        "type": "manipulates"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "robot",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "5",
+        "type": "contains"
+      },
+      {
+        "source_id": "lab",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "tray_yellow",
+        "target_id": "chem_synthesis_products",
+        "type": "holds"
+      },
+      {
+        "source_id": "2",
+        "target_id": "chem_synthesis_products",
+        "type": "stores"
+      },
+      {
+        "source_id": "3",
+        "target_id": "chem_synthesis_products",
+        "type": "stores"
+      },
+      {
+        "source_id": "9",
+        "target_id": "1",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "2",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "3",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "5",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "7",
+        "type": "contains"
+      },
+      {
+        "source_id": "7",
+        "target_id": "8",
+        "type": "supports"
+      },
+      {
+        "source_id": "4",
+        "target_id": "3",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "6",
+        "target_id": "8",
+        "type": "transports"
+      }
+    ]
+  }
+}

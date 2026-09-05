@@ -1,0 +1,3402 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_ATO",
+        "type": "chemical",
+        "name": "ATO",
+        "aliases": [
+          "antimony-doped tin oxide"
+        ],
+        "formula": "SnO2:Sb",
+        "properties": {
+          "BET surface area": {
+            "value": 54.5,
+            "unit": "m²/g"
+          },
+          "particle size": {
+            "value": "5-15",
+            "unit": "nm"
+          },
+          "conductivity": {
+            "value": 0.05,
+            "unit": "S/cm"
+          }
+        }
+      },
+      {
+        "id": "chem_ATO_AT",
+        "type": "chemical",
+        "name": "ATO.AT",
+        "aliases": [
+          "acid-treated ATO"
+        ],
+        "properties": {
+          "BET surface area": {
+            "value": 57,
+            "unit": "m²/g"
+          }
+        }
+      },
+      {
+        "id": "chem_IrCl3_xH2O",
+        "type": "chemical",
+        "name": "iridium (III) chloride hydrate",
+        "aliases": [
+          "IrCl₃·xH₂O"
+        ],
+        "formula": "IrCl₃·xH₂O"
+      },
+      {
+        "id": "chem_H2O",
+        "type": "chemical",
+        "name": "milliQ water",
+        "aliases": [
+          "ultrapure water"
+        ],
+        "formula": "H₂O"
+      },
+      {
+        "id": "chem_ethylene_glycol",
+        "type": "chemical",
+        "name": "ethylene glycol",
+        "aliases": [],
+        "formula": "HOCH₂CH₂OH"
+      },
+      {
+        "id": "chem_HCl",
+        "type": "chemical",
+        "name": "hydrochloric acid",
+        "aliases": [
+          "HCl"
+        ],
+        "formula": "HCl"
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Acid treatment of ATO",
+        "procedure": "One gram of ATO was suspended in 50 mL of HCl (37 wt%) and held at 65°C for 1 h under stirring. The sample was centrifuged and washed several times with ultrapure water until neutral pH followed by drying in a vacuum oven at 70°C overnight to obtain the acid-treated ATO (ATO.AT).",
+        "method": "Acid treatment",
+        "conditions": {
+          "temperature": {
+            "value": 65,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 1,
+            "unit": "h"
+          },
+          "drying temperature": {
+            "value": 70,
+            "unit": "°C"
+          },
+          "drying time": {
+            "value": "overnight",
+            "unit": ""
+          }
+        },
+        "source_text": "Acid treatment of the ATO powder was carried out to clean and activate the surface. One gram of ATO was suspended in 50 mL of HCl (37 wt%)..."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "MW-assisted polyol synthesis (general)",
+        "procedure": "The electrocatalysts were synthesized using MW-assisted polyol method using a CEM Discovery SP® microwave synthesizer operated in dynamic power mode with maximum power 200 W. As an example, the required amount of IrCl₃·H₂O solution in ultrapure water was mixed with ethylene glycol to obtain reaction bath having ethylene glycol/water ratio of 3:7 (ν/ν) and Ir concentration of 5 mmol L⁻¹. The required amount of support (ATO or ATO.AT) was dispersed in 20 mL reaction mixture by ultrasonication 60 s at RT. Mixture transferred to 35 mL glass reactor, exposed to microwaves 20 min at predefined temperature (140°C or 160°C). After cooling, collected by centrifugation 4000 rpm 5 min, washed with ultrapure water, dried overnight at 60°C.",
+        "method": "MW-assisted polyol",
+        "conditions": {
+          "microwave power": {
+            "value": 200,
+            "unit": "W"
+          },
+          "ethylene glycol/water ratio": {
+            "value": "3:7",
+            "unit": "v/v"
+          },
+          "Ir concentration": {
+            "value": 5,
+            "unit": "mmol/L"
+          },
+          "ultrasonication time": {
+            "value": 60,
+            "unit": "s"
+          },
+          "microwave time": {
+            "value": 20,
+            "unit": "min"
+          },
+          "centrifugation": {
+            "value": 4000,
+            "unit": "rpm"
+          },
+          "centrifugation time": {
+            "value": 5,
+            "unit": "min"
+          },
+          "drying temperature": {
+            "value": 60,
+            "unit": "°C"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Solution preparation",
+            "method": "Mixing",
+            "conditions": {
+              "EG/H2O ratio": {
+                "value": "3:7",
+                "unit": "v/v"
+              },
+              "Ir conc.": {
+                "value": 5,
+                "unit": "mmol/L"
+              }
+            },
+            "procedure_snippet": "IrCl₃·H₂O solution mixed with ethylene glycol to obtain EG/H2O 3:7 and 5 mmol L⁻¹ Ir"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Support dispersion",
+            "method": "Ultrasonication",
+            "conditions": {
+              "time": {
+                "value": 60,
+                "unit": "s"
+              }
+            },
+            "procedure_snippet": "support dispersed in 20 mL reaction mixture by ultrasonication 60 s"
+          },
+          {
+            "id": "unit_op_2.3",
+            "name": "MW heating",
+            "method": "Microwave irradiation",
+            "conditions": {
+              "power": {
+                "value": 200,
+                "unit": "W"
+              },
+              "time": {
+                "value": 20,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": "140-160",
+                "unit": "°C"
+              }
+            },
+            "procedure_snippet": "exposed to microwaves 20 min at predefined temperature"
+          },
+          {
+            "id": "unit_op_2.4",
+            "name": "Isolation",
+            "method": "Centrifugation/drying",
+            "conditions": {
+              "speed": {
+                "value": 4000,
+                "unit": "rpm"
+              },
+              "time": {
+                "value": 5,
+                "unit": "min"
+              },
+              "dry T": {
+                "value": 60,
+                "unit": "°C"
+              }
+            },
+            "procedure_snippet": "centrifuged 4000 rpm 5 min, washed, dried overnight 60°C"
+          }
+        ],
+        "source_text": "2.3. Synthesis of the supported Ir electrocatalysts...The electrocatalysts were synthesized using MW-assisted polyol method..."
+      },
+      {
+        "id": "chem_Ir_ATO_40_160",
+        "type": "chemical",
+        "name": "Ir/ATO.AT-40-160",
+        "aliases": [
+          "Ir nanoparticles on ATO.AT (40 wt% Ir, 160°C)"
+        ],
+        "composition": {
+          "Ir": {
+            "value": 40,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "Ir particle diameter": {
+            "value": 2,
+            "unit": "nm"
+          }
+        },
+        "related_images": [
+          "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "IrO2-AT-40-160-15min",
+            "properties": {
+              "description": "Iridium oxide synthesized via AT method at 40-160°C for 15 min",
+              "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+            },
+            "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2-AT-40-160-20min",
+            "properties": {
+              "description": "Iridium oxide synthesized via AT method at 40-160°C for 20 min",
+              "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+            },
+            "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2-AT-40-160-10min",
+            "properties": {
+              "description": "Iridium oxide synthesized via AT method at 40-160°C for 10 min",
+              "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+            },
+            "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ir_ATO_AT_40_140",
+        "type": "chemical",
+        "name": "Ir/ATO.AT-40-140",
+        "aliases": [
+          "Ir nanoparticles on ATO.AT (40 wt% Ir, 140°C)"
+        ],
+        "composition": {
+          "Ir": {
+            "value": 40,
+            "unit": "wt%"
+          }
+        },
+        "related_images": [
+          "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg",
+          "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg",
+          "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "material",
+            "name": "ATO-40",
+            "properties": {
+              "Ir_load": "40 wt%",
+              "description": "Antimony-doped tin oxide with 40 wt% Ir",
+              "extracted_from_image": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+            },
+            "source_image_file": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+          },
+          {
+            "type": "material",
+            "name": "ATO-40",
+            "properties": {
+              "ir_load": "40 wt%",
+              "description": "Antimony-doped tin oxide with 40 wt% Ir load",
+              "extracted_from_image": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+            },
+            "source_image_file": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+          },
+          {
+            "type": "material",
+            "name": "ATO-40",
+            "properties": {
+              "Ir_load": "40 wt%",
+              "description": "Antimony-doped Tin Oxide with 40 wt% Ir",
+              "extracted_from_image": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+            },
+            "source_image_file": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_ir_black",
+        "type": "chemical",
+        "name": "commercial Ir-black (IrO2)",
+        "aliases": [
+          "IrO2 AA",
+          "commercial IrO2",
+          "IrO2"
+        ],
+        "formula": "IrO2",
+        "related_images": [
+          "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg",
+          "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg",
+          "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg",
+          "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg",
+          "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg",
+          "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "IrO2-AA-160-5min",
+            "properties": {
+              "description": "Iridium oxide synthesized via AA method at 160°C for 5 min",
+              "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+            },
+            "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2-AA-40-160-5min",
+            "properties": {
+              "description": "Iridium oxide synthesized via AA method at 40-160°C for 5 min",
+              "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+            },
+            "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium(IV) oxide",
+            "properties": {
+              "formula": "IrO₂",
+              "description": "Common OER electrocatalyst",
+              "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+            },
+            "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+          },
+          {
+            "type": "material",
+            "name": "IrO2 AA",
+            "properties": {
+              "description": "Commercial IrO2 (anodically active)",
+              "extracted_from_image": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+            },
+            "source_image_file": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Iridium(IV) oxide",
+            "properties": {
+              "formula": "IrO2",
+              "role": "reference catalyst",
+              "extracted_from_image": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+            },
+            "source_image_file": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium dioxide reference material",
+              "extracted_from_image": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+            },
+            "source_image_file": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2, AA-10",
+            "properties": {
+              "description": "IrO2 with AA-10 preparation",
+              "extracted_from_image": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+            },
+            "source_image_file": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "description": "Iridium dioxide",
+              "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+            },
+            "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IrO2",
+            "properties": {
+              "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+            },
+            "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+          },
+          {
+            "type": "material",
+            "name": "IrO2-AA",
+            "properties": {
+              "description": "Iridium dioxide (anodically activated)",
+              "extracted_from_image": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+            },
+            "source_image_file": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_ir_ato_at_40_160",
+        "type": "chemical",
+        "name": "Ir/ATO.AT-40-160",
+        "aliases": [
+          "Ir/ATO.AT-40-160 electrocatalyst"
+        ],
+        "composition": {
+          "Ir": {
+            "value": 40,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "mean particle diameter": {
+            "value": 2,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_ato",
+        "type": "chemical",
+        "name": "ATO",
+        "aliases": [
+          "antimony-doped tin oxide"
+        ],
+        "formula": "SnO2:Sb",
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 54.5,
+            "unit": "m²/g"
+          },
+          "conductivity": {
+            "value": 0.05,
+            "unit": "S/cm"
+          },
+          "particle size": {
+            "value": "5-15",
+            "unit": "nm"
+          }
+        },
+        "related_images": [
+          "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg",
+          "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg",
+          "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "ATO",
+            "properties": {
+              "full_name": "Antimony-doped Tin Oxide",
+              "formula": "SnO2:Sb",
+              "role": "support material",
+              "extracted_from_image": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+            },
+            "source_image_file": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ATO",
+            "properties": {
+              "description": "Antimony-doped tin oxide",
+              "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+            },
+            "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "ATO",
+            "properties": {
+              "full_name": "Antimony-doped Tin Oxide",
+              "formula": "SnO₂:Sb",
+              "role": "support material",
+              "extracted_from_image": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+            },
+            "source_image_file": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_ato_at",
+        "type": "chemical",
+        "name": "ATO.AT",
+        "aliases": [
+          "acid-treated ATO"
+        ],
+        "formula": "SnO2:Sb",
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 57,
+            "unit": "m²/g"
+          },
+          "particle size": {
+            "value": "5-10",
+            "unit": "nm"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_ATO_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ATO",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support",
+          "amount": {
+            "value": 1,
+            "unit": "g"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_HCl_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_HCl",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reagent",
+          "concentration": {
+            "value": 37,
+            "unit": "wt%"
+          },
+          "volume": {
+            "value": 50,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_ATO_AT",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_ATO_AT",
+        "properties": {
+          "form": "dried powder"
+        }
+      },
+      {
+        "id": "edge_input_chem_IrCl3_xH2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_IrCl3_xH2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 5,
+            "unit": "mmol/L"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_H2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_H2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethylene_glycol_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ethylene_glycol",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "ratio": {
+            "value": "3:7",
+            "unit": "v/v ethylene glycol:water"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_ATO_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ATO",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_ATO_AT_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ATO_AT",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Ir_ATO_40_160",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Ir_ATO_40_160",
+        "properties": {
+          "Ir loading": {
+            "value": 40,
+            "unit": "wt%"
+          },
+          "temperature": {
+            "value": 160,
+            "unit": "°C"
+          },
+          "conversion efficiency": {
+            "value": 99,
+            "unit": "%"
+          },
+          "form": "dried powder"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Ir_ATO_AT_40_140",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Ir_ATO_AT_40_140",
+        "properties": {
+          "Ir loading": {
+            "value": 40,
+            "unit": "wt%"
+          },
+          "temperature": {
+            "value": 140,
+            "unit": "°C"
+          },
+          "conversion efficiency": {
+            "value": 59,
+            "unit": "%"
+          },
+          "form": "dried powder"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_ir_black",
+      "chem_ir_ato_at_40_160"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_ir_black",
+        "type": "chemical",
+        "name": "commercial Ir-black (IrO2)",
+        "aliases": [
+          "IrO2 AA",
+          "commercial IrO2",
+          "IrO2"
+        ],
+        "formula": "IrO2"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_ir_black",
+        "description": "OER activity and AST stability in 0.1 M HClO4",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 mol L^{-1} HClO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "GC RDE (0.196 cm2)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (saturated KCl)",
+            "unit": "electrode"
+          },
+          "rotation_speed": {
+            "value": 1600,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "2 Ω (~70% of measured R)"
+          },
+          "activation": {
+            "value": "20 CV cycles 1.0-1.7 V vs RHE at 100 mV/s",
+            "unit": "pre-treatment"
+          }
+        },
+        "results_json": {
+          "onset_potential": {
+            "value": "1.49",
+            "unit": "±0.11 V vs RHE"
+          },
+          "overpotential_at_10_mA/cm2": {
+            "value": "330",
+            "unit": "±0.19 mV vs RHE"
+          },
+          "mass_specific_activity": {
+            "value": "305",
+            "unit": "±2.1 A g^{-1} at 1.65 V"
+          },
+          "AST_retained_current": {
+            "value": "31",
+            "unit": "% after 2000 cycles"
+          },
+          "post_AST_mass_activity": {
+            "value": "94",
+            "unit": "±1.3 A g^{-1}"
+          },
+          "Ir_weight_loss": {
+            "value": "4.1",
+            "unit": "wt% after AST"
+          }
+        },
+        "source_text": "commercial IrO2 (330±0.19mV vs. RHE)... mass specific activities... 305 ± 2.1 A g^{-1}... post-AST J_m values were determined to be 94.0 ± 1.3 for IrO2 AA (31% of pre-AST)... Ir weight loss 04.1%"
+      },
+      {
+        "id": "chem_ir_ato_at_40_160",
+        "type": "chemical",
+        "name": "Ir/ATO.AT-40-160",
+        "aliases": [
+          "Ir/ATO.AT-40-160"
+        ],
+        "composition": {
+          "Ir": {
+            "value": 40,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "average_particle_diameter": {
+            "value": 2,
+            "unit": "nm"
+          },
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 57,
+            "unit": "m2/g"
+          }
+        }
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_ir_ato_at_40_160",
+        "description": "OER activity and AST stability in 0.1 M HClO4",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M HClO4",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "GC RDE",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "rotation_speed": {
+            "value": 1600,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "potential_window": {
+            "value": "1.0 to 1.65 V",
+            "unit": "vs RHE"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "2 ohm (~70%)"
+          },
+          "activation": {
+            "value": "20 CV cycles 1.0-1.7 V at 100 mV/s",
+            "unit": "pre-treatment"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm2": {
+            "value": "360",
+            "unit": "mV vs RHE"
+          },
+          "mass_specific_activity_at_1.65V": {
+            "value": "449",
+            "unit": "A/g"
+          },
+          "AST_retained_current_after_2000_cycles": {
+            "value": "75.1",
+            "unit": "%"
+          },
+          "post_AST_mass_activity": {
+            "value": "337",
+            "unit": "A/g"
+          }
+        },
+        "source_text": "Ir/ATO.AT-40-160 has demonstrated high activity (449±2.7 Ag_ir^{-1}) and high AST stability (75.1% retained current)... overpotential (E_over) for 40 wt% Ir loads on ATO.AT supported electrocatalysts at current density of 10mAcm^{-2} is 360±0.24mV vs. RHE... post-AST J_m values were determined to be 337±3.1 A g^{-1} (75.1% of pre-AST) for Ir/ATO.AT-40-160"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_ir_black_test_1",
+        "type": "tested_in",
+        "source_id": "chem_ir_black",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_ir_ato_at_40_160_test_2",
+        "type": "tested_in",
+        "source_id": "chem_ir_ato_at_40_160",
+        "target_id": "test_2",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_ato",
+        "type": "chemical",
+        "name": "ATO",
+        "aliases": [
+          "antimony-doped tin oxide"
+        ],
+        "formula": "SnO2:Sb",
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 54.5,
+            "unit": "m²/g"
+          },
+          "conductivity": {
+            "value": 0.05,
+            "unit": "S/cm"
+          },
+          "particle size": {
+            "value": "5-15",
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_ato_at",
+        "type": "chemical",
+        "name": "ATO.AT",
+        "aliases": [
+          "acid-treated ATO"
+        ],
+        "formula": "SnO2:Sb",
+        "properties": {
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 57,
+            "unit": "m²/g"
+          },
+          "particle size": {
+            "value": "5-10",
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_ir_ato_at_40_160",
+        "type": "chemical",
+        "name": "Ir/ATO.AT-40-160",
+        "aliases": [
+          "Ir/ATO.AT-40-160 electrocatalyst"
+        ],
+        "composition": {
+          "Ir": {
+            "value": 40,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "mean particle diameter": {
+            "value": 2,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "TEM images show Ir NPs with average particle diameter of ~2 nm, well-dispersed on ATO.AT support surface, with 65% particles smaller than 2.5 nm.",
+        "evidence_snippet": "The histogram determined by measuring >200 particles under the assumption of spherical like units shows the Ir average particle diameter of ∼2 nm (Fig. S2c), well-dispersed on the support surface (Fig. 3f)."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "TEM shows agglomerated ATO.AT structure with good crystallinity and particle size range of 5-10 nm.",
+        "evidence_snippet": "The TEM images show agglomerated structure of the ATO.AT with good crystallinity at the edges of the agglomerates (Fig. 2a, b) with high resolution. The NPs are in the range from 5 to 10 nm (Fig. S2a, b).",
+        "related_images": [
+          "8f30972752a64d17658c001fe92bf4fb22011acba03969255593895aa874a7aa.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "TEM",
+            "properties": {
+              "technique": "Transmission Electron Microscopy",
+              "purpose": "morphological analysis",
+              "extracted_from_image": "8f30972752a64d17658c001fe92bf4fb22011acba03969255593895aa874a7aa.jpg"
+            },
+            "source_image_file": "8f30972752a64d17658c001fe92bf4fb22011acba03969255593895aa874a7aa.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "SAED",
+        "is_reported": true,
+        "characterization_summary": "SAED pattern exhibits circular ring diffraction belonging to polycrystalline tetragonal SnO2 (P42/mnm) for ATO.AT support.",
+        "evidence_snippet": "The SAED (selected area electron diffraction) pattern (inset of Fig. 2a and magnified image Fig. S3a) exhibits a circular ring diffraction pattern, where the rings belong to the polycrystalline ATO.AT support."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "SAED",
+        "is_reported": true,
+        "characterization_summary": "SAED shows rings assigned to (110), (101), (211), (301) lattice planes of ATO.AT and diffuse ring fitting Ir (111) d-spacing indicating amorphous Ir NPs.",
+        "evidence_snippet": "The SAED pattern (inset of Fig. 3a and magnified image Fig. S3b) exhibits a circular ring diffraction pattern, where the rings assigned to the (110), (101), (211) and (301) lattice planes of ATO.AT..."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "BET",
+        "is_reported": true,
+        "characterization_summary": "N2 adsorption shows BET surface area of ~55 m²/g for ATO and ~57 m²/g for ATO.AT with pore size distribution maximum at 7.2 nm.",
+        "evidence_snippet": "The BET surface areas of the ATO and ATO.AT samples are observed to be ∼55 and ∼57 m²g⁻¹, respectively... The pore size distribution plots have maxima at around 7.2 nm for both ATO and ATO.AT."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "PXRD",
+        "is_reported": true,
+        "characterization_summary": "PXRD shows broad weak peak at 2θ ~40.8° corresponding to Ir (111) confirming metallic Ir NPs presence; other peaks from ATO support.",
+        "evidence_snippet": "All electrocatalysts exhibit a broad and weak diffraction peak at 2θ value ∼40.8° corresponding to the (111) diffraction from the Ir crystals (JCPDS: 87-0715).",
+        "related_images": [
+          "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "technique": "X-ray Diffraction",
+              "reference": "JCPDS 87-0719",
+              "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+            },
+            "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "XPS for Ir/ATO.AT-40-140 shows Ir 4f7/2 peaks at 61.3 eV (Ir⁰) and 63.4 eV (Ir⁴⁺); Sb 3d3/2 at 540.7 eV (Sb⁵⁺); Sn 3d5/2 at 487.4 eV and 3d3/2 at 495.9 eV (Sn⁴⁺).",
+        "evidence_snippet": "The Ir 4f for Ir/ATO.AT-40-140 show 4f7/2 and 4f5/2 spin-orbit doublet with the more intense 4f7/2 component at 61.3 and 63.4 eV representing the Ir⁰ and Ir⁴⁺ [19,47,61,62], respectively (Fig. 5c).",
+        "related_images": [
+          "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "description": "X-ray Photoelectron Spectroscopy plot showing Sn 3d region",
+              "x_axis": "Binding Energy (eV)",
+              "x_range": [
+                483,
+                501
+              ],
+              "y_axis": "Intensity",
+              "extracted_from_image": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+            },
+            "source_image_file": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "XPS for Ir/ATO.AT-40-160 shows shifted binding energies: Ir 4f7/2 at 60.7 eV, 4f5/2 at 62.8 eV (reduced Ir valence); Sb 3d5/2 at 530.9 eV, 3d3/2 at 540.2 eV (Sb⁵⁺); Sn⁴⁺ components also shifted lower.",
+        "evidence_snippet": "For the higher synthesis temperature of 160°C, the binding energy values for Sb, Sn and Ir are shifted to lower values for Ir/ATO.AT-40-160 electrocatalyst (Fig. 5d-f)... Ir/Ir⁴⁺ 4f doublet at 60.7 (4f7/2) and 62.8 (4f5/2) (Table S3).",
+        "related_images": [
+          "4cbb1e37d5ebe18d2bbeb64a169ae519d9deb3da0d5db36f98c0026073ab3d1b.jpg",
+          "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "type": "X-ray Photoelectron Spectroscopy",
+              "binding_energy_range": "945-535 eV",
+              "regions": [
+                "O 1s",
+                "Sb 3d"
+              ],
+              "extracted_from_image": "4cbb1e37d5ebe18d2bbeb64a169ae519d9deb3da0d5db36f98c0026073ab3d1b.jpg"
+            },
+            "source_image_file": "4cbb1e37d5ebe18d2bbeb64a169ae519d9deb3da0d5db36f98c0026073ab3d1b.jpg"
+          },
+          {
+            "type": "chart",
+            "name": "XPS Spectrum",
+            "properties": {
+              "description": "XPS spectrum plot",
+              "x_axis": "Binding Energy (eV)",
+              "x_range": [
+                545,
+                525
+              ],
+              "y_axis": "Intensity",
+              "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+            },
+            "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+          }
+        ]
+      },
+      {
+        "id": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56_node2",
+        "type": "chemical",
+        "name": "Sn^{4+}",
+        "properties": {
+          "description": "Tin(IV) species",
+          "peaks": "Pink open circles",
+          "extracted_from_image": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+        },
+        "source_image_file": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+      },
+      {
+        "id": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56_node3",
+        "type": "chemical",
+        "name": "Sn^{2+}",
+        "properties": {
+          "description": "Tin(II) species",
+          "peaks": "Blue open circles",
+          "extracted_from_image": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+        },
+        "source_image_file": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+      },
+      {
+        "id": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56_node4",
+        "type": "chemical",
+        "name": "Sn^0",
+        "properties": {
+          "description": "Metallic tin",
+          "peaks": "Black open circles",
+          "extracted_from_image": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+        },
+        "source_image_file": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+      },
+      {
+        "id": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56_node5",
+        "type": "chemical",
+        "name": "Sn_{3/2}",
+        "properties": {
+          "description": "Sn 3d_{3/2} spin-orbit component",
+          "peaks": "Green solid line",
+          "extracted_from_image": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+        },
+        "source_image_file": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+      },
+      {
+        "id": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56_node6",
+        "type": "chemical",
+        "name": "Sn_{5/2}",
+        "properties": {
+          "description": "Sn 3d_{5/2} spin-orbit component",
+          "peaks": "Red solid line",
+          "extracted_from_image": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+        },
+        "source_image_file": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+      },
+      {
+        "id": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56_node7",
+        "type": "data",
+        "name": "Experimental",
+        "properties": {
+          "description": "Experimental data points",
+          "peaks": "Open circles (various colors)",
+          "extracted_from_image": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+        },
+        "source_image_file": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+      },
+      {
+        "id": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56_node8",
+        "type": "data",
+        "name": "Background (BG)",
+        "properties": {
+          "description": "Background spectrum",
+          "peaks": "Green solid line baseline",
+          "extracted_from_image": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+        },
+        "source_image_file": "0107cf40de9ee0c023409ce6912e8359cfa1ae61965568884274845e10a0ed56.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "O",
+        "properties": {
+          "description": "Oxygen",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "O1s",
+        "properties": {
+          "description": "Oxygen 1s XPS peak",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "chemical",
+        "name": "Sb",
+        "properties": {
+          "description": "Antimony",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "chemical",
+        "name": "Sb^{5+}",
+        "properties": {
+          "description": "Antimony in +5 oxidation state",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "chemical",
+        "name": "Sb^{3+}",
+        "properties": {
+          "description": "Antimony in +3 oxidation state",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "chemical",
+        "name": "Sb 3d_{3/2}",
+        "properties": {
+          "description": "Antimony 3d_{3/2} XPS peak",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "chemical",
+        "name": "Sb 3d_{5/2}",
+        "properties": {
+          "description": "Antimony 3d_{5/2} XPS peak",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chemical",
+        "name": "BG",
+        "properties": {
+          "description": "Background",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "LSV_plot",
+        "type": "characterization",
+        "name": "Linear Sweep Voltammetry (LSV) Plot",
+        "properties": {
+          "x_axis": "Potential (V vs. RHE)",
+          "y_axis": "Current Density (mA/cm²)",
+          "range_x": [
+            1.2,
+            1.68
+          ],
+          "range_y": [
+            0,
+            500
+          ],
+          "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+        },
+        "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+      },
+      {
+        "id": "AA_method",
+        "type": "synthesis_method",
+        "name": "AA synthesis method",
+        "properties": {
+          "description": "Synthesis method labeled 'AA'",
+          "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+        },
+        "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+      },
+      {
+        "id": "AT_method",
+        "type": "synthesis_method",
+        "name": "AT synthesis method",
+        "properties": {
+          "description": "Synthesis method labeled 'AT'",
+          "extracted_from_image": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+        },
+        "source_image_file": "1c1d1db331a868218198fbcc030ddd6c36bd1339337c8d8ee1ad3f498a4ff146.jpg"
+      },
+      {
+        "id": "ATO-30",
+        "type": "material",
+        "name": "ATO-30",
+        "properties": {
+          "Ir_load": "30 wt%",
+          "description": "Antimony-doped tin oxide with 30 wt% Ir",
+          "extracted_from_image": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+        },
+        "source_image_file": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+      },
+      {
+        "id": "ATO-20",
+        "type": "material",
+        "name": "ATO-20",
+        "properties": {
+          "Ir_load": "20 wt%",
+          "description": "Antimony-doped Tin Oxide with 20 wt% Ir",
+          "extracted_from_image": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+        },
+        "source_image_file": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+      },
+      {
+        "id": "ATO-10",
+        "type": "material",
+        "name": "ATO-10",
+        "properties": {
+          "Ir_load": "10 wt%",
+          "description": "Antimony-doped Tin Oxide with 10 wt% Ir",
+          "extracted_from_image": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+        },
+        "source_image_file": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+      },
+      {
+        "id": "Ir",
+        "type": "chemical",
+        "name": "Iridium",
+        "properties": {
+          "symbol": "Ir",
+          "role": "active metal loading",
+          "extracted_from_image": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+        },
+        "source_image_file": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+      },
+      {
+        "id": "chart-140C",
+        "type": "characterization",
+        "name": "Polarization curve at 140°C",
+        "properties": {
+          "type": "line_chart",
+          "x_axis": "Current density (mA/cm² @ 1.65 V vs RHE)",
+          "y_axis": "Ir load (wt%)",
+          "temperature": "140°C",
+          "colors": {
+            "green": "ATO-Ir",
+            "purple": "140°C data"
+          },
+          "extracted_from_image": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+        },
+        "source_image_file": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+      },
+      {
+        "id": "chart-160C",
+        "type": "characterization",
+        "name": "Polarization curve at 160°C",
+        "properties": {
+          "type": "line_chart",
+          "x_axis": "Current density (mA/cm² @ 1.65 V vs RHE)",
+          "y_axis": "Ir load (wt%)",
+          "temperature": "160°C",
+          "colors": {
+            "purple": "160°C data"
+          },
+          "extracted_from_image": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+        },
+        "source_image_file": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+      },
+      {
+        "id": "RHE",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "full_name": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+        },
+        "source_image_file": "35415cc09fd96a692dd6373a705020d644a43845e7d32763b0e8dd54df15d243.jpg"
+      },
+      {
+        "id": "IrO2-10",
+        "type": "chemical",
+        "name": "IrO2 (10%)",
+        "properties": {
+          "composition": "IrO2 with 10% loading",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "IrO2-20",
+        "type": "chemical",
+        "name": "IrO2 (20%)",
+        "properties": {
+          "composition": "IrO2 with 20% loading",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "IrO2-30",
+        "type": "chemical",
+        "name": "IrO2 (30%)",
+        "properties": {
+          "composition": "IrO2 with 30% loading",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "IrO2-40",
+        "type": "chemical",
+        "name": "IrO2 (40%)",
+        "properties": {
+          "composition": "IrO2 with 40% loading",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_110",
+        "type": "peak",
+        "name": "(110)",
+        "properties": {
+          "miller_index": "(110)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_101",
+        "type": "peak",
+        "name": "(101)",
+        "properties": {
+          "miller_index": "(101)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_200",
+        "type": "peak",
+        "name": "(200)",
+        "properties": {
+          "miller_index": "(200)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_211",
+        "type": "peak",
+        "name": "(211)",
+        "properties": {
+          "miller_index": "(211)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_002",
+        "type": "peak",
+        "name": "(002)",
+        "properties": {
+          "miller_index": "(002)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_102",
+        "type": "peak",
+        "name": "(102)",
+        "properties": {
+          "miller_index": "(102)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_210",
+        "type": "peak",
+        "name": "(210)",
+        "properties": {
+          "miller_index": "(210)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_301",
+        "type": "peak",
+        "name": "(301)",
+        "properties": {
+          "miller_index": "(301)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "peak_202",
+        "type": "peak",
+        "name": "(202)",
+        "properties": {
+          "miller_index": "(202)",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "JCPDS_87-0719",
+        "type": "reference",
+        "name": "JCPDS 87-0719",
+        "properties": {
+          "database": "JCPDS",
+          "card_number": "87-0719",
+          "extracted_from_image": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+        },
+        "source_image_file": "378ee597ec8ccf0d77f28c43e5f5de450190ebec12dfdc03f8c5eced4d534576.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "characterization",
+        "name": "Experimental",
+        "properties": {
+          "description": "Experimental XPS spectrum",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "characterization",
+        "name": "Fitted",
+        "properties": {
+          "description": "Fitted XPS spectrum",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "characterization",
+        "name": "O-Metals",
+        "properties": {
+          "description": "Oxygen-metal fitted component",
+          "extracted_from_image": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+        },
+        "source_image_file": "fd1e056facba2598e41f703d57960d6485d0340b221016ec0c76bcf40db52454.jpg"
+      },
+      {
+        "id": "IrO2_AT-10",
+        "type": "chemical",
+        "name": "IrO2, AT-10",
+        "properties": {
+          "description": "IrO2 with AT-10 preparation",
+          "extracted_from_image": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+        },
+        "source_image_file": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+      },
+      {
+        "id": "IrO2_AT-20",
+        "type": "chemical",
+        "name": "IrO2, AT-20",
+        "properties": {
+          "description": "IrO2 with AT-20 preparation",
+          "extracted_from_image": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+        },
+        "source_image_file": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+      },
+      {
+        "id": "IrO2_AT-30",
+        "type": "chemical",
+        "name": "IrO2, AT-30",
+        "properties": {
+          "description": "IrO2 with AT-30 preparation",
+          "extracted_from_image": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+        },
+        "source_image_file": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+      },
+      {
+        "id": "IrO2_AT-40",
+        "type": "chemical",
+        "name": "IrO2, AT-40",
+        "properties": {
+          "description": "IrO2 with AT-40 preparation",
+          "extracted_from_image": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+        },
+        "source_image_file": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+      },
+      {
+        "id": "IrO2_AT-160",
+        "type": "chemical",
+        "name": "IrO2, AT-160",
+        "properties": {
+          "description": "IrO2 with AT-160 preparation",
+          "extracted_from_image": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+        },
+        "source_image_file": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+      },
+      {
+        "id": "chart_b",
+        "type": "characterization",
+        "name": "Figure (b)",
+        "properties": {
+          "description": "Current density vs potential plot",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (A/g)",
+          "x_range": [
+            1.28,
+            1.66
+          ],
+          "extracted_from_image": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+        },
+        "source_image_file": "70cc1df535f84bfe50666f73354577d565cf7673b02595f95322a3931005e49f.jpg"
+      },
+      {
+        "id": "Ir-ATO-10-40",
+        "type": "chemical",
+        "name": "Ir-ATO-10-40",
+        "properties": {
+          "description": "Iridium on ATO, 10 wt% Ir, 40 nm particle size",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "Ir-ATO-20-40",
+        "type": "chemical",
+        "name": "Ir-ATO-20-40",
+        "properties": {
+          "description": "Iridium on ATO, 20 wt% Ir, 40 nm particle size",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "Ir-ATO-30-40",
+        "type": "chemical",
+        "name": "Ir-ATO-30-40",
+        "properties": {
+          "description": "Iridium on ATO, 30 wt% Ir, 40 nm particle size",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "Ir-ATO-10-140",
+        "type": "chemical",
+        "name": "Ir-ATO-10-140",
+        "properties": {
+          "description": "Iridium on ATO, 10 wt% Ir, 140 nm particle size",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "Ir-ATO-20-140",
+        "type": "chemical",
+        "name": "Ir-ATO-20-140",
+        "properties": {
+          "description": "Iridium on ATO, 20 wt% Ir, 140 nm particle size",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "Ir-ATO-30-140",
+        "type": "chemical",
+        "name": "Ir-ATO-30-140",
+        "properties": {
+          "description": "Iridium on ATO, 30 wt% Ir, 140 nm particle size",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "AST",
+        "type": "characterization",
+        "name": "AST",
+        "properties": {
+          "description": "Accelerated Stability Test (cyclic voltammetry)",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "RetainedCurrent",
+        "type": "characterization",
+        "name": "Retained Current (%)",
+        "properties": {
+          "description": "Percentage of retained current after AST cycles",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "Chart",
+        "type": "characterization",
+        "name": "AST Stability Chart",
+        "properties": {
+          "description": "Plot of retained current vs AST cycles",
+          "x_axis": "AST Cycles (0-2000)",
+          "y_axis": "Retained Current (%) (0-100)",
+          "extracted_from_image": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+        },
+        "source_image_file": "8103901e07588f0367fb4a8f814a9ed7fb671dc6ef21b22323db8d14c8ada7cf.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "image",
+        "name": "Figure (b)",
+        "properties": {
+          "description": "TEM image showing irregular, aggregated nanoparticles with graphene-like layered structures",
+          "extracted_from_image": "8f30972752a64d17658c001fe92bf4fb22011acba03969255593895aa874a7aa.jpg"
+        },
+        "source_image_file": "8f30972752a64d17658c001fe92bf4fb22011acba03969255593895aa874a7aa.jpg"
+      },
+      {
+        "id": "nanoparticles",
+        "type": "chemical",
+        "name": "Nanoparticles",
+        "properties": {
+          "morphology": "irregular, aggregated",
+          "size": "nano-scale",
+          "features": "layered, sheet-like structures resembling graphene",
+          "extracted_from_image": "8f30972752a64d17658c001fe92bf4fb22011acba03969255593895aa874a7aa.jpg"
+        },
+        "source_image_file": "8f30972752a64d17658c001fe92bf4fb22011acba03969255593895aa874a7aa.jpg"
+      },
+      {
+        "id": "catalyst1",
+        "type": "chemical",
+        "name": "Ir/ATO-160",
+        "properties": {
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "time_20min",
+        "type": "condition",
+        "name": "20 min",
+        "properties": {
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "time_10min",
+        "type": "condition",
+        "name": "10 min",
+        "properties": {
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "time_5min",
+        "type": "condition",
+        "name": "5 min",
+        "properties": {
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "preAST_20min_IrATO",
+        "type": "measurement",
+        "name": "Pre-AST J (A g⁻¹)",
+        "properties": {
+          "value": "455 ± 2.1",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "postAST_20min_IrATO",
+        "type": "measurement",
+        "name": "Post-AST J (A g⁻¹)",
+        "properties": {
+          "value": "246 ± 2.4",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "retCurrent_20min_IrATO",
+        "type": "measurement",
+        "name": "Ret. Current (%)",
+        "properties": {
+          "value": "68.8",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "irWeight_20min_IrATO",
+        "type": "measurement",
+        "name": "Ir weight (%)",
+        "properties": {
+          "value": "3.59",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "preAST_10min_IrATO",
+        "type": "measurement",
+        "name": "Pre-AST J (A g⁻¹)",
+        "properties": {
+          "value": "515 ± 2.1",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "postAST_10min_IrATO",
+        "type": "measurement",
+        "name": "Post-AST J (A g⁻¹)",
+        "properties": {
+          "value": "242 ± 2.3",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "retCurrent_10min_IrATO",
+        "type": "measurement",
+        "name": "Ret. Current (%)",
+        "properties": {
+          "value": "58.3",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "irWeight_10min_IrATO",
+        "type": "measurement",
+        "name": "Ir weight (%)",
+        "properties": {
+          "value": "11.0",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "preAST_5min_IrATO",
+        "type": "measurement",
+        "name": "Pre-AST J (A g⁻¹)",
+        "properties": {
+          "value": "425 ± 2.0",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "postAST_5min_IrATO",
+        "type": "measurement",
+        "name": "Post-AST J (A g⁻¹)",
+        "properties": {
+          "value": "271 ± 1.4",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "retCurrent_5min_IrATO",
+        "type": "measurement",
+        "name": "Ret. Current (%)",
+        "properties": {
+          "value": "66.4",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "irWeight_5min_IrATO",
+        "type": "measurement",
+        "name": "Ir weight (%)",
+        "properties": {
+          "value": "12.1",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "preAST_IrO2",
+        "type": "measurement",
+        "name": "Pre-AST J (A g⁻¹)",
+        "properties": {
+          "value": "305 ± 2.1",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "postAST_IrO2",
+        "type": "measurement",
+        "name": "Post-AST J (A g⁻¹)",
+        "properties": {
+          "value": "94.0 ± 1.3",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "retCurrent_IrO2",
+        "type": "measurement",
+        "name": "Ret. Current (%)",
+        "properties": {
+          "value": "31.0",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "irWeight_IrO2",
+        "type": "measurement",
+        "name": "Ir weight (%)",
+        "properties": {
+          "value": "0.41",
+          "extracted_from_image": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+        },
+        "source_image_file": "982253bae46919ae8060a3b7ed9f36e9f412c2a75aa12f3ccf96f4d10122f818.jpg"
+      },
+      {
+        "id": "ATO-50",
+        "type": "material",
+        "name": "ATO-50",
+        "properties": {
+          "Ir_load": "50 wt%",
+          "description": "Antimony-doped Tin Oxide with 50 wt% Ir",
+          "extracted_from_image": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+        },
+        "source_image_file": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+      },
+      {
+        "id": "ATO-60",
+        "type": "material",
+        "name": "ATO-60",
+        "properties": {
+          "ir_load": "60 wt%",
+          "description": "Antimony-doped tin oxide with 60 wt% Ir load",
+          "extracted_from_image": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+        },
+        "source_image_file": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+      },
+      {
+        "id": "IO2A",
+        "type": "material",
+        "name": "IO2A",
+        "properties": {
+          "description": "Reference material IO2A",
+          "extracted_from_image": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+        },
+        "source_image_file": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+      },
+      {
+        "id": "temp_140C",
+        "type": "condition",
+        "name": "140°C",
+        "properties": {
+          "temperature": "140°C",
+          "extracted_from_image": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+        },
+        "source_image_file": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+      },
+      {
+        "id": "temp_160C",
+        "type": "condition",
+        "name": "160°C",
+        "properties": {
+          "temperature": "160°C",
+          "extracted_from_image": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+        },
+        "source_image_file": "9e289c588039452d300c2ff573b99ad4dedb20cbc0d8276f7231685fefa45f2a.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Bar Chart",
+        "properties": {
+          "type": "bar graph",
+          "x_axis": "Ir load (wt%)",
+          "y_axis": "E (V) vs RHE",
+          "title": "(a)",
+          "metric": "Electrochemical performance",
+          "extracted_from_image": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+        },
+        "source_image_file": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+      },
+      {
+        "id": "140C",
+        "type": "condition",
+        "name": "140°C",
+        "properties": {
+          "temperature": "140°C",
+          "extracted_from_image": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+        },
+        "source_image_file": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+      },
+      {
+        "id": "160C",
+        "type": "condition",
+        "name": "160°C",
+        "properties": {
+          "temperature": "160°C",
+          "extracted_from_image": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+        },
+        "source_image_file": "d3a6c0f80102b55b6beed5a09eda860a98cf9582364c5ee102d4d09451dec3e5.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_ir_ato_at_40_160_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_ir_ato_at_40_160",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ato_at_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_ato_at",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ato_at_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_ato_at",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ir_ato_at_40_160_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_ir_ato_at_40_160",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ato_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_ato",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ato_at_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_ato_at",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ir_ato_at_40_160_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_ir_ato_at_40_160",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ir_ato_at_40_160_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_ir_ato_at_40_160",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_ir_ato_at_40_160_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_ir_ato_at_40_160",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node7",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node8",
+        "type": "contains"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node6",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node5",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node6",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node5",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node6",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "condition"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "condition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "chem_ir_black",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "chem_ir_black",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "chem_ir_black",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "chem_ir_black",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "chem_ir_black",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "AA_method",
+        "type": "synthesized_by"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "AA_method",
+        "type": "synthesized_by"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "AT_method",
+        "type": "synthesized_by"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "AT_method",
+        "type": "synthesized_by"
+      },
+      {
+        "source_id": "chem_Ir_ATO_40_160",
+        "target_id": "AT_method",
+        "type": "synthesized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "shows"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "shows"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "shows"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ir_ATO_AT_40_140",
+        "target_id": "Ir",
+        "type": "has_loading"
+      },
+      {
+        "source_id": "ATO-30",
+        "target_id": "Ir",
+        "type": "has_loading"
+      },
+      {
+        "source_id": "ATO-20",
+        "target_id": "Ir",
+        "type": "has_loading"
+      },
+      {
+        "source_id": "ATO-10",
+        "target_id": "Ir",
+        "type": "has_loading"
+      },
+      {
+        "source_id": "chem_Ir_ATO_AT_40_140",
+        "target_id": "chem_ato",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "ATO-30",
+        "target_id": "chem_ato",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "ATO-20",
+        "target_id": "chem_ato",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "ATO-10",
+        "target_id": "chem_ato",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "chem_ir_black",
+        "type": "is"
+      },
+      {
+        "source_id": "chem_Ir_ATO_AT_40_140",
+        "target_id": "chart-140C",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "ATO-30",
+        "target_id": "chart-140C",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "ATO-20",
+        "target_id": "chart-140C",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "ATO-10",
+        "target_id": "chart-140C",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "chart-140C",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chart-140C",
+        "target_id": "RHE",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "chart-160C",
+        "target_id": "RHE",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "IrO2-10",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IrO2-20",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IrO2-30",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IrO2-40",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "peak_110",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_101",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_200",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_211",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_002",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_102",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_210",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_301",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_202",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "JCPDS_87-0719",
+        "type": "references"
+      },
+      {
+        "source_id": "IrO2-10",
+        "target_id": "peak_110",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "IrO2-20",
+        "target_id": "peak_101",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n7",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "oxidation_state"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "oxidation_state"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n2",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "char_8",
+        "type": "component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_8",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_8",
+        "type": "part_of_spectrum"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "subpeak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "subpeak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "doped_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "doped_with"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "doped_with"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "doped_with"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "doped_with"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "shows"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "shows"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "exposes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "exposes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "exposes"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "IrO2_AT-10",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "IrO2_AT-20",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "IrO2_AT-30",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "IrO2_AT-40",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "IrO2_AT-160",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "chart_b",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "chem_ir_black",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "IrO2_AT-10",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "IrO2_AT-20",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "IrO2_AT-30",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "IrO2_AT-40",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "IrO2_AT-160",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "Ir-ATO-10-40",
+        "target_id": "Chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "Ir-ATO-20-40",
+        "target_id": "Chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "Ir-ATO-30-40",
+        "target_id": "Chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "Ir-ATO-10-140",
+        "target_id": "Chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "Ir-ATO-20-140",
+        "target_id": "Chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "Ir-ATO-30-140",
+        "target_id": "Chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ato",
+        "target_id": "Ir-ATO-10-40",
+        "type": "support_for"
+      },
+      {
+        "source_id": "chem_ato",
+        "target_id": "Ir-ATO-20-40",
+        "type": "support_for"
+      },
+      {
+        "source_id": "chem_ato",
+        "target_id": "Ir-ATO-30-40",
+        "type": "support_for"
+      },
+      {
+        "source_id": "chem_ato",
+        "target_id": "Ir-ATO-10-140",
+        "type": "support_for"
+      },
+      {
+        "source_id": "chem_ato",
+        "target_id": "Ir-ATO-20-140",
+        "type": "support_for"
+      },
+      {
+        "source_id": "chem_ato",
+        "target_id": "Ir-ATO-30-140",
+        "type": "support_for"
+      },
+      {
+        "source_id": "AST",
+        "target_id": "Chart",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "RetainedCurrent",
+        "target_id": "Chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "Chart",
+        "type": "compared_with"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "char_2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "nanoparticles",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "nanoparticles",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "preAST_20min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "postAST_20min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "retCurrent_20min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "irWeight_20min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "preAST_10min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "postAST_10min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "retCurrent_10min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "irWeight_10min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "preAST_5min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "postAST_5min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "retCurrent_5min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "catalyst1",
+        "target_id": "irWeight_5min_IrATO",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "time_20min",
+        "target_id": "preAST_20min_IrATO",
+        "type": "at_condition"
+      },
+      {
+        "source_id": "time_10min",
+        "target_id": "preAST_10min_IrATO",
+        "type": "at_condition"
+      },
+      {
+        "source_id": "time_5min",
+        "target_id": "preAST_5min_IrATO",
+        "type": "at_condition"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "preAST_IrO2",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "postAST_IrO2",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "retCurrent_IrO2",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "irWeight_IrO2",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_Ir_ATO_AT_40_140",
+        "target_id": "Ir",
+        "type": "has_loading"
+      },
+      {
+        "source_id": "ATO-50",
+        "target_id": "Ir",
+        "type": "has_loading"
+      },
+      {
+        "source_id": "ATO-60",
+        "target_id": "Ir",
+        "type": "has_loading"
+      },
+      {
+        "source_id": "chem_Ir_ATO_AT_40_140",
+        "target_id": "chem_ato",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "ATO-50",
+        "target_id": "chem_ato",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "ATO-60",
+        "target_id": "chem_ato",
+        "type": "is_variant_of"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "chem_Ir_ATO_AT_40_140",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ATO-50",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ATO-60",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "IO2A",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "temp_140C",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "temp_160C",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "plots"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "at_temperature"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "measures"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "plots"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "at_temperature"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "affects"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n3",
+        "type": "fits"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n4",
+        "type": "fits"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "fits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ir_ATO_AT_40_140",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "ATO-50",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "ATO-20",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "ATO-10",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_ir_black",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "140C",
+        "target_id": "chart",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "160C",
+        "target_id": "chart",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n10",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n10",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n10",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n10",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n10",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "oxidation_state"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "oxidation_state"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "char_8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "char_8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_8",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_8",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_8",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "char_8",
+        "type": "part_of"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3042 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_iron_foam",
+        "type": "chemical",
+        "name": "iron foam",
+        "aliases": [
+          "IF"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Co(NO3)2_6H2O",
+        "type": "chemical",
+        "name": "Co(NO3)2·6H2O",
+        "aliases": [],
+        "formula": "Co(NO3)2·6H2O",
+        "properties": {
+          "amount": {
+            "value": 29.1,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "chem_H6TDPAT",
+        "type": "chemical",
+        "name": "H6TDPAT",
+        "aliases": [
+          "5,5′,5″-(1,3,5-triazine-2,4,6-triyl)tris(azanediyl)triisophthalic acid"
+        ],
+        "formula": "H₆TDPAT",
+        "properties": {
+          "amount": {
+            "value": 12.4,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "chem_DMF",
+        "type": "chemical",
+        "name": "DMF",
+        "aliases": [
+          "N,N-dimethylformamide"
+        ],
+        "formula": "DMF",
+        "properties": {}
+      },
+      {
+        "id": "chem_methanol",
+        "type": "chemical",
+        "name": "methanol",
+        "aliases": [],
+        "formula": "CH3OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_IF_CoFe_TDPAT_NSA",
+        "type": "chemical",
+        "name": "IF@CoFe-TDPAT NSA",
+        "aliases": [
+          "CoFe-TDPAT NSA"
+        ],
+        "formula": null,
+        "composition": {
+          "Fe": {
+            "value": 2,
+            "unit": "ratio"
+          },
+          "Co": {
+            "value": 1,
+            "unit": "ratio"
+          }
+        },
+        "properties": {
+          "nanosheet thickness": {
+            "value": 14,
+            "unit": "nm"
+          },
+          "array thickness": {
+            "value": 411,
+            "unit": "nm"
+          },
+          "lattice spacing": {
+            "value": 0.24,
+            "unit": "nm"
+          }
+        },
+        "related_images": [
+          "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg",
+          "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "IF@Co-TDPAT NSA",
+            "properties": {
+              "description": "IF-coated Co-TDPAT nanosheet assembly",
+              "extracted_from_image": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+            },
+            "source_image_file": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IF@CoFe-TDPA NSA",
+            "properties": {
+              "description": "IF@CoFe-TDPA with NSA modification",
+              "extracted_from_image": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+            },
+            "source_image_file": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "IF pretreatment",
+        "procedure": "IF was first ultrasonicated in methanol (15 min) and 1 M HCl (15 min), then rinsed with DI water (5 min), and finally dried with N₂ for further use.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Ultrasonication",
+            "method": "Methanol ultrasonication",
+            "conditions": {
+              "time": {
+                "value": 15,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "ultrasonicated in methanol (15 min)"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Ultrasonication",
+            "method": "1 M HCl ultrasonication",
+            "conditions": {
+              "time": {
+                "value": 15,
+                "unit": "min"
+              },
+              "HCl_concentration": {
+                "value": 1,
+                "unit": "M"
+              }
+            },
+            "procedure_snippet": "1 M HCl (15 min)"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Rinsing",
+            "method": "DI water rinsing",
+            "conditions": {
+              "time": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "rinsed with DI water (5 min)"
+          },
+          {
+            "id": "unit_op_1.4",
+            "name": "Drying",
+            "method": "N₂ drying",
+            "procedure_snippet": "dried with N₂"
+          }
+        ],
+        "method": "Ultrasonic cleaning",
+        "conditions": {
+          "HCl_concentration": {
+            "value": 1,
+            "unit": "M"
+          }
+        },
+        "source_text": "IF was first ultrasonicated in methanol (15 min) and 1 M HCl (15 min), then rinsed with DI water (5 min), and finally dried with N₂ for further use."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "In situ solvothermal CoFe-TDPAT NSA synthesis",
+        "procedure": "29.1 mg Co(NO₃)₂·6H₂O and 12.4 mg H₆TDPAT were added in 10 mL of a mixed solvent consisting of DMF and methanol (volume ratio 1:2), and under magnetic stirring for 60 min. The resulting suspension was transferred into a 20 mL autoclave. A piece of clean IF was then introduced into this suspension. Subsequently, the autoclave was sealed and maintained for 24 h at 160°C and naturally cooled to room temperature. Finally, the product was thoroughly rinsed with DMF and methanol and dried at 60°C for 30 min in a vacuum drying oven.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Precursor mixing",
+            "method": "Magnetic stirring",
+            "conditions": {
+              "stirring_time": {
+                "value": 60,
+                "unit": "min"
+              },
+              "solvent_volume": {
+                "value": 10,
+                "unit": "mL"
+              },
+              "DMF_methanol_ratio": {
+                "value": "1:2",
+                "unit": "vol ratio"
+              }
+            },
+            "procedure_snippet": "under magnetic stirring for 60 min"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Solvothermal reaction",
+            "method": "Autoclave solvothermal",
+            "conditions": {
+              "temperature": {
+                "value": 160,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 24,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "maintained for 24 h at 160°C and naturally cooled"
+          },
+          {
+            "id": "unit_op_2.3",
+            "name": "Post-synthesis washing",
+            "method": "DMF/methanol rinsing",
+            "procedure_snippet": "thoroughly rinsed with DMF and methanol"
+          },
+          {
+            "id": "unit_op_2.4",
+            "name": "Vacuum drying",
+            "method": "Vacuum oven drying",
+            "conditions": {
+              "temperature": {
+                "value": 60,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "dried at 60°C for 30 min in a vacuum drying oven"
+          }
+        ],
+        "method": "In situ solvothermal self-assembly",
+        "conditions": {
+          "temperature": {
+            "value": 160,
+            "unit": "°C"
+          },
+          "reaction_time": {
+            "value": 24,
+            "unit": "h"
+          },
+          "stirring_time": {
+            "value": 60,
+            "unit": "min"
+          },
+          "drying_temperature": {
+            "value": 60,
+            "unit": "°C"
+          },
+          "drying_time": {
+            "value": 30,
+            "unit": "min"
+          },
+          "DMF_methanol_ratio": {
+            "value": "1:2",
+            "unit": "volume ratio"
+          },
+          "solvent_volume": {
+            "value": 10,
+            "unit": "mL"
+          },
+          "autoclave_volume": {
+            "value": 20,
+            "unit": "mL"
+          }
+        },
+        "source_text": "Synthesis of IF Supported CoFe-TDPAT MOF NSAs (IF@CoFe-TDPAT NSA): 29.1 mg Co(NO3)2·6H2O and 12.4 mg H6 TDPAT were added in 10 mL of a mixed solvent... dried at 60°C for 30 min in a vacuum drying oven."
+      },
+      {
+        "id": "chem_IF_CoFe_TDPAT_NPF",
+        "type": "chemical",
+        "name": "IF@CoFe-TDPAT NPF",
+        "aliases": [
+          "CoFe-TDPAT NPF"
+        ],
+        "formula": "",
+        "properties": {},
+        "related_images": [
+          "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg",
+          "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "IF@Co-TDPAT NPF",
+            "properties": {
+              "description": "IF-coated Co-TDPAT nanofilm",
+              "extracted_from_image": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+            },
+            "source_image_file": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IF@CoFe-TDPA NPF",
+            "properties": {
+              "description": "IF@CoFe-TDPA with NPF modification",
+              "extracted_from_image": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+            },
+            "source_image_file": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_IF",
+        "type": "chemical",
+        "name": "IF",
+        "aliases": [
+          "iron foam"
+        ],
+        "formula": "",
+        "properties": {},
+        "related_images": [
+          "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg",
+          "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg",
+          "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg",
+          "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "IF",
+            "properties": {
+              "description": "Ionic liquid or reference material",
+              "extracted_from_image": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+            },
+            "source_image_file": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IF",
+            "properties": {
+              "description": "Base material or framework",
+              "extracted_from_image": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+            },
+            "source_image_file": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IF",
+            "properties": {
+              "description": "Chemical entity, likely an ionic framework or material",
+              "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+            },
+            "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "IF",
+            "properties": {
+              "description": "Iron foam substrate",
+              "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+            },
+            "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "RuO2",
+        "aliases": [],
+        "formula": "RuO2",
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "Pt/C",
+        "aliases": [],
+        "formula": "",
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_iron_foam_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_iron_foam",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_methanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_methanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_iron_foam_clean",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_iron_foam",
+        "properties": {
+          "form": "clean IF"
+        }
+      },
+      {
+        "id": "edge_input_chem_iron_foam_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_iron_foam",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate",
+          "state": "clean"
+        }
+      },
+      {
+        "id": "edge_input_chem_Co(NO3)2_6H2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Co(NO3)2_6H2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "Co precursor",
+          "amount": {
+            "value": 29.1,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_H6TDPAT_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_H6TDPAT",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "organic ligand",
+          "amount": {
+            "value": 12.4,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_DMF_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_DMF",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_methanol_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_methanol",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_IF_CoFe_TDPAT_NSA",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_IF_CoFe_TDPAT_NSA",
+        "properties": {
+          "form": "nanosheet array on IF"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_RuO2",
+      "chem_Pt_C",
+      "chem_IF_CoFe_TDPAT_NPF",
+      "chem_IF"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_IF_CoFe_TDPAT_NSA",
+        "type": "chemical",
+        "name": "IF@CoFe-TDPAT NSA",
+        "aliases": [
+          "CoFe-TDPAT NSA"
+        ],
+        "formula": "",
+        "properties": {
+          "nanosheet_thickness": {
+            "value": 14,
+            "unit": "nm"
+          },
+          "array_thickness": {
+            "value": 411,
+            "unit": "nm"
+          },
+          "Fe_Co_ratio": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        }
+      },
+      {
+        "id": "chem_IF_CoFe_TDPAT_NPF",
+        "type": "chemical",
+        "name": "IF@CoFe-TDPAT NPF",
+        "aliases": [
+          "CoFe-TDPAT NPF"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_IF",
+        "type": "chemical",
+        "name": "IF",
+        "aliases": [
+          "iron foam"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "RuO2",
+        "aliases": [],
+        "formula": "RuO2",
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "Pt/C",
+        "aliases": [],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_IF_CoFe_TDPAT_NSA",
+        "description": "OER performance in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "IF@CoFe-TDPAT NSA",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "80%",
+            "unit": "correction"
+          }
+        },
+        "results_json": {
+          "onset_potential": {
+            "value": 1.41,
+            "unit": "V_vs_RHE"
+          },
+          "overpotential_at_10_mA/cm2": {
+            "value": 185.5,
+            "unit": "mV"
+          },
+          "overpotential_at_300_mA/cm2": {
+            "value": 234.0,
+            "unit": "mV"
+          },
+          "overpotential_at_500_mA/cm2": {
+            "value": 240.0,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 30.8,
+            "unit": "mV/dec"
+          },
+          "charge_transfer_resistance": {
+            "value": 43.21,
+            "unit": "Ω"
+          },
+          "electrochemically_active_surface_area": {
+            "value": 690,
+            "unit": "cm2"
+          },
+          "double_layer_capacitance": {
+            "value": null,
+            "unit": "calculated via CV"
+          }
+        },
+        "source_text": "Figure 5A displays linear sweep voltammetry (LSV) curves... the onset potential further decreases to 1.41 V... overpotential... 185.5 mV for IF@CoFe-TDPAT NSA... 234.0 and 240.0 mV... Tafel slope... 30.8 mVdec−1... ECSA... 690 cm2."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_IF_CoFe_TDPAT_NSA",
+        "description": "HER performance in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "IF@CoFe-TDPAT NSA",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "80%",
+            "unit": "correction"
+          }
+        },
+        "results_json": {
+          "onset_overpotential": {
+            "value": 121.1,
+            "unit": "mV"
+          },
+          "overpotential_at_10_mA/cm2": {
+            "value": 174.7,
+            "unit": "mV"
+          },
+          "overpotential_at_300_mA/cm2": {
+            "value": 326.9,
+            "unit": "mV"
+          },
+          "overpotential_at_500_mA/cm2": {
+            "value": 343.3,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 76.7,
+            "unit": "mV/dec"
+          },
+          "charge_transfer_resistance": {
+            "value": 23.8,
+            "unit": "Ω"
+          },
+          "electrochemically_active_surface_area": {
+            "value": 690,
+            "unit": "cm2"
+          }
+        },
+        "source_text": "Figure 5C shows the LSV curves... For IF@CoFe-TDPAT NSA, these values are further reduced to 121.1, 174.7, 326.9, and 343.3 mV... Tafel slope further decreases to 76.7 mVdec−1."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_IF_CoFe_TDPAT_NSA",
+        "description": "Overall water splitting in 1.0 M KOH (bifunctional)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "anode": {
+            "value": "IF@CoFe-TDPAT NSA",
+            "unit": "electrode"
+          },
+          "cathode": {
+            "value": "IF@CoFe-TDPAT NSA",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "onset_voltage": {
+            "value": 1.41,
+            "unit": "V"
+          },
+          "voltage_at_10_mA/cm2": {
+            "value": 1.43,
+            "unit": "V"
+          },
+          "voltage_at_300_mA/cm2": {
+            "value": 1.753,
+            "unit": "V"
+          },
+          "voltage_at_500_mA/cm2": {
+            "value": 1.78,
+            "unit": "V"
+          },
+          "chronoamperometry_stability": {
+            "value": "297.2 from 301.3",
+            "unit": "mA/cm2 after 100h"
+          }
+        },
+        "source_text": "When adopted as a bifunctional electrode for overall water splitting, it achieves 300 mA cm−2 at 1.753 V and exhibits negligible current decay after 100 h... current density changes negligibly after 100 h (from 301.3 to 297.2 mA cm−2)."
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_RuO2",
+        "description": "Benchmark overall water splitting Pt/C||RuO2",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "anode": {
+            "value": "RuO2",
+            "unit": "electrode"
+          },
+          "cathode": {
+            "value": "Pt/C",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "onset_voltage": {
+            "value": 1.51,
+            "unit": "V"
+          },
+          "voltage_at_10_mA/cm2": {
+            "value": 1.61,
+            "unit": "V"
+          }
+        },
+        "source_text": "The onset voltage of the IF@CoFe-TDPAT NSA electrolyzer is ≈1.41 V, 100 mV lower than that of Pt/C//RuO2 (≈1.51 V)... 180 mV lower than that required for Pt/C//RuO2 (1.61 V)."
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_IF_CoFe_TDPAT_NSA",
+        "description": "OER stability test in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "chronoamperometry",
+            "unit": "stability"
+          },
+          "overpotential": {
+            "value": 234.0,
+            "unit": "mV"
+          },
+          "duration": {
+            "value": 24,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "current_retention": {
+            "value": "296.6 from 300.7",
+            "unit": "mA/cm2"
+          }
+        },
+        "source_text": "The OER current density changes from 300.7 to 296.6 mA cm−2 after 24 h."
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_IF_CoFe_TDPAT_NSA",
+        "description": "HER stability test in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "chronoamperometry",
+            "unit": "stability"
+          },
+          "overpotential": {
+            "value": 326.9,
+            "unit": "mV"
+          },
+          "duration": {
+            "value": 24,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "current_retention": {
+            "value": "297.2 from 301.3",
+            "unit": "mA/cm2"
+          }
+        },
+        "source_text": "The HER one changes from 301.3 to 297.2 mA cm−2 after 24 h."
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_IF_CoFe_TDPAT_NSA",
+        "description": "CV stability cycling OER",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "cyclic voltammetry",
+            "unit": "stability"
+          },
+          "potential_window": {
+            "value": "1.0 to 1.7",
+            "unit": "V"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "cycles": {
+            "value": 1000,
+            "unit": "cycles"
+          }
+        },
+        "results_json": {
+          "current_density_loss": {
+            "value": "negligible",
+            "unit": "after 1000 CV cycles"
+          }
+        },
+        "source_text": "LSV curves... before and after 1000 CV cycles... exhibit negligible loss in current density."
+      },
+      {
+        "id": "test_12",
+        "type": "testing",
+        "catalyst_id": "chem_IF_CoFe_TDPAT_NSA",
+        "description": "CV stability cycling HER",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "cyclic voltammetry",
+            "unit": "stability"
+          },
+          "potential_window": {
+            "value": "0.0 to -0.55",
+            "unit": "V"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "cycles": {
+            "value": 1000,
+            "unit": "cycles"
+          }
+        },
+        "results_json": {
+          "current_density_loss": {
+            "value": "negligible",
+            "unit": "after 1000 CV cycles"
+          }
+        },
+        "source_text": "LSV curves... before and after 1000 CV cycles... exhibit negligible loss in current density."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_IF_CoFe_TDPAT_NSA_test_1",
+        "type": "tested_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IF_CoFe_TDPAT_NSA_test_2",
+        "type": "tested_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IF_CoFe_TDPAT_NSA_test_3",
+        "type": "tested_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_RuO2_test_8",
+        "type": "tested_in",
+        "source_id": "chem_RuO2",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IF_CoFe_TDPAT_NSA_test_9",
+        "type": "tested_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IF_CoFe_TDPAT_NSA_test_10",
+        "type": "tested_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "test_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IF_CoFe_TDPAT_NSA_test_11",
+        "type": "tested_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "test_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_IF_CoFe_TDPAT_NSA_test_12",
+        "type": "tested_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "test_12",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_IF_CoFe_TDPAT_NSA",
+        "type": "chemical",
+        "name": "IF@CoFe-TDPAT NSA",
+        "aliases": [
+          "CoFe-TDPAT NSA"
+        ],
+        "formula": null,
+        "composition": {
+          "Fe": {
+            "value": 2,
+            "unit": "ratio"
+          },
+          "Co": {
+            "value": 1,
+            "unit": "ratio"
+          }
+        },
+        "properties": {
+          "nanosheet thickness": {
+            "value": 14,
+            "unit": "nm"
+          },
+          "array thickness": {
+            "value": 411,
+            "unit": "nm"
+          },
+          "lattice spacing": {
+            "value": 0.24,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "FTIR",
+        "is_reported": true,
+        "characterization_summary": "FTIR peaks red-shifted to 1656.9, 1388.4, and 1515.4 cm⁻¹ indicating coordination of Co and Fe ions to carboxyl oxygen atoms of H₆TDPAT.",
+        "evidence_snippet": "Figure 1A displays the FTIR spectra of H₆TDPAT and IF@CoFeTDPAT NSA. ... for IF@CoFe-TDPAT NSA, these peaks have red-shifted to 1656.9, 1388.4, and 1515.4 cm⁻¹, respectively."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "High-resolution Co 2p XPS shows peaks at 780.9 and 796.5 eV (Co²⁺) with satellites at 785.7 and 802.8 eV; Fe 2p XPS shows peaks at 710.9 and 724.5 eV (Fe³⁺) with satellites at 715.6 and 733.2 eV.",
+        "evidence_snippet": "The deconvoluted Co 2p XPS spectrum (Figure 1B) shows peaks with binding energy values of 780.9 and 796.5 eV, which correspond to Co 2p₃/₂ and Co 2p₁/₂ of Co²⁺, respectively. The peaks at 785.7 and 802.8 eV are the satellite peaks. The Fe 2p XPS spectrum (Figure 1C) shows peaks located at 710.9 and 724.5 eV, which are ascribed to Fe 2p₃/₂ and Fe 2p₁/₂ of Fe³⁺, and at 715.6 and 733.2 eV, which are the satellite peaks.",
+        "related_images": [
+          "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg",
+          "489f7ff272e7f0cbd2ca4065d8cc228c090db9c434cff239bf575ef493f37e41.jpg",
+          "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum - CoFe-TDPA T NSA",
+            "properties": {
+              "type": "XPS",
+              "region": "Binding Energy 397-402 eV",
+              "intensity_units": "a.u.",
+              "extracted_from_image": "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg"
+            },
+            "source_image_file": "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV Plot",
+            "properties": {
+              "type": "polarization curve",
+              "x_axis": "Voltage (V)",
+              "y_axis": "Current Density (mA/cm²)",
+              "range_x": [
+                1.2,
+                1.8
+              ],
+              "range_y": [
+                0,
+                500
+              ],
+              "extracted_from_image": "489f7ff272e7f0cbd2ca4065d8cc228c090db9c434cff239bf575ef493f37e41.jpg"
+            },
+            "source_image_file": "489f7ff272e7f0cbd2ca4065d8cc228c090db9c434cff239bf575ef493f37e41.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Fe 2p Spectrum",
+            "properties": {
+              "technique": "XPS",
+              "region": "Fe 2p",
+              "x_axis": "Binding Energy (eV)",
+              "x_range": [
+                705,
+                735
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "extracted_from_image": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+            },
+            "source_image_file": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "XRD shows peaks at 9.6°, 11.8°, and 35.5° indicating formation of CoFe-TDPAT MOF structure on IF, plus IF peaks at 44.9°, 65.5°, and 82.4°.",
+        "evidence_snippet": "Figure 1D shows the X-ray diffraction (XRD) patterns of IF@CoFe-TDPAT NSA... additional peaks at 9.6°, 11.8°, and 35.5° can be observed.",
+        "related_images": [
+          "7ac38d707db4a4f073eacae3671ff45daac0de722f878c95c53023462ad42c0d.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "technique": "X-ray Diffraction",
+              "x_axis": "2θ (degree)",
+              "x_range": [
+                15,
+                75
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "features": [
+                "peaks at low angles",
+                "marked peaks with *"
+              ],
+              "extracted_from_image": "7ac38d707db4a4f073eacae3671ff45daac0de722f878c95c53023462ad42c0d.jpg"
+            },
+            "source_image_file": "7ac38d707db4a4f073eacae3671ff45daac0de722f878c95c53023462ad42c0d.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "FESEM",
+        "is_reported": true,
+        "characterization_summary": "FESEM reveals large-area high-density vertically aligned ultrathin interconnected nanosheet array with individual nanosheet thickness ≈14 nm and array thickness ≈411 nm.",
+        "evidence_snippet": "Figure 2A-C shows the Field emission scanning electron microscopy (FESEM) images of IF@CoFe-TDPAT NSA at different magnifications... The thickness of each nanosheet is ≈14 nm (Figure 2C). The cross-section FESEM image (Figure 2D) reveals that the thickness of the nanosheet array is ≈411 nm.",
+        "related_images": [
+          "81e51d5f75c4a021332fddf6a160c3d872a9e5dca668678a5224b5580acdc78c.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "description": "Porous nanofibrous structure with interconnected fibers, high surface area morphology",
+              "scale": "500 nm",
+              "extracted_from_image": "81e51d5f75c4a021332fddf6a160c3d872a9e5dca668678a5224b5580acdc78c.jpg"
+            },
+            "source_image_file": "81e51d5f75c4a021332fddf6a160c3d872a9e5dca668678a5224b5580acdc78c.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "TEM shows crumpled ultrathin nanosheets; HRTEM exhibits lattice spacing of 0.24 nm confirming crystallinity.",
+        "evidence_snippet": "The TEM result (Figure 3A) shows the nanosheets are crumpled... Its HRTEM image (Figure 3B) exhibits lattices with spacing of 0.24 nm, further indicating that these nanosheets are crystalline."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "EDX",
+        "is_reported": true,
+        "characterization_summary": "EDX mapping shows uniform distribution of Fe, Co, N, C, O elements with Fe:Co ratio ≈2:1.",
+        "evidence_snippet": "The energy dispersive X-ray (EDX) mapping images displayed in Figure 3D-H show the distribution of Fe, Co, N, C, and O... The EDX analysis reveals that the ratio of Fe to Co is ≈2:1."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "Double layer capacitance Cdl yields ECSA of 690 cm² for IF@CoFe-TDPAT NSA (vs 325 cm² for IF, 635 cm² for NPF).",
+        "evidence_snippet": "ECSA of IF is 325 cm². After growth of CoFe-TDPAT NPF on IF, ECSA increases significantly to 635 cm². After growth of CoFe-TDPAT NSA, ECSA slightly increases to 690 cm².",
+        "related_images": [
+          "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry Plot",
+            "properties": {
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "Current Density (mA/cm²)",
+              "x_range": [
+                1.2,
+                1.7
+              ],
+              "y_range": [
+                0,
+                500
+              ],
+              "extracted_from_image": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+            },
+            "source_image_file": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "EIS shows charge transfer resistance Rct of 43.21 Ω for OER and 23.8 Ω for HER for IF@CoFe-TDPAT NSA.",
+        "evidence_snippet": "The charge transfer resistances of IF are 1942 Ω for OER and 149.6 Ω for HER. ... After in situ self-assembly of CoFe-TDPAT NSA, this value further significantly decreases to 43.21 Ω for OER and 23.8 Ω for HER, respectively.",
+        "related_images": [
+          "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg",
+          "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Nyquist Plot",
+            "properties": {
+              "description": "Electrochemical impedance spectroscopy plot",
+              "x_axis": "Z' (Ω)",
+              "y_axis": "-Z'' (Ω)",
+              "extracted_from_image": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+            },
+            "source_image_file": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EIS Nyquist Plot",
+            "properties": {
+              "description": "Electrochemical impedance spectroscopy plot",
+              "x_axis": "Z' (Ω)",
+              "y_axis": "Z'' (Ω)",
+              "range_x": "[0, 1800]",
+              "range_y": "[0, 800]",
+              "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+            },
+            "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+          }
+        ]
+      },
+      {
+        "id": "n1",
+        "type": "characterization",
+        "name": "Initial CV Cycles",
+        "properties": {
+          "description": "Cyclic Voltammetry curve for initial cycles",
+          "current_range": "0-500 mA/cm²",
+          "potential_range": "1.2-1.5 V vs RHE",
+          "extracted_from_image": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+        },
+        "source_image_file": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "characterization",
+        "name": "After 1000 CV Cycles",
+        "properties": {
+          "description": "Cyclic Voltammetry curve after 1000 cycles",
+          "current_range": "0-500 mA/cm²",
+          "potential_range": "1.2-1.5 V vs RHE",
+          "stability": "Maintained performance",
+          "extracted_from_image": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+        },
+        "source_image_file": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "experiment",
+        "name": "Cyclic Voltammetry",
+        "properties": {
+          "cycles": "1000",
+          "potential_window": "1.2-1.5 V",
+          "reference": "RHE",
+          "current_density_unit": "mA/cm²",
+          "extracted_from_image": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+        },
+        "source_image_file": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "axis",
+        "name": "Current Density",
+        "properties": {
+          "unit": "mA/cm²",
+          "range": "0-500",
+          "extracted_from_image": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+        },
+        "source_image_file": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "axis",
+        "name": "Potential",
+        "properties": {
+          "unit": "V vs RHE",
+          "range": "1.2-1.5",
+          "extracted_from_image": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+        },
+        "source_image_file": "f76ec40e8e47fc03194ec2d1dea43339ab0bb7e8e085dd10315802c948b11bde.jpg"
+      },
+      {
+        "id": "Co-TDPAT",
+        "type": "chemical",
+        "name": "Co-TDPAT",
+        "properties": {
+          "description": "Cobalt-based metal-organic framework",
+          "extracted_from_image": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+        },
+        "source_image_file": "0ab3493a0a6650495aa3216179fb9d64ce54775ae2f1ff70cc562b1fcdcf3203.jpg"
+      },
+      {
+        "id": "Rs",
+        "type": "parameter",
+        "name": "Rs",
+        "properties": {
+          "description": "Series resistance",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "Rct",
+        "type": "parameter",
+        "name": "Rct",
+        "properties": {
+          "description": "Charge transfer resistance",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "CPE",
+        "type": "parameter",
+        "name": "CPE",
+        "properties": {
+          "description": "Constant phase element",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "spectrum_trace",
+        "name": "Black Trace",
+        "properties": {
+          "color": "black",
+          "style": "solid",
+          "extracted_from_image": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+        },
+        "source_image_file": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "spectrum_trace",
+        "name": "Red Trace",
+        "properties": {
+          "color": "red",
+          "style": "solid",
+          "label": "Co 2p",
+          "extracted_from_image": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+        },
+        "source_image_file": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "spectrum_trace",
+        "name": "Cyan Trace",
+        "properties": {
+          "color": "cyan",
+          "style": "solid",
+          "extracted_from_image": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+        },
+        "source_image_file": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "spectrum_trace",
+        "name": "Yellow Trace",
+        "properties": {
+          "color": "yellow",
+          "style": "solid",
+          "extracted_from_image": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+        },
+        "source_image_file": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+      },
+      {
+        "id": "IF@CoFe-TDPA",
+        "type": "chemical",
+        "name": "IF@CoFe-TDPA",
+        "properties": {
+          "description": "Iron foam supported CoFe-TDPA material",
+          "extracted_from_image": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+        },
+        "source_image_file": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+      },
+      {
+        "id": "RHE",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+        },
+        "source_image_file": "1b9d2eed9572fb22cb562857762d2ba287eb261f5d694c18ed1eb4d41d529fcc.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "XPS Spectrum - CoFe-TDPA NF",
+        "properties": {
+          "type": "XPS",
+          "region": "Binding Energy 397-402 eV",
+          "intensity_units": "a.u.",
+          "extracted_from_image": "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg"
+        },
+        "source_image_file": "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "XPS Spectrum - IF@CoFe-TDPA T NSA",
+        "properties": {
+          "type": "XPS",
+          "region": "Binding Energy 397-402 eV",
+          "intensity_units": "a.u.",
+          "extracted_from_image": "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg"
+        },
+        "source_image_file": "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg"
+      },
+      {
+        "id": "c4",
+        "type": "characterization",
+        "name": "XPS Spectrum - IF@CoFe-TDPA NF",
+        "properties": {
+          "type": "XPS",
+          "region": "Binding Energy 397-402 eV",
+          "intensity_units": "a.u.",
+          "extracted_from_image": "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg"
+        },
+        "source_image_file": "274818eece43b03ec06a19c7e986a5093c82ae137e6f4f9a0155c2865c7444f7.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "spectrum_trace",
+        "name": "Magenta Trace",
+        "properties": {
+          "color": "magenta",
+          "style": "solid",
+          "extracted_from_image": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+        },
+        "source_image_file": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "spectrum_trace",
+        "name": "Green Trace",
+        "properties": {
+          "color": "green",
+          "style": "solid",
+          "extracted_from_image": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+        },
+        "source_image_file": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "spectrum_trace",
+        "name": "Blue Trace",
+        "properties": {
+          "color": "blue",
+          "style": "solid",
+          "extracted_from_image": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+        },
+        "source_image_file": "7d0c6ac4d66259d98ceb1b555150b60da8a37f0c6a153baf6b57d1aebe43e157.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "process",
+        "name": "In situ nucleation and growth",
+        "properties": {
+          "description": "In situ nucleation and growth on substrate",
+          "extracted_from_image": "2a7fbe7e9bc75c408b4a4fff4aa993f90a6872ac8ed48014a309c013d192a2c5.jpg"
+        },
+        "source_image_file": "2a7fbe7e9bc75c408b4a4fff4aa993f90a6872ac8ed48014a309c013d192a2c5.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "structure",
+        "name": "Substrate",
+        "properties": {
+          "description": "Growth substrate (bottom right)",
+          "extracted_from_image": "2a7fbe7e9bc75c408b4a4fff4aa993f90a6872ac8ed48014a309c013d192a2c5.jpg"
+        },
+        "source_image_file": "2a7fbe7e9bc75c408b4a4fff4aa993f90a6872ac8ed48014a309c013d192a2c5.jpg"
+      },
+      {
+        "id": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b_node2",
+        "type": "peak",
+        "name": "Fe 2p3/2",
+        "properties": {
+          "binding_energy": "711 eV (approx)",
+          "color": "orange",
+          "satellite": false,
+          "extracted_from_image": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+        },
+        "source_image_file": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+      },
+      {
+        "id": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b_node3",
+        "type": "peak",
+        "name": "Fe 2p1/2",
+        "properties": {
+          "binding_energy": "724 eV (approx)",
+          "color": "green",
+          "satellite": false,
+          "extracted_from_image": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+        },
+        "source_image_file": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+      },
+      {
+        "id": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b_node4",
+        "type": "peak",
+        "name": "Fe 2p3/2 Satellite",
+        "properties": {
+          "binding_energy": "719 eV (approx)",
+          "color": "red",
+          "satellite": true,
+          "extracted_from_image": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+        },
+        "source_image_file": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+      },
+      {
+        "id": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b_node5",
+        "type": "peak",
+        "name": "Fe 2p1/2 Satellite",
+        "properties": {
+          "binding_energy": "730 eV (approx)",
+          "color": "purple",
+          "satellite": true,
+          "extracted_from_image": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+        },
+        "source_image_file": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+      },
+      {
+        "id": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b_node6",
+        "type": "chemical",
+        "name": "Iron (Fe)",
+        "properties": {
+          "element": "Fe",
+          "oxidation_state": "likely Fe3+ or Fe2+ based on XPS",
+          "extracted_from_image": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+        },
+        "source_image_file": "51790e29a499e53fb8301128e7b87f786cd224cfa4b9773af3144fc442ffa84b.jpg"
+      },
+      {
+        "id": "image_E",
+        "type": "characterization",
+        "name": "SEM Image E",
+        "properties": {
+          "description": "Cyan fluorescent nanoparticles",
+          "scale": "500 nm",
+          "extracted_from_image": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+        },
+        "source_image_file": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+      },
+      {
+        "id": "image_F",
+        "type": "characterization",
+        "name": "SEM Image F",
+        "properties": {
+          "description": "Yellow fluorescent nanoparticles",
+          "scale": "500 nm",
+          "extracted_from_image": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+        },
+        "source_image_file": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+      },
+      {
+        "id": "image_G",
+        "type": "characterization",
+        "name": "SEM Image G",
+        "properties": {
+          "description": "Purple fluorescent nanoparticles",
+          "scale": "500 nm",
+          "extracted_from_image": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+        },
+        "source_image_file": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+      },
+      {
+        "id": "nanoparticles_cyan",
+        "type": "chemical",
+        "name": "Cyan Fluorescent Nanoparticles",
+        "properties": {
+          "size_scale": "500 nm",
+          "fluorescence": "cyan",
+          "extracted_from_image": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+        },
+        "source_image_file": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+      },
+      {
+        "id": "nanoparticles_yellow",
+        "type": "chemical",
+        "name": "Yellow Fluorescent Nanoparticles",
+        "properties": {
+          "size_scale": "500 nm",
+          "fluorescence": "yellow",
+          "extracted_from_image": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+        },
+        "source_image_file": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+      },
+      {
+        "id": "nanoparticles_purple",
+        "type": "chemical",
+        "name": "Purple Fluorescent Nanoparticles",
+        "properties": {
+          "size_scale": "500 nm",
+          "fluorescence": "purple",
+          "extracted_from_image": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+        },
+        "source_image_file": "5a227e27a02aa19eb721bfa676c79ee797bc554e0199c318f1fc41d099b20654.jpg"
+      },
+      {
+        "id": "CoFe-TDAP",
+        "type": "chemical",
+        "name": "CoFe-TDAP",
+        "properties": {
+          "description": "Bare CoFe-TDAP material",
+          "extracted_from_image": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+        },
+        "source_image_file": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+      },
+      {
+        "id": "NF",
+        "type": "chemical",
+        "name": "NF",
+        "properties": {
+          "description": "Nickel foam",
+          "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        },
+        "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+      },
+      {
+        "id": "NSA",
+        "type": "chemical",
+        "name": "NSA",
+        "properties": {
+          "description": "Nanosheet array morphology",
+          "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        },
+        "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+      },
+      {
+        "id": "IF@CoFe-TDAP_NF",
+        "type": "chemical",
+        "name": "IF@CoFe-TDAP NF",
+        "properties": {
+          "description": "IF core with CoFe-TDAP nanoflower shell",
+          "extracted_from_image": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+        },
+        "source_image_file": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+      },
+      {
+        "id": "IF@CoFe-TDAP_NSA",
+        "type": "chemical",
+        "name": "IF@CoFe-TDAP NSA",
+        "properties": {
+          "description": "IF core with CoFe-TDAP nanosheet array shell",
+          "extracted_from_image": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+        },
+        "source_image_file": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+      },
+      {
+        "id": "TafelPlot",
+        "type": "characterization",
+        "name": "Tafel Plot",
+        "properties": {
+          "description": "Overpotential vs log(current density)",
+          "x_axis": "Log(Current Density / mA cm⁻²)",
+          "y_axis": "Overpotential (V)",
+          "extracted_from_image": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+        },
+        "source_image_file": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+      },
+      {
+        "id": "91.8mVdec",
+        "type": "property",
+        "name": "91.8 mV/dec",
+        "properties": {
+          "description": "Tafel slope for IF@CoFe-TDAP NF",
+          "extracted_from_image": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+        },
+        "source_image_file": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+      },
+      {
+        "id": "133.8mVdec",
+        "type": "property",
+        "name": "133.8 mV/dec",
+        "properties": {
+          "description": "Tafel slope for IF@CoFe-TDAP NSA",
+          "extracted_from_image": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+        },
+        "source_image_file": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+      },
+      {
+        "id": "76.7mVdec",
+        "type": "property",
+        "name": "76.7 mV/dec",
+        "properties": {
+          "description": "Tafel slope for CoFe-TDAP",
+          "extracted_from_image": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+        },
+        "source_image_file": "6595d66e4c6d2340fcdd6492376d241cdd5769c691b489d45b15b237acbe4ced.jpg"
+      },
+      {
+        "id": "sample",
+        "type": "material",
+        "name": "Crystalline Sample",
+        "properties": {
+          "description": "Material analyzed by XRD showing polycrystalline nature with prominent peaks",
+          "extracted_from_image": "7ac38d707db4a4f073eacae3671ff45daac0de722f878c95c53023462ad42c0d.jpg"
+        },
+        "source_image_file": "7ac38d707db4a4f073eacae3671ff45daac0de722f878c95c53023462ad42c0d.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "image",
+        "name": "Figure B",
+        "properties": {
+          "label": "B",
+          "scale_bar": "500 nm",
+          "extracted_from_image": "81e51d5f75c4a021332fddf6a160c3d872a9e5dca668678a5224b5580acdc78c.jpg"
+        },
+        "source_image_file": "81e51d5f75c4a021332fddf6a160c3d872a9e5dca668678a5224b5580acdc78c.jpg"
+      },
+      {
+        "id": "material",
+        "type": "chemical",
+        "name": "Nanoporous material",
+        "properties": {
+          "description": "Material with spherical particles and porous network structure",
+          "extracted_from_image": "ebb65e463cfd076abcb83fe09bfb0b1a35895adb854c7f6ff67fea231b9c0301.jpg"
+        },
+        "source_image_file": "ebb65e463cfd076abcb83fe09bfb0b1a35895adb854c7f6ff67fea231b9c0301.jpg"
+      },
+      {
+        "id": "Co-Fe-TDPA",
+        "type": "chemical",
+        "name": "Co-Fe-TDPA",
+        "properties": {
+          "description": "Bimetallic TDPA complex or ligand system",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "NT",
+        "type": "morphology",
+        "name": "NT",
+        "properties": {
+          "description": "Nanotubes",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "NP",
+        "type": "morphology",
+        "name": "NP",
+        "properties": {
+          "description": "Nanoparticles",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "IF@Co-Fe-TDPA NT",
+        "type": "material",
+        "name": "IF@Co-Fe-TDPA NT",
+        "properties": {
+          "description": "Core-shell nanotube material",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "IF@Co-Fe-TDPA NP",
+        "type": "material",
+        "name": "IF@Co-Fe-TDPA NP",
+        "properties": {
+          "description": "Core-shell nanoparticle material",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "IF@Co-Fe-TDPA NSA",
+        "type": "material",
+        "name": "IF@Co-Fe-TDPA NSA",
+        "properties": {
+          "description": "Core-shell nanosheet assembly material",
+          "extracted_from_image": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+        },
+        "source_image_file": "ab21fc755cc69d78ab903721412651c18ea768a50ac5470f4170813308359040.jpg"
+      },
+      {
+        "id": "C",
+        "type": "characterization",
+        "name": "Image C",
+        "properties": {
+          "description": "Droplet at 0 ms",
+          "time": "0 ms",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "D",
+        "type": "characterization",
+        "name": "Image D",
+        "properties": {
+          "description": "Droplet at 0 ms",
+          "time": "0 ms",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "E",
+        "type": "characterization",
+        "name": "Image E",
+        "properties": {
+          "description": "Droplet at 0 ms",
+          "time": "0 ms",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "F",
+        "type": "characterization",
+        "name": "Image F",
+        "properties": {
+          "description": "Droplet at 4 ms",
+          "time": "4 ms",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "G",
+        "type": "characterization",
+        "name": "Image G",
+        "properties": {
+          "description": "Droplet at 6 ms",
+          "time": "6 ms",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "H",
+        "type": "characterization",
+        "name": "Image H",
+        "properties": {
+          "description": "Droplet at 8 ms",
+          "time": "8 ms",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "surface",
+        "type": "material",
+        "name": "Hydrophobic Surface",
+        "properties": {
+          "description": "Surface on which water droplets are placed",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "droplet",
+        "type": "chemical",
+        "name": "Water Droplet",
+        "properties": {
+          "description": "Liquid water droplet",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "experiment",
+        "type": "characterization",
+        "name": "Droplet Spreading Experiment",
+        "properties": {
+          "description": "Time-resolved images of water droplet behavior on surface",
+          "extracted_from_image": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+        },
+        "source_image_file": "b504204b64060bddb1e4f248ae397ffd3a55c8915c078be93f7f1e7da5ac4542.jpg"
+      },
+      {
+        "id": "image",
+        "type": "image",
+        "name": "SEM image",
+        "properties": {
+          "scale_bar": "200 nm",
+          "label": "E",
+          "extracted_from_image": "ebb65e463cfd076abcb83fe09bfb0b1a35895adb854c7f6ff67fea231b9c0301.jpg"
+        },
+        "source_image_file": "ebb65e463cfd076abcb83fe09bfb0b1a35895adb854c7f6ff67fea231b9c0301.jpg"
+      },
+      {
+        "id": "particles",
+        "type": "structural_feature",
+        "name": "Spherical particles",
+        "properties": {
+          "morphology": "circular/round",
+          "size_scale": "hundreds of nm",
+          "extracted_from_image": "ebb65e463cfd076abcb83fe09bfb0b1a35895adb854c7f6ff67fea231b9c0301.jpg"
+        },
+        "source_image_file": "ebb65e463cfd076abcb83fe09bfb0b1a35895adb854c7f6ff67fea231b9c0301.jpg"
+      },
+      {
+        "id": "pores",
+        "type": "structural_feature",
+        "name": "Nanopores",
+        "properties": {
+          "morphology": "interconnected network",
+          "scale": "nanometer",
+          "extracted_from_image": "ebb65e463cfd076abcb83fe09bfb0b1a35895adb854c7f6ff67fea231b9c0301.jpg"
+        },
+        "source_image_file": "ebb65e463cfd076abcb83fe09bfb0b1a35895adb854c7f6ff67fea231b9c0301.jpg"
+      },
+      {
+        "id": "IFCoFeTDAT",
+        "type": "chemical",
+        "name": "IF@CoFe-TDAT",
+        "properties": {
+          "description": "Iron foam supported CoFe-TDAT material",
+          "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        },
+        "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+      },
+      {
+        "id": "CoFeTDAT",
+        "type": "chemical",
+        "name": "CoFe-TDAT",
+        "properties": {
+          "description": "Cobalt-iron TDAT coordination polymer",
+          "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        },
+        "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+      },
+      {
+        "id": "IFCoFeTDAT_NF",
+        "type": "chemical",
+        "name": "IF@CoFe-TDAT NF",
+        "properties": {
+          "description": "IF@CoFe-TDAT on nickel foam",
+          "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        },
+        "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+      },
+      {
+        "id": "IFCoFeTDAT_NSA",
+        "type": "chemical",
+        "name": "IF@CoFe-TDAT NSA",
+        "properties": {
+          "description": "IF@CoFe-TDAT nanosheet array",
+          "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        },
+        "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+      },
+      {
+        "id": "LSV_plot",
+        "type": "characterization",
+        "name": "LSV Curves",
+        "properties": {
+          "description": "Linear sweep voltammetry plot",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current Density (mA/cm²)",
+          "range_x": [
+            1.2,
+            1.7
+          ],
+          "range_y": [
+            0,
+            0.8
+          ],
+          "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        },
+        "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+      },
+      {
+        "id": "TDAT",
+        "type": "chemical",
+        "name": "TDAT",
+        "properties": {
+          "description": "Ligand used in coordination polymer (likely tetradentate)",
+          "extracted_from_image": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+        },
+        "source_image_file": "fe1703e50c86a94a99f3b748d769aced8f25e107230ad0e11539195f01d536fb.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_IF_CoFe_TDPAT_NSA_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_IF_CoFe_TDPAT_NSA_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_IF_CoFe_TDPAT_NSA_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_IF_CoFe_TDPAT_NSA_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_IF_CoFe_TDPAT_NSA_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_IF_CoFe_TDPAT_NSA_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_IF_CoFe_TDPAT_NSA_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_IF_CoFe_TDPAT_NSA_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "chem_IF_CoFe_TDPAT_NPF",
+        "target_id": "char_8",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_8",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "chem_IF",
+        "target_id": "char_8",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "Co-TDPAT",
+        "target_id": "chem_IF_CoFe_TDPAT_NPF",
+        "type": "component_of"
+      },
+      {
+        "source_id": "Co-TDPAT",
+        "target_id": "chem_IF_CoFe_TDPAT_NSA",
+        "type": "component_of"
+      },
+      {
+        "source_id": "chem_IF",
+        "target_id": "chem_IF_CoFe_TDPAT_NPF",
+        "type": "coated_with"
+      },
+      {
+        "source_id": "chem_IF",
+        "target_id": "chem_IF_CoFe_TDPAT_NSA",
+        "type": "coated_with"
+      },
+      {
+        "source_id": "Rs",
+        "target_id": "char_8",
+        "type": "parameter_in"
+      },
+      {
+        "source_id": "Rct",
+        "target_id": "char_8",
+        "type": "parameter_in"
+      },
+      {
+        "source_id": "CPE",
+        "target_id": "char_8",
+        "type": "parameter_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "morphology"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "morphology"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains_ligand"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "IF@CoFe-TDPA",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_IF_CoFe_TDPAT_NPF",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_IF_CoFe_TDPAT_NSA",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "RHE",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "core_shell"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "core_shell"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "solvent_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "solvent_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "produces"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n12",
+        "type": "under_conditions"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n7",
+        "type": "involves"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n7",
+        "type": "involves"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n11",
+        "type": "under_conditions"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n8",
+        "type": "describes"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n14",
+        "type": "grows_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n10",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "protonated_form"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "ligand_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "nanosheet_assembly"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "contains"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_E",
+        "target_id": "nanoparticles_cyan",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_F",
+        "target_id": "nanoparticles_yellow",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_G",
+        "target_id": "nanoparticles_purple",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "uses_substrate"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_measurement"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_measurement"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_IF",
+        "target_id": "CoFe-TDAP",
+        "type": "core-shell"
+      },
+      {
+        "source_id": "CoFe-TDAP",
+        "target_id": "NF",
+        "type": "morphology"
+      },
+      {
+        "source_id": "chem_IF",
+        "target_id": "NSA",
+        "type": "core-shell"
+      },
+      {
+        "source_id": "CoFe-TDAP",
+        "target_id": "NSA",
+        "type": "morphology"
+      },
+      {
+        "source_id": "IF@CoFe-TDAP_NF",
+        "target_id": "TafelPlot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IF@CoFe-TDAP_NSA",
+        "target_id": "TafelPlot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "CoFe-TDAP",
+        "target_id": "TafelPlot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IF@CoFe-TDAP_NF",
+        "target_id": "91.8mVdec",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "IF@CoFe-TDAP_NSA",
+        "target_id": "133.8mVdec",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "CoFe-TDAP",
+        "target_id": "76.7mVdec",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "sample",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n11",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n12",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "char_4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "material",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "chem_IF",
+        "target_id": "Co-Fe-TDPA",
+        "type": "core"
+      },
+      {
+        "source_id": "Co-Fe-TDPA",
+        "target_id": "NT",
+        "type": "shell_morphology"
+      },
+      {
+        "source_id": "IF@Co-Fe-TDPA NT",
+        "target_id": "char_8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IF@Co-Fe-TDPA NP",
+        "target_id": "char_8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IF@Co-Fe-TDPA NSA",
+        "target_id": "char_8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Rs",
+        "target_id": "char_8",
+        "type": "equivalent_circuit_component"
+      },
+      {
+        "source_id": "Rct",
+        "target_id": "char_8",
+        "type": "equivalent_circuit_component"
+      },
+      {
+        "source_id": "CPE",
+        "target_id": "char_8",
+        "type": "equivalent_circuit_component"
+      },
+      {
+        "source_id": "C",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "C",
+        "target_id": "droplet",
+        "type": "depicts"
+      },
+      {
+        "source_id": "D",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "D",
+        "target_id": "droplet",
+        "type": "depicts"
+      },
+      {
+        "source_id": "E",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "E",
+        "target_id": "droplet",
+        "type": "depicts"
+      },
+      {
+        "source_id": "F",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "F",
+        "target_id": "droplet",
+        "type": "depicts"
+      },
+      {
+        "source_id": "G",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "G",
+        "target_id": "droplet",
+        "type": "depicts"
+      },
+      {
+        "source_id": "H",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "H",
+        "target_id": "droplet",
+        "type": "depicts"
+      },
+      {
+        "source_id": "C",
+        "target_id": "experiment",
+        "type": "part_of"
+      },
+      {
+        "source_id": "D",
+        "target_id": "experiment",
+        "type": "part_of"
+      },
+      {
+        "source_id": "E",
+        "target_id": "experiment",
+        "type": "part_of"
+      },
+      {
+        "source_id": "F",
+        "target_id": "experiment",
+        "type": "part_of"
+      },
+      {
+        "source_id": "G",
+        "target_id": "experiment",
+        "type": "part_of"
+      },
+      {
+        "source_id": "H",
+        "target_id": "experiment",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "images"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "maps"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "generates"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterizes_lattice"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "plots"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "shows"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characteristic_of"
+      },
+      {
+        "source_id": "image",
+        "target_id": "material",
+        "type": "depicts"
+      },
+      {
+        "source_id": "material",
+        "target_id": "particles",
+        "type": "contains"
+      },
+      {
+        "source_id": "material",
+        "target_id": "pores",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "particles",
+        "type": "shows"
+      },
+      {
+        "source_id": "image",
+        "target_id": "pores",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measures"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "vs"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "vs"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "chem_IF",
+        "target_id": "IFCoFeTDAT",
+        "type": "substrate"
+      },
+      {
+        "source_id": "CoFeTDAT",
+        "target_id": "IFCoFeTDAT",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "IFCoFeTDAT",
+        "target_id": "IFCoFeTDAT_NF",
+        "type": "electrode"
+      },
+      {
+        "source_id": "IFCoFeTDAT",
+        "target_id": "IFCoFeTDAT_NSA",
+        "type": "morphology"
+      },
+      {
+        "source_id": "IFCoFeTDAT",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IFCoFeTDAT_NF",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "IFCoFeTDAT_NSA",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "TDAT",
+        "target_id": "CoFeTDAT",
+        "type": "contains_ligand"
+      },
+      {
+        "source_id": "NF",
+        "target_id": "IFCoFeTDAT_NF",
+        "type": "electrode_support"
+      },
+      {
+        "source_id": "NSA",
+        "target_id": "IFCoFeTDAT_NSA",
+        "type": "structure"
+      }
+    ]
+  }
+}

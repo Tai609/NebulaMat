@@ -1,0 +1,2899 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_nickel_foam",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "Ni foam",
+          "Ni-4753",
+          "RECEMAT"
+        ],
+        "properties": {
+          "porosity": {
+            "value": 95.2,
+            "unit": "%"
+          },
+          "pore_size": {
+            "value": 400,
+            "unit": "μm"
+          },
+          "thickness": {
+            "value": 3,
+            "unit": "mm"
+          },
+          "specific_surface_area": {
+            "value": 5400,
+            "unit": "m²/m³"
+          }
+        }
+      },
+      {
+        "id": "chem_nickel_nitrate",
+        "type": "chemical",
+        "name": "nickel nitrate",
+        "aliases": [
+          "Ni(NO₃)₂",
+          "nickel nitrate powder"
+        ],
+        "formula": "Ni(NO₃)₂"
+      },
+      {
+        "id": "chem_cobalt_nitrate",
+        "type": "chemical",
+        "name": "cobalt nitrate",
+        "aliases": [
+          "Co(NO₃)₂"
+        ],
+        "formula": "Co(NO₃)₂"
+      },
+      {
+        "id": "chem_sodium_nitrite",
+        "type": "chemical",
+        "name": "sodium nitrite",
+        "aliases": [
+          "NaNO₂"
+        ],
+        "formula": "NaNO₂"
+      },
+      {
+        "id": "chem_ethanol",
+        "type": "chemical",
+        "name": "ethanol",
+        "aliases": [
+          "Ethanol ABS AR"
+        ],
+        "formula": "C₂H₅OH"
+      },
+      {
+        "id": "chem_nitric_acid",
+        "type": "chemical",
+        "name": "nitric acid",
+        "aliases": [
+          "HNO₃"
+        ],
+        "formula": "HNO₃"
+      },
+      {
+        "id": "chem_ni09co01_oh2",
+        "type": "chemical",
+        "name": "Ni₀.₉Co₀.₁(OH)₂",
+        "aliases": [
+          "Ni₀.₉Co₀.₁(OH)₂",
+          "β-nickel hydroxide"
+        ],
+        "composition": {
+          "Ni": {
+            "value": 0.9,
+            "unit": "mole fraction"
+          },
+          "Co": {
+            "value": 0.1,
+            "unit": "mole fraction"
+          }
+        },
+        "properties": {
+          "coating_thickness": {
+            "value": 9,
+            "unit": "μm"
+          },
+          "Ni_Co_ratio": {
+            "value": 6.7,
+            "unit": "ratio"
+          },
+          "regenerated_capacity": {
+            "value": 5,
+            "unit": "C cm⁻²"
+          },
+          "standard_capacity": {
+            "value": 3,
+            "unit": "C cm⁻²"
+          }
+        }
+      },
+      {
+        "id": "chem_nife_ldh",
+        "type": "chemical",
+        "name": "NiFe LDH",
+        "aliases": [
+          "NiFe layered double hydroxide"
+        ]
+      },
+      {
+        "id": "chem_ferrous_chloride",
+        "type": "chemical",
+        "name": "ferrous chloride",
+        "aliases": [
+          "FeCl₂",
+          "iron(II) chloride"
+        ],
+        "formula": "FeCl₂"
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Ni₀.₉Co₀.₁(OH)₂ ECI deposition",
+        "procedure": "Nickel foam substrates (Ni-4753; RECEMAT; 3 mm thickness; 400-μm pores; 95.2% porosity; 5,400 m² m⁻³ specific surface) were cut into 1 cm × 2 cm pieces. The substrates were dipped in acetone and ethanol, cleaned ultrasonically in isopropanol for 15 min, and then washed with deionized water. Before deposition, the substrates were vacuum immersed in the deposition solution for 30 min by placing the substrates in a vacuum chamber (Struers Epovac) and flooding them with the deposition solution. The deposition solution was composed of nickel nitrate, sodium nitrite and cobalt nitrate in an aqueous mixture of ethanol in water, titrated to an initial pH of 4 with nitric acid. A portion of 1 cm × 1 cm of each nickel foam substrate was dipped in the deposition solution, and the remaining portion was used as the electrical contact. Each substrate was connected as the cathode to a potentiostat and placed between two nickel foam pieces acting as anodes. Deposition was carried out at a constant temperature of 80 °C, by applying a cathodic current of 60 mA. After deposition, each electrode was washed thoroughly with deionized water.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Substrate cleaning",
+            "method": "Ultrasonic cleaning",
+            "conditions": {
+              "time": {
+                "value": 15,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "The substrates were dipped in acetone and ethanol, cleaned ultrasonically in isopropanol for 15 min, and then washed with deionized water."
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Vacuum impregnation",
+            "method": "Vacuum immersion",
+            "conditions": {
+              "time": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "Before deposition, the substrates were vacuum immersed in the deposition solution for 30 min."
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Electrochemical deposition",
+            "method": "Cathodic electrodeposition",
+            "conditions": {
+              "temperature": {
+                "value": 80,
+                "unit": "°C"
+              },
+              "current": {
+                "value": 60,
+                "unit": "mA"
+              }
+            },
+            "procedure_snippet": "Deposition was carried out at a constant temperature of 80 °C, by applying a cathodic current of 60 mA."
+          }
+        ],
+        "method": "Electrochemical impregnation",
+        "conditions": {
+          "temperature": {
+            "value": 80,
+            "unit": "°C"
+          },
+          "pH": {
+            "value": 4,
+            "unit": "pH units"
+          },
+          "current": {
+            "value": 60,
+            "unit": "mA"
+          }
+        },
+        "source_text": "All Ni₀.₉Co₀.₁(OH)₂ anodes were prepared by ECI... After deposition, each electrode was washed thoroughly with deionized water."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Ni₀.₉Co₀.₁(OH)₂ aging",
+        "procedure": "After deposition, each electrode was aged in a 5 M KOH aqueous solution at 90 °C for 30 min.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Thermal aging",
+            "method": "Hot KOH aging",
+            "conditions": {
+              "temperature": {
+                "value": 90,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 30,
+                "unit": "min"
+              },
+              "KOH_concentration": {
+                "value": 5,
+                "unit": "M"
+              }
+            },
+            "procedure_snippet": "aged in a 5 M KOH aqueous solution at 90 °C for 30 min."
+          }
+        ],
+        "method": "Thermal aging",
+        "conditions": {
+          "temperature": {
+            "value": 90,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 30,
+            "unit": "min"
+          },
+          "KOH_concentration": {
+            "value": 5,
+            "unit": "M"
+          }
+        },
+        "source_text": "then aged in a 5 M KOH aqueous solution at 90 °C for 30 min."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "NiFe LDH electrodeposition",
+        "procedure": "The same nickel foam substrate described... was used for the fabrication of the NiFe LDH anode. The deposition solution comprised 0.095 M Ni(NO₃)₂ and 0.05 M FeCl₂ in deionized water. Before deposition, the solution was purged with N₂ gas for 20 min. The same cell configuration described... was also employed for NiFe LDH anode fabrication. Deposition was carried out by applying a pulsed cathodic current of 10 mA for 20 cycles of 2 s on/off pulses, following the methods described elsewhere⁴⁹. Following deposition, the anode was washed in deionized water.",
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "N₂ purging",
+            "method": "Gas purging",
+            "conditions": {
+              "time": {
+                "value": 20,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "Before deposition, the solution was purged with N₂ gas for 20 min."
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Pulsed electrodeposition",
+            "method": "Pulse electrodeposition",
+            "conditions": {
+              "current": {
+                "value": 10,
+                "unit": "mA"
+              },
+              "cycles": {
+                "value": 20,
+                "unit": "cycles"
+              },
+              "pulse_duration": {
+                "value": 2,
+                "unit": "s"
+              }
+            },
+            "procedure_snippet": "Deposition was carried out by applying a pulsed cathodic current of 10 mA for 20 cycles of 2 s on/off pulses."
+          }
+        ],
+        "method": "Pulse electrodeposition",
+        "conditions": {
+          "Ni_concentration": {
+            "value": 0.095,
+            "unit": "M"
+          },
+          "Fe_concentration": {
+            "value": 0.05,
+            "unit": "M"
+          },
+          "current": {
+            "value": 10,
+            "unit": "mA"
+          },
+          "cycles": {
+            "value": 20,
+            "unit": "dimensionless"
+          }
+        },
+        "source_text": "NiFe LDH anode fabrication. The same nickel foam substrate... Following deposition, the anode was washed in deionized water."
+      },
+      {
+        "id": "chem_koh",
+        "type": "chemical",
+        "name": "KOH",
+        "aliases": [
+          "potassium hydroxide",
+          "5 M KOH"
+        ],
+        "formula": "KOH"
+      },
+      {
+        "id": "chem_ni_oh2_undoped",
+        "type": "chemical",
+        "name": "Ni(OH)₂",
+        "aliases": [
+          "undoped Ni(OH)₂",
+          "Ni(OH)₂ anode"
+        ],
+        "formula": "Ni(OH)₂",
+        "related_images": [
+          "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg",
+          "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ni(OH)₂",
+            "properties": {
+              "formula": "Ni(OH)₂",
+              "extracted_from_image": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+            },
+            "source_image_file": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni(OH)2",
+            "properties": {
+              "formula": "Ni(OH)2",
+              "role": "reactant",
+              "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+            },
+            "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ni0.9Co0.1(OH)2",
+        "type": "chemical",
+        "name": "Ni0.9Co0.1(OH)2",
+        "aliases": [
+          "Ni_{0.9}Co_{0.1}(OH)_2",
+          "β-nickel hydroxide"
+        ],
+        "formula": "Ni_{0.9}Co_{0.1}(OH)_2",
+        "composition": {
+          "Ni": {
+            "value": 0.9,
+            "unit": "mole fraction"
+          },
+          "Co": {
+            "value": 0.1,
+            "unit": "mole fraction"
+          }
+        },
+        "properties": {
+          "coating thickness": {
+            "value": 9,
+            "unit": "μm"
+          },
+          "Ni:Co ratio": {
+            "value": 6.7,
+            "unit": "atomic ratio"
+          }
+        }
+      },
+      {
+        "id": "chem_NiFe_LDH",
+        "type": "chemical",
+        "name": "NiFe LDH",
+        "aliases": [
+          "NiFe layered double hydroxide"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_platinized_ni_stainless",
+        "type": "chemical",
+        "name": "platinized nickel-coated stainless-steel mesh",
+        "aliases": [
+          "Pt/Ni-coated stainless-steel mesh"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate",
+          "size": "1 cm × 2 cm"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_nitrate_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_nitrate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_cobalt_nitrate_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_cobalt_nitrate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_sodium_nitrite_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_sodium_nitrite",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_nitric_acid_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nitric_acid",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "pH_adjuster"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_ni09co01_oh2_pre_aged",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_ni09co01_oh2",
+        "properties": {
+          "form": "deposited then washed coating"
+        }
+      },
+      {
+        "id": "edge_input_chem_ni09co01_oh2_pre_aged_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ni09co01_oh2",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_ni09co01_oh2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_ni09co01_oh2",
+        "properties": {
+          "form": "aged electrode"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_nitrate_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_nitrate",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 0.095,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_ferrous_chloride_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_ferrous_chloride",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 0.05,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_nife_ldh",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_nife_ldh",
+        "properties": {
+          "form": "electrodeposited film"
+        }
+      },
+      {
+        "id": "edge_input_chem_koh_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_koh",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "aging_solution",
+          "concentration": {
+            "value": 5,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Ni0.9Co0.1(OH)2",
+      "chem_platinized_ni_stainless",
+      "chem_NiFe_LDH"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Ni0.9Co0.1(OH)2",
+        "type": "chemical",
+        "name": "Ni0.9Co0.1(OH)2",
+        "aliases": [
+          "Ni_{0.9}Co_{0.1}(OH)_2",
+          "nickel cobalt hydroxide"
+        ],
+        "formula": "Ni_{0.9}Co_{0.1}(OH)_2",
+        "composition": {
+          "Ni": {
+            "value": 0.9,
+            "unit": "mole fraction"
+          },
+          "Co": {
+            "value": 0.1,
+            "unit": "mole fraction"
+          }
+        },
+        "properties": {
+          "coating_thickness": {
+            "value": 9,
+            "unit": "μm"
+          },
+          "Ni_Co_ratio": {
+            "value": 6.7,
+            "unit": "atomic ratio"
+          },
+          "regenerated_capacity": {
+            "value": 5,
+            "unit": "C/cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_NiFe_LDH",
+        "type": "chemical",
+        "name": "NiFe LDH",
+        "aliases": [
+          "NiFe layered double hydroxide"
+        ],
+        "formula": "NiFe-LDH"
+      },
+      {
+        "id": "chem_platinized_ni_stainless",
+        "type": "chemical",
+        "name": "platinized nickel-coated stainless-steel mesh",
+        "aliases": [
+          "Pt/Ni-coated stainless-steel mesh"
+        ]
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Ni0.9Co0.1(OH)2",
+        "description": "E-TAC water splitting proof-of-concept: 10 cycles at 50 mA/cm² in 5 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "E-TAC (HER electrochemical + OER chemical)",
+            "unit": "process"
+          },
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 15,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "Ni0.9Co0.1(OH)2 anode",
+            "unit": "anode"
+          },
+          "counter_electrode": {
+            "value": "1 cm² platinized Ni-coated SS mesh",
+            "unit": "cathode"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO (1 M NaOH)",
+            "unit": "electrode"
+          },
+          "current_density": {
+            "value": 50,
+            "unit": "mA/cm²"
+          },
+          "step_1_temperature": {
+            "value": "~25",
+            "unit": "°C"
+          },
+          "step_2_temperature": {
+            "value": 95,
+            "unit": "°C"
+          },
+          "step_duration": {
+            "value": 100,
+            "unit": "s"
+          },
+          "charge_transferred": {
+            "value": 5,
+            "unit": "C/cm²"
+          },
+          "cycles": {
+            "value": 10,
+            "unit": "cycles"
+          },
+          "cell_voltage_limit": {
+            "value": "<1.60",
+            "unit": "V"
+          }
+        },
+        "results_json": {
+          "anode_potential_range": {
+            "value": "1.37-1.45",
+            "unit": "V_RHE"
+          },
+          "cell_voltage_range": {
+            "value": "1.44-1.56",
+            "unit": "V"
+          },
+          "average_cell_voltage": {
+            "value": 1.5,
+            "unit": "V"
+          },
+          "voltage_efficiency": {
+            "value": 98.7,
+            "unit": "% (vs 1.48 V thermoneutral)"
+          },
+          "Faradaic_efficiency_anode": {
+            "value": "99.2 ± 0.1",
+            "unit": "%"
+          },
+          "H2_production": {
+            "value": 6.4,
+            "unit": "ml (1 atm, 25°C)"
+          },
+          "energy_consumption": {
+            "value": "3.24",
+            "unit": "kWh/m³ H₂"
+          },
+          "energy_consumption_alt": {
+            "value": "39.9",
+            "unit": "kWh/kg H₂"
+          }
+        },
+        "source_text": "hydrogen generation steps were carried out at ambient temperature... for 100 s at a current density of 50 mA cm^{-2}... The overall cell voltage varied from 1.44–1.56 V... with an average of 1.5 V for all ten cycles... voltage efficiency... gave an average of 98.7%... 6.4 ml hydrogen... consuming 20.8 mWh... 3.24 kWh m^{-3} or 39.9 kWh kg^{-1} hydrogen."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Ni0.9Co0.1(OH)2",
+        "description": "E-TAC water splitting at varying current densities 10-200 mA/cm² in 5 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "E-TAC water splitting",
+            "unit": "electrochemical-chemical"
+          },
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "current_density_range": {
+            "value": "10-200",
+            "unit": "mA/cm²"
+          }
+        },
+        "results_json": {
+          "average_cell_voltage_10mA": {
+            "value": 1.44,
+            "unit": "V"
+          },
+          "average_cell_voltage_200mA": {
+            "value": 1.6,
+            "unit": "V"
+          }
+        },
+        "source_text": "similar tests were carried out at different nominal current densities ranging from 10-200 mA cm^{-2}. The average cell voltage was found to increase from 1.44 V at 10 mA cm^{-2} to 1.60 V at 200 mA cm^{-2}"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_Ni0.9Co0.1(OH)2",
+        "description": "E-TAC stability test 100 cycles at 50 mA/cm² in 5 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "E-TAC water splitting",
+            "unit": "electrochemical-chemical"
+          },
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "current_density": {
+            "value": 50,
+            "unit": "mA/cm²"
+          },
+          "number_of_cycles": {
+            "value": 100,
+            "unit": "cycles"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "stable operation",
+            "unit": "100 cycles"
+          }
+        },
+        "source_text": "100 cycles were carried out at the same nominal current density as shown in Fig. 3 (50 mA cm^{-2}), providing evidence for stable, extended operation in alkaline solutions"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_Ni0.9Co0.1(OH)2",
+        "description": "E-TAC water splitting in carbonate-bicarbonate buffer pH 10.6",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "E-TAC water splitting",
+            "unit": "electrochemical-chemical"
+          },
+          "electrolyte": {
+            "value": "0.6 M K₂CO₃ + 0.4 M KHCO₃",
+            "unit": "buffer solution"
+          },
+          "pH": {
+            "value": 10.6,
+            "unit": "pH"
+          },
+          "current_density": {
+            "value": 25,
+            "unit": "mA/cm²"
+          },
+          "temperature_chemical": {
+            "value": "85-90",
+            "unit": "°C"
+          }
+        },
+        "results_json": {
+          "anode_potential_range": {
+            "value": "1.43-1.50",
+            "unit": "V_RHE"
+          }
+        },
+        "source_text": "the anode potential varied from 1.43-1.50 V_RHE at a nominal current density of 25 mA cm^{-2}"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_Ni0.9Co0.1(OH)2",
+        "description": "Cyclic voltammetry comparison with NiFe LDH in 5 M KOH",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          },
+          "potential_window": {
+            "value": "0.80-1.75",
+            "unit": "V_RHE"
+          },
+          "temperature": {
+            "value": "ambient",
+            "unit": "25°C"
+          }
+        },
+        "results_json": {
+          "Ni2+_to_Ni3+_oxidation_onset": {
+            "value": 1.3,
+            "unit": "V_RHE"
+          },
+          "pseudocapacitive_feature": {
+            "value": "large oxidation wave",
+            "unit": "current"
+          }
+        },
+        "source_text": "Cyclic voltammograms measured at a scan rate of 50 mV s^{-1}... The Ni_{0.9}Co_{0.1}(OH)_2 anode displays a large pseudocapacitive oxidation wave of Ni^{+2} to Ni^{+3}, beginning at 1.3 V_RHE during the anodic sweep"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_Ni0.9Co0.1(OH)2",
+        "description": "Chronoamperometry Faradaic efficiency measurement at 1.48 V_RHE",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "applied_potential": {
+            "value": 1.48,
+            "unit": "V_RHE"
+          },
+          "duration": {
+            "value": ">2000",
+            "unit": "s"
+          },
+          "charge_limit": {
+            "value": ">50",
+            "unit": "C/cm²"
+          }
+        },
+        "results_json": {
+          "Faradaic_efficiency_charging": {
+            "value": ">99.7",
+            "unit": "%"
+          },
+          "charge_capacity": {
+            "value": ">50",
+            "unit": "C/cm²"
+          }
+        },
+        "source_text": "On charging a fully discharged anode at a potential of 1.48 V_RHE, the Faradaic efficiency was larger than 99.7% for more than 2,000 s, during which the anode was charged by more than 50 C cm^{-2}"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_NiFe_LDH",
+        "description": "Cyclic voltammetry comparison in 5 M KOH",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "scan_rate": {
+            "value": 50,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {},
+        "source_text": "Cyclic voltammograms of the Ni_{0.9}Co_{0.1}(OH)_2 and NiFe LDH anodes are presented in Fig. 2a."
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_Ni0.9Co0.1(OH)2",
+        "description": "Chronoamperometry Tafel plot potentials 1.3-1.7 V_RHE",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "potential_range": {
+            "value": "1.3-1.7",
+            "unit": "V_RHE"
+          }
+        },
+        "results_json": {
+          "steady_state_water_oxidation": {
+            "value": "much smaller than pseudocapacitive",
+            "unit": "current"
+          }
+        },
+        "source_text": "For the Ni_{0.9}Co_{0.1}(OH)_2 anode, the steady-state water oxidation current is much smaller than the pseudo-capacitive current measured in the cyclic voltammogram"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_Ni0.9Co0.1(OH)2",
+        "description": "Open circuit potential vs SOC measurement",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO/1 M NaOH",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "nickel foil/foam",
+            "unit": "electrode"
+          },
+          "current_density_charge": {
+            "value": 20,
+            "unit": "mA/cm²"
+          },
+          "SOC_range": {
+            "value": "10-90",
+            "unit": "%"
+          }
+        },
+        "results_json": {
+          "OCP_range": {
+            "value": "1.31-1.41",
+            "unit": "V_RHE"
+          }
+        },
+        "source_text": "The OCP ranges from 1.31–1.41 V_RHE for the Ni_{0.9}Co_{0.1}(OH)_2 anode... over a SOC ranging from 10-90%"
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_NiFe_LDH",
+        "description": "Chronoamperometry Tafel plot comparison",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "5 M KOH",
+            "unit": "solution"
+          },
+          "potential_range": {
+            "value": "1.3-1.7",
+            "unit": "V_RHE"
+          },
+          "duration": {
+            "value": 600,
+            "unit": "s"
+          }
+        },
+        "results_json": {
+          "steady_state_current": {
+            "value": "dominant water oxidation",
+            "unit": "current"
+          }
+        },
+        "source_text": "when comparing steady-state water oxidation and pseudo-capacitive currents for the NiFe LDH anode, most of the net current arises from water oxidation"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Ni0.9Co0.1(OH)2_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni0.9Co0.1(OH)2_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni0.9Co0.1(OH)2_test_3",
+        "type": "tested_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni0.9Co0.1(OH)2_test_4",
+        "type": "tested_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni0.9Co0.1(OH)2_test_5",
+        "type": "tested_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni0.9Co0.1(OH)2_test_6",
+        "type": "tested_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFe_LDH_test_7",
+        "type": "tested_in",
+        "source_id": "chem_NiFe_LDH",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni0.9Co0.1(OH)2_test_8",
+        "type": "tested_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni0.9Co0.1(OH)2_test_9",
+        "type": "tested_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFe_LDH_test_10",
+        "type": "tested_in",
+        "source_id": "chem_NiFe_LDH",
+        "target_id": "test_10",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Ni0.9Co0.1(OH)2",
+        "type": "chemical",
+        "name": "Ni0.9Co0.1(OH)2",
+        "aliases": [
+          "Ni_{0.9}Co_{0.1}(OH)_2",
+          "β-nickel hydroxide"
+        ],
+        "formula": "Ni_{0.9}Co_{0.1}(OH)_2",
+        "composition": {
+          "Ni": {
+            "value": 0.9,
+            "unit": "mole fraction"
+          },
+          "Co": {
+            "value": 0.1,
+            "unit": "mole fraction"
+          }
+        },
+        "properties": {
+          "coating thickness": {
+            "value": 9,
+            "unit": "μm"
+          },
+          "Ni:Co ratio": {
+            "value": 6.7,
+            "unit": "atomic ratio"
+          }
+        }
+      },
+      {
+        "id": "chem_NiFe_LDH",
+        "type": "chemical",
+        "name": "NiFe LDH",
+        "aliases": [
+          "NiFe layered double hydroxide"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM shows conformal coating of nickel foam substrate by roughly 9-μm-thick layer of β-nickel hydroxide.",
+        "evidence_snippet": "Optical and scanning electron microscope (SEM) micrographs... show conformal coating of the nickel foam substrate by a roughly 9-μm-thick layer of β-nickel hydroxide."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "EDS",
+        "is_reported": true,
+        "characterization_summary": "EDS shows coating layer composition with Ni:Co ratio of 6.7:1.0 (x ≅ 0.1).",
+        "evidence_snippet": "The coating layer composition was determined by energy-dispersive spectroscopy, yielding an Ni:Co ratio of 6.7:1.0 (where x ≅ 0.1 ; that is, Ni_{0.9}Co_{0.1}(OH)_2)."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "X-ray diffractograms confirm β-nickel hydroxide phase of the coating.",
+        "evidence_snippet": "Optical and scanning electron microscope (SEM) micrographs, as well as X-ray diffractograms of the anodes are presented in Supplementary Figs. 14–24."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "Ni_{0.9}Co_{0.1}(OH)_2 anode displays large pseudocapacitive oxidation wave of Ni^{2+} to Ni^{3+} beginning at 1.3 V_{RHE} during anodic sweep, preceding water oxidation currents; NiFe LDH shows primarily water oxidation currents.",
+        "evidence_snippet": "The Ni_{0.9}Co_{0.1}(OH)_2 anode displays a large pseudocapacitive oxidation wave of Ni^{+2} to Ni^{+3}, beginning at 1.3 V_{RHE} during the anodic sweep, preceding the water oxidation currents of both anodes."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "chronoamperometry",
+        "is_reported": true,
+        "characterization_summary": "For Ni_{0.9}Co_{0.1}(OH)_2 anode, steady-state water oxidation current is much smaller than pseudocapacitive current; for NiFe LDH, most net current arises from water oxidation.",
+        "evidence_snippet": "For the Ni_{0.9}Co_{0.1}(OH)_2 anode, the steady-state water oxidation current is much smaller than the pseudo-capacitive current measured in the cyclic voltammogram... when comparing steady-state water oxidation and pseudo-capacitive currents for the NiFe LDH anode, most of the net current arises from water oxidation."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "OCP",
+        "is_reported": true,
+        "characterization_summary": "OCP ranges from 1.31–1.41 V_{RHE} for Ni_{0.9}Co_{0.1}(OH)_2 anode over SOC 10-90%, shifted cathodically by ~50 mV compared to undoped Ni(OH)_2.",
+        "evidence_snippet": "The OCP ranges from 1.31–1.41 V_{RHE} for the Ni_{0.9}Co_{0.1}(OH)_2 anode... The addition of cobalt shifts the potential cathodically by approximately 50 mV."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "Ex situ SEM confirms anode cyclability with no degradation before, during and after E-TAC cycles.",
+        "evidence_snippet": "To confirm this, the anode cyclability was verified by ex situ microstructural (SEM) and crystallinity (X-ray powder diffraction) analyses before, during and after the E-TAC cycles."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "Ex situ X-ray powder diffraction confirms crystallinity and phase stability before, during and after E-TAC cycles.",
+        "evidence_snippet": "To confirm this, the anode cyclability was verified by ex situ microstructural (SEM) and crystallinity (X-ray powder diffraction) analyses before, during and after the E-TAC cycles."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "optical microscopy",
+        "is_reported": true,
+        "characterization_summary": "Optical microscopy shows microstructure of wet anodes before, during and after SEM imaging to distinguish drying shrinkage cracks from actual material cracks.",
+        "evidence_snippet": "To show that the cracks observed in the SEM images of our anodes are drying shrinkage cracks... optical microscopy imaging of wet anodes was carried out before, during and after SEM imaging."
+      },
+      {
+        "id": "NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "properties": {
+          "formula": "NiOOH",
+          "extracted_from_image": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+        },
+        "source_image_file": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "formula": "H₂O",
+          "extracted_from_image": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+        },
+        "source_image_file": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "formula": "O₂",
+          "extracted_from_image": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+        },
+        "source_image_file": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+      },
+      {
+        "id": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "material": "white",
+          "extracted_from_image": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+        },
+        "source_image_file": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+      },
+      {
+        "id": "cathode",
+        "type": "electrode",
+        "name": "Cathode",
+        "properties": {
+          "location": "left",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "temperature",
+        "type": "condition",
+        "name": "Temperature",
+        "properties": {
+          "value": "95°C",
+          "extracted_from_image": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+        },
+        "source_image_file": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+      },
+      {
+        "id": "reaction",
+        "type": "reaction",
+        "name": "NiOOH disproportionation",
+        "properties": {
+          "equation": "4NiOOH + 2H₂O → 4Ni(OH)₂ + O₂",
+          "extracted_from_image": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+        },
+        "source_image_file": "0dc1507b64bac40fda16010c2361c8b8a1e411bd3da081dcea6271aff16ff6e0.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "Cycling Performance Graph",
+        "properties": {
+          "type": "voltage-time plot",
+          "x_axis": "Time (s)",
+          "y_axis": "V_cell RHE (V)",
+          "range_x": [
+            0,
+            100
+          ],
+          "range_y": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "curve_red",
+        "type": "dataset",
+        "name": "Red Curve",
+        "properties": {
+          "color": "red",
+          "behavior": "exponential decay from ~200 to ~10 mA cm⁻² over 600s",
+          "extracted_from_image": "1614cf7255e2f51ce294e83ed0835ff7b1e2edfbc70396adbf103d6460850d7a.jpg"
+        },
+        "source_image_file": "1614cf7255e2f51ce294e83ed0835ff7b1e2edfbc70396adbf103d6460850d7a.jpg"
+      },
+      {
+        "id": "curve_blue",
+        "type": "dataset",
+        "name": "Blue Curve",
+        "properties": {
+          "color": "blue",
+          "behavior": "faster exponential decay from ~200 to near 0 mA cm⁻² over 600s",
+          "extracted_from_image": "1614cf7255e2f51ce294e83ed0835ff7b1e2edfbc70396adbf103d6460850d7a.jpg"
+        },
+        "source_image_file": "1614cf7255e2f51ce294e83ed0835ff7b1e2edfbc70396adbf103d6460850d7a.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_1",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "formula": "H2O",
+          "role": "reactant",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_2",
+        "type": "chemical",
+        "name": "e-",
+        "properties": {
+          "formula": "e-",
+          "role": "electron",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_3",
+        "type": "chemical",
+        "name": "OH-",
+        "properties": {
+          "formula": "OH-",
+          "role": "product",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_4",
+        "type": "chemical",
+        "name": "H2",
+        "properties": {
+          "formula": "H2",
+          "role": "product",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_6",
+        "type": "chemical",
+        "name": "NiOOH",
+        "properties": {
+          "formula": "NiOOH",
+          "role": "product",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_7",
+        "type": "process",
+        "name": "HER",
+        "properties": {
+          "equation": "4H2O + 4e- → 4OH- + H2",
+          "type": "Hydrogen Evolution Reaction",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_8",
+        "type": "process",
+        "name": "OER",
+        "properties": {
+          "equation": "Ni(OH)2 + OH- → NiOOH + H2O + e- (x4)",
+          "type": "Oxygen Evolution Reaction precursor",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_9",
+        "type": "component",
+        "name": "Cathode",
+        "properties": {
+          "label": "Cathode",
+          "color": "white",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_10",
+        "type": "component",
+        "name": "Anode",
+        "properties": {
+          "label": "Anode",
+          "color": "blue",
+          "temperature": "25°C",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61_11",
+        "type": "component",
+        "name": "Power Source",
+        "properties": {
+          "label": "Power",
+          "extracted_from_image": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+        },
+        "source_image_file": "4dd78f3fba2d6b0823fdc437b07c9a8e6bde6ca5f04abcd96a83bc499dd00d61.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "characterization",
+        "name": "Hydrogen Production vs Energy Consumption Plot",
+        "properties": {
+          "type": "scatter_plot",
+          "x_axis": "Energy consumption (mW)",
+          "y_axis": "Hydrogen produced (m)",
+          "cycles": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "label": "d",
+          "extracted_from_image": "5068ed25afebaf7ffd9a13a8de877dab4754f260458807fd51ec287063da3425.jpg"
+        },
+        "source_image_file": "5068ed25afebaf7ffd9a13a8de877dab4754f260458807fd51ec287063da3425.jpg"
+      },
+      {
+        "id": "cycle1",
+        "type": "cycle",
+        "name": "Cycle 1",
+        "properties": {
+          "color": "red",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle2",
+        "type": "cycle",
+        "name": "Cycle 2",
+        "properties": {
+          "color": "red",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle3",
+        "type": "cycle",
+        "name": "Cycle 3",
+        "properties": {
+          "color": "orange",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle4",
+        "type": "cycle",
+        "name": "Cycle 4",
+        "properties": {
+          "color": "yellow",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle5",
+        "type": "cycle",
+        "name": "Cycle 5",
+        "properties": {
+          "color": "light green",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle6",
+        "type": "cycle",
+        "name": "Cycle 6",
+        "properties": {
+          "color": "cyan",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle7",
+        "type": "cycle",
+        "name": "Cycle 7",
+        "properties": {
+          "color": "dark blue",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle8",
+        "type": "cycle",
+        "name": "Cycle 8",
+        "properties": {
+          "color": "blue",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle9",
+        "type": "cycle",
+        "name": "Cycle 9",
+        "properties": {
+          "color": "purple",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "cycle10",
+        "type": "cycle",
+        "name": "Cycle 10",
+        "properties": {
+          "color": "magenta",
+          "voltage_range": [
+            1.45,
+            1.6
+          ],
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "h2",
+        "type": "chemical",
+        "name": "H₂",
+        "properties": {
+          "role": "product",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "energy",
+        "type": "parameter",
+        "name": "Energy Consumption",
+        "properties": {
+          "unit": "mW",
+          "extracted_from_image": "5068ed25afebaf7ffd9a13a8de877dab4754f260458807fd51ec287063da3425.jpg"
+        },
+        "source_image_file": "5068ed25afebaf7ffd9a13a8de877dab4754f260458807fd51ec287063da3425.jpg"
+      },
+      {
+        "id": "red_line",
+        "type": "dataset",
+        "name": "Red Line Dataset",
+        "properties": {
+          "color": "red",
+          "potential": "~1.6 V",
+          "stability": "stable across all cycles",
+          "extracted_from_image": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+        },
+        "source_image_file": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+      },
+      {
+        "id": "yellow_line",
+        "type": "dataset",
+        "name": "Yellow Line Dataset",
+        "properties": {
+          "color": "yellow",
+          "potential": "~1.45-1.5 V",
+          "trend": "fluctuating with error bars",
+          "extracted_from_image": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+        },
+        "source_image_file": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+      },
+      {
+        "id": "green_line",
+        "type": "dataset",
+        "name": "Green Line Dataset",
+        "properties": {
+          "color": "green",
+          "potential": "~1.45 V",
+          "trend": "fluctuating with error bars",
+          "extracted_from_image": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+        },
+        "source_image_file": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+      },
+      {
+        "id": "blue_line",
+        "type": "dataset",
+        "name": "Blue Line Dataset",
+        "properties": {
+          "color": "blue",
+          "potential": "~1.6 V plateau",
+          "trend": "initial plateau then stable",
+          "extracted_from_image": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+        },
+        "source_image_file": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+      },
+      {
+        "id": "purple_line",
+        "type": "dataset",
+        "name": "Purple Line Dataset",
+        "properties": {
+          "color": "purple",
+          "potential": "~1.45 V",
+          "trend": "fluctuating with error bars",
+          "extracted_from_image": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+        },
+        "source_image_file": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+      },
+      {
+        "id": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "reference": "H⁺/H₂",
+          "potential_range": "1.3-1.7 V",
+          "extracted_from_image": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+        },
+        "source_image_file": "624f280c7fb409351b3afcedbeb597d66ea79e2aabac5f59d9fab2f0b26642cc.jpg"
+      },
+      {
+        "id": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "location": "right",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "separator",
+        "type": "component",
+        "name": "Separator",
+        "properties": {
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "power",
+        "type": "component",
+        "name": "Power",
+        "properties": {
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "o2",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "role": "product",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "oh-",
+        "type": "chemical",
+        "name": "OH⁻",
+        "properties": {
+          "role": "ion",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "h2o",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "role": "reactant/product",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "e-",
+        "type": "chemical",
+        "name": "e⁻",
+        "properties": {
+          "role": "electron",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "her",
+        "type": "reaction",
+        "name": "HER",
+        "properties": {
+          "equation": "4H₂O + 4e⁻ → 4OH⁻ + 2H₂",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "oer",
+        "type": "reaction",
+        "name": "OER",
+        "properties": {
+          "equation": "4OH⁻ → 2H₂O + O₂ + 4e⁻",
+          "extracted_from_image": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+        },
+        "source_image_file": "7025edf9f281adb37ce5c0bde266aadda869376343a7f28a6693f03808c3602d.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "system",
+        "name": "Multi-cell system",
+        "properties": {
+          "description": "Multi-cell experimental setup",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "cell",
+        "name": "Cell A",
+        "properties": {
+          "label": "Cell A",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "cell",
+        "name": "Cell B",
+        "properties": {
+          "label": "Cell B",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "cell",
+        "name": "Cell C-Z",
+        "properties": {
+          "label": "Cell C-Z",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "formula": "O₂",
+          "state": "gas",
+          "direction": "inflow",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "chemical",
+        "name": "H₂",
+        "properties": {
+          "formula": "H₂",
+          "state": "gas",
+          "direction": "outflow",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "chemical",
+        "name": "Water",
+        "properties": {
+          "formula": "H₂O",
+          "state": "liquid",
+          "role": "inlet",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "container",
+        "name": "Red tank",
+        "properties": {
+          "color": "red",
+          "content": "unknown liquid",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "m1",
+        "type": "membrane",
+        "name": "Not required",
+        "properties": {
+          "extracted_from_image": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+        },
+        "source_image_file": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+      },
+      {
+        "id": "m2",
+        "type": "membrane",
+        "name": "PEM",
+        "properties": {
+          "extracted_from_image": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+        },
+        "source_image_file": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+      },
+      {
+        "id": "m3",
+        "type": "membrane",
+        "name": "Diaphragm",
+        "properties": {
+          "extracted_from_image": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+        },
+        "source_image_file": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+      },
+      {
+        "id": "m4",
+        "type": "membrane",
+        "name": "AEM",
+        "properties": {
+          "extracted_from_image": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+        },
+        "source_image_file": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+      },
+      {
+        "id": "op1",
+        "type": "operation_mode",
+        "name": "Swing",
+        "properties": {
+          "extracted_from_image": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+        },
+        "source_image_file": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+      },
+      {
+        "id": "op2",
+        "type": "operation_mode",
+        "name": "Continuous",
+        "properties": {
+          "extracted_from_image": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+        },
+        "source_image_file": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+      },
+      {
+        "id": "trl1",
+        "type": "trl",
+        "name": "Research development",
+        "properties": {
+          "extracted_from_image": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+        },
+        "source_image_file": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+      },
+      {
+        "id": "trl2",
+        "type": "trl",
+        "name": "Commercial",
+        "properties": {
+          "extracted_from_image": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+        },
+        "source_image_file": "a4e698eeb156f37e72504cd24a63096f9dd1bc90705e133c5979ab0e49d6d7da.jpg"
+      },
+      {
+        "id": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082_e_anode",
+        "type": "electrode",
+        "name": "E_anode",
+        "properties": {
+          "description": "Anode potential reference",
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "v_cell",
+        "type": "measurement",
+        "name": "V_cell",
+        "properties": {
+          "description": "Cell voltage vs RHE",
+          "unit": "V",
+          "extracted_from_image": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+        },
+        "source_image_file": "d23cd30bab0c9d321e563113596d3fe6a091b8e3c1644fbcfbd4cb3683a29082.jpg"
+      },
+      {
+        "id": "N1",
+        "type": "characterization",
+        "name": "CV_plot",
+        "properties": {
+          "type": "cyclic_voltammetry",
+          "x_axis": "Potential (V_RHE)",
+          "y_axis": "Current density (mA cm⁻²)",
+          "range_x": [
+            0.7,
+            1.9
+          ],
+          "range_y": [
+            -600,
+            900
+          ],
+          "label": "a",
+          "extracted_from_image": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+        },
+        "source_image_file": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+      },
+      {
+        "id": "N2",
+        "type": "curve",
+        "name": "blue_solid_line",
+        "properties": {
+          "color": "blue",
+          "style": "solid",
+          "description": "Primary CV curve with high positive and negative current peaks",
+          "extracted_from_image": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+        },
+        "source_image_file": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+      },
+      {
+        "id": "N3",
+        "type": "curve",
+        "name": "red_solid_line",
+        "properties": {
+          "color": "red",
+          "style": "solid",
+          "description": "Secondary CV curve, shifted relative to blue curve",
+          "extracted_from_image": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+        },
+        "source_image_file": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+      },
+      {
+        "id": "N4",
+        "type": "curve",
+        "name": "blue_dots",
+        "properties": {
+          "color": "blue",
+          "style": "dotted/scatter",
+          "description": "Data points following blue solid line",
+          "extracted_from_image": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+        },
+        "source_image_file": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+      },
+      {
+        "id": "N5",
+        "type": "curve",
+        "name": "red_dots",
+        "properties": {
+          "color": "red",
+          "style": "dotted/scatter",
+          "description": "Data points following red solid line",
+          "extracted_from_image": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+        },
+        "source_image_file": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+      },
+      {
+        "id": "N6",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode reference scale",
+          "extracted_from_image": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+        },
+        "source_image_file": "d536f3361be92de127e07347515db3a96f9197ec58ada93c5eb04b4362659965.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "container",
+        "name": "Gray tank",
+        "properties": {
+          "color": "gray",
+          "content": "unknown slurry/liquid",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "F⁻",
+        "properties": {
+          "formula": "F⁻",
+          "state": "anion",
+          "direction": "outflow",
+          "extracted_from_image": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+        },
+        "source_image_file": "f123b700eb4b60d8ddc4c4f2b83d41d061ef5f9e245a857268d835451456f70d.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFe_LDH_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_NiFe_LDH",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFe_LDH_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NiFe_LDH",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni0.9Co0.1(OH)2_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_Ni0.9Co0.1(OH)2",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "source_id": "anode",
+        "target_id": "cathode",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "NiOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "chem_ni_oh2_undoped",
+        "type": "contains"
+      },
+      {
+        "source_id": "reaction",
+        "target_id": "NiOOH",
+        "type": "reactant"
+      },
+      {
+        "source_id": "reaction",
+        "target_id": "H2O",
+        "type": "reactant"
+      },
+      {
+        "source_id": "reaction",
+        "target_id": "chem_ni_oh2_undoped",
+        "type": "product"
+      },
+      {
+        "source_id": "reaction",
+        "target_id": "O2",
+        "type": "product"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "temperature",
+        "type": "operates_at"
+      },
+      {
+        "source_id": "reaction",
+        "target_id": "temperature",
+        "type": "condition"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve_red",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve_blue",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "7",
+        "type": "reactant_in"
+      },
+      {
+        "source_id": "2",
+        "target_id": "7",
+        "type": "reactant_in"
+      },
+      {
+        "source_id": "7",
+        "target_id": "3",
+        "type": "produces"
+      },
+      {
+        "source_id": "7",
+        "target_id": "4",
+        "type": "produces"
+      },
+      {
+        "source_id": "5",
+        "target_id": "8",
+        "type": "reactant_in"
+      },
+      {
+        "source_id": "3",
+        "target_id": "8",
+        "type": "reactant_in"
+      },
+      {
+        "source_id": "8",
+        "target_id": "6",
+        "type": "produces"
+      },
+      {
+        "source_id": "8",
+        "target_id": "1",
+        "type": "produces"
+      },
+      {
+        "source_id": "8",
+        "target_id": "2",
+        "type": "produces"
+      },
+      {
+        "source_id": "9",
+        "target_id": "7",
+        "type": "site_of"
+      },
+      {
+        "source_id": "10",
+        "target_id": "8",
+        "type": "site_of"
+      },
+      {
+        "source_id": "11",
+        "target_id": "7",
+        "type": "drives"
+      },
+      {
+        "source_id": "11",
+        "target_id": "8",
+        "type": "drives"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle1",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle4",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle5",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle6",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle7",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle8",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle9",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "cycle10",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "h2",
+        "type": "measures"
+      },
+      {
+        "source_id": "chart1",
+        "target_id": "energy",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle1",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle2",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle3",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle4",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle5",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle6",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle7",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle8",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle9",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle10",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cycle1",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle2",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle3",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle4",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle5",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle6",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle7",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle8",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle9",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cycle10",
+        "target_id": "energy",
+        "type": "consumes"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "red_line",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "yellow_line",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "green_line",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "blue_line",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "purple_line",
+        "type": "contains"
+      },
+      {
+        "source_id": "red_line",
+        "target_id": "anode",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "yellow_line",
+        "target_id": "anode",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "green_line",
+        "target_id": "anode",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "blue_line",
+        "target_id": "anode",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "purple_line",
+        "target_id": "anode",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "her",
+        "type": "hosts"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "oer",
+        "type": "hosts"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "separator",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "separator",
+        "target_id": "anode",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "power",
+        "target_id": "cathode",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "power",
+        "target_id": "anode",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "her",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "her",
+        "target_id": "oh-",
+        "type": "produces"
+      },
+      {
+        "source_id": "oer",
+        "target_id": "o2",
+        "type": "produces"
+      },
+      {
+        "source_id": "her",
+        "target_id": "h2o",
+        "type": "consumes"
+      },
+      {
+        "source_id": "oer",
+        "target_id": "oh-",
+        "type": "consumes"
+      },
+      {
+        "source_id": "separator",
+        "target_id": "oh-",
+        "type": "transports"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "powered_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "removes_residual"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "removes_residual"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "m1",
+        "type": "uses_membrane"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "op1",
+        "type": "uses_operation_mode"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "trl1",
+        "type": "has_trl"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "m1",
+        "type": "uses_membrane"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "op1",
+        "type": "uses_operation_mode"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "trl1",
+        "type": "has_trl"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "m2",
+        "type": "uses_membrane"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "op1",
+        "type": "uses_operation_mode"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "trl1",
+        "type": "has_trl"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "m1",
+        "type": "uses_membrane"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "op1",
+        "type": "uses_operation_mode"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "trl2",
+        "type": "has_trl"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "m3",
+        "type": "uses_membrane"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "op2",
+        "type": "uses_operation_mode"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "trl1",
+        "type": "has_trl"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "m4",
+        "type": "uses_membrane"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "op2",
+        "type": "uses_operation_mode"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "trl2",
+        "type": "has_trl"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "m3",
+        "type": "uses_membrane"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "op2",
+        "type": "uses_operation_mode"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "trl2",
+        "type": "has_trl"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "m2",
+        "type": "uses_membrane"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "op2",
+        "type": "uses_operation_mode"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "trl2",
+        "type": "has_trl"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle1",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle2",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle3",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle4",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle5",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle6",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle7",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle8",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle9",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "cycle10",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "e_anode",
+        "type": "references"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle1",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle2",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle3",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle4",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle5",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle6",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle7",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle8",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle9",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "cycle10",
+        "target_id": "v_cell",
+        "type": "measures"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "N2",
+        "type": "contains"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "N3",
+        "type": "contains"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "N4",
+        "type": "contains"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "N5",
+        "type": "contains"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "N6",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "N2",
+        "target_id": "N4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "N3",
+        "target_id": "N5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "flows_into"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "flows_from"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n1",
+        "type": "feeds"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "produces"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "component"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "component"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "component"
+      }
+    ]
+  }
+}

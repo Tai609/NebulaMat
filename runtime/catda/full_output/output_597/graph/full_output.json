@@ -1,0 +1,901 @@
+{
+  "synthesis": {
+    "nodes": [],
+    "edges": [],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [],
+    "edges": []
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "n1",
+        "type": "characterization",
+        "name": "Absorption Spectrum",
+        "properties": {
+          "y_label": "Absorbance (A_max)",
+          "x_label": "Wavenumber (K^{-1})",
+          "x_range": [
+            0,
+            2.5
+          ],
+          "peaks": [
+            {
+              "position": "0.0-0.5",
+              "description": "Broad rising peak"
+            },
+            {
+              "position": "0.5",
+              "description": "Vertical dashed line marker"
+            },
+            {
+              "position": "0.75",
+              "description": "Sharp peak"
+            },
+            {
+              "position": "1.0",
+              "description": "Vertical dashed line marker"
+            },
+            {
+              "position": "1.25",
+              "description": "Sharp narrow peak"
+            }
+          ],
+          "features": [
+            "Dashed vertical lines at ~0.5 and ~1.0 K^{-1}",
+            "Baseline drop to zero after 1.5 K^{-1}"
+          ],
+          "extracted_from_image": "ec0681af7b8a523fd1e0b57e27a33217e0e53d336834a6de3272c5f455c2a530.jpg"
+        },
+        "source_image_file": "ec0681af7b8a523fd1e0b57e27a33217e0e53d336834a6de3272c5f455c2a530.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "characterization",
+        "name": "Red dashed line",
+        "properties": {
+          "color": "red",
+          "style": "dashed",
+          "intensity_range": "[0, 0.4]",
+          "description": "Reference or baseline spectrum",
+          "extracted_from_image": "a584f20dab00293ec2bf67b9e8a65ae334c439892ced874e209f3089c9a5762a.jpg"
+        },
+        "source_image_file": "a584f20dab00293ec2bf67b9e8a65ae334c439892ced874e209f3089c9a5762a.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "characterization",
+        "name": "Blue solid line",
+        "properties": {
+          "color": "blue",
+          "style": "solid",
+          "intensity_range": "[0, 0.4]",
+          "description": "Secondary spectrum with peaks around 0.15, 0.3 (arbitrary units)",
+          "extracted_from_image": "a584f20dab00293ec2bf67b9e8a65ae334c439892ced874e209f3089c9a5762a.jpg"
+        },
+        "source_image_file": "a584f20dab00293ec2bf67b9e8a65ae334c439892ced874e209f3089c9a5762a.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "characterization",
+        "name": "Blue dashed line",
+        "properties": {
+          "color": "blue",
+          "style": "dashed",
+          "intensity_range": "[0, 0.4]",
+          "description": "Reference or baseline for blue spectrum",
+          "extracted_from_image": "a584f20dab00293ec2bf67b9e8a65ae334c439892ced874e209f3089c9a5762a.jpg"
+        },
+        "source_image_file": "a584f20dab00293ec2bf67b9e8a65ae334c439892ced874e209f3089c9a5762a.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "parameter",
+        "name": "Number of Reservoir Nodes",
+        "properties": {
+          "Single Reservoir": "N_r = 10,000",
+          "a) Known Neighbors": "≈200",
+          "b) Unknown Neighbors": "≈200",
+          "extracted_from_image": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+        },
+        "source_image_file": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "parameter",
+        "name": "Spectral Radius",
+        "properties": {
+          "Single Reservoir": "0.9",
+          "a) Known Neighbors": "0.9",
+          "b) Unknown Neighbors": "0.9",
+          "extracted_from_image": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+        },
+        "source_image_file": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "parameter",
+        "name": "Input Scaling",
+        "properties": {
+          "Single Reservoir": "0.1",
+          "a) Known Neighbors": "0.6",
+          "b) Unknown Neighbors": "0.6",
+          "extracted_from_image": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+        },
+        "source_image_file": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+      },
+      {
+        "id": "p4",
+        "type": "parameter",
+        "name": "Leak rate",
+        "properties": {
+          "Single Reservoir": "0",
+          "a) Known Neighbors": "0.1",
+          "b) Unknown Neighbors": "0.1",
+          "extracted_from_image": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+        },
+        "source_image_file": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+      },
+      {
+        "id": "p5",
+        "type": "parameter",
+        "name": "Regularization",
+        "properties": {
+          "Single Reservoir": "10^{-7}",
+          "a) Known Neighbors": "10^{-9}",
+          "b) Unknown Neighbors": "10^{-9}",
+          "extracted_from_image": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+        },
+        "source_image_file": "2f73e6aa0619bfde5a8cee5288da2249f8baa9ff31c3b3a8b993bfa3cb2c6cd8.jpg"
+      },
+      {
+        "id": "network1",
+        "type": "structure",
+        "name": "Left Network Structure",
+        "properties": {
+          "description": "Black dots connected by lines forming a network",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "central_box",
+        "type": "system",
+        "name": "Central Processing Box",
+        "properties": {
+          "description": "Box containing nodes 1, 2, 3 with inputs u(t)",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65_node1",
+        "type": "node",
+        "name": "Node 1",
+        "properties": {
+          "label": "1",
+          "input": "u(t)",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65_node2",
+        "type": "node",
+        "name": "Node 2",
+        "properties": {
+          "label": "2",
+          "input": "u(t)",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65_node3",
+        "type": "node",
+        "name": "Node 3",
+        "properties": {
+          "label": "3",
+          "output": "u(t)",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "input_ut",
+        "type": "signal",
+        "name": "u(t)",
+        "properties": {
+          "description": "Input signal",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "r_signal",
+        "type": "signal",
+        "name": "R",
+        "properties": {
+          "description": "Reference signal",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "output_signal",
+        "type": "signal",
+        "name": "u(t + Δt)",
+        "properties": {
+          "description": "Delayed output signal",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "dots",
+        "type": "structure",
+        "name": "Right Dots",
+        "properties": {
+          "description": "Series of dots representing continuation",
+          "extracted_from_image": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+        },
+        "source_image_file": "333782f7095c70476dacfe01b333bf6f23f5a16be8618b50916bfa0b5f6e4b65.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "concept",
+        "name": "Oscillator Network",
+        "properties": {
+          "size_range": "0-500 oscillators",
+          "extracted_from_image": "729a1a9b776fd541f146d0c444dc6b6934a1ac6f38b69bae5c9ff4a33cb3a21b.jpg"
+        },
+        "source_image_file": "729a1a9b776fd541f146d0c444dc6b6934a1ac6f38b69bae5c9ff4a33cb3a21b.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "metric",
+        "name": "IR (Prediction time) max (%)",
+        "properties": {
+          "description": "Maximum prediction time metric",
+          "extracted_from_image": "729a1a9b776fd541f146d0c444dc6b6934a1ac6f38b69bae5c9ff4a33cb3a21b.jpg"
+        },
+        "source_image_file": "729a1a9b776fd541f146d0c444dc6b6934a1ac6f38b69bae5c9ff4a33cb3a21b.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "bond",
+        "name": "Grey Bonds",
+        "properties": {
+          "color": "grey",
+          "description": "Connecting framework bonds",
+          "extracted_from_image": "58bbd6e67a0cbc92f347486d0f22f22e326af5015c473256bc6aa0ff703ab14b.jpg"
+        },
+        "source_image_file": "58bbd6e67a0cbc92f347486d0f22f22e326af5015c473256bc6aa0ff703ab14b.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "chart",
+        "name": "Figure (a)",
+        "properties": {
+          "type": "spectrum",
+          "x_label": "2θ (degrees)",
+          "y_label": "Intensity (arbitrary units)",
+          "x_range": "[0, ~80]",
+          "y_range": "[0, 0.4]",
+          "extracted_from_image": "a584f20dab00293ec2bf67b9e8a65ae334c439892ced874e209f3089c9a5762a.jpg"
+        },
+        "source_image_file": "a584f20dab00293ec2bf67b9e8a65ae334c439892ced874e209f3089c9a5762a.jpg"
+      },
+      {
+        "id": "a1",
+        "type": "characterization",
+        "name": "Oscillatory Signal ω=0.321",
+        "properties": {
+          "panel": "a1",
+          "omega": 0.321,
+          "y_label": "σ (σ_i)",
+          "x_label": "t",
+          "x_range": [
+            0,
+            10
+          ],
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "a2",
+        "type": "characterization",
+        "name": "Oscillatory Signal ω=0.193",
+        "properties": {
+          "panel": "a2",
+          "omega": 0.193,
+          "y_label": "σ (σ_i)",
+          "x_label": "t",
+          "x_range": [
+            0,
+            10
+          ],
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "a3",
+        "type": "characterization",
+        "name": "Oscillatory Signal ω=0.229",
+        "properties": {
+          "panel": "a3",
+          "omega": 0.229,
+          "y_label": "σ (σ_i)",
+          "x_label": "t",
+          "x_range": [
+            0,
+            10
+          ],
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "b1",
+        "type": "characterization",
+        "name": "Oscillatory Signal Panel b1",
+        "properties": {
+          "panel": "b1",
+          "y_label": "φ (φ_i)",
+          "x_label": "t",
+          "x_range": [
+            0,
+            10
+          ],
+          "features": "dashed vertical lines",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "b2",
+        "type": "characterization",
+        "name": "Oscillatory Signal Panel b2",
+        "properties": {
+          "panel": "b2",
+          "y_label": "φ (φ_i)",
+          "x_label": "t",
+          "x_range": [
+            0,
+            10
+          ],
+          "omega": 0,
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "b3",
+        "type": "characterization",
+        "name": "Oscillatory Signal Panel b3",
+        "properties": {
+          "panel": "b3",
+          "y_label": "φ (φ_i)",
+          "x_label": "t",
+          "x_range": [
+            0,
+            10
+          ],
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "Oscillatory Signal ω_max Panel c1",
+        "properties": {
+          "panel": "c1",
+          "y_label": "λ",
+          "x_label": "t",
+          "x_range": [
+            0,
+            5,
+            10
+          ],
+          "label": "ω_max",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "Oscillatory Signal Panel c2",
+        "properties": {
+          "panel": "c2",
+          "y_label": "λ",
+          "x_label": "t",
+          "x_range": [
+            0,
+            5,
+            10
+          ],
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "Oscillatory Signal Panel c3",
+        "properties": {
+          "panel": "c3",
+          "y_label": "λ",
+          "x_label": "t",
+          "x_range": [
+            0,
+            5,
+            10
+          ],
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "figure_a",
+        "type": "figure",
+        "name": "Panel A: σ vs t at different ω",
+        "properties": {
+          "description": "Stress oscillation data at frequencies ω=0.321, 0.193, 0.229",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "figure_b",
+        "type": "figure",
+        "name": "Panel B: φ vs t",
+        "properties": {
+          "description": "Phase oscillation data with vertical reference lines",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "figure_c",
+        "type": "figure",
+        "name": "Panel C: λ vs t",
+        "properties": {
+          "description": "Lyapunov exponent or wavelength oscillation data",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "omega_0.321",
+        "type": "parameter",
+        "name": "ω = 0.321",
+        "properties": {
+          "value": 0.321,
+          "unit": "frequency",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "omega_0.193",
+        "type": "parameter",
+        "name": "ω = 0.193",
+        "properties": {
+          "value": 0.193,
+          "unit": "frequency",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "omega_0.229",
+        "type": "parameter",
+        "name": "ω = 0.229",
+        "properties": {
+          "value": 0.229,
+          "unit": "frequency",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "sigma",
+        "type": "physical_quantity",
+        "name": "σ (σ_i)",
+        "properties": {
+          "description": "Stress or strain",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "phi",
+        "type": "physical_quantity",
+        "name": "φ (φ_i)",
+        "properties": {
+          "description": "Phase",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      },
+      {
+        "id": "lambda",
+        "type": "physical_quantity",
+        "name": "λ",
+        "properties": {
+          "description": "Lyapunov exponent or wavelength",
+          "extracted_from_image": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+        },
+        "source_image_file": "d8290dc30a0803b6c7922d614a605c9ee31a13d91a28417be7b06b47ea775f55.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p1",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p2",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p3",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p4",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "p5",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p1",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p2",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p3",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p4",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p5",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p1",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p2",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p3",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p4",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p5",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "network1",
+        "target_id": "central_box",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "input_ut",
+        "target_id": "node1",
+        "type": "input"
+      },
+      {
+        "source_id": "input_ut",
+        "target_id": "node2",
+        "type": "input"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "connects"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node3",
+        "type": "connects"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "output_signal",
+        "type": "output"
+      },
+      {
+        "source_id": "r_signal",
+        "target_id": "output_signal",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "central_box",
+        "target_id": "dots",
+        "type": "extends_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_visualization"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "connected_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "maps_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "colors"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "colors"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "colors"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "evaluates"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measures"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "quantifies"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chart1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chart1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chart1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chart1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "a1",
+        "target_id": "figure_a",
+        "type": "part_of"
+      },
+      {
+        "source_id": "a2",
+        "target_id": "figure_a",
+        "type": "part_of"
+      },
+      {
+        "source_id": "a3",
+        "target_id": "figure_a",
+        "type": "part_of"
+      },
+      {
+        "source_id": "a1",
+        "target_id": "omega_0.321",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "a2",
+        "target_id": "omega_0.193",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "a3",
+        "target_id": "omega_0.229",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "a1",
+        "target_id": "sigma",
+        "type": "measures"
+      },
+      {
+        "source_id": "a2",
+        "target_id": "sigma",
+        "type": "measures"
+      },
+      {
+        "source_id": "a3",
+        "target_id": "sigma",
+        "type": "measures"
+      },
+      {
+        "source_id": "b1",
+        "target_id": "figure_b",
+        "type": "part_of"
+      },
+      {
+        "source_id": "b2",
+        "target_id": "figure_b",
+        "type": "part_of"
+      },
+      {
+        "source_id": "b3",
+        "target_id": "figure_b",
+        "type": "part_of"
+      },
+      {
+        "source_id": "b1",
+        "target_id": "phi",
+        "type": "measures"
+      },
+      {
+        "source_id": "b2",
+        "target_id": "phi",
+        "type": "measures"
+      },
+      {
+        "source_id": "b3",
+        "target_id": "phi",
+        "type": "measures"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "figure_c",
+        "type": "part_of"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "figure_c",
+        "type": "part_of"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "figure_c",
+        "type": "part_of"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "lambda",
+        "type": "measures"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "lambda",
+        "type": "measures"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "lambda",
+        "type": "measures"
+      }
+    ]
+  }
+}

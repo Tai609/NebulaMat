@@ -1,0 +1,40 @@
+schema_version: 1
+id: T003
+title: Build candidate adsorption structures
+role: structure-modeler
+skill: structure-prep
+status: approved
+depends_on:
+  - T001
+  - T002
+approval: none
+inputs:
+  - artifact_id: method-fingerprint
+    min_status: accepted
+  - artifact_id: model-observable-decision
+    min_status: accepted
+outputs_expected:
+  - artifact_id: candidate-structures
+    type: structure-set
+    path: work/models/
+success_criteria:
+  - no atomic overlaps
+  - composition and PBC validated
+  - species order recorded
+knowledge_required:
+  - knowledge/surface-thermodynamics.md
+required_refs:
+  - tools/structure-prep/SKILL.md
+  - tools/structure-prep/references/running.md
+  - tools/structure-prep/references/validation.md
+required_checks:
+  - uv run {repo_root}/tools/structure-prep/scripts/convert_structure.py work/models/slab.vasp work/models/slab.vasp
+release_gates:
+  - structure-release
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions: []
+provenance:
+  - work/method-fingerprint.md
+  - work/model-observable-decision.md

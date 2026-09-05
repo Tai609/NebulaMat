@@ -1,0 +1,45 @@
+schema_version: 1
+id: T002
+title: Generate candidate slab and adsorption structures
+role: structure-modeler
+role_contract: procedures/research-orchestrator/references/roles.md#structure-modeler
+skill: structure-prep
+status: accepted
+depends_on:
+  - T001
+approval: none
+inputs:
+  - artifact_id: surface-literature-review
+    min_status: accepted
+can_read:
+  - artifact_id: surface-literature-review
+can_write:
+  - artifact_type: structure-set
+  - artifact_type: validation-report
+cannot:
+  - submit production engine jobs
+outputs_expected:
+  - artifact_id: candidate-structures
+    type: structure-set
+    path: work/models/
+success_criteria:
+  - structures are generated through structure-prep
+  - no hard geometry overlaps in the initial audit
+  - species order and provenance are recorded
+knowledge_required:
+  - knowledge/surface-thermodynamics.md
+required_refs:
+  - tools/structure-prep/SKILL.md
+  - tools/structure-prep/references/running.md
+  - tools/structure-prep/references/validation.md
+required_checks:
+  - uv run {repo_root}/tools/structure-prep/scripts/audit_structure.py work/models/ads00/POSCAR --adsorbate-count 1 --json work/models/ads00/structure-audit.json
+release_gates:
+  - structure-release
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions:
+  - Fixture POSCAR is a toy geometry for protocol testing.
+provenance:
+  - work/surface-literature-review.md

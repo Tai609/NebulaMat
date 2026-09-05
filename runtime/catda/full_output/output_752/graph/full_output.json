@@ -1,0 +1,1829 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_copper_electrode",
+        "type": "chemical",
+        "name": "copper electrode",
+        "aliases": [
+          "Cu electrode"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_NiSO4_7H2O",
+        "type": "chemical",
+        "name": "NiSO4·7H2O",
+        "aliases": [
+          "NiSO4·7H2O"
+        ],
+        "formula": "NiSO4·7H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_CuSO4_5H2O",
+        "type": "chemical",
+        "name": "CuSO4·5H2O",
+        "aliases": [
+          "CuSO4·5H2O"
+        ],
+        "formula": "CuSO4·5H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_Na3C6H5O7_2H2O",
+        "type": "chemical",
+        "name": "Na3C6H5O7·2H2O",
+        "aliases": [
+          "Na3C6H5O7·2H2O"
+        ],
+        "formula": "Na3C6H5O7·2H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_H3BO3",
+        "type": "chemical",
+        "name": "H3BO3",
+        "aliases": [
+          "H3BO3"
+        ],
+        "formula": "H3BO3",
+        "properties": {}
+      },
+      {
+        "id": "chem_NiCu_coating",
+        "type": "chemical",
+        "name": "NiCu coating",
+        "aliases": [
+          "NiCu composite coating"
+        ],
+        "composition": {
+          "Ni": {
+            "value": 14.6,
+            "unit": "wt%"
+          },
+          "Cu": {
+            "value": 85.4,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "surface_composition_Ni": {
+            "value": 13.3,
+            "unit": "at%"
+          },
+          "surface_composition_Cu": {
+            "value": 86.7,
+            "unit": "at%"
+          },
+          "film_thickness": {
+            "value": 50,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Galvanostatic Electrodeposition of NiCu",
+        "procedure": "Before electrodeposition, the electrode surface was polished with emery paper (320–1000 grain size), and then washed with distilled water, thoroughly degreased with acetone, washed once more with distilled water and immersed in a bath solution. The electrodeposition of the NiCu coating was performed galvanostatically using a potentiostate–galvanostate instrument (Princeton Applied Research Model 362) with a three-electrode configuration. A copper electrode was used as counter electrode and a Ag/AgCl electrode was used as the reference electrode. The bath composition was 30% NiSO4·7H2O, 1.333% CuSO4·5H2O, 5% Na3C6H5O7·2H2O and 1.25% H3BO3. A constant current density of 50 mA cm^-2 was applied to the electrolysis system for 2918 s during the electrodeposition, which corresponds to a nearly theoretically Faraday laws of 50 μm film thickness by using the average alloy density and average atomic weights.",
+        "method": "Galvanostatic electrodeposition",
+        "conditions": {
+          "current_density": {
+            "value": 50,
+            "unit": "mA cm^-2"
+          },
+          "deposition_time": {
+            "value": 2918,
+            "unit": "s"
+          },
+          "film_thickness": {
+            "value": 50,
+            "unit": "μm"
+          }
+        },
+        "source_text": "Before electrodeposition, the electrode surface was polished... which corresponds to a nearly theoretically Faraday laws of 50 μm film thickness"
+      },
+      {
+        "id": "chem_NiCu",
+        "type": "chemical",
+        "name": "NiCu coating",
+        "aliases": [
+          "NiCu composite coating",
+          "NiCu deposit"
+        ],
+        "formula": "NiCu",
+        "composition": {
+          "Ni": {
+            "value": 14.6,
+            "unit": "wt%"
+          },
+          "Cu": {
+            "value": 85.4,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "surface_Ni": {
+            "value": 13.3,
+            "unit": "at%"
+          },
+          "surface_Cu": {
+            "value": 86.7,
+            "unit": "at%"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_copper_electrode_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_copper_electrode",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_NiSO4_7H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_NiSO4_7H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 30,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_CuSO4_5H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_CuSO4_5H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 1.333,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_Na3C6H5O7_2H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Na3C6H5O7_2H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "complexing_agent",
+          "concentration": {
+            "value": 5,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_H3BO3_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_H3BO3",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "buffer",
+          "concentration": {
+            "value": 1.25,
+            "unit": "%"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_NiCu_coating",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_NiCu_coating",
+        "properties": {
+          "form": "coating"
+        }
+      },
+      {
+        "id": "edge_input_chem_acetone_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_acetone",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "degreasing_solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_distilled_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_distilled_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "rinsing_solvent"
+        }
+      }
+    ],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_NiCu_coating",
+        "type": "chemical",
+        "name": "NiCu coating",
+        "aliases": [
+          "NiCu composite coating"
+        ],
+        "composition": {
+          "Ni": {
+            "value": 14.6,
+            "unit": "wt%"
+          },
+          "Cu": {
+            "value": 85.4,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "surface_composition_Ni": {
+            "value": 13.3,
+            "unit": "at%"
+          },
+          "surface_composition_Cu": {
+            "value": 86.7,
+            "unit": "at%"
+          },
+          "film_thickness": {
+            "value": 50,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_NiCu_coating",
+        "description": "HER stability testing during long-term electrolysis in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "temperature": {
+            "value": "room temperature",
+            "unit": "condition"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "cathodic_current_density": {
+            "value": 100,
+            "unit": "mA/cm²"
+          },
+          "duration": {
+            "value": 120,
+            "unit": "h"
+          },
+          "counter_electrode": {
+            "value": "Pt sheet",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          }
+        },
+        "results_json": {
+          "Tafel_slope_24h": {
+            "value": 0.149,
+            "unit": "V/dec"
+          },
+          "Tafel_slope_48h": {
+            "value": 0.149,
+            "unit": "V/dec"
+          },
+          "Tafel_slope_120h": {
+            "value": 0.169,
+            "unit": "V/dec"
+          },
+          "current_density_at_eta_100mV_24h": {
+            "value": 2.69,
+            "unit": "mA/cm²"
+          },
+          "current_density_at_eta_200mV_24h": {
+            "value": 11.81,
+            "unit": "mA/cm²"
+          },
+          "current_density_at_eta_300mV_24h": {
+            "value": 36.43,
+            "unit": "mA/cm²"
+          },
+          "current_density_at_eta_100mV_48h": {
+            "value": 3.9,
+            "unit": "mA/cm²"
+          },
+          "current_density_at_eta_200mV_48h": {
+            "value": 16.03,
+            "unit": "mA/cm²"
+          },
+          "current_density_at_eta_300mV_48h": {
+            "value": 41.7,
+            "unit": "mA/cm²"
+          },
+          "current_density_at_eta_100mV_120h": {
+            "value": 4.05,
+            "unit": "mA/cm²"
+          },
+          "current_density_at_eta_200mV_120h": {
+            "value": 15.13,
+            "unit": "mA/cm²"
+          },
+          "current_density_at_eta_300mV_120h": {
+            "value": 40.74,
+            "unit": "mA/cm²"
+          },
+          "overpotential_stability": {
+            "value": "constant after 48 h",
+            "unit": "at 100 mA/cm²"
+          },
+          "charge_transfer_resistance_reduction": {
+            "value": "Rct reduced with electrolysis time",
+            "unit": "activation"
+          }
+        },
+        "source_text": "a constant cathodic current density of 100 mA cm⁻² was applied to the electrolysis system, where the Cu/NiCu electrode was cathode and Pt was anode, over 120 h in 1 M KOH solution at room temperature... The cathodic Tafel slopes given in Table 1 are nearly constant with electrolysis time... the current densities nearly remained the same during longer electrolysis time."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_NiCu_coating",
+        "description": "Corrosion performance testing at open circuit potential after electrolysis in 1 M KOH",
+        "conditions_json": {
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "measurement_type": {
+            "value": "EIS at open circuit potential",
+            "unit": "technique"
+          },
+          "frequency_range": {
+            "value": "100 kHz to 0.003 Hz",
+            "unit": "frequency"
+          },
+          "AC_amplitude": {
+            "value": 0.005,
+            "unit": "V peak-to-peak"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance_24h": {
+            "value": 210,
+            "unit": "Ω"
+          },
+          "charge_transfer_resistance_120h": {
+            "value": 540,
+            "unit": "Ω"
+          },
+          "constant_phase_element_24h": {
+            "value": 0.0069,
+            "unit": "F"
+          },
+          "constant_phase_element_120h": {
+            "value": 0.0049,
+            "unit": "F"
+          },
+          "corrosion_resistance": {
+            "value": "increased after 120 h electrolysis",
+            "unit": "performance"
+          }
+        },
+        "source_text": "The Nyquist and Bode plots of the Cu/NiCu electrode... at open circuit potential after 24 and 120 h electrolysis... The determined charge transfer resistance (Rct) values were 210 Ω and 540 Ω after 24 h and 120 h, respectively. The related constant phase elements (CPE) were 0.0069 F and 0.0049 F"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_NiCu_coating",
+        "description": "EIS measurements for HER kinetics at different overpotentials",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "overpotentials": {
+            "value": "-0.100 V, -0.200 V, -0.300 V",
+            "unit": "vs reference"
+          },
+          "frequency_range": {
+            "value": "100 kHz to 0.01 Hz",
+            "unit": "frequency"
+          },
+          "AC_amplitude": {
+            "value": 0.005,
+            "unit": "V peak-to-peak"
+          }
+        },
+        "results_json": {
+          "solution_resistance_24h_eta100mV": {
+            "value": 4.8,
+            "unit": "Ω"
+          },
+          "charge_transfer_resistance_24h_eta100mV": {
+            "value": 98.3,
+            "unit": "Ω"
+          },
+          "CPE_24h_eta100mV": {
+            "value": 0.0082,
+            "unit": "F"
+          },
+          "charge_transfer_resistance_reduction": {
+            "value": "Rct decreases with electrolysis time and overpotential",
+            "unit": "activation"
+          }
+        },
+        "source_text": "The representative Nyquist and Bode plots of the Cu/NiCu electrode at -0.200 V overpotential after 24, 48 and 120 h electrolysis... The data obtained are presented in Table 2... at the same overpotential, the charge transfer resistance (Rct) reduced with electrolysis"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_NiCu_coating_test_1",
+        "type": "tested_in",
+        "source_id": "chem_NiCu_coating",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiCu_coating_test_2",
+        "type": "tested_in",
+        "source_id": "chem_NiCu_coating",
+        "target_id": "test_2",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_NiCu",
+        "type": "chemical",
+        "name": "NiCu coating",
+        "aliases": [
+          "NiCu composite coating",
+          "NiCu deposit"
+        ],
+        "formula": "NiCu",
+        "composition": {
+          "Ni": {
+            "value": 14.6,
+            "unit": "wt%"
+          },
+          "Cu": {
+            "value": 85.4,
+            "unit": "wt%"
+          }
+        },
+        "properties": {
+          "surface_Ni": {
+            "value": 13.3,
+            "unit": "at%"
+          },
+          "surface_Cu": {
+            "value": 86.7,
+            "unit": "at%"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "Freshly deposited NiCu coating exhibits highly heterogeneous and compact surface with cauliflower-like structures of different grain sizes forming leaf-like structures (Fig. 1).",
+        "evidence_snippet": "A highly heterogeneous and compact surface can be seen from SEM micrograph of the NiCu coating in Fig. 1. Cauliflower like structures with different grain sizes are seen on the surface. In addition, some of them were combined and formed leaf like structures.",
+        "related_images": [
+          "0970ae547a0e265cdb20612b900d2b4d697e2219943c693c5993a96bcf7ac746.jpg",
+          "44fbab5d294da675e61907849f3400ea06ffc9fa74a2bcfaa71a6639437a4e70.jpg",
+          "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg",
+          "8f77adaec4f7aaefe1a993ad6befbffe2d51b2de5b1f7a760777f0efde73bc61.jpg",
+          "fb17b7a0f67898ca09c46c60be172720bf72b4ff62c52a3f5aa426cf5dc6bb90.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "EDX Spectrum",
+            "properties": {
+              "type": "Energy Dispersive X-ray Spectroscopy",
+              "x_axis": "Energy (keV)",
+              "y_axis": "Counts",
+              "range_x": [
+                0,
+                20
+              ],
+              "peaks": [
+                8.0,
+                8.9
+              ],
+              "extracted_from_image": "0970ae547a0e265cdb20612b900d2b4d697e2219943c693c5993a96bcf7ac746.jpg"
+            },
+            "source_image_file": "0970ae547a0e265cdb20612b900d2b4d697e2219943c693c5993a96bcf7ac746.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image showing clusters of nanoparticles with irregular, aggregated morphology",
+              "scale": "unknown",
+              "material": "nanoparticles",
+              "extracted_from_image": "44fbab5d294da675e61907849f3400ea06ffc9fa74a2bcfaa71a6639437a4e70.jpg"
+            },
+            "source_image_file": "44fbab5d294da675e61907849f3400ea06ffc9fa74a2bcfaa71a6639437a4e70.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Logarithmic plot of current density vs potential",
+            "properties": {
+              "description": "Plot of log(|j|/A cm⁻²) vs E/V (vs Ag/AgCl)",
+              "x_axis": "E/V (vs Ag/AgCl)",
+              "x_range": "-1.80 to 0.0 V",
+              "y_axis": "log(|j|/A cm⁻²)",
+              "y_range": "-5.0 to 0.0",
+              "extracted_from_image": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+            },
+            "source_image_file": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Nyquist Plot",
+            "properties": {
+              "label": "a",
+              "type": "EIS Nyquist plot",
+              "x_axis": "Z'/ohm",
+              "y_axis": "Z''/ohm",
+              "x_range": [
+                0,
+                600
+              ],
+              "y_range": [
+                0,
+                600
+              ],
+              "extracted_from_image": "8f77adaec4f7aaefe1a993ad6befbffe2d51b2de5b1f7a760777f0efde73bc61.jpg"
+            },
+            "source_image_file": "8f77adaec4f7aaefe1a993ad6befbffe2d51b2de5b1f7a760777f0efde73bc61.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Log|Z|-log f plot",
+            "properties": {
+              "description": "Logarithmic plot of impedance modulus |Z| (in Ohm) versus log frequency (Hz)",
+              "x_axis": "log(f/Hz)",
+              "y_axis": "log|Z|(Ohm)",
+              "range_x": [
+                -3.0,
+                5.0
+              ],
+              "range_y": [
+                0.9,
+                3.0
+              ],
+              "label": "b",
+              "extracted_from_image": "fb17b7a0f67898ca09c46c60be172720bf72b4ff62c52a3f5aa426cf5dc6bb90.jpg"
+            },
+            "source_image_file": "fb17b7a0f67898ca09c46c60be172720bf72b4ff62c52a3f5aa426cf5dc6bb90.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "AAS",
+        "data_reported": true,
+        "characterization_summary": "Bulk composition of NiCu coating is 14.6% Ni and 85.4% Cu.",
+        "evidence_snippet": "The determined percentage metal ratios of Ni and Cu were 14.6% and 85.4%, respectively."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EDX",
+        "data_reported": true,
+        "characterization_summary": "Surface composition of NiCu coating is 13.3% Ni and 86.7% Cu (Fig. 2), nearly matching bulk composition.",
+        "evidence_snippet": "The chemical composition of the surface was 13.3% Ni and 86.7% Cu. The surface and bulk compositions are nearly the same suggesting that the NiCu deposit has a quite homogenous chemical composition."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "After 120 h electrolysis, NiCu coating shows highly heterogeneous and compact surface with coagulated cauliflower-like structures, undamaged compared to fresh deposit (Fig. 7).",
+        "evidence_snippet": "A highly heterogeneous and compact surface with coagulated cauliflower like structures is seen on the surface. When compared to SEM image of freshly prepared deposit, the surface structure of the electrode was not damaged during the continuous electrolysis.",
+        "related_images": [
+          "0970ae547a0e265cdb20612b900d2b4d697e2219943c693c5993a96bcf7ac746.jpg",
+          "44fbab5d294da675e61907849f3400ea06ffc9fa74a2bcfaa71a6639437a4e70.jpg",
+          "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg",
+          "8f77adaec4f7aaefe1a993ad6befbffe2d51b2de5b1f7a760777f0efde73bc61.jpg",
+          "fb17b7a0f67898ca09c46c60be172720bf72b4ff62c52a3f5aa426cf5dc6bb90.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Nitrogen",
+            "properties": {
+              "symbol": "N",
+              "atomic_number": 7,
+              "ka_line_energy": "0.5 keV",
+              "extracted_from_image": "0970ae547a0e265cdb20612b900d2b4d697e2219943c693c5993a96bcf7ac746.jpg"
+            },
+            "source_image_file": "0970ae547a0e265cdb20612b900d2b4d697e2219943c693c5993a96bcf7ac746.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "morphology": "clustered aggregates",
+              "shape": "irregular",
+              "size": "submicron scale (estimated from clustering)",
+              "extracted_from_image": "44fbab5d294da675e61907849f3400ea06ffc9fa74a2bcfaa71a6639437a4e70.jpg"
+            },
+            "source_image_file": "44fbab5d294da675e61907849f3400ea06ffc9fa74a2bcfaa71a6639437a4e70.jpg"
+          },
+          {
+            "type": "dataset_red",
+            "name": "Red dataset",
+            "properties": {
+              "color": "red",
+              "style": "filled circles with solid line",
+              "description": "Primary electrochemical data series",
+              "extracted_from_image": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+            },
+            "source_image_file": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+          },
+          {
+            "type": "dataset",
+            "name": "Blue Dots Dataset",
+            "properties": {
+              "color": "blue",
+              "shape": "dots",
+              "description": "Secondary impedance data (likely reference or fitting)",
+              "extracted_from_image": "8f77adaec4f7aaefe1a993ad6befbffe2d51b2de5b1f7a760777f0efde73bc61.jpg"
+            },
+            "source_image_file": "8f77adaec4f7aaefe1a993ad6befbffe2d51b2de5b1f7a760777f0efde73bc61.jpg"
+          },
+          {
+            "type": "dataset",
+            "name": "Blue curve",
+            "properties": {
+              "color": "blue",
+              "data_points": "high frequency plateau ~2.3 log|Z|, decreases to ~0.9 at low frequency",
+              "description": "Impedance data series (likely sample 2)",
+              "extracted_from_image": "fb17b7a0f67898ca09c46c60be172720bf72b4ff62c52a3f5aa426cf5dc6bb90.jpg"
+            },
+            "source_image_file": "fb17b7a0f67898ca09c46c60be172720bf72b4ff62c52a3f5aa426cf5dc6bb90.jpg"
+          }
+        ]
+      },
+      {
+        "id": "n2",
+        "type": "dataset",
+        "name": "Red curve",
+        "properties": {
+          "color": "red",
+          "data_points": "high frequency plateau ~2.8 log|Z|, decreases to ~1.0 at low frequency",
+          "description": "Impedance data series (likely sample 1)",
+          "extracted_from_image": "fb17b7a0f67898ca09c46c60be172720bf72b4ff62c52a3f5aa426cf5dc6bb90.jpg"
+        },
+        "source_image_file": "fb17b7a0f67898ca09c46c60be172720bf72b4ff62c52a3f5aa426cf5dc6bb90.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "dataset_blue",
+        "name": "Blue dataset",
+        "properties": {
+          "color": "blue",
+          "style": "filled circles",
+          "description": "Secondary electrochemical data series",
+          "extracted_from_image": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+        },
+        "source_image_file": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "Time-dependent plot",
+        "properties": {
+          "description": "Line graph showing a quantity ε over time t",
+          "x_label": "t / h",
+          "y_label": "ε",
+          "x_ticks": [
+            24,
+            48,
+            72,
+            96,
+            120,
+            144
+          ],
+          "y_ticks": [
+            0.75,
+            0.77,
+            0.79,
+            0.81,
+            0.83,
+            0.85
+          ],
+          "trend": "initial rise followed by plateau",
+          "extracted_from_image": "31db23ad40b46f515956fdb1a113453c7345d4b729ae22122543f0e8b902ef9b.jpg"
+        },
+        "source_image_file": "31db23ad40b46f515956fdb1a113453c7345d4b729ae22122543f0e8b902ef9b.jpg"
+      },
+      {
+        "id": "curve1",
+        "type": "data_curve",
+        "name": "Curve 1",
+        "properties": {
+          "color": "blue",
+          "style": "line with circles",
+          "description": "High frequency region",
+          "extracted_from_image": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+        },
+        "source_image_file": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+      },
+      {
+        "id": "curve2",
+        "type": "data_curve",
+        "name": "Curve 2",
+        "properties": {
+          "color": "black",
+          "style": "line with circles",
+          "description": "Mid-high frequency region",
+          "extracted_from_image": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+        },
+        "source_image_file": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+      },
+      {
+        "id": "curve3",
+        "type": "data_curve",
+        "name": "Curve 3",
+        "properties": {
+          "color": "red",
+          "style": "line with circles",
+          "description": "Low frequency region",
+          "extracted_from_image": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+        },
+        "source_image_file": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+      },
+      {
+        "id": "curve4",
+        "type": "data_curve",
+        "name": "Curve 4",
+        "properties": {
+          "color": "dark red/black",
+          "style": "solid line",
+          "description": "Reference or baseline",
+          "extracted_from_image": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+        },
+        "source_image_file": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+      },
+      {
+        "id": "sample1",
+        "type": "material",
+        "name": "Sample 1",
+        "properties": {
+          "impedance_data": "blue curve",
+          "extracted_from_image": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+        },
+        "source_image_file": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+      },
+      {
+        "id": "sample2",
+        "type": "material",
+        "name": "Sample 2",
+        "properties": {
+          "impedance_data": "black curve",
+          "extracted_from_image": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+        },
+        "source_image_file": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+      },
+      {
+        "id": "sample3",
+        "type": "material",
+        "name": "Sample 3",
+        "properties": {
+          "impedance_data": "red curve",
+          "extracted_from_image": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+        },
+        "source_image_file": "126d52d024db9422f0b5702e069fd5bb805b0f0a964f069aafbf86645a211336.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "Nyquist Plot",
+        "properties": {
+          "label": "a",
+          "type": "EIS Nyquist plot",
+          "x_axis": "Z'/ohm",
+          "y_axis": "Z''/ohm",
+          "x_range": [
+            3.0,
+            30.0
+          ],
+          "y_range": [
+            0.0,
+            27.0
+          ],
+          "extracted_from_image": "25b794aaf454f065d5184a56a13a7f916ffa707f8c742113741acd27a608e935.jpg"
+        },
+        "source_image_file": "25b794aaf454f065d5184a56a13a7f916ffa707f8c742113741acd27a608e935.jpg"
+      },
+      {
+        "id": "semicircle_high",
+        "type": "data_curve",
+        "name": "High-frequency semicircle",
+        "properties": {
+          "color": "blue",
+          "shape": "semicircle",
+          "frequency_range": "high",
+          "extracted_from_image": "25b794aaf454f065d5184a56a13a7f916ffa707f8c742113741acd27a608e935.jpg"
+        },
+        "source_image_file": "25b794aaf454f065d5184a56a13a7f916ffa707f8c742113741acd27a608e935.jpg"
+      },
+      {
+        "id": "semicircle_mid",
+        "type": "data_curve",
+        "name": "Mid-frequency semicircle",
+        "properties": {
+          "color": "red",
+          "shape": "semicircle",
+          "frequency_range": "mid",
+          "extracted_from_image": "25b794aaf454f065d5184a56a13a7f916ffa707f8c742113741acd27a608e935.jpg"
+        },
+        "source_image_file": "25b794aaf454f065d5184a56a13a7f916ffa707f8c742113741acd27a608e935.jpg"
+      },
+      {
+        "id": "line_low",
+        "type": "data_curve",
+        "name": "Low-frequency line",
+        "properties": {
+          "color": "cyan",
+          "shape": "straight_line",
+          "frequency_range": "low",
+          "angle": "45_degrees",
+          "extracted_from_image": "25b794aaf454f065d5184a56a13a7f916ffa707f8c742113741acd27a608e935.jpg"
+        },
+        "source_image_file": "25b794aaf454f065d5184a56a13a7f916ffa707f8c742113741acd27a608e935.jpg"
+      },
+      {
+        "id": "table1",
+        "type": "table",
+        "name": "Table 1 - Cathodic Tafel slopes and current densities at various overpotentials after 24h, 48h and 120h electrolysis",
+        "properties": {
+          "description": "Cathodic Tafel slopes (b in V/dec) and current densities (I/A cm^-2 x10^3) at overpotentials η=-0.100V, -0.200V, -0.300V",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "time_24h",
+        "type": "timepoint",
+        "name": "24h",
+        "properties": {
+          "duration": "24 hours",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "time_48h",
+        "type": "timepoint",
+        "name": "48h",
+        "properties": {
+          "duration": "48 hours",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "time_120h",
+        "type": "timepoint",
+        "name": "120h",
+        "properties": {
+          "duration": "120 hours",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "eta_-0.100V",
+        "type": "overpotential",
+        "name": "η = -0.100 V",
+        "properties": {
+          "value": "-0.100 V",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "eta_-0.200V",
+        "type": "overpotential",
+        "name": "η = -0.200 V",
+        "properties": {
+          "value": "-0.200 V",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "eta_-0.300V",
+        "type": "overpotential",
+        "name": "η = -0.300 V",
+        "properties": {
+          "value": "-0.300 V",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "24h_b",
+        "type": "tafel_slope",
+        "name": "Tafel slope 24h",
+        "properties": {
+          "value": "0.149 V/dec",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "24h_i_0.100",
+        "type": "current_density",
+        "name": "I(24h, -0.100V)",
+        "properties": {
+          "value": "2.69 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "24h_i_0.200",
+        "type": "current_density",
+        "name": "I(24h, -0.200V)",
+        "properties": {
+          "value": "11.81 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "24h_i_0.300",
+        "type": "current_density",
+        "name": "I(24h, -0.300V)",
+        "properties": {
+          "value": "36.43 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "48h_b",
+        "type": "tafel_slope",
+        "name": "Tafel slope 48h",
+        "properties": {
+          "value": "0.169 V/dec",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "48h_i_0.100",
+        "type": "current_density",
+        "name": "I(48h, -0.100V)",
+        "properties": {
+          "value": "3.90 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "48h_i_0.200",
+        "type": "current_density",
+        "name": "I(48h, -0.200V)",
+        "properties": {
+          "value": "16.03 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "48h_i_0.300",
+        "type": "current_density",
+        "name": "I(48h, -0.300V)",
+        "properties": {
+          "value": "41.70 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "120h_b",
+        "type": "tafel_slope",
+        "name": "Tafel slope 120h",
+        "properties": {
+          "value": "0.169 V/dec",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "120h_i_0.100",
+        "type": "current_density",
+        "name": "I(120h, -0.100V)",
+        "properties": {
+          "value": "4.05 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "120h_i_0.200",
+        "type": "current_density",
+        "name": "I(120h, -0.200V)",
+        "properties": {
+          "value": "15.13 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "120h_i_0.300",
+        "type": "current_density",
+        "name": "I(120h, -0.300V)",
+        "properties": {
+          "value": "40.74 × 10^-3 A/cm²",
+          "extracted_from_image": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+        },
+        "source_image_file": "2884c023935f43e295fb08f604e8156983d0a718da41b7e71340603e4a7fd57c.jpg"
+      },
+      {
+        "id": "voltage",
+        "type": "characterization",
+        "name": "Voltage",
+        "properties": {
+          "unit": "V",
+          "symbol": "ln(V)",
+          "extracted_from_image": "28a43e27807e3d06f5298c4dd4fa56877bbba5942e80dc9d7cfaa7f4c6158369.jpg"
+        },
+        "source_image_file": "28a43e27807e3d06f5298c4dd4fa56877bbba5942e80dc9d7cfaa7f4c6158369.jpg"
+      },
+      {
+        "id": "time",
+        "type": "characterization",
+        "name": "Time",
+        "properties": {
+          "unit": "h",
+          "symbol": "t/h",
+          "extracted_from_image": "28a43e27807e3d06f5298c4dd4fa56877bbba5942e80dc9d7cfaa7f4c6158369.jpg"
+        },
+        "source_image_file": "28a43e27807e3d06f5298c4dd4fa56877bbba5942e80dc9d7cfaa7f4c6158369.jpg"
+      },
+      {
+        "id": "plot",
+        "type": "characterization",
+        "name": "Plot",
+        "properties": {
+          "type": "line graph",
+          "x_label": "t/h",
+          "y_label": "ln(V)",
+          "x_range": [
+            24,
+            144
+          ],
+          "y_range": [
+            0.3,
+            0.32
+          ],
+          "extracted_from_image": "28a43e27807e3d06f5298c4dd4fa56877bbba5942e80dc9d7cfaa7f4c6158369.jpg"
+        },
+        "source_image_file": "28a43e27807e3d06f5298c4dd4fa56877bbba5942e80dc9d7cfaa7f4c6158369.jpg"
+      },
+      {
+        "id": "data_trend",
+        "type": "characterization",
+        "name": "Data Trend",
+        "properties": {
+          "description": "Initial sharp decrease from ~0.315 V at 24 h to ~0.305 V around 48-72 h, followed by stabilization and slight increase to plateau at ~0.305 V",
+          "extracted_from_image": "28a43e27807e3d06f5298c4dd4fa56877bbba5942e80dc9d7cfaa7f4c6158369.jpg"
+        },
+        "source_image_file": "28a43e27807e3d06f5298c4dd4fa56877bbba5942e80dc9d7cfaa7f4c6158369.jpg"
+      },
+      {
+        "id": "time_axis",
+        "type": "axis",
+        "name": "Time axis (t / h)",
+        "properties": {
+          "range": [
+            24,
+            144
+          ],
+          "unit": "hours",
+          "ticks": [
+            24,
+            48,
+            72,
+            96,
+            120,
+            144
+          ],
+          "extracted_from_image": "31db23ad40b46f515956fdb1a113453c7345d4b729ae22122543f0e8b902ef9b.jpg"
+        },
+        "source_image_file": "31db23ad40b46f515956fdb1a113453c7345d4b729ae22122543f0e8b902ef9b.jpg"
+      },
+      {
+        "id": "epsilon_quantity",
+        "type": "quantity",
+        "name": "ε",
+        "properties": {
+          "description": "Unspecified dimensionless quantity (likely efficiency, conversion, or yield)",
+          "range": [
+            0.75,
+            0.85
+          ],
+          "extracted_from_image": "31db23ad40b46f515956fdb1a113453c7345d4b729ae22122543f0e8b902ef9b.jpg"
+        },
+        "source_image_file": "31db23ad40b46f515956fdb1a113453c7345d4b729ae22122543f0e8b902ef9b.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "dataset_black_line1",
+        "name": "Black solid line 1",
+        "properties": {
+          "color": "black",
+          "style": "solid line",
+          "description": "Linear fit or theoretical line",
+          "extracted_from_image": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+        },
+        "source_image_file": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "dataset_black_line2",
+        "name": "Black solid line 2",
+        "properties": {
+          "color": "black",
+          "style": "solid line",
+          "description": "Additional linear fit",
+          "extracted_from_image": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+        },
+        "source_image_file": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "dataset_black_line3",
+        "name": "Black solid line 3",
+        "properties": {
+          "color": "black",
+          "style": "solid line",
+          "description": "Additional linear fit",
+          "extracted_from_image": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+        },
+        "source_image_file": "812fbe2bac9d711b46b5a21862d55c9eea73d8926bc90368e78846c9df8ca797.jpg"
+      },
+      {
+        "id": "table",
+        "type": "characterization",
+        "name": "Experimental Data Table",
+        "properties": {
+          "description": "Table of catalytic performance data with columns t/h, -n/V, Rf/Q, Rc/V, CPE/F",
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "t_h",
+        "type": "parameter",
+        "name": "t/h",
+        "properties": {
+          "description": "Time in hours",
+          "values": [
+            24,
+            48,
+            120
+          ],
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "n_V",
+        "type": "parameter",
+        "name": "-n/V",
+        "properties": {
+          "description": "Negative rate per volume",
+          "values": [
+            0.1,
+            0.2,
+            0.3
+          ],
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "Rf_Q",
+        "type": "parameter",
+        "name": "Rf/Q",
+        "properties": {
+          "description": "Rf per Q",
+          "values": [
+            4.8,
+            4.3,
+            4.5,
+            5.4,
+            5.5,
+            4.5,
+            4.5
+          ],
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "Rc_V",
+        "type": "parameter",
+        "name": "Rc/V",
+        "properties": {
+          "description": "Rc per V",
+          "values": [
+            98.3,
+            22.2,
+            61.9,
+            16.5,
+            55.6,
+            15.3,
+            5.5
+          ],
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "CPE_F",
+        "type": "parameter",
+        "name": "CPE/F",
+        "properties": {
+          "description": "CPE per F",
+          "values": [
+            0.0082,
+            0.0062,
+            0.0053,
+            0.0049,
+            0.0034,
+            0.0036,
+            0.0026
+          ],
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "condition_24h_0.100",
+        "type": "data_point",
+        "name": "24h, -n/V=0.100",
+        "properties": {
+          "t_h": 24,
+          "n_V": 0.1,
+          "Rf_Q": 4.8,
+          "Rc_V": 98.3,
+          "CPE_F": 0.0082,
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "condition_24h_0.200",
+        "type": "data_point",
+        "name": "24h, -n/V=0.200",
+        "properties": {
+          "t_h": 24,
+          "n_V": 0.2,
+          "Rf_Q": 4.3,
+          "Rc_V": 22.2,
+          "CPE_F": 0.0062,
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "condition_24h_0.300",
+        "type": "data_point",
+        "name": "24h, -n/V=0.300",
+        "properties": {
+          "t_h": 24,
+          "n_V": 0.3,
+          "Rf_Q": 4.5,
+          "Rc_V": 5.5,
+          "CPE_F": 0.0026,
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "condition_48h_0.100",
+        "type": "data_point",
+        "name": "48h, -n/V=0.100",
+        "properties": {
+          "t_h": 48,
+          "n_V": 0.1,
+          "Rf_Q": 5.4,
+          "Rc_V": 61.9,
+          "CPE_F": 0.0053,
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "condition_48h_0.200",
+        "type": "data_point",
+        "name": "48h, -n/V=0.200",
+        "properties": {
+          "t_h": 48,
+          "n_V": 0.2,
+          "Rf_Q": 5.5,
+          "Rc_V": 16.5,
+          "CPE_F": 0.0049,
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "condition_120h_0.100",
+        "type": "data_point",
+        "name": "120h, -n/V=0.100",
+        "properties": {
+          "t_h": 120,
+          "n_V": 0.1,
+          "Rf_Q": 4.5,
+          "Rc_V": 55.6,
+          "CPE_F": 0.0034,
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "condition_120h_0.200",
+        "type": "data_point",
+        "name": "120h, -n/V=0.200",
+        "properties": {
+          "t_h": 120,
+          "n_V": 0.2,
+          "Rf_Q": 4.5,
+          "Rc_V": 15.3,
+          "CPE_F": 0.0036,
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      },
+      {
+        "id": "condition_120h_0.300",
+        "type": "data_point",
+        "name": "120h, -n/V=0.300",
+        "properties": {
+          "t_h": 120,
+          "n_V": 0.3,
+          "Rf_Q": 4.5,
+          "Rc_V": 5.5,
+          "CPE_F": 0.0026,
+          "extracted_from_image": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+        },
+        "source_image_file": "d89a0cf0c7b02baea627ef979ce6dd16e2bfd6a4c1853651dd07e98f16957f16.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_NiCu_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_NiCu",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCu_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_NiCu",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCu_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_NiCu",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiCu_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_NiCu",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve1",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve2",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve3",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "curve4",
+        "type": "contains"
+      },
+      {
+        "source_id": "sample1",
+        "target_id": "curve1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "sample2",
+        "target_id": "curve2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "sample3",
+        "target_id": "curve3",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "curve4",
+        "target_id": "sample3",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "semicircle_high",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "semicircle_mid",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "line_low",
+        "type": "contains"
+      },
+      {
+        "source_id": "table1",
+        "target_id": "time_24h",
+        "type": "contains"
+      },
+      {
+        "source_id": "table1",
+        "target_id": "time_48h",
+        "type": "contains"
+      },
+      {
+        "source_id": "table1",
+        "target_id": "time_120h",
+        "type": "contains"
+      },
+      {
+        "source_id": "table1",
+        "target_id": "eta_-0.100V",
+        "type": "contains"
+      },
+      {
+        "source_id": "table1",
+        "target_id": "eta_-0.200V",
+        "type": "contains"
+      },
+      {
+        "source_id": "table1",
+        "target_id": "eta_-0.300V",
+        "type": "contains"
+      },
+      {
+        "source_id": "time_24h",
+        "target_id": "24h_b",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "time_24h",
+        "target_id": "24h_i_0.100",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "24h_i_0.100",
+        "target_id": "eta_-0.100V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "time_24h",
+        "target_id": "24h_i_0.200",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "24h_i_0.200",
+        "target_id": "eta_-0.200V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "time_24h",
+        "target_id": "24h_i_0.300",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "24h_i_0.300",
+        "target_id": "eta_-0.300V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "time_48h",
+        "target_id": "48h_b",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "time_48h",
+        "target_id": "48h_i_0.100",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "48h_i_0.100",
+        "target_id": "eta_-0.100V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "time_48h",
+        "target_id": "48h_i_0.200",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "48h_i_0.200",
+        "target_id": "eta_-0.200V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "time_48h",
+        "target_id": "48h_i_0.300",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "48h_i_0.300",
+        "target_id": "eta_-0.300V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "time_120h",
+        "target_id": "120h_b",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "time_120h",
+        "target_id": "120h_i_0.100",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "120h_i_0.100",
+        "target_id": "eta_-0.100V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "time_120h",
+        "target_id": "120h_i_0.200",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "120h_i_0.200",
+        "target_id": "eta_-0.200V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "time_120h",
+        "target_id": "120h_i_0.300",
+        "type": "has_current_density"
+      },
+      {
+        "source_id": "120h_i_0.300",
+        "target_id": "eta_-0.300V",
+        "type": "at_overpotential"
+      },
+      {
+        "source_id": "voltage",
+        "target_id": "plot",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "time",
+        "target_id": "plot",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "plot",
+        "target_id": "data_trend",
+        "type": "describes"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "time_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "epsilon_quantity",
+        "type": "plots"
+      },
+      {
+        "source_id": "time_axis",
+        "target_id": "epsilon_quantity",
+        "type": "vs"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "acquired_with"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "characterized"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n5",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n6",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "contains_dataset"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "contains"
+      },
+      {
+        "source_id": "table",
+        "target_id": "t_h",
+        "type": "contains"
+      },
+      {
+        "source_id": "table",
+        "target_id": "n_V",
+        "type": "contains"
+      },
+      {
+        "source_id": "table",
+        "target_id": "Rf_Q",
+        "type": "contains"
+      },
+      {
+        "source_id": "table",
+        "target_id": "Rc_V",
+        "type": "contains"
+      },
+      {
+        "source_id": "table",
+        "target_id": "CPE_F",
+        "type": "contains"
+      },
+      {
+        "source_id": "table",
+        "target_id": "condition_24h_0.100",
+        "type": "contains_row"
+      },
+      {
+        "source_id": "table",
+        "target_id": "condition_24h_0.200",
+        "type": "contains_row"
+      },
+      {
+        "source_id": "table",
+        "target_id": "condition_24h_0.300",
+        "type": "contains_row"
+      },
+      {
+        "source_id": "table",
+        "target_id": "condition_48h_0.100",
+        "type": "contains_row"
+      },
+      {
+        "source_id": "table",
+        "target_id": "condition_48h_0.200",
+        "type": "contains_row"
+      },
+      {
+        "source_id": "table",
+        "target_id": "condition_120h_0.100",
+        "type": "contains_row"
+      },
+      {
+        "source_id": "table",
+        "target_id": "condition_120h_0.200",
+        "type": "contains_row"
+      },
+      {
+        "source_id": "table",
+        "target_id": "condition_120h_0.300",
+        "type": "contains_row"
+      },
+      {
+        "source_id": "condition_24h_0.100",
+        "target_id": "t_h",
+        "type": "has_value"
+      },
+      {
+        "source_id": "condition_24h_0.100",
+        "target_id": "n_V",
+        "type": "has_value"
+      },
+      {
+        "source_id": "condition_24h_0.100",
+        "target_id": "Rf_Q",
+        "type": "has_value"
+      },
+      {
+        "source_id": "condition_24h_0.100",
+        "target_id": "Rc_V",
+        "type": "has_value"
+      },
+      {
+        "source_id": "condition_24h_0.100",
+        "target_id": "CPE_F",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_1",
+        "type": "part_of"
+      }
+    ]
+  }
+}

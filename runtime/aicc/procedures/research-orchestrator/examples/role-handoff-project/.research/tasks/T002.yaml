@@ -1,0 +1,40 @@
+schema_version: 1
+id: T002
+title: Accept model and observable decision
+role: literature-method
+role_contract: procedures/research-orchestrator/references/roles.md#literature-method
+skill: comp-chem-workflow
+status: accepted
+depends_on:
+  - T001
+approval: scientific_model_choice
+inputs:
+  - artifact_id: method-fingerprint
+    min_status: accepted
+can_read:
+  - artifact_id: method-fingerprint
+can_write:
+  - artifact_type: model-observable-decision
+cannot:
+  - submit or monitor HPC jobs
+outputs_expected:
+  - artifact_id: model-observable-decision
+    type: model-observable-decision
+    path: work/model-observable-decision.md
+success_criteria:
+  - observable is tied to the registered objective
+  - missing literature details are assumptions, not invented facts
+knowledge_required:
+  - knowledge/electronic-structure.md
+required_refs:
+  - procedures/comp-chem-workflow/SKILL.md
+required_checks: []
+release_gates:
+  - model-observable
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions:
+  - Example state uses a toy parser result; it is not a scientific conclusion.
+provenance:
+  - work/method-fingerprint.md

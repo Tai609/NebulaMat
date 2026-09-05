@@ -1,0 +1,4926 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_Ti",
+        "type": "chemical",
+        "name": "pure Ti",
+        "aliases": [
+          "Ti"
+        ],
+        "formula": "Ti",
+        "properties": {}
+      },
+      {
+        "id": "chem_Al",
+        "type": "chemical",
+        "name": "pure Al",
+        "aliases": [
+          "Al"
+        ],
+        "formula": "Al",
+        "properties": {}
+      },
+      {
+        "id": "chem_Mo",
+        "type": "chemical",
+        "name": "pure Mo",
+        "aliases": [
+          "Mo"
+        ],
+        "formula": "Mo",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ti50Al48Mo2_master_alloy",
+        "type": "chemical",
+        "name": "Ti-47.78Al-2.03Mo (at.%) master alloy",
+        "aliases": [
+          "Ti50Al48Mo2 master alloys"
+        ],
+        "composition": {
+          "Ti": {
+            "value": 47.78,
+            "unit": "at.%"
+          },
+          "Al": {
+            "value": 2.03,
+            "unit": "at.%"
+          },
+          "Mo": {
+            "value": 2.19,
+            "unit": "at.%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_Ti50Al48Mo2_eml",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti50Al48Mo2 alloy"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "properties": {}
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Arc melting of master alloy",
+        "procedure": "The Ti50Al48Mo2 master alloys were prepared from pure Ti (99.999%), Al (99.999%), and Mo (99.999%) in an arc-melting furnace under a protective argon atmosphere using a tungsten electrode. Because the melting points of Al (933 K), Ti (1941 K), and Mo (2893 K) are quite different, Ti and Mo were melted together first, then Al was melted in alloys, and the melting process was repeated six times to guarantee uniform elemental combination. The mass losses after arc melting were -0.3%.",
+        "method": "Arc melting",
+        "conditions": {
+          "repetitions": {
+            "value": 6,
+            "unit": "cycles"
+          },
+          "mass_loss": {
+            "value": -0.3,
+            "unit": "%"
+          }
+        },
+        "source_text": "The Ti50Al48Mo2 master alloys were prepared from pure Ti (99.999%), Al (99.999%), and Mo (99.999%) in an arc-melting furnace under a protective argon atmosphere using a tungsten electrode... The mass losses after arc melting were -0.3%."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Electromagnetic levitation rapid solidification",
+        "procedure": "Before the EML experiments, the vacuum degree was guaranteed to be less than 2×10^-4 and 10^5 Pa high-purity argon was introduced. The sample with 1 g mass was levitated by electromagnetic force and superheated at about 100 K by high-frequency induction and then cooled by flowing helium gas to obtain high undercooling.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Levitation and superheating",
+            "method": "Electromagnetic levitation",
+            "conditions": {
+              "mass": {
+                "value": 1,
+                "unit": "g"
+              },
+              "superheat": {
+                "value": 100,
+                "unit": "K"
+              }
+            },
+            "procedure_snippet": "The sample with 1 g mass was levitated by electromagnetic force and superheated at about 100 K by high-frequency induction"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Rapid cooling",
+            "method": "Helium gas cooling",
+            "conditions": {},
+            "procedure_snippet": "then cooled by flowing helium gas to obtain high undercooling"
+          }
+        ],
+        "method": "EML rapid solidification",
+        "conditions": {
+          "sample_mass": {
+            "value": 1,
+            "unit": "g"
+          },
+          "superheat": {
+            "value": 100,
+            "unit": "K"
+          },
+          "vacuum": {
+            "value": "2×10^-4",
+            "unit": "Pa"
+          }
+        },
+        "source_text": "Before the EML experiments, the vacuum degree was guaranteed to be less than 2×10^-4 and 10^5 Pa high-purity argon was introduced. The sample with 1 g mass was levitated by electromagnetic force and superheated at about 100 K by high-frequency induction and then cooled by flowing helium gas to obtain high undercooling."
+      },
+      {
+        "id": "chem_ti50al48mo2_50K",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti50Al48Mo2 alloy solidified at ΔT = 50 K"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "properties": {
+          "undercooling": {
+            "value": 50,
+            "unit": "K"
+          }
+        }
+      },
+      {
+        "id": "chem_ti50al48mo2_152K",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti50Al48Mo2 alloy solidified at ΔT = 152 K"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "properties": {
+          "undercooling": {
+            "value": 152,
+            "unit": "K"
+          }
+        }
+      },
+      {
+        "id": "chem_ti50al48mo2_253K",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti50Al48Mo2 alloy solidified at ΔT = 253 K"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "properties": {
+          "undercooling": {
+            "value": 253,
+            "unit": "K"
+          }
+        },
+        "related_images": [
+          "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg",
+          "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg",
+          "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg",
+          "1c8310fbe6d3d98cfccd5a385964b74e229763458930f6785888734b9735959a.jpg",
+          "20c9c5db21024ef50af364a39a6d196c76ef46f566e88e91ca2e9b63d0595684.jpg",
+          "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg",
+          "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg",
+          "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg",
+          "6bd87f27bfe0b6e6a645ac8ce65def1d7ecae31aa495afd44631e372738e5d72.jpg",
+          "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg",
+          "843d62a014f41c312beaac6fe2338da87231eace23d5541929cf5fd865c08f8f.jpg",
+          "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg",
+          "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg",
+          "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg",
+          "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg",
+          "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg",
+          "9857c44af9b160862e28739182a78950007c5410ee2c0777338f9d0529a6db72.jpg",
+          "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg",
+          "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg",
+          "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg",
+          "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg",
+          "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg",
+          "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg",
+          "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg",
+          "f0d77721f07bf3b4bdc6bb27a51a48b4ca13cac7bef55105c327756e012bd608.jpg",
+          "fb570beebe44b0be23063e9b7e14795b70734037beaabf3293816b56e942df5b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Fit Line",
+            "properties": {
+              "description": "Blue line representing fitted data",
+              "symbol": "— Exp. Fit",
+              "extracted_from_image": "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg"
+            },
+            "source_image_file": "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Al⁰",
+            "properties": {
+              "description": "Metallic aluminum (zero oxidation state)",
+              "extracted_from_image": "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg"
+            },
+            "source_image_file": "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "ΔT = 50K",
+            "properties": {
+              "temperature_change": "50 K",
+              "symbol": "black squares (■)",
+              "extracted_from_image": "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg"
+            },
+            "source_image_file": "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image showing microstructure of Ti3",
+              "scale_bar": "1 μm",
+              "extracted_from_image": "1c8310fbe6d3d98cfccd5a385964b74e229763458930f6785888734b9735959a.jpg"
+            },
+            "source_image_file": "1c8310fbe6d3d98cfccd5a385964b74e229763458930f6785888734b9735959a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image showing yellow-highlighted nanostructures or particles labeled (f) MoO",
+              "scale_bar": "500 nm",
+              "extracted_from_image": "20c9c5db21024ef50af364a39a6d196c76ef46f566e88e91ca2e9b63d0595684.jpg"
+            },
+            "source_image_file": "20c9c5db21024ef50af364a39a6d196c76ef46f566e88e91ca2e9b63d0595684.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "ΔT = 152 K",
+            "properties": {
+              "delta_T": "152 K",
+              "description": "Temperature difference",
+              "extracted_from_image": "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg"
+            },
+            "source_image_file": "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg"
+          },
+          {
+            "type": "microstructural_feature",
+            "name": "Grain Boundary",
+            "properties": {
+              "color": "red",
+              "description": "marked with red line",
+              "extracted_from_image": "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg"
+            },
+            "source_image_file": "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "B₂ unit",
+            "properties": {
+              "label": "(O I Γ) B₂",
+              "description": "B₂ unit with oxygen, iodine, and gamma coordination",
+              "extracted_from_image": "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg"
+            },
+            "source_image_file": "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Al",
+            "properties": {
+              "element": "Aluminum",
+              "extracted_from_image": "6bd87f27bfe0b6e6a645ac8ce65def1d7ecae31aa495afd44631e372738e5d72.jpg"
+            },
+            "source_image_file": "6bd87f27bfe0b6e6a645ac8ce65def1d7ecae31aa495afd44631e372738e5d72.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV Curve at ΔT=152K",
+            "properties": {
+              "color": "red",
+              "onset_potential": "-0.49 V vs SCE",
+              "time_point": "2495 s",
+              "extracted_from_image": "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg"
+            },
+            "source_image_file": "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale_bar": "1 μm",
+              "label": "(h)",
+              "features": "microstructure with particles or fibers, grayscale image",
+              "extracted_from_image": "843d62a014f41c312beaac6fe2338da87231eace23d5541929cf5fd865c08f8f.jpg"
+            },
+            "source_image_file": "843d62a014f41c312beaac6fe2338da87231eace23d5541929cf5fd865c08f8f.jpg"
+          },
+          {
+            "type": "time_point",
+            "name": "t=0.13 ms",
+            "properties": {
+              "description": "Nucleation begins",
+              "extracted_from_image": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+            },
+            "source_image_file": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Al⁰",
+            "properties": {
+              "binding_energy": "around 72 eV",
+              "description": "Metallic aluminum",
+              "extracted_from_image": "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg"
+            },
+            "source_image_file": "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Au NCs",
+            "properties": {
+              "description": "Gold Nanoclusters",
+              "extracted_from_image": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+            },
+            "source_image_file": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Linear Fit m=3.90×10⁻⁴",
+            "properties": {
+              "slope": "3.90×10⁻⁴",
+              "units": "cm⁴ F⁻¹",
+              "symbol": "blue triangles with line",
+              "extracted_from_image": "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg"
+            },
+            "source_image_file": "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg"
+          },
+          {
+            "type": "structural_feature",
+            "name": "Grain Boundary",
+            "properties": {
+              "description": "Red line marked boundary",
+              "extracted_from_image": "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg"
+            },
+            "source_image_file": "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "ΔT = 251 K",
+            "properties": {
+              "temperature_change": "251 K",
+              "extracted_from_image": "9857c44af9b160862e28739182a78950007c5410ee2c0777338f9d0529a6db72.jpg"
+            },
+            "source_image_file": "9857c44af9b160862e28739182a78950007c5410ee2c0777338f9d0529a6db72.jpg"
+          },
+          {
+            "type": "parameter",
+            "name": "Q_ut (10⁻⁵ F² S⁻¹ cm⁻²)",
+            "properties": {
+              "description": "Ut constant phase element",
+              "unit": "10⁻⁵ F² S⁻¹ cm⁻²",
+              "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+            },
+            "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+          },
+          {
+            "type": "surface",
+            "name": "Rough Surface",
+            "properties": {
+              "description": "Rough surface under liquid",
+              "extracted_from_image": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+            },
+            "source_image_file": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Mo",
+            "properties": {
+              "description": "Homogeneously distributed Molybdenum",
+              "extracted_from_image": "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg"
+            },
+            "source_image_file": "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Mo metal 3d_{3/2}",
+            "properties": {
+              "description": "Mo metal 3d_{3/2} peak at θ=90°",
+              "extracted_from_image": "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg"
+            },
+            "source_image_file": "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Potentiodynamic Polarization Curve ΔT=155K",
+            "properties": {
+              "color": "blue",
+              "description": "Polarization curve at ΔT=155K",
+              "extracted_from_image": "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg"
+            },
+            "source_image_file": "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg"
+          },
+          {
+            "type": "measurement",
+            "name": "E_cr",
+            "properties": {
+              "value": "-0.034 V",
+              "unit": "V vs Cr",
+              "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+            },
+            "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Temperature vs Time Plot",
+            "properties": {
+              "type": "graph",
+              "x_axis": "t (s)",
+              "y_axis": "T (K)",
+              "range_x": "0 to 120 s",
+              "range_y": "1500 to 1800 K",
+              "extracted_from_image": "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+            },
+            "source_image_file": "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ti",
+            "properties": {
+              "element": "Titanium",
+              "extracted_from_image": "f0d77721f07bf3b4bdc6bb27a51a48b4ca13cac7bef55105c327756e012bd608.jpg"
+            },
+            "source_image_file": "f0d77721f07bf3b4bdc6bb27a51a48b4ca13cac7bef55105c327756e012bd608.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale_bar": "1 μm",
+              "description": "Image showing nanostructured or nanoparticulate aluminum material with turquoise false color enhancement",
+              "extracted_from_image": "fb570beebe44b0be23063e9b7e14795b70734037beaabf3293816b56e942df5b.jpg"
+            },
+            "source_image_file": "fb570beebe44b0be23063e9b7e14795b70734037beaabf3293816b56e942df5b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ti50Al48Mo2",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti_50 Al_48 Mo_2 alloy",
+          "Ti-47.78Al-2.03Mo (at.%)"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "composition": {
+          "Ti": {
+            "value": 47.78,
+            "unit": "at%"
+          },
+          "Al": {
+            "value": 2.03,
+            "unit": "at%"
+          }
+        },
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_Ti_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Ti",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "purity": "99.999%"
+        }
+      },
+      {
+        "id": "edge_input_chem_Al_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Al",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "purity": "99.999%"
+        }
+      },
+      {
+        "id": "edge_input_chem_Mo_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Mo",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "purity": "99.999%"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Ti50Al48Mo2_master_alloy",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Ti50Al48Mo2_master_alloy",
+        "properties": {
+          "form": "master alloy"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ti50Al48Mo2_master_alloy_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Ti50Al48Mo2_master_alloy",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Ti50Al48Mo2_eml",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Ti50Al48Mo2_eml",
+        "properties": {
+          "form": "rapidly solidified alloy"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_ti50al48mo2_50K",
+      "chem_ti50al48mo2_253K",
+      "chem_ti50al48mo2_152K"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_ti50al48mo2_50K",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti50Al48Mo2 alloy solidified at ΔT = 50 K"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "properties": {
+          "undercooling": {
+            "value": 50,
+            "unit": "K"
+          }
+        }
+      },
+      {
+        "id": "chem_ti50al48mo2_152K",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti50Al48Mo2 alloy solidified at ΔT = 152 K"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "properties": {
+          "undercooling": {
+            "value": 152,
+            "unit": "K"
+          }
+        }
+      },
+      {
+        "id": "chem_ti50al48mo2_253K",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti50Al48Mo2 alloy solidified at ΔT = 253 K"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "properties": {
+          "undercooling": {
+            "value": 253,
+            "unit": "K"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_ti50al48mo2_50K",
+        "description": "Electrochemical corrosion resistance testing (OCP, potentiodynamic polarization, EIS, Mott-Schottky) in substitute seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "corrosion testing",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "substitute seawater solution",
+            "unit": "ASTM D 1141-98"
+          },
+          "temperature": {
+            "value": "room temperature",
+            "unit": "condition"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "counter_electrode": {
+            "value": "platinum foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "saturated calomel electrode (SCE)",
+            "unit": "electrode"
+          },
+          "working_electrode_preparation": {
+            "value": "ground with SiC paper, polished with diamond paste, ultrasonically cleaned",
+            "unit": "procedure"
+          },
+          "ocp_polarization": {
+            "value": "-1 V vs OCP",
+            "unit": "300 s"
+          },
+          "ocp_stabilization_time": {
+            "value": 2,
+            "unit": "h"
+          },
+          "eis_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "eis_frequency_range": {
+            "value": "100 kHz - 0.01 Hz",
+            "unit": "12 points/decade"
+          },
+          "potentiodynamic_scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "mott_schottky_frequency": {
+            "value": 1000,
+            "unit": "Hz"
+          },
+          "mott_schottky_step": {
+            "value": 20,
+            "unit": "mV"
+          },
+          "pitting_test": {
+            "value": "1 V vs SCE",
+            "unit": "5 min"
+          }
+        },
+        "results_json": {
+          "open_circuit_potential_Eocp": {
+            "value": "quasi-steady state reached",
+            "unit": "vs SCE"
+          },
+          "corrosion_potential_Ecorr": {
+            "value": -0.218,
+            "unit": "V_SCE"
+          },
+          "corrosion_current_density_icorr": {
+            "value": 1.539,
+            "unit": "10^{-6} A/cm^2"
+          },
+          "passive_current_density_ip": {
+            "value": 2.773,
+            "unit": "10^{-5} A/cm^2"
+          },
+          "pitting_potential_Epit": {
+            "value": 0.09,
+            "unit": "V_SCE"
+          },
+          "passive_region_range_ΔE": {
+            "value": 0.227,
+            "unit": "V_SCE"
+          },
+          "passivation_film_thickness": {
+            "value": 2.28,
+            "unit": "nm"
+          },
+          "donor_defect_density_ND": {
+            "value": 5.36,
+            "unit": "10^{22} cm^{-3}"
+          },
+          "average_pit_depth_Sz": {
+            "value": 70.84,
+            "unit": "μm"
+          },
+          "solution_resistance_Rs": {
+            "value": 11.35,
+            "unit": "Ω cm^2"
+          },
+          "inner_film_resistance_Rct_f": {
+            "value": 0.75,
+            "unit": "10^6 Ω cm^2"
+          },
+          "outer_layer_resistance_Rct_out": {
+            "value": 1.14,
+            "unit": "10^2 Ω cm^2"
+          }
+        },
+        "source_text": "The electrochemical investigations were conducted... in substitute seawater solution according to ASTM D 1141-98 at room temperature using a conventional three-electrode cell. Table 1: ΔT=50K, Ecorr=-0.218 VSCE, icorr=1.539×10-6 A cm-2, ip=2.773×10-5 A cm-2, Epit=0.090 VSCE, ΔE=0.227 VSCE. The thickness... at ΔT=50K is about 2.28 nm. Table 2: ΔT=50K, Rs=11.35 Ω cm2, Rct-out=1.14×10^2 Ω cm2, Rct-f=0.75×10^6 Ω cm2, ND=~5.36×10^22 cm-3. Sz=70.84 μm."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_ti50al48mo2_152K",
+        "description": "Electrochemical corrosion resistance testing (OCP, potentiodynamic polarization, EIS, Mott-Schottky) in substitute seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "corrosion testing",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "substitute seawater solution",
+            "unit": "ASTM D 1141-98"
+          },
+          "temperature": {
+            "value": "room temperature",
+            "unit": "condition"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "counter_electrode": {
+            "value": "platinum foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "saturated calomel electrode (SCE)",
+            "unit": "electrode"
+          },
+          "working_electrode_preparation": {
+            "value": "ground with SiC paper, polished with diamond paste, ultrasonically cleaned",
+            "unit": "procedure"
+          },
+          "ocp_polarization": {
+            "value": "-1 V vs OCP",
+            "unit": "300 s"
+          },
+          "ocp_stabilization_time": {
+            "value": 2,
+            "unit": "h"
+          },
+          "eis_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "eis_frequency_range": {
+            "value": "100 kHz - 0.01 Hz",
+            "unit": "12 points/decade"
+          },
+          "potentiodynamic_scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "mott_schottky_frequency": {
+            "value": 1000,
+            "unit": "Hz"
+          },
+          "mott_schottky_step": {
+            "value": 20,
+            "unit": "mV"
+          },
+          "pitting_test": {
+            "value": "1 V vs SCE",
+            "unit": "5 min"
+          }
+        },
+        "results_json": {
+          "open_circuit_potential_Eocp": {
+            "value": "higher and faster stabilization",
+            "unit": "vs SCE"
+          },
+          "corrosion_potential_Ecorr": {
+            "value": -0.004,
+            "unit": "V_SCE"
+          },
+          "corrosion_current_density_icorr": {
+            "value": 1.479,
+            "unit": "10^{-6} A/cm^2"
+          },
+          "passive_current_density_ip": {
+            "value": 1.408,
+            "unit": "10^{-5} A/cm^2"
+          },
+          "pitting_potential_Epit": {
+            "value": 0.271,
+            "unit": "V_SCE"
+          },
+          "passive_region_range_ΔE": {
+            "value": 0.275,
+            "unit": "V_SCE"
+          },
+          "donor_defect_density_ND": {
+            "value": 2.12,
+            "unit": "10^{22} cm^{-3}"
+          },
+          "average_pit_depth_Sz": {
+            "value": 50.38,
+            "unit": "μm"
+          },
+          "solution_resistance_Rs": {
+            "value": 19.4,
+            "unit": "Ω cm^2"
+          },
+          "inner_film_resistance_Rct_f": {
+            "value": 1.26,
+            "unit": "10^6 Ω cm^2"
+          },
+          "outer_layer_resistance_Rct_out": {
+            "value": 1.55,
+            "unit": "10^2 Ω cm^2"
+          }
+        },
+        "source_text": "Table 1: ΔT=152K, Ecorr=-0.004 VSCE, icorr=1.479×10-6 A cm-2, ip=1.408×10-5 A cm-2, Epit=0.271 VSCE, ΔE=0.275 VSCE. Table 2: ΔT=152K, Rs=19.40 Ω cm2, Rct-out=1.55×10^2 Ω cm2, Rct-f=1.26×10^6 Ω cm2, ND=~2.12×10^22 cm-3. Sz=50.38 μm."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_ti50al48mo2_253K",
+        "description": "Electrochemical corrosion resistance testing (OCP, potentiodynamic polarization, EIS, Mott-Schottky) in substitute seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "corrosion testing",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "substitute seawater solution",
+            "unit": "ASTM D 1141-98"
+          },
+          "temperature": {
+            "value": "room temperature",
+            "unit": "condition"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "counter_electrode": {
+            "value": "platinum foil",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "saturated calomel electrode (SCE)",
+            "unit": "electrode"
+          },
+          "working_electrode_preparation": {
+            "value": "ground with SiC paper, polished with diamond paste, ultrasonically cleaned",
+            "unit": "procedure"
+          },
+          "ocp_polarization": {
+            "value": "-1 V vs OCP",
+            "unit": "300 s"
+          },
+          "ocp_stabilization_time": {
+            "value": 2,
+            "unit": "h"
+          },
+          "eis_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "eis_frequency_range": {
+            "value": "100 kHz - 0.01 Hz",
+            "unit": "12 points/decade"
+          },
+          "potentiodynamic_scan_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          },
+          "mott_schottky_frequency": {
+            "value": 1000,
+            "unit": "Hz"
+          },
+          "mott_schottky_step": {
+            "value": 20,
+            "unit": "mV"
+          },
+          "pitting_test": {
+            "value": "1 V vs SCE",
+            "unit": "5 min"
+          }
+        },
+        "results_json": {
+          "open_circuit_potential_Eocp": {
+            "value": "highest and fastest stabilization",
+            "unit": "vs SCE"
+          },
+          "corrosion_potential_Ecorr": {
+            "value": -0.043,
+            "unit": "V_SCE"
+          },
+          "corrosion_current_density_icorr": {
+            "value": 1.168,
+            "unit": "10^{-6} A/cm^2"
+          },
+          "passive_current_density_ip": {
+            "value": 1.602,
+            "unit": "10^{-5} A/cm^2"
+          },
+          "pitting_potential_Epit": {
+            "value": 0.55,
+            "unit": "V_SCE"
+          },
+          "passive_region_range_ΔE": {
+            "value": 0.593,
+            "unit": "V_SCE"
+          },
+          "passivation_film_thickness": {
+            "value": 4.04,
+            "unit": "nm"
+          },
+          "donor_defect_density_ND": {
+            "value": 0.36,
+            "unit": "10^{22} cm^{-3}"
+          },
+          "average_pit_depth_Sz": {
+            "value": 44.71,
+            "unit": "μm"
+          },
+          "solution_resistance_Rs": {
+            "value": 25.57,
+            "unit": "Ω cm^2"
+          },
+          "inner_film_resistance_Rct_f": {
+            "value": 1.52,
+            "unit": "10^6 Ω cm^2"
+          },
+          "outer_layer_resistance_Rct_out": {
+            "value": 2.63,
+            "unit": "10^2 Ω cm^2"
+          }
+        },
+        "source_text": "Table 1: ΔT=253K, Ecorr=-0.043 VSCE, icorr=1.168×10-6 A cm-2, ip=1.602×10-5 A cm-2, Epit=0.550 VSCE, ΔE=0.593 VSCE. The thickness... at ΔT=253K is about 4.04 nm. Table 2: ΔT=253K, Rs=25.57 Ω cm2, Rct-out=2.63×10^2 Ω cm2, Rct-f=1.52×10^6 Ω cm2, ND=~0.36×10^22 cm-3. Sz=44.71 μm."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_ti50al48mo2_50K_test_1",
+        "type": "tested_in",
+        "source_id": "chem_ti50al48mo2_50K",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_ti50al48mo2_152K_test_2",
+        "type": "tested_in",
+        "source_id": "chem_ti50al48mo2_152K",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_ti50al48mo2_253K_test_3",
+        "type": "tested_in",
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "test_3",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Ti50Al48Mo2",
+        "type": "chemical",
+        "name": "Ti50Al48Mo2 alloy",
+        "aliases": [
+          "Ti_50 Al_48 Mo_2 alloy",
+          "Ti-47.78Al-2.03Mo (at.%)"
+        ],
+        "formula": "Ti50Al48Mo2",
+        "composition": {
+          "Ti": {
+            "value": 47.78,
+            "unit": "at%"
+          },
+          "Al": {
+            "value": 2.03,
+            "unit": "at%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM reveals dendrite morphology evolution from irregular dendrites at ΔT=50 K to refined structures at higher undercoolings, as shown in Fig. 2.",
+        "evidence_snippet": "The microstructure evolution of Ti50Al48Mo2 alloy solidified at different undercoolings is shown in Fig. 2."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "TEM analysis at ΔT = 50 K and 253 K reveals B2 phase crystal planes (00-1) and (010), HAADF images, and EDS elemental maps showing Mo-rich B2 phase and homogeneous solute distribution at high undercooling.",
+        "evidence_snippet": "The phases and crystalline structure of alloys at ΔT = 50 and 253 K were studied by FEI Themis Z correction transmission electron microscopy (TEM).",
+        "related_images": [
+          "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SEM image (a1)",
+            "properties": {
+              "description": "High-magnification SEM with red arrows indicating nanostructures",
+              "scale": "~20 nm",
+              "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+            },
+            "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EDS",
+        "is_reported": true,
+        "characterization_summary": "EDS mapping shows Mo enrichment and Al depletion in B2 phase at ΔT = 50 K, and homogeneous Ti, Al, Mo distribution at ΔT = 253 K.",
+        "evidence_snippet": "Combined with the corresponding diffraction pattern of the B2 phase in the TEM analysis (Fig. 3(c)), the crystal planes are (00-1) and (010) respectively. According to the high-angle annular dark field (HAADF) TEM micrographs with the corresponding energy dispersive X-ray spectroscopy (EDS) elemental maps (Fig. 3(b, d–f)), Mo is rich and Al is depleted in the B2 phase."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "EIS Nyquist plots show incomplete semicircles with increasing capacitive loop diameters (R_ct-f from 0.75×10^6 Ω cm² at ΔT=50 K to 1.52×10^6 Ω cm² at ΔT=253 K) indicating improved passivation film resistance with undercooling.",
+        "evidence_snippet": "As Fig. 5(a) shows, all Nyquist plots exhibit incomplete semicircles... The diameter of the capacitive loop reflects the corrosion resistance of the passivation film on the alloy surface."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "potentiodynamic polarization",
+        "is_reported": true,
+        "characterization_summary": "Potentiodynamic polarization curves show wider passive regions at higher undercooling; E_corr improves from -0.218 V_SCE (i_corr=1.539×10^{-6} A cm^{-2}) at ΔT=50 K to -0.043 V_SCE (i_corr=1.168×10^{-6} A cm^{-2}, E_pit=0.550 V_SCE) at ΔT=253 K.",
+        "evidence_snippet": "Table 1 Extracted corrosion parameters from potentiodynamic polarization curves of Ti50Al48Mo2 alloy.",
+        "related_images": [
+          "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg",
+          "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg",
+          "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg",
+          "1c8310fbe6d3d98cfccd5a385964b74e229763458930f6785888734b9735959a.jpg",
+          "20c9c5db21024ef50af364a39a6d196c76ef46f566e88e91ca2e9b63d0595684.jpg",
+          "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg",
+          "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg",
+          "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg",
+          "6bd87f27bfe0b6e6a645ac8ce65def1d7ecae31aa495afd44631e372738e5d72.jpg",
+          "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg",
+          "843d62a014f41c312beaac6fe2338da87231eace23d5541929cf5fd865c08f8f.jpg",
+          "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg",
+          "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg",
+          "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg",
+          "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg",
+          "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg",
+          "9857c44af9b160862e28739182a78950007c5410ee2c0777338f9d0529a6db72.jpg",
+          "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg",
+          "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg",
+          "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg",
+          "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg",
+          "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg",
+          "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg",
+          "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg",
+          "f0d77721f07bf3b4bdc6bb27a51a48b4ca13cac7bef55105c327756e012bd608.jpg",
+          "fb570beebe44b0be23063e9b7e14795b70734037beaabf3293816b56e942df5b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Experimental Data Points",
+            "properties": {
+              "description": "Blue circles representing experimental data",
+              "symbol": "● Exp.",
+              "extracted_from_image": "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg"
+            },
+            "source_image_file": "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Al₂O₃",
+            "properties": {
+              "description": "Aluminum oxide",
+              "extracted_from_image": "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg"
+            },
+            "source_image_file": "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Dielectric Spectroscopy Data",
+            "properties": {
+              "description": "Log-log plot of dielectric loss (Z' phase) vs frequency (f in Hz)",
+              "x_axis": "f (Hz), 10^{-1} to 10^5",
+              "y_axis": "Z' phase angle (10^0 to 10^6)",
+              "right_axis": "Angle (0 to 80°)",
+              "extracted_from_image": "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg"
+            },
+            "source_image_file": "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ti3",
+            "properties": {
+              "label": "(i) Ti3",
+              "description": "Chemical entity labeled as Ti3, likely a titanium-based compound or material",
+              "extracted_from_image": "1c8310fbe6d3d98cfccd5a385964b74e229763458930f6785888734b9735959a.jpg"
+            },
+            "source_image_file": "1c8310fbe6d3d98cfccd5a385964b74e229763458930f6785888734b9735959a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "MoO",
+            "properties": {
+              "label": "(f) MoO",
+              "extracted_from_image": "20c9c5db21024ef50af364a39a6d196c76ef46f566e88e91ca2e9b63d0595684.jpg"
+            },
+            "source_image_file": "20c9c5db21024ef50af364a39a6d196c76ef46f566e88e91ca2e9b63d0595684.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "label": "(c)",
+              "description": "Scanning Electron Microscopy image",
+              "scale": "50 μm",
+              "extracted_from_image": "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg"
+            },
+            "source_image_file": "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "label": "(e)",
+              "temperature": "ΔT = 253 K",
+              "composition": "Mo-rich",
+              "scale": "20 μm",
+              "extracted_from_image": "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg"
+            },
+            "source_image_file": "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "B₂ unit",
+            "properties": {
+              "label": "(O O) B₂",
+              "description": "Diborane-like B₂ unit with oxygen coordination",
+              "extracted_from_image": "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg"
+            },
+            "source_image_file": "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg"
+          },
+          {
+            "type": "figure_label",
+            "name": "Figure (e)",
+            "properties": {
+              "extracted_from_image": "6bd87f27bfe0b6e6a645ac8ce65def1d7ecae31aa495afd44631e372738e5d72.jpg"
+            },
+            "source_image_file": "6bd87f27bfe0b6e6a645ac8ce65def1d7ecae31aa495afd44631e372738e5d72.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV Curve at ΔT=50K",
+            "properties": {
+              "color": "black",
+              "onset_potential": "-0.42 V vs SCE",
+              "time_point": "2022 s",
+              "extracted_from_image": "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg"
+            },
+            "source_image_file": "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg"
+          },
+          {
+            "type": "material",
+            "name": "HA-MDF",
+            "properties": {
+              "description": "Hydroxyapatite-MDF composite or material",
+              "extracted_from_image": "843d62a014f41c312beaac6fe2338da87231eace23d5541929cf5fd865c08f8f.jpg"
+            },
+            "source_image_file": "843d62a014f41c312beaac6fe2338da87231eace23d5541929cf5fd865c08f8f.jpg"
+          },
+          {
+            "type": "time_point",
+            "name": "t=0 ms",
+            "properties": {
+              "description": "Smooth liquid surface",
+              "extracted_from_image": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+            },
+            "source_image_file": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Al₂O₃ 2p",
+            "properties": {
+              "binding_energy": "around 74-76 eV",
+              "description": "Aluminum oxide 2p peak",
+              "extracted_from_image": "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg"
+            },
+            "source_image_file": "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Rough Liquid",
+            "properties": {
+              "extracted_from_image": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+            },
+            "source_image_file": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "m",
+            "properties": {
+              "description": "Chemical entity or material under study",
+              "extracted_from_image": "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg"
+            },
+            "source_image_file": "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "Temperature Difference",
+            "properties": {
+              "value": "ΔT = 253 K",
+              "extracted_from_image": "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg"
+            },
+            "source_image_file": "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg"
+          },
+          {
+            "type": "label",
+            "name": "(g)",
+            "properties": {
+              "extracted_from_image": "9857c44af9b160862e28739182a78950007c5410ee2c0777338f9d0529a6db72.jpg"
+            },
+            "source_image_file": "9857c44af9b160862e28739182a78950007c5410ee2c0777338f9d0529a6db72.jpg"
+          },
+          {
+            "type": "parameter",
+            "name": "R_ct (Ω cm²)",
+            "properties": {
+              "description": "Charge transfer resistance",
+              "unit": "Ω cm²",
+              "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+            },
+            "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Liquid",
+            "properties": {
+              "description": "Liquid drop on surface",
+              "extracted_from_image": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+            },
+            "source_image_file": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Refined α' γ",
+            "properties": {
+              "description": "Refined α' γ phase",
+              "extracted_from_image": "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg"
+            },
+            "source_image_file": "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Mo⁶⁺",
+            "properties": {
+              "description": "Mo 3d peak at θ=90°",
+              "extracted_from_image": "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg"
+            },
+            "source_image_file": "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Potentiodynamic Polarization Curve ΔT=50K",
+            "properties": {
+              "color": "red",
+              "description": "Polarization curve at ΔT=50K",
+              "extracted_from_image": "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg"
+            },
+            "source_image_file": "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "ΔT = 285 K",
+            "properties": {
+              "value": "285 K",
+              "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+            },
+            "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "BTI",
+            "properties": {
+              "description": "Chemical entity labeled in the plot",
+              "extracted_from_image": "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+            },
+            "source_image_file": "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+          },
+          {
+            "type": "label",
+            "name": "Figure (d)",
+            "properties": {
+              "extracted_from_image": "f0d77721f07bf3b4bdc6bb27a51a48b4ca13cac7bef55105c327756e012bd608.jpg"
+            },
+            "source_image_file": "f0d77721f07bf3b4bdc6bb27a51a48b4ca13cac7bef55105c327756e012bd608.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Al",
+            "properties": {
+              "formula": "Al",
+              "description": "Aluminum",
+              "extracted_from_image": "fb570beebe44b0be23063e9b7e14795b70734037beaabf3293816b56e942df5b.jpg"
+            },
+            "source_image_file": "fb570beebe44b0be23063e9b7e14795b70734037beaabf3293816b56e942df5b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "Mott-Schottky",
+        "is_reported": true,
+        "characterization_summary": "Mott-Schottky plots confirm n-type semiconductor behavior of passivation films with donor density N_D decreasing from ~5.36×10^{22} cm^{-3} at ΔT=50 K to ~0.36×10^{22} cm^{-3} at ΔT=253 K.",
+        "evidence_snippet": "Fig. 5(d) shows the Mott–Schottky results... The donor defect density N_D value of passivation films can be calculated from the slopes of linearly fitted plots (m_i).",
+        "related_images": [
+          "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg",
+          "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg",
+          "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg",
+          "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg",
+          "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg",
+          "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg",
+          "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg",
+          "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg",
+          "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg",
+          "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg",
+          "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg",
+          "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg",
+          "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg",
+          "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg",
+          "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg",
+          "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "property",
+            "name": "Temperature Difference (ΔT)",
+            "properties": {
+              "unit": "K",
+              "axis": "x-axis",
+              "range": "[0, 300]",
+              "extracted_from_image": "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg"
+            },
+            "source_image_file": "056b4d9a6030b85bd89c5a5fbd32aa0fa62f2798259f3f97ce5b8bb837a9a19c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Al metal 2p_{3/2}",
+            "properties": {
+              "description": "Aluminum metal 2p_{3/2} peak",
+              "extracted_from_image": "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg"
+            },
+            "source_image_file": "056ff07e09744cfd857f1d212d2359307041d14884ab2f9265fff4709b0005b8.jpg"
+          },
+          {
+            "type": "data",
+            "name": "Fitting curves",
+            "properties": {
+              "description": "Solid lines fitting the experimental data",
+              "color": "black",
+              "extracted_from_image": "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg"
+            },
+            "source_image_file": "0f008b030a042b5c7aa9caf466a0648be7348b56497dcc7a965e90137abfbabd.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanostructured Material",
+            "properties": {
+              "description": "Material showing wrinkled/sheet-like morphology",
+              "scale_observed": "50 μm",
+              "extracted_from_image": "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg"
+            },
+            "source_image_file": "41e10ea4c49bd82d12c195e868914150bd6061c247abd0fbdeeb7177c72608d4.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "ΔT = 253 K",
+            "properties": {
+              "value": "253 K",
+              "type": "undercooling",
+              "extracted_from_image": "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg"
+            },
+            "source_image_file": "4fa0548d0a518bb6e16c3a108d8d0611e4650c028c2ecf2da2888d0d0fd1bdae.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanoparticles",
+            "properties": {
+              "description": "Bright nanoparticles in TEM image",
+              "scale": "5 nm scale bar",
+              "extracted_from_image": "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg"
+            },
+            "source_image_file": "5563f3cc207260c5fb90c68fd7e743bcddad2f3f68c6473584ff1889f5bbe2fd.jpg"
+          },
+          {
+            "type": "parameter",
+            "name": "ΔT=152K",
+            "properties": {
+              "temperature_increase": "152 K",
+              "extracted_from_image": "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg"
+            },
+            "source_image_file": "7efad704965fbc1c18fb69c23c278393ac49a49ac5120e55c0a3776386025509.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Al metal 2p₁/₂",
+            "properties": {
+              "binding_energy": "72.5 eV (approx)",
+              "description": "Metallic aluminum 2p₁/₂ peak",
+              "extracted_from_image": "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg"
+            },
+            "source_image_file": "8917c4b69a099994efb367533854c715c8fd8cfb48337751a64c2987aa264d86.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "ΔT=50K",
+            "properties": {
+              "temperature_difference": "50K",
+              "symbol": "black squares",
+              "extracted_from_image": "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg"
+            },
+            "source_image_file": "8f236f120a31ec25390ae67567939cc760178ff39911815c0ce83e1f622e8877.jpg"
+          },
+          {
+            "type": "image",
+            "name": "Micrograph",
+            "properties": {
+              "label": "(1)",
+              "scale": "10 μm",
+              "extracted_from_image": "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg"
+            },
+            "source_image_file": "947b53457a1d50376ecaebf530ef040c0943d94366f7404a1d59ff76964d1500.jpg"
+          },
+          {
+            "type": "parameter",
+            "name": "R_ct (10⁶ Ω F⁻¹ cm⁻²)",
+            "properties": {
+              "description": "Charge transfer resistance (alternative)",
+              "unit": "10⁶ Ω F⁻¹ cm⁻²",
+              "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+            },
+            "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Passive film",
+            "properties": {
+              "description": "Point defect in dendritic γ phase",
+              "extracted_from_image": "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg"
+            },
+            "source_image_file": "b873f4c29d18903d20d5953c1245681167b3af3dd2487a5fd3d658f869bb03dc.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "MoO₂ 3d_{5/2}",
+            "properties": {
+              "description": "MoO₂ 3d_{5/2} peak at θ=90°",
+              "extracted_from_image": "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg"
+            },
+            "source_image_file": "b9d34bfcfbd060b0496dc151cfe38d5eab42d434b2bd562594c1bf7fc8f97a97.jpg"
+          },
+          {
+            "type": "parameter",
+            "name": "Epit",
+            "properties": {
+              "description": "Pitting potential",
+              "extracted_from_image": "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg"
+            },
+            "source_image_file": "bca402db68adc448d3f904936788067ca12542b7cd8b1052c1f708847cbf53f9.jpg"
+          },
+          {
+            "type": "measurement",
+            "name": "E_fp",
+            "properties": {
+              "value": "0.590 V",
+              "unit": "V vs Cr",
+              "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+            },
+            "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "ΔT=25 K",
+            "properties": {
+              "delta_T": "25 K",
+              "description": "Vertical reference annotation",
+              "extracted_from_image": "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+            },
+            "source_image_file": "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "ARXPS",
+        "is_reported": true,
+        "characterization_summary": "ARXPS shows passivation film thickness increases from 2.28 nm at ΔT=50 K to 4.04 nm at ΔT=253 K; films composed of TiO2, Ti2O3, Al2O3, MoO2 with metallic Al, Mo.",
+        "evidence_snippet": "The thickness of the passivation film on the surface of Ti50Al48Mo2 alloy at ΔT = 50 K is about 2.28 nm, while that of the passivation film... at ΔT = 253 K is about 4.04 nm."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM of pits after potentiostatic polarization at 1 V vs SCE shows deep irregular pits (Sz=70.84 μm) at ΔT=50 K, reduced to Sz=44.71 μm at ΔT=253 K with lamellar structure and corrosion products.",
+        "evidence_snippet": "The samples were polarized at a potentiostatic anodic potential of 1 V (vs. SCE) for 5 min to generate steady pits and their morphologies were observed by SEM."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "3D-optical profilometry",
+        "is_reported": true,
+        "characterization_summary": "3D profilometry measures pit depth Sz decreasing from 70.84 μm at ΔT=50 K to 44.71 μm at ΔT=253 K.",
+        "evidence_snippet": "Also, the average surface depth (Sz) and 3D profiles of the pits were measured using a white light interferometry-based non-contact 3D-optical profilometer... the average surface depth (Sz) is about 70.84 μm... reduces to about 44.71 μm."
+      },
+      {
+        "id": "n3",
+        "type": "characterization",
+        "name": "SEM image",
+        "properties": {
+          "description": "Purple-colored micrograph showing nanostructured material with scale bar",
+          "scale_bar": "500 nm",
+          "extracted_from_image": "f0d77721f07bf3b4bdc6bb27a51a48b4ca13cac7bef55105c327756e012bd608.jpg"
+        },
+        "source_image_file": "f0d77721f07bf3b4bdc6bb27a51a48b4ca13cac7bef55105c327756e012bd608.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "condition",
+        "name": "ΔT=52 K",
+        "properties": {
+          "delta_T": "52 K",
+          "description": "Vertical reference annotation",
+          "extracted_from_image": "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+        },
+        "source_image_file": "f068cd07f8a3aea39eb6314271329881d001c80b3406369704d487ed4ff34f53.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "measurement",
+        "name": "ΔE (E_fp - E_cor)",
+        "properties": {
+          "value": "0.593 V",
+          "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+        },
+        "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "condition",
+        "name": "ΔT = 253 K",
+        "properties": {
+          "value": "253 K",
+          "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+        },
+        "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "measurement",
+        "name": "E_cr",
+        "properties": {
+          "value": "-0.043 V",
+          "unit": "V vs Cr",
+          "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+        },
+        "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "measurement",
+        "name": "E_fc",
+        "properties": {
+          "value": "1.188 V",
+          "unit": "10^6 A cm^-2",
+          "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+        },
+        "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "measurement",
+        "name": "b",
+        "properties": {
+          "value": "1.602 Å",
+          "unit": "Å",
+          "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+        },
+        "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+      },
+      {
+        "id": "eutectoid1",
+        "type": "microstructure",
+        "name": "Eutectoid",
+        "properties": {
+          "label": "(a)",
+          "temperature": "50K",
+          "scale": "1 μm",
+          "extracted_from_image": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+        },
+        "source_image_file": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+      },
+      {
+        "id": "eutectoid2",
+        "type": "microstructure",
+        "name": "Eutectoid",
+        "properties": {
+          "scale": "1 μm",
+          "extracted_from_image": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+        },
+        "source_image_file": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+      },
+      {
+        "id": "B2",
+        "type": "phase",
+        "name": "B2",
+        "properties": {
+          "size": "334 nm",
+          "extracted_from_image": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+        },
+        "source_image_file": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+      },
+      {
+        "id": "arrow1",
+        "type": "annotation",
+        "name": "Size Arrow",
+        "properties": {
+          "length": "334 nm",
+          "extracted_from_image": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+        },
+        "source_image_file": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "label": "(a)",
+          "scale_bar": "1 μm",
+          "extracted_from_image": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+        },
+        "source_image_file": "16a02a266d224e3f7e772ae5de48478c3b90d81b7a03db884ced0279b4b84d4f.jpg"
+      },
+      {
+        "id": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45_1",
+        "type": "chemical",
+        "name": "Refined B2 phase",
+        "properties": {
+          "description": "Refined B2 phase in dendrites",
+          "extracted_from_image": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+        },
+        "source_image_file": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+      },
+      {
+        "id": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45_2",
+        "type": "chemical",
+        "name": "γ phase",
+        "properties": {
+          "description": "γ phase",
+          "extracted_from_image": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+        },
+        "source_image_file": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+      },
+      {
+        "id": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45_3",
+        "type": "chemical",
+        "name": "α₂ + γ",
+        "properties": {
+          "description": "α₂ + γ phase",
+          "extracted_from_image": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+        },
+        "source_image_file": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+      },
+      {
+        "id": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45_4",
+        "type": "microstructure",
+        "name": "Dendrites",
+        "properties": {
+          "description": "Interdendritic pitting",
+          "extracted_from_image": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+        },
+        "source_image_file": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+      },
+      {
+        "id": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45_5",
+        "type": "phenomenon",
+        "name": "Pitting initiation points",
+        "properties": {
+          "description": "Pitting initiation points",
+          "extracted_from_image": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+        },
+        "source_image_file": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+      },
+      {
+        "id": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45_6",
+        "type": "phenomenon",
+        "name": "Corrosion pits",
+        "properties": {
+          "description": "Corrosion pits",
+          "extracted_from_image": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+        },
+        "source_image_file": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+      },
+      {
+        "id": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45_7",
+        "type": "phenomenon",
+        "name": "Stable pits",
+        "properties": {
+          "description": "Stable pits on pits",
+          "extracted_from_image": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+        },
+        "source_image_file": "22b85de13656373060bd3190afd1b361022eb62f1be2067f95ed8b9761048d45.jpg"
+      },
+      {
+        "id": "TiO2_2p",
+        "type": "chemical",
+        "name": "TiO2 2p",
+        "properties": {
+          "binding_energy_range": "455-460 eV",
+          "peaks": [
+            "2p1/2",
+            "2p3/2"
+          ],
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "Ti4+",
+        "type": "chemical",
+        "name": "Ti4+",
+        "properties": {
+          "description": "Tetravalent titanium ion",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "Ti3+",
+        "type": "chemical",
+        "name": "Ti3+",
+        "properties": {
+          "description": "Trivalent titanium ion",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "TiO2_2p1/2",
+        "type": "chemical",
+        "name": "TiO2 2p1/2",
+        "properties": {
+          "description": "TiO2 2p1/2 peak",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "TiO2_2p3/2",
+        "type": "chemical",
+        "name": "TiO2 2p3/2",
+        "properties": {
+          "description": "TiO2 2p3/2 peak",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "Ti2O3_2p1/2",
+        "type": "chemical",
+        "name": "Ti2O3 2p1/2",
+        "properties": {
+          "description": "Ti2O3 2p1/2 peak",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "Ti2O3_2p3/2",
+        "type": "chemical",
+        "name": "Ti2O3 2p3/2",
+        "properties": {
+          "description": "Ti2O3 2p3/2 peak",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "theta_90",
+        "type": "characterization",
+        "name": "θ=90°",
+        "properties": {
+          "description": "XPS spectrum at takeoff angle 90°",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "theta_50",
+        "type": "characterization",
+        "name": "θ=50°",
+        "properties": {
+          "description": "XPS spectrum at takeoff angle 50°",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "theta_37",
+        "type": "characterization",
+        "name": "θ=37°",
+        "properties": {
+          "description": "XPS spectrum at takeoff angle 37°",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "theta_25",
+        "type": "characterization",
+        "name": "θ=25°",
+        "properties": {
+          "description": "XPS spectrum at takeoff angle 25°",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "raw_data",
+        "type": "data",
+        "name": "Raw Data",
+        "properties": {
+          "color": "black",
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "Ti4+_data",
+        "type": "characterization",
+        "name": "Ti4+ Data",
+        "properties": {
+          "description": "Fitted Ti4+ component",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "Ti3+_data",
+        "type": "characterization",
+        "name": "Ti3+ Data",
+        "properties": {
+          "description": "Fitted Ti3+ component",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "cumulative_fit",
+        "type": "data",
+        "name": "Cumulative Fit",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "xps_spectrum",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "description": "Ti 2p XPS spectrum with multiple takeoff angles",
+          "x_axis": "Binding energy (eV)",
+          "x_range": [
+            455,
+            460
+          ],
+          "y_axis": "Intensity (a.u.)",
+          "extracted_from_image": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+        },
+        "source_image_file": "3b1743956198809545760d09688cf0466d0b7af04f68634144b26c3903418649.jpg"
+      },
+      {
+        "id": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb_node1",
+        "type": "chemical",
+        "name": "Mo",
+        "properties": {
+          "description": "Molybdenum",
+          "extracted_from_image": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+        },
+        "source_image_file": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+      },
+      {
+        "id": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb_node2",
+        "type": "chemical",
+        "name": "α",
+        "properties": {
+          "description": "Alpha phase",
+          "extracted_from_image": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+        },
+        "source_image_file": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+      },
+      {
+        "id": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb_node3",
+        "type": "characterization",
+        "name": "Homogeneous distribution",
+        "properties": {
+          "description": "Mo with homogeneous distribution in dendrites",
+          "visual": "Green uniform distribution in dendrite structure",
+          "extracted_from_image": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+        },
+        "source_image_file": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+      },
+      {
+        "id": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb_node4",
+        "type": "characterization",
+        "name": "Pitting initiation points",
+        "properties": {
+          "description": "Pitting initiation points in α phase",
+          "extracted_from_image": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+        },
+        "source_image_file": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+      },
+      {
+        "id": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb_node5",
+        "type": "characterization",
+        "name": "Mo-rich corrosion scale",
+        "properties": {
+          "description": "Mo-rich regions in corrosion scale",
+          "visual": "Dark spots/clusters",
+          "extracted_from_image": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+        },
+        "source_image_file": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+      },
+      {
+        "id": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb_node6",
+        "type": "characterization",
+        "name": "Villous corrosion scale",
+        "properties": {
+          "description": "Villous (hair-like) corrosion scale",
+          "visual": "Gray fibrous protrusions",
+          "extracted_from_image": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+        },
+        "source_image_file": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+      },
+      {
+        "id": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb_node7",
+        "type": "characterization",
+        "name": "Stable pits",
+        "properties": {
+          "description": "Stable developed pits",
+          "visual": "Black pits on surface",
+          "extracted_from_image": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+        },
+        "source_image_file": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+      },
+      {
+        "id": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb_node8",
+        "type": "material",
+        "name": "Dendrites",
+        "properties": {
+          "description": "Dendritic microstructure",
+          "extracted_from_image": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+        },
+        "source_image_file": "4f5475b12f5dc4f0682d38079fba1bdbca49e0cbe7a76387b00f01f3fff1cbdb.jpg"
+      },
+      {
+        "id": "particle_distribution",
+        "type": "characterization",
+        "name": "Particle Size Distribution",
+        "properties": {
+          "type": "histogram",
+          "x_axis": "w (μm)",
+          "y_axis": "Fraction (%)",
+          "range": "0-30 μm",
+          "extracted_from_image": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+        },
+        "source_image_file": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+      },
+      {
+        "id": "peak_5.36",
+        "type": "peak",
+        "name": "Peak at 5.36 μm",
+        "properties": {
+          "position": "5.36 ± 1.47 μm",
+          "color": "blue",
+          "extracted_from_image": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+        },
+        "source_image_file": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+      },
+      {
+        "id": "peak_14.78",
+        "type": "peak",
+        "name": "Peak at 14.78 μm",
+        "properties": {
+          "position": "14.78 ± 1.87 μm",
+          "color": "red",
+          "extracted_from_image": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+        },
+        "source_image_file": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+      },
+      {
+        "id": "peak_18.80",
+        "type": "peak",
+        "name": "Peak at 18.80 μm",
+        "properties": {
+          "position": "18.80 ± 2.87 μm",
+          "color": "gray",
+          "extracted_from_image": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+        },
+        "source_image_file": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+      },
+      {
+        "id": "condition_dt50",
+        "type": "condition",
+        "name": "ΔT = 50 K",
+        "properties": {
+          "delta_t": "50 K",
+          "color": "gray",
+          "extracted_from_image": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+        },
+        "source_image_file": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+      },
+      {
+        "id": "condition_dt152",
+        "type": "condition",
+        "name": "ΔT = 152 K",
+        "properties": {
+          "delta_t": "152 K",
+          "color": "red",
+          "extracted_from_image": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+        },
+        "source_image_file": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+      },
+      {
+        "id": "condition_dt253",
+        "type": "condition",
+        "name": "ΔT = 253 K",
+        "properties": {
+          "delta_t": "253 K",
+          "color": "blue",
+          "extracted_from_image": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+        },
+        "source_image_file": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+      },
+      {
+        "id": "material_g",
+        "type": "material",
+        "name": "Material (g)",
+        "properties": {
+          "label": "(g)",
+          "extracted_from_image": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+        },
+        "source_image_file": "6517a0529110accfeca87d0bf915b39dac57f7e4177cb22f0f3084bec0d6efd0.jpg"
+      },
+      {
+        "id": "Ti2O3_2p",
+        "type": "chemical",
+        "name": "Ti2O3 2p",
+        "properties": {
+          "binding_energy_range": "455-460 eV",
+          "peaks": [
+            "2p1/2",
+            "2p3/2"
+          ],
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "Ti4plus",
+        "type": "chemical",
+        "name": "Ti⁴⁺",
+        "properties": {
+          "associated_with": "TiO2",
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "Ti3plus",
+        "type": "chemical",
+        "name": "Ti³⁺",
+        "properties": {
+          "associated_with": "Ti2O3",
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "XPS_spectrum",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "technique": "XPS",
+          "region": "Ti 2p",
+          "x_axis": "Binding energy (eV)",
+          "x_range": [
+            455,
+            470
+          ],
+          "y_axis": "Intensity (a.u.)",
+          "angles": [
+            "θ=90°",
+            "θ=50°",
+            "θ=37°",
+            "θ=25°"
+          ],
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "Ti4plus_data",
+        "type": "data",
+        "name": "Ti⁴⁺ Data",
+        "properties": {
+          "color": "yellow",
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "Ti3plus_data",
+        "type": "data",
+        "name": "Ti³⁺ Data",
+        "properties": {
+          "color": "cyan",
+          "extracted_from_image": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+        },
+        "source_image_file": "6a83c3eec8380142f7b11b5eb423754201d99632c47f83e3daad0ebf4608e29f.jpg"
+      },
+      {
+        "id": "image_a",
+        "type": "characterization",
+        "name": "Figure (a)",
+        "properties": {
+          "type": "schematic",
+          "description": "Corrosion mechanism diagram",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "delta_t",
+        "type": "condition",
+        "name": "ΔT = 152 K",
+        "properties": {
+          "temperature_difference": "152 K",
+          "extracted_from_image": "9ef2ddea60d64c94b481e04f4ecc47a2b1056a46a9daf78ad564dcc125c97927.jpg"
+        },
+        "source_image_file": "9ef2ddea60d64c94b481e04f4ecc47a2b1056a46a9daf78ad564dcc125c97927.jpg"
+      },
+      {
+        "id": "region_x",
+        "type": "region",
+        "name": "X",
+        "properties": {
+          "description": "Yellow highlighted rectangular region with fibrous or dendritic microstructure",
+          "extracted_from_image": "72c398785754f8d71f682e985d2f19202bf623531bb8c6eca992f5f5a10cc549.jpg"
+        },
+        "source_image_file": "72c398785754f8d71f682e985d2f19202bf623531bb8c6eca992f5f5a10cc549.jpg"
+      },
+      {
+        "id": "arrow_yellow",
+        "type": "annotation",
+        "name": "Yellow Arrow",
+        "properties": {
+          "description": "Points from region X to B2 area",
+          "color": "yellow",
+          "extracted_from_image": "72c398785754f8d71f682e985d2f19202bf623531bb8c6eca992f5f5a10cc549.jpg"
+        },
+        "source_image_file": "72c398785754f8d71f682e985d2f19202bf623531bb8c6eca992f5f5a10cc549.jpg"
+      },
+      {
+        "id": "b2",
+        "type": "characterization",
+        "name": "SEM image (b2)",
+        "properties": {
+          "description": "Wrinkled surface SEM with red arrows",
+          "scale": "~2 μm",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "arrow_blue",
+        "type": "annotation",
+        "name": "Blue Arrow",
+        "properties": {
+          "description": "Points to γ region",
+          "color": "blue",
+          "extracted_from_image": "72c398785754f8d71f682e985d2f19202bf623531bb8c6eca992f5f5a10cc549.jpg"
+        },
+        "source_image_file": "72c398785754f8d71f682e985d2f19202bf623531bb8c6eca992f5f5a10cc549.jpg"
+      },
+      {
+        "id": "gamma",
+        "type": "phase",
+        "name": "γ (Gamma)",
+        "properties": {
+          "label": "γ",
+          "position": "central region",
+          "extracted_from_image": "9ef2ddea60d64c94b481e04f4ecc47a2b1056a46a9daf78ad564dcc125c97927.jpg"
+        },
+        "source_image_file": "9ef2ddea60d64c94b481e04f4ecc47a2b1056a46a9daf78ad564dcc125c97927.jpg"
+      },
+      {
+        "id": "microstructure",
+        "type": "characterization",
+        "name": "Microstructure",
+        "properties": {
+          "type": "likely SEM",
+          "features": "grain boundaries, fibrous/dendritic structures",
+          "scale_bar": "50 μm",
+          "extracted_from_image": "72c398785754f8d71f682e985d2f19202bf623531bb8c6eca992f5f5a10cc549.jpg"
+        },
+        "source_image_file": "72c398785754f8d71f682e985d2f19202bf623531bb8c6eca992f5f5a10cc549.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "Impedance Plot",
+        "properties": {
+          "description": "Nyquist plot of Z'' vs Z' at 0.01 Hz",
+          "x_axis": "Z' × 10² (Ω cm²)",
+          "y_axis": "Z'' × 10⁴ (Ω cm²)",
+          "figure_label": "(a)",
+          "extracted_from_image": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+        },
+        "source_image_file": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+      },
+      {
+        "id": "dt50",
+        "type": "condition",
+        "name": "ΔT = 50 K",
+        "properties": {
+          "temperature_change": "50 K",
+          "color": "black",
+          "symbol": "square",
+          "extracted_from_image": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+        },
+        "source_image_file": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+      },
+      {
+        "id": "dt152",
+        "type": "condition",
+        "name": "ΔT = 152 K",
+        "properties": {
+          "temperature_change": "152 K",
+          "color": "red",
+          "symbol": "circle",
+          "extracted_from_image": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+        },
+        "source_image_file": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+      },
+      {
+        "id": "dt253",
+        "type": "condition",
+        "name": "ΔT = 253 K",
+        "properties": {
+          "temperature_change": "253 K",
+          "color": "blue",
+          "symbol": "triangle",
+          "extracted_from_image": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+        },
+        "source_image_file": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+      },
+      {
+        "id": "fit",
+        "type": "characterization",
+        "name": "Fitting curves",
+        "properties": {
+          "description": "Fitting lines for impedance data",
+          "style": "solid lines",
+          "extracted_from_image": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+        },
+        "source_image_file": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+      },
+      {
+        "id": "freq001hz",
+        "type": "condition",
+        "name": "Frequency 0.01 Hz",
+        "properties": {
+          "frequency": "0.01 Hz",
+          "extracted_from_image": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+        },
+        "source_image_file": "7cb23773a984969c214959370f213c0091b9a7e6bec598e4f011882e9ffc9c41.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "chemical",
+        "name": "Electrolyte",
+        "properties": {
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "passivation_film",
+        "type": "chemical",
+        "name": "Passivation Film",
+        "properties": {
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "outer_layer",
+        "type": "chemical",
+        "name": "Outer Layer",
+        "properties": {
+          "resistance": "R_out",
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "cpe_out",
+        "type": "chemical",
+        "name": "CPE-out",
+        "properties": {
+          "description": "Constant Phase Element (outer)",
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "inner_layer",
+        "type": "chemical",
+        "name": "Inner Layer",
+        "properties": {
+          "resistance": "R_f-out",
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "cpe_f",
+        "type": "chemical",
+        "name": "CPE-f",
+        "properties": {
+          "description": "Constant Phase Element (film)",
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "metal",
+        "type": "chemical",
+        "name": "Metal",
+        "properties": {
+          "resistance": "R_metal",
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "cpe_in",
+        "type": "chemical",
+        "name": "CPE-in",
+        "properties": {
+          "description": "Constant Phase Element (inner/metal interface)",
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "r",
+        "type": "electrical",
+        "name": "R",
+        "properties": {
+          "description": "Solution Resistance",
+          "extracted_from_image": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+        },
+        "source_image_file": "8403cce0a048e59c29a57ac261b60a310645f25b308132f496c3ae2e441ecc31.jpg"
+      },
+      {
+        "id": "exp1",
+        "type": "experiment",
+        "name": "AP-35K Nucleation",
+        "properties": {
+          "condition": "Smooth liquid interface",
+          "extracted_from_image": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+        },
+        "source_image_file": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+      },
+      {
+        "id": "img1",
+        "type": "characterization",
+        "name": "Image at t=0 ms",
+        "properties": {
+          "description": "Rough liquid interface",
+          "extracted_from_image": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+        },
+        "source_image_file": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+      },
+      {
+        "id": "img2",
+        "type": "characterization",
+        "name": "Image at t=0.35 ms",
+        "properties": {
+          "description": "Au NCs nucleation sites and rough interface",
+          "extracted_from_image": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+        },
+        "source_image_file": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+      },
+      {
+        "id": "img3",
+        "type": "characterization",
+        "name": "Image at t=0.6 ms",
+        "properties": {
+          "description": "Red circular feature",
+          "extracted_from_image": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+        },
+        "source_image_file": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+      },
+      {
+        "id": "img4",
+        "type": "characterization",
+        "name": "Image at t=1.3 ms",
+        "properties": {
+          "description": "Red circular feature",
+          "extracted_from_image": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+        },
+        "source_image_file": "892b7f2c58cf743c91b7023d9a7dbf18deea8ff74af38dfe02738887ce1fad65.jpg"
+      },
+      {
+        "id": "proc1",
+        "type": "process",
+        "name": "Nucleation",
+        "properties": {
+          "type": "heterogeneous nucleation",
+          "duration": "0-0.3 ms",
+          "extracted_from_image": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+        },
+        "source_image_file": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+      },
+      {
+        "id": "surf1",
+        "type": "surface",
+        "name": "Smooth Liquid Interface",
+        "properties": {
+          "initial_state": "smooth",
+          "extracted_from_image": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+        },
+        "source_image_file": "8463c0a84f488831f4456dccdfa048b396056d80526a1b513f5c023caca9759d.jpg"
+      },
+      {
+        "id": "haadf",
+        "type": "characterization",
+        "name": "HAADF",
+        "properties": {
+          "description": "High-Angle Annular Dark-Field imaging technique",
+          "extracted_from_image": "88ddac676774c2ed981c022f39b5f5f9ed6fd23e5023b6ffe09668b2c6dcfa6c.jpg"
+        },
+        "source_image_file": "88ddac676774c2ed981c022f39b5f5f9ed6fd23e5023b6ffe09668b2c6dcfa6c.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "characterization",
+        "name": "Figure (b)",
+        "properties": {
+          "scale": "500 nm",
+          "extracted_from_image": "88ddac676774c2ed981c022f39b5f5f9ed6fd23e5023b6ffe09668b2c6dcfa6c.jpg"
+        },
+        "source_image_file": "88ddac676774c2ed981c022f39b5f5f9ed6fd23e5023b6ffe09668b2c6dcfa6c.jpg"
+      },
+      {
+        "id": "bb2",
+        "type": "chemical",
+        "name": "B_B2",
+        "properties": {
+          "label": "B_B2",
+          "description": "Labeled region or particle B_B2",
+          "extracted_from_image": "88ddac676774c2ed981c022f39b5f5f9ed6fd23e5023b6ffe09668b2c6dcfa6c.jpg"
+        },
+        "source_image_file": "88ddac676774c2ed981c022f39b5f5f9ed6fd23e5023b6ffe09668b2c6dcfa6c.jpg"
+      },
+      {
+        "id": "structure",
+        "type": "structure",
+        "name": "Outlined Structure",
+        "properties": {
+          "outline": "Dashed lines (blue and orange)",
+          "scale": "500 nm",
+          "extracted_from_image": "88ddac676774c2ed981c022f39b5f5f9ed6fd23e5023b6ffe09668b2c6dcfa6c.jpg"
+        },
+        "source_image_file": "88ddac676774c2ed981c022f39b5f5f9ed6fd23e5023b6ffe09668b2c6dcfa6c.jpg"
+      },
+      {
+        "id": "t1",
+        "type": "table",
+        "name": "Electrochemical Table",
+        "properties": {
+          "description": "Table showing critical field (E_cr), field emission current density (E_fc), barrier width (b), field emission peak (E_fp), and ΔE at two temperatures",
+          "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+        },
+        "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+      },
+      {
+        "id": "t2",
+        "type": "timepoint",
+        "name": "t≈1 ms",
+        "properties": {
+          "time": "≈1 ms",
+          "extracted_from_image": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+        },
+        "source_image_file": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+      },
+      {
+        "id": "t3",
+        "type": "timepoint",
+        "name": "t=20 ms",
+        "properties": {
+          "time": "20 ms",
+          "extracted_from_image": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+        },
+        "source_image_file": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+      },
+      {
+        "id": "t4",
+        "type": "timepoint",
+        "name": "t≈31 ms",
+        "properties": {
+          "time": "≈31 ms",
+          "extracted_from_image": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+        },
+        "source_image_file": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "SEM image (c1)",
+        "properties": {
+          "description": "High-magnification SEM with red arrows",
+          "scale": "~50 nm",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "SEM image (c2)",
+        "properties": {
+          "description": "Wrinkled layered SEM with yellow arrow",
+          "scale": "~5 μm",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "SEM image (c3)",
+        "properties": {
+          "description": "Color-coded intensity map or fluorescence",
+          "scale": "0-2.3 nm",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "d1",
+        "type": "data_point",
+        "name": "R_ct @ 50K",
+        "properties": {
+          "value": 11.35,
+          "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+        },
+        "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+      },
+      {
+        "id": "d2",
+        "type": "data_point",
+        "name": "R_ct @ 152K",
+        "properties": {
+          "value": 19.4,
+          "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+        },
+        "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+      },
+      {
+        "id": "d3",
+        "type": "data_point",
+        "name": "R_ct @ 253K",
+        "properties": {
+          "value": 25.57,
+          "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+        },
+        "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+      },
+      {
+        "id": "d4",
+        "type": "data_point",
+        "name": "Q_ut @ 50K",
+        "properties": {
+          "value": 0.83,
+          "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+        },
+        "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+      },
+      {
+        "id": "d5",
+        "type": "data_point",
+        "name": "Q_ut @ 152K",
+        "properties": {
+          "value": 0.51,
+          "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+        },
+        "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+      },
+      {
+        "id": "d6",
+        "type": "data_point",
+        "name": "Q_ut @ 253K",
+        "properties": {
+          "value": 0.57,
+          "extracted_from_image": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+        },
+        "source_image_file": "9aa23d5721d40bb460c0dded71bc1d2b10f19ab09a51ef5b48cc3e5ddbe03c2a.jpg"
+      },
+      {
+        "id": "exp",
+        "type": "experiment",
+        "name": "AF50k Nucleation",
+        "properties": {
+          "label": "(c)",
+          "context": "AF50k Nucleation experiment",
+          "extracted_from_image": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+        },
+        "source_image_file": "9e2bb0f59aa804700ea649253b8a2ddf31d65e0b3cead5313ac88f24f8714a8a.jpg"
+      },
+      {
+        "id": "image_d",
+        "type": "characterization",
+        "name": "SEM Image (d)",
+        "properties": {
+          "technique": "SEM",
+          "label": "(d)",
+          "scale": "20 μm",
+          "extracted_from_image": "9ef2ddea60d64c94b481e04f4ecc47a2b1056a46a9daf78ad564dcc125c97927.jpg"
+        },
+        "source_image_file": "9ef2ddea60d64c94b481e04f4ecc47a2b1056a46a9daf78ad564dcc125c97927.jpg"
+      },
+      {
+        "id": "eutectoid",
+        "type": "microstructure",
+        "name": "Eutectoid",
+        "properties": {
+          "description": "Region indicated by green arrows",
+          "extracted_from_image": "9ef2ddea60d64c94b481e04f4ecc47a2b1056a46a9daf78ad564dcc125c97927.jpg"
+        },
+        "source_image_file": "9ef2ddea60d64c94b481e04f4ecc47a2b1056a46a9daf78ad564dcc125c97927.jpg"
+      },
+      {
+        "id": "KMnO4",
+        "type": "chemical",
+        "name": "KMnO4",
+        "properties": {
+          "formula": "KMnO4",
+          "description": "Potassium permanganate, purple crystalline material appearing as yellow particles in SEM",
+          "extracted_from_image": "b6a50e2b42f5eedbe2c9efb6b6256c5dc136e396a227c2c71b8730bb01f5f535.jpg"
+        },
+        "source_image_file": "b6a50e2b42f5eedbe2c9efb6b6256c5dc136e396a227c2c71b8730bb01f5f535.jpg"
+      },
+      {
+        "id": "SEM",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "technique": "Scanning Electron Microscopy",
+          "scale": "1 μm",
+          "description": "Image showing yellow particles of KMnO4",
+          "extracted_from_image": "b6a50e2b42f5eedbe2c9efb6b6256c5dc136e396a227c2c71b8730bb01f5f535.jpg"
+        },
+        "source_image_file": "b6a50e2b42f5eedbe2c9efb6b6256c5dc136e396a227c2c71b8730bb01f5f535.jpg"
+      },
+      {
+        "id": "B2_phase",
+        "type": "chemical",
+        "name": "B2 phase",
+        "properties": {
+          "description": "Intermetallic phase in dendrites",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "B2b_phase",
+        "type": "chemical",
+        "name": "B2b phase",
+        "properties": {
+          "description": "Phase forming stable corrosion scale",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "gamma_phase",
+        "type": "chemical",
+        "name": "γ phase",
+        "properties": {
+          "description": "Interdendritic phase",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "alpha_prime",
+        "type": "chemical",
+        "name": "α′",
+        "properties": {
+          "description": "Phase involved in pit initiation",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "interdendritic_phase",
+        "type": "chemical",
+        "name": "Interdendritic phase",
+        "properties": {
+          "description": "Region containing γ phase",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "pit_initiation_points",
+        "type": "characterization",
+        "name": "Pit initiation points",
+        "properties": {
+          "location": "α′ in dendrites",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "stable_pits",
+        "type": "characterization",
+        "name": "Stable pits",
+        "properties": {
+          "description": "Developed corrosion pits",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "corrosion_scale",
+        "type": "characterization",
+        "name": "Corrosion scale",
+        "properties": {
+          "description": "Protective layer on B2b phase",
+          "extracted_from_image": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+        },
+        "source_image_file": "cf31ebfebbf9f30315636b64849ca83194124b7c7d7a56ecc144e17f236cb8dd.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "measurement",
+        "name": "E_fp",
+        "properties": {
+          "value": "0.500 V",
+          "unit": "V vs Cr",
+          "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+        },
+        "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "measurement",
+        "name": "ΔE (E_fp - E_cor)",
+        "properties": {
+          "value": "0.593 V",
+          "extracted_from_image": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+        },
+        "source_image_file": "dcdb1477caafdc2288d63b4c85de46df5801394b955f4d8709a60e03c3ba8bb3.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node1",
+        "type": "chemical",
+        "name": "MoO2",
+        "properties": {
+          "description": "Molybdenum dioxide",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node2",
+        "type": "chemical",
+        "name": "Mo metal",
+        "properties": {
+          "description": "Molybdenum metal",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node3",
+        "type": "chemical",
+        "name": "Mo6+",
+        "properties": {
+          "description": "Hexavalent molybdenum ion",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node4",
+        "type": "chemical",
+        "name": "Mo4+",
+        "properties": {
+          "description": "Tetravalent molybdenum ion",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node5",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "technique": "X-ray Photoelectron Spectroscopy",
+          "region": "Mo 3d",
+          "binding_energies": [
+            226,
+            228,
+            230,
+            232,
+            234,
+            236,
+            238
+          ],
+          "unit": "eV",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node6",
+        "type": "peak",
+        "name": "MoO2 2d5/2",
+        "properties": {
+          "binding_energy": "≈230 eV",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node7",
+        "type": "peak",
+        "name": "Mo metal 2d5/2",
+        "properties": {
+          "binding_energy": "≈228 eV",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node8",
+        "type": "peak",
+        "name": "MoO2 2d3/2",
+        "properties": {
+          "binding_energy": "≈234 eV",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node9",
+        "type": "peak",
+        "name": "Mo metal 2d3/2",
+        "properties": {
+          "binding_energy": "≈232 eV",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node10",
+        "type": "data",
+        "name": "Raw Data",
+        "properties": {
+          "color": "black",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node11",
+        "type": "data",
+        "name": "Mo4+",
+        "properties": {
+          "color": "green",
+          "description": "Fitted peak for tetravalent Mo",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node12",
+        "type": "data",
+        "name": "Mo6+",
+        "properties": {
+          "color": "blue",
+          "description": "Fitted peak for hexavalent Mo",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node13",
+        "type": "data",
+        "name": "Cumulative Fit",
+        "properties": {
+          "color": "red",
+          "description": "Total fitted spectrum",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node14",
+        "type": "angle",
+        "name": "θ = 90°",
+        "properties": {
+          "description": "Highest intensity spectrum",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node15",
+        "type": "angle",
+        "name": "θ = 50°",
+        "properties": {
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node16",
+        "type": "angle",
+        "name": "θ = 37°",
+        "properties": {
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725_node17",
+        "type": "angle",
+        "name": "θ = 25°",
+        "properties": {
+          "description": "Lowest intensity spectrum",
+          "extracted_from_image": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+        },
+        "source_image_file": "e728dc111e16362a7e4d6d703dea2da9a50a11f6ff431ea75b65eb3904017725.jpg"
+      },
+      {
+        "id": "a2",
+        "type": "characterization",
+        "name": "SEM image (a2)",
+        "properties": {
+          "description": "Lower-magnification SEM with yellow circle highlighting region",
+          "scale": "~1 μm",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "a3",
+        "type": "characterization",
+        "name": "SEM image (a3)",
+        "properties": {
+          "description": "3D-like SEM or AFM with color scale 0-3.9 nm",
+          "scale": "3.9 nm",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "b1",
+        "type": "characterization",
+        "name": "SEM image (b1)",
+        "properties": {
+          "description": "Green highlighted SEM with red arrows, labeled 'π-stacking'",
+          "scale": "~500 nm",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "b3",
+        "type": "characterization",
+        "name": "SEM image (b3)",
+        "properties": {
+          "description": "3D topography map with color scale 0-1.5 nm",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "material_A",
+        "type": "chemical",
+        "name": "Nanostructured Material A",
+        "properties": {
+          "description": "Sample at low concentration or condition A",
+          "features": "Dendritic nanostructures",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "material_B",
+        "type": "chemical",
+        "name": "Nanostructured Material B",
+        "properties": {
+          "description": "Sample with π-stacking, medium condition",
+          "features": "π-stacking domains, wrinkled surfaces",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "material_C",
+        "type": "chemical",
+        "name": "Nanostructured Material C",
+        "properties": {
+          "description": "Sample at high concentration or condition C (2.5%)",
+          "features": "Dense wrinkled layers",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "pi_stacking",
+        "type": "chemical",
+        "name": "π-π Stacking",
+        "properties": {
+          "description": "Molecular interaction observed in panel b1",
+          "extracted_from_image": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+        },
+        "source_image_file": "e7989b7f3b47a1be286fba84df9a9bc7708dd3f504f136403365f2a43d13cf50.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_1",
+        "type": "chemical",
+        "name": "α phase",
+        "properties": {
+          "description": "Alpha phase in the microstructure",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_2",
+        "type": "chemical",
+        "name": "γ phase",
+        "properties": {
+          "description": "Gamma phase, interdendritic",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_3",
+        "type": "chemical",
+        "name": "γ' phase",
+        "properties": {
+          "description": "Gamma prime phase",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_4",
+        "type": "defect",
+        "name": "Vacancies",
+        "properties": {
+          "description": "Vacancy defects, labeled V°",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_5",
+        "type": "defect",
+        "name": "Vacancies aggregation",
+        "properties": {
+          "description": "Aggregated vacancies",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_6",
+        "type": "defect",
+        "name": "Metal substitute",
+        "properties": {
+          "description": "Metal substitution, labeled Vᴹ and Mⁿᶠ of interdendritic γ phase",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_7",
+        "type": "element",
+        "name": "Cr",
+        "properties": {
+          "description": "Chromium, shown as light blue circles",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_8",
+        "type": "element",
+        "name": "Mⁱ",
+        "properties": {
+          "description": "Interdendritic metal in γ phase, black circles",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_9",
+        "type": "microstructure",
+        "name": "Dendrites",
+        "properties": {
+          "description": "Dendritic structure",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_10",
+        "type": "environment",
+        "name": "Sea water",
+        "properties": {
+          "description": "Seawater phase surrounding the material",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      },
+      {
+        "id": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1_11",
+        "type": "image",
+        "name": "Microstructure SEM image",
+        "properties": {
+          "label": "(a)",
+          "type": "SEM",
+          "description": "Schematic microstructure showing phases, defects, and seawater interaction",
+          "extracted_from_image": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+        },
+        "source_image_file": "fde3760536fa59df74655cce7c6e00c70ec54b16abed8b2cc2735c375e8b7fd1.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Ti50Al48Mo2_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ti50Al48Mo2",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ti50Al48Mo2_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ti50Al48Mo2",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ti50Al48Mo2_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ti50Al48Mo2",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ti50Al48Mo2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Ti50Al48Mo2",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ti50Al48Mo2_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Ti50Al48Mo2",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ti50Al48Mo2_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Ti50Al48Mo2",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ti50Al48Mo2_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Ti50Al48Mo2",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ti50Al48Mo2_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Ti50Al48Mo2",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "represents"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n4",
+        "type": "represents"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_6",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "char_6",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n6",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "fitted_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_5",
+        "type": "labels"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "labels"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_5",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_6",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "represents"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n3",
+        "type": "represents"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "belongs_to"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "belongs_to"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_6",
+        "type": "includes_fitting"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n7",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n8",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "char_6",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_6",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "image",
+        "target_id": "eutectoid1",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "eutectoid2",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "B2",
+        "type": "contains"
+      },
+      {
+        "source_id": "arrow1",
+        "target_id": "B2",
+        "type": "measures"
+      },
+      {
+        "source_id": "eutectoid1",
+        "target_id": "B2",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "eutectoid2",
+        "target_id": "B2",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "depicts"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "located_in"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "present_in"
+      },
+      {
+        "source_id": "1",
+        "target_id": "6",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "5",
+        "target_id": "6",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "6",
+        "target_id": "7",
+        "type": "progresses_to"
+      },
+      {
+        "source_id": "3",
+        "target_id": "7",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "TiO2_2p",
+        "target_id": "Ti4+",
+        "type": "contains"
+      },
+      {
+        "source_id": "TiO2_2p",
+        "target_id": "TiO2_2p1/2",
+        "type": "contains"
+      },
+      {
+        "source_id": "TiO2_2p",
+        "target_id": "TiO2_2p3/2",
+        "type": "contains"
+      },
+      {
+        "source_id": "Ti2O3_2p1/2",
+        "target_id": "Ti3+",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "Ti2O3_2p3/2",
+        "target_id": "Ti3+",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "theta_90",
+        "target_id": "xps_spectrum",
+        "type": "part_of"
+      },
+      {
+        "source_id": "theta_50",
+        "target_id": "xps_spectrum",
+        "type": "part_of"
+      },
+      {
+        "source_id": "theta_37",
+        "target_id": "xps_spectrum",
+        "type": "part_of"
+      },
+      {
+        "source_id": "theta_25",
+        "target_id": "xps_spectrum",
+        "type": "part_of"
+      },
+      {
+        "source_id": "raw_data",
+        "target_id": "xps_spectrum",
+        "type": "component"
+      },
+      {
+        "source_id": "Ti4+_data",
+        "target_id": "xps_spectrum",
+        "type": "component"
+      },
+      {
+        "source_id": "Ti3+_data",
+        "target_id": "xps_spectrum",
+        "type": "component"
+      },
+      {
+        "source_id": "cumulative_fit",
+        "target_id": "xps_spectrum",
+        "type": "component"
+      },
+      {
+        "source_id": "TiO2_2p",
+        "target_id": "xps_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ti4+",
+        "target_id": "Ti4+_data",
+        "type": "fitted_as"
+      },
+      {
+        "source_id": "Ti3+",
+        "target_id": "Ti3+_data",
+        "type": "fitted_as"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "char_6",
+        "type": "condition_applied"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "highlights"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "highlights"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "has_distribution"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node8",
+        "type": "in_structure"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node4",
+        "type": "contains_initiation"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "progresses_to"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node5",
+        "type": "develops_into"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node6",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node7",
+        "type": "results_in"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "enriched_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_6",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "represents"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_5",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "particle_distribution",
+        "target_id": "peak_5.36",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "particle_distribution",
+        "target_id": "peak_14.78",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "particle_distribution",
+        "target_id": "peak_18.80",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "peak_5.36",
+        "target_id": "condition_dt253",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "peak_14.78",
+        "target_id": "condition_dt152",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "peak_18.80",
+        "target_id": "condition_dt50",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "particle_distribution",
+        "target_id": "material_g",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "XPS_spectrum",
+        "target_id": "TiO2_2p",
+        "type": "contains"
+      },
+      {
+        "source_id": "XPS_spectrum",
+        "target_id": "Ti2O3_2p",
+        "type": "contains"
+      },
+      {
+        "source_id": "TiO2_2p",
+        "target_id": "Ti4plus",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "Ti2O3_2p",
+        "target_id": "Ti3plus",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "XPS_spectrum",
+        "target_id": "raw_data",
+        "type": "includes"
+      },
+      {
+        "source_id": "XPS_spectrum",
+        "target_id": "Ti4plus_data",
+        "type": "includes"
+      },
+      {
+        "source_id": "XPS_spectrum",
+        "target_id": "Ti3plus_data",
+        "type": "includes"
+      },
+      {
+        "source_id": "XPS_spectrum",
+        "target_id": "cumulative_fit",
+        "type": "includes"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "delta_t",
+        "type": "has_condition"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "region_x",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "microstructure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "region_x",
+        "target_id": "arrow_yellow",
+        "type": "originates_from"
+      },
+      {
+        "source_id": "arrow_yellow",
+        "target_id": "b2",
+        "type": "points_to"
+      },
+      {
+        "source_id": "arrow_blue",
+        "target_id": "gamma",
+        "type": "points_to"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "arrow_blue",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "b2",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "gamma",
+        "type": "contains"
+      },
+      {
+        "source_id": "delta_t",
+        "target_id": "microstructure",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "dt50",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "dt152",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "dt253",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "fit",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "freq001hz",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "dt50",
+        "target_id": "fit",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "dt152",
+        "target_id": "fit",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "dt253",
+        "target_id": "fit",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "char_6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n7",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n7",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "r",
+        "type": "contains"
+      },
+      {
+        "source_id": "r",
+        "target_id": "passivation_film",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "passivation_film",
+        "target_id": "outer_layer",
+        "type": "has_layer"
+      },
+      {
+        "source_id": "outer_layer",
+        "target_id": "cpe_out",
+        "type": "in_series_with"
+      },
+      {
+        "source_id": "cpe_out",
+        "target_id": "inner_layer",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "inner_layer",
+        "target_id": "cpe_f",
+        "type": "in_series_with"
+      },
+      {
+        "source_id": "cpe_f",
+        "target_id": "metal",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "metal",
+        "target_id": "cpe_in",
+        "type": "in_series_with"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "char_5",
+        "type": "includes"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "includes"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "n3",
+        "type": "includes"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "n4",
+        "type": "includes"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "proc1",
+        "type": "observes"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "img1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "img2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "img3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "img4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "surf1",
+        "target_id": "char_5",
+        "type": "initial_state"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "temporal_successor"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n3",
+        "type": "temporal_successor"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "temporal_successor"
+      },
+      {
+        "source_id": "proc1",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "starts_at"
+      },
+      {
+        "source_id": "proc1",
+        "target_id": "n4",
+        "type": "completes_at"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "surf1",
+        "type": "uses"
+      },
+      {
+        "source_id": "haadf",
+        "target_id": "image_b",
+        "type": "technique_used_in"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "bb2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "structure",
+        "type": "shows"
+      },
+      {
+        "source_id": "bb2",
+        "target_id": "structure",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "shows"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "shows"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "overlaps_with"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "img1",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n3",
+        "type": "forms"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "img2",
+        "type": "visible_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "img2",
+        "type": "visible_in"
+      },
+      {
+        "source_id": "t1",
+        "target_id": "img1",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "t2",
+        "target_id": "img2",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "t3",
+        "target_id": "img3",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "t4",
+        "target_id": "img4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "img3",
+        "type": "appears_as"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "img4",
+        "type": "appears_as"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n3",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "measured_under"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n7",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n8",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "contains"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_6",
+        "type": "has_condition"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "char_6",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_6",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n3",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n4",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n3",
+        "type": "describes_condition"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "shows"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "c1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "c2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "c3",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "c1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "c2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "c3",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c1",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "d1",
+        "target_id": "char_5",
+        "type": "value_of"
+      },
+      {
+        "source_id": "d1",
+        "target_id": "c1",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "d2",
+        "target_id": "char_5",
+        "type": "value_of"
+      },
+      {
+        "source_id": "d2",
+        "target_id": "c2",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "d3",
+        "target_id": "char_5",
+        "type": "value_of"
+      },
+      {
+        "source_id": "d3",
+        "target_id": "c3",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "d4",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "value_of"
+      },
+      {
+        "source_id": "d4",
+        "target_id": "c1",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "d5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "value_of"
+      },
+      {
+        "source_id": "d5",
+        "target_id": "c2",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "d6",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "value_of"
+      },
+      {
+        "source_id": "d6",
+        "target_id": "c3",
+        "type": "under_condition"
+      },
+      {
+        "source_id": "exp",
+        "target_id": "char_5",
+        "type": "involves"
+      },
+      {
+        "source_id": "exp",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "on"
+      },
+      {
+        "source_id": "t1",
+        "target_id": "char_5",
+        "type": "observes"
+      },
+      {
+        "source_id": "t1",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "observes"
+      },
+      {
+        "source_id": "t2",
+        "target_id": "char_5",
+        "type": "observes"
+      },
+      {
+        "source_id": "t2",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "observes"
+      },
+      {
+        "source_id": "t3",
+        "target_id": "char_5",
+        "type": "observes"
+      },
+      {
+        "source_id": "t3",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "observes"
+      },
+      {
+        "source_id": "t4",
+        "target_id": "char_5",
+        "type": "observes"
+      },
+      {
+        "source_id": "t4",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "observes"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "on"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "delta_t",
+        "type": "has_condition"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "eutectoid",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "gamma",
+        "type": "depicts"
+      },
+      {
+        "source_id": "delta_t",
+        "target_id": "eutectoid",
+        "type": "formed_under"
+      },
+      {
+        "source_id": "eutectoid",
+        "target_id": "gamma",
+        "type": "contains"
+      },
+      {
+        "source_id": "KMnO4",
+        "target_id": "SEM",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "forms"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "covered_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "exposed_to"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "char_5",
+        "type": "distributed_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n6",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n6",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_6",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "char_6",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_6",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n9",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n10",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n9",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n10",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "plotted_on"
+      },
+      {
+        "source_id": "interdendritic_phase",
+        "target_id": "gamma_phase",
+        "type": "contains"
+      },
+      {
+        "source_id": "B2_phase",
+        "target_id": "pit_initiation_points",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "pit_initiation_points",
+        "target_id": "alpha_prime",
+        "type": "located_in"
+      },
+      {
+        "source_id": "pit_initiation_points",
+        "target_id": "stable_pits",
+        "type": "progresses_to"
+      },
+      {
+        "source_id": "B2b_phase",
+        "target_id": "corrosion_scale",
+        "type": "forms"
+      },
+      {
+        "source_id": "stable_pits",
+        "target_id": "B2b_phase",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "B2_phase",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "B2b_phase",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "gamma_phase",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_a",
+        "target_id": "alpha_prime",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "t1",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "t1",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "t1",
+        "type": "measurement_in"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node8",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node7",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node9",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node12",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node11",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node10",
+        "type": "contains"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node11",
+        "type": "contains"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node12",
+        "type": "contains"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node13",
+        "type": "contains"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node14",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node15",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node16",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node17",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "material_A",
+        "target_id": "char_2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_A",
+        "target_id": "a2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_A",
+        "target_id": "a3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_B",
+        "target_id": "b1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_B",
+        "target_id": "b2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_B",
+        "target_id": "b3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_C",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_C",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_C",
+        "target_id": "c3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "material_B",
+        "target_id": "pi_stacking",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n4",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n3",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_ti50al48mo2_253K",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "chem_ti50al48mo2_253K",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "11",
+        "target_id": "1",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "2",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "3",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "5",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "7",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "8",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "9",
+        "type": "contains"
+      },
+      {
+        "source_id": "11",
+        "target_id": "10",
+        "type": "contains"
+      },
+      {
+        "source_id": "2",
+        "target_id": "8",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "2",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "2",
+        "type": "interdendritic"
+      },
+      {
+        "source_id": "9",
+        "target_id": "1",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "3",
+        "type": "contains"
+      },
+      {
+        "source_id": "5",
+        "target_id": "4",
+        "type": "aggregation_of"
+      },
+      {
+        "source_id": "10",
+        "target_id": "9",
+        "type": "surrounds"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4296 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_IF",
+        "type": "chemical",
+        "name": "iron foam",
+        "aliases": [
+          "IF"
+        ],
+        "formula": "Fe",
+        "properties": {
+          "thickness": {
+            "value": 2,
+            "unit": "mm"
+          },
+          "Fe content": {
+            "value": 99.432,
+            "unit": "wt%"
+          },
+          "Ni content": {
+            "value": 0.401,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "chem_Fe3O4",
+        "type": "chemical",
+        "name": "Fe₃O₄",
+        "aliases": [
+          "Fe3O4"
+        ],
+        "formula": "Fe₃O₄",
+        "properties": {
+          "double-layer capacitance": {
+            "value": 2.3,
+            "unit": "mF cm⁻²"
+          },
+          "nanosheet thickness": {
+            "value": 0.5,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "chem_Cu_Fe3O4",
+        "type": "chemical",
+        "name": "Cu-Fe₃O₄",
+        "aliases": [
+          "Cu-Fe3O4"
+        ],
+        "formula": "Cu-Fe₃O₄",
+        "properties": {
+          "double-layer capacitance": {
+            "value": 2.4,
+            "unit": "mF cm⁻²"
+          }
+        }
+      },
+      {
+        "id": "chem_Cu_FeOOH_Fe3O4",
+        "type": "chemical",
+        "name": "Cu-FeOOH/Fe₃O₄",
+        "aliases": [
+          "Cu-FeOOH/Fe3O4"
+        ],
+        "formula": "Cu-FeOOH/Fe₃O₄",
+        "properties": {
+          "double-layer capacitance": {
+            "value": 7.3,
+            "unit": "mF cm⁻²"
+          }
+        }
+      },
+      {
+        "id": "chem_KOH",
+        "type": "chemical",
+        "name": "KOH",
+        "aliases": [
+          "1 M KOH"
+        ],
+        "formula": "KOH",
+        "properties": {}
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Hydrothermal synthesis of Fe3O4 and Cu-Fe3O4",
+        "procedure": "Fe3O4 and Cu-Fe3O4 catalysts are grown through simple hydrothermal reaction(s) on iron foam (IF) substrate, of which thickness is 2 mm. Cu atoms and oxygen vacancies are introduced into Fe3O4 (Cu-Fe3O4) by the means of a hydrothermal method.",
+        "method": "Hydrothermal synthesis",
+        "conditions": {},
+        "source_text": "In the step, a Cu-Fe3O4 precursor is grown through a simple hydrothermal reaction on an iron foam (IF) substrate... Cu atoms and oxygen vacancies are introduced into Fe3O4 (Cu-Fe3O4) by the means of a hydrothermal method."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Electrochemical activation",
+        "procedure": "A subsequent electrochemical activation process (e.g., under -120 mV vs. RHE in 1 M KOH) results in the formation of FeOOH on the surface of the Cu-Fe3O4 precursor, namely the generation of a Cu-FeOOH/Fe3O4 catalyst. This potential-driven electrochemical self-reconstruction follows a dynamic 'dissolution-redeposition' route. In more detail, partial Fe species in the Cu-Fe3O4 precursor leaches at the catalyst-electrolyte interface and subsequently reacts with OH⁻ ions, leading to the electrosynthesis of FeOOH on the surface of the Cu-Fe3O4 precursor.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Electrochemical activation",
+            "method": "Potential stimulation",
+            "conditions": {
+              "potential": {
+                "value": -120,
+                "unit": "mV vs. RHE"
+              },
+              "time": {
+                "value": 50,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "under -120 mV vs. RHE in 1 M KOH"
+          }
+        ],
+        "conditions": {
+          "potential": {
+            "value": -120,
+            "unit": "mV vs. RHE"
+          },
+          "electrolyte": {
+            "value": 1,
+            "unit": "M KOH"
+          },
+          "activation time": {
+            "value": 50,
+            "unit": "h"
+          }
+        },
+        "source_text": "A subsequent electrochemical activation process (e.g., under -120 mV vs. RHE in 1 M KOH) results in the formation of FeOOH on the surface of the Cu-Fe3O4 precursor..."
+      },
+      {
+        "id": "chem_Fe3O4_pure",
+        "type": "chemical",
+        "name": "Fe3O4",
+        "aliases": [
+          "pure Fe3O4"
+        ],
+        "formula": "Fe3O4",
+        "properties": {
+          "nanosheet thickness": {
+            "value": 0.5,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "Pt/C",
+        "aliases": [
+          "Pt/C catalyst",
+          "commercial Pt/C catalyst",
+          "noble metal Pt/C catalyst",
+          "market-available noble metal Pt/C catalyst"
+        ],
+        "formula": "Pt/C"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_IF_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_IF",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Cu_Fe3O4",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Cu_Fe3O4",
+        "properties": {
+          "form": "nanosheets on substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_Cu_Fe3O4_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_KOH_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_KOH",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "electrolyte",
+          "concentration": {
+            "value": 1,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Cu_FeOOH_Fe3O4",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Cu_FeOOH_Fe3O4",
+        "properties": {
+          "form": "surface reconstructed catalyst"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Fe3O4",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Fe3O4",
+        "properties": {
+          "form": "nanosheets on IF"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Pt_C"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "Pt/C",
+        "aliases": [
+          "Pt/C catalyst",
+          "commercial Pt/C catalyst",
+          "noble metal Pt/C catalyst",
+          "market-available noble metal Pt/C catalyst"
+        ],
+        "formula": "Pt/C"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Cu_FeOOH_Fe3O4",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "binder": {
+            "value": "none",
+            "unit": "required"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "iR-compensation"
+          }
+        },
+        "results_json": {
+          "overpotential_at_-100_mA/cm2": {
+            "value": 129,
+            "unit": "mV"
+          },
+          "overpotential_at_-500_mA/cm2": {
+            "value": 285,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 11,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance_Cdl": {
+            "value": 7.3,
+            "unit": "mF/cm2"
+          }
+        },
+        "source_text": "Significantly, the Cu-FeOOH/Fe3O4 catalyst achieves the best HER activity in 1 M KOH since it features the ultra-low overpotential. For example, it is only 129 and 285 mV at the current density of as large as −100 and −500 mAcm−2, respectively... the corresponding Tafel slope of the Cu-FeOOH/Fe3O4 catalyst is only 11 mVdec−1... The estimated Cdl of a Cu-FeOOH/Fe3O4 catalyst is 7.3 mFcm−2"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Pt_C",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "iR-compensation"
+          }
+        },
+        "results_json": {
+          "overpotential_at_-100_mA/cm2": {
+            "value": 198,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 20,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance_Cdl": {
+            "value": 4.8,
+            "unit": "mF/cm2"
+          }
+        },
+        "source_text": "when a current density of −100 mAcm−2 is applied, the overpotential of the Pt/C catalyst is 198 mV... Tafel slope... Pt/C (20 mVdec−1)... The estimated Cdl of... Pt/C (4.8 mFcm−2)"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_Cu_Fe3O4",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "binder": {
+            "value": "none",
+            "unit": "required"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "iR-compensation"
+          }
+        },
+        "results_json": {
+          "overpotential_at_-100_mA/cm2": {
+            "value": 281,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 47,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance_Cdl": {
+            "value": 2.4,
+            "unit": "mF/cm2"
+          }
+        },
+        "source_text": "The overpotentials of 281... mV are required for Cu-Fe3O4... to gain a current density of 100 mAcm−2... Tafel slope of the Cu-Fe3O4 (47 mVdec−1)... Cdl of... Cu-Fe3O4 (2.4 mFcm−2)"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_Fe3O4",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "binder": {
+            "value": "none",
+            "unit": "required"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": "iR-compensation"
+          }
+        },
+        "results_json": {
+          "overpotential_at_-100_mA/cm2": {
+            "value": 392,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 67,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance_Cdl": {
+            "value": 2.3,
+            "unit": "mF/cm2"
+          }
+        },
+        "source_text": "The overpotentials of... 392 mV are required for Fe3O4 catalysts to gain a current density of 100 mAcm−2... Tafel slope... Fe3O4 (67 mVdec−1)... Cdl of... Fe3O4 (2.3 mFcm−2)"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_Cu_Fe3O4",
+        "description": "Chronoamperometry stability at -120 mV vs RHE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER stability",
+            "unit": "chronoamperometry"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "applied_potential": {
+            "value": -120,
+            "unit": "mV vs RHE"
+          },
+          "duration": {
+            "value": ">50 h",
+            "unit": "time"
+          }
+        },
+        "results_json": {
+          "current_density_increase": {
+            "value": "100%",
+            "unit": "after 50h"
+          },
+          "stability": {
+            "value": "excellent, negligible change after 50h",
+            "unit": "chronoamperometry"
+          }
+        },
+        "source_text": "A continuous current-time measurement on the Cu-Fe3O4 catalyst... reveals a dramatically increase at −120 mV (vs. RHE), approximately 100% after the application of 50 h activation time... The change of current density is negligible when the activation time is longer than 50 h"
+      },
+      {
+        "id": "chem_Cu_FeOOH_Fe3O4",
+        "type": "chemical",
+        "name": "Cu-FeOOH/Fe3O4",
+        "aliases": [
+          "Cu-FeOOH/Fe₃O₄ catalyst",
+          "Cu-FeOOH/Fe3O4 catalyst"
+        ],
+        "formula": "Cu-FeOOH/Fe3O4"
+      },
+      {
+        "id": "chem_Cu_Fe3O4",
+        "type": "chemical",
+        "name": "Cu-Fe3O4",
+        "aliases": [
+          "Cu-Fe₃O₄ precursor",
+          "Cu-Fe3O4 catalyst",
+          "Cu-Fe₃O₄ catalyst"
+        ],
+        "formula": "Cu-Fe3O4"
+      },
+      {
+        "id": "chem_Fe3O4",
+        "type": "chemical",
+        "name": "Fe3O4",
+        "aliases": [
+          "Fe₃O₄",
+          "Fe3O4 catalyst"
+        ],
+        "formula": "Fe3O4"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Cu_FeOOH_Fe3O4_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Pt_C_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Pt_C",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Cu_Fe3O4_test_3",
+        "type": "tested_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Fe3O4_test_4",
+        "type": "tested_in",
+        "source_id": "chem_Fe3O4",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Cu_Fe3O4_test_5",
+        "type": "tested_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "test_5",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Cu_FeOOH_Fe3O4",
+        "type": "chemical",
+        "name": "Cu-FeOOH/Fe₃O₄",
+        "aliases": [
+          "Cu-FeOOH/Fe3O4"
+        ],
+        "formula": "Cu-FeOOH/Fe₃O₄",
+        "properties": {
+          "double-layer capacitance": {
+            "value": 7.3,
+            "unit": "mF cm⁻²"
+          }
+        }
+      },
+      {
+        "id": "chem_Cu_Fe3O4",
+        "type": "chemical",
+        "name": "Cu-Fe₃O₄",
+        "aliases": [
+          "Cu-Fe3O4"
+        ],
+        "formula": "Cu-Fe₃O₄",
+        "properties": {
+          "double-layer capacitance": {
+            "value": 2.4,
+            "unit": "mF cm⁻²"
+          }
+        }
+      },
+      {
+        "id": "chem_Fe3O4",
+        "type": "chemical",
+        "name": "Fe₃O₄",
+        "aliases": [
+          "Fe3O4"
+        ],
+        "formula": "Fe₃O₄",
+        "properties": {
+          "double-layer capacitance": {
+            "value": 2.3,
+            "unit": "mF cm⁻²"
+          },
+          "nanosheet thickness": {
+            "value": 0.5,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "IF substrate shows continuous 3D porous structure; Fe₃O₄ nanosheets ≈0.5 μm thick; Cu-Fe₃O₄ nanosheets ≈1 μm thick; Cu-FeOOH/Fe₃O₄ shows polygon nanoflakes ≈20 nm thick, 3 μm high.",
+        "evidence_snippet": "From recorded scanning electron microscopy (SEM) images of the as-mentioned catalysts, one can see that the untreated IF substrate owns a continuous 3D porous structure (Figure 1b)... The as-synthesized Fe₃O₄ and Cu-Fe₃O₄ catalysts are ultra-thin and uniform. These nanosheets have an average thickness of ≈0.5 μm (Figure 1c) and 1 μm (Figure 1d), respectively.",
+        "related_images": [
+          "0cee445a2fa86550b69c88aff602c57dc416020dbfc3735f7b6a9bf4767feb21.jpg",
+          "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg",
+          "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg",
+          "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg",
+          "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg",
+          "38895dc73d6f4b3fd0040530a1c28d182f5e83ec4b1d5a8eeb2461957aae79cf.jpg",
+          "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg",
+          "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg",
+          "6bdc619b98f265d8680896c3b3571708a6421d1685c44483882efad5bffa115e.jpg",
+          "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg",
+          "7ae78157cedc0e3b651eea46b67555bb17ea68fba63bda31c283bbcb9bcc0e70.jpg",
+          "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg",
+          "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg",
+          "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg",
+          "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg",
+          "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg",
+          "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg",
+          "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg",
+          "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg",
+          "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg",
+          "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg",
+          "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg",
+          "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg",
+          "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg",
+          "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg",
+          "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg",
+          "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg",
+          "e0eea594d0d343193a4c74c41f2e4be614900eb4ffe00ff25068186ecc538c0b.jpg",
+          "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg",
+          "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg",
+          "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg",
+          "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "type": "Scanning Electron Microscopy",
+              "scale": "1 μm",
+              "label": "d",
+              "extracted_from_image": "0cee445a2fa86550b69c88aff602c57dc416020dbfc3735f7b6a9bf4767feb21.jpg"
+            },
+            "source_image_file": "0cee445a2fa86550b69c88aff602c57dc416020dbfc3735f7b6a9bf4767feb21.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe3O4",
+            "properties": {
+              "description": "Magnetite component",
+              "extracted_from_image": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+            },
+            "source_image_file": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe2O4",
+            "properties": {
+              "description": "Surface Cu-FeOOH/Fe2O4",
+              "extracted_from_image": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+            },
+            "source_image_file": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH",
+            "properties": {
+              "description": "Copper-doped FeOOH",
+              "extracted_from_image": "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg"
+            },
+            "source_image_file": "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeOOH@Fe2O3",
+            "properties": {
+              "formula": "CuFeOOH·Fe2O3",
+              "extracted_from_image": "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg"
+            },
+            "source_image_file": "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeOOH/Fe₃O₄",
+            "properties": {
+              "formula": "CuFeOOH/Fe₃O₄",
+              "extracted_from_image": "38895dc73d6f4b3fd0040530a1c28d182f5e83ec4b1d5a8eeb2461957aae79cf.jpg"
+            },
+            "source_image_file": "38895dc73d6f4b3fd0040530a1c28d182f5e83ec4b1d5a8eeb2461957aae79cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH",
+            "properties": {
+              "description": "Copper iron oxyhydroxide",
+              "extracted_from_image": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+            },
+            "source_image_file": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe₂O₃/FeOOH",
+            "properties": {
+              "formula": "Cu-Fe₂O₃/FeOOH",
+              "extracted_from_image": "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg"
+            },
+            "source_image_file": "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "description": "nanoflake morphology",
+              "scale": "500 nm",
+              "extracted_from_image": "6bdc619b98f265d8680896c3b3571708a6421d1685c44483882efad5bffa115e.jpg"
+            },
+            "source_image_file": "6bdc619b98f265d8680896c3b3571708a6421d1685c44483882efad5bffa115e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe-O",
+            "properties": {
+              "bond_type": "metal-oxygen",
+              "peak_position": "~1.8-2.0 Å",
+              "extracted_from_image": "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg"
+            },
+            "source_image_file": "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "scale_bar": "500 nm",
+              "label": "g",
+              "technique": "Scanning Electron Microscopy",
+              "extracted_from_image": "7ae78157cedc0e3b651eea46b67555bb17ea68fba63bda31c283bbcb9bcc0e70.jpg"
+            },
+            "source_image_file": "7ae78157cedc0e3b651eea46b67555bb17ea68fba63bda31c283bbcb9bcc0e70.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeO(OH)Fe₂O₄",
+            "properties": {
+              "formula": "CuFeO(OH)Fe₂O₄",
+              "description": "Copper iron oxyhydroxide ferrite composite",
+              "extracted_from_image": "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg"
+            },
+            "source_image_file": "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe₃O₄",
+            "properties": {
+              "label": "Cu-FeOOH/Fe₃O₄",
+              "description": "Copper-iron oxyhydroxide on Fe₃O₄ composite",
+              "extracted_from_image": "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg"
+            },
+            "source_image_file": "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg"
+          },
+          {
+            "type": "crystallographic_plane",
+            "name": "(311)",
+            "properties": {
+              "description": "Miller index for Fe3O4",
+              "extracted_from_image": "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg"
+            },
+            "source_image_file": "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe2O4",
+            "properties": {
+              "extracted_from_image": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+            },
+            "source_image_file": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu",
+            "properties": {
+              "element": "Copper",
+              "extracted_from_image": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+            },
+            "source_image_file": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Cu-FeOOH/Fe3O4",
+            "properties": {
+              "description": "composite material",
+              "extracted_from_image": "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg"
+            },
+            "source_image_file": "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOHx/FeOx",
+            "properties": {
+              "formula": "Cu-FeOHx/FeOx",
+              "description": "Copper-iron hydroxide/oxide",
+              "extracted_from_image": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+            },
+            "source_image_file": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu2O",
+            "properties": {
+              "description": "Cuprous oxide",
+              "extracted_from_image": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+            },
+            "source_image_file": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe₃O₄",
+            "properties": {
+              "formula": "Fe₃O₄",
+              "color": "purple",
+              "extracted_from_image": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+            },
+            "source_image_file": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe2O4",
+            "properties": {
+              "description": "Copper ferrite",
+              "extracted_from_image": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+            },
+            "source_image_file": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe₃O₄",
+            "properties": {
+              "formula": "Cu-FeOOH/Fe₃O₄",
+              "description": "Copper-modified FeOOH on Fe₃O₄ composite",
+              "extracted_from_image": "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg"
+            },
+            "source_image_file": "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu2FeO4 (This work)",
+            "properties": {
+              "label": "Cu2FeO4",
+              "source": "This work",
+              "extracted_from_image": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+            },
+            "source_image_file": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe",
+            "properties": {
+              "element": "Iron",
+              "color": "yellow",
+              "extracted_from_image": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+            },
+            "source_image_file": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe3O4",
+            "properties": {
+              "formula": "Cu-Fe3O4",
+              "description": "Copper-doped Fe3O4",
+              "extracted_from_image": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+            },
+            "source_image_file": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Vacancy",
+            "properties": {
+              "symbol": "V",
+              "color": "red",
+              "representation": "defect site",
+              "label": "Cu : Vacancy",
+              "extracted_from_image": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+            },
+            "source_image_file": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe3O4",
+            "properties": {
+              "formula": "Cu-FeOOH/Fe3O4",
+              "description": "Copper-doped feroxyhyte/magnetite composite",
+              "extracted_from_image": "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg"
+            },
+            "source_image_file": "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe2O4",
+            "properties": {
+              "description": "Copper ferrite",
+              "extracted_from_image": "e0eea594d0d343193a4c74c41f2e4be614900eb4ffe00ff25068186ecc538c0b.jpg"
+            },
+            "source_image_file": "e0eea594d0d343193a4c74c41f2e4be614900eb4ffe00ff25068186ecc538c0b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Fe 3d DOS Fe2O3",
+            "properties": {
+              "description": "Fe 3d orbital DOS for Fe2O3",
+              "energy_range": [
+                -25,
+                10
+              ],
+              "extracted_from_image": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+            },
+            "source_image_file": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe₃O₄",
+            "properties": {
+              "formula": "Cu-FeOOH/Fe₃O₄",
+              "extracted_from_image": "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg"
+            },
+            "source_image_file": "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe2O4",
+            "properties": {
+              "description": "Copper ferrite (blue curve)",
+              "extracted_from_image": "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg"
+            },
+            "source_image_file": "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe-Fe",
+            "properties": {
+              "label": "Fe-Fe",
+              "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+            },
+            "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "Cu-Fe₃O₄ shows lattice fringe spacing of 0.25 nm indexed to (311) plane of Fe₃O₄; Cu-FeOOH/Fe₃O₄ shows d-spacings of 0.25 nm (311) and 0.33 nm (310) for Fe₃O₄ and FeOOH with 0.32% lattice mismatch.",
+        "evidence_snippet": "The denoted lattice fringe with a spacing of 0.25 nm (Figure 1h) is indexed to the (311) plane of Fe₃O₄. The d spacings of 0.25 and 0.33 nm (Figure 1i) match well with the (311) and (310) lattice planes of Fe₃O₄ and FeOOH, respectively.",
+        "related_images": [
+          "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg",
+          "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg",
+          "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg",
+          "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg",
+          "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg",
+          "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg",
+          "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg",
+          "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg",
+          "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg",
+          "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "HRTEM image",
+            "properties": {
+              "scale_bar": "5 nm",
+              "extracted_from_image": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+            },
+            "source_image_file": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EXAFS Spectrum Left",
+            "properties": {
+              "type": "XAFS/EXAFS",
+              "axis_x": "k (Å⁻¹)",
+              "axis_y": "k²χ(k)",
+              "labels": [
+                "Cu-Cu",
+                "Cu-Fe",
+                "Cu-O"
+              ],
+              "extracted_from_image": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+            },
+            "source_image_file": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeO₄",
+            "properties": {
+              "formula": "CuFeO₄",
+              "extracted_from_image": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+            },
+            "source_image_file": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "OH-",
+            "properties": {
+              "formula": "OH⁻",
+              "description": "Hydroxide ion product",
+              "extracted_from_image": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+            },
+            "source_image_file": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV Plot",
+            "properties": {
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "Current Density (mA cm⁻²)",
+              "range_x": "0-0.4 V",
+              "range_y": "0-300 mA cm⁻²",
+              "extracted_from_image": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+            },
+            "source_image_file": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+          },
+          {
+            "type": "peak",
+            "name": "2p3/2 Fe^2+ sat",
+            "properties": {
+              "binding_energy": "~720 eV",
+              "assignment": "Fe2+ satellite",
+              "extracted_from_image": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+            },
+            "source_image_file": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiFe LDH/Cu NW",
+            "properties": {
+              "label": "NiFe LDH/Cu NW",
+              "source": "literature",
+              "extracted_from_image": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+            },
+            "source_image_file": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Fe3O4 structure",
+            "properties": {
+              "representation": "left panel",
+              "elements": [
+                "Fe",
+                "O"
+              ],
+              "extracted_from_image": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+            },
+            "source_image_file": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Total DOS Cu-FeOOH/Fe2O3",
+            "properties": {
+              "description": "Total Density of States for Cu-FeOOH/Fe2O3",
+              "energy_range": [
+                -25,
+                10
+              ],
+              "features": "Broad peaks across energy range",
+              "extracted_from_image": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+            },
+            "source_image_file": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe-Cu-FE-O",
+            "properties": {
+              "label": "Fe-Cu-FE-O",
+              "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+            },
+            "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "Fe₃O₄, Cu-Fe₃O₄, and Cu-FeOOH/Fe₃O₄ show peaks at 30.2°, 35.6°, 62.9° for (220), (311), (440) Fe₃O₄; Cu-FeOOH/Fe₃O₄ additionally shows 26.7°, 34.1°, 46.7° for (310), (400), (411) FeOOH.",
+        "evidence_snippet": "The peaks located at 30.2°, 35.6°, and 62.9° (Figure 2a) are indexed to (220), (311), and (440) facets of the standard Fe₃O₄ (PDF#39-1346) in Fe₃O₄, Cu-Fe₃O₄, and Cu-FeOOH/Fe₃O₄ catalysts, respectively.",
+        "related_images": [
+          "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "type": "X-ray diffraction",
+              "x_axis": "2Theta (degrees)",
+              "y_axis": "Intensity (a.u.)",
+              "range": "20-80°",
+              "extracted_from_image": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+            },
+            "source_image_file": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "Raman",
+        "data_reported": true,
+        "characterization_summary": "All three catalysts show Fe₃O₄ vibrations at 603 and 657 cm⁻¹; Cu-FeOOH/Fe₃O₄ shows additional FeOOH peaks at 240, 302, and 420 cm⁻¹.",
+        "evidence_snippet": "The Raman peaks located at around 603 and 657 cm⁻¹ for three catalysts are in good agreement with the vibrations of Fe₃O₄. The characteristic peaks at 240, 302, and 420 cm⁻¹ in the Cu-FeOOH/Fe₃O₄ catalyst can be assigned to the reported typical vibrations of FeOOH.",
+        "related_images": [
+          "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg",
+          "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg",
+          "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg",
+          "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg",
+          "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg",
+          "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg",
+          "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg",
+          "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg",
+          "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg",
+          "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg",
+          "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg",
+          "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg",
+          "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg",
+          "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg",
+          "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg",
+          "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg",
+          "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg",
+          "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg",
+          "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "crystal_plane",
+            "name": "(310)",
+            "properties": {
+              "associated_with": "FeOOH",
+              "extracted_from_image": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+            },
+            "source_image_file": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+          },
+          {
+            "type": "feature",
+            "name": "oxygen vacancy",
+            "properties": {
+              "description": "Oxygen vacancy defect",
+              "extracted_from_image": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+            },
+            "source_image_file": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum",
+            "properties": {
+              "technique": "Raman spectroscopy",
+              "x_axis": "Raman shift (cm⁻¹)",
+              "x_range": [
+                300,
+                800
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "extracted_from_image": "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg"
+            },
+            "source_image_file": "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg"
+          },
+          {
+            "type": "morphology",
+            "name": "Polygon Nanoflake",
+            "properties": {
+              "extracted_from_image": "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg"
+            },
+            "source_image_file": "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg"
+          },
+          {
+            "type": "pair",
+            "name": "Cu-Cu",
+            "properties": {
+              "distance_range": "R (Å)",
+              "extracted_from_image": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+            },
+            "source_image_file": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeOOHFeO",
+            "properties": {
+              "structure": "oxyhydroxide-iron oxide composite",
+              "label_position": "top right",
+              "extracted_from_image": "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg"
+            },
+            "source_image_file": "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg"
+          },
+          {
+            "type": "axis",
+            "name": "ρ (z)",
+            "properties": {
+              "description": "Vertical axis labeled ρ(z)",
+              "extracted_from_image": "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg"
+            },
+            "source_image_file": "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoFeO",
+            "properties": {
+              "formula": "CoFeO",
+              "extracted_from_image": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+            },
+            "source_image_file": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+          },
+          {
+            "type": "process",
+            "name": "hydrothermal reaction",
+            "properties": {
+              "description": "Synthesis method involving Cu and Fe",
+              "extracted_from_image": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+            },
+            "source_image_file": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeOx-100",
+            "properties": {
+              "description": "CuFe oxide annealed at 100°C",
+              "extracted_from_image": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+            },
+            "source_image_file": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH",
+            "properties": {
+              "formula": "Cu-FeOOH",
+              "color": "dark gray",
+              "extracted_from_image": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+            },
+            "source_image_file": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe2O3",
+            "properties": {
+              "description": "Hematite",
+              "extracted_from_image": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+            },
+            "source_image_file": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiFe2O4/NiS, NiS-CF",
+            "properties": {
+              "label": "NiFe2O4/NiS, NiS-CF",
+              "source": "literature",
+              "extracted_from_image": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+            },
+            "source_image_file": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FeOOH",
+            "properties": {
+              "component": "Iron oxyhydroxide",
+              "structure": "layered/framework",
+              "extracted_from_image": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+            },
+            "source_image_file": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+          },
+          {
+            "type": "element",
+            "name": "O",
+            "properties": {
+              "color": "red",
+              "role": "oxygen atoms",
+              "extracted_from_image": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+            },
+            "source_image_file": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+          },
+          {
+            "type": "image_panel",
+            "name": "Panel i",
+            "properties": {
+              "description": "Density map with vacancy visualization",
+              "color_scale": "blue (-0.002) to red (+0.002)",
+              "extracted_from_image": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+            },
+            "source_image_file": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cu DOS Cu-Fe2O4",
+            "properties": {
+              "description": "Cu orbital DOS for Cu-Fe2O4",
+              "energy_range": [
+                -25,
+                10
+              ],
+              "extracted_from_image": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+            },
+            "source_image_file": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EXAFS Spectrum",
+            "properties": {
+              "technique": "X-ray Absorption Fine Structure",
+              "x_axis": "R (Å)",
+              "y_axis": "k²-weighted χ(R) (Å)",
+              "extracted_from_image": "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg"
+            },
+            "source_image_file": "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe-Fe-OH",
+            "properties": {
+              "label": "Fe-Fe-OH",
+              "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+            },
+            "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "EPR",
+        "data_reported": true,
+        "characterization_summary": "Cu-Fe₃O₄ and Cu-FeOOH/Fe₃O₄ show signal at g=2.003 confirming oxygen vacancies; Cu-FeOOH/Fe₃O₄ shows amplified and broadened signal indicating increased oxygen vacancy concentration.",
+        "evidence_snippet": "Electron paramagnetic resonance (EPR) spectra of both Cu-Fe₃O₄ and Cu-FeOOH/Fe₃O₄ catalysts exhibit a typical signal at g = 2.003, confirming the existence of oxygen vacancies (Figure 2c)."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "O 1s shows peaks at 529.7 eV (Cu/Fe-O), 530.9 eV (oxygen vacancies), 532.8 eV (surface oxygen); Fe 2p shows Fe²⁺/Fe³⁺ at 710.0, 711.6, 721.8, 724.2 eV; Cu 2p₃/₂ shows Cu⁰/Cu⁺ at 933.1 eV, Cu²⁺ at 934.9 eV.",
+        "evidence_snippet": "In the O 1s XPS spectra of these catalysts, three peaks can be identified (Figure 2d). The peak at about 529.7 eV is attributed to the Cu/Fe-O bond, while the peak at about 530.9 eV corresponds to the oxygen vacancies...",
+        "related_images": [
+          "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg",
+          "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg",
+          "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg",
+          "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg",
+          "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg",
+          "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg",
+          "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg",
+          "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg",
+          "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg",
+          "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg",
+          "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg",
+          "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg",
+          "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg",
+          "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "distance",
+            "name": "0.25 nm",
+            "properties": {
+              "description": "Interplanar distance",
+              "extracted_from_image": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+            },
+            "source_image_file": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "O 1s XPS Spectrum",
+            "properties": {
+              "technique": "XPS",
+              "region": "O 1s",
+              "binding_energy_range": "528-540 eV",
+              "extracted_from_image": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+            },
+            "source_image_file": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+          },
+          {
+            "type": "pair",
+            "name": "Cu-O",
+            "properties": {
+              "distance_range": "R (Å)",
+              "extracted_from_image": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+            },
+            "source_image_file": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeO",
+            "properties": {
+              "formula": "CuFeO",
+              "extracted_from_image": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+            },
+            "source_image_file": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu2+",
+            "properties": {
+              "formula": "Cu²⁺",
+              "description": "Copper ion product",
+              "extracted_from_image": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+            },
+            "source_image_file": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Current Density Plot",
+            "properties": {
+              "x_axis": "Time (s)",
+              "y_axis": "Current Density (mA cm⁻²)",
+              "range_x": "0-100 s",
+              "range_y": "-50 to 0 mA cm⁻²",
+              "extracted_from_image": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+            },
+            "source_image_file": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+          },
+          {
+            "type": "parameter",
+            "name": "g=2.003",
+            "properties": {
+              "value": "2.003",
+              "position": "peak annotation",
+              "extracted_from_image": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+            },
+            "source_image_file": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+          },
+          {
+            "type": "peak",
+            "name": "2p3/2 Fe_sat",
+            "properties": {
+              "binding_energy": "~710-720 eV",
+              "assignment": "Fe satellite peak",
+              "extracted_from_image": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+            },
+            "source_image_file": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "6-FeOOH NSs/NF [ref]",
+            "properties": {
+              "label": "6-FeOOH NSs/NF",
+              "source": "literature reference",
+              "extracted_from_image": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+            },
+            "source_image_file": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+          },
+          {
+            "type": "visualization",
+            "name": "Crystal Structure",
+            "properties": {
+              "type": "ball-and-stick model",
+              "style": "polyhedral representation",
+              "dimension": "3D framework",
+              "extracted_from_image": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+            },
+            "source_image_file": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+          },
+          {
+            "type": "defect",
+            "name": "O vacancy",
+            "properties": {
+              "color": "red",
+              "role": "oxygen vacancy",
+              "extracted_from_image": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+            },
+            "source_image_file": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Cu-Fe-O System",
+            "properties": {
+              "composition": "Cu, Fe, O with vacancies",
+              "structure": "oxide with metal substitution",
+              "extracted_from_image": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+            },
+            "source_image_file": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe2O3",
+            "properties": {
+              "formula": "Cu-FeOOH/Fe2O3",
+              "description": "Composite material",
+              "extracted_from_image": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+            },
+            "source_image_file": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe-Cu-FE-OH",
+            "properties": {
+              "label": "Fe-Cu-FE-OH",
+              "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+            },
+            "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "CV",
+        "data_reported": true,
+        "characterization_summary": "Double-layer capacitance Cdl = 7.3 mF cm⁻² for Cu-FeOOH/Fe₃O₄, 2.4 mF cm⁻² for Cu-Fe₃O₄, 2.3 mF cm⁻² for Fe₃O₄, 4.8 mF cm⁻² for Pt/C.",
+        "evidence_snippet": "The estimated Cdl of a Cu-FeOOH/Fe₃O₄ catalyst is 7.3 mF cm⁻² (Figure 4d), larger than that of Pt/C (4.8 mF cm⁻²), Cu-Fe₃O₄ (2.4 mF cm⁻²) and Fe₃O₄ (2.3 mF cm⁻²) catalysts.",
+        "related_images": [
+          "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg",
+          "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg",
+          "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg",
+          "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg",
+          "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg",
+          "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg",
+          "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg",
+          "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg",
+          "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg",
+          "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg",
+          "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg",
+          "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg",
+          "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg",
+          "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg",
+          "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg",
+          "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg",
+          "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg",
+          "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg",
+          "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg",
+          "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg",
+          "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg",
+          "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg",
+          "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg",
+          "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg",
+          "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg",
+          "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg",
+          "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "crystal_plane",
+            "name": "(311)",
+            "properties": {
+              "associated_with": "FeO",
+              "extracted_from_image": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+            },
+            "source_image_file": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+          },
+          {
+            "type": "feature",
+            "name": "Fe/Cu-O",
+            "properties": {
+              "description": "Iron or Copper-Oxygen bond",
+              "extracted_from_image": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+            },
+            "source_image_file": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe2O3",
+            "properties": {
+              "description": "Hematite",
+              "extracted_from_image": "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg"
+            },
+            "source_image_file": "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg"
+          },
+          {
+            "type": "morphology",
+            "name": "Ultra-thin Nanosheet",
+            "properties": {
+              "extracted_from_image": "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg"
+            },
+            "source_image_file": "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe3O4",
+            "properties": {
+              "description": "Magnetite",
+              "extracted_from_image": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+            },
+            "source_image_file": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV Plot",
+            "properties": {
+              "type": "Cyclic Voltammetry",
+              "x_axis": "Scan rate (V s⁻¹)",
+              "y_axis": "Current density (mA cm⁻²)",
+              "scan_rates": [
+                0.5,
+                0.6,
+                0.7,
+                0.8
+              ],
+              "current_densities": {
+                "Fe₂O₃": [
+                  1.0,
+                  1.8,
+                  2.4,
+                  3.2
+                ],
+                "Cu-FeOOH": [
+                  1.2,
+                  2.0,
+                  2.8,
+                  3.8
+                ],
+                "Cu-Fe₂O₃/FeOOH": [
+                  0.8,
+                  1.6,
+                  2.2,
+                  3.0
+                ],
+                "Pt/C": [
+                  1.4,
+                  2.2,
+                  2.6,
+                  3.4
+                ]
+              },
+              "extracted_from_image": "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg"
+            },
+            "source_image_file": "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeO4",
+            "properties": {
+              "structure": "perovskite-like or spinel phase",
+              "label_position": "top right",
+              "extracted_from_image": "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg"
+            },
+            "source_image_file": "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV Plot",
+            "properties": {
+              "type": "Linear Sweep Voltammetry",
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "Current density (mA/cm²)",
+              "conditions": "Electrocatalytic measurement",
+              "extracted_from_image": "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg"
+            },
+            "source_image_file": "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg"
+          },
+          {
+            "type": "axis",
+            "name": "Bohr radius (x)",
+            "properties": {
+              "description": "Horizontal axis labeled in Bohr magnetons",
+              "extracted_from_image": "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg"
+            },
+            "source_image_file": "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg"
+          },
+          {
+            "type": "measurement",
+            "name": "0.25 nm",
+            "properties": {
+              "description": "Interplanar distance or lattice fringe spacing",
+              "extracted_from_image": "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg"
+            },
+            "source_image_file": "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TPDL Plot",
+            "properties": {
+              "x_axis": "log|J| (mA cm^-2)",
+              "y_axis": "Overpotential (V)",
+              "tafel_slopes": [
+                "11 mV dec^-1",
+                "20 mV dec^-1",
+                "47 mV dec^-1",
+                "67 mV dec^-1"
+              ],
+              "extracted_from_image": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+            },
+            "source_image_file": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoFe",
+            "properties": {
+              "formula": "CoFe",
+              "extracted_from_image": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+            },
+            "source_image_file": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+          },
+          {
+            "type": "figure",
+            "name": "Figure f",
+            "properties": {
+              "extracted_from_image": "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg"
+            },
+            "source_image_file": "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "formed FeOH",
+            "properties": {
+              "formula": "FeOH",
+              "description": "Iron hydroxide formed during reaction",
+              "extracted_from_image": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+            },
+            "source_image_file": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FeOx",
+            "properties": {
+              "description": "Iron oxide",
+              "extracted_from_image": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+            },
+            "source_image_file": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe₃O₄",
+            "properties": {
+              "formula": "Cu-Fe₃O₄",
+              "color": "cyan",
+              "extracted_from_image": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+            },
+            "source_image_file": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe3O4",
+            "properties": {
+              "description": "Magnetite",
+              "extracted_from_image": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+            },
+            "source_image_file": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EXAFS Spectrum",
+            "properties": {
+              "technique": "Extended X-ray Absorption Fine Structure",
+              "x_axis": "k (Å⁻¹)",
+              "y_axis": "k²χ(k) (Å²)",
+              "range_k": [
+                0,
+                12
+              ],
+              "description": "Fourier transform magnitude plot of EXAFS data",
+              "extracted_from_image": "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg"
+            },
+            "source_image_file": "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiFeO CFP",
+            "properties": {
+              "label": "NiFeO CFP",
+              "source": "literature",
+              "extracted_from_image": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+            },
+            "source_image_file": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "N",
+            "properties": {
+              "element": "Nitrogen",
+              "color": "blue/purple",
+              "extracted_from_image": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+            },
+            "source_image_file": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+          },
+          {
+            "type": "element",
+            "name": "Cu",
+            "properties": {
+              "color": "yellow",
+              "role": "copper atoms/ions (Cu2+)",
+              "extracted_from_image": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+            },
+            "source_image_file": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe",
+            "properties": {
+              "symbol": "Fe",
+              "color": "brown",
+              "representation": "atom",
+              "extracted_from_image": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+            },
+            "source_image_file": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Fe K-edge XANES",
+            "properties": {
+              "technique": "X-ray Absorption Near Edge Structure",
+              "edge": "Fe K-edge",
+              "energy_range": "7100-7200 eV",
+              "y_axis": "Normalized μ(E)",
+              "extracted_from_image": "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg"
+            },
+            "source_image_file": "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Total DOS Cu-Fe2O4",
+            "properties": {
+              "description": "Total Density of States for Cu-Fe2O4",
+              "energy_range": [
+                -25,
+                10
+              ],
+              "features": "Multiple peaks, gap around Fermi level",
+              "extracted_from_image": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+            },
+            "source_image_file": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe-Fe",
+            "properties": {
+              "bond": "Fe-Fe",
+              "extracted_from_image": "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg"
+            },
+            "source_image_file": "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EXAFS Spectrum",
+            "properties": {
+              "technique": "Extended X-ray Absorption Fine Structure",
+              "x_axis": "R (Å)",
+              "y_axis": "k²-weighted χ(R) (Å⁻³)",
+              "range_x": [
+                0,
+                6
+              ],
+              "range_y": [
+                0,
+                2.0
+              ],
+              "extracted_from_image": "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg"
+            },
+            "source_image_file": "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe-Cu-FE",
+            "properties": {
+              "label": "Fe-Cu-FE",
+              "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+            },
+            "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "EIS",
+        "data_reported": true,
+        "characterization_summary": "Cu-FeOOH/Fe₃O₄ shows smallest charge transfer resistance among Fe₃O₄, Cu-Fe₃O₄, and Cu-FeOOH/Fe₃O₄ catalysts.",
+        "evidence_snippet": "The recorded Nyquist plot of the Cu-FeOOH/Fe₃O₄ catalyst exhibits the smallest charge transfer resistance within these three catalysts, demonstrating its outstanding charge transfer during the HER process.",
+        "related_images": [
+          "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Nyquist Plot",
+            "properties": {
+              "label": "e",
+              "x_axis": "Z' (ohm)",
+              "y_axis": "Z'' (ohm)",
+              "x_range": [
+                0,
+                50
+              ],
+              "y_range": [
+                0,
+                20
+              ],
+              "extracted_from_image": "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+            },
+            "source_image_file": "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "ICP-MS",
+        "data_reported": true,
+        "characterization_summary": "IF substrate Fe = 99.432 wt%, Ni = 0.401 wt%; separated IF from Cu-Fe₃O₄ has Ni = 0.436 wt%; separated IF from Cu-FeOOH/Fe₃O₄ has Ni = 0.437 wt%; separated catalyst powders show minimal Ni.",
+        "evidence_snippet": "The contents of Fe and other impurities in IF were determined by inductively coupled plasma-mass spectrometry (ICP-MS). The obtained mass fraction of Fe is 99.432 wt.% (Table S1, Supporting Information)."
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "XAS",
+        "data_reported": true,
+        "characterization_summary": "Fe K-edge XANES shows lower white line intensity and negative absorption edge shift in Cu-FeOOH/Fe₃O₄ vs Cu-Fe₃O₄ indicating decreased Fe valence; FT-EXAFS shows Fe-O at 1.51 Å, Fe-Fe/Cu at 2.61 Å.",
+        "evidence_snippet": "The Fe K-edge X-ray absorption near edge structure (XANES) spectra of Fe₃O₄, Cu-Fe₃O₄ and Cu-FeOOH/Fe₃O₄ catalysts (Figure 3a) were studied... The white line intensities of both Cu-FeOOH/Fe₃O₄ and Cu-Fe₃O₄ catalysts are lower than that of a Fe₃O₄ catalyst.",
+        "related_images": [
+          "0cee445a2fa86550b69c88aff602c57dc416020dbfc3735f7b6a9bf4767feb21.jpg",
+          "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg",
+          "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg",
+          "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg",
+          "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg",
+          "38895dc73d6f4b3fd0040530a1c28d182f5e83ec4b1d5a8eeb2461957aae79cf.jpg",
+          "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg",
+          "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg",
+          "6bdc619b98f265d8680896c3b3571708a6421d1685c44483882efad5bffa115e.jpg",
+          "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg",
+          "7ae78157cedc0e3b651eea46b67555bb17ea68fba63bda31c283bbcb9bcc0e70.jpg",
+          "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg",
+          "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg",
+          "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg",
+          "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg",
+          "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg",
+          "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg",
+          "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg",
+          "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg",
+          "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg",
+          "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg",
+          "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg",
+          "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg",
+          "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg",
+          "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg",
+          "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg",
+          "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg",
+          "dc7a3f6ac24a2205d6f3ef520eb863bca9d70ea5e0209363247ea3c3834f0a73.jpg",
+          "e0eea594d0d343193a4c74c41f2e4be614900eb4ffe00ff25068186ecc538c0b.jpg",
+          "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg",
+          "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg",
+          "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg",
+          "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Cu-Fe3O4",
+            "properties": {
+              "formula": "Cu-Fe₃O₄",
+              "description": "Copper-iron oxide material",
+              "extracted_from_image": "0cee445a2fa86550b69c88aff602c57dc416020dbfc3735f7b6a9bf4767feb21.jpg"
+            },
+            "source_image_file": "0cee445a2fa86550b69c88aff602c57dc416020dbfc3735f7b6a9bf4767feb21.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe3O4",
+            "properties": {
+              "description": "Composite material",
+              "extracted_from_image": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+            },
+            "source_image_file": "1029487688cee9069037f73aae03108cf837493d72c31ce31779be2c02a97d4b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe2O4",
+            "properties": {
+              "description": "Copper iron oxide",
+              "extracted_from_image": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+            },
+            "source_image_file": "1745fc1a3ed1bbea2cc293fda43c82879b3c3b9bda689c5c7ad24bfab1b4583a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FeOOH",
+            "properties": {
+              "description": "Iron(III) oxide-hydroxide",
+              "extracted_from_image": "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg"
+            },
+            "source_image_file": "1a5cb6d0ec3b273ffe0d27578b39821184ef971a3bd01ebaddf89dd2dc78b09c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ultra-thin CuFe2O4 Nanosheet",
+            "properties": {
+              "formula": "CuFe2O4",
+              "morphology": "ultra-thin nanosheet",
+              "extracted_from_image": "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg"
+            },
+            "source_image_file": "21e31ca65e04d1185421ffaae9349e871a4f98477e25775419604d1429a503e5.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cu K-edge XANES Spectrum",
+            "properties": {
+              "technique": "XANES",
+              "edge": "Cu K-edge",
+              "x_unit": "Energy (eV)",
+              "y_unit": "Normalized μ(E)",
+              "x_range": [
+                8950,
+                9050
+              ],
+              "extracted_from_image": "38895dc73d6f4b3fd0040530a1c28d182f5e83ec4b1d5a8eeb2461957aae79cf.jpg"
+            },
+            "source_image_file": "38895dc73d6f4b3fd0040530a1c28d182f5e83ec4b1d5a8eeb2461957aae79cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe2O4",
+            "properties": {
+              "description": "Copper ferrite structure",
+              "extracted_from_image": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+            },
+            "source_image_file": "3aab573ffa802990215a4f44e9a9a4af64a98bb96c1607b4023036a46348055c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe₂O₃",
+            "properties": {
+              "formula": "Fe₂O₃",
+              "extracted_from_image": "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg"
+            },
+            "source_image_file": "5ec120dc9d9213c4d0aeefcec3103e8d3487911d22a6038e4c02d669a681fca2.jpg"
+          },
+          {
+            "type": "image",
+            "name": "Figure e",
+            "properties": {
+              "label": "e",
+              "scale_bar": "500 nm",
+              "extracted_from_image": "6bdc619b98f265d8680896c3b3571708a6421d1685c44483882efad5bffa115e.jpg"
+            },
+            "source_image_file": "6bdc619b98f265d8680896c3b3571708a6421d1685c44483882efad5bffa115e.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "RDF Plot R+ (left)",
+            "properties": {
+              "description": "Radial Distribution Function plot with Fe-O, Fe-Fe/Cu distances",
+              "r_range": "0-6 Å",
+              "intensity_range": "0-12 k",
+              "extracted_from_image": "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg"
+            },
+            "source_image_file": "7920d7bc62db89c3a5657bef6a6740e2dc0b9dadb5ca14602e13550e7e6c0a29.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe3O4-10",
+            "properties": {
+              "description": "Copper-doped magnetite (10% loading)",
+              "extracted_from_image": "7ae78157cedc0e3b651eea46b67555bb17ea68fba63bda31c283bbcb9bcc0e70.jpg"
+            },
+            "source_image_file": "7ae78157cedc0e3b651eea46b67555bb17ea68fba63bda31c283bbcb9bcc0e70.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe₂O₃",
+            "properties": {
+              "formula": "Fe₂O₃",
+              "description": "Iron(III) oxide",
+              "extracted_from_image": "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg"
+            },
+            "source_image_file": "7d4c84babe25ca9e008ab72b48423496deefb74c90c8361c6f5951cb640854a5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe₃O₄",
+            "properties": {
+              "label": "Fe₃O₄",
+              "description": "Iron oxide nanoparticle/magnetite",
+              "extracted_from_image": "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg"
+            },
+            "source_image_file": "8041fe4739ccee3113529952c9dd9bee03280a33fc7f3c8454d90f3852bc0ff9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Fe3O4",
+            "properties": {
+              "description": "Copper-iron oxide compound",
+              "extracted_from_image": "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg"
+            },
+            "source_image_file": "80d4a328ae22f4ceb067b5d61309608511cd6fc7957a49137bb30031a2b76c45.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe2O3",
+            "properties": {
+              "extracted_from_image": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+            },
+            "source_image_file": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe",
+            "properties": {
+              "element": "Iron",
+              "extracted_from_image": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+            },
+            "source_image_file": "8872658d1bba7f660961fe992aaac5d89cf05a16660a8b42285da5ccd674377d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH",
+            "properties": {
+              "formula": "Cu-FeOOH",
+              "extracted_from_image": "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg"
+            },
+            "source_image_file": "90fe90e1dfb8f3e4cd8cda466409daff4e3a71798a7ff09a1649a15924af76e7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu IF",
+            "properties": {
+              "formula": "Cu IF",
+              "description": "Copper-based infinite framework or metal-organic framework",
+              "extracted_from_image": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+            },
+            "source_image_file": "9e2b9d85ac39fb08812172c9a55e9e14cf62ee34fb86fdc905b8f2d057c79f25.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CuFeO",
+            "properties": {
+              "description": "Copper iron oxide",
+              "extracted_from_image": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+            },
+            "source_image_file": "a39243c3ebf75abcfac398f747a48f7190be1faf7b25829cccf52192e4972448.jpg"
+          },
+          {
+            "type": "figure",
+            "name": "Figure C",
+            "properties": {
+              "label": "C",
+              "extracted_from_image": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+            },
+            "source_image_file": "a4d66b0a412b20b9b690320e0b442bc27463732b80d2503579c264998101e273.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH",
+            "properties": {
+              "description": "Copper-iron oxyhydroxide",
+              "extracted_from_image": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+            },
+            "source_image_file": "a5351785b4172c0bc048afd5407c387909d8bcba904c93473f1107925edfbdbb.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe₃O₄",
+            "properties": {
+              "formula": "Fe₃O₄",
+              "description": "Iron oxide (magnetite)",
+              "extracted_from_image": "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg"
+            },
+            "source_image_file": "b2228650e3dcda7ae48a67dea8974f18a3e665e5f26d2e08d1595ff0831fbde8.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe2O3 (This work)",
+            "properties": {
+              "label": "Fe2O3",
+              "source": "This work",
+              "extracted_from_image": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+            },
+            "source_image_file": "b4a660a8ae139f23e4e31df44ad47cc6e5f5d4ce2eb1d9b8e388cfdaf3738a06.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe3O4",
+            "properties": {
+              "description": "Copper-iron oxyhydroxide/iron oxide composite",
+              "label": "Cu-FeOOH/Fe3O4",
+              "extracted_from_image": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+            },
+            "source_image_file": "b8a0694922a1bf6bf5d269927155f1bbaceb46b46393450a8d83fe509cadfd15.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe3O4",
+            "properties": {
+              "formula": "Fe3O4",
+              "description": "Magnetite structure",
+              "extracted_from_image": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+            },
+            "source_image_file": "c62129728573f2c36ca89d5204cc580a9b39ccadfbf31fbbd202ead7de6a4f80.jpg"
+          },
+          {
+            "type": "image_panel",
+            "name": "Panel h",
+            "properties": {
+              "description": "Atomic site map with vacancy visualization",
+              "extracted_from_image": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+            },
+            "source_image_file": "d47c1d47fdd1bb3b8e0d89ab678bbc019208e62a0568fbfbb384eeea911c5acd.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe3O4",
+            "properties": {
+              "formula": "Fe3O4",
+              "description": "Iron oxide standard",
+              "extracted_from_image": "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg"
+            },
+            "source_image_file": "d8cb88faa256b0e2cb126b6dbbc71295c4814c9d34a644fb7cea4d5ec2bdf043.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe3O4",
+            "properties": {
+              "formula": "Fe₃O₄",
+              "description": "Iron oxide (magnetite)",
+              "extracted_from_image": "dc7a3f6ac24a2205d6f3ef520eb863bca9d70ea5e0209363247ea3c3834f0a73.jpg"
+            },
+            "source_image_file": "dc7a3f6ac24a2205d6f3ef520eb863bca9d70ea5e0209363247ea3c3834f0a73.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-FeOOH/Fe2O3",
+            "properties": {
+              "description": "Copper-iron oxyhydroxide/iron oxide composite",
+              "extracted_from_image": "e0eea594d0d343193a4c74c41f2e4be614900eb4ffe00ff25068186ecc538c0b.jpg"
+            },
+            "source_image_file": "e0eea594d0d343193a4c74c41f2e4be614900eb4ffe00ff25068186ecc538c0b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe2O3",
+            "properties": {
+              "formula": "Fe2O3",
+              "extracted_from_image": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+            },
+            "source_image_file": "e234fb2ca178c0235aac17ed7eef5807d009c954cbe90ca23fc43859f5eefce7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe₃O₄",
+            "properties": {
+              "formula": "Fe₃O₄",
+              "extracted_from_image": "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg"
+            },
+            "source_image_file": "f4dabc4b55b092bdd8f392e91e841cd86ffb7a0c03d5a31f5aa6c1a56f6fcccb.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Cu",
+            "properties": {
+              "description": "Copper-Copper bond",
+              "extracted_from_image": "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg"
+            },
+            "source_image_file": "fadd2097e48e34ffb167ca941a853de9df9aeba98e9098b5e8ae3bb159db8819.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu-Cu",
+            "properties": {
+              "label": "Cu-Cu",
+              "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+            },
+            "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+          }
+        ]
+      },
+      {
+        "id": "state1",
+        "type": "chemical",
+        "name": "H2O adsorption state",
+        "properties": {
+          "description": "Initial state with H2O adsorbed on metal site (yellow), sulfate (SO4^2-) ligands (purple/red), and framework (blue/pink)",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "state2",
+        "type": "chemical",
+        "name": "H2O dissociation state",
+        "properties": {
+          "description": "Intermediate state with OH- and H+ after H2O dissociation, metal site (yellow), sulfate ligands, framework",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "state3",
+        "type": "chemical",
+        "name": "H2 evolution state",
+        "properties": {
+          "description": "Final state with H2 evolution, *OH on metal site, sulfate ligands, framework",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "h2o",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "formula": "H2O",
+          "role": "adsorbate",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "oh",
+        "type": "chemical",
+        "name": "OH-",
+        "properties": {
+          "formula": "OH^-",
+          "role": "intermediate",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "h_plus",
+        "type": "chemical",
+        "name": "H+",
+        "properties": {
+          "formula": "H^+",
+          "role": "proton",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "h2",
+        "type": "chemical",
+        "name": "H2",
+        "properties": {
+          "formula": "H2",
+          "role": "evolved gas",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "metal_site",
+        "type": "chemical",
+        "name": "Metal site",
+        "properties": {
+          "color": "yellow",
+          "likely": "transition metal (e.g., Ni, Co, Fe)",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "sulfate",
+        "type": "chemical",
+        "name": "SO4^2-",
+        "properties": {
+          "color": "purple/red",
+          "role": "ligand",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "framework",
+        "type": "chemical",
+        "name": "MOF framework",
+        "properties": {
+          "color": "blue/pink",
+          "description": "coordination polymer lattice",
+          "extracted_from_image": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+        },
+        "source_image_file": "0cd9c2a4809248afb722e68b67741abb76037428ccbf4f1f1eaa3f6c63306f50.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "Fe-Cu",
+        "properties": {
+          "label": "Fe-Cu",
+          "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        },
+        "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "chemical",
+        "name": "Cu-Cu-FE",
+        "properties": {
+          "label": "Cu-Cu-FE",
+          "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        },
+        "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "chemical",
+        "name": "Cu-Cu-FE-O",
+        "properties": {
+          "label": "Cu-Cu-FE-O",
+          "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        },
+        "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+      },
+      {
+        "id": "Cu-FeOOH",
+        "type": "chemical",
+        "name": "Cu-FeOOH",
+        "properties": {
+          "description": "Copper-doped iron oxyhydroxide",
+          "extracted_from_image": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+        },
+        "source_image_file": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+      },
+      {
+        "id": "FeOOH",
+        "type": "chemical",
+        "name": "FeOOH",
+        "properties": {
+          "description": "Iron oxyhydroxide",
+          "extracted_from_image": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+        },
+        "source_image_file": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+      },
+      {
+        "id": "Fe3O4",
+        "type": "chemical",
+        "name": "Fe3O4",
+        "properties": {
+          "description": "Magnetite",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "Fe2O3",
+        "type": "chemical",
+        "name": "Fe2O3",
+        "properties": {
+          "description": "Iron(III) oxide (hematite)",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "CuFe2O4",
+        "type": "chemical",
+        "name": "CuFe2O4",
+        "properties": {
+          "description": "Copper ferrite",
+          "extracted_from_image": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+        },
+        "source_image_file": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+      },
+      {
+        "id": "CuFeO2",
+        "type": "chemical",
+        "name": "CuFeO2",
+        "properties": {
+          "description": "Copper iron oxide",
+          "extracted_from_image": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+        },
+        "source_image_file": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+      },
+      {
+        "id": "PDF-FeOOH-34-1266",
+        "type": "reference",
+        "name": "FeOOH PDF #34-1266",
+        "properties": {
+          "database": "PDF",
+          "card_number": "34-1266",
+          "match": "FeOOH",
+          "extracted_from_image": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+        },
+        "source_image_file": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+      },
+      {
+        "id": "PDF-Fe2O3-89-3854",
+        "type": "reference",
+        "name": "Fe2O3 PDF #89-3854",
+        "properties": {
+          "database": "PDF",
+          "card_number": "89-3854",
+          "match": "Fe2O3",
+          "extracted_from_image": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+        },
+        "source_image_file": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+      },
+      {
+        "id": "PDF-Fe3O4-06-0696",
+        "type": "reference",
+        "name": "Fe3O4 PDF #06-0696",
+        "properties": {
+          "database": "PDF",
+          "card_number": "06-0696",
+          "match": "Fe3O4",
+          "extracted_from_image": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+        },
+        "source_image_file": "1917dbe7bc8d8efc860ca8370828e6e70fd6f75c7648beaf2cf951d6582cb88a.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "Fe-Fe-O",
+        "properties": {
+          "label": "Fe-Fe-O",
+          "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        },
+        "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+      },
+      {
+        "id": "image_b",
+        "type": "image",
+        "name": "Figure b",
+        "properties": {
+          "label": "b",
+          "scale_bar": "5 μm",
+          "extracted_from_image": "4a7dc9d76d3858338f4d164bb21baec14add38106f45c7faa7678f579499d860.jpg"
+        },
+        "source_image_file": "4a7dc9d76d3858338f4d164bb21baec14add38106f45c7faa7678f579499d860.jpg"
+      },
+      {
+        "id": "micrograph",
+        "type": "characterization",
+        "name": "SEM Micrograph",
+        "properties": {
+          "description": "Porous material with irregular, interconnected pores and rough surface morphology",
+          "scale": "5 μm",
+          "extracted_from_image": "4a7dc9d76d3858338f4d164bb21baec14add38106f45c7faa7678f579499d860.jpg"
+        },
+        "source_image_file": "4a7dc9d76d3858338f4d164bb21baec14add38106f45c7faa7678f579499d860.jpg"
+      },
+      {
+        "id": "material",
+        "type": "chemical",
+        "name": "Porous Material",
+        "properties": {
+          "morphology": "3D interconnected porous network",
+          "feature_size": "~1-5 μm pores",
+          "appearance": "gray scale SEM image",
+          "extracted_from_image": "4a7dc9d76d3858338f4d164bb21baec14add38106f45c7faa7678f579499d860.jpg"
+        },
+        "source_image_file": "4a7dc9d76d3858338f4d164bb21baec14add38106f45c7faa7678f579499d860.jpg"
+      },
+      {
+        "id": "Cu",
+        "type": "chemical",
+        "name": "Cu",
+        "properties": {
+          "description": "Copper metal",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "Cu2p",
+        "type": "chemical",
+        "name": "Cu 2p",
+        "properties": {
+          "description": "Copper 2p XPS peak",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "Cu2p_1_2",
+        "type": "chemical",
+        "name": "Cu 2p_{3/2}",
+        "properties": {
+          "description": "Cu 2p_{3/2} binding energy peak",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "Cu2p_3_2",
+        "type": "chemical",
+        "name": "Cu 2p_{1/2}",
+        "properties": {
+          "description": "Cu 2p_{1/2} binding energy peak",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "Cu_FeOOH",
+        "type": "chemical",
+        "name": "Cu-FeOOH",
+        "properties": {
+          "description": "Copper iron oxyhydroxide",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "FeO",
+        "type": "chemical",
+        "name": "FeO",
+        "properties": {
+          "description": "Iron(II) oxide",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "Cu2_FeO4",
+        "type": "chemical",
+        "name": "Cu^2+ FeO4^2-",
+        "properties": {
+          "description": "Copper ferrate or Cu-Fe oxide phase",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "Cu_sat_2p",
+        "type": "chemical",
+        "name": "Cu^2+ sat 2p",
+        "properties": {
+          "description": "Cu^{2+} satellite peak in 2p region",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "Cu_FeO",
+        "type": "chemical",
+        "name": "Cu-FeO",
+        "properties": {
+          "description": "Copper iron oxide",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "xps_spectrum",
+        "type": "characterization",
+        "name": "Cu 2p XPS Spectrum",
+        "properties": {
+          "type": "XPS",
+          "binding_energy_range": "930-948 eV",
+          "figure_label": "f",
+          "extracted_from_image": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+        },
+        "source_image_file": "608e905714faca3f39bcb5db33fa2906adae15c2e68c454911c7cfaebf73a8e0.jpg"
+      },
+      {
+        "id": "e1",
+        "type": "characterized_by",
+        "source_id": "n1",
+        "target_id": "n5",
+        "source_image_file": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg",
+        "properties": {
+          "extracted_from_image": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+        }
+      },
+      {
+        "id": "e2",
+        "type": "characterized_by",
+        "source_id": "n2",
+        "target_id": "n5",
+        "source_image_file": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg",
+        "properties": {
+          "extracted_from_image": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+        }
+      },
+      {
+        "id": "e3",
+        "type": "characterized_by",
+        "source_id": "n3",
+        "target_id": "n5",
+        "source_image_file": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg",
+        "properties": {
+          "extracted_from_image": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+        }
+      },
+      {
+        "id": "e4",
+        "type": "characterized_by",
+        "source_id": "n4",
+        "target_id": "n5",
+        "source_image_file": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg",
+        "properties": {
+          "extracted_from_image": "84c2f430417a78e699a65ffafd1c0e487c146e612937b50c0e7cec61c5661695.jpg"
+        }
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "label": "H2O",
+          "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        },
+        "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "H+OH-",
+        "properties": {
+          "label": "H+OH-",
+          "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        },
+        "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+      },
+      {
+        "id": "fe2o3",
+        "type": "chemical",
+        "name": "Fe₂O₃",
+        "properties": {
+          "color": "black",
+          "symbol": "●",
+          "extracted_from_image": "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+        },
+        "source_image_file": "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+      },
+      {
+        "id": "cufe2o4",
+        "type": "chemical",
+        "name": "CuFe₂O₄",
+        "properties": {
+          "color": "blue",
+          "symbol": "◯",
+          "extracted_from_image": "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+        },
+        "source_image_file": "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+      },
+      {
+        "id": "cu_fe_ooh_fe2o3",
+        "type": "chemical",
+        "name": "Cu-FeOOH/Fe₂O₃",
+        "properties": {
+          "color": "red",
+          "symbol": "●",
+          "extracted_from_image": "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+        },
+        "source_image_file": "f7363542d0febce7bd47398a6505a1bea76bee591ef122b90f7904adc7b29246.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chemical",
+        "name": "Cu-Cu-FEOHFE-O",
+        "properties": {
+          "label": "Cu-Cu-FEOHFE-O, H+OH-",
+          "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        },
+        "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "characterization",
+        "name": "Free Energy Diagram",
+        "properties": {
+          "type": "plot",
+          "x_axis": "Reaction pathway",
+          "y_axis": "Free energy (eV)",
+          "y_range": [
+            0,
+            2.5
+          ],
+          "extracted_from_image": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+        },
+        "source_image_file": "fe938f3c4caaf9f63e4bbaa09953598fb82cebe557328398833fa43b4f300011.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Fe3O4_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Fe3O4",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_Fe3O4_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_FeOOH_Fe3O4_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_Fe3O4_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_FeOOH_Fe3O4_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Fe3O4_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Fe3O4",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_Fe3O4_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_FeOOH_Fe3O4_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Fe3O4_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Fe3O4",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_Fe3O4_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_FeOOH_Fe3O4_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_Fe3O4_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_FeOOH_Fe3O4_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Fe3O4_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Fe3O4",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_Fe3O4_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_FeOOH_Fe3O4_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Fe3O4_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Fe3O4",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_Fe3O4_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_FeOOH_Fe3O4_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Fe3O4_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Fe3O4",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_Fe3O4_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_Fe3O4",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Cu_FeOOH_Fe3O4_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Cu_FeOOH_Fe3O4",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "source_id": "state1",
+        "target_id": "state2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "state2",
+        "target_id": "state3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "state1",
+        "target_id": "h2o",
+        "type": "contains"
+      },
+      {
+        "source_id": "state2",
+        "target_id": "oh",
+        "type": "contains"
+      },
+      {
+        "source_id": "state2",
+        "target_id": "h_plus",
+        "type": "contains"
+      },
+      {
+        "source_id": "state3",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "state1",
+        "target_id": "metal_site",
+        "type": "contains"
+      },
+      {
+        "source_id": "state1",
+        "target_id": "sulfate",
+        "type": "contains"
+      },
+      {
+        "source_id": "state1",
+        "target_id": "framework",
+        "type": "contains"
+      },
+      {
+        "source_id": "state2",
+        "target_id": "metal_site",
+        "type": "contains"
+      },
+      {
+        "source_id": "state2",
+        "target_id": "sulfate",
+        "type": "contains"
+      },
+      {
+        "source_id": "state2",
+        "target_id": "framework",
+        "type": "contains"
+      },
+      {
+        "source_id": "state3",
+        "target_id": "metal_site",
+        "type": "contains"
+      },
+      {
+        "source_id": "state3",
+        "target_id": "sulfate",
+        "type": "contains"
+      },
+      {
+        "source_id": "state3",
+        "target_id": "framework",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "has_morphology"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "has_plane"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "has_plane"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_7",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_10",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n7",
+        "type": "shows"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_6",
+        "type": "shows"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_10",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n2",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_1",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_1",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "Cu-FeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "FeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "Fe3O4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "Fe2O3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "CuFe2O4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "CuFeO2",
+        "type": "contains"
+      },
+      {
+        "source_id": "PDF-FeOOH-34-1266",
+        "target_id": "FeOOH",
+        "type": "matches"
+      },
+      {
+        "source_id": "PDF-Fe2O3-89-3854",
+        "target_id": "Fe2O3",
+        "type": "matches"
+      },
+      {
+        "source_id": "PDF-Fe3O4-06-0696",
+        "target_id": "Fe3O4",
+        "type": "matches"
+      },
+      {
+        "source_id": "Cu-FeOOH",
+        "target_id": "FeOOH",
+        "type": "doped"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "has_morphology"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_7",
+        "type": "has_morphology"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "has_morphology"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_4",
+        "type": "has_morphology"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n4",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_10",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n2",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_7",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_4",
+        "type": "labels_peak"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n7",
+        "type": "labels_peak"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_6",
+        "type": "labels_peak"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_6",
+        "type": "labels_peak"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_6",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_6",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_b",
+        "target_id": "micrograph",
+        "type": "depicts"
+      },
+      {
+        "source_id": "micrograph",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "xps_spectrum",
+        "target_id": "Cu2p",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "xps_spectrum",
+        "target_id": "Cu2p_1_2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "xps_spectrum",
+        "target_id": "Cu2p_3_2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "xps_spectrum",
+        "target_id": "Cu_sat_2p",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "Cu2p_1_2",
+        "target_id": "Cu_FeOOH",
+        "type": "assigned_to"
+      },
+      {
+        "source_id": "Cu2p_1_2",
+        "target_id": "FeO",
+        "type": "assigned_to"
+      },
+      {
+        "source_id": "Cu2p_3_2",
+        "target_id": "Cu2_FeO4",
+        "type": "assigned_to"
+      },
+      {
+        "source_id": "Cu_sat_2p",
+        "target_id": "Cu2_FeO4",
+        "type": "assigned_to"
+      },
+      {
+        "source_id": "xps_spectrum",
+        "target_id": "Cu_FeO",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "xps_spectrum",
+        "target_id": "Fe2O3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "xps_spectrum",
+        "target_id": "Fe3O4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "Cu",
+        "target_id": "Cu2p",
+        "type": "core_level"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "is"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "features"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n4",
+        "type": "features"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "features"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "indicates"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "features"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "indicates"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "has_morphology"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_10",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "modified_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "modified_to"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "has_plane"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_7",
+        "type": "corresponds_to_spacing"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n4",
+        "type": "component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "component"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "component"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_7",
+        "type": "component"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_4",
+        "type": "component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "component"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n7",
+        "type": "component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "component"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_6",
+        "type": "component"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_6",
+        "type": "component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_6",
+        "type": "component"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_2",
+        "type": "component"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_2",
+        "type": "component"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n11",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n11",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n11",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n11",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n11",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n11",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_10",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "transforms_via"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "produced_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "forms"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "involves"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "produces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_2",
+        "type": "produces"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n7",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "produced_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "involved_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "involved_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n7",
+        "type": "involved_in"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n7",
+        "type": "compared_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_6",
+        "type": "monitored_by"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_6",
+        "type": "shows_improvement"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_6",
+        "type": "final_phase"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_2",
+        "type": "performance_shown_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_2",
+        "type": "after"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_7",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_6",
+        "type": "annotates"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "region_of"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n7",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n7",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n7",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_10",
+        "type": "modification_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_10",
+        "type": "composite_with"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n12",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_4",
+        "type": "composes"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n7",
+        "type": "composes"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_2",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n10",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n10",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_7",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_7",
+        "type": "incorporates"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "char_6",
+        "type": "features"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_10",
+        "type": "related_to"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_6",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_1",
+        "type": "highlights"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n7",
+        "type": "displays"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_6",
+        "type": "component"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_6",
+        "type": "component"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_6",
+        "type": "component"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_6",
+        "type": "defect"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_1",
+        "type": "detects"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n2",
+        "type": "has_dos"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_1",
+        "type": "has_orbital_dos"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "has_dos"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_4",
+        "type": "has_orbital_dos"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "has_orbital_dos"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_2",
+        "type": "has_dos"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n10",
+        "type": "has_orbital_dos"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n11",
+        "type": "has_orbital_dos"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n12",
+        "type": "has_orbital_dos"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_4",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_4",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "fe2o3",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "cufe2o4",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "cu_fe_ooh_fe2o3",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_7",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "char_7",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_7",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n14",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n14",
+        "type": "part_of"
+      }
+    ]
+  }
+}

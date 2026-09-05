@@ -1,0 +1,63 @@
+schema_version: 1
+id: T005
+title: Re-critique evidence after follow-up
+role: scientific-critic
+role_contract: procedures/research-orchestrator/references/roles.md#scientific-critic
+skill: comp-chem-workflow
+status: accepted
+stage: follow-up
+wave_id: wave-2
+iteration: 2
+source_proposal: follow-up-proposal
+resolves_follow_up: follow-up-proposal
+depends_on:
+  - T004
+approval: none
+inputs:
+  - artifact_id: follow-up-proposal
+    min_status: accepted
+  - artifact_id: parser-result-wave2
+    min_status: validated
+can_read:
+  - artifact_id: follow-up-proposal
+  - artifact_id: parser-result-wave2
+can_write:
+  - artifact_type: scientific-claim
+  - artifact_type: gate-verdict
+cannot:
+  - edit parser outputs
+  - hide first-wave limitations
+evidence_packet:
+  - artifact_id: follow-up-proposal
+    min_status: accepted
+    why: states the missing evidence from the first wave
+  - artifact_id: parser-result-wave2
+    min_status: validated
+    why: carries the follow-up technical validation
+outputs_expected:
+  - artifact_id: scientific-claim-final
+    type: scientific-claim
+    path: work/claims/claim-final.md
+  - artifact_id: result-gate-final
+    type: gate-verdict
+    path: work/reviews/result_gate_final.yaml
+  - artifact_id: report-gate
+    type: gate-verdict
+    path: work/reviews/report_gate.yaml
+success_criteria:
+  - follow-up proposal is resolved by accepted claim evidence
+knowledge_required: []
+required_refs:
+  - procedures/research-orchestrator/references/critic-contract.md
+  - tools/report/references/validation.md
+required_checks: []
+release_gates:
+  - result_gate
+  - report_gate
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: true
+assumptions: []
+provenance:
+  - follow-up-proposal
+  - parser-result-wave2

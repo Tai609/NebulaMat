@@ -1,0 +1,54 @@
+# Open Science publication figure style (P1-5 chart design system).
+# The categorical color cycle is the SAME validated palette used by the app's
+# native charts (packages/shared chartPalette / index.css --series-*), so an
+# agent-generated figure and a native stat tile read as one system.
+# Apply in Python with:  import matplotlib.pyplot as plt; plt.style.use(str(path))
+
+# --- Color cycle: categorical slots 1..8, fixed order (light-surface hues) ---
+axes.prop_cycle: cycler('color', ['2a78d6', '1baf7a', 'eda100', '008300', '4a3aa7', 'e34948', 'e87ba4', 'eb6834'])
+
+# --- Figure & surface ---
+figure.facecolor: white
+figure.dpi: 140
+savefig.dpi: 200
+savefig.bbox: tight
+figure.figsize: 6.0, 4.0
+axes.facecolor: white
+
+# --- Ink & chrome: recessive axes, hairline grid, no top/right spines ---
+text.color: 2a2723
+axes.labelcolor: 2a2723
+axes.edgecolor: cbc6bb
+axes.linewidth: 0.8
+axes.grid: True
+axes.grid.axis: y
+grid.color: e7e3da
+grid.linewidth: 0.8
+grid.linestyle: -
+axes.spines.top: False
+axes.spines.right: False
+xtick.color: 8c877d
+ytick.color: 8c877d
+xtick.labelcolor: 2a2723
+ytick.labelcolor: 2a2723
+xtick.direction: out
+ytick.direction: out
+
+# --- Marks: 2px lines, round caps, ≥8px markers ---
+lines.linewidth: 2.0
+lines.solid_capstyle: round
+lines.solid_joinstyle: round
+lines.markersize: 6
+patch.linewidth: 0.0
+
+# --- Typography: sans everywhere, calm sizes ---
+font.family: sans-serif
+font.sans-serif: Inter, Helvetica Neue, Arial, sans-serif
+font.size: 11
+axes.titlesize: 13
+axes.titleweight: 600
+axes.titlelocation: left
+axes.labelsize: 11
+legend.fontsize: 10
+legend.frameon: False
+figure.titlesize: 14

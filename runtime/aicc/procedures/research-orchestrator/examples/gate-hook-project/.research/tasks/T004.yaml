@@ -1,0 +1,41 @@
+schema_version: 1
+id: T004
+title: Review report readiness before docx generation
+role: synthesis-report
+role_contract: procedures/research-orchestrator/references/roles.md#synthesis-report
+skill: report
+status: accepted
+depends_on:
+  - T003
+approval: none
+inputs:
+  - artifact_id: scientific-claim
+    min_status: accepted
+can_read:
+  - artifact_id: scientific-claim
+can_write:
+  - artifact_type: gate-verdict
+cannot:
+  - promote unsupported claims
+outputs_expected:
+  - artifact_id: report-gate
+    type: gate-verdict
+    path: work/reviews/report_gate.yaml
+success_criteria:
+  - report gate checks accepted claims and overclaiming risk
+knowledge_required: []
+required_refs:
+  - procedures/research-orchestrator/references/gate-contract.md
+  - tools/report/references/validation.md
+required_checks:
+  - uv run {repo_root}/procedures/research-orchestrator/scripts/validate_gate.py work/reviews/report_gate.yaml --research {project_root}/.research --target-gate report_gate --require-passing
+release_gates:
+  - report_gate
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: true
+assumptions:
+  - Fixture report gate is illustrative and not a real report review.
+provenance:
+  - work/reviews/report_gate.yaml
+  - work/claims/claim.md

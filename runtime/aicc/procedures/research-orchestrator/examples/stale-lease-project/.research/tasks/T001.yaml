@@ -1,0 +1,41 @@
+schema_version: 1
+id: T001
+title: Monitor fixture calculation with expired heartbeat
+role: engine-runner
+role_contract: procedures/research-orchestrator/references/roles.md#engine-runner
+skill: vasp
+status: running
+depends_on: []
+approval: none
+inputs: []
+can_read:
+  - artifact_type: model-observable-decision
+can_write:
+  - artifact_type: parser-result
+cannot:
+  - resubmit automatically after lease expiry
+outputs_expected:
+  - artifact_id: parser-result
+    type: parser-result
+    path: work/run-a/parser-result.json
+success_criteria:
+  - stale lease is reconciled before recovery
+knowledge_required: []
+required_refs:
+  - tools/vasp/SKILL.md
+  - tools/hpc-submit/SKILL.md
+required_checks: []
+release_gates:
+  - engine-parser-validation
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+  requires_claim: true
+  lease_ttl_minutes: 10
+  heartbeat_interval_minutes: 5
+  owner_dir: work/run-a/
+  exclusive_paths:
+    - work/run-a/
+assumptions:
+  - Fixture task is not a real calculation.
+provenance: []

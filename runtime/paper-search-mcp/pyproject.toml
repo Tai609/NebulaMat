@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nebulamat-paper-search"
+version = "0.1.0"
+description = "NebulaMat safety wrapper for the pinned paper-search-mcp connector"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+  "paper-search-mcp==0.1.4",
+  # Upstream still imports mcp.server.fastmcp, which was removed in MCP 2.x.
+  "mcp>=1.6,<2",
+  "fastmcp<4",
+]
+
+[project.scripts]
+nebulamat-paper-search = "nebulamat_paper_search.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["nebulamat_paper_search"]

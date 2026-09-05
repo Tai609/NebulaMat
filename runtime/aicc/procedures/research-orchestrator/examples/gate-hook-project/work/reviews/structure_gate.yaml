@@ -1,0 +1,22 @@
+schema_version: 1
+gate: structure_gate
+status: pass
+scope:
+  artifacts:
+    - candidate-structures
+checks:
+  - id: model_relevance
+    status: pass
+    evidence: The model purpose matches the registered scientific question.
+  - id: finite_size_effects
+    status: pass
+    metrics:
+      min_adsorbate_image_A: 6.0
+      target_min_adsorbate_image_A: 5.0
+      surface_cell: fixture
+    evidence: Lateral size, concentration or coverage, and image interactions have recorded rationale.
+  - id: structure_prep_validation
+    status: pass
+    evidence: Structure-prep validation provenance is present.
+blocking_issues: []
+required_fix: []

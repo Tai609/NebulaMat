@@ -1,0 +1,109 @@
+{
+  "name": "@omdsh-dev/dsh-genui",
+  "description": "GenUI for DeepSeek Harness: interactive UI components rendered inline in assistant replies via the ```dsh-ui fence — layout, charts, plots, forms, quizzes, mermaid, 3D scenes, and an action event loop back to the model. Ships the fence-teaching host plugin, the browser renderer (client half), and the genui skill.",
+  "version": "0.8.3",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/plugin/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/plugin/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./invariant": {
+      "types": "./lib/types/plugin/invariant.d.ts",
+      "default": "./lib/invariant.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/invariant.js",
+    "lib/client.js",
+    "lib/assets/mermaid.js",
+    "lib/assets/three.js",
+    "lib/types/plugin/index.d.ts",
+    "lib/types/plugin/invariant.d.ts",
+    "lib/types/client/index.d.ts",
+    "SKILL.md",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "demo-prompts.md",
+    "cordis.patch.yml"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omdsh-dev/dsh-genui.git"
+  },
+  "homepage": "https://github.com/omdsh-dev/dsh-genui",
+  "bugs": {
+    "url": "https://github.com/omdsh-dev/dsh-genui/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "generative-ui",
+    "plugin",
+    "ui"
+  ],
+  "dependencies": {
+    "react": "^18.3.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-client-ui-slots": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-client-ui-tool": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-invariants": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-llm": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6",
+    "@deepseek-ai/cordis": "^4.0.1",
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/three": "^0.185.4",
+    "jsdom": "^25.0.0",
+    "lightningcss": "^1.25.0",
+    "tsdown": "^0.22.2",
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0",
+    "mermaid": "11.16.0",
+    "three": "^0.180.0",
+    "react-dom": "^18.3.1"
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsc -p tsconfig.json && tsdown",
+    "test": "vitest run",
+    "check": "rm -rf lib && tsc -p tsconfig.json && vitest run && tsdown"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "pnpm": ">=11.7.0 <12"
+  }
+}

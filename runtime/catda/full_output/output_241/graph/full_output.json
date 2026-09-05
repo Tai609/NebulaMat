@@ -1,0 +1,3800 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "nickel foam",
+        "aliases": [
+          "NF",
+          "bare NF",
+          "cleaning NF"
+        ],
+        "properties": {
+          "thickness": {
+            "value": 1.5,
+            "unit": "mm"
+          },
+          "areal_density": {
+            "value": 350,
+            "unit": "g/cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni(NO3)2_6H2O",
+        "type": "chemical",
+        "name": "Ni(NO3)2·6H2O",
+        "formula": "Ni(NO3)2·6H2O",
+        "aliases": []
+      },
+      {
+        "id": "chem_(NH4)6Mo7O24_2H2O",
+        "type": "chemical",
+        "name": "(NH4)6Mo7O24·2H2O",
+        "formula": "(NH4)6Mo7O24·2H2O",
+        "aliases": []
+      },
+      {
+        "id": "chem_DI_water",
+        "type": "chemical",
+        "name": "DI water",
+        "aliases": [
+          "deionized water"
+        ],
+        "formula": "H2O",
+        "properties": {
+          "resistivity": {
+            "value": 18.2,
+            "unit": "ohm cm"
+          }
+        }
+      },
+      {
+        "id": "chem_HCl",
+        "type": "chemical",
+        "name": "HCl",
+        "formula": "HCl",
+        "aliases": [
+          "3 M HCl"
+        ]
+      },
+      {
+        "id": "chem_ethanol",
+        "type": "chemical",
+        "name": "ethanol",
+        "formula": "C2H5OH",
+        "aliases": []
+      },
+      {
+        "id": "chem_NiMoO4_xH2O",
+        "type": "chemical",
+        "name": "NiMoO₄·xH₂O",
+        "aliases": [
+          "NiMoO₄·xH₂O precursor"
+        ],
+        "formula": "NiMoO₄·xH₂O",
+        "related_images": [
+          "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "NiMoO₄",
+            "properties": {
+              "role": "cathode component",
+              "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+            },
+            "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "NF cleaning and NiMoO4_xH2O hydrothermal",
+        "procedure": "A piece of bare NF (4 cm²) was ultrasonically washed under conditions of 3 M HCl, ethanol, and DI water. Subsequently, the mixture consisted of 30 ml of DI water, 1.2 mmol of Ni(NO3)2·6H2O, and 0.3 mmol of (NH4)6Mo7O24·2H2O was stirred for 10 min in the Teflon autoclave. Next, the cleaning NF was immersed into the above solution and kept at 150°C for 6 hours. After the temperature was cooled down, the NiMoO4·xH2O precursor was rinsed by DI water and dried in air.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "NF Ultrasonic Cleaning",
+            "method": "Ultrasonic washing",
+            "conditions": {},
+            "procedure_snippet": "A piece of bare NF (4 cm²) was ultrasonically washed under conditions of 3 M HCl, ethanol, and DI water."
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Hydrothermal Reaction",
+            "method": "Hydrothermal synthesis",
+            "conditions": {
+              "temperature": {
+                "value": 150,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 6,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "The cleaning NF was immersed into the above solution and kept at 150°C for 6 hours."
+          }
+        ],
+        "method": "hydrothermal synthesis",
+        "conditions": {
+          "temperature": {
+            "value": 150,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 6,
+            "unit": "h"
+          },
+          "stirring_time": {
+            "value": 10,
+            "unit": "min"
+          },
+          "NF_area": {
+            "value": 4,
+            "unit": "cm²"
+          },
+          "DI_water_volume": {
+            "value": 30,
+            "unit": "ml"
+          }
+        },
+        "source_text": "Synthesis of NiMoO4.xH2O... kept at 150°C for 6 hours. After the temperature was cooled down..."
+      },
+      {
+        "id": "chem_Mo_NiOOH",
+        "type": "chemical",
+        "name": "Mo-NiOOH",
+        "aliases": [
+          "Mo-NiOOH catalyst",
+          "black Mo-NiOOH"
+        ]
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "NiMoO4 electrooxidation to Mo-NiOOH",
+        "procedure": "The Mo-NiOOH catalyst was synthesized by a chronoamperometry method under a three-electrode system in 1.0 M KOH at a current density of 100 mA cm⁻² for 20 min, in which the NiMoO4·xH2O precursor (1.0 cm²) was used as the working electrode, the graphite rod was used as the counter electrode, and the Hg/HgO electrode served as the reference electrode.",
+        "method": "chronoamperometry",
+        "conditions": {
+          "current_density": {
+            "value": 100,
+            "unit": "mA/cm²"
+          },
+          "time": {
+            "value": 20,
+            "unit": "min"
+          },
+          "KOH_concentration": {
+            "value": 1.0,
+            "unit": "M"
+          },
+          "precursor_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          }
+        },
+        "source_text": "The Mo-NiOOH catalyst was synthesized by a chronoamperometry method under a three-electrode system in 1.0 M KOH at a current density of 100 mA cm⁻² for 20 min..."
+      },
+      {
+        "id": "chem_Mo_Ni(OH)2",
+        "type": "chemical",
+        "name": "Mo-Ni(OH)₂",
+        "aliases": [
+          "Mo-Ni(OH)₂",
+          "green Mo-Ni(OH)₂"
+        ],
+        "properties": {
+          "loading_mass": {
+            "value": 14.2,
+            "unit": "mg/cm²"
+          },
+          "double-layer_capacitance": {
+            "value": -6.24,
+            "unit": "mV"
+          },
+          "zeta_potential": {
+            "value": -6.24,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Mo-NiOOH spontaneous reduction",
+        "procedure": "The synthesized Mo-NiOOH catalyst was immersed into a 1.0 M KOH electrolyte containing 0.1 M EG under stirring, and black Mo-NiOOH was spontaneously reduced to green Mo-Ni(OH)₂.",
+        "method": "spontaneous chemical reduction",
+        "conditions": {
+          "KOH_concentration": {
+            "value": 1.0,
+            "unit": "M"
+          },
+          "EG_concentration": {
+            "value": 0.1,
+            "unit": "M"
+          }
+        },
+        "source_text": "The synthesized Mo-NiOOH catalyst was immersed into a 1.0 M KOH electrolyte containing 0.1 M EG under stirring..."
+      },
+      {
+        "id": "chem_urea",
+        "type": "chemical",
+        "name": "urea",
+        "formula": "CO(NH₂)₂",
+        "aliases": []
+      },
+      {
+        "id": "chem_NH4F",
+        "type": "chemical",
+        "name": "NH₄F",
+        "formula": "NH4F",
+        "aliases": []
+      },
+      {
+        "id": "chem_Ni(OH)2_NSs",
+        "type": "chemical",
+        "name": "Ni(OH)₂ NSs",
+        "aliases": [
+          "Ni(OH)₂ nanosheets",
+          "green Ni(OH)₂ catalyst"
+        ],
+        "properties": {
+          "loading_mass": {
+            "value": 7.8,
+            "unit": "mg/cm²"
+          },
+          "zeta_potential": {
+            "value": -0.79,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "synth_step_4",
+        "type": "synthesis",
+        "name": "Ni(OH)₂ NSs hydrothermal synthesis",
+        "procedure": "The mixed solution for the hydrothermal treatment consisted of 30 ml of DI water, 2 mmol of Ni(NO3)2·6H2O, 10 mmol of urea, and 4 mmol of NH₄F was stirred for 10 min in the Teflon autoclave. Subsequently, a piece of cleaning NF (4 cm²) was immersed into the above solution and kept at 120°C for 6 hours. After the temperature cooled down, the green Ni(OH)₂ catalyst was rinsed by DI water and dried in air overnight.",
+        "unit_operations": [
+          {
+            "id": "unit_op_4.1",
+            "name": "Solution Preparation",
+            "method": "Stirring",
+            "conditions": {
+              "stirring_time": {
+                "value": 10,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "The mixed solution... was stirred for 10 min in the Teflon autoclave."
+          },
+          {
+            "id": "unit_op_4.2",
+            "name": "Hydrothermal Reaction",
+            "method": "Hydrothermal synthesis",
+            "conditions": {
+              "temperature": {
+                "value": 120,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 6,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "A piece of cleaning NF (4 cm²) was immersed into the above solution and kept at 120°C for 6 hours."
+          }
+        ],
+        "method": "hydrothermal synthesis",
+        "conditions": {
+          "temperature": {
+            "value": 120,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 6,
+            "unit": "h"
+          },
+          "stirring_time": {
+            "value": 10,
+            "unit": "min"
+          },
+          "NF_area": {
+            "value": 4,
+            "unit": "cm²"
+          },
+          "DI_water_volume": {
+            "value": 30,
+            "unit": "ml"
+          }
+        },
+        "source_text": "Synthesis of Ni(OH)₂ NSs... kept at 120°C for 6 hours."
+      },
+      {
+        "id": "chem_NiO_NiMoOx",
+        "type": "chemical",
+        "name": "NiO/NiMoOₓ",
+        "aliases": [
+          "NiO / NiMoO_x"
+        ],
+        "formula": "NiO/NiMoOₓ",
+        "related_images": [
+          "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg",
+          "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "NiO",
+            "properties": {
+              "role": "cathode component",
+              "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+            },
+            "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiO/NiMoOx",
+            "properties": {
+              "description": "Nickel oxide / Nickel molybdate oxide catalyst",
+              "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+            },
+            "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_5",
+        "type": "synthesis",
+        "name": "NiO/NiMoOₓ annealing reduction",
+        "procedure": "The obtained NiMoO₄·xH₂O precursor was annealed at 450°C under a ramp rate of 5°C min⁻¹ at H₂/Ar (10:90, 80 standard cubic centimeter per minute) atmosphere for 2 hours.",
+        "method": "annealing reduction",
+        "conditions": {
+          "temperature": {
+            "value": 450,
+            "unit": "°C"
+          },
+          "ramp_rate": {
+            "value": 5,
+            "unit": "°C/min"
+          },
+          "time": {
+            "value": 2,
+            "unit": "h"
+          },
+          "atmosphere": {
+            "value": "H₂/Ar (10:90)",
+            "unit": ""
+          },
+          "gas_flow": {
+            "value": 80,
+            "unit": "sccm"
+          }
+        },
+        "source_text": "Synthesis of NiO/NiMoOₓ... annealed at 450°C... for 2 hours."
+      },
+      {
+        "id": "chem_RuO2",
+        "type": "chemical",
+        "name": "RuO₂",
+        "formula": "RuO2",
+        "aliases": [
+          "commercial RuO₂"
+        ]
+      },
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "20 wt% Pt/C",
+        "aliases": [
+          "20 wt% Pt/C powders"
+        ]
+      },
+      {
+        "id": "chem_Nafion",
+        "type": "chemical",
+        "name": "Nafion",
+        "aliases": []
+      },
+      {
+        "id": "chem_isopropanol",
+        "type": "chemical",
+        "name": "isopropanol",
+        "formula": "C₃H₈O",
+        "aliases": []
+      },
+      {
+        "id": "chem_RuO2_NF",
+        "type": "chemical",
+        "name": "RuO₂ on NF",
+        "aliases": []
+      },
+      {
+        "id": "chem_PtC_NF",
+        "type": "chemical",
+        "name": "20 wt% Pt/C on NF",
+        "aliases": []
+      },
+      {
+        "id": "synth_step_6",
+        "type": "synthesis",
+        "name": "RuO₂ and Pt/C drop-casting",
+        "procedure": "The mixed solution consisted of 5.0 mg of commercial RuO₂ or 20 wt% Pt/C powders, 30 μl of Nafion, and 600 μl of isopropanol was ultrasonically treated for 1 hour. Next, the above mixture was slowly dropped on the cleaning NF under red light.",
+        "method": "drop-casting",
+        "conditions": {
+          "ultrasonic_time": {
+            "value": 1,
+            "unit": "h"
+          }
+        },
+        "source_text": "Synthesis of RuO₂ and 20 wt% Pt/C on NF... ultrasonically treated for 1 hour."
+      },
+      {
+        "id": "chem_KOH",
+        "type": "chemical",
+        "name": "KOH",
+        "formula": "KOH",
+        "aliases": [
+          "1.0 M KOH",
+          "4.0 M KOH"
+        ],
+        "related_images": [
+          "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "KOH",
+            "properties": {
+              "amount": "80 g",
+              "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+            },
+            "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_PET_powder",
+        "type": "chemical",
+        "name": "PET powder",
+        "aliases": [
+          "ground PET powders",
+          "PET powders",
+          "waste PET powders",
+          "commercial water PET bottles"
+        ],
+        "properties": {
+          "mesh_size": {
+            "value": 100,
+            "unit": ""
+          },
+          "grain_size": {
+            "value": 1,
+            "unit": "μm"
+          }
+        },
+        "related_images": [
+          "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg",
+          "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg",
+          "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "PET",
+            "properties": {
+              "description": "Polyethylene terephthalate",
+              "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+            },
+            "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PET powders",
+            "properties": {
+              "amount": "500 g",
+              "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+            },
+            "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PET",
+            "properties": {
+              "description": "Polyethylene terephthalate",
+              "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+            },
+            "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PET Hydrolysate",
+            "properties": {
+              "description": "Hydrolysate from PET (polyethylene terephthalate)",
+              "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+            },
+            "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_PTA",
+        "type": "chemical",
+        "name": "PTA",
+        "aliases": [
+          "p-phthalic acid"
+        ],
+        "related_images": [
+          "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg",
+          "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg",
+          "395661d9eeafe45bf742f2d7830f9bab1530937640513b47f0030cb052be468c.jpg",
+          "4d2c57fe8d7d6dcb80fee955863282672c45bcd210586f972d28ae3736a24bd9.jpg",
+          "527cae799fb81679fa98ce843072dc3fee4b70c409b8adfd8d9c41d6f2a9600b.jpg",
+          "54b62317bacc99f16840b668a8329951c3931ba8a7369e4da1127c95c34ed26f.jpg",
+          "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg",
+          "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg",
+          "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg",
+          "8af8fdb1f9c765bb8f5330235d2413fa9d92f5ac01fe182e2ed488833599dee8.jpg",
+          "c808ffd7fe3aabecc63de65f95b32a7a7d9f632284eba43915a22a3dc6752580.jpg",
+          "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg",
+          "d28df2e6ab39c2eada74de4edcb6d07c1178d9dd8fffd82d32aad61206e1b52f.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Mo(N,O)x(N)y",
+            "properties": {
+              "description": "Molybdenum oxynitride material",
+              "extracted_from_image": "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg"
+            },
+            "source_image_file": "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PTA",
+            "properties": {
+              "description": "Purified Terephthalic Acid",
+              "amount": "154.2 g",
+              "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+            },
+            "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C=O",
+            "properties": {
+              "wavenumber": 1362,
+              "unit": "cm⁻¹",
+              "extracted_from_image": "395661d9eeafe45bf742f2d7830f9bab1530937640513b47f0030cb052be468c.jpg"
+            },
+            "source_image_file": "395661d9eeafe45bf742f2d7830f9bab1530937640513b47f0030cb052be468c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Mo-NiOOH",
+            "properties": {
+              "description": "Molybdenum-doped Nickel Oxyhydroxide",
+              "extracted_from_image": "4d2c57fe8d7d6dcb80fee955863282672c45bcd210586f972d28ae3736a24bd9.jpg"
+            },
+            "source_image_file": "4d2c57fe8d7d6dcb80fee955863282672c45bcd210586f972d28ae3736a24bd9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co, Cl-NiS",
+            "properties": {
+              "label": "Co, Cl-NiS",
+              "marker": "this work",
+              "extracted_from_image": "527cae799fb81679fa98ce843072dc3fee4b70c409b8adfd8d9c41d6f2a9600b.jpg"
+            },
+            "source_image_file": "527cae799fb81679fa98ce843072dc3fee4b70c409b8adfd8d9c41d6f2a9600b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PET Hydrolysate",
+            "properties": {
+              "description": "Hydrolysate derived from polyethylene terephthalate (PET)",
+              "extracted_from_image": "54b62317bacc99f16840b668a8329951c3931ba8a7369e4da1127c95c34ed26f.jpg"
+            },
+            "source_image_file": "54b62317bacc99f16840b668a8329951c3931ba8a7369e4da1127c95c34ed26f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "MoNi(OH)₂(101)",
+            "properties": {
+              "surface": "(101)",
+              "extracted_from_image": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+            },
+            "source_image_file": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+          },
+          {
+            "type": "process",
+            "name": "Green Chemical Upcycling",
+            "properties": {
+              "description": "Main process highlighted in the diagram",
+              "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+            },
+            "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "HO-M-O-M-OH",
+            "properties": {
+              "description": "Initial methoxy-hydroxylated surface species",
+              "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+            },
+            "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PET",
+            "properties": {
+              "description": "Polyethylene terephthalate",
+              "extracted_from_image": "8af8fdb1f9c765bb8f5330235d2413fa9d92f5ac01fe182e2ed488833599dee8.jpg"
+            },
+            "source_image_file": "8af8fdb1f9c765bb8f5330235d2413fa9d92f5ac01fe182e2ed488833599dee8.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni³⁺-O",
+            "properties": {
+              "raman_peak": "476 cm⁻¹",
+              "extracted_from_image": "c808ffd7fe3aabecc63de65f95b32a7a7d9f632284eba43915a22a3dc6752580.jpg"
+            },
+            "source_image_file": "c808ffd7fe3aabecc63de65f95b32a7a7d9f632284eba43915a22a3dc6752580.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "EG",
+            "properties": {
+              "description": "Exfoliated Graphene or Edge-functionalized Graphene",
+              "extracted_from_image": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+            },
+            "source_image_file": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PTA",
+            "properties": {
+              "description": "Phosphotungstic acid or related compound",
+              "extracted_from_image": "d28df2e6ab39c2eada74de4edcb6d07c1178d9dd8fffd82d32aad61206e1b52f.jpg"
+            },
+            "source_image_file": "d28df2e6ab39c2eada74de4edcb6d07c1178d9dd8fffd82d32aad61206e1b52f.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_EG",
+        "type": "chemical",
+        "name": "EG",
+        "formula": "C₂H₆O₂",
+        "aliases": [
+          "ethylene glycol"
+        ],
+        "related_images": [
+          "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg",
+          "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg",
+          "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "HO-CH2-CH2-OH",
+            "properties": {
+              "description": "Ethylene glycol (EG)",
+              "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+            },
+            "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C₂H₆O₂ (Ethylene glycol)",
+            "properties": {
+              "role": "reactant",
+              "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+            },
+            "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "EG",
+            "properties": {
+              "description": "Ethylene glycol (likely product from PET hydrolysis)",
+              "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+            },
+            "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_7",
+        "type": "synthesis",
+        "name": "PET alkaline hydrolysis",
+        "procedure": "Ground PET powders (100 mesh, 1 μm in grain size) from commercial plastic bottles were hydrolyzed into PTA (79%) and EG (21%) at 70°C in 4.0 M KOH, with high conversion efficiency of nearly 100% after 24 hours.",
+        "method": "alkaline hydrolysis",
+        "conditions": {
+          "temperature": {
+            "value": 70,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 24,
+            "unit": "h"
+          },
+          "KOH_concentration": {
+            "value": 4.0,
+            "unit": "M"
+          }
+        },
+        "source_text": "Ground PET powders (100 mesh, 1 μm in grain size)... hydrolyzed into PTA (79%) and EG (21%) at 70°C in 4.0 M KOH... after 24 hours."
+      },
+      {
+        "id": "chem_KDF",
+        "type": "chemical",
+        "name": "KDF",
+        "aliases": [
+          "potassium diformate"
+        ],
+        "related_images": [
+          "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "KDF",
+            "properties": {
+              "description": "Likely potassium diformate or similar chemical",
+              "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+            },
+            "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_FA",
+        "type": "chemical",
+        "name": "FA",
+        "formula": "CH₂O₂",
+        "aliases": [
+          "formic acid",
+          "88 wt% FA"
+        ],
+        "properties": {
+          "concentration": {
+            "value": 88,
+            "unit": "wt%"
+          }
+        },
+        "related_images": [
+          "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg",
+          "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg",
+          "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Formate",
+            "properties": {
+              "description": "Daily supplement",
+              "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+            },
+            "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "HCOO⁻ (Formate)",
+            "properties": {
+              "role": "product",
+              "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+            },
+            "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FA",
+            "properties": {
+              "description": "Formic acid (likely product from PET hydrolysis)",
+              "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+            },
+            "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_8",
+        "type": "synthesis",
+        "name": "PET upcycling product separation",
+        "procedure": "After PET hydrolysate electrolysis, 100 ml of FA (88 wt%) was slowly added into the electrolyte to adjust the pH to 3.0 under stirring. After the temperature was cooled down, PTA precipitations were filtrated and washed for several times. Afterward, the filtrate was concentrated at 60°C under stirring for 3 days, with a daily supplement of 20 ml of FA (88 wt%) until the crystals precipitated in the solution. Afterward, the hot solution was cooled at 4°C for 12 hours. Last, the KDF product was obtained through filtering the initially precipitated crystals and then evaporating the remaining filtrate.",
+        "unit_operations": [
+          {
+            "id": "unit_op_8.1",
+            "name": "Acidification",
+            "method": "FA addition",
+            "conditions": {
+              "pH": {
+                "value": 3.0,
+                "unit": ""
+              },
+              "FA_volume": {
+                "value": 100,
+                "unit": "ml"
+              }
+            },
+            "procedure_snippet": "100 ml of FA (88 wt%) was slowly added into the electrolyte to adjust the pH to 3.0 under stirring."
+          },
+          {
+            "id": "unit_op_8.2",
+            "name": "PTA Precipitation",
+            "method": "Filtration",
+            "conditions": {},
+            "procedure_snippet": "After the temperature was cooled down, PTA precipitations were filtrated and washed for several times."
+          },
+          {
+            "id": "unit_op_8.3",
+            "name": "KDF Concentration",
+            "method": "Evaporation",
+            "conditions": {
+              "temperature": {
+                "value": 60,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 3,
+                "unit": "days"
+              },
+              "FA_supplement": {
+                "value": 20,
+                "unit": "ml/day"
+              }
+            },
+            "procedure_snippet": "The filtrate was concentrated at 60°C under stirring for 3 days, with a daily supplement of 20 ml of FA (88 wt%)"
+          },
+          {
+            "id": "unit_op_8.4",
+            "name": "KDF Crystallization",
+            "method": "Cooling",
+            "conditions": {
+              "temperature": {
+                "value": 4,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 12,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "The hot solution was cooled at 4°C for 12 hours."
+          }
+        ],
+        "conditions": {
+          "pH": {
+            "value": 3.0,
+            "unit": ""
+          },
+          "concentration_temp": {
+            "value": 60,
+            "unit": "°C"
+          },
+          "crystallization_temp": {
+            "value": 4,
+            "unit": "°C"
+          }
+        },
+        "source_text": "Product separation... After PET hydrolysate electrolysis, 100 ml of FA (88 wt%)... evaporating the remaining filtrate."
+      },
+      {
+        "id": "chem_graphite_rod",
+        "type": "chemical",
+        "name": "graphite rod",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_Hg_HgO",
+        "type": "chemical",
+        "name": "Hg/HgO electrode",
+        "aliases": [
+          "Hg/HgO"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Mo-Ni(OH)2",
+        "type": "chemical",
+        "name": "Mo-Ni(OH)₂",
+        "aliases": [
+          "Mo - Ni(OH)₂"
+        ],
+        "formula": "Mo-Ni(OH)₂",
+        "properties": {
+          "loading_mass": {
+            "value": 14.2,
+            "unit": "mg/cm²"
+          }
+        },
+        "related_images": [
+          "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg",
+          "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Mo-Ni(OH)₂",
+            "properties": {
+              "role": "anode material",
+              "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+            },
+            "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Mo-Ni(OH)2",
+            "properties": {
+              "description": "Molybdenum-nickel hydroxide",
+              "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+            },
+            "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ni(OH)2",
+        "type": "chemical",
+        "name": "Ni(OH)₂",
+        "aliases": [
+          "Ni(OH)₂ NSs"
+        ],
+        "formula": "Ni(OH)₂",
+        "properties": {
+          "loading_mass": {
+            "value": 7.8,
+            "unit": "mg/cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_NiO/NiMoOx",
+        "type": "chemical",
+        "name": "NiO/NiMoOₓ",
+        "aliases": [
+          "NiO / NiMoO_x"
+        ]
+      },
+      {
+        "id": "chem_Mo-NiOOH",
+        "type": "chemical",
+        "name": "Mo-NiOOH",
+        "formula": "Mo-NiOOH"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_NF_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_NF",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_HCl_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_HCl",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "cleaning_agent"
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "cleaning_agent"
+        }
+      },
+      {
+        "id": "edge_input_chem_DI_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_DI_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni(NO3)2_6H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni(NO3)2_6H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "Ni_precursor",
+          "amount": {
+            "value": 1.2,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_(NH4)6Mo7O24_2H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_(NH4)6Mo7O24_2H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "Mo_precursor",
+          "amount": {
+            "value": 0.3,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_NiMoO4_xH2O",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_NiMoO4_xH2O",
+        "properties": {
+          "form": "hydrothermal product (air-dried)"
+        }
+      },
+      {
+        "id": "edge_input_chem_NiMoO4_xH2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_NiMoO4_xH2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "area": {
+            "value": 1.0,
+            "unit": "cm²"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_KOH_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_KOH",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "electrolyte",
+          "concentration": {
+            "value": 1.0,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Mo_NiOOH",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Mo_NiOOH",
+        "properties": {
+          "form": "electrooxidized product"
+        }
+      },
+      {
+        "id": "edge_input_chem_Mo_NiOOH_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Mo_NiOOH",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_KOH_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_KOH",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "electrolyte",
+          "concentration": {
+            "value": 1.0,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_EG_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_EG",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "reductant",
+          "concentration": {
+            "value": 0.1,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_Mo_Ni(OH)2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_Mo_Ni(OH)2",
+        "properties": {
+          "form": "spontaneously reduced product"
+        }
+      },
+      {
+        "id": "edge_input_chem_NF_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_NF",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni(NO3)2_6H2O_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni(NO3)2_6H2O",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "Ni_precursor",
+          "amount": {
+            "value": 2,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_urea_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_urea",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "hydrolysis_agent",
+          "amount": {
+            "value": 10,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_NH4F_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_NH4F",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "morphology_director",
+          "amount": {
+            "value": 4,
+            "unit": "mmol"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_DI_water_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_DI_water",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 30,
+            "unit": "ml"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_chem_Ni(OH)2_NSs",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_Ni(OH)2_NSs",
+        "properties": {
+          "form": "hydrothermal product (air-dried)"
+        }
+      },
+      {
+        "id": "edge_input_chem_NiMoO4_xH2O_synth_step_5",
+        "type": "synthesis_input",
+        "source_id": "chem_NiMoO4_xH2O",
+        "target_id": "synth_step_5",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_5_chem_NiO_NiMoOx",
+        "type": "synthesis_output",
+        "source_id": "synth_step_5",
+        "target_id": "chem_NiO_NiMoOx",
+        "properties": {
+          "form": "annealed product"
+        }
+      },
+      {
+        "id": "edge_input_chem_RuO2_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_RuO2",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "active_material",
+          "amount": {
+            "value": 5.0,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_Pt_C_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_Pt_C",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "active_material",
+          "amount": {
+            "value": 5.0,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_Nafion_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_Nafion",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "binder",
+          "volume": {
+            "value": 30,
+            "unit": "μl"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_isopropanol_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_isopropanol",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 600,
+            "unit": "μl"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_NF_synth_step_6",
+        "type": "synthesis_input",
+        "source_id": "chem_NF",
+        "target_id": "synth_step_6",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_6_chem_RuO2_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_6",
+        "target_id": "chem_RuO2_NF",
+        "properties": {
+          "form": "drop-cast electrode"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_6_chem_PtC_NF",
+        "type": "synthesis_output",
+        "source_id": "synth_step_6",
+        "target_id": "chem_PtC_NF",
+        "properties": {
+          "form": "drop-cast electrode"
+        }
+      },
+      {
+        "id": "edge_input_chem_PET_powder_synth_step_7",
+        "type": "synthesis_input",
+        "source_id": "chem_PET_powder",
+        "target_id": "synth_step_7",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_KOH_synth_step_7",
+        "type": "synthesis_input",
+        "source_id": "chem_KOH",
+        "target_id": "synth_step_7",
+        "properties": {
+          "role": "reagent",
+          "concentration": {
+            "value": 4.0,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_7_chem_PTA",
+        "type": "synthesis_output",
+        "source_id": "synth_step_7",
+        "target_id": "chem_PTA",
+        "properties": {
+          "yield": "79%"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_7_chem_EG",
+        "type": "synthesis_output",
+        "source_id": "synth_step_7",
+        "target_id": "chem_EG",
+        "properties": {
+          "yield": "21%"
+        }
+      },
+      {
+        "id": "edge_input_chem_FA_synth_step_8",
+        "type": "synthesis_input",
+        "source_id": "chem_FA",
+        "target_id": "synth_step_8",
+        "properties": {
+          "role": "reagent",
+          "initial_volume": {
+            "value": 100,
+            "unit": "ml"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_graphite_rod_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_graphite_rod",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "counter_electrode"
+        }
+      },
+      {
+        "id": "edge_input_chem_Hg_HgO_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Hg_HgO",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "reference_electrode"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Ni(OH)2",
+      "chem_Mo-Ni(OH)2",
+      "chem_NiO/NiMoOx"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Mo-Ni(OH)2",
+        "type": "chemical",
+        "name": "Mo-Ni(OH)₂",
+        "aliases": [
+          "Mo - Ni(OH)₂",
+          "Mo-Ni(OH)₂ electrode",
+          "Mo-Ni(OH)₂ nanorods"
+        ],
+        "properties": {
+          "loading_mass": {
+            "value": 14.2,
+            "unit": "mg/cm²"
+          },
+          "zeta_potential": {
+            "value": -6.24,
+            "unit": "mV"
+          },
+          "double_layer_capacitance": {
+            "value": "increased",
+            "unit": "for EGOR"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni(OH)2",
+        "type": "chemical",
+        "name": "Ni(OH)₂",
+        "aliases": [
+          "Ni(OH)₂ NSs"
+        ],
+        "properties": {
+          "loading_mass": {
+            "value": 7.8,
+            "unit": "mg/cm²"
+          },
+          "zeta_potential": {
+            "value": -0.79,
+            "unit": "mV"
+          }
+        }
+      },
+      {
+        "id": "chem_NiO/NiMoOx",
+        "type": "chemical",
+        "name": "NiO/NiMoOₓ",
+        "aliases": [
+          "NiO / NiMoO_x"
+        ]
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Mo-Ni(OH)2",
+        "description": "EGOR LSV half-cell performance in alkaline water/seawater media",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "EGOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.5 M EG and alkaline seawater",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13.8,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO (1.0 M KOH)",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "85%",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "potential_at_100mA/cm²": {
+            "value": 1.38,
+            "unit": "V vs RHE"
+          },
+          "potential_at_300mA/cm²": {
+            "value": 1.41,
+            "unit": "V vs RHE"
+          },
+          "Tafel_slope": {
+            "value": 37.0,
+            "unit": "mV/dec"
+          },
+          "Faradaic_efficiency": {
+            "value": 95.8,
+            "unit": "%"
+          },
+          "selectivity": {
+            "value": 97.7,
+            "unit": "%"
+          },
+          "Faradaic_efficiency_condition": {
+            "value": "at 1.55 V vs RHE",
+            "unit": ""
+          }
+        },
+        "source_text": "Half-cell EGOR performances under alkaline water/seawater media were evaluated through a three-electrode system. As shown in figs. S21 and S22, linear sweep voltammetry (LSV) curves that exhibit Mo-Ni(OH)₂ only requires 1.38 and 1.41 V versus the reversible hydrogen electrode (RHE) to drive 100 and 300 mA cm⁻²... The high-performance liquid chromatography (HPLC) chromatograms demonstrate that the highest faradic efficiency (FE; 95.8%) with selectivity (97.7%) is obtained at 1.55 V versus RHE"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Mo-Ni(OH)2",
+        "description": "EGOR stability in flow electrolyzer",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "EGOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH with 0.5 M EG",
+            "unit": "solution"
+          },
+          "current_density": {
+            "value": 100,
+            "unit": "mA/cm²"
+          },
+          "iR_correction": {
+            "value": "not applied",
+            "unit": "flow electrolyzer"
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": 300,
+            "unit": "hours"
+          },
+          "deactivation": {
+            "value": "negligible",
+            "unit": "performance"
+          }
+        },
+        "source_text": "The Mo-Ni(OH)₂ shows an impressive stability with negligible deactivation over 300 hours under a current density of 100 mA cm⁻² in a flow electrolyzer"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_NiO/NiMoOx",
+        "description": "HER half-cell performance",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "alkaline",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "overpotential_at_100mA/cm²": {
+            "value": 75,
+            "unit": "mV"
+          },
+          "overpotential_at_300mA/cm²": {
+            "value": 126,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 40.5,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "NiO/NiMoOₓ only requires overpotentials of 75 and 126 mV to drive 100 and 300 mA cm⁻². Tafel slope of NiO/NiMoOₓ (40.5 mV dec⁻¹)"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_NiO/NiMoOx",
+        "description": "HER stability",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "current_density": {
+            "value": 100,
+            "unit": "mA/cm²"
+          },
+          "Faradaic_efficiency": {
+            "value": 100,
+            "unit": "%"
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": 350,
+            "unit": "hours"
+          }
+        },
+        "source_text": "the reconstructed *OH-NiO/NiMoOₓ catalyst exhibits excellent HER stability for over 350 hours under a current density of 100 mA cm⁻² with nearly 100% FE"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_Mo-Ni(OH)2",
+        "description": "PET upcycling anode performance in slot-type parallel flow electrolyzer",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "PET upcycling (EGOR)",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "PET hydrolysate in alkaline natural seawater",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "five-unit parallel flow electrolyzer",
+            "unit": "setup"
+          },
+          "working_area": {
+            "value": 50,
+            "unit": "cm²"
+          },
+          "temperature": {
+            "value": 70,
+            "unit": "°C"
+          },
+          "flow_rate": {
+            "value": 10,
+            "unit": "ml/min"
+          },
+          "catalyst_pairs": {
+            "value": 5,
+            "unit": "pairs"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_6A": {
+            "value": 1.74,
+            "unit": "V"
+          },
+          "stability_duration": {
+            "value": 350,
+            "unit": "hours"
+          },
+          "PET_upcycled": {
+            "value": 301.0,
+            "unit": "g"
+          },
+          "PTA_yield": {
+            "value": 95.5,
+            "unit": "%"
+          },
+          "KDF_yield": {
+            "value": 67.2,
+            "unit": "%"
+          },
+          "H2_produced": {
+            "value": 214.9,
+            "unit": "liters"
+          }
+        },
+        "source_text": "this device only requires 1.74 V for PET hydrolysate electrolysis to drive an industrial demand current of 6 A... constant PET hydrolysate electrolysis was achieved at a current of 6 A for more than 350 hours under alkaline natural seawater... successfully upcycled 301.0 g of PET... into 227.1 g of p-phthalic acid (95.5% yield), 1486.2 g of potassium difomate (67.2% yield), and approximately 214.9 liters of green hydrogen"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_NiO/NiMoOx",
+        "description": "PET upcycling cathode performance in slot-type parallel flow electrolyzer",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "PET upcycling (HER)",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "PET hydrolysate in alkaline natural seawater",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "five-unit parallel flow electrolyzer",
+            "unit": "setup"
+          },
+          "working_area": {
+            "value": 50,
+            "unit": "cm²"
+          },
+          "temperature": {
+            "value": 70,
+            "unit": "°C"
+          },
+          "flow_rate": {
+            "value": 10,
+            "unit": "ml/min"
+          },
+          "catalyst_pairs": {
+            "value": 5,
+            "unit": "pairs"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_6A": {
+            "value": 1.74,
+            "unit": "V"
+          },
+          "stability_duration": {
+            "value": 350,
+            "unit": "hours"
+          }
+        },
+        "source_text": "we integrated NiO/NiMoOₓ as cathode and Mo-Ni(OH)₂ as anode... this device only requires 1.74 V for PET hydrolysate electrolysis to drive an industrial demand current of 6 A... constant PET hydrolysate electrolysis was achieved at a current of 6 A for more than 350 hours"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_Mo-Ni(OH)2",
+        "description": "CP test in 1.0 M KOH with 0.5 M EG and alkaline seawater",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "EGOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH with 0.5 M EG and alkaline seawater",
+            "unit": "solution"
+          }
+        },
+        "results_json": {},
+        "source_text": "Chronopotentiometry (CP) test in 1.0 M KOH with 0.5 M EG and alkaline seawater with/without 0.5 M EG"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_Ni(OH)2",
+        "description": "EGOR half-cell performance comparison",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "EGOR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "potential_at_100mA/cm²": {
+            "value": 1.52,
+            "unit": "V vs RHE"
+          },
+          "potential_at_300mA/cm²": {
+            "value": 1.59,
+            "unit": "V vs RHE"
+          }
+        },
+        "source_text": "LSV curve in 1.0 M KOH as the control demands higher potentials of 1.52 and 1.59 V versus RHE to drive 100 and 300 mA cm⁻²"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Mo-Ni(OH)2_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Mo-Ni(OH)2_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiO/NiMoOx_test_3",
+        "type": "tested_in",
+        "source_id": "chem_NiO/NiMoOx",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiO/NiMoOx_test_4",
+        "type": "tested_in",
+        "source_id": "chem_NiO/NiMoOx",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Mo-Ni(OH)2_test_5",
+        "type": "tested_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiO/NiMoOx_test_6",
+        "type": "tested_in",
+        "source_id": "chem_NiO/NiMoOx",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Mo-Ni(OH)2_test_7",
+        "type": "tested_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni(OH)2_test_8",
+        "type": "tested_in",
+        "source_id": "chem_Ni(OH)2",
+        "target_id": "test_8",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Mo-Ni(OH)2",
+        "type": "chemical",
+        "name": "Mo-Ni(OH)₂",
+        "aliases": [
+          "Mo - Ni(OH)₂"
+        ],
+        "formula": "Mo-Ni(OH)₂",
+        "properties": {
+          "loading_mass": {
+            "value": 14.2,
+            "unit": "mg/cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_NiMoO4_xH2O",
+        "type": "chemical",
+        "name": "NiMoO₄·xH₂O",
+        "aliases": [
+          "NiMoO₄·xH₂O precursor"
+        ],
+        "formula": "NiMoO₄·xH₂O"
+      },
+      {
+        "id": "chem_Ni(OH)2",
+        "type": "chemical",
+        "name": "Ni(OH)₂",
+        "aliases": [
+          "Ni(OH)₂ NSs"
+        ],
+        "formula": "Ni(OH)₂",
+        "properties": {
+          "loading_mass": {
+            "value": 7.8,
+            "unit": "mg/cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_NiO_NiMoOx",
+        "type": "chemical",
+        "name": "NiO/NiMoOₓ",
+        "aliases": [
+          "NiO / NiMoO_x"
+        ],
+        "formula": "NiO/NiMoOₓ"
+      },
+      {
+        "id": "chem_Mo-NiOOH",
+        "type": "chemical",
+        "name": "Mo-NiOOH",
+        "formula": "Mo-NiOOH"
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "SEM image shows densely interconnected nanorods of Mo-Ni(OH)₂ beneficial to mass and charge transfer.",
+        "evidence_snippet": "The scanning electron microscope (SEM) image shows that the densely interconnected nanorods are beneficial to mass and charge transfer (Fig. 2, A and B, and figs. S7 to S10).",
+        "related_images": [
+          "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg",
+          "395661d9eeafe45bf742f2d7830f9bab1530937640513b47f0030cb052be468c.jpg",
+          "527cae799fb81679fa98ce843072dc3fee4b70c409b8adfd8d9c41d6f2a9600b.jpg",
+          "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg",
+          "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg",
+          "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg",
+          "c808ffd7fe3aabecc63de65f95b32a7a7d9f632284eba43915a22a3dc6752580.jpg",
+          "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "NiMoS4-Ni3S2",
+            "properties": {
+              "description": "Nickel molybdenum sulfide",
+              "extracted_from_image": "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg"
+            },
+            "source_image_file": "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "FTIR Spectrum",
+            "properties": {
+              "range": "1200-2000 cm⁻¹",
+              "y_axis": "Absorbance (a.u.)",
+              "multiple_traces": true,
+              "extracted_from_image": "395661d9eeafe45bf742f2d7830f9bab1530937640513b47f0030cb052be468c.jpg"
+            },
+            "source_image_file": "395661d9eeafe45bf742f2d7830f9bab1530937640513b47f0030cb052be468c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Pt/Ni(OH)23",
+            "properties": {
+              "label": "Pt/Ni(OH)23",
+              "extracted_from_image": "527cae799fb81679fa98ce843072dc3fee4b70c409b8adfd8d9c41d6f2a9600b.jpg"
+            },
+            "source_image_file": "527cae799fb81679fa98ce843072dc3fee4b70c409b8adfd8d9c41d6f2a9600b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "*CHOH + *COOH",
+            "properties": {
+              "extracted_from_image": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+            },
+            "source_image_file": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+          },
+          {
+            "type": "equipment",
+            "name": "Filter",
+            "properties": {
+              "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+            },
+            "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "HO-CH2-O-M-O-M-O-CH2-OH",
+            "properties": {
+              "description": "Formate desorption product",
+              "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+            },
+            "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+          },
+          {
+            "type": "timepoint",
+            "name": "5 min",
+            "properties": {
+              "extracted_from_image": "c808ffd7fe3aabecc63de65f95b32a7a7d9f632284eba43915a22a3dc6752580.jpg"
+            },
+            "source_image_file": "c808ffd7fe3aabecc63de65f95b32a7a7d9f632284eba43915a22a3dc6752580.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image of nanorod array",
+              "scale": "1 μm",
+              "extracted_from_image": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+            },
+            "source_image_file": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM image with selected-area electron diffraction reveals typical lattice mismatching of the amorphous phase in Mo-Ni(OH)₂.",
+        "evidence_snippet": "The transmission electron microscope (TEM) image with the selected-area electron diffraction reveals typical lattice mismatching of the amorphous phase (fig. S11)."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "XRD pattern shows NiMoO₄·xH₂O precursor (PDF #12-0348) transforms into nickel hydroxide phase (PDF #14-0117).",
+        "evidence_snippet": "The x-ray diffraction (XRD) pattern (fig. S12) indicates that the NiMoO₄·xH₂O precursor (PDF #12-0348) transforms into nickel hydroxide phase (PDF #14-0117)."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "Ni 2p XPS spectra show Mo-Ni(OH)₂ has lower Ni³⁺/Ni²⁺ ratio than Ni(OH)₂ (fig. S15).",
+        "evidence_snippet": "The Ni 2p spectra indicate that Mo-Ni(OH)₂ has a lower ratio of Ni³⁺/Ni²⁺ (fig. S15)."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "ICP-OES",
+        "data_reported": true,
+        "characterization_summary": "ICP-OES shows large amounts of MoO₄²⁻ ions dissolve from catalyst during electrooxidation (table S1).",
+        "evidence_snippet": "the inductively coupled plasma optical emission spectrometry (ICP-OES) result that large amounts of MoO₄²⁻ ions dissolve from the catalyst during the electrooxidation process (table S1 and fig. S16)."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "XANES",
+        "data_reported": true,
+        "characterization_summary": "Negative shift of Ni K-edge XANES spectra of Mo-Ni(OH)₂ indicates lower average valence state.",
+        "evidence_snippet": "The negative shift of Ni K-edge x-ray absorption near edge structure spectra of Mo-Ni(OH)₂ represents a lower average valence state (figs. S18 to S20)."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "EXAFS",
+        "data_reported": true,
+        "characterization_summary": "EXAFS shows Ni-Ni scattering at 2.48 Å and Ni-O coordination at 2.08 Å (table S2).",
+        "evidence_snippet": "Fourier transform extended x-ray absorption fine structure (EXAFS) spectra in R-space show intensity maximum of Ni-Ni scattering at 2.48Å and Ni-O coordination at 2.08Å (table S2)."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "zeta_potential",
+        "data_reported": true,
+        "characterization_summary": "Zeta potential of Mo-Ni(OH)₂ is -6.24 mV vs -0.79 mV for Ni(OH)₂.",
+        "evidence_snippet": "a lower zeta potential of Mo-Ni(OH)₂ (-6.24 mV) than that of Ni(OH)₂ (-0.79 mV) implies better chlorine resistance of the former (fig. S39)."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "CV",
+        "data_reported": true,
+        "characterization_summary": "Higher Cdl of Mo-Ni(OH)₂ indicates larger ECSA than Ni(OH)₂.",
+        "evidence_snippet": "increasing double-layer capacitance (Cdl) of Mo-Ni(OH)₂ for EGOR implies the larger electrochemical active surface area (ECSA) (figs. S40 and S41)."
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "Raman",
+        "data_reported": true,
+        "characterization_summary": "In situ Raman of Mo-NiOOH shows Ni³⁺-O stretching peaks at 476 and 553 cm⁻¹.",
+        "evidence_snippet": "In the Raman spectra of Mo-NiOOH, two strong doublet peaks at 476 and 553 cm⁻¹ belong to the Ni³⁺-O stretching vibration (Fig. 3, A and B)."
+      },
+      {
+        "id": "char_11",
+        "type": "characterization",
+        "method_name": "FTIR",
+        "data_reported": true,
+        "characterization_summary": "In situ FTIR shows glyoxal peak at 1068 cm⁻¹ and formate bands at 1230, 1326, 1412, 1585 cm⁻¹; no CO intermediates.",
+        "evidence_snippet": "the absorption band at 1068 cm⁻¹ is assigned to the aldehyde stretching of glyoxal... Representative absorption bands of formate at 1230, 1326, 1412, and 1585 cm⁻¹ belong to the C-O stretching, the antisymmetric and symmetric stretching of COO⁻, and the C-O asymmetric stretching."
+      },
+      {
+        "id": "char_12",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "Post-stability SEM shows retained nanorod structure of Mo-Ni(OH)₂.",
+        "evidence_snippet": "The Mo-Ni(OH)₂ catalyst shows high catalytic stability for EGOR, as confirmed by the retained nanorod structure in the SEM result (fig. S44)."
+      },
+      {
+        "id": "char_13",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "Post-stability XRD shows nearly unchanged (101) plane of Ni(OH)₂ at 0.233 nm.",
+        "evidence_snippet": "the almost unchanged lattice fringe of 0.233 nm assigned to the (101) plane for Ni(OH)₂ in the XRD and TEM results (figs. S46 and S47) after long-term EGOR."
+      },
+      {
+        "id": "char_14",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "Post-stability TEM confirms nearly unchanged lattice fringe of 0.233 nm for Ni(OH)₂ (101) plane.",
+        "evidence_snippet": "the almost unchanged lattice fringe of 0.233 nm assigned to the (101) plane for Ni(OH)₂ in the XRD and TEM results (figs. S46 and S47) after long-term EGOR."
+      },
+      {
+        "id": "char_15",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "Post-stability Ni 2p XPS shows nearly unchanged Ni²⁺/Ni³⁺ ratio.",
+        "evidence_snippet": "the nearly unchanged ratio of Ni²⁺/Ni³⁺ in Ni 2p x-ray photoelectron spectroscopy (XPS) spectra (fig. S45)."
+      },
+      {
+        "id": "char_16",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "NiO/NiMoOₓ shows typical (101) plane of NiO state.",
+        "evidence_snippet": "The XRD pattern and TEM characterization indicate the typical (101) plane of the NiO state in NiO/NiMoOₓ (figs. S64 and S65)."
+      },
+      {
+        "id": "char_17",
+        "type": "characterization",
+        "method_name": "TEM",
+        "data_reported": true,
+        "characterization_summary": "TEM confirms typical (101) plane of NiO state in NiO/NiMoOₓ.",
+        "evidence_snippet": "The XRD pattern and TEM characterization indicate the typical (101) plane of the NiO state in NiO/NiMoOₓ (figs. S64 and S65)."
+      },
+      {
+        "id": "n2",
+        "type": "characterization",
+        "name": "Recyclability Chart",
+        "properties": {
+          "type": "bar graph",
+          "x_axis": "Reaction cycle (1-10)",
+          "y_axis": "Yield of PTA (%)",
+          "colors": [
+            "blue",
+            "red"
+          ],
+          "trends": "Both blue and red bars show high yields (~80-100%) stable across 10 cycles",
+          "extracted_from_image": "d28df2e6ab39c2eada74de4edcb6d07c1178d9dd8fffd82d32aad61206e1b52f.jpg"
+        },
+        "source_image_file": "d28df2e6ab39c2eada74de4edcb6d07c1178d9dd8fffd82d32aad61206e1b52f.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "chemical",
+        "name": "N",
+        "properties": {
+          "description": "Nitrogen-containing group",
+          "extracted_from_image": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+        },
+        "source_image_file": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "chemical",
+        "name": "M",
+        "properties": {
+          "description": "Metal or marker (possibly catalyst)",
+          "extracted_from_image": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+        },
+        "source_image_file": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "material",
+        "name": "Porous substrate",
+        "properties": {
+          "description": "Substrate with porous structure",
+          "extracted_from_image": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+        },
+        "source_image_file": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "material",
+        "name": "Self-supported nanorod array",
+        "properties": {
+          "description": "Self-supported nanostructure resembling nanorods or nanowires",
+          "extracted_from_image": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+        },
+        "source_image_file": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "image",
+        "name": "Figure A",
+        "properties": {
+          "description": "Schematic of efficient mass transfer with labeled components",
+          "scale": null,
+          "extracted_from_image": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+        },
+        "source_image_file": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "concept",
+        "name": "Efficient mass transfer",
+        "properties": {
+          "description": "Process depicted in schematic",
+          "extracted_from_image": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+        },
+        "source_image_file": "cbd4afc08ba37bab380b311280ce85007c726c3334f8c79c76224c711815eb22.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "timepoint",
+        "name": "15 min",
+        "properties": {
+          "extracted_from_image": "c808ffd7fe3aabecc63de65f95b32a7a7d9f632284eba43915a22a3dc6752580.jpg"
+        },
+        "source_image_file": "c808ffd7fe3aabecc63de65f95b32a7a7d9f632284eba43915a22a3dc6752580.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "waste",
+        "name": "Waste Landfill",
+        "properties": {
+          "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+        },
+        "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "Stability Test (Figure C)",
+        "properties": {
+          "description": "Chronopotentiometry at 100 mA/cm² vs RHE, with and without IR correction, in 1 M KOH + 0.5 M EG and alkaline seawater",
+          "extracted_from_image": "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg"
+        },
+        "source_image_file": "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "Stability vs Potential (Figure D)",
+        "properties": {
+          "description": "Stability data at 100 mA/cm² vs RHE, plotting stability against potential (1.48V to 1.59V)",
+          "extracted_from_image": "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg"
+        },
+        "source_image_file": "20c943628e987cf8dfdddd07cf0480fe7fb7ccd812f479f022f08c33971c750c.jpg"
+      },
+      {
+        "id": "CaMg",
+        "type": "chemical",
+        "name": "CaMg",
+        "properties": {
+          "description": "Calcium-Magnesium mixture",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "CaMg_mixture",
+        "type": "chemical",
+        "name": "CaMg mixture",
+        "properties": {
+          "amount": "23 g",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "natural_seawater",
+        "type": "chemical",
+        "name": "Natural seawater",
+        "properties": {
+          "volume": "0.4 L",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "NaOH",
+        "type": "chemical",
+        "name": "NaOH",
+        "properties": {
+          "concentration": "20x",
+          "amount": "in water",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "grinding",
+        "type": "process",
+        "name": "Grinding",
+        "properties": {
+          "input": "PET",
+          "output": "PET powders",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "hydrolysis",
+        "type": "process",
+        "name": "Hydrolysis",
+        "properties": {
+          "conditions": "70°C, 24 h",
+          "reagents": "KOH",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "CaMg_mixing",
+        "type": "process",
+        "name": "CaMg mixing",
+        "properties": {
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "electrolysis",
+        "type": "process",
+        "name": "Electrolysis",
+        "properties": {
+          "conditions": "6 A, 8 h",
+          "electrolyte": "natural seawater",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "filtration_1",
+        "type": "process",
+        "name": "Filtration",
+        "properties": {
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "NaOH_supplement",
+        "type": "process",
+        "name": "20x NaOH (aq)",
+        "properties": {
+          "description": "Daily supplement",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "PTA_precipitation",
+        "type": "process",
+        "name": "PTA precipitation",
+        "properties": {
+          "conditions": "pH adjusted to 2.0 with 30% H2SO4",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "filter_evaporation",
+        "type": "process",
+        "name": "Filter evaporation",
+        "properties": {
+          "conditions": "60°C, 3 days",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "crystallization",
+        "type": "process",
+        "name": "Crystallization",
+        "properties": {
+          "conditions": "60°C, 1 day",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "washing",
+        "type": "process",
+        "name": "Washing",
+        "properties": {
+          "weight": "23 g",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "drying",
+        "type": "process",
+        "name": "Drying",
+        "properties": {
+          "conditions": "60°C, 1 day",
+          "extracted_from_image": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+        },
+        "source_image_file": "2288c464e166261848193808fdabb7ddcda64cc402ceea65e60027332853d26a.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "process",
+        "name": "Traditional Route",
+        "properties": {
+          "color": "Orange",
+          "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+        },
+        "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "process",
+        "name": "Low-Cost Effective Route",
+        "properties": {
+          "color": "Blue",
+          "recycling_rate": "20%",
+          "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+        },
+        "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "benefit",
+        "name": "No CO2 Emission",
+        "properties": {
+          "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+        },
+        "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+      },
+      {
+        "id": "is",
+        "type": "state",
+        "name": "Initial State",
+        "properties": {
+          "energy": "0 eV",
+          "extracted_from_image": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+        },
+        "source_image_file": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+      },
+      {
+        "id": "rds1",
+        "type": "state",
+        "name": "RDS 1",
+        "properties": {
+          "energy": "-0.24 eV",
+          "extracted_from_image": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+        },
+        "source_image_file": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+      },
+      {
+        "id": "rds2",
+        "type": "state",
+        "name": "RDS 2",
+        "properties": {
+          "energy": "-0.86 eV",
+          "extracted_from_image": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+        },
+        "source_image_file": "5f271b7cbeb219777a306874df4fd1b30ca7f80c1b5d62251aaac50a3fdb119d.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "benefit",
+        "name": "No Explosion Risk",
+        "properties": {
+          "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+        },
+        "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "benefit",
+        "name": "Easy Separation",
+        "properties": {
+          "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+        },
+        "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "output",
+        "name": "Green Fuel",
+        "properties": {
+          "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+        },
+        "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+      },
+      {
+        "id": "n18",
+        "type": "output",
+        "name": "Power Grid",
+        "properties": {
+          "extracted_from_image": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+        },
+        "source_image_file": "6bc37241a8a6969c0d6b8f79f06be2f936c73a6833d5776a51ce83c329c1a797.jpg"
+      },
+      {
+        "id": "hydroxide",
+        "type": "chemical",
+        "name": "OH-",
+        "properties": {
+          "description": "Hydroxide",
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "process",
+        "name": "0. Hydroxide Desorption",
+        "properties": {
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "process",
+        "name": "1. EG Adsorption",
+        "properties": {
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "process",
+        "name": "2. Dehydrogenation",
+        "properties": {
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "p4",
+        "type": "process",
+        "name": "3. Dehydrogenation",
+        "properties": {
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "p5",
+        "type": "process",
+        "name": "5. OH Adsorption",
+        "properties": {
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "p6",
+        "type": "process",
+        "name": "6. Formate Formation",
+        "properties": {
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "p7",
+        "type": "process",
+        "name": "7. Formate Desorption",
+        "properties": {
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "p8",
+        "type": "process",
+        "name": "4. C-C Bond Cleavage",
+        "properties": {
+          "extracted_from_image": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+        },
+        "source_image_file": "85c50b80350a63deadf37a38bc7113327bc5209c8a2474836ed9d6b27afe0741.jpg"
+      },
+      {
+        "id": "H2",
+        "type": "chemical",
+        "name": "H2",
+        "properties": {
+          "description": "Hydrogen gas product",
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      },
+      {
+        "id": "chart_D",
+        "type": "characterization",
+        "name": "Cost and Revenue Bar Chart",
+        "properties": {
+          "description": "Figure D showing cost and revenue comparison for recycling processes",
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "mechanical_recycling",
+        "type": "process",
+        "name": "Mechanical Recycling",
+        "properties": {
+          "revenue": "9.96 $ ton⁻¹",
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "waste_incineration",
+        "type": "process",
+        "name": "Waste Incineration",
+        "properties": {
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "electrochemical_upcycling",
+        "type": "process",
+        "name": "Electrochemical Upcycling",
+        "properties": {
+          "voltage": "1.74 V",
+          "current": "6 A",
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "reworked_PET",
+        "type": "material",
+        "name": "Reworked PET",
+        "properties": {
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "raw_material_cost",
+        "type": "cost_category",
+        "name": "Raw Material Cost",
+        "properties": {
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "capital_cost",
+        "type": "cost_category",
+        "name": "Capital Cost",
+        "properties": {
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "electricity_cost",
+        "type": "cost_category",
+        "name": "Electricity Cost",
+        "properties": {
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "labor_sales_cost",
+        "type": "cost_category",
+        "name": "Labor/Sales Cost",
+        "properties": {
+          "extracted_from_image": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+        },
+        "source_image_file": "bebaf425573518d5a6b6c6b00805ec3300a702867421b38fb84e16bea5754ac0.jpg"
+      },
+      {
+        "id": "electrolyzer",
+        "type": "device",
+        "name": "Slot-type flow electrolyzer",
+        "properties": {
+          "description": "Slot-type flow electrolyzer with dimensions 10 cm height, 2 cm width",
+          "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+        },
+        "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+      },
+      {
+        "id": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "material": "Mo-Ni(OH)₂",
+          "color": "green",
+          "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+        },
+        "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+      },
+      {
+        "id": "cathode",
+        "type": "electrode",
+        "name": "Cathode",
+        "properties": {
+          "material": "NiO/NiMoO₄",
+          "color": "black",
+          "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+        },
+        "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+      },
+      {
+        "id": "OH-",
+        "type": "chemical",
+        "name": "OH⁻",
+        "properties": {
+          "role": "reactant",
+          "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+        },
+        "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "description": "Water",
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      },
+      {
+        "id": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4_anode_rxn",
+        "type": "reaction",
+        "name": "Anode reaction",
+        "properties": {
+          "equation": "C₂H₆O₂ + 8OH⁻ → 2HCOO⁻ + 6H₂O + 6e⁻",
+          "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+        },
+        "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+      },
+      {
+        "id": "cathode_rxn",
+        "type": "reaction",
+        "name": "Cathode reaction",
+        "properties": {
+          "equation": "2H₂O + 2e⁻ → 2OH⁻ + H₂",
+          "extracted_from_image": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+        },
+        "source_image_file": "defab3f8c0be39499e85d286bb6e404c6e4a8b84306e1638fc5a4a4dc9fddca4.jpg"
+      },
+      {
+        "id": "alkaline_seawater",
+        "type": "chemical",
+        "name": "Alkaline Seawater",
+        "properties": {
+          "description": "Alkaline seawater electrolyte",
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "O2",
+        "properties": {
+          "description": "Oxygen",
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      },
+      {
+        "id": "C",
+        "type": "chemical",
+        "name": "C",
+        "properties": {
+          "description": "Carbon (likely from PET hydrolysate)",
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      },
+      {
+        "id": "electrode",
+        "type": "structure",
+        "name": "Electrode Assembly",
+        "properties": {
+          "components": [
+            "NiO/NiMoOx",
+            "Mo-Ni(OH)2",
+            "black material"
+          ],
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      },
+      {
+        "id": "LSV_plot",
+        "type": "characterization",
+        "name": "LSV Plot",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Current (A)",
+          "y_axis": "Voltage (V)",
+          "conditions": "70°C",
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      },
+      {
+        "id": "PET_curve",
+        "type": "data",
+        "name": "PET Hydrolysate LSV Curve",
+        "properties": {
+          "color": "pink",
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      },
+      {
+        "id": "seawater_curve",
+        "type": "data",
+        "name": "Alkaline Seawater LSV Curve",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+        },
+        "source_image_file": "f8df30e948411f918a057bbd01b15c93601b2659a87b4fed9799398fc94b99b5.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-NiOOH_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-NiOOH",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_11",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiMoO4_xH2O_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_NiMoO4_xH2O",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni(OH)2_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Ni(OH)2",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_12",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_12",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiMoO4_xH2O_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NiMoO4_xH2O",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiMoO4_xH2O_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_NiMoO4_xH2O",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni(OH)2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Ni(OH)2",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-NiOOH_char_11",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-NiOOH",
+        "target_id": "char_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_12",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_12",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_13",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_13",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_14",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_14",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Mo-Ni(OH)2_char_15",
+        "type": "characterized_in",
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "char_15",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiO_NiMoOx_char_16",
+        "type": "characterized_in",
+        "source_id": "chem_NiO_NiMoOx",
+        "target_id": "char_16",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiO_NiMoOx_char_17",
+        "type": "characterized_in",
+        "source_id": "chem_NiO_NiMoOx",
+        "target_id": "char_17",
+        "properties": {}
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "c1",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "c2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "c1",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "c1",
+        "type": "used_in"
+      },
+      {
+        "source_id": "chem_PET_powder",
+        "target_id": "grinding",
+        "type": "input"
+      },
+      {
+        "source_id": "grinding",
+        "target_id": "chem_PET_powder",
+        "type": "output"
+      },
+      {
+        "source_id": "chem_PET_powder",
+        "target_id": "hydrolysis",
+        "type": "input"
+      },
+      {
+        "source_id": "chem_KOH",
+        "target_id": "hydrolysis",
+        "type": "reagent"
+      },
+      {
+        "source_id": "hydrolysis",
+        "target_id": "filtration_1",
+        "type": "output_to"
+      },
+      {
+        "source_id": "CaMg",
+        "target_id": "CaMg_mixing",
+        "type": "input"
+      },
+      {
+        "source_id": "CaMg_mixing",
+        "target_id": "CaMg_mixture",
+        "type": "output"
+      },
+      {
+        "source_id": "natural_seawater",
+        "target_id": "electrolysis",
+        "type": "electrolyte"
+      },
+      {
+        "source_id": "CaMg_mixture",
+        "target_id": "electrolysis",
+        "type": "catalyst"
+      },
+      {
+        "source_id": "electrolysis",
+        "target_id": "chem_FA",
+        "type": "product"
+      },
+      {
+        "source_id": "chem_FA",
+        "target_id": "NaOH_supplement",
+        "type": "supplemented_with"
+      },
+      {
+        "source_id": "NaOH_supplement",
+        "target_id": "PTA_precipitation",
+        "type": "input"
+      },
+      {
+        "source_id": "PTA_precipitation",
+        "target_id": "chem_PTA",
+        "type": "output"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "filter_evaporation",
+        "type": "input"
+      },
+      {
+        "source_id": "filter_evaporation",
+        "target_id": "crystallization",
+        "type": "output_to"
+      },
+      {
+        "source_id": "crystallization",
+        "target_id": "washing",
+        "type": "output_to"
+      },
+      {
+        "source_id": "washing",
+        "target_id": "drying",
+        "type": "output_to"
+      },
+      {
+        "source_id": "NaOH",
+        "target_id": "NaOH_supplement",
+        "type": "reagent"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_PTA",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "labels"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n5",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "treated_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "peak_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "peak_at"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n9",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n9",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains_point"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "describes"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n5",
+        "type": "used_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "used_in"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "is",
+        "type": "has_state"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "is",
+        "type": "has_state"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n3",
+        "type": "adsorbs"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "adsorbs"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_1",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n9",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n11",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n12",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n13",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n14",
+        "type": "contains"
+      },
+      {
+        "source_id": "is",
+        "target_id": "rds1",
+        "type": "reaction_path"
+      },
+      {
+        "source_id": "rds1",
+        "target_id": "rds2",
+        "type": "reaction_path"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_PTA",
+        "type": "uses_resource"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chem_PTA",
+        "type": "powered_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_PTA",
+        "type": "powered_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chem_PTA",
+        "type": "targets_industry"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chem_PTA",
+        "type": "uses_equipment"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_PTA",
+        "type": "uses_equipment"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_PTA",
+        "type": "uses_equipment"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "chem_PTA",
+        "type": "uses_equipment"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "chem_PTA",
+        "type": "uses_equipment"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n14",
+        "type": "provides_benefit"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n15",
+        "type": "provides_benefit"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n16",
+        "type": "provides_benefit"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n17",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n18",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n11",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "chem_PTA",
+        "type": "represents"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "p1",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "n2",
+        "type": "produces"
+      },
+      {
+        "source_id": "p1",
+        "target_id": "hydroxide",
+        "type": "releases"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "p2",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "n3",
+        "type": "produces"
+      },
+      {
+        "source_id": "p2",
+        "target_id": "chem_EG",
+        "type": "involves"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "p3",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p3",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "p4",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p4",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "p5",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p5",
+        "target_id": "n6",
+        "type": "produces"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "p6",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p6",
+        "target_id": "n7",
+        "type": "produces"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "p7",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p7",
+        "target_id": "char_1",
+        "type": "produces"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "p8",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "p8",
+        "target_id": "n9",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n5",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "with_replaced"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chart_D",
+        "target_id": "mechanical_recycling",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart_D",
+        "target_id": "waste_incineration",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart_D",
+        "target_id": "electrochemical_upcycling",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_upcycling",
+        "target_id": "chem_PET_powder",
+        "type": "processes"
+      },
+      {
+        "source_id": "electrochemical_upcycling",
+        "target_id": "chem_KDF",
+        "type": "produces"
+      },
+      {
+        "source_id": "electrochemical_upcycling",
+        "target_id": "H2",
+        "type": "produces"
+      },
+      {
+        "source_id": "mechanical_recycling",
+        "target_id": "reworked_PET",
+        "type": "produces"
+      },
+      {
+        "source_id": "chart_D",
+        "target_id": "raw_material_cost",
+        "type": "shows"
+      },
+      {
+        "source_id": "chart_D",
+        "target_id": "capital_cost",
+        "type": "shows"
+      },
+      {
+        "source_id": "chart_D",
+        "target_id": "electricity_cost",
+        "type": "shows"
+      },
+      {
+        "source_id": "chart_D",
+        "target_id": "labor_sales_cost",
+        "type": "shows"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_PTA",
+        "type": "features_peak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "features_peak"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_1",
+        "type": "includes_timepoint"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "includes_timepoint"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "includes_timepoint"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_PTA",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n6",
+        "type": "shows"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n3",
+        "type": "labels"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n4",
+        "type": "labels"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "chem_PTA",
+        "type": "decorated_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "functionalized_with"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_PTA",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "electrolyzer",
+        "target_id": "anode",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrolyzer",
+        "target_id": "cathode",
+        "type": "contains"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "chem_Mo-Ni(OH)2",
+        "type": "made_of"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "chem_NiO_NiMoOx",
+        "type": "made_of"
+      },
+      {
+        "source_id": "cathode",
+        "target_id": "chem_NiMoO4_xH2O",
+        "type": "made_of"
+      },
+      {
+        "source_id": "anode_rxn",
+        "target_id": "chem_EG",
+        "type": "consumes"
+      },
+      {
+        "source_id": "anode_rxn",
+        "target_id": "OH-",
+        "type": "consumes"
+      },
+      {
+        "source_id": "anode_rxn",
+        "target_id": "chem_FA",
+        "type": "produces"
+      },
+      {
+        "source_id": "anode_rxn",
+        "target_id": "H2O",
+        "type": "produces"
+      },
+      {
+        "source_id": "anode_rxn",
+        "target_id": "anode",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "cathode_rxn",
+        "target_id": "H2O",
+        "type": "consumes"
+      },
+      {
+        "source_id": "cathode_rxn",
+        "target_id": "OH-",
+        "type": "produces"
+      },
+      {
+        "source_id": "cathode_rxn",
+        "target_id": "H2",
+        "type": "produces"
+      },
+      {
+        "source_id": "cathode_rxn",
+        "target_id": "cathode",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "chem_PET_powder",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "alkaline_seawater",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_PET_powder",
+        "target_id": "PET_curve",
+        "type": "represents"
+      },
+      {
+        "source_id": "alkaline_seawater",
+        "target_id": "seawater_curve",
+        "type": "represents"
+      },
+      {
+        "source_id": "chem_NiO_NiMoOx",
+        "target_id": "electrode",
+        "type": "component_of"
+      },
+      {
+        "source_id": "chem_Mo-Ni(OH)2",
+        "target_id": "electrode",
+        "type": "component_of"
+      },
+      {
+        "source_id": "electrode",
+        "target_id": "LSV_plot",
+        "type": "used_in"
+      },
+      {
+        "source_id": "chem_PET_powder",
+        "target_id": "C",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_PET_powder",
+        "target_id": "chem_EG",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_PET_powder",
+        "target_id": "chem_FA",
+        "type": "produces"
+      },
+      {
+        "source_id": "electrode",
+        "target_id": "H2",
+        "type": "produces"
+      },
+      {
+        "source_id": "electrode",
+        "target_id": "H2O",
+        "type": "involves"
+      },
+      {
+        "source_id": "electrode",
+        "target_id": "O2",
+        "type": "involves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+name: build
+
+# Builds macOS (.dmg/.app), Windows (NSIS .exe / .msi) and Linux
+# (.deb/.rpm/.AppImage) installers. Each platform's installer can only be
+# produced on its own runner — hence the matrix. On a `v*` tag push the
+# installers are also attached to a draft GitHub Release.
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+# tauri-action needs to create the draft release and upload assets.
+permissions:
+  contents: write
+
+jobs:
+  build:
+    timeout-minutes: 210
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macos-latest
+            target: aarch64-apple-darwin
+          - platform: macos-latest
+            target: x86_64-apple-darwin
+          - platform: windows-latest
+            target: x86_64-pc-windows-msvc
+          - platform: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux system dependencies
+        if: startsWith(matrix.platform, 'ubuntu')
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev build-essential curl \
+            wget file libxdo-dev libssl-dev libayatana-appindicator3-dev \
+            librsvg2-dev
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4   # version comes from package.json "packageManager"
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Cache cargo
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: apps/desktop/src-tauri
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Fetch bundled OpenCode sidecar
+        shell: bash
+        run: bash scripts/dev/fetch-opencode.sh ${{ matrix.target }}
+
+      - name: Fetch bundled ai4s-skills pack
+        shell: bash
+        run: bash scripts/dev/fetch-skills.sh
+
+      - name: Fetch bundled uv sidecar
+        shell: bash
+        run: bash scripts/dev/fetch-uv.sh ${{ matrix.target }}
+
+      - name: Fetch bundled agent-browser sidecar
+        shell: bash
+        run: bash scripts/dev/fetch-agent-browser.sh ${{ matrix.target }}
+
+      - name: Fetch bundled goal plugin
+        shell: bash
+        run: bash scripts/dev/fetch-goal-plugin.sh
+
+      - name: Configure macOS release signing
+        if: runner.os == 'macOS'
+        shell: bash
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          missing=()
+          for name in APPLE_CERTIFICATE APPLE_CERTIFICATE_PASSWORD APPLE_SIGNING_IDENTITY APPLE_ID APPLE_PASSWORD APPLE_TEAM_ID; do
+            if [ -z "${!name:-}" ]; then
+              missing+=("$name")
+            fi
+          done
+          if [ "${#missing[@]}" -eq 0 ]; then
+            echo "MACOS_SIGNING_ENABLED=true" >> "$GITHUB_ENV"
+          elif [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            echo "::error::A macOS release must be Developer ID-signed and notarized. Missing secrets: ${missing[*]}"
+            exit 1
+          else
+            echo "MACOS_SIGNING_ENABLED=false" >> "$GITHUB_ENV"
+            echo "::notice::Unsigned macOS development artifact; tagged releases require Developer ID signing."
+          fi
+
+      - name: Build the app (Tauri)
+        id: tauri_build
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        with:
+          projectPath: apps/desktop
+          # Linux: deb+rpm only. AppImage is off because linuxdeploy runs ldd
+          # on every bundled ELF and ldd exits 1 on the Bun-built opencode
+          # sidecar, aborting the whole bundle (tauri-apps/tauri#8929).
+          # macOS submits the signed app without blocking inside Tauri. The
+          # following steps preserve that exact app, wait with a bounded retry
+          # loop, staple it, and create the final DMG.
+          args: --target ${{ matrix.target }} ${{ startsWith(matrix.platform, 'macos') && env.MACOS_SIGNING_ENABLED == 'true' && '--bundles app --skip-stapling' || startsWith(matrix.platform, 'macos') && '--bundles dmg' || startsWith(matrix.platform, 'ubuntu') && '--bundles deb,rpm' || '' }}
+          # On a v* tag push, attach installers to a draft GitHub Release.
+          # Empty tagName (workflow_dispatch) skips release creation.
+          tagName: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
+          releaseName: ${{ github.ref_type == 'tag' && format('Open Science Desktop {0}', github.ref_name) || '' }}
+          releaseDraft: true
+          # Standing install/first-launch notes. Tagged macOS releases are blocked
+          # above unless Developer ID signing + notarization credentials are
+          # present; Windows remains unsigned for now.
+          releaseBody: |
+            ## Install & first launch
+
+            **macOS** — Apple Silicon: `…_aarch64.dmg` · Intel: `…_x64.dmg` (requires macOS 13+)
+            - Developer ID-signed and notarized. Open the DMG and drag **Open Science** into Applications.
+            - When you use an existing project in place, allow access to its folder if macOS asks.
+
+            **Windows** — `…_x64-setup.exe` or `…_x64_en-US.msi`
+            - SmartScreen shows *"Windows protected your PC"* → **More info** → **Run anyway**.
+
+            **Linux** — `.deb` / `.rpm`
+            - `sudo apt install ./…_amd64.deb`  or  `sudo rpm -i …x86_64.rpm`
+
+            > **No in-app auto-update** — download new versions from this Releases page. (The `.app.tar.gz` assets are build artifacts, not an update channel.)
+
+            ---
+
+            <!-- Prepend this release's changelog above this line before publishing. -->
+
+      - name: Preserve submitted macOS app
+        id: macos_app
+        if: always() && runner.os == 'macOS' && env.MACOS_SIGNING_ENABLED == 'true'
+        shell: bash
+        run: |
+          app_path=$(find "apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/macos" -maxdepth 1 -type d -name '*.app' -print -quit 2>/dev/null || true)
+          if [ -z "$app_path" ]; then
+            echo "::warning::No macOS app bundle was produced."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          version=$(jq -r '.version' apps/desktop/src-tauri/tauri.conf.json)
+          case "${{ matrix.target }}" in
+            aarch64-apple-darwin) suffix=aarch64 ;;
+            x86_64-apple-darwin) suffix=x64 ;;
+            *) echo "::error::Unsupported macOS target: ${{ matrix.target }}"; exit 1 ;;
+          esac
+
+          archive_dir="$RUNNER_TEMP/macos-submitted-app"
+          archive_path="$archive_dir/Open.Science_${version}_${suffix}.submitted.app.zip"
+          dmg_path="$PWD/apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/dmg/Open.Science_${version}_${suffix}.dmg"
+          mkdir -p "$archive_dir"
+          ditto -c -k --keepParent --sequesterRsrc "$app_path" "$archive_path"
+
+          echo "found=true" >> "$GITHUB_OUTPUT"
+          echo "app_path=$app_path" >> "$GITHUB_OUTPUT"
+          echo "archive_path=$archive_path" >> "$GITHUB_OUTPUT"
+          echo "dmg_path=$dmg_path" >> "$GITHUB_OUTPUT"
+
+      - name: Upload submitted macOS app
+        if: always() && steps.macos_app.outputs.found == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai4s-workbench-${{ matrix.target }}-submitted-app
+          path: ${{ steps.macos_app.outputs.archive_path }}
+          if-no-files-found: error
+
+      - name: Queue submitted macOS app on draft release
+        if: steps.macos_app.outputs.found == 'true' && github.ref_type == 'tag'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload "$GITHUB_REF_NAME" "${{ steps.macos_app.outputs.archive_path }}" --clobber
+
+      - name: Wait for notarization and create macOS DMG
+        id: finalize_macos
+        if: steps.tauri_build.outcome == 'success' && steps.macos_app.outputs.found == 'true' && env.MACOS_SIGNING_ENABLED == 'true' && github.ref_type != 'tag'
+        shell: bash
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          MACOS_NOTARIZATION_TIMEOUT_SECONDS: 5400
+          MACOS_NOTARIZATION_POLL_SECONDS: 60
+        run: |
+          bash scripts/release/finalize-macos-notarization.sh \
+            "${{ steps.macos_app.outputs.app_path }}" \
+            "${{ steps.macos_app.outputs.dmg_path }}"
+
+      - name: Upload installers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai4s-workbench-${{ matrix.target }}
+          path: |
+            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.dmg
+            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.exe
+            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.msi
+            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.deb
+            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.rpm
+            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.AppImage
+          if-no-files-found: warn

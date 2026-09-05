@@ -1,0 +1,1717 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_W",
+        "type": "chemical",
+        "name": "metallic tungsten target",
+        "aliases": [
+          "tungsten target",
+          "W target"
+        ],
+        "formula": "W",
+        "properties": {},
+        "related_images": [
+          "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "material",
+            "name": "Target",
+            "properties": {
+              "description": "Central target material being processed",
+              "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+            },
+            "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_O2",
+        "type": "chemical",
+        "name": "oxygen",
+        "aliases": [
+          "O2"
+        ],
+        "formula": "O2",
+        "properties": {}
+      },
+      {
+        "id": "chem_corning_glass",
+        "type": "chemical",
+        "name": "Corning glass",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_Si100",
+        "type": "chemical",
+        "name": "(100)-Silicon",
+        "aliases": [
+          "Si(100)"
+        ],
+        "properties": {},
+        "related_images": [
+          "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "material",
+            "name": "Substrate",
+            "properties": {
+              "description": "Substrate receiving deposition or processing",
+              "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+            },
+            "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_WOx",
+        "type": "chemical",
+        "name": "WO_x thin films",
+        "aliases": [
+          "tungsten oxide thin films",
+          "WO_x layers",
+          "W O_x"
+        ],
+        "formula": "WO_x",
+        "properties": {
+          "density": {
+            "value": 6.48,
+            "unit": "g cm^{-3}"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Pulsed Laser Deposition (PLD)",
+        "procedure": "A metallic tungsten target was ablated in reactive atmosphere of oxygen at pressures ranging from 0.01 to 0.05 mbar using a frequency-tripled Nd:YAG laser (355 nm, 5 ns, 10 Hz) with fluence 4-8 J/cm². Substrates (Corning glass or Si(100)) positioned at 4 cm, temperature RT-600°C. Target rotated and translated for uniform ablation.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Laser Ablation",
+            "method": "Nd:YAG PLD",
+            "conditions": {
+              "wavelength": {
+                "value": 355,
+                "unit": "nm"
+              },
+              "pulse_duration": {
+                "value": 5,
+                "unit": "ns"
+              },
+              "rep_rate": {
+                "value": 10,
+                "unit": "Hz"
+              },
+              "fluence": {
+                "value": "4-8",
+                "unit": "J/cm²"
+              }
+            },
+            "procedure_snippet": "frequency-tripled SURELITE II Nd:YAG laser (wavelength 355 nm, pulse length 5 ns, repetition rate 10 Hz) ... laser fluence was in the range of 4-8 J/cm²"
+          }
+        ],
+        "method": "Pulsed Laser Deposition",
+        "conditions": {
+          "O2_pressure": {
+            "value": "0.01-0.05",
+            "unit": "mbar"
+          },
+          "substrate_distance": {
+            "value": 4,
+            "unit": "cm"
+          },
+          "T_substrate": {
+            "value": "RT-600",
+            "unit": "°C"
+          }
+        },
+        "source_text": "A metallic tungsten target was ablated in reactive atmosphere of oxygen... The deposition parameters are summarised in Table 1."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "RF-Assisted Pulsed Laser Deposition (RF-PLD)",
+        "procedure": "PLD process with added RF plasma beam source (13.56 MHz) generating excited/ionized oxygen beam through 2 mm nozzle. RF power 0-150 W applied during deposition on substrates at varying conditions per Table 1.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "RF Oxygen Plasma",
+            "method": "13.56 MHz RF Discharge",
+            "conditions": {
+              "frequency": {
+                "value": 13.56,
+                "unit": "MHz"
+              },
+              "RF_power": {
+                "value": "0-150",
+                "unit": "W"
+              }
+            },
+            "procedure_snippet": "radio-frequency (13.56 MHz, CESAR 1310, RF maximum power 1000 W) power supply"
+          }
+        ],
+        "method": "RF-Assisted PLD",
+        "conditions": {
+          "RF_frequency": {
+            "value": 13.56,
+            "unit": "MHz"
+          },
+          "RF_power": {
+            "value": "0-150",
+            "unit": "W"
+          }
+        },
+        "source_text": "addition to the PLD set-up of an excited and/or ionized beam of oxygen atoms... radio-frequency (13.56 MHz...)"
+      },
+      {
+        "id": "chem_w71",
+        "type": "chemical",
+        "name": "w71",
+        "aliases": [
+          "sample w71"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.01,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 20,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 15000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 4.5,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 0,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Corning glass",
+            "unit": ""
+          }
+        },
+        "related_images": [
+          "5d0951576eda1220ae158f70ce0c5966f3b1b54a8669beb14b55caa102c806a3.jpg",
+          "5f96110ae47579b52e13508ff4477f35c72d003f0556fab72fb469729dc93371.jpg",
+          "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg",
+          "635ef4e889d85a84af1e9768112ba68b7b869fe2de42b754589de02a3918f6f0.jpg",
+          "84e2d060462c727c913a68cceadddb175a898497e5c181f2e2c70c3923f9f188.jpg",
+          "b0e269f64fcc84cc1845629b240adad12451f21fc5dfb6bc1a76489c5382c9a9.jpg",
+          "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "sample",
+            "name": "Nanostructured Film",
+            "properties": {
+              "scan_size": "5 μm × 5 μm",
+              "features": "nanoparticles or islands",
+              "extracted_from_image": "5d0951576eda1220ae158f70ce0c5966f3b1b54a8669beb14b55caa102c806a3.jpg"
+            },
+            "source_image_file": "5d0951576eda1220ae158f70ce0c5966f3b1b54a8669beb14b55caa102c806a3.jpg"
+          },
+          {
+            "type": "dimension",
+            "name": "Height Scale",
+            "properties": {
+              "value": "92 nm",
+              "unit": "nm",
+              "color_scale": "0-92 nm (yellow to red)",
+              "extracted_from_image": "5f96110ae47579b52e13508ff4477f35c72d003f0556fab72fb469729dc93371.jpg"
+            },
+            "source_image_file": "5f96110ae47579b52e13508ff4477f35c72d003f0556fab72fb469729dc93371.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "w71",
+            "properties": {
+              "substrate": "Corning glass",
+              "P_F": "0.17",
+              "deposition_duration": "n/a",
+              "T_sub": "20",
+              "N_flux": "5000",
+              "φ_Pc": "3",
+              "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+            },
+            "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+          },
+          {
+            "type": "surface",
+            "name": "Sample Surface",
+            "properties": {
+              "roughness_rms": "1 nm",
+              "features": "textured with discrete spots",
+              "scan_area": "20 μm × 20 μm",
+              "height_variation": "up to 2.6 μm",
+              "extracted_from_image": "635ef4e889d85a84af1e9768112ba68b7b869fe2de42b754589de02a3918f6f0.jpg"
+            },
+            "source_image_file": "635ef4e889d85a84af1e9768112ba68b7b869fe2de42b754589de02a3918f6f0.jpg"
+          },
+          {
+            "type": "dimension",
+            "name": "Height Feature",
+            "properties": {
+              "value": "7.28 nm",
+              "unit": "nm",
+              "extracted_from_image": "84e2d060462c727c913a68cceadddb175a898497e5c181f2e2c70c3923f9f188.jpg"
+            },
+            "source_image_file": "84e2d060462c727c913a68cceadddb175a898497e5c181f2e2c70c3923f9f188.jpg"
+          },
+          {
+            "type": "scale",
+            "name": "X-axis",
+            "properties": {
+              "range": "0 to 20 μm",
+              "labels": [
+                "0",
+                "5 μm",
+                "10 μm",
+                "15 μm",
+                "20 μm"
+              ],
+              "extracted_from_image": "b0e269f64fcc84cc1845629b240adad12451f21fc5dfb6bc1a76489c5382c9a9.jpg"
+            },
+            "source_image_file": "b0e269f64fcc84cc1845629b240adad12451f21fc5dfb6bc1a76489c5382c9a9.jpg"
+          },
+          {
+            "type": "measurement",
+            "name": "Height 47.88 nm",
+            "properties": {
+              "value": "47.88 nm",
+              "description": "Maximum height scale",
+              "extracted_from_image": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+            },
+            "source_image_file": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_w72",
+        "type": "chemical",
+        "name": "w72",
+        "aliases": [
+          "sample w72"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.01,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 20,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 15000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 4.5,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 100,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Corning glass",
+            "unit": ""
+          },
+          "density": {
+            "value": 6.48,
+            "unit": "g/cm³"
+          }
+        },
+        "related_images": [
+          "5f96110ae47579b52e13508ff4477f35c72d003f0556fab72fb469729dc93371.jpg",
+          "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg",
+          "84e2d060462c727c913a68cceadddb175a898497e5c181f2e2c70c3923f9f188.jpg",
+          "b0e269f64fcc84cc1845629b240adad12451f21fc5dfb6bc1a76489c5382c9a9.jpg",
+          "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "dimension",
+            "name": "Scan Size",
+            "properties": {
+              "x_range": "0-5 μm",
+              "y_range": "0-5 μm",
+              "extracted_from_image": "5f96110ae47579b52e13508ff4477f35c72d003f0556fab72fb469729dc93371.jpg"
+            },
+            "source_image_file": "5f96110ae47579b52e13508ff4477f35c72d003f0556fab72fb469729dc93371.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "w72",
+            "properties": {
+              "substrate": "Corning glass",
+              "P_F": "0.18",
+              "deposition_duration": "n/a",
+              "T_sub": "400",
+              "N_flux": "12000",
+              "φ_Pc": "4.3",
+              "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+            },
+            "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+          },
+          {
+            "type": "dimension",
+            "name": "Height Feature 2",
+            "properties": {
+              "value": "9 nm",
+              "unit": "nm",
+              "extracted_from_image": "84e2d060462c727c913a68cceadddb175a898497e5c181f2e2c70c3923f9f188.jpg"
+            },
+            "source_image_file": "84e2d060462c727c913a68cceadddb175a898497e5c181f2e2c70c3923f9f188.jpg"
+          },
+          {
+            "type": "scale",
+            "name": "Y-axis",
+            "properties": {
+              "range": "0 to 20 μm",
+              "labels": [
+                "0",
+                "5 μm",
+                "10 μm",
+                "15 μm",
+                "20 μm"
+              ],
+              "extracted_from_image": "b0e269f64fcc84cc1845629b240adad12451f21fc5dfb6bc1a76489c5382c9a9.jpg"
+            },
+            "source_image_file": "b0e269f64fcc84cc1845629b240adad12451f21fc5dfb6bc1a76489c5382c9a9.jpg"
+          },
+          {
+            "type": "scale",
+            "name": "X-axis Scale",
+            "properties": {
+              "range": "0 to 5.0 μm",
+              "ticks": [
+                "0",
+                "1.0",
+                "2.0",
+                "3.0",
+                "4.0",
+                "5.0"
+              ],
+              "extracted_from_image": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+            },
+            "source_image_file": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_w83",
+        "type": "chemical",
+        "name": "w83",
+        "aliases": [
+          "sample w83"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.05,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 200,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 15000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 4.5,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 150,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Corning glass",
+            "unit": ""
+          },
+          "composition": {
+            "W": {
+              "value": 51.3,
+              "unit": "at%"
+            },
+            "O": {
+              "value": 48.7,
+              "unit": "at%"
+            }
+          }
+        }
+      },
+      {
+        "id": "chem_w90",
+        "type": "chemical",
+        "name": "w90",
+        "aliases": [
+          "sample w90"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.05,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 400,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 12000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 4.5,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 100,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Corning glass",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_w91",
+        "type": "chemical",
+        "name": "w91",
+        "aliases": [
+          "sample w91"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.05,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 400,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 12000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 4.5,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 150,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Corning glass",
+            "unit": ""
+          },
+          "composition": {
+            "W": {
+              "value": 53.49,
+              "unit": "at%"
+            },
+            "O": {
+              "value": 46.51,
+              "unit": "at%"
+            }
+          }
+        }
+      },
+      {
+        "id": "chem_w92",
+        "type": "chemical",
+        "name": "w92",
+        "aliases": [
+          "sample w92"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.05,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 600,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 12000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 4.5,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 150,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Corning glass",
+            "unit": ""
+          },
+          "composition": {
+            "W": {
+              "value": 38.5,
+              "unit": "at%"
+            },
+            "O": {
+              "value": 61.5,
+              "unit": "at%"
+            }
+          }
+        }
+      },
+      {
+        "id": "chem_w94",
+        "type": "chemical",
+        "name": "w94",
+        "aliases": [
+          "sample w94"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.05,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 400,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 12000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 8,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 150,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Corning glass",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_w95",
+        "type": "chemical",
+        "name": "w95",
+        "aliases": [
+          "sample w95"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.05,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 400,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 12000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 3,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 150,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Corning glass",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "chem_w619",
+        "type": "chemical",
+        "name": "w619",
+        "aliases": [
+          "sample w619"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.05,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 20,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 15000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 4,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 0,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Si(100)",
+            "unit": ""
+          },
+          "roughness": {
+            "value": "higher than 1",
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_w621",
+        "type": "chemical",
+        "name": "w621",
+        "aliases": [
+          "sample w621"
+        ],
+        "formula": "WOx",
+        "properties": {
+          "oxygen_pressure": {
+            "value": 0.05,
+            "unit": "mbar"
+          },
+          "substrate_temperature": {
+            "value": 20,
+            "unit": "°C"
+          },
+          "laser_pulses": {
+            "value": 15000,
+            "unit": ""
+          },
+          "laser_fluence": {
+            "value": 4,
+            "unit": "J/cm²"
+          },
+          "RF_power": {
+            "value": 150,
+            "unit": "W"
+          },
+          "substrate": {
+            "value": "Si(100)",
+            "unit": ""
+          },
+          "roughness": {
+            "value": 1,
+            "unit": "nm"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_W_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_W",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "target"
+        }
+      },
+      {
+        "id": "edge_input_chem_O2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_O2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactive_atmosphere"
+        }
+      },
+      {
+        "id": "edge_input_chem_corning_glass_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_corning_glass",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_Si100_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Si100",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_W_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_W",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "target"
+        }
+      },
+      {
+        "id": "edge_input_chem_O2_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_O2",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "reactive_atmosphere"
+        }
+      },
+      {
+        "id": "edge_input_chem_corning_glass_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_corning_glass",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_Si100_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Si100",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      }
+    ],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [],
+    "edges": []
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_WOx",
+        "type": "chemical",
+        "name": "WO_x thin films",
+        "aliases": [
+          "tungsten oxide thin films",
+          "WO_x layers",
+          "W O_x"
+        ],
+        "formula": "WO_x",
+        "properties": {
+          "density": {
+            "value": 6.48,
+            "unit": "g cm^{-3}"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "AFM",
+        "is_reported": true,
+        "characterization_summary": "AFM shows RF beam addition results in more compact surface without droplets, smaller roughness around 1 nm, and diminished grain size for sample w621 compared to w619.",
+        "evidence_snippet": "On a 20 μm × 20 μm scale, the surface of thin films deposited by RF-PLD is more compact, without droplets and with a smaller roughness, around 1 nm (Fig. 2)."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "AES",
+        "is_reported": true,
+        "characterization_summary": "AES shows atomic concentrations for w83: W 51.3%, O 48.7%; w91: W 53.49%, O 46.51%; w92: W 38.5%, O 61.5%.",
+        "evidence_snippet": "the atomic concentrations of samples w83 and w91 are W 51.3 %, O 48.7 % and W 53.49 %, O 46.51 %, respectively... for sample w92 was recorded a W:O ratio of 38.5 %; 61.5 %."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "XRD patterns show no peaks related to crystalline WOx, suggesting nanocrystallites with very small dimensions.",
+        "evidence_snippet": "Although the X-ray patterns did not show any peak related to the formation of crystalline WOx, we can speculate that nanocrystallites with very small dimensions are present in our layers."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "Raman",
+        "is_reported": true,
+        "characterization_summary": "Raman spectra evolve from metallic tungsten (w71) to amorphous tungsten oxide (w72) with RF power, showing O-W-O bending modes (100-500 cm⁻¹) and W-O stretching (800 cm⁻¹), W=O stretching (950 cm⁻¹); higher temperature and lower fluence promote crystallization.",
+        "evidence_snippet": "Looking at the spectra an evolution is observed from metallic tungsten (w71) to amorphous tungsten oxide (w72), associated to the operation of RF power.",
+        "related_images": [
+          "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum",
+            "properties": {
+              "type": "Raman spectroscopy",
+              "x_axis": "Raman shift (cm⁻¹)",
+              "x_range": [
+                200,
+                2000
+              ],
+              "y_axis": "Intensity (a.u.)",
+              "y_range": [
+                0,
+                2500
+              ],
+              "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+            },
+            "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "X-ray reflectivity",
+        "is_reported": true,
+        "characterization_summary": "X-ray reflectivity on w72 gives density of 6.48 g cm⁻³ from critical angle, close to WO₃ bulk density of 7.2 g cm⁻³.",
+        "evidence_snippet": "Preliminary X-ray reflectivity measurements... permitted... to get a density value of 6.48 g cm⁻³, which is close to WO₃ bulk density value (7.2 g cm⁻³)."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "AFM",
+        "is_reported": true,
+        "characterization_summary": "AFM shows dense, droplets and cracks free film at 400°C substrate temperature (w90/w91); clusters >500 nm at 200°C (w83); porous film at 600°C (w92).",
+        "evidence_snippet": "A dense, droplets and cracks free film was obtained at 400 °C substrate temperature (Fig. 3b). For 200 °C substrate temperature clusters with diameter larger than 500 nm appeared on the film surface, while at 600 °C the film became porous (Fig. 3).",
+        "related_images": [
+          "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg",
+          "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "material",
+            "name": "Sample Surface",
+            "properties": {
+              "description": "3D topographic surface of a material sample",
+              "extracted_from_image": "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+            },
+            "source_image_file": "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "RMS Roughness",
+            "properties": {
+              "value": "5 nm",
+              "unit": "nm",
+              "extracted_from_image": "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+            },
+            "source_image_file": "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+          },
+          {
+            "type": "measurement",
+            "name": "RMS Roughness",
+            "properties": {
+              "value": "4 nm",
+              "extracted_from_image": "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+            },
+            "source_image_file": "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "AFM",
+        "is_reported": true,
+        "characterization_summary": "AFM shows improved film quality with decreasing laser fluence from 8 to 3 J cm^{-2}, becoming more compact without droplets, lower roughness and porosity (w94, w90/w91, w95).",
+        "evidence_snippet": "decreasing the laser fluence from 8 to 3 J cm^{-2}, the quality of the film surfaces was improved, becoming more compact, without droplets and with lower roughness and porosity (Fig. 4).",
+        "related_images": [
+          "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "AFM Image",
+            "properties": {
+              "type": "3D topographic map",
+              "scale": "5 μm x 5 μm",
+              "height_scale": "0 to 98.91 nm",
+              "extracted_from_image": "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+            },
+            "source_image_file": "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+          }
+        ]
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_1",
+        "type": "equipment",
+        "name": "Laser Beam",
+        "properties": {
+          "description": "Incoming laser beam shown in red",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_2",
+        "type": "equipment",
+        "name": "Focusing Lens",
+        "properties": {
+          "description": "Lens for focusing the laser beam",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_3",
+        "type": "equipment",
+        "name": "RF Plasma",
+        "properties": {
+          "description": "Radio frequency plasma source",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_6",
+        "type": "equipment",
+        "name": "Stainless Steel Vacuum Chamber",
+        "properties": {
+          "description": "Enclosing vacuum chamber made of stainless steel",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_7",
+        "type": "equipment",
+        "name": "RF Supply",
+        "properties": {
+          "description": "Power supply for RF plasma",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_8",
+        "type": "equipment",
+        "name": "Gas Inlet",
+        "properties": {
+          "description": "Inlet for process gases",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_9",
+        "type": "equipment",
+        "name": "Water Cooling",
+        "properties": {
+          "description": "Cooling system for the setup",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_10",
+        "type": "process",
+        "name": "Laser Plume",
+        "properties": {
+          "description": "Plume generated by laser interaction, shown in purple",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9_11",
+        "type": "process",
+        "name": "RF Plasma Beam",
+        "properties": {
+          "description": "RF plasma beam shown in yellow/orange",
+          "extracted_from_image": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+        },
+        "source_image_file": "1aa2abdde052ff9534d5c3e88a2ad88ad5cfd9fb2c218f2a637e4d9669dddbc9.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "characterization",
+        "name": "AFM Image",
+        "properties": {
+          "label": "(a)",
+          "type": "Atomic Force Microscopy",
+          "description": "3D surface topography image",
+          "extracted_from_image": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+        },
+        "source_image_file": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "measurement",
+        "name": "RMS 3.5 nm",
+        "properties": {
+          "value": "3.5 nm",
+          "description": "Root Mean Square roughness",
+          "extracted_from_image": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+        },
+        "source_image_file": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "scale",
+        "name": "Y-axis Scale",
+        "properties": {
+          "range": "0 to 5.0 μm",
+          "ticks": [
+            "0",
+            "1.0",
+            "2.0",
+            "3.0",
+            "4.0",
+            "5.0"
+          ],
+          "extracted_from_image": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+        },
+        "source_image_file": "e2d627f1d46664ab8420703853b69da5005c2360502d34babb113f027fd2e171.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "feature",
+        "name": "Surface Features",
+        "properties": {
+          "description": "Red height map with scattered protrusions",
+          "extracted_from_image": "b0e269f64fcc84cc1845629b240adad12451f21fc5dfb6bc1a76489c5382c9a9.jpg"
+        },
+        "source_image_file": "b0e269f64fcc84cc1845629b240adad12451f21fc5dfb6bc1a76489c5382c9a9.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "sample",
+        "name": "w75",
+        "properties": {
+          "substrate": "Corning glass",
+          "P_F": "0.15",
+          "deposition_duration": "n/a",
+          "T_sub": "600",
+          "N_flux": "12000",
+          "φ_Pc": "8",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "sample",
+        "name": "w81",
+        "properties": {
+          "substrate": "SiO2 glass",
+          "P_F": "0.15",
+          "deposition_duration": "n/a",
+          "T_sub": "20",
+          "N_flux": "15000",
+          "φ_Pc": "4",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "sample",
+        "name": "w82",
+        "properties": {
+          "substrate": "SiO2 glass",
+          "P_F": "0.15",
+          "deposition_duration": "20",
+          "T_sub": "n/a",
+          "N_flux": "15000",
+          "φ_Pc": "4",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "parameter",
+        "name": "P_F (nbar)",
+        "properties": {
+          "description": "Flow pressure",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "parameter",
+        "name": "deposition_duration",
+        "properties": {
+          "unit": "?",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "parameter",
+        "name": "T_sub (°C)",
+        "properties": {
+          "description": "Substrate temperature",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "parameter",
+        "name": "N_flux",
+        "properties": {
+          "description": "Flux",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "parameter",
+        "name": "φ_Pc (%)",
+        "properties": {
+          "description": "Pc phase percentage",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "parameter",
+        "name": "P_W (%)",
+        "properties": {
+          "description": "W phase percentage",
+          "extracted_from_image": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+        },
+        "source_image_file": "627cc4fe7136de329fe839335dd17977e98ce56b9e0f698d8d990fc58819c07d.jpg"
+      },
+      {
+        "id": "w0",
+        "type": "sample",
+        "name": "W0",
+        "properties": {
+          "description": "Sample labeled W0",
+          "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        },
+        "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+      },
+      {
+        "id": "w1",
+        "type": "sample",
+        "name": "W1",
+        "properties": {
+          "description": "Sample labeled W1",
+          "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        },
+        "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+      },
+      {
+        "id": "w2",
+        "type": "sample",
+        "name": "W2",
+        "properties": {
+          "description": "Sample labeled W2",
+          "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        },
+        "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+      },
+      {
+        "id": "w3",
+        "type": "sample",
+        "name": "W3",
+        "properties": {
+          "description": "Sample labeled W3 (inferred from pattern)",
+          "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        },
+        "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+      },
+      {
+        "id": "w4",
+        "type": "sample",
+        "name": "W4",
+        "properties": {
+          "description": "Sample labeled W4 (inferred from pattern)",
+          "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        },
+        "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+      },
+      {
+        "id": "w5",
+        "type": "sample",
+        "name": "W5",
+        "properties": {
+          "description": "Sample labeled W5",
+          "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        },
+        "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+      },
+      {
+        "id": "w6",
+        "type": "sample",
+        "name": "W6",
+        "properties": {
+          "description": "Sample labeled W6 (inferred from pattern)",
+          "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        },
+        "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+      },
+      {
+        "id": "w7",
+        "type": "sample",
+        "name": "W7",
+        "properties": {
+          "description": "Sample labeled W7",
+          "extracted_from_image": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+        },
+        "source_image_file": "79cd3eabf5e046efab0350622f67078d0aa28a9e197b347c1ac83a2523d0f589.jpg"
+      },
+      {
+        "id": "features",
+        "type": "feature",
+        "name": "Surface Features",
+        "properties": {
+          "description": "Nanoscale protrusions and bumps",
+          "max_height": "98.91 nm",
+          "extracted_from_image": "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+        },
+        "source_image_file": "8cc2ddfaccc2952d831c949074775519dd25e0503441fb6f806b7e4caf91f9c1.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "AFM Image",
+        "properties": {
+          "label": "(b)",
+          "technique": "Atomic Force Microscopy",
+          "scale_bar": "5 μm",
+          "color_scale": "0 to 50 nm",
+          "extracted_from_image": "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+        },
+        "source_image_file": "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+      },
+      {
+        "id": "height1",
+        "type": "measurement",
+        "name": "Feature Height",
+        "properties": {
+          "value": "51 nm",
+          "position": "left edge",
+          "extracted_from_image": "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+        },
+        "source_image_file": "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+      },
+      {
+        "id": "sample",
+        "type": "material",
+        "name": "Nanostructured Surface",
+        "properties": {
+          "description": "Red-yellow topographic map showing nanoparticles or rough surface features",
+          "extracted_from_image": "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+        },
+        "source_image_file": "b22fed982d5327c1784bb34e6eead2e3f80c948dde50ae5706e2b5bc9b708f63.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_WOx_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_WOx",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_WOx_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_WOx",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_WOx_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_WOx",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_WOx_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_WOx",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_WOx_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_WOx",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "passes_through"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "focuses_on"
+      },
+      {
+        "source_id": "1",
+        "target_id": "10",
+        "type": "generates"
+      },
+      {
+        "source_id": "10",
+        "target_id": "5",
+        "type": "deposits_on"
+      },
+      {
+        "source_id": "3",
+        "target_id": "11",
+        "type": "generates"
+      },
+      {
+        "source_id": "11",
+        "target_id": "5",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "7",
+        "target_id": "3",
+        "type": "powers"
+      },
+      {
+        "source_id": "8",
+        "target_id": "3",
+        "type": "feeds"
+      },
+      {
+        "source_id": "9",
+        "target_id": "6",
+        "type": "cools"
+      },
+      {
+        "source_id": "3",
+        "target_id": "6",
+        "type": "contained_in"
+      },
+      {
+        "source_id": "4",
+        "target_id": "6",
+        "type": "contained_in"
+      },
+      {
+        "source_id": "5",
+        "target_id": "6",
+        "type": "contained_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w71",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_w71",
+        "type": "property_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w71",
+        "type": "has_scale"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w72",
+        "type": "has_dimension"
+      },
+      {
+        "source_id": "chem_w71",
+        "target_id": "n1",
+        "type": "substrate"
+      },
+      {
+        "source_id": "chem_w72",
+        "target_id": "n1",
+        "type": "substrate"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "substrate"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "substrate"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n1",
+        "type": "substrate"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n2",
+        "type": "substrate"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n2",
+        "type": "substrate"
+      },
+      {
+        "source_id": "chem_w71",
+        "target_id": "n10",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_w71",
+        "target_id": "n11",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_w71",
+        "target_id": "n12",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_w71",
+        "target_id": "n13",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_w71",
+        "target_id": "n14",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_w72",
+        "target_id": "n10",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_w72",
+        "target_id": "n12",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_w72",
+        "target_id": "n13",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "chem_w72",
+        "target_id": "n14",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w71",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_w71",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "labeled_in"
+      },
+      {
+        "source_id": "w0",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "w1",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "w2",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "w3",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "w4",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "w5",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "w6",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "w7",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w71",
+        "type": "shows_feature"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w72",
+        "type": "shows_feature"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_6",
+        "type": "property_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "features",
+        "type": "shows"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "char_7",
+        "type": "parameter"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w71",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w72",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_annotation"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "image",
+        "target_id": "char_6",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "image",
+        "target_id": "height1",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "image",
+        "target_id": "sample",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "sample",
+        "type": "describes"
+      },
+      {
+        "source_id": "height1",
+        "target_id": "sample",
+        "type": "describes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w71",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_w72",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_w71",
+        "type": "co_measurement"
+      }
+    ]
+  }
+}

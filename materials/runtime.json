@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "tools": {
+    "mattergen": {
+      "runtime": {
+        "windows_app_python": "%APPDATA%/com.ai4s.workbench/runtime/mattergen/venv/Scripts/python.exe",
+        "wsl_python": "/root/mattergen/venv/bin/python"
+      },
+      "model": "chemical_system",
+      "source_revision": "ac9ddd406171138c3f037d06b9b53fedbbb1c536",
+      "standardization_defaults": {
+        "bulk_target_atoms": 40,
+        "bulk_atom_tolerance": 0.2,
+        "surface_target_atoms": 96,
+        "surface_atom_tolerance": 0.2,
+        "vacuum_angstrom": 15.0,
+        "surface_min_lateral_angstrom": 12.0,
+        "surface_max_cell_aspect_ratio": 4.0,
+        "surface_max_slab_thickness_angstrom": 20.0
+      },
+      "required_modules": ["torch", "mattergen", "pymatgen"]
+    },
+    "mattersim": {
+      "runtime": {
+        "windows_app_python": "%APPDATA%/com.ai4s.workbench/runtime/materials-env/Scripts/python.exe",
+        "wsl_python": "/root/fairchem/venv/bin/python"
+      },
+      "model": "MatterSim-v1.0.0-5M",
+      "checkpoint": "runtime/mattersim/models/mattersim-v1.0.0-5M.pth",
+      "sha256": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+      "required_modules": ["torch", "mattersim", "ase"]
+    },
+    "uma": {
+      "runtime": {
+        "windows_app_python": "%APPDATA%/com.ai4s.workbench/runtime/materials-env/Scripts/python.exe",
+        "wsl_python": "/root/fairchem/venv/bin/python"
+      },
+      "model": "uma-s-1p2p1",
+      "task": "oc25",
+      "weight_source": "facebook/UMA",
+      "weights": "runtime/uma/models/uma-s-1p2p1.pt",
+      "weights_sha256": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+      "download_url": "https://huggingface.co/facebook/UMA/resolve/main/uma-s-1p2p1.pt?download=true",
+      "adsorption_defaults": {
+        "relax": true,
+        "fmax_ev_per_angstrom": 0.05,
+        "max_steps": 200,
+        "fixed_bottom_layers": 3,
+        "layer_tolerance_angstrom": 0.25
+      },
+      "md_defaults": {
+        "engine": "ase",
+        "supercell": [2, 2, 1],
+        "ensemble": "nvt",
+        "temperature_k": 300.0,
+        "timestep_fs": 0.5,
+        "equilibration_ps": 5.0,
+        "production_ps": 20.0,
+        "fixed_bottom_layers": 2,
+        "seeds": [1729, 2718, 3141],
+        "thermo_interval_steps": 10,
+        "trajectory_interval_steps": 10,
+        "trajectory_preview_max_frames": 600
+      },
+      "required_modules": ["torch", "fairchem", "ase"]
+    }
+  }
+}

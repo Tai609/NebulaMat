@@ -1,0 +1,3450 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_water",
+        "type": "chemical",
+        "name": "water",
+        "aliases": [
+          "water molecules"
+        ],
+        "formula": "H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_GO",
+        "type": "chemical",
+        "name": "graphene oxide",
+        "aliases": [
+          "GO"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_FePc",
+        "type": "chemical",
+        "name": "FePc",
+        "aliases": [
+          "FePc"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_GA",
+        "type": "chemical",
+        "name": "GA",
+        "aliases": [
+          "GA",
+          "graphene aerogel"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_FePc-GA",
+        "type": "chemical",
+        "name": "FePc-GA",
+        "aliases": [
+          "FePc-GA"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_GA-FePc",
+        "type": "chemical",
+        "name": "GA-FePc",
+        "aliases": [
+          "GA-FePc"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "In situ FePc-GA synthesis",
+        "procedure": "GO and FePc powders are uniformly dispersed in water through sonication forming acoustic cavitation that generates bubbles promoting penetration of water molecules into the solid and improving dispersion, forming a stable colloid. Due to the presence of many oxygen-containing functional groups such as hydroxyl, carboxyl, and epoxy groups on the surface of graphene oxide, these hydrophilic functional groups overcome van der Waals forces on the carbon skeleton itself under the strong electrostatic repulsion induced by the solvent. During the subsequent hydrothermal process, the oxygen functional groups on the surface of GO can be partly reduced and eliminated, increasing the π-conjugated structure of the reduced graphene oxide sheets (rGO). This allows them to form π-π conjugated stacking, making FePc and the rGO sheets closely bonding together. Finally, through freeze-drying, the solvent molecules in the hydrogel are converted into gas molecules, thereby in situ synthesizing a three-dimensional FePc-GA network structure material with high porosity, high specific surface area, and high compressibility.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Sonication",
+            "method": "Ultrasonic dispersion",
+            "conditions": {},
+            "procedure_snippet": "GO and FePc powders are uniformly dispersed in water through sonication forming acoustic cavitation that generates bubbles in the liquid, and the growth and collapse of these bubbles concentrate a large amount of energy inside the solution, promoting the penetration of water molecules into the solid. This improves the dispersion of the catalyst, ensuring that GO and FePc powders are uniformly dispersed in water, forming a stable colloid."
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Hydrothermal self-assembly",
+            "method": "Hydrothermal process",
+            "conditions": {},
+            "procedure_snippet": "During the subsequent hydrothermal process, the oxygen functional groups on the surface of GO can be partly reduced and eliminated, increasing the π-conjugated structure of the reduced graphene oxide sheets (rGO). This allows them to form π-π conjugated stacking, making FePc and the rGO sheets closely bonding together."
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Freeze drying",
+            "method": "Freeze-drying",
+            "conditions": {},
+            "procedure_snippet": "Finally, through freeze-drying, the solvent molecules in the hydrogel are converted into gas molecules, thereby in situ synthesizing a three-dimensional FePc-GA network structure material."
+          }
+        ],
+        "method": "Sonication-hydrothermal-freeze drying",
+        "conditions": {},
+        "source_text": "Figure 1 illustrates the catalyst preparation method, which involves the formation of an acoustic cavitation in the liquid through sonication... thereby in situ synthesizing a three-dimensional FePc-GA network structure material with high porosity, high specific surface area, and high compressibility."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "GA-FePc physical mixing",
+        "procedure": "FePc was combined with the hydrothermal GA to obtain GA-FePc, in which FePc can hardly couple with GA through π-π conjugated stacking.",
+        "unit_operations": [],
+        "method": "Physical mixing",
+        "conditions": {},
+        "source_text": "For comparison, FePc was combined with the hydrothermal GA to obtain GA-FePc, in which FePc can hardly couple with GA through π-π conjugated stacking."
+      },
+      {
+        "id": "chem_rGO",
+        "type": "chemical",
+        "name": "reduced graphene oxide",
+        "aliases": [
+          "rGO"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt/C",
+        "type": "chemical",
+        "name": "commercial Pt/C (20 wt %)",
+        "aliases": [
+          "Pt/C",
+          "20 wt % Pt/C"
+        ],
+        "formula": "Pt/C"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_GO_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_GO",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_FePc_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_FePc",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_FePc-GA",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_FePc-GA",
+        "properties": {
+          "form": "3D aerogel network"
+        }
+      },
+      {
+        "id": "edge_input_chem_GA_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_GA",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_FePc_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_FePc",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_GA-FePc",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_GA-FePc",
+        "properties": {
+          "form": "physical mixture"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Pt/C"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_FePc-GA",
+        "type": "chemical",
+        "name": "FePc-GA",
+        "aliases": [
+          "pyrolysis-free FePc-GA"
+        ],
+        "formula": "FePc-GA"
+      },
+      {
+        "id": "chem_GA-FePc",
+        "type": "chemical",
+        "name": "GA-FePc",
+        "aliases": [],
+        "formula": "GA-FePc"
+      },
+      {
+        "id": "chem_FePc",
+        "type": "chemical",
+        "name": "FePc",
+        "aliases": [
+          "iron phthalocyanine"
+        ],
+        "formula": "FePc"
+      },
+      {
+        "id": "chem_GA",
+        "type": "chemical",
+        "name": "GA",
+        "aliases": [
+          "graphene aerogel"
+        ],
+        "formula": "GA"
+      },
+      {
+        "id": "chem_Pt/C",
+        "type": "chemical",
+        "name": "commercial Pt/C (20 wt %)",
+        "aliases": [
+          "Pt/C",
+          "20 wt % Pt/C"
+        ],
+        "formula": "Pt/C"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_FePc-GA",
+        "description": "ORR half-cell LSV/RRDE in O2-saturated 0.1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "O2-saturated"
+          },
+          "electrode_type": {
+            "value": "RRDE",
+            "unit": "rotating ring-disk"
+          },
+          "rotation_rate": {
+            "value": 1600,
+            "unit": "rpm"
+          },
+          "scan_method": {
+            "value": "LSV",
+            "unit": "linear sweep voltammetry"
+          },
+          "onset_current_density_definition": {
+            "value": 0.1,
+            "unit": "mA/cm²"
+          },
+          "FePc_loading": {
+            "value": 15,
+            "unit": "mg"
+          }
+        },
+        "results_json": {
+          "onset_potential": {
+            "value": 1.015,
+            "unit": "V"
+          },
+          "half_wave_potential": {
+            "value": 0.92,
+            "unit": "V"
+          },
+          "Tafel_slope": {
+            "value": 53,
+            "unit": "mV/dec"
+          },
+          "kinetic_current_density_Jk": {
+            "value": "high",
+            "unit": "at 0.900 V"
+          },
+          "H2O2_yield": {
+            "value": "low",
+            "unit": "%"
+          },
+          "electron_transfer_number": {
+            "value": 4,
+            "unit": "e⁻ pathway"
+          }
+        },
+        "source_text": "Figure 4a presents the polarization curves of FePc-GA, GA-FePc, FePc, GA, and commercial Pt/C (20 wt %) in 0.1 M KOH... FePc-GA exhibits superior ORR performance with an onset potential of 1.015 V and a half-wave potential of 0.920 V... FePc-GA has a Tafel slope of 53 mVdec^{-1} around an overpotential of ∼0.9 V"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_FePc-GA",
+        "description": "ORR methanol tolerance chronoamperometry in 0.1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "test_type": {
+            "value": "chronoamperometry",
+            "unit": "CA"
+          },
+          "methanol_addition": {
+            "value": "after 400 s",
+            "unit": "time"
+          }
+        },
+        "results_json": {
+          "methanol_tolerance": {
+            "value": "superior",
+            "unit": "vs Pt/C"
+          },
+          "normalized_current_response": {
+            "value": "increased",
+            "unit": "upon methanol addition"
+          }
+        },
+        "source_text": "A chronoamperometric test was performed by adding methanol after about 400 s of reaction. As shown in Figure 4e, FePc-GA shows good resistance to methanol molecules... upon the addition of methanol, the normalized current increased for FePC-GA"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_FePc-GA",
+        "description": "ORR durability chronoamperometry at 0.6 V in O2-saturated 0.1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "ORR",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "O2-saturated"
+          },
+          "test_type": {
+            "value": "chronoamperometry",
+            "unit": "CA"
+          },
+          "constant_potential": {
+            "value": 0.6,
+            "unit": "V vs RHE"
+          },
+          "rotation_rate": {
+            "value": 1600,
+            "unit": "rpm"
+          },
+          "duration": {
+            "value": 24,
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "current_retention": {
+            "value": 91,
+            "unit": "% after 24 h"
+          }
+        },
+        "source_text": "the CA test under 0.6 V showed a 91% current retain for FePc-GA after 24 h, compared to 74% for commercial 20 wt % Pt/C"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_FePc-GA",
+        "description": "AEMFC performance pure FePc-GA cathode",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "AEMFC",
+            "unit": "fuel cell"
+          },
+          "catalyst_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "membrane": {
+            "value": "PiperION-A20-HCO3 (20 μm)",
+            "unit": "AEM"
+          },
+          "anode_fuel": {
+            "value": "H2",
+            "unit": "gas"
+          },
+          "cathode_gas": {
+            "value": "O2",
+            "unit": "gas"
+          },
+          "temperature": {
+            "value": 80,
+            "unit": "°C"
+          },
+          "catalyst_formulation": {
+            "value": "pure FePc-GA",
+            "unit": "no additives"
+          }
+        },
+        "results_json": {
+          "power_density": {
+            "value": 10,
+            "unit": "mW/cm²"
+          }
+        },
+        "source_text": "Figure 5b illustrates that the power density based on the pure FePc-GA catalyst can only reach 10 mW cm^{-2}"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_FePc-GA",
+        "description": "AEMFC performance FePc-GA + CB cathode",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "AEMFC",
+            "unit": "fuel cell"
+          },
+          "catalyst_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "membrane": {
+            "value": "PiperION-A20-HCO3 (20 μm)",
+            "unit": "AEM"
+          },
+          "anode_fuel": {
+            "value": "H2",
+            "unit": "gas"
+          },
+          "cathode_gas": {
+            "value": "O2",
+            "unit": "gas"
+          },
+          "temperature": {
+            "value": 80,
+            "unit": "°C"
+          },
+          "catalyst_formulation": {
+            "value": "FePc-GA:CB (1:1)",
+            "unit": "ink ratio"
+          }
+        },
+        "results_json": {
+          "power_density": {
+            "value": 100,
+            "unit": "mW/cm²"
+          }
+        },
+        "source_text": "adjusting the ratio of FePc-GA:CB to 1:1 resulted in a 10-fold increase in power density, improving from 10 to 100 mW cm^{-2}"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_FePc-GA",
+        "description": "AEMFC performance FePc-GA + CB + PTFE cathode",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "AEMFC",
+            "unit": "fuel cell"
+          },
+          "catalyst_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "membrane": {
+            "value": "PiperION-A20-HCO3 (20 μm)",
+            "unit": "AEM"
+          },
+          "anode_fuel": {
+            "value": "H2",
+            "unit": "gas"
+          },
+          "cathode_gas": {
+            "value": "O2",
+            "unit": "gas"
+          },
+          "temperature": {
+            "value": 80,
+            "unit": "°C"
+          },
+          "catalyst_formulation": {
+            "value": "FePc-GA + CB + PTFE",
+            "unit": "ink additives"
+          }
+        },
+        "results_json": {
+          "power_density": {
+            "value": 160,
+            "unit": "mW/cm²"
+          },
+          "contact_angle": {
+            "value": 101.6,
+            "unit": "°"
+          }
+        },
+        "source_text": "This modification resulted in a further improvement in cell performance, raising the power density to ∼160 mW cm^{-2}... contact angle to 101.6° after the addition of PTFE"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_FePc-GA_test_1",
+        "type": "tested_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FePc-GA_test_2",
+        "type": "tested_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FePc-GA_test_3",
+        "type": "tested_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FePc-GA_test_4",
+        "type": "tested_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FePc-GA_test_5",
+        "type": "tested_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FePc-GA_test_6",
+        "type": "tested_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_GA-FePc_test_1",
+        "type": "tested_in",
+        "source_id": "chem_GA-FePc",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FePc_test_1",
+        "type": "tested_in",
+        "source_id": "chem_FePc",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_GA_test_1",
+        "type": "tested_in",
+        "source_id": "chem_GA",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Pt/C_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Pt/C",
+        "target_id": "test_1",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_FePc-GA",
+        "type": "chemical",
+        "name": "FePc-GA",
+        "aliases": [
+          "FePc-GA"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_GA-FePc",
+        "type": "chemical",
+        "name": "GA-FePc",
+        "aliases": [
+          "GA-FePc"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_FePc",
+        "type": "chemical",
+        "name": "FePc",
+        "aliases": [
+          "FePc"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "chem_GA",
+        "type": "chemical",
+        "name": "GA",
+        "aliases": [
+          "GA",
+          "graphene aerogel"
+        ],
+        "formula": "",
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM shows aggregated FePc on GA sheets for GA-FePc and uniform 2D planar layered structure with no large FePc aggregations for FePc-GA.",
+        "evidence_snippet": "As shown in Figure 2a-c, for GA-FePc, aggregated FePc was observed on the GA sheets. ... In contrast, the morphology of FePc-GA, depicted in Figure 2d-g, shows ... uniform two-dimensional planar layered structure with no noticeable presence of large FePc aggregations."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "High-magnification TEM reveals aggregated FePc on GA sheets for GA-FePc; planar aggregated FePc coupled to ultrathin GA sheets through π-π stacking for FePc-GA.",
+        "evidence_snippet": "Further TEM observation of the morphology and microstructure revealed that the planar aggregated FePc was coupled to the ultrathin GA sheets through π-π stacking."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EDX",
+        "is_reported": true,
+        "characterization_summary": "EDX mapping confirms presence of FePc coupled to graphene aerogel sheets in FePc-GA; shows distribution of Fe, N, O, and C elements.",
+        "evidence_snippet": "Moreover, EDS mapping (Figure 2g) confirmed the presence of FePc coupled to graphene aerogel sheets. Figure 2h shows the distribution of Fe, N, O, and C elements with specific values detailed in Table S1."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "Raman",
+        "is_reported": true,
+        "characterization_summary": "GA has ID/IG = 1.02 indicating high graphitization; FePc-GA and GA-FePc have ID/IG = 1.05 and 1.04 respectively due to FePc coupling inducing defects.",
+        "evidence_snippet": "The Raman spectra (Figures 3a and S5) display the intensity variations of the D band ... indicating changes in the defects and graphite phase.",
+        "related_images": [
+          "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum of FePc-GA",
+            "properties": {
+              "color": "red",
+              "I_D/I_G": 1.05,
+              "x_axis": "Raman Shift (cm⁻¹)",
+              "x_range": [
+                500,
+                2500
+              ],
+              "extracted_from_image": "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+            },
+            "source_image_file": "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum of GA-FePc",
+            "properties": {
+              "color": "blue",
+              "I_D/I_G": 1.04,
+              "x_axis": "Raman Shift (cm⁻¹)",
+              "x_range": [
+                500,
+                2500
+              ],
+              "extracted_from_image": "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+            },
+            "source_image_file": "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum of GA",
+            "properties": {
+              "color": "orange",
+              "I_D/I_G": 1.02,
+              "x_axis": "Raman Shift (cm⁻¹)",
+              "x_range": [
+                500,
+                2500
+              ],
+              "extracted_from_image": "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+            },
+            "source_image_file": "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Raman Spectrum of FePc",
+            "properties": {
+              "color": "green",
+              "x_axis": "Raman Shift (cm⁻¹)",
+              "x_range": [
+                500,
+                2500
+              ],
+              "extracted_from_image": "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+            },
+            "source_image_file": "35bfc00ec8c6c6e8aaf1a772cbad853d1525e682825ce2a056b237f87ebbf31c.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "TGA",
+        "is_reported": true,
+        "characterization_summary": "FePc-GA shows enhanced thermal stability with ~5 wt% loss at 100°C and stable mass loss between 300-600°C; FePc pyrolyzes completely at ~400°C.",
+        "evidence_snippet": "To demonstrate the thermal stability of the materials, TGA tests were conducted (Figure 3b,c). Notably, the in situ synthesized FePc-GA exhibited enhanced thermal stability in air.",
+        "related_images": [
+          "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg",
+          "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg",
+          "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg",
+          "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg",
+          "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg",
+          "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "event",
+            "name": "Water loss",
+            "properties": {
+              "temperature_region": "Initial low temperature",
+              "extracted_from_image": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+            },
+            "source_image_file": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TGA Plot",
+            "properties": {
+              "type": "Thermogravimetric Analysis",
+              "x_axis": "Temperature (°C) [200-800]",
+              "y_axis": "Weight (%)",
+              "features": [
+                "Weight loss curves",
+                "Derivative curves"
+              ],
+              "extracted_from_image": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+            },
+            "source_image_file": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA-FePc",
+            "properties": {
+              "color": "blue",
+              "extracted_from_image": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+            },
+            "source_image_file": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+          },
+          {
+            "type": "process",
+            "name": "Oxygen Reduction Reaction (ORR)",
+            "properties": {
+              "conditions": "vs. RHE reference electrode",
+              "extracted_from_image": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+            },
+            "source_image_file": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+          },
+          {
+            "type": "image",
+            "name": "Molecular Structure",
+            "properties": {
+              "description": "FePc molecular structure with central Fe atom (blue/purple)",
+              "extracted_from_image": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+            },
+            "source_image_file": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+          },
+          {
+            "type": "crystal_plane",
+            "name": "C (101)",
+            "properties": {
+              "hkl": [
+                1,
+                0,
+                1
+              ],
+              "extracted_from_image": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+            },
+            "source_image_file": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "DTG",
+        "is_reported": true,
+        "characterization_summary": "DTG reveals weight change stages for FePc-GA: magnetite (Fe3O4) formation up to 400°C, conversion to Fe2O3 at 500°C, complete pyrolysis beyond 600°C.",
+        "evidence_snippet": "Differential thermogravimetric analysis (DTG) (Figure 3c) further revealed the various stages of weight change during the process."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "FePc-GA and GA-FePc show sharp peak at 7.05° for FePc; FePc-GA FePc peaks weakened and shifted to lower angles due to π-π interaction; GA peaks at 25.4° (C 002) and 44.5° (C 101).",
+        "evidence_snippet": "Figure 3d shows the X-ray diffraction (XRD) patterns of all of the materials. Both FePc-GA and GA-FePc exhibit a sharp peak at 7.05°, indicating the presence of FePc.",
+        "related_images": [
+          "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg",
+          "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg",
+          "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg",
+          "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg",
+          "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg",
+          "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg",
+          "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg",
+          "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "TGA Plot",
+            "properties": {
+              "type": "Thermogravimetric Analysis",
+              "x_axis": "Temperature (°C)",
+              "y_axis": "Weight percent (%)",
+              "temperature_range": "0-800°C",
+              "extracted_from_image": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+            },
+            "source_image_file": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+          },
+          {
+            "type": "event",
+            "name": "Functional group decomposition",
+            "properties": {
+              "temperature_region": "Intermediate temperature",
+              "extracted_from_image": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+            },
+            "source_image_file": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+          },
+          {
+            "type": "event",
+            "name": "Carbon decomposition",
+            "properties": {
+              "temperature_region": "High temperature ~400-600°C",
+              "extracted_from_image": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+            },
+            "source_image_file": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GPC",
+            "properties": {
+              "description": "Graphitic porous carbon (likely)",
+              "extracted_from_image": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+            },
+            "source_image_file": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FePc-GA",
+            "properties": {
+              "color": "red",
+              "extracted_from_image": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+            },
+            "source_image_file": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA",
+            "properties": {
+              "color": "orange",
+              "extracted_from_image": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+            },
+            "source_image_file": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "FTIR Spectrum",
+            "properties": {
+              "x_axis": "Wavenumber (cm⁻¹)",
+              "y_axis": "Intensity (a.u.)",
+              "range": "1000-3000",
+              "extracted_from_image": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+            },
+            "source_image_file": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "ORR LSV Curves",
+            "properties": {
+              "type": "Linear Sweep Voltammetry",
+              "x_axis": "Potential (V vs. RHE)",
+              "y_axis_left": "O2 and H2 yield (%)",
+              "y_axis_right": "Electron transfer number (n)",
+              "extracted_from_image": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+            },
+            "source_image_file": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+          },
+          {
+            "type": "data_point",
+            "name": "75 mV dec⁻¹",
+            "properties": {
+              "slope": "75 mV/dec",
+              "associated_with": "FePc-GA",
+              "extracted_from_image": "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg"
+            },
+            "source_image_file": "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg"
+          },
+          {
+            "type": "material",
+            "name": "FePc-GA",
+            "properties": {
+              "description": "Composite catalyst",
+              "extracted_from_image": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+            },
+            "source_image_file": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+          },
+          {
+            "type": "image",
+            "name": "Graphene Sheets",
+            "properties": {
+              "description": "Layered graphene structure (white/gray)",
+              "extracted_from_image": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+            },
+            "source_image_file": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+          },
+          {
+            "type": "image",
+            "name": "Porous Structure",
+            "properties": {
+              "description": "3D porous aerogel structure (free-standing, red circle)",
+              "extracted_from_image": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+            },
+            "source_image_file": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "scale": "2 μm",
+              "description": "Scanning electron microscopy image showing porous microstructure",
+              "extracted_from_image": "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg"
+            },
+            "source_image_file": "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XRD Pattern GA-FePc",
+            "properties": {
+              "peaks": [
+                "C (002)"
+              ],
+              "color": "blue",
+              "extracted_from_image": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+            },
+            "source_image_file": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XRD Pattern GA",
+            "properties": {
+              "peaks": [
+                "C (101)"
+              ],
+              "color": "orange",
+              "extracted_from_image": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+            },
+            "source_image_file": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XRD Pattern FePc",
+            "properties": {
+              "peaks": [],
+              "color": "green",
+              "extracted_from_image": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+            },
+            "source_image_file": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "FT-IR",
+        "is_reported": true,
+        "characterization_summary": "FePc-GA shows N-Fe bond at 923 cm⁻¹, C-N at 1248 cm⁻¹, N-H at 1627 cm⁻¹ confirming FePc-GA composite formation; reduced OH intensity on GA.",
+        "evidence_snippet": "To further investigate the chemical structure of the synthesized electrocatalysts, Fourier transform infrared (FT-IR) spectroscopy (Figure 3e) ... FePc-GA exhibits a vibrational signal for the N-Fe bond at 923 cm⁻¹ within the fingerprint region."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "UV-Vis",
+        "is_reported": true,
+        "characterization_summary": "All samples show peak absorption at 663 nm attributed to electron delocalization effect in FePc.",
+        "evidence_snippet": "The UV-Vis spectra of all samples (Figure 3f) display a peak absorption at 663 nm, attributed to the electron delocalization effect in FePc.",
+        "related_images": [
+          "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg",
+          "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg",
+          "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg",
+          "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg",
+          "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg",
+          "ab1bf89f9c6cc64ffecc4a5b6ac911beb7064447060a644cbfe2c1c59b359cb7.jpg",
+          "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg",
+          "c2dd607d09568bb24a80af5c7a87fcc982cb99cf6fb5abe63c05767bcdabce27.jpg",
+          "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg",
+          "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg",
+          "daddfa172fb4a65f07821dcc280802ebc8e7e23c7fcbed407d54d3a0b92d757c.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "FePc-GA",
+            "properties": {
+              "description": "Composite of FePc and GA (repeated in legend)",
+              "extracted_from_image": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+            },
+            "source_image_file": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA",
+            "properties": {
+              "description": "Pure GA (repeated in legend)",
+              "extracted_from_image": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+            },
+            "source_image_file": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA-FePc",
+            "properties": {
+              "description": "Glycolic acid-iron phthalocyanine composite",
+              "extracted_from_image": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+            },
+            "source_image_file": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA",
+            "properties": {
+              "description": "Glycolic acid",
+              "extracted_from_image": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+            },
+            "source_image_file": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-S",
+            "properties": {
+              "peak": 1260,
+              "unit": "cm⁻¹",
+              "extracted_from_image": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+            },
+            "source_image_file": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FePc",
+            "properties": {
+              "color": "green",
+              "extracted_from_image": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+            },
+            "source_image_file": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FePc-GA",
+            "properties": {
+              "description": "FePc conjugated with GA",
+              "extracted_from_image": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+            },
+            "source_image_file": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA-FePc",
+            "properties": {
+              "description": "GA conjugated FePc",
+              "extracted_from_image": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+            },
+            "source_image_file": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+          },
+          {
+            "type": "data_point",
+            "name": "53 mV dec⁻¹",
+            "properties": {
+              "slope": "53 mV/dec",
+              "associated_with": "FePc-GA",
+              "extracted_from_image": "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg"
+            },
+            "source_image_file": "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg"
+          },
+          {
+            "type": "data_point",
+            "name": "63 mV dec⁻¹",
+            "properties": {
+              "slope": "63 mV/dec",
+              "associated_with": "Pt(20%)",
+              "extracted_from_image": "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg"
+            },
+            "source_image_file": "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg"
+          },
+          {
+            "type": "event",
+            "name": "Methanol Injection Point",
+            "properties": {
+              "time": "~300 s",
+              "description": "Point of methanol addition causing current response",
+              "extracted_from_image": "ab1bf89f9c6cc64ffecc4a5b6ac911beb7064447060a644cbfe2c1c59b359cb7.jpg"
+            },
+            "source_image_file": "ab1bf89f9c6cc64ffecc4a5b6ac911beb7064447060a644cbfe2c1c59b359cb7.jpg"
+          },
+          {
+            "type": "material",
+            "name": "FePc-GA-CB-PTFE",
+            "properties": {
+              "description": "Composite catalyst",
+              "extracted_from_image": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+            },
+            "source_image_file": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+          },
+          {
+            "type": "material",
+            "name": "FePc-GA-CB",
+            "properties": {
+              "description": "Composite catalyst",
+              "extracted_from_image": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+            },
+            "source_image_file": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PVC (20%)",
+            "properties": {
+              "description": "Polyvinyl chloride with 20% loading, reference material",
+              "extracted_from_image": "c2dd607d09568bb24a80af5c7a87fcc982cb99cf6fb5abe63c05767bcdabce27.jpg"
+            },
+            "source_image_file": "c2dd607d09568bb24a80af5c7a87fcc982cb99cf6fb5abe63c05767bcdabce27.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV Plot",
+            "properties": {
+              "type": "Linear Sweep Voltammetry",
+              "x_axis": "E (V vs. RHE)",
+              "y_axis": "J (mA cm⁻²)",
+              "range_x": [
+                0.4,
+                1.2
+              ],
+              "range_y": [
+                0,
+                6
+              ],
+              "extracted_from_image": "c2dd607d09568bb24a80af5c7a87fcc982cb99cf6fb5abe63c05767bcdabce27.jpg"
+            },
+            "source_image_file": "c2dd607d09568bb24a80af5c7a87fcc982cb99cf6fb5abe63c05767bcdabce27.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PTFE",
+            "properties": {
+              "description": "Polytetrafluoroethylene (Teflon) component",
+              "extracted_from_image": "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg"
+            },
+            "source_image_file": "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Contact Angle Image",
+            "properties": {
+              "angle": "101.6°",
+              "description": "Water contact angle measurement on FePc-GA+CB+PTFE surface",
+              "extracted_from_image": "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg"
+            },
+            "source_image_file": "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XRD Pattern FePc-GA",
+            "properties": {
+              "peaks": [],
+              "color": "red",
+              "extracted_from_image": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+            },
+            "source_image_file": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+          },
+          {
+            "type": "crystal_plane",
+            "name": "C (002)",
+            "properties": {
+              "hkl": [
+                0,
+                0,
+                2
+              ],
+              "extracted_from_image": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+            },
+            "source_image_file": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "UV-Vis Spectrum",
+            "properties": {
+              "type": "Absorbance",
+              "unit": "a.u.",
+              "wavelength_range": "300-800 nm",
+              "peak_highlighted": "663 nm",
+              "extracted_from_image": "daddfa172fb4a65f07821dcc280802ebc8e7e23c7fcbed407d54d3a0b92d757c.jpg"
+            },
+            "source_image_file": "daddfa172fb4a65f07821dcc280802ebc8e7e23c7fcbed407d54d3a0b92d757c.jpg"
+          },
+          {
+            "type": "data_point",
+            "name": "663 nm peak",
+            "properties": {
+              "wavelength": "663 nm",
+              "associated_with": "FePC-GA and GA-FePC",
+              "extracted_from_image": "daddfa172fb4a65f07821dcc280802ebc8e7e23c7fcbed407d54d3a0b92d757c.jpg"
+            },
+            "source_image_file": "daddfa172fb4a65f07821dcc280802ebc8e7e23c7fcbed407d54d3a0b92d757c.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "FePc-GA shows C 1s (286.1 eV), N 1s (400.8 eV), O 1s (532.7 eV), Fe 2p (712.2 eV); N 1s peaks at 398.8-402.06 eV for various N species; Fe 2p indicates intermediate Fe(II)/Fe(III) oxidation state.",
+        "evidence_snippet": "Meanwhile, X-ray photoelectron spectroscopy (XPS) was conducted to investigate the electronic structure and elemental composition of FePc-GA.",
+        "related_images": [
+          "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "type": "X-ray Photoelectron Spectroscopy",
+              "axis_x": "Binding Energy (keV)",
+              "axis_y": "Intensity (a.u.)",
+              "range_x": [
+                0,
+                9
+              ],
+              "extracted_from_image": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+            },
+            "source_image_file": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C 1s Peak",
+            "properties": {
+              "binding_energy": "~285 eV",
+              "color": "black",
+              "extracted_from_image": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+            },
+            "source_image_file": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "N 1s Peak",
+            "properties": {
+              "binding_energy": "~400 eV",
+              "color": "magenta",
+              "extracted_from_image": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+            },
+            "source_image_file": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "O 1s Peak",
+            "properties": {
+              "binding_energy": "~532 eV",
+              "color": "pink",
+              "extracted_from_image": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+            },
+            "source_image_file": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe 2p Peak",
+            "properties": {
+              "binding_energy": "~710 eV",
+              "color": "green",
+              "extracted_from_image": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+            },
+            "source_image_file": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_11",
+        "type": "characterization",
+        "method_name": "contact angle",
+        "is_reported": true,
+        "characterization_summary": "FePc-GA catalyst layer shows contact angle of 77.4° indicating hydrophilic properties.",
+        "evidence_snippet": "As shown in Figure 5c, without additives, the contact angle test for the catalyst FePc-GA in an MEA shows a contact angle of 77.4°, indicating its hydrophilic properties.",
+        "related_images": [
+          "01ea0e4ddee35232add9004dd9082339bc46a705965a52b555437a8c106adcdc.jpg",
+          "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg",
+          "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg",
+          "5649d926b438b246713849aaa80e265a70946fd8b283c5060affeeab7584a774.jpg",
+          "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg",
+          "6a75d09e385913cd36479dd988d27e1e2650c270c938c5ee183a0c9495d3897f.jpg",
+          "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg",
+          "7c9681cc7b3d66b6b98d04afb3614496f5778071879e29421b38b9f7d657ad66.jpg",
+          "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg",
+          "ab1bf89f9c6cc64ffecc4a5b6ac911beb7064447060a644cbfe2c1c59b359cb7.jpg",
+          "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg",
+          "c2dd607d09568bb24a80af5c7a87fcc982cb99cf6fb5abe63c05767bcdabce27.jpg",
+          "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg",
+          "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg",
+          "daddfa172fb4a65f07821dcc280802ebc8e7e23c7fcbed407d54d3a0b92d757c.jpg",
+          "e07bf08529c49de6eb66b6074944355ed3b75e002253d26a7e3db30dcb231173.jpg",
+          "f0a3c4afa84b1e3a6236382990dfcdc5d4d18ef332157556a781b4c3a5515e4b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale": "2 μm",
+              "label": "b",
+              "visual_features": "interconnected network structure with pores and fibers",
+              "extracted_from_image": "01ea0e4ddee35232add9004dd9082339bc46a705965a52b555437a8c106adcdc.jpg"
+            },
+            "source_image_file": "01ea0e4ddee35232add9004dd9082339bc46a705965a52b555437a8c106adcdc.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA",
+            "properties": {
+              "description": "Likely graphene acid or gallic acid",
+              "extracted_from_image": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+            },
+            "source_image_file": "13b9922e27c86475d1f6691d6c1b3b81c3eb8b6d9498737564ccb8e2af04f0df.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "4Fe3O4+O2=6Fe2O3",
+            "properties": {
+              "description": "Iron oxide oxidation reaction (4Fe3O4 + O2 → 6Fe2O3)",
+              "extracted_from_image": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+            },
+            "source_image_file": "253f0fda705080444bf024cb6f1ac17fc7a02b0b0080a56af86b4a43cfc60060.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale_bar": "1 μm",
+              "label": "a",
+              "visual_features": "interconnected network of particles, sheet-like structures, nanoparticles aggregated",
+              "extracted_from_image": "5649d926b438b246713849aaa80e265a70946fd8b283c5060affeeab7584a774.jpg"
+            },
+            "source_image_file": "5649d926b438b246713849aaa80e265a70946fd8b283c5060affeeab7584a774.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "C-H",
+            "properties": {
+              "peak": 980,
+              "unit": "cm⁻¹",
+              "extracted_from_image": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+            },
+            "source_image_file": "56fe4146939e16acc953e8f365e02d7b63c547897443eacfa1822e3cb5d7af0a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale_bar": "1 μm",
+              "features": "nanofiber network structure, web-like morphology",
+              "extracted_from_image": "6a75d09e385913cd36479dd988d27e1e2650c270c938c5ee183a0c9495d3897f.jpg"
+            },
+            "source_image_file": "6a75d09e385913cd36479dd988d27e1e2650c270c938c5ee183a0c9495d3897f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PIC(20%)",
+            "properties": {
+              "description": "PIC with 20% composition",
+              "extracted_from_image": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+            },
+            "source_image_file": "7870f71bb2af54a102998bb5a22150dcd17aeecb9addaf4ba74f7749488ef572.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Contact Angle Image",
+            "properties": {
+              "angle": "77.4°",
+              "description": "Water contact angle measurement on FePc-GA surface",
+              "extracted_from_image": "7c9681cc7b3d66b6b98d04afb3614496f5778071879e29421b38b9f7d657ad66.jpg"
+            },
+            "source_image_file": "7c9681cc7b3d66b6b98d04afb3614496f5778071879e29421b38b9f7d657ad66.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FePc-GA",
+            "properties": {
+              "description": "Iron phthalocyanine on graphene aerogel",
+              "extracted_from_image": "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg"
+            },
+            "source_image_file": "a548cf15203747a6e7cc1dc1efd730cc283e379131a9f8ebc937624688977dc6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PVC (20%)",
+            "properties": {
+              "description": "Polyvinyl chloride with 20% loading, likely catalyst ink or reference",
+              "extracted_from_image": "ab1bf89f9c6cc64ffecc4a5b6ac911beb7064447060a644cbfe2c1c59b359cb7.jpg"
+            },
+            "source_image_file": "ab1bf89f9c6cc64ffecc4a5b6ac911beb7064447060a644cbfe2c1c59b359cb7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA",
+            "properties": {
+              "description": "Graphene Aerogel",
+              "extracted_from_image": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+            },
+            "source_image_file": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA-FePc",
+            "properties": {
+              "description": "GA conjugated Iron phthalocyanine",
+              "extracted_from_image": "c2dd607d09568bb24a80af5c7a87fcc982cb99cf6fb5abe63c05767bcdabce27.jpg"
+            },
+            "source_image_file": "c2dd607d09568bb24a80af5c7a87fcc982cb99cf6fb5abe63c05767bcdabce27.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FePc",
+            "properties": {
+              "description": "Likely iron phthalocyanine component",
+              "extracted_from_image": "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg"
+            },
+            "source_image_file": "cdcb5999e9642db36a46c91e99fdbbe59a03e9ece5832cae8d8201652afd2b82.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "GA-FePc",
+            "properties": {
+              "description": "Graphene acid conjugated with iron phthalocyanine",
+              "extracted_from_image": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+            },
+            "source_image_file": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "FePC-GA",
+            "properties": {
+              "description": "FePC conjugated with GA",
+              "extracted_from_image": "daddfa172fb4a65f07821dcc280802ebc8e7e23c7fcbed407d54d3a0b92d757c.jpg"
+            },
+            "source_image_file": "daddfa172fb4a65f07821dcc280802ebc8e7e23c7fcbed407d54d3a0b92d757c.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Fluorescence Microscopy Image A",
+            "properties": {
+              "label": "Fe",
+              "color": "green",
+              "scale_bar": "1 μm",
+              "description": "Green fluorescent image showing Fe nanoparticle cluster",
+              "extracted_from_image": "e07bf08529c49de6eb66b6074944355ed3b75e002253d26a7e3db30dcb231173.jpg"
+            },
+            "source_image_file": "e07bf08529c49de6eb66b6074944355ed3b75e002253d26a7e3db30dcb231173.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM image",
+            "properties": {
+              "technique": "Scanning Electron Microscopy",
+              "scale_bar": "2 μm",
+              "label": "e",
+              "description": "Image showing wrinkled sheet-like morphology with layered structures and pores",
+              "extracted_from_image": "f0a3c4afa84b1e3a6236382990dfcdc5d4d18ef332157556a781b4c3a5515e4b.jpg"
+            },
+            "source_image_file": "f0a3c4afa84b1e3a6236382990dfcdc5d4d18ef332157556a781b4c3a5515e4b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "FePc-GA",
+        "properties": {
+          "description": "Iron phthalocyanine modified with graphene acid or similar graphene derivative",
+          "extracted_from_image": "f0a3c4afa84b1e3a6236382990dfcdc5d4d18ef332157556a781b4c3a5515e4b.jpg"
+        },
+        "source_image_file": "f0a3c4afa84b1e3a6236382990dfcdc5d4d18ef332157556a781b4c3a5515e4b.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "chemical",
+        "name": "C-based nanoparticle",
+        "properties": {
+          "description": "Carbon (C) labeled cyan fluorescent nanoparticle aggregate",
+          "size_scale": "1 μm",
+          "extracted_from_image": "e07bf08529c49de6eb66b6074944355ed3b75e002253d26a7e3db30dcb231173.jpg"
+        },
+        "source_image_file": "e07bf08529c49de6eb66b6074944355ed3b75e002253d26a7e3db30dcb231173.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "characterization",
+        "name": "Fluorescence Microscopy Image B",
+        "properties": {
+          "label": "C",
+          "color": "cyan/blue",
+          "scale_bar": "1 μm",
+          "description": "Cyan fluorescent image showing C nanoparticle cluster",
+          "extracted_from_image": "e07bf08529c49de6eb66b6074944355ed3b75e002253d26a7e3db30dcb231173.jpg"
+        },
+        "source_image_file": "e07bf08529c49de6eb66b6074944355ed3b75e002253d26a7e3db30dcb231173.jpg"
+      },
+      {
+        "id": "FePc-GA",
+        "type": "chemical",
+        "name": "FePc-GA",
+        "properties": {
+          "description": "Iron phthalocyanine-gallic acid complex",
+          "extracted_from_image": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+        },
+        "source_image_file": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+      },
+      {
+        "id": "GA-FePc",
+        "type": "chemical",
+        "name": "GA-FePc",
+        "properties": {
+          "description": "Gallic acid-iron phthalocyanine complex",
+          "extracted_from_image": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+        },
+        "source_image_file": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+      },
+      {
+        "id": "GA",
+        "type": "chemical",
+        "name": "Graphene Aerogel",
+        "properties": {
+          "representation": "gray porous structure",
+          "extracted_from_image": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+        },
+        "source_image_file": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+      },
+      {
+        "id": "FePc",
+        "type": "chemical",
+        "name": "Iron Phthalocyanine",
+        "properties": {
+          "representation": "blue cluster structure",
+          "extracted_from_image": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+        },
+        "source_image_file": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+      },
+      {
+        "id": "PVCF20",
+        "type": "chemical",
+        "name": "PVC (20%)",
+        "properties": {
+          "description": "Polyvinyl chloride with 20% composition",
+          "extracted_from_image": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+        },
+        "source_image_file": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+      },
+      {
+        "id": "j_090V",
+        "type": "characterization",
+        "name": "j (mA/cm²) at 0.90 V",
+        "properties": {
+          "description": "Current density at 0.90 V",
+          "units": "mA/cm²",
+          "extracted_from_image": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+        },
+        "source_image_file": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+      },
+      {
+        "id": "E12_0V",
+        "type": "characterization",
+        "name": "E_{1/2} (V) at 0 V",
+        "properties": {
+          "description": "Half-wave potential at 0 V",
+          "units": "V",
+          "extracted_from_image": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+        },
+        "source_image_file": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Bar Chart",
+        "properties": {
+          "description": "Comparative electrochemical performance chart",
+          "x_axis": [
+            "GA-FePc",
+            "PVC(20%)",
+            "FePc-GA"
+          ],
+          "y1_axis": "j (mA/cm²) at 0.90 V",
+          "y2_axis": "E_{1/2} (V) at 0 V",
+          "extracted_from_image": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+        },
+        "source_image_file": "382ac1a278e0a333bc3d5aa5bc7717a1d82505f1e273026a0bbac321a51e785b.jpg"
+      },
+      {
+        "id": "image_g",
+        "type": "image",
+        "name": "Figure Panel g",
+        "properties": {
+          "description": "Grayscale TEM image of nanoparticle aggregate",
+          "scale": "1 μm",
+          "extracted_from_image": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+        },
+        "source_image_file": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+      },
+      {
+        "id": "aggregate_g",
+        "type": "material",
+        "name": "Nanoparticle Aggregate (g)",
+        "properties": {
+          "morphology": "spherical cluster",
+          "size_scale": "1 μm",
+          "contrast": "high electron density",
+          "extracted_from_image": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+        },
+        "source_image_file": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+      },
+      {
+        "id": "image_N",
+        "type": "image",
+        "name": "Figure Panel N",
+        "properties": {
+          "description": "Dark-field or elemental map image labeled N",
+          "scale": "1 μm",
+          "extracted_from_image": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+        },
+        "source_image_file": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+      },
+      {
+        "id": "aggregate_N",
+        "type": "material",
+        "name": "Nanoparticle Aggregate (N)",
+        "properties": {
+          "morphology": "spherical cluster",
+          "size_scale": "1 μm",
+          "contrast": "bright particles on dark background",
+          "extracted_from_image": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+        },
+        "source_image_file": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+      },
+      {
+        "id": "element_N",
+        "type": "chemical",
+        "name": "Element N",
+        "properties": {
+          "label": "N",
+          "likely_technique": "EDX elemental mapping or dark-field imaging",
+          "extracted_from_image": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+        },
+        "source_image_file": "3c5cb99f436c1115a6cb9298c0fa5504a4f8bee38363d7ad6001810ac634e1e6.jpg"
+      },
+      {
+        "id": "GO",
+        "type": "chemical",
+        "name": "Graphene Oxide",
+        "properties": {
+          "extracted_from_image": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+        },
+        "source_image_file": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+      },
+      {
+        "id": "GH",
+        "type": "chemical",
+        "name": "Graphene Hydrogel",
+        "properties": {
+          "representation": "black chunk",
+          "extracted_from_image": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+        },
+        "source_image_file": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+      },
+      {
+        "id": "FeGH",
+        "type": "chemical",
+        "name": "FePc-Graphene Hydrogel",
+        "properties": {
+          "representation": "black chunk with blue clusters",
+          "extracted_from_image": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+        },
+        "source_image_file": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+      },
+      {
+        "id": "FeGA",
+        "type": "chemical",
+        "name": "FeGA",
+        "properties": {
+          "description": "Iron-based catalyst with GA (possibly graphene aerogel or gallic acid derivative)",
+          "extracted_from_image": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+        },
+        "source_image_file": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+      },
+      {
+        "id": "GAFePc",
+        "type": "chemical",
+        "name": "Graphene Aerogel-FePc",
+        "properties": {
+          "representation": "blue porous structure with FePc",
+          "extracted_from_image": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+        },
+        "source_image_file": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+      },
+      {
+        "id": "hydrothermal",
+        "type": "process",
+        "name": "Hydrothermal Reaction",
+        "properties": {
+          "extracted_from_image": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+        },
+        "source_image_file": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+      },
+      {
+        "id": "freeze-drying",
+        "type": "process",
+        "name": "Freeze-Drying",
+        "properties": {
+          "extracted_from_image": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+        },
+        "source_image_file": "87623ac3223db3b88bd3a5b82e69ce7ad7b9f35feec787d081cd3639d51c7ee2.jpg"
+      },
+      {
+        "id": "image_c",
+        "type": "image",
+        "name": "Figure C",
+        "properties": {
+          "label": "C",
+          "scale_bar": "500 nm",
+          "extracted_from_image": "88099d2d58425ac44c6a4bbab0814e2bc1d2aa4657a77644c14ef71354cd4562.jpg"
+        },
+        "source_image_file": "88099d2d58425ac44c6a4bbab0814e2bc1d2aa4657a77644c14ef71354cd4562.jpg"
+      },
+      {
+        "id": "nanostructure",
+        "type": "chemical",
+        "name": "Nanofibers or Nanowires",
+        "properties": {
+          "description": "Entangled network of high-aspect-ratio nanostructures with fibrous morphology",
+          "scale": "500 nm",
+          "extracted_from_image": "88099d2d58425ac44c6a4bbab0814e2bc1d2aa4657a77644c14ef71354cd4562.jpg"
+        },
+        "source_image_file": "88099d2d58425ac44c6a4bbab0814e2bc1d2aa4657a77644c14ef71354cd4562.jpg"
+      },
+      {
+        "id": "morphology",
+        "type": "characterization",
+        "name": "SEM Morphology",
+        "properties": {
+          "technique": "Scanning Electron Microscopy (SEM)",
+          "features": "Woven or entangled fibers, bundles, high surface area structure",
+          "extracted_from_image": "88099d2d58425ac44c6a4bbab0814e2bc1d2aa4657a77644c14ef71354cd4562.jpg"
+        },
+        "source_image_file": "88099d2d58425ac44c6a4bbab0814e2bc1d2aa4657a77644c14ef71354cd4562.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "Durability Test Graph",
+        "properties": {
+          "type": "line chart",
+          "x_axis": "Time (h)",
+          "y_axis": "%",
+          "labels": [
+            "Pt/C (20%)",
+            "FePc",
+            "FePc-GA"
+          ],
+          "extracted_from_image": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+        },
+        "source_image_file": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+      },
+      {
+        "id": "ptc",
+        "type": "chemical",
+        "name": "Pt/C (20%)",
+        "properties": {
+          "description": "20% Platinum on Carbon catalyst",
+          "extracted_from_image": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+        },
+        "source_image_file": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+      },
+      {
+        "id": "fepc",
+        "type": "chemical",
+        "name": "FePc",
+        "properties": {
+          "description": "Iron Phthalocyanine",
+          "extracted_from_image": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+        },
+        "source_image_file": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+      },
+      {
+        "id": "fepcga",
+        "type": "chemical",
+        "name": "FePc-GA",
+        "properties": {
+          "description": "Iron Phthalocyanine - Graphene Aerogel composite",
+          "extracted_from_image": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+        },
+        "source_image_file": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+      },
+      {
+        "id": "ptc_curve",
+        "type": "data",
+        "name": "Pt/C (20%) curve",
+        "properties": {
+          "color": "gray",
+          "performance": "74% retention at 24h",
+          "extracted_from_image": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+        },
+        "source_image_file": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+      },
+      {
+        "id": "fepc_curve",
+        "type": "data",
+        "name": "FePc curve",
+        "properties": {
+          "color": "black",
+          "performance": "91% retention at 24h",
+          "extracted_from_image": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+        },
+        "source_image_file": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+      },
+      {
+        "id": "fepcga_curve",
+        "type": "data",
+        "name": "FePc-GA curve",
+        "properties": {
+          "color": "red",
+          "performance": "74% retention at 24h",
+          "extracted_from_image": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+        },
+        "source_image_file": "abc66b2e9c9319bcbe02809dbc4772031fe2aedf7957832a01d523845bad2a16.jpg"
+      },
+      {
+        "id": "image_f",
+        "type": "image",
+        "name": "Figure f",
+        "properties": {
+          "label": "f",
+          "scale_bar": "500 nm",
+          "extracted_from_image": "ba9415ee08758f3e535e430d3b05f6a63363a70c162fc848feb9047f4d7ebef9.jpg"
+        },
+        "source_image_file": "ba9415ee08758f3e535e430d3b05f6a63363a70c162fc848feb9047f4d7ebef9.jpg"
+      },
+      {
+        "id": "microscopy_image",
+        "type": "characterization",
+        "name": "TEM Image",
+        "properties": {
+          "technique": "Transmission Electron Microscopy",
+          "scale": "500 nm",
+          "description": "High-resolution image showing nanostructured material with fibrous or dendritic morphology",
+          "extracted_from_image": "ba9415ee08758f3e535e430d3b05f6a63363a70c162fc848feb9047f4d7ebef9.jpg"
+        },
+        "source_image_file": "ba9415ee08758f3e535e430d3b05f6a63363a70c162fc848feb9047f4d7ebef9.jpg"
+      },
+      {
+        "id": "nanomaterial",
+        "type": "chemical",
+        "name": "Nanostructured Material",
+        "properties": {
+          "morphology": "fibrous/dendritic",
+          "scale": "nanoscale",
+          "size_reference": "500 nm scale bar",
+          "extracted_from_image": "ba9415ee08758f3e535e430d3b05f6a63363a70c162fc848feb9047f4d7ebef9.jpg"
+        },
+        "source_image_file": "ba9415ee08758f3e535e430d3b05f6a63363a70c162fc848feb9047f4d7ebef9.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "annotation",
+        "name": "500 nm Scale Bar",
+        "properties": {
+          "length": "500 nm",
+          "purpose": "size reference",
+          "extracted_from_image": "ba9415ee08758f3e535e430d3b05f6a63363a70c162fc848feb9047f4d7ebef9.jpg"
+        },
+        "source_image_file": "ba9415ee08758f3e535e430d3b05f6a63363a70c162fc848feb9047f4d7ebef9.jpg"
+      },
+      {
+        "id": "material1",
+        "type": "chemical",
+        "name": "FePc-GA",
+        "properties": {
+          "extracted_from_image": "bb519e85daa854463084506517e3fe87b4eba07c07c353626812ead79a9a0503.jpg"
+        },
+        "source_image_file": "bb519e85daa854463084506517e3fe87b4eba07c07c353626812ead79a9a0503.jpg"
+      },
+      {
+        "id": "material2",
+        "type": "chemical",
+        "name": "FePc-GA+CB",
+        "properties": {
+          "extracted_from_image": "bb519e85daa854463084506517e3fe87b4eba07c07c353626812ead79a9a0503.jpg"
+        },
+        "source_image_file": "bb519e85daa854463084506517e3fe87b4eba07c07c353626812ead79a9a0503.jpg"
+      },
+      {
+        "id": "contact_angle_image",
+        "type": "characterization",
+        "name": "Contact Angle Measurement",
+        "properties": {
+          "angle": "79.8°",
+          "scale": "2 μm",
+          "extracted_from_image": "bb519e85daa854463084506517e3fe87b4eba07c07c353626812ead79a9a0503.jpg"
+        },
+        "source_image_file": "bb519e85daa854463084506517e3fe87b4eba07c07c353626812ead79a9a0503.jpg"
+      },
+      {
+        "id": "sem_image",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "scale": "2 μm",
+          "extracted_from_image": "bb519e85daa854463084506517e3fe87b4eba07c07c353626812ead79a9a0503.jpg"
+        },
+        "source_image_file": "bb519e85daa854463084506517e3fe87b4eba07c07c353626812ead79a9a0503.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "technique",
+        "name": "XRD",
+        "properties": {
+          "x_axis": "2Theta (degrees)",
+          "y_axis": "Intensity (a.u.)",
+          "range_2theta": [
+            10,
+            50
+          ],
+          "extracted_from_image": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+        },
+        "source_image_file": "d3a1af0ce176d915beb678e9fbebe7e261c33c619eb7aa1153678e4d2fc00952.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "characterization",
+        "name": "Power Density",
+        "properties": {
+          "description": "Power density (mW cm⁻²) vs current density",
+          "peak_power": "Highlighted maximum power density",
+          "extracted_from_image": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+        },
+        "source_image_file": "bb6cad1b8c4dc456a63c42c7d81b0502ecbee657e5bcd9a4035c1dde2e84a487.jpg"
+      },
+      {
+        "id": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b_6",
+        "type": "molecule",
+        "name": "Metal-Organic Framework (MOF)",
+        "properties": {
+          "structure": "porphyrin-like with central metal",
+          "central_atom": "Fe",
+          "ligands": "N4 coordination",
+          "extracted_from_image": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+        },
+        "source_image_file": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+      },
+      {
+        "id": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b_7",
+        "type": "chemical",
+        "name": "Iron (Fe)",
+        "properties": {
+          "central_metal": true,
+          "extracted_from_image": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+        },
+        "source_image_file": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+      },
+      {
+        "id": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b_8",
+        "type": "molecule",
+        "name": "Organic Ligand Chain",
+        "properties": {
+          "structure": "polymeric chain",
+          "extracted_from_image": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+        },
+        "source_image_file": "be99486df79fd486725434f1bed0f4886629715c592bf459223ab99d7e8c590b.jpg"
+      },
+      {
+        "id": "membrane_stack",
+        "type": "structure",
+        "name": "Membrane Stack",
+        "properties": {
+          "description": "Multi-layer membrane assembly in electrochemical cell",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "layer_outer1",
+        "type": "layer",
+        "name": "Outer Layer 1",
+        "properties": {
+          "color": "dark gray",
+          "position": "left side",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "layer_orange1",
+        "type": "layer",
+        "name": "Orange Layer 1",
+        "properties": {
+          "color": "orange",
+          "position": "second from left",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "layer_yellow",
+        "type": "layer",
+        "name": "Yellow Layer",
+        "properties": {
+          "color": "yellow",
+          "position": "third from left, patterned",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "layer_green1",
+        "type": "layer",
+        "name": "Green Layer 1",
+        "properties": {
+          "color": "green",
+          "position": "fourth from left",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "layer_black",
+        "type": "layer",
+        "name": "Black Layer",
+        "properties": {
+          "color": "black",
+          "position": "center",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "layer_green2",
+        "type": "layer",
+        "name": "Green Layer 2",
+        "properties": {
+          "color": "green",
+          "position": "sixth from left",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "layer_orange2",
+        "type": "layer",
+        "name": "Orange Layer 2",
+        "properties": {
+          "color": "orange",
+          "position": "seventh from left",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "layer_outer2",
+        "type": "layer",
+        "name": "Outer Layer 2",
+        "properties": {
+          "color": "gray",
+          "position": "right side",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "gas_in_left",
+        "type": "flow",
+        "name": "Gas In (Left)",
+        "properties": {
+          "direction": "inward",
+          "position": "left",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "gas_out_left",
+        "type": "flow",
+        "name": "Gas Out / Coolant Out (Left)",
+        "properties": {
+          "direction": "outward",
+          "position": "bottom left",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "gas_in_right",
+        "type": "flow",
+        "name": "Gas In (Right)",
+        "properties": {
+          "direction": "inward",
+          "position": "top right",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "gas_out_right",
+        "type": "flow",
+        "name": "Gas Out (Right)",
+        "properties": {
+          "direction": "outward",
+          "position": "right",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "bolts",
+        "type": "component",
+        "name": "Bolts",
+        "properties": {
+          "description": "Mechanical fasteners",
+          "count": "4",
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "figure_label",
+        "type": "label",
+        "name": "Figure a",
+        "properties": {
+          "extracted_from_image": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+        },
+        "source_image_file": "ca3e87ec3fbdfa5e96b963d33a933f1f15ac76d862bfb8b7c5bf7c331386ce51.jpg"
+      },
+      {
+        "id": "CB",
+        "type": "chemical",
+        "name": "CB",
+        "properties": {
+          "description": "Carbon Black",
+          "extracted_from_image": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+        },
+        "source_image_file": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+      },
+      {
+        "id": "PTFE",
+        "type": "chemical",
+        "name": "PTFE",
+        "properties": {
+          "description": "Polytetrafluoroethylene",
+          "extracted_from_image": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+        },
+        "source_image_file": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+      },
+      {
+        "id": "FeGA-CB",
+        "type": "chemical",
+        "name": "FeGA-CB",
+        "properties": {
+          "description": "FeGA mixed with Carbon Black",
+          "extracted_from_image": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+        },
+        "source_image_file": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+      },
+      {
+        "id": "FeGA-CB-PTFE",
+        "type": "chemical",
+        "name": "FeGA-CB-PTFE",
+        "properties": {
+          "description": "FeGA-CB with PTFE binder",
+          "extracted_from_image": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+        },
+        "source_image_file": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+      },
+      {
+        "id": "plot",
+        "type": "characterization",
+        "name": "Polarization Curve",
+        "properties": {
+          "type": "graph",
+          "x_axis": "Current Density (mA cm⁻²)",
+          "y_axis_left": "Cell Voltage (V)",
+          "y_axis_right": "Power Density (mW cm⁻²)",
+          "figure_label": "b",
+          "extracted_from_image": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+        },
+        "source_image_file": "fae76700297d224682e729b3c4afa2ac1ddf8952c926ab7ce25e872d8b4b4f10.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_GA-FePc_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_GA-FePc",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA-FePc_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_GA-FePc",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA-FePc_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_GA-FePc",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_FePc",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_GA",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_FePc",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA-FePc_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_GA-FePc",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_FePc",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_GA",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA-FePc_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_GA-FePc",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_FePc",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_GA",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA-FePc_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_GA-FePc",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_FePc",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_GA_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_GA",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FePc-GA_char_11",
+        "type": "characterized_in",
+        "source_id": "chem_FePc-GA",
+        "target_id": "char_11",
+        "properties": {}
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n4",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_7",
+        "type": "region_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_7",
+        "type": "region_in"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_7",
+        "type": "region_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "n4",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_9",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_9",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_5",
+        "type": "reference_point"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_5",
+        "type": "reference_point"
+      },
+      {
+        "source_id": "FePc-GA",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "GA-FePc",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "GA",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "FePc",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "FePc",
+        "target_id": "FePc-GA",
+        "type": "component_of"
+      },
+      {
+        "source_id": "GA",
+        "target_id": "FePc-GA",
+        "type": "component_of"
+      },
+      {
+        "source_id": "FePc",
+        "target_id": "GA-FePc",
+        "type": "component_of"
+      },
+      {
+        "source_id": "GA",
+        "target_id": "GA-FePc",
+        "type": "component_of"
+      },
+      {
+        "source_id": "GA-FePc",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "PVCF20",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "FePc-GA",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "GA-FePc",
+        "target_id": "j_090V",
+        "type": "has_property"
+      },
+      {
+        "source_id": "PVCF20",
+        "target_id": "j_090V",
+        "type": "has_property"
+      },
+      {
+        "source_id": "FePc-GA",
+        "target_id": "j_090V",
+        "type": "has_property"
+      },
+      {
+        "source_id": "GA-FePc",
+        "target_id": "E12_0V",
+        "type": "has_property"
+      },
+      {
+        "source_id": "PVCF20",
+        "target_id": "E12_0V",
+        "type": "has_property"
+      },
+      {
+        "source_id": "FePc-GA",
+        "target_id": "E12_0V",
+        "type": "has_property"
+      },
+      {
+        "source_id": "j_090V",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "E12_0V",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "image_g",
+        "target_id": "aggregate_g",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_N",
+        "target_id": "aggregate_N",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_N",
+        "target_id": "element_N",
+        "type": "labels"
+      },
+      {
+        "source_id": "aggregate_g",
+        "target_id": "aggregate_N",
+        "type": "same_sample"
+      },
+      {
+        "source_id": "aggregate_N",
+        "target_id": "element_N",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_7",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_7",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_7",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_7",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_7",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_7",
+        "type": "composite_with"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_7",
+        "type": "composite_with"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_5",
+        "type": "composite_with"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_5",
+        "type": "composite_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_11",
+        "type": "labels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_5",
+        "type": "catalyst_for"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_5",
+        "type": "catalyst_for"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_5",
+        "type": "catalyst_for"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_5",
+        "type": "catalyst_for"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_5",
+        "type": "catalyst_for"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_9",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_9",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_5",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "GO",
+        "target_id": "GH",
+        "type": "hydrothermal"
+      },
+      {
+        "source_id": "GH",
+        "target_id": "GA",
+        "type": "freeze-drying"
+      },
+      {
+        "source_id": "GO",
+        "target_id": "FeGH",
+        "type": "hydrothermal_with_FePc"
+      },
+      {
+        "source_id": "FePc",
+        "target_id": "FeGH",
+        "type": "combined_in_hydrothermal"
+      },
+      {
+        "source_id": "FeGH",
+        "target_id": "FeGA",
+        "type": "freeze-drying"
+      },
+      {
+        "source_id": "FeGA",
+        "target_id": "GAFePc",
+        "type": "modification"
+      },
+      {
+        "source_id": "FePc",
+        "target_id": "GAFePc",
+        "type": "incorporated_into"
+      },
+      {
+        "source_id": "image_c",
+        "target_id": "morphology",
+        "type": "depicts"
+      },
+      {
+        "source_id": "morphology",
+        "target_id": "nanostructure",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_c",
+        "target_id": "nanostructure",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_9",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_7",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_9",
+        "type": "injected_at"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "n4",
+        "type": "event_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "tested_with"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_9",
+        "type": "tested_with"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "ptc_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "fepc_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "fepcga_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "ptc",
+        "target_id": "ptc_curve",
+        "type": "measured"
+      },
+      {
+        "source_id": "fepc",
+        "target_id": "fepc_curve",
+        "type": "measured"
+      },
+      {
+        "source_id": "fepcga",
+        "target_id": "fepcga_curve",
+        "type": "measured"
+      },
+      {
+        "source_id": "fepc",
+        "target_id": "fepcga",
+        "type": "component_of"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "microscopy_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "microscopy_image",
+        "target_id": "nanomaterial",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "scale_bar",
+        "target_id": "nanomaterial",
+        "type": "calibrates"
+      },
+      {
+        "source_id": "material2",
+        "target_id": "contact_angle_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "material1",
+        "target_id": "sem_image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "material1",
+        "target_id": "material2",
+        "type": "composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "composite"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n3",
+        "type": "composite"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "composite"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "composite"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "composite"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "composite"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "n11",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "n11",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n11",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "n12",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "n12",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n12",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_11",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_9",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_7",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "1",
+        "target_id": "5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "6",
+        "target_id": "7",
+        "type": "contains"
+      },
+      {
+        "source_id": "6",
+        "target_id": "3",
+        "type": "contains"
+      },
+      {
+        "source_id": "6",
+        "target_id": "2",
+        "type": "contains"
+      },
+      {
+        "source_id": "6",
+        "target_id": "4",
+        "type": "contains"
+      },
+      {
+        "source_id": "6",
+        "target_id": "8",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "7",
+        "target_id": "5",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_9",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_9",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_9",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_9",
+        "type": "reference_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "related_to"
+      },
+      {
+        "source_id": "layer_outer1",
+        "target_id": "membrane_stack",
+        "type": "part_of"
+      },
+      {
+        "source_id": "layer_orange1",
+        "target_id": "membrane_stack",
+        "type": "part_of"
+      },
+      {
+        "source_id": "layer_yellow",
+        "target_id": "membrane_stack",
+        "type": "part_of"
+      },
+      {
+        "source_id": "layer_green1",
+        "target_id": "membrane_stack",
+        "type": "part_of"
+      },
+      {
+        "source_id": "layer_black",
+        "target_id": "membrane_stack",
+        "type": "part_of"
+      },
+      {
+        "source_id": "layer_green2",
+        "target_id": "membrane_stack",
+        "type": "part_of"
+      },
+      {
+        "source_id": "layer_orange2",
+        "target_id": "membrane_stack",
+        "type": "part_of"
+      },
+      {
+        "source_id": "layer_outer2",
+        "target_id": "membrane_stack",
+        "type": "part_of"
+      },
+      {
+        "source_id": "gas_in_left",
+        "target_id": "membrane_stack",
+        "type": "flows_into"
+      },
+      {
+        "source_id": "gas_out_left",
+        "target_id": "membrane_stack",
+        "type": "flows_from"
+      },
+      {
+        "source_id": "gas_in_right",
+        "target_id": "membrane_stack",
+        "type": "flows_into"
+      },
+      {
+        "source_id": "gas_out_right",
+        "target_id": "membrane_stack",
+        "type": "flows_from"
+      },
+      {
+        "source_id": "bolts",
+        "target_id": "membrane_stack",
+        "type": "secures"
+      },
+      {
+        "source_id": "figure_label",
+        "target_id": "membrane_stack",
+        "type": "labels"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_7",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_7",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_7",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "n11",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n11",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n11",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "n11",
+        "type": "uses_technique"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_9",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "char_5",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_11",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_11",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n1",
+        "type": "derivative_of"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "n4",
+        "type": "conjugated_with"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "conjugated_with"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "derivative_of"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_9",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_11",
+        "target_id": "char_9",
+        "type": "exhibits_peak_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_9",
+        "type": "exhibits_peak_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_11",
+        "type": "depicts"
+      },
+      {
+        "source_id": "FeGA",
+        "target_id": "FeGA-CB",
+        "type": "composite"
+      },
+      {
+        "source_id": "CB",
+        "target_id": "FeGA-CB",
+        "type": "composite"
+      },
+      {
+        "source_id": "FeGA-CB",
+        "target_id": "FeGA-CB-PTFE",
+        "type": "composite"
+      },
+      {
+        "source_id": "PTFE",
+        "target_id": "FeGA-CB-PTFE",
+        "type": "composite"
+      },
+      {
+        "source_id": "FeGA-CB",
+        "target_id": "plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "FeGA-CB-PTFE",
+        "target_id": "plot",
+        "type": "characterized_by"
+      }
+    ]
+  }
+}

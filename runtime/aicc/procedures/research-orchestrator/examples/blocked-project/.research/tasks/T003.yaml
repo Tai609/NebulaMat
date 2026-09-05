@@ -1,0 +1,32 @@
+schema_version: 1
+id: T003
+title: Draft report from non-accepted parser result
+role: synthesis-report
+skill: report
+status: approved
+depends_on:
+  - T001
+approval: none
+inputs:
+  - artifact_id: parser-result
+    min_status: accepted
+outputs_expected:
+  - artifact_id: report-docx
+    type: docx-report
+    path: work/report.docx
+success_criteria:
+  - report consumes only accepted claims
+knowledge_required:
+  - knowledge/scientific-visualization.md
+required_refs:
+  - tools/report/SKILL.md
+  - tools/report/references/validation.md
+required_checks:
+  - uv run {repo_root}/tools/report/scripts/build_report.py work/manifest.json -o work/report.docx
+release_gates:
+  - report-readiness
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions: []
+provenance: []

@@ -1,0 +1,18 @@
+schema_version: 1
+project_id: ro-minimal-2026-06
+title: Minimal research orchestrator project
+mode: semi-automatic
+created_at: "2026-06-25T00:00:00+08:00"
+objective: >
+  Demonstrate a valid project DAG with accepted planning artifacts, one ready
+  structure-preparation task, and one downstream HPC task blocked by that structure task.
+success_criteria:
+  - validator accepts the state directory
+  - ready_tasks reports T003 as ready
+  - ready_tasks reports T004 as blocked on T003
+default_policy:
+  approval_required_for:
+    - expensive_hpc_submission
+    - scientific_model_choice
+    - overwrite_existing_data
+    - promote_claim_to_report

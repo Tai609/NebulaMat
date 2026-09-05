@@ -1,0 +1,3663 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "Pt/C",
+        "aliases": [
+          "Pt/C (TKK, 47.7 wt%)",
+          "Pt/C catalyst"
+        ],
+        "formula": "Pt/C",
+        "composition": {
+          "Pt": {
+            "value": 47.7,
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_Nafion",
+        "type": "chemical",
+        "name": "Nafion",
+        "aliases": [
+          "5% Nafion"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_ultrapure_water",
+        "type": "chemical",
+        "name": "ultrapure water",
+        "aliases": [
+          "ultrapure water (18.2 MΩ cm^{-1})"
+        ],
+        "formula": "H2O",
+        "properties": {
+          "resistivity": {
+            "value": 18.2,
+            "unit": "MΩ cm^{-1}"
+          }
+        }
+      },
+      {
+        "id": "chem_isopropanol",
+        "type": "chemical",
+        "name": "isopropanol",
+        "aliases": [
+          "isopropanol (ACS grade)"
+        ],
+        "formula": "C3H8O",
+        "properties": {}
+      },
+      {
+        "id": "chem_glassy_carbon",
+        "type": "chemical",
+        "name": "glassy carbon electrode",
+        "aliases": [
+          "glassy carbon electrode (0.2463 cm²)"
+        ],
+        "properties": {
+          "geometric_area": {
+            "value": 0.2463,
+            "unit": "cm²"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Pt/C RDE electrode preparation",
+        "procedure": "Before drop-casting, the glassy carbon electrode (0.2463 cm²) embedded in PTFE was polished mechanically with 0.5 mm, 0.3 mm, 0.05 mm alumina powder and then sonicated in ultrapure water and isopropanol at least three times. Each time took 5 min. Ink was freshly prepared each time with 2.4 mg 47.7% Pt/C, 2.55 ml ultrapure water, 0.51 ml isopropanol and 7.65 μl 5% Nafion. The ink was sonicated in the ice-water bath for 1 h before drop-casting. Each time 5.3 μl ink was used to drop-cast on the glassy carbon electrode with a rotation rate of 450 r.p.m. to achieve a Pt loading of 8 μg cm^{-2}. The electrode was dried in the air for about 30 min before use and rinsed with ultrapure water before electrochemical conditions.",
+        "method": "Drop-casting",
+        "conditions": {
+          "ink_composition": {
+            "value": "2.4 mg 47.7% Pt/C, 2.55 ml water, 0.51 ml isopropanol, 7.65 μl 5% Nafion",
+            "unit": "per batch"
+          },
+          "sonication_time": {
+            "value": 1,
+            "unit": "h"
+          },
+          "sonication_bath": {
+            "value": "ice-water",
+            "unit": ""
+          },
+          "drop_volume": {
+            "value": 5.3,
+            "unit": "μl"
+          },
+          "rotation_rate": {
+            "value": 450,
+            "unit": "rpm"
+          },
+          "drying_time": {
+            "value": 30,
+            "unit": "min"
+          },
+          "Pt_loading": {
+            "value": 8,
+            "unit": "μg_Pt cm^{-2}"
+          },
+          "electrode_area": {
+            "value": 0.2463,
+            "unit": "cm²"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Mechanical Polishing",
+            "method": "Alumina polishing",
+            "conditions": {
+              "particle_sizes": {
+                "value": "0.5, 0.3, 0.05",
+                "unit": "mm"
+              }
+            },
+            "procedure_snippet": "polished mechanically with 0.5 mm, 0.3 mm, 0.05 mm alumina powder"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Ultrasonic Cleaning",
+            "method": "Solvent sonication",
+            "conditions": {
+              "cycles": {
+                "value": 3,
+                "unit": "times"
+              },
+              "time_per_cycle": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "sonicated in ultrapure water and isopropanol at least three times. Each time took 5 min"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Catalyst Ink Preparation",
+            "method": "Sonicated dispersion",
+            "conditions": {
+              "sonication_time": {
+                "value": 1,
+                "unit": "h"
+              },
+              "temperature": {
+                "value": 0,
+                "unit": "°C (ice bath)"
+              }
+            },
+            "procedure_snippet": "Ink was freshly prepared each time with 2.4 mg 47.7% Pt/C, 2.55 ml ultrapure water, 0.51 ml isopropanol and 7.65 μl 5% Nafion. The ink was sonicated in the ice-water bath for 1 h"
+          },
+          {
+            "id": "unit_op_1.4",
+            "name": "Drop-casting Deposition",
+            "method": "Rotating substrate deposition",
+            "conditions": {
+              "ink_volume": {
+                "value": 5.3,
+                "unit": "μl"
+              },
+              "rotation_rate": {
+                "value": 450,
+                "unit": "rpm"
+              }
+            },
+            "procedure_snippet": "5.3 μl ink was used to drop-cast on the glassy carbon electrode with a rotation rate of 450 r.p.m."
+          },
+          {
+            "id": "unit_op_1.5",
+            "name": "Air Drying",
+            "method": "Ambient drying",
+            "conditions": {
+              "time": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "The electrode was dried in the air for about 30 min before use"
+          }
+        ],
+        "source_text": "Before drop-casting, the glassy carbon electrode (0.2463 cm²) embedded in PTFE was polished mechanically with 0.5 mm, 0.3 mm, 0.05 mm alumina powder and then sonicated... The electrode was dried in the air for about 30 min before use and rinsed with ultrapure water before electrochemical conditions."
+      },
+      {
+        "id": "chem_Pt_C_AEMEL_cathode",
+        "type": "chemical",
+        "name": "Pt/C AEMEL cathode",
+        "aliases": [
+          "Pt/C cathode (0.12 mg_Pt cm^{-2})"
+        ],
+        "formula": "Pt/C",
+        "properties": {
+          "Pt_loading": {
+            "value": 0.12,
+            "unit": "mg_Pt cm^{-2}"
+          },
+          "ionomer_loading": {
+            "value": 25,
+            "unit": "% vs catalyst"
+          }
+        }
+      },
+      {
+        "id": "chem_PAP_TP_85",
+        "type": "chemical",
+        "name": "PAP-TP-85",
+        "aliases": [
+          "PAP-TP-85 (11% in ethanol)",
+          "PAP-TP-85 solution"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_carbon_cloth",
+        "type": "chemical",
+        "name": "carbon cloth",
+        "aliases": [
+          "carbon cloth loaded with carbon and PTFE"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_IrOx",
+        "type": "chemical",
+        "name": "iridium oxide",
+        "aliases": [
+          "IrOx",
+          "iridium black (99.95% (metals basis), Alfa Aesar)"
+        ],
+        "formula": "IrOx",
+        "properties": {
+          "loading_AEMEL_anode": {
+            "value": 3.1,
+            "unit": "mg cm^{-2}"
+          },
+          "ionomer_loading": {
+            "value": 10,
+            "unit": "% vs catalyst"
+          }
+        }
+      },
+      {
+        "id": "chem_PAP_TP_85_MQN_10C",
+        "type": "chemical",
+        "name": "PAP-TP-85-MQN-10C",
+        "aliases": [
+          "PAP-TP-85-MQN-10C membrane"
+        ],
+        "properties": {
+          "thickness": {
+            "value": 20,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "AEMEL Pt/C cathode preparation",
+        "procedure": "The Pt/C catalyst (47.7%, TKK) and PAP-TP-85 solution were sonicated with ultrapure water and isopropanol in an ice-water bath for 2 h to obtain a well-dispersed catalyst ink. The catalyst ink was then hand-sprayed on the carbon cloth using the spray gun (iwata, HP-CS) to achieve a Pt loading of 0.12 mg cm^{-2} and ionomer loading of 25% versus catalyst. A low loading of Pt was used in the cathode here to render the HER kinetics as the limiting factor of the AEMEL performance.",
+        "method": "Hand-spray coating",
+        "conditions": {
+          "sonication_time": {
+            "value": 2,
+            "unit": "h"
+          },
+          "sonication_temp": {
+            "value": 0,
+            "unit": "°C (ice-water bath)"
+          },
+          "Pt_loading": {
+            "value": 0.12,
+            "unit": "mg_Pt cm^{-2}"
+          },
+          "ionomer_content": {
+            "value": 25,
+            "unit": "% vs catalyst"
+          },
+          "electrode_area": {
+            "value": 25,
+            "unit": "cm²"
+          }
+        },
+        "source_text": "For the preparation of the cathode, the Pt/C catalyst (47.7%, TKK) and PAP-TP-85 solution were sonicated with ultrapure water and isopropanol in an ice-water bath for 2 h to obtain a well-dispersed catalyst ink. The catalyst ink was then hand-sprayed on the carbon cloth using the spray gun (iwata, HP-CS) to achieve a Pt loading of 0.12 mg cm^{-2} and ionomer loading of 25% versus catalyst."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "AEMEL anode preparation",
+        "procedure": "IrOx and PAP-TP-85 solution were sonicated with ultrapure water and isopropanol in an ice-water bath for 2 h to obtain a well-dispersed catalyst ink. The catalyst ink was then hand-sprayed on the carbon cloth using the spray gun (iwata, HP-CS) to reach an IrOx loading of 3.1 mg cm^{-2} and ionomer loading of 10% versus catalyst.",
+        "method": "Hand-spray coating",
+        "conditions": {
+          "sonication_time": {
+            "value": 2,
+            "unit": "h"
+          },
+          "sonication_temp": {
+            "value": 0,
+            "unit": "°C (ice-water bath)"
+          },
+          "IrOx_loading": {
+            "value": 3.1,
+            "unit": "mg cm^{-2}"
+          },
+          "ionomer_loading": {
+            "value": 10,
+            "unit": "% vs catalyst"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Catalyst ink sonication",
+            "method": "Ultrasonic dispersion",
+            "conditions": {
+              "time": {
+                "value": 2,
+                "unit": "h"
+              },
+              "temp": {
+                "value": 0,
+                "unit": "°C (ice-water bath)"
+              }
+            },
+            "procedure_snippet": "IrOx and PAP-TP-85 solution were sonicated with ultrapure water and isopropanol in an ice-water bath for 2 h"
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Hand-spraying",
+            "method": "Spray coating",
+            "conditions": {
+              "IrOx_loading": {
+                "value": 3.1,
+                "unit": "mg cm^{-2}"
+              }
+            },
+            "procedure_snippet": "The catalyst ink was then hand-sprayed on the carbon cloth using the spray gun (iwata, HP-CS)"
+          }
+        ],
+        "source_text": "For the preparation of the anode, IrOx and PAP-TP-85 solution were sonicated... to reach an IrOx loading of 3.1 mg cm^{-2} and ionomer loading of 10% versus catalyst."
+      },
+      {
+        "id": "chem_Pt_C_XAS",
+        "type": "chemical",
+        "name": "Pt/C XAS electrode",
+        "aliases": [
+          "Pt/C (47.7%, TKK) XAS"
+        ],
+        "formula": "Pt/C",
+        "properties": {
+          "Pt_loading": {
+            "value": 0.2,
+            "unit": "mg cm^{-2}"
+          },
+          "ionomer_to_carbon_ratio": {
+            "value": 0.4,
+            "unit": "wt ratio"
+          }
+        }
+      },
+      {
+        "id": "chem_carbon_paper",
+        "type": "chemical",
+        "name": "carbon paper",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "synth_step_4",
+        "type": "synthesis",
+        "name": "Pt/C XAS electrode preparation",
+        "procedure": "A Pt/C catalyst (47.7%, TKK) and Nafion were sonicated with ultrapure water and isopropanol in an ice-water bath for 1 h to obtain a well-dispersed catalyst ink. The catalyst ink was then hand-sprayed on the carbon paper using the spray gun (iwata, HP-CS) to achieve a Pt loading of 0.2 mg cm^{-2} with an ionomer-to-carbon weight ratio of 0.4.",
+        "method": "Hand-spray coating",
+        "conditions": {
+          "sonication_time": {
+            "value": 1,
+            "unit": "h"
+          },
+          "sonication_temp": {
+            "value": 0,
+            "unit": "°C (ice-water bath)"
+          },
+          "Pt_loading": {
+            "value": 0.2,
+            "unit": "mg cm^{-2}"
+          },
+          "ionomer_to_carbon_ratio": {
+            "value": 0.4,
+            "unit": "wt ratio"
+          }
+        },
+        "source_text": "A Pt/C catalyst (47.7%, TKK) and Nafion were sonicated... to achieve a Pt loading of 0.2 mg cm^{-2} with an ionomer-to-carbon weight ratio of 0.4."
+      },
+      {
+        "id": "chem_Pt_C_RDE",
+        "type": "chemical",
+        "name": "Pt/C RDE electrode",
+        "aliases": [
+          "Pt/C (8 μg_Pt cm^{-2}) on glassy carbon"
+        ],
+        "formula": "Pt/C",
+        "properties": {
+          "Pt_loading": {
+            "value": 8,
+            "unit": "μg_Pt cm^{-2}"
+          }
+        }
+      },
+      {
+        "id": "chem_IrOx_AEMEL_anode",
+        "type": "chemical",
+        "name": "IrOx AEMEL anode",
+        "aliases": [
+          "IrOx anode (3.1 mg cm^{-2})"
+        ],
+        "formula": "IrOx",
+        "properties": {
+          "IrOx_loading": {
+            "value": 3.1,
+            "unit": "mg cm^{-2}"
+          },
+          "ionomer_loading": {
+            "value": 10,
+            "unit": "% vs catalyst"
+          }
+        }
+      },
+      {
+        "id": "chem_1_2-dimethylimidazole",
+        "type": "chemical",
+        "name": "1,2-dimethylimidazole",
+        "aliases": [
+          "Me-N1C2"
+        ],
+        "formula": "C5H8N2",
+        "properties": {},
+        "related_images": [
+          "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg",
+          "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg",
+          "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg",
+          "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg",
+          "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg",
+          "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg",
+          "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg",
+          "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg",
+          "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg",
+          "9e902a7b103a56bb8117a74a9f8bf13094194b9a422a58d036eca31971cd5104.jpg",
+          "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg",
+          "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg",
+          "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "sample",
+            "name": "Sample 1",
+            "properties": {
+              "label": "1",
+              "color": "red",
+              "extracted_from_image": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+            },
+            "source_image_file": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "Sample 2",
+            "properties": {
+              "label": "2",
+              "color": "black",
+              "extracted_from_image": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+            },
+            "source_image_file": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "Sample 3",
+            "properties": {
+              "label": "3",
+              "color": "green",
+              "extracted_from_image": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+            },
+            "source_image_file": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "Sample 4",
+            "properties": {
+              "label": "4",
+              "color": "brown",
+              "extracted_from_image": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+            },
+            "source_image_file": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+          },
+          {
+            "type": "sample",
+            "name": "Sample 5",
+            "properties": {
+              "label": "5",
+              "color": "blue",
+              "extracted_from_image": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+            },
+            "source_image_file": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "10^{-6} M Me-C2.4",
+            "properties": {
+              "concentration": "10^{-6} M",
+              "extracted_from_image": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+            },
+            "source_image_file": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-C2.4",
+            "properties": {
+              "structure": "1,2,4-triazole derivative with methyl groups",
+              "extracted_from_image": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+            },
+            "source_image_file": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Imidazole",
+            "properties": {
+              "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+            },
+            "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-N1-C2",
+            "properties": {
+              "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+            },
+            "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-N1-C4",
+            "properties": {
+              "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+            },
+            "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-N3-C2",
+            "properties": {
+              "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+            },
+            "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-N3-C4",
+            "properties": {
+              "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+            },
+            "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-C2",
+            "properties": {
+              "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+            },
+            "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-C4",
+            "properties": {
+              "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+            },
+            "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "0.1 M KOH",
+            "properties": {
+              "concentration": "0.1 M",
+              "solute": "KOH",
+              "extracted_from_image": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+            },
+            "source_image_file": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "0.01 M KOH",
+            "properties": {
+              "concentration": "0.01 M",
+              "solute": "KOH",
+              "extracted_from_image": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+            },
+            "source_image_file": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Imidazole",
+            "properties": {
+              "concentration": "10^{-5} M",
+              "structure": "five-membered ring with two nitrogen atoms",
+              "extracted_from_image": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+            },
+            "source_image_file": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV in 0.1 M KOH",
+            "properties": {
+              "type": "cyclic voltammetry",
+              "current_range": "-0.3 to 0.4 mA cm^{-2}",
+              "potential_range": "-0.01 to 0.01 V vs RHE",
+              "color": "black",
+              "extracted_from_image": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+            },
+            "source_image_file": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV in 0.01 M KOH",
+            "properties": {
+              "type": "cyclic voltammetry",
+              "current_range": "-0.3 to 0.4 mA cm^{-2}",
+              "potential_range": "-0.01 to 0.01 V vs RHE",
+              "color": "black dashed",
+              "extracted_from_image": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+            },
+            "source_image_file": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV in 0.01 M KOH + 10^{-5} M Imidazole",
+            "properties": {
+              "type": "cyclic voltammetry",
+              "current_range": "-0.3 to 0.4 mA cm^{-2}",
+              "potential_range": "-0.01 to 0.01 V vs RHE",
+              "color": "red",
+              "extracted_from_image": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+            },
+            "source_image_file": "466ebfb964c64b031cbc236e20f1dca6b4fac9d4d6818034629615f52347fe3f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-NC₂",
+            "properties": {
+              "concentration": "10⁻³ M",
+              "extracted_from_image": "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg"
+            },
+            "source_image_file": "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Absorbance Spectrum",
+            "properties": {
+              "x_axis": "Wavenumber (cm⁻¹)",
+              "y_axis": "Absorbance",
+              "range_x": "[2000, 4000] cm⁻¹",
+              "peaks": [
+                "~3000 cm⁻¹",
+                "~3500 cm⁻¹"
+              ],
+              "vertical_lines": [
+                "3000 cm⁻¹",
+                "3600 cm⁻¹"
+              ],
+              "extracted_from_image": "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg"
+            },
+            "source_image_file": "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg"
+          },
+          {
+            "type": "label",
+            "name": "Figure b",
+            "properties": {
+              "extracted_from_image": "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg"
+            },
+            "source_image_file": "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg"
+          },
+          {
+            "type": "condition",
+            "name": "10⁻³ M Me-NC₂",
+            "properties": {
+              "extracted_from_image": "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg"
+            },
+            "source_image_file": "4fd42978f06f65d803dafd50d4aff9b61265f8962307ffd6dae960b71bf71aec.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "H2 saturated 0.1 M KOH",
+            "properties": {
+              "concentration": "0.1 M",
+              "saturant": "H2",
+              "base": "KOH",
+              "extracted_from_image": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+            },
+            "source_image_file": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Absorbance Spectrum",
+            "properties": {
+              "x_axis": "Wavenumber (cm⁻¹)",
+              "y_axis": "Absorbance (a.u.)",
+              "x_range": [
+                2800,
+                3600
+              ],
+              "y_range": [
+                0,
+                3.51
+              ],
+              "peaks": [
+                3000,
+                3072,
+                3510
+              ],
+              "extracted_from_image": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+            },
+            "source_image_file": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+          },
+          {
+            "type": "peak",
+            "name": "Peak at 3000 cm⁻¹",
+            "properties": {
+              "wavenumber": 3000,
+              "label": "3.000",
+              "extracted_from_image": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+            },
+            "source_image_file": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+          },
+          {
+            "type": "peak",
+            "name": "Peak at 3072 cm⁻¹",
+            "properties": {
+              "wavenumber": 3072,
+              "label": "3.072",
+              "extracted_from_image": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+            },
+            "source_image_file": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+          },
+          {
+            "type": "peak",
+            "name": "Peak at 3510 cm⁻¹",
+            "properties": {
+              "wavenumber": 3510,
+              "label": "3.510",
+              "extracted_from_image": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+            },
+            "source_image_file": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+          },
+          {
+            "type": "reference",
+            "name": "RHE",
+            "properties": {
+              "full_name": "Reversible Hydrogen Electrode",
+              "potential_range": "0.002 V",
+              "extracted_from_image": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+            },
+            "source_image_file": "6306f249c4c033723bf39e587def6a11cffe5c968ec8d6039f17bc5bbe829a31.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-N",
+            "properties": {
+              "structure": "1-methyl-1H-imidazole",
+              "description": "Inset shows pyrrole-like five-membered ring with N-Me and N",
+              "extracted_from_image": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+            },
+            "source_image_file": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Complex (a)",
+            "properties": {
+              "structure": "P-Ph-CH2-O-CH2-Ph-P",
+              "description": "Initial diphosphine diether complex",
+              "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+            },
+            "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Intermediate (b)",
+            "properties": {
+              "structure": "P-Ph-CH2-CH2-P with O-H",
+              "description": "After first rearrangement",
+              "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+            },
+            "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Central Complex (central)",
+            "properties": {
+              "structure": "Cycle with P-CH2-CH(OH)-CH2-P",
+              "description": "Central cyclic intermediate",
+              "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+            },
+            "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Intermediate (iii)",
+            "properties": {
+              "structure": "P-CH2-CH(OH)-CH2-P with F",
+              "description": "Fluorinated intermediate",
+              "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+            },
+            "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Intermediate (v)",
+            "properties": {
+              "structure": "P-CH2-CH(O-)-CH2-P",
+              "description": "Deprotonated alkoxide intermediate",
+              "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+            },
+            "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Product (e)",
+            "properties": {
+              "structure": "Pyrrolidine ring with OH and Me",
+              "description": "Final heterocyclic product",
+              "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+            },
+            "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Side product (c)",
+            "properties": {
+              "structure": "P-CH(OH)-CH3",
+              "description": "Acyclic alcohol side product",
+              "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+            },
+            "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "0.1 M KOH",
+            "properties": {
+              "concentration": "0.1 M",
+              "solute": "KOH",
+              "extracted_from_image": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+            },
+            "source_image_file": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+          },
+          {
+            "type": "electrolyte",
+            "name": "0.1 M KOH + 10^{-5} M Me-C4",
+            "properties": {
+              "concentration": "0.1 M KOH + 10^{-5} M Me-C4",
+              "extracted_from_image": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+            },
+            "source_image_file": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-C4",
+            "properties": {
+              "structure": "cyclic compound with formula involving Me (methyl) and C4 backbone, containing N-H and N-Me groups",
+              "extracted_from_image": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+            },
+            "source_image_file": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV Plot",
+            "properties": {
+              "type": "cyclic voltammetry",
+              "x_axis": "Potential (V vs RHE)",
+              "y_axis": "i (mA cm^{-2})",
+              "figure_label": "f",
+              "extracted_from_image": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+            },
+            "source_image_file": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+          },
+          {
+            "type": "reference",
+            "name": "RHE",
+            "properties": {
+              "full_name": "Reversible Hydrogen Electrode",
+              "extracted_from_image": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+            },
+            "source_image_file": "9860b1f0c7b2461f86d325342098bc2dd654ef097419507d2338d465240f15f5.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-NC",
+            "properties": {
+              "concentration": "10^{-5} M",
+              "solvent": "implied aqueous",
+              "extracted_from_image": "9e902a7b103a56bb8117a74a9f8bf13094194b9a422a58d036eca31971cd5104.jpg"
+            },
+            "source_image_file": "9e902a7b103a56bb8117a74a9f8bf13094194b9a422a58d036eca31971cd5104.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Absorption Spectrum",
+            "properties": {
+              "type": "UV-Vis",
+              "x_axis": "Wavenumber (cm^{-1})",
+              "y_axis": "Absorbance (a.u.)",
+              "range_x": [
+                1600,
+                1200
+              ],
+              "peak_max": 1440,
+              "extracted_from_image": "9e902a7b103a56bb8117a74a9f8bf13094194b9a422a58d036eca31971cd5104.jpg"
+            },
+            "source_image_file": "9e902a7b103a56bb8117a74a9f8bf13094194b9a422a58d036eca31971cd5104.jpg"
+          },
+          {
+            "type": "reference_electrode",
+            "name": "RHE",
+            "properties": {
+              "extracted_from_image": "9e902a7b103a56bb8117a74a9f8bf13094194b9a422a58d036eca31971cd5104.jpg"
+            },
+            "source_image_file": "9e902a7b103a56bb8117a74a9f8bf13094194b9a422a58d036eca31971cd5104.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "0.1 M KOH",
+            "properties": {
+              "concentration": "0.1 M",
+              "electrolyte": true,
+              "extracted_from_image": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+            },
+            "source_image_file": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "10^{-5} M Me-N2",
+            "properties": {
+              "concentration": "10^{-5} M",
+              "IR_corrected": true,
+              "extracted_from_image": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+            },
+            "source_image_file": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "10^{-1} M Me-NC",
+            "properties": {
+              "concentration": "10^{-1} M",
+              "IR_corrected": true,
+              "extracted_from_image": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+            },
+            "source_image_file": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "10^{-5} M Me-NC",
+            "properties": {
+              "concentration": "10^{-5} M",
+              "IR_corrected": true,
+              "extracted_from_image": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+            },
+            "source_image_file": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "LSV Plot",
+            "properties": {
+              "x_axis": "i (A cm^{-2})",
+              "y_axis": "Cell Potential (V)",
+              "type": "Linear Sweep Voltammetry",
+              "extracted_from_image": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+            },
+            "source_image_file": "a11cfbd38e1cea1ee1777ac4dbcfc69df18ef6879f34960c2e823447aef8b894.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-C2",
+            "properties": {
+              "structure": "Imidazolium derivative",
+              "extracted_from_image": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+            },
+            "source_image_file": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "H2",
+            "properties": {
+              "description": "Hydrogen gas",
+              "extracted_from_image": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+            },
+            "source_image_file": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "KOH",
+            "properties": {
+              "concentration": "0.1 M",
+              "extracted_from_image": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+            },
+            "source_image_file": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Me-N≡N-CN",
+            "properties": {
+              "description": "Methyl diazido compound or Me-NCN with N≡N notation",
+              "extracted_from_image": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+            },
+            "source_image_file": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+          },
+          {
+            "type": "solution",
+            "name": "H2-saturated 0.1 M KOH",
+            "properties": {
+              "description": "Electrolyte solution saturated with H2",
+              "extracted_from_image": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+            },
+            "source_image_file": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Absorbance Spectrum",
+            "properties": {
+              "technique": "UV-Vis or IR spectroscopy",
+              "x_axis": "Wavenumber (cm⁻¹)",
+              "y_axis": "Absorbance (a.u.)",
+              "range_x": [
+                1200,
+                1600
+              ],
+              "reference": "0 V versus RHE",
+              "peak_max": "1.440",
+              "extracted_from_image": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+            },
+            "source_image_file": "b2e0fc7be769daef294e916fcdfc0a27f62022620d9613a477ebf9249ef09a10.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Pt_film",
+        "type": "chemical",
+        "name": "Pt film",
+        "aliases": [
+          "polycrystalline Pt film"
+        ],
+        "formula": "Pt",
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_Pt_C_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Pt_C",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "amount": "2.4 mg (47.7% Pt/C)"
+        }
+      },
+      {
+        "id": "edge_input_chem_Nafion_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Nafion",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "binder",
+          "amount": "7.65 μl (5% Nafion)"
+        }
+      },
+      {
+        "id": "edge_input_chem_ultrapure_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ultrapure_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "amount": "2.55 ml"
+        }
+      },
+      {
+        "id": "edge_input_chem_isopropanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_isopropanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "amount": "0.51 ml"
+        }
+      },
+      {
+        "id": "edge_input_chem_glassy_carbon_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_glassy_carbon",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Pt_C_RDE",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Pt_C_RDE",
+        "properties": {
+          "form": "drop-cast dried electrode",
+          "Pt_loading": "8 μg_Pt cm^{-2}"
+        }
+      },
+      {
+        "id": "edge_input_chem_Pt_C_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Pt_C",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_PAP_TP_85_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_PAP_TP_85",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "ionomer"
+        }
+      },
+      {
+        "id": "edge_input_chem_ultrapure_water_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_ultrapure_water",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_isopropanol_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_isopropanol",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_carbon_cloth_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_carbon_cloth",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Pt_C_AEMEL_cathode",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Pt_C_AEMEL_cathode",
+        "properties": {
+          "form": "hand-sprayed cathode",
+          "Pt_loading": "0.12 mg_Pt cm^{-2}",
+          "ionomer": "25 wt% PAP-TP-85"
+        }
+      },
+      {
+        "id": "edge_input_chem_IrOx_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_IrOx",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_PAP_TP_85_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_PAP_TP_85",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "ionomer"
+        }
+      },
+      {
+        "id": "edge_input_chem_ultrapure_water_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_ultrapure_water",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_isopropanol_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_isopropanol",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_carbon_cloth_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_carbon_cloth",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_IrOx_AEMEL_anode",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_IrOx_AEMEL_anode",
+        "properties": {
+          "form": "hand-sprayed anode",
+          "IrOx_loading": "3.1 mg cm^{-2}",
+          "ionomer": "10 wt% PAP-TP-85"
+        }
+      },
+      {
+        "id": "edge_input_chem_Pt_C_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_Pt_C",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_Nafion_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_Nafion",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "ionomer"
+        }
+      },
+      {
+        "id": "edge_input_chem_ultrapure_water_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_ultrapure_water",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_isopropanol_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_isopropanol",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_input_chem_carbon_paper_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_carbon_paper",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_chem_Pt_C_XAS",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_Pt_C_XAS",
+        "properties": {
+          "form": "spray-coated XAS electrode"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_1_2-dimethylimidazole"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "Pt/C",
+        "aliases": [
+          "Pt/C (TKK, 47.7 wt%)"
+        ],
+        "formula": "Pt/C",
+        "composition": {
+          "Pt": {
+            "value": 47.7,
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Pt_C",
+        "description": "HOR/HER performance in 0.1 M KOH with various N-methylimidazoles",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HOR/HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "glassy carbon RDE",
+            "unit": ""
+          },
+          "reference_electrode": {
+            "value": "RHE",
+            "unit": ""
+          },
+          "counter_electrode": {
+            "value": "Pt mesh",
+            "unit": ""
+          },
+          "catalyst_loading": {
+            "value": 8,
+            "unit": "μg_Pt cm^{-2}"
+          },
+          "rotation_rate": {
+            "value": 2500,
+            "unit": "rpm"
+          },
+          "scan_rate": {
+            "value": 20,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "applied",
+            "unit": ""
+          },
+          "temperature": {
+            "value": "room temperature",
+            "unit": ""
+          },
+          "gas_saturation": {
+            "value": "H2-saturated",
+            "unit": ""
+          },
+          "potential_range": {
+            "value": "-0.2 to 0.9",
+            "unit": "V vs RHE"
+          },
+          "additive_concentration": {
+            "value": "10^{-5}",
+            "unit": "M"
+          }
+        },
+        "results_json": {
+          "exchange_current_density_i0": {
+            "value": "0.64",
+            "unit": "mA/cm_Pt^2"
+          },
+          "i0_standard_deviation": {
+            "value": "0.02",
+            "unit": "mA/cm_Pt^2"
+          },
+          "i0_improvement_imidazole": {
+            "value": "5",
+            "unit": "%"
+          },
+          "i0_improvement_Me-N1": {
+            "value": "36",
+            "unit": "%"
+          },
+          "i0_improvement_Me-C2": {
+            "value": "28",
+            "unit": "%"
+          },
+          "i0_improvement_Me-C4": {
+            "value": "14",
+            "unit": "%"
+          },
+          "i0_improvement_Me-N1C2": {
+            "value": "57",
+            "unit": "%"
+          },
+          "i0_improvement_Me-C24": {
+            "value": "33",
+            "unit": "%"
+          },
+          "ECSA_method": {
+            "value": "H_upd charge",
+            "unit": "0.05-0.45 V vs RHE"
+          }
+        },
+        "source_text": "The iR-corrected HOR/HER low-overpotential kinetic current density of Pt/C (8 μg_Pt cm^{-2}) with or without 10^{-5} M caffeine, 1,3-dimethyluracil, imidazole and N-methylimidazoles in H2-saturated 0.1 M KOH with a rotation rate of 2,500 r.p.m. and a scan rate of 20 mV s^{-1}, room temperature. The average i0 of Pt/C in these cases is 0.64 ± 0.02 mA cm_Pt^{-2}."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Pt_C",
+        "description": "AEMEL water electrolysis performance with Pt/C cathode ± Me-N1C2 additive",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "cell_configuration": {
+            "value": "two-electrode AEMEL",
+            "unit": ""
+          },
+          "cathode_catalyst": {
+            "value": "Pt/C (47.7 wt%)",
+            "unit": ""
+          },
+          "cathode_loading": {
+            "value": 0.12,
+            "unit": "mg_Pt cm^{-2}"
+          },
+          "cathode_ionomer": {
+            "value": "PAP-TP-85 25 wt%",
+            "unit": "vs catalyst"
+          },
+          "anode_catalyst": {
+            "value": "IrOx",
+            "unit": ""
+          },
+          "anode_loading": {
+            "value": 3.1,
+            "unit": "mg cm^{-2}"
+          },
+          "anode_ionomer": {
+            "value": "PAP-TP-85 10 wt%",
+            "unit": "vs catalyst"
+          },
+          "membrane": {
+            "value": "PAP-TP-85-MQN-10C",
+            "unit": "20 μm thick"
+          },
+          "electrode_area": {
+            "value": 25,
+            "unit": "cm^2"
+          },
+          "temperature": {
+            "value": 60,
+            "unit": "°C"
+          },
+          "cathode_electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "flow 200 ml/min"
+          },
+          "anode_electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "flow 250 ml/min"
+          },
+          "cathode_additive": {
+            "value": "10^{-5} M 1,2-dimethylimidazole",
+            "unit": ""
+          }
+        },
+        "results_json": {
+          "performance_improvement": {
+            "value": "~40",
+            "unit": "% at 1.6 V iR-corrected"
+          },
+          "cell_resistance_baseline": {
+            "value": "9.7",
+            "unit": "mΩ"
+          },
+          "cell_resistance_additive": {
+            "value": "9.5",
+            "unit": "mΩ"
+          },
+          "current_density_range": {
+            "value": "0.04-0.8",
+            "unit": "A cm^{-2}"
+          },
+          "hold_time_per_point": {
+            "value": "3",
+            "unit": "min"
+          }
+        },
+        "source_text": "AEMEL polarization curves with and without adding 10^{-5} M Me-N1C2 into the 0.1 M KOH solution fed into the cathode... Cathode: 0.12 mg_Pt cm^{-2} Pt/C; anode: 3.1 mg_IrOx cm^{-2} IrOx; membrane: PAP-TP-85-MQN-10C; 60°C; electrode area 25 cm^2. The iR-corrected current density at 1.6 V increased by ~40%."
+      },
+      {
+        "id": "chem_1_2-dimethylimidazole",
+        "type": "chemical",
+        "name": "1,2-dimethylimidazole",
+        "aliases": [
+          "Me-N1C2"
+        ],
+        "formula": "C5H8N2",
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Pt_C_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Pt_C",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Pt_C_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Pt_C",
+        "target_id": "test_2",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "Pt/C",
+        "aliases": [
+          "Pt/C (TKK, 47.7 wt%)",
+          "Pt/C catalyst"
+        ],
+        "formula": "Pt/C",
+        "composition": {
+          "Pt": {
+            "value": 47.7,
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_Pt_film",
+        "type": "chemical",
+        "name": "Pt film",
+        "aliases": [
+          "polycrystalline Pt film"
+        ],
+        "formula": "Pt",
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "CV of Pt/C in 0.1 M KOH (0.05-0.45 V vs RHE) used to derive electrochemical surface area from Hupd charge; Hupd charge suppressed by N-methylimidazoles via steric effect but HOR limiting current unchanged.",
+        "evidence_snippet": "The electrochemical surface area was derived from the hydrogen underpotential deposition (Hupd) charge of the cyclic voltammetry (CV) of Pt/C in 0.1 M KOH within the potential range of 0.05–0.45 V ... Although the Hupd charge of Pt/C was substantially suppressed by the N-methylimidazoles (Supplementary Fig. 2), probably via the steric effect, the HOR limiting current density remained unchanged for all cases."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XAS",
+        "is_reported": true,
+        "characterization_summary": "XAS spectrum at Pt L3-edge of Pt/C remains unchanged upon adding 10^-5 M Me-N1C2 despite suppressed Hupd peaks.",
+        "evidence_snippet": "The XAS spectrum at the Pt L3-edge remains unchanged upon adding 10^-5 M Me-N1C2 onto the Pt XAS electrode despite the suppressed Hupd peaks (Supplementary Fig. 8), which suggests that the bonding between Me-N1C2 and Pt is not sufficiently strong or abundant to be detectable by the XAS"
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "ATR-SEIRAS",
+        "is_reported": true,
+        "characterization_summary": "In situ ATR-SEIRAS of interfacial water on Pt film in 0.1 M KOH shows ν(OH) bands at ~3500 cm^-1 (weak H-bonding water) and ~3000 cm^-1 (strongly H-bonded water near Pt); addition of 10^-5 M Me-N1C2 prevents potential-dependent decrease/blue-shift of 3000 cm^-1 band; C-H bending of CH3 at 1440 cm^-1 shows no Stark shift.",
+        "evidence_snippet": "The characteristic features of interfacial water, two ν(OH) bands at ~3,500 and ~3,000 cm^-1 ... However, the general trends of the ν(OH) bands are dramatically altered upon addition of 10^-5 M Me-N1C2 into 0.1 M KOH. The 3,000 cm^-1 band undergoes neither a decrease in intensity nor a blue shift with potential ... The lack of a shift of this peak [1440 cm^-1] with changing potential indicates the lack of stark effects."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "Raman",
+        "is_reported": true,
+        "characterization_summary": "In situ surface-enhanced Raman on Ag electrode shows ν(CH3) bands of Me-N1 between 2850-2950 cm^-1 with potential-dependent growth and broadening, while Me-N1C2 bands are preserved.",
+        "evidence_snippet": "The in situ Raman spectra of Me-N1 exhibit two sets of dynamic peaks within 2,800–3,200 cm^-1 ... By contrast, the ν(CH3) bands of Me-N1C2 are largely preserved within the potential range of −0.4 to −0.1 V (Fig. 3f)."
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Plot",
+        "properties": {
+          "type": "line chart",
+          "y_label": "ZDF (a.u.)",
+          "x_label": "Distance from surface (Å)",
+          "extracted_from_image": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+        },
+        "source_image_file": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+      },
+      {
+        "id": "region_a",
+        "type": "data_region",
+        "name": "Region a",
+        "properties": {
+          "description": "Low distance region",
+          "extracted_from_image": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+        },
+        "source_image_file": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+      },
+      {
+        "id": "region_b",
+        "type": "data_region",
+        "name": "Region b",
+        "properties": {
+          "description": "Peak distance region",
+          "extracted_from_image": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+        },
+        "source_image_file": "050b480b3b6669bff969d31cd9fde3067e38173d97b94ac8cbd755d16b8bb825.jpg"
+      },
+      {
+        "id": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95_node1",
+        "type": "electrolyte",
+        "name": "0.1 M KOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "composition": "KOH",
+          "extracted_from_image": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+        },
+        "source_image_file": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+      },
+      {
+        "id": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95_node2",
+        "type": "electrolyte",
+        "name": "0.01 M KOH",
+        "properties": {
+          "concentration": "0.01 M",
+          "composition": "KOH",
+          "extracted_from_image": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+        },
+        "source_image_file": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+      },
+      {
+        "id": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95_node5",
+        "type": "characterization",
+        "name": "CV plot",
+        "properties": {
+          "type": "Cyclic Voltammetry",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (mA cm^{-2})",
+          "range_x": "-0.10 to 0.10 V",
+          "range_y": "-0.4 to 0.4 mA cm^{-2}",
+          "extracted_from_image": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+        },
+        "source_image_file": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+      },
+      {
+        "id": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95_node6",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+        },
+        "source_image_file": "1303f86e848abd8843133f730aeb90da5ba5d4eb823d34a3d62e57e837b81a95.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chemical",
+        "name": "Side product (d)",
+        "properties": {
+          "structure": "Ru complex with P-CH-CH3",
+          "description": "Ruthenium-coordinated side product",
+          "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+        },
+        "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "characterization",
+        "name": "Improvement of N_i",
+        "properties": {
+          "unit": "%",
+          "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+        },
+        "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "property",
+        "name": "Charge of N3",
+        "properties": {
+          "unit": "e",
+          "range": [
+            -0.51,
+            -0.534
+          ],
+          "extracted_from_image": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+        },
+        "source_image_file": "232249c52303159c9626055d2f5d032c15c8942de8ebb8e90a1f6f12e3bedf11.jpg"
+      },
+      {
+        "id": "MOF",
+        "type": "chemical",
+        "name": "Metal-Organic Framework",
+        "properties": {
+          "description": "Crystalline framework structure with metal nodes and organic linkers",
+          "extracted_from_image": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+        },
+        "source_image_file": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+      },
+      {
+        "id": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca_MetalNode",
+        "type": "chemical",
+        "name": "Metal Node",
+        "properties": {
+          "description": "Central metal atoms/ions forming the secondary building units (SBUs)",
+          "extracted_from_image": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+        },
+        "source_image_file": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+      },
+      {
+        "id": "OrganicLinker",
+        "type": "chemical",
+        "name": "Organic Linker",
+        "properties": {
+          "description": "Red-colored organic ligands connecting metal nodes, likely carboxylate-based",
+          "extracted_from_image": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+        },
+        "source_image_file": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+      },
+      {
+        "id": "Water",
+        "type": "chemical",
+        "name": "Water Molecule",
+        "properties": {
+          "description": "H2O molecules shown as red oxygen with white hydrogens",
+          "extracted_from_image": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+        },
+        "source_image_file": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+      },
+      {
+        "id": "HydrogenBond",
+        "type": "chemical",
+        "name": "Hydrogen Bond",
+        "properties": {
+          "description": "Dashed lines indicating H-bonding interactions between water and framework",
+          "extracted_from_image": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+        },
+        "source_image_file": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+      },
+      {
+        "id": "Pore",
+        "type": "structure",
+        "name": "Pore Space",
+        "properties": {
+          "description": "Void spaces within the framework visible between nodes",
+          "extracted_from_image": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+        },
+        "source_image_file": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+      },
+      {
+        "id": "Image",
+        "type": "characterization",
+        "name": "Molecular Visualization",
+        "properties": {
+          "description": "Ball-and-stick model with space-filling elements showing framework-water interactions",
+          "style": "Red=oxygen, gray=metal/carbon, white=hydrogen, dashed lines=H-bonds",
+          "extracted_from_image": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+        },
+        "source_image_file": "5bafe487b42e6f420d5c1936a2c96f4a5918f39f7487d34c14888d07ace7f9ca.jpg"
+      },
+      {
+        "id": "compound1",
+        "type": "chemical",
+        "name": "Tri-substituted Imidazolinium",
+        "properties": {
+          "structure": "fused ring system with C2=C5 imidazoline and pyrrole-like ring, N1-R1, N3-R3, side chain C2-R2",
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "N1",
+        "type": "atom",
+        "name": "Nitrogen 1",
+        "properties": {
+          "substituent": "R¹",
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "N3",
+        "type": "atom",
+        "name": "Nitrogen 3",
+        "properties": {
+          "substituent": "R³",
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "C2",
+        "type": "atom",
+        "name": "Carbon 2",
+        "properties": {
+          "substituent": "R²",
+          "bond": "double bond to C5",
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "C4",
+        "type": "atom",
+        "name": "Carbon 4",
+        "properties": {
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "C5",
+        "type": "atom",
+        "name": "Carbon 5",
+        "properties": {
+          "bond": "double bond to C2",
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "R1",
+        "type": "substituent",
+        "name": "R¹",
+        "properties": {
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "R2",
+        "type": "substituent",
+        "name": "R²",
+        "properties": {
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "R3",
+        "type": "substituent",
+        "name": "R³",
+        "properties": {
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "panel_e",
+        "type": "figure_panel",
+        "name": "Panel e",
+        "properties": {
+          "extracted_from_image": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+        },
+        "source_image_file": "5e637b4c25c972fa05e0e5e1ff1c8f5f3bce25478f510a619dd32c7d635c16d5.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "Time-Resolved Distance Measurement Graph",
+        "properties": {
+          "description": "Graph showing distance (Å) vs time (fs)",
+          "x_axis": "Time (fs)",
+          "x_range": [
+            0,
+            1000
+          ],
+          "y_axis": "Distance (Å)",
+          "y_range": [
+            1,
+            6
+          ],
+          "label": "f",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "trace1",
+        "type": "data_trace",
+        "name": "Trace 1",
+        "properties": {
+          "color": "red",
+          "label": "1",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "trace2",
+        "type": "data_trace",
+        "name": "Trace 2",
+        "properties": {
+          "color": "green",
+          "label": "2",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "trace3",
+        "type": "data_trace",
+        "name": "Trace 3",
+        "properties": {
+          "color": "dark green",
+          "label": "3",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "trace4",
+        "type": "data_trace",
+        "name": "Trace 4",
+        "properties": {
+          "color": "light green",
+          "label": "4",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "trace5",
+        "type": "data_trace",
+        "name": "Trace 5",
+        "properties": {
+          "color": "brown",
+          "label": "5",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "trace6",
+        "type": "data_trace",
+        "name": "Trace 6",
+        "properties": {
+          "color": "blue",
+          "label": "6",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "point_a",
+        "type": "data_point",
+        "name": "Point a",
+        "properties": {
+          "position": "x-axis at ~400 fs",
+          "description": "Reference point a",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "point_b",
+        "type": "data_point",
+        "name": "Point b",
+        "properties": {
+          "position": "x-axis at ~900 fs",
+          "description": "Reference point b",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "point_c",
+        "type": "data_point",
+        "name": "Point C",
+        "properties": {
+          "position": "y-axis at ~5.5 Å",
+          "description": "Reference point C",
+          "extracted_from_image": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+        },
+        "source_image_file": "7105e8f925d6629e6c28121607ec5c825d262358cbc4c69b9ffeb6338fc696ec.jpg"
+      },
+      {
+        "id": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca_node1",
+        "type": "electrolyte",
+        "name": "0.1 M KOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "solute": "KOH",
+          "extracted_from_image": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+        },
+        "source_image_file": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+      },
+      {
+        "id": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca_node2",
+        "type": "electrolyte",
+        "name": "0.1 M KOH + 10^{-5} M Me-N",
+        "properties": {
+          "concentration_base": "0.1 M KOH",
+          "additive": "10^{-5} M Me-N",
+          "extracted_from_image": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+        },
+        "source_image_file": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+      },
+      {
+        "id": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca_node4",
+        "type": "characterization",
+        "name": "LSV in 0.1 M KOH",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "range_x": "-0.010 to 0.010 V",
+          "range_y": "-0.4 to 0.4 mA/cm²",
+          "extracted_from_image": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+        },
+        "source_image_file": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+      },
+      {
+        "id": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca_node5",
+        "type": "characterization",
+        "name": "LSV in 0.1 M KOH + 10^{-5} M Me-N",
+        "properties": {
+          "type": "Linear Sweep Voltammetry",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "range_x": "-0.010 to 0.010 V",
+          "range_y": "-0.4 to 0.4 mA/cm²",
+          "extracted_from_image": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+        },
+        "source_image_file": "7da1224b400334bfcdf5c42579f96a3393c845e1bc309f3ec10f02cfe8bf4cca.jpg"
+      },
+      {
+        "id": "Ru",
+        "type": "chemical",
+        "name": "Ruthenium Center",
+        "properties": {
+          "role": "Catalytic metal center",
+          "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+        },
+        "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+      },
+      {
+        "id": "P1",
+        "type": "chemical",
+        "name": "Phosphine Ligand 1",
+        "properties": {
+          "role": "Ligand coordinating to Ru",
+          "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+        },
+        "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+      },
+      {
+        "id": "P2",
+        "type": "chemical",
+        "name": "Phosphine Ligand 2",
+        "properties": {
+          "role": "Ligand coordinating to Ru",
+          "extracted_from_image": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+        },
+        "source_image_file": "91618887014f4a87f25436ec7f5669a3a550ee8d2ec4ca4fd1fdf6a00add6833.jpg"
+      },
+      {
+        "id": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7_node1",
+        "type": "electrolyte",
+        "name": "0.1 M KOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "solute": "KOH",
+          "extracted_from_image": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+        },
+        "source_image_file": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+      },
+      {
+        "id": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7_node2",
+        "type": "electrolyte",
+        "name": "0.5 M KOH",
+        "properties": {
+          "concentration": "0.5 M",
+          "solute": "KOH",
+          "extracted_from_image": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+        },
+        "source_image_file": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+      },
+      {
+        "id": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7_node3",
+        "type": "electrolyte",
+        "name": "10^{-7} M Me-C2",
+        "properties": {
+          "concentration": "10^{-7} M",
+          "solute": "Me-C2",
+          "extracted_from_image": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+        },
+        "source_image_file": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+      },
+      {
+        "id": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7_node5",
+        "type": "chemical",
+        "name": "Imidazolium cation",
+        "properties": {
+          "structure": "1-methyl-3H-imidazol-3-ium",
+          "extracted_from_image": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+        },
+        "source_image_file": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+      },
+      {
+        "id": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7_node6",
+        "type": "characterization",
+        "name": "CV Plot",
+        "properties": {
+          "type": "Cyclic Voltammetry",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (mA cm^{-2})",
+          "figure_label": "g",
+          "extracted_from_image": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+        },
+        "source_image_file": "a15b11012b7213736dc5ad2c720188c14455a03eaaad1ca8c1cdd0b0caac7be7.jpg"
+      },
+      {
+        "id": "electrolyte_1",
+        "type": "chemical",
+        "name": "1 M KOH",
+        "properties": {
+          "concentration": "1 M",
+          "solute": "KOH",
+          "extracted_from_image": "a26134cd0430976e559d9548f362ca15fc50d6817fb1aa0c073143c32fe945e6.jpg"
+        },
+        "source_image_file": "a26134cd0430976e559d9548f362ca15fc50d6817fb1aa0c073143c32fe945e6.jpg"
+      },
+      {
+        "id": "electrolyte_2",
+        "type": "chemical",
+        "name": "0.1 M KOH + 1 M MeN",
+        "properties": {
+          "concentration_1": "0.1 M KOH",
+          "concentration_2": "1 M MeN",
+          "extracted_from_image": "a26134cd0430976e559d9548f362ca15fc50d6817fb1aa0c073143c32fe945e6.jpg"
+        },
+        "source_image_file": "a26134cd0430976e559d9548f362ca15fc50d6817fb1aa0c073143c32fe945e6.jpg"
+      },
+      {
+        "id": "raman_spectra",
+        "type": "characterization",
+        "name": "Raman Spectra",
+        "properties": {
+          "technique": "Raman spectroscopy",
+          "x_axis": "Raman shift (cm⁻¹)",
+          "x_range": [
+            2800,
+            3100
+          ],
+          "y_axis": "Potential (vs RHE)",
+          "y_range": [
+            -0.35,
+            0.05
+          ],
+          "extracted_from_image": "a26134cd0430976e559d9548f362ca15fc50d6817fb1aa0c073143c32fe945e6.jpg"
+        },
+        "source_image_file": "a26134cd0430976e559d9548f362ca15fc50d6817fb1aa0c073143c32fe945e6.jpg"
+      },
+      {
+        "id": "figure_e",
+        "type": "figure",
+        "name": "Figure e",
+        "properties": {
+          "extracted_from_image": "a26134cd0430976e559d9548f362ca15fc50d6817fb1aa0c073143c32fe945e6.jpg"
+        },
+        "source_image_file": "a26134cd0430976e559d9548f362ca15fc50d6817fb1aa0c073143c32fe945e6.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry Graph",
+        "properties": {
+          "label": "a",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "i (mA cm⁻²)",
+          "range_x": "-0.010 to 0.010 V",
+          "range_y": "-0.4 to 0.4 mA cm⁻²",
+          "extracted_from_image": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+        },
+        "source_image_file": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+      },
+      {
+        "id": "cv_0.1KOH",
+        "type": "characterization",
+        "name": "CV in 0.1 KOH",
+        "properties": {
+          "line_style": "black solid",
+          "electrolyte": "0.1 M KOH",
+          "extracted_from_image": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+        },
+        "source_image_file": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+      },
+      {
+        "id": "cv_1M_KOH",
+        "type": "characterization",
+        "name": "CV in 1 M KOH + 10⁻⁵ M Caffeine",
+        "properties": {
+          "line_style": "red solid",
+          "electrolyte": "1 M KOH + 10⁻⁵ M Caffeine",
+          "extracted_from_image": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+        },
+        "source_image_file": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+      },
+      {
+        "id": "electrolyte_0.1KOH",
+        "type": "electrolyte",
+        "name": "0.1 M KOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "base": "KOH",
+          "extracted_from_image": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+        },
+        "source_image_file": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+      },
+      {
+        "id": "electrolyte_1M_KOH",
+        "type": "chemical",
+        "name": "1 M KOH",
+        "properties": {
+          "concentration": "1 M",
+          "components": [
+            "KOH"
+          ],
+          "extracted_from_image": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+        },
+        "source_image_file": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+      },
+      {
+        "id": "caffeine",
+        "type": "chemical",
+        "name": "Caffeine",
+        "properties": {
+          "concentration": "10⁻⁵ M",
+          "structure": "1,3,7-trimethylxanthine",
+          "formula": "C₈H₁₀N₄O₂",
+          "depiction": "present in graph",
+          "extracted_from_image": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+        },
+        "source_image_file": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+      },
+      {
+        "id": "RHE",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+        },
+        "source_image_file": "a81bc08abaa08bd799f2db39cc0a40cbbf26c475bf146610e5616e66e73bb117.jpg"
+      },
+      {
+        "id": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884_1",
+        "type": "chemical",
+        "name": "Central Complex",
+        "properties": {
+          "description": "Molecular complex with central N-heterocyclic carbene (NHC) ligand bound to metal center, featuring blue nitrogen atoms and red oxygen atoms",
+          "extracted_from_image": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+        },
+        "source_image_file": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+      },
+      {
+        "id": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884_2",
+        "type": "chemical",
+        "name": "Metal Center",
+        "properties": {
+          "description": "Central metallic atom (likely Pd, Pt, or Ru based on coordination), represented by gray sphere or implied",
+          "extracted_from_image": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+        },
+        "source_image_file": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+      },
+      {
+        "id": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884_3",
+        "type": "chemical",
+        "name": "NHC Ligand",
+        "properties": {
+          "description": "N-heterocyclic carbene with two blue nitrogen atoms coordinating to metal",
+          "extracted_from_image": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+        },
+        "source_image_file": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+      },
+      {
+        "id": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884_4",
+        "type": "chemical",
+        "name": "Water Molecules",
+        "properties": {
+          "description": "Multiple H2O molecules shown with red oxygen and white hydrogen atoms, involved in hydrogen bonding",
+          "extracted_from_image": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+        },
+        "source_image_file": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+      },
+      {
+        "id": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884_5",
+        "type": "chemical",
+        "name": "Hydrogen Bonds",
+        "properties": {
+          "description": "Dashed lines (blue/white) indicating hydrogen bonding interactions between water molecules and complex",
+          "extracted_from_image": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+        },
+        "source_image_file": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+      },
+      {
+        "id": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884_6",
+        "type": "chemical",
+        "name": "Nanoparticles",
+        "properties": {
+          "description": "Gray spherical nanoparticles serving as support or matrix for the molecular complex",
+          "extracted_from_image": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+        },
+        "source_image_file": "ae606d0744e5ed5b18f2597d83c5ca6b7040e22aa5106eea6e695396c219b884.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "chemical",
+        "name": "0.1 M KOH + 1 M MeNC",
+        "properties": {
+          "concentration": "0.1 M KOH",
+          "additive": "1 M MeNC",
+          "description": "Electrolyte solution",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "figure_f",
+        "type": "characterization",
+        "name": "Figure f",
+        "properties": {
+          "type": "Raman spectroelectrochemistry",
+          "label": "f",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "raman_spectra_0V",
+        "type": "characterization",
+        "name": "Raman spectra at 0 V",
+        "properties": {
+          "potential": "0 V",
+          "color": "black solid line",
+          "shift_range": "2700-3000 cm⁻¹",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "raman_spectra_01V",
+        "type": "characterization",
+        "name": "Raman spectra at 0.1 V",
+        "properties": {
+          "potential": "0.1 V",
+          "color": "black solid line",
+          "shift_range": "2700-3000 cm⁻¹",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "raman_spectra_02V",
+        "type": "characterization",
+        "name": "Raman spectra at 0.2 V",
+        "properties": {
+          "potential": "0.2 V",
+          "color": "black solid line",
+          "shift_range": "2700-3000 cm⁻¹",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "raman_spectra_03V",
+        "type": "characterization",
+        "name": "Raman spectra at 0.3 V",
+        "properties": {
+          "potential": "0.3 V",
+          "color": "black solid line",
+          "shift_range": "2700-3000 cm⁻¹",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "raman_spectra_04V",
+        "type": "characterization",
+        "name": "Raman spectra at 0.4 V",
+        "properties": {
+          "potential": "0.4 V",
+          "color": "black solid line",
+          "shift_range": "2700-3000 cm⁻¹",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "reference_spectra",
+        "type": "characterization",
+        "name": "Reference spectra",
+        "properties": {
+          "color": "red dashed lines",
+          "description": "Multiple reference Raman peaks",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "axis",
+        "name": "Raman shift",
+        "properties": {
+          "range": "2700-3000 cm⁻¹",
+          "units": "cm⁻¹",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "axis",
+        "name": "Potential",
+        "properties": {
+          "range": "0 to -0.4 V",
+          "reference": "vs RHE",
+          "units": "V vs RHE",
+          "extracted_from_image": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+        },
+        "source_image_file": "be2cb839bcfd8b1db3dfdaaaf39fa66fbe63d79a45ce3316ae5e29b124c1be3d.jpg"
+      },
+      {
+        "id": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381_node1",
+        "type": "chemical",
+        "name": "0.1 M KOH",
+        "properties": {
+          "concentration": "0.1 M",
+          "electrolyte": "KOH",
+          "extracted_from_image": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+        },
+        "source_image_file": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+      },
+      {
+        "id": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381_node2",
+        "type": "chemical",
+        "name": "1 M 3-dimethyluracil",
+        "properties": {
+          "concentration": "1 M",
+          "compound": "3-dimethyluracil",
+          "structure": "O=C1NC(Me)=N(Me)C(=O)NC1",
+          "extracted_from_image": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+        },
+        "source_image_file": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+      },
+      {
+        "id": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381_node3",
+        "type": "chemical",
+        "name": "3-dimethyluracil",
+        "properties": {
+          "formula": "C6H8N2O2",
+          "structure": "O=C1NC(Me)=N(Me)C(=O)NC1",
+          "extracted_from_image": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+        },
+        "source_image_file": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+      },
+      {
+        "id": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381_node4",
+        "type": "characterization",
+        "name": "CV 0.1 M KOH",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "electrolyte": "0.1 M KOH",
+          "color": "black solid line",
+          "extracted_from_image": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+        },
+        "source_image_file": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+      },
+      {
+        "id": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381_node5",
+        "type": "characterization",
+        "name": "CV 0.1 M KOH + 1 M 3-dimethyluracil",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "electrolyte": "0.1 M KOH + 1 M 3-dimethyluracil",
+          "color": "red solid line",
+          "extracted_from_image": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+        },
+        "source_image_file": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+      },
+      {
+        "id": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381_node6",
+        "type": "experiment",
+        "name": "Electrochemical Measurement",
+        "properties": {
+          "technique": "Cyclic Voltammetry",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "potential_range": "-0.010 to 0.010 V",
+          "extracted_from_image": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+        },
+        "source_image_file": "c693904fd5e075fe25efb21698b829e00b29fbd19dc2e2b9189fcd343c275381.jpg"
+      },
+      {
+        "id": "electrolyte_0.1MKOH_MeN2",
+        "type": "electrolyte",
+        "name": "0.1 M KOH + 10^{-5} M Me-N₂",
+        "properties": {
+          "concentration_KOH": "0.1 M",
+          "concentration_MeN2": "10^{-5} M",
+          "base": "KOH",
+          "extracted_from_image": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+        },
+        "source_image_file": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+      },
+      {
+        "id": "MeN2",
+        "type": "chemical",
+        "name": "Me-N₂",
+        "properties": {
+          "structure": "1,2-dimethylpyrazinium dication",
+          "formula": "C₆H₁₀N₂²⁺",
+          "depiction": "five-membered ring with two adjacent N atoms, each methylated",
+          "extracted_from_image": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+        },
+        "source_image_file": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+      },
+      {
+        "id": "CV_0.1KOH",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry in 0.1 M KOH",
+        "properties": {
+          "current_range": "-0.4 to 0.4 mA cm⁻²",
+          "potential_range": "-0.10 to 0.10 V vs RHE",
+          "line_style": "solid black",
+          "extracted_from_image": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+        },
+        "source_image_file": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+      },
+      {
+        "id": "CV_0.1MKOH_MeN2",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry in 0.1 M KOH + 10⁻⁵ M Me-N₂",
+        "properties": {
+          "current_range": "-0.4 to 0.4 mA cm⁻²",
+          "potential_range": "-0.10 to 0.10 V vs RHE",
+          "line_style": "dashed red",
+          "extracted_from_image": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+        },
+        "source_image_file": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+      },
+      {
+        "id": "reference_electrode",
+        "type": "electrode",
+        "name": "RHE",
+        "properties": {
+          "type": "reversible hydrogen electrode",
+          "extracted_from_image": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+        },
+        "source_image_file": "cf78f404de50942b9e82890768f1beac8785b02d3d324b7e261f92229449c844.jpg"
+      },
+      {
+        "id": "atom1",
+        "type": "chemical",
+        "name": "H",
+        "properties": {
+          "label": "1",
+          "bond_style": "dashed red",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "atom2",
+        "type": "chemical",
+        "name": "H",
+        "properties": {
+          "label": "2",
+          "bond_style": "solid red",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "atom3",
+        "type": "chemical",
+        "name": "H",
+        "properties": {
+          "label": "3",
+          "bond_style": "solid green",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "central_O",
+        "type": "chemical",
+        "name": "O",
+        "properties": {
+          "label": "",
+          "position": "central",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "atom4",
+        "type": "chemical",
+        "name": "H",
+        "properties": {
+          "label": "4",
+          "bond_style": "solid orange",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "atom5",
+        "type": "chemical",
+        "name": "H",
+        "properties": {
+          "label": "5",
+          "bond_style": "solid brown",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "n_atom",
+        "type": "chemical",
+        "name": "N",
+        "properties": {
+          "label": "",
+          "connected": "to H5",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "label_a",
+        "type": "annotation",
+        "name": "a",
+        "properties": {
+          "position": "left",
+          "bond_style": "solid blue",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "label_b",
+        "type": "annotation",
+        "name": "b",
+        "properties": {
+          "position": "top-left",
+          "bond_style": "dashed pink",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "label_c",
+        "type": "annotation",
+        "name": "c",
+        "properties": {
+          "position": "top-right",
+          "bond_style": "dashed green",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "o_a",
+        "type": "chemical",
+        "name": "O",
+        "properties": {
+          "label": "",
+          "part_of": "group a",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "structure",
+        "type": "chemical",
+        "name": "Central Molecule",
+        "properties": {
+          "description": "H2C(OH)-N(H2) with labeled bonds and atoms",
+          "extracted_from_image": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+        },
+        "source_image_file": "d3085eedbe02c5d756c9d96172950f0f50d5c7ef7e753be60398225e7b55c1c8.jpg"
+      },
+      {
+        "id": "no-me-cn3",
+        "type": "chemical",
+        "name": "No Me-CN:3e",
+        "properties": {
+          "description": "System without Me-CN, 3e charge",
+          "extracted_from_image": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+        },
+        "source_image_file": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+      },
+      {
+        "id": "plus-me-cn0e",
+        "type": "chemical",
+        "name": "+Me-CN:0e",
+        "properties": {
+          "description": "System with Me-CN, 0e charge",
+          "extracted_from_image": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+        },
+        "source_image_file": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+      },
+      {
+        "id": "plus-me-cn3e",
+        "type": "chemical",
+        "name": "+Me-CN:3e",
+        "properties": {
+          "description": "System with Me-CN, 3e charge",
+          "extracted_from_image": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+        },
+        "source_image_file": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+      },
+      {
+        "id": "me-cn3e",
+        "type": "chemical",
+        "name": "Me-CN:3e",
+        "properties": {
+          "description": "Me-CN system, 3e charge",
+          "extracted_from_image": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+        },
+        "source_image_file": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+      },
+      {
+        "id": "zdf-profile",
+        "type": "characterization",
+        "name": "ZDF Profile",
+        "properties": {
+          "description": "Density Functional Theory profile (ZDF)",
+          "units": "a.u.",
+          "x_axis": "Distance from surface (Å)",
+          "x_range": [
+            0,
+            6
+          ],
+          "extracted_from_image": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+        },
+        "source_image_file": "f39b2f231363043122393ead9a094470eb20a918cf50c552bb4af24602c9378e.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Pt_C_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Pt_C",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt_C_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Pt_C",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt_film_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Pt_film",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt_C_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Pt_C",
+        "target_id": "char_4",
+        "properties": {
+          "note": {
+            "value": "in situ surface-enhanced Raman on Ag electrode to probe N-methylimidazole orientation relevant to Pt interface",
+            "unit": ""
+          }
+        }
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chart",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "region_a",
+        "target_id": "chart",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "region_b",
+        "target_id": "chart",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "solution_of"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node6",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node3",
+        "type": "dissolved_as"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n8",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n8",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n8",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n8",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n8",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n8",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n8",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n9",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n9",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n9",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n9",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n9",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n9",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n9",
+        "type": "has_measurement"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n8",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n9",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "used_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "used_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "used_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "added_to"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "labels"
+      },
+      {
+        "source_id": "MOF",
+        "target_id": "MetalNode",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "MOF",
+        "target_id": "OrganicLinker",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "MOF",
+        "target_id": "Pore",
+        "type": "contains"
+      },
+      {
+        "source_id": "MetalNode",
+        "target_id": "OrganicLinker",
+        "type": "connected_to"
+      },
+      {
+        "source_id": "OrganicLinker",
+        "target_id": "Water",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "Water",
+        "target_id": "HydrogenBond",
+        "type": "forms"
+      },
+      {
+        "source_id": "HydrogenBond",
+        "target_id": "OrganicLinker",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "MOF",
+        "target_id": "Image",
+        "type": "visualized_by"
+      },
+      {
+        "source_id": "compound1",
+        "target_id": "N1",
+        "type": "contains"
+      },
+      {
+        "source_id": "compound1",
+        "target_id": "N3",
+        "type": "contains"
+      },
+      {
+        "source_id": "compound1",
+        "target_id": "C2",
+        "type": "contains"
+      },
+      {
+        "source_id": "compound1",
+        "target_id": "C4",
+        "type": "contains"
+      },
+      {
+        "source_id": "compound1",
+        "target_id": "C5",
+        "type": "contains"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "R1",
+        "type": "substituted_by"
+      },
+      {
+        "source_id": "N3",
+        "target_id": "R3",
+        "type": "substituted_by"
+      },
+      {
+        "source_id": "C2",
+        "target_id": "R2",
+        "type": "substituted_by"
+      },
+      {
+        "source_id": "panel_e",
+        "target_id": "compound1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "referenced_to"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "trace1",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "trace2",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "trace3",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "trace4",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "trace5",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "trace6",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "point_a",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "point_b",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "point_c",
+        "type": "contains"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node2",
+        "type": "component_of"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "base_electrolyte"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node5",
+        "type": "comparative_experiment"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "rearrangement"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "cyclization"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "fluorination"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "deprotonation"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "ring_closure"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "side_reaction"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "n8",
+        "type": "side_reaction"
+      },
+      {
+        "source_id": "Ru",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "coordinates"
+      },
+      {
+        "source_id": "Ru",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "coordinates"
+      },
+      {
+        "source_id": "Ru",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "coordinates"
+      },
+      {
+        "source_id": "P1",
+        "target_id": "Ru",
+        "type": "binds"
+      },
+      {
+        "source_id": "P2",
+        "target_id": "Ru",
+        "type": "binds"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "component_of"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "reference_electrode"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured_vs"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node6",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "contains"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node5",
+        "type": "represents_structure"
+      },
+      {
+        "source_id": "electrolyte_1",
+        "target_id": "raman_spectra",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_2",
+        "target_id": "raman_spectra",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "figure_e",
+        "target_id": "raman_spectra",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "cv_0.1KOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "cv_1M_KOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "cv_0.1KOH",
+        "target_id": "electrolyte_0.1KOH",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "cv_1M_KOH",
+        "target_id": "electrolyte_1M_KOH",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "cv_1M_KOH",
+        "target_id": "caffeine",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrolyte_1M_KOH",
+        "target_id": "caffeine",
+        "type": "mixed_with"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "RHE",
+        "type": "referenced_to"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "3",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "1",
+        "target_id": "5",
+        "type": "connected_by"
+      },
+      {
+        "source_id": "1",
+        "target_id": "6",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "3",
+        "target_id": "2",
+        "type": "coordinates_to"
+      },
+      {
+        "source_id": "4",
+        "target_id": "5",
+        "type": "forms"
+      },
+      {
+        "source_id": "6",
+        "target_id": "1",
+        "type": "hosts"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "saturated_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "dissolved_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_1_2-dimethylimidazole",
+        "target_id": "chem_1_2-dimethylimidazole",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "electrolyte",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "raman_spectra_0V",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "raman_spectra_01V",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "raman_spectra_02V",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "raman_spectra_03V",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "raman_spectra_04V",
+        "type": "contains"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "reference_spectra",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "raman_spectra_0V",
+        "type": "used_for"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "raman_spectra_01V",
+        "type": "used_for"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "raman_spectra_02V",
+        "type": "used_for"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "raman_spectra_03V",
+        "type": "used_for"
+      },
+      {
+        "source_id": "electrolyte",
+        "target_id": "raman_spectra_04V",
+        "type": "used_for"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "x_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "figure_f",
+        "target_id": "y_axis",
+        "type": "has_axis"
+      },
+      {
+        "source_id": "raman_spectra_0V",
+        "target_id": "y_axis",
+        "type": "plotted_at_potential"
+      },
+      {
+        "source_id": "raman_spectra_01V",
+        "target_id": "y_axis",
+        "type": "plotted_at_potential"
+      },
+      {
+        "source_id": "raman_spectra_02V",
+        "target_id": "y_axis",
+        "type": "plotted_at_potential"
+      },
+      {
+        "source_id": "raman_spectra_03V",
+        "target_id": "y_axis",
+        "type": "plotted_at_potential"
+      },
+      {
+        "source_id": "raman_spectra_04V",
+        "target_id": "y_axis",
+        "type": "plotted_at_potential"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "raman_spectra_0V",
+        "type": "spans_range"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "raman_spectra_01V",
+        "type": "spans_range"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "raman_spectra_02V",
+        "type": "spans_range"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "raman_spectra_03V",
+        "type": "spans_range"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "raman_spectra_04V",
+        "type": "spans_range"
+      },
+      {
+        "source_id": "x_axis",
+        "target_id": "reference_spectra",
+        "type": "spans_range"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "electrolyte_in"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "electrolyte_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node5",
+        "type": "additive_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node2",
+        "type": "compound"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "CV_0.1KOH",
+        "target_id": "electrolyte_0.1KOH",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "CV_0.1MKOH_MeN2",
+        "target_id": "electrolyte_0.1MKOH_MeN2",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "electrolyte_0.1MKOH_MeN2",
+        "target_id": "MeN2",
+        "type": "contains"
+      },
+      {
+        "source_id": "CV_0.1KOH",
+        "target_id": "reference_electrode",
+        "type": "vs"
+      },
+      {
+        "source_id": "CV_0.1MKOH_MeN2",
+        "target_id": "reference_electrode",
+        "type": "vs"
+      },
+      {
+        "source_id": "atom1",
+        "target_id": "central_O",
+        "type": "bond"
+      },
+      {
+        "source_id": "atom2",
+        "target_id": "central_O",
+        "type": "bond"
+      },
+      {
+        "source_id": "atom3",
+        "target_id": "central_O",
+        "type": "bond"
+      },
+      {
+        "source_id": "central_O",
+        "target_id": "atom4",
+        "type": "bond"
+      },
+      {
+        "source_id": "central_O",
+        "target_id": "atom5",
+        "type": "bond"
+      },
+      {
+        "source_id": "atom5",
+        "target_id": "n_atom",
+        "type": "bond"
+      },
+      {
+        "source_id": "label_a",
+        "target_id": "o_a",
+        "type": "annotation"
+      },
+      {
+        "source_id": "label_b",
+        "target_id": "central_O",
+        "type": "annotation"
+      },
+      {
+        "source_id": "label_c",
+        "target_id": "n_atom",
+        "type": "annotation"
+      },
+      {
+        "source_id": "o_a",
+        "target_id": "structure",
+        "type": "part_of"
+      },
+      {
+        "source_id": "central_O",
+        "target_id": "structure",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n_atom",
+        "target_id": "structure",
+        "type": "part_of"
+      },
+      {
+        "source_id": "no-me-cn3",
+        "target_id": "zdf-profile",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "plus-me-cn0e",
+        "target_id": "zdf-profile",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "plus-me-cn3e",
+        "target_id": "zdf-profile",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "me-cn3e",
+        "target_id": "zdf-profile",
+        "type": "represented_by"
+      },
+      {
+        "source_id": "zdf-profile",
+        "target_id": "chart",
+        "type": "visualized_in"
+      }
+    ]
+  }
+}

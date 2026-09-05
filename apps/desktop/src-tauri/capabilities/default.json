@@ -1,0 +1,14 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Main window baseline. start-dragging is NOT part of core:default — without it every data-tauri-drag-region (overlay titlebar strips) is silently denied and the window cannot be moved. set-webview-zoom backs the in-app Ctrl/Cmd +/- zoom (ZoomProvider owns it instead of zoomHotkeysEnabled, so the macOS titlebar strips can counter-scale for the fixed native traffic lights) — without it setZoom is silently denied and the page stays at 100%. set-theme keeps the macOS vibrancy material in sync with the in-app theme (setWindowTheme) — without it a dark in-app theme sits on a light material and the translucent sidebar washes out.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "core:window:allow-set-theme",
+    "core:webview:allow-set-webview-zoom",
+    "clipboard-manager:allow-write-text",
+    "notification:default"
+  ]
+}

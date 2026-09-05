@@ -1,0 +1,1402 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_MWCNT",
+        "type": "chemical",
+        "name": "multi-walled carbon nanotube",
+        "aliases": [
+          "MWCNT"
+        ],
+        "properties": {
+          "purity": {
+            "value": 95,
+            "unit": "%"
+          },
+          "diameter_range": {
+            "value": "10-30",
+            "unit": "nm"
+          },
+          "length": {
+            "value": 5,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "chem_DMF",
+        "type": "chemical",
+        "name": "DMF",
+        "aliases": [
+          "DMF"
+        ],
+        "formula": "C3H7NO"
+      },
+      {
+        "id": "chem_GCE",
+        "type": "chemical",
+        "name": "glassy carbon electrode",
+        "aliases": [
+          "GCE"
+        ],
+        "related_images": [
+          "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "CV Curve a",
+            "properties": {
+              "description": "Lowest current density curve, baseline-like",
+              "color": "black",
+              "extracted_from_image": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+            },
+            "source_image_file": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_MWCNT_GCE",
+        "type": "chemical",
+        "name": "MWCNT film-modified GCE",
+        "aliases": [
+          "MWCNT–GCE"
+        ],
+        "related_images": [
+          "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "CV Curve b",
+            "properties": {
+              "description": "Moderate current rise curve",
+              "label_position": "high current region",
+              "extracted_from_image": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+            },
+            "source_image_file": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "GCE Polishing and Cleaning",
+        "procedure": "The GCE was sanded using ultrafine sand paper, polished with 10 μm alumina slurry in sequence and successively sonicated in water for 10 min.",
+        "method": "Polishing and sonication",
+        "conditions": {
+          "sonication_time": {
+            "value": 10,
+            "unit": "min"
+          }
+        },
+        "source_text": "The GCE was sanded using ultrafine sand paper, polished with 10 μm alumina slurry in sequence and successively sonicated in water for 10 min."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "MWCNT Suspension Preparation",
+        "procedure": "MWCNT (4 mg) was added to 1 mL of DMF. A homogeneous and stable suspension of 4 mg mL⁻¹ was achieved with the aid of ultrasonic agitation for about 30 min.",
+        "method": "Ultrasonic dispersion",
+        "conditions": {
+          "MWCNT_amount": {
+            "value": 4,
+            "unit": "mg"
+          },
+          "DMF_volume": {
+            "value": 1,
+            "unit": "mL"
+          },
+          "concentration": {
+            "value": 4,
+            "unit": "mg/mL"
+          },
+          "sonication_time": {
+            "value": 30,
+            "unit": "min"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Dispersion",
+            "method": "Addition to solvent",
+            "conditions": {
+              "MWCNT_amount": {
+                "value": 4,
+                "unit": "mg"
+              },
+              "DMF_volume": {
+                "value": 1,
+                "unit": "mL"
+              }
+            },
+            "procedure_snippet": "MWCNT (4 mg) was added to 1 mL of DMF"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Sonication",
+            "method": "Ultrasonic agitation",
+            "conditions": {
+              "time": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "ultrasonic agitation for about 30 min"
+          }
+        ],
+        "source_text": "MWCNT (4 mg) was added to 1 mL of DMF. A homogeneous and stable suspension of 4 mg mL⁻¹ was achieved with the aid of ultrasonic agitation for about 30 min."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "MWCNT Film Coating",
+        "procedure": "The [polished] GCE was coated by casting with a 5 μL suspension of MWCNT–DMF and dried in the air.",
+        "method": "Drop-casting and air drying",
+        "conditions": {
+          "suspension_volume": {
+            "value": 5,
+            "unit": "μL"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Drop-casting",
+            "method": "Suspension casting",
+            "conditions": {
+              "suspension_volume": {
+                "value": 5,
+                "unit": "μL"
+              }
+            },
+            "procedure_snippet": "coated by casting with a 5 μL suspension of MWCNT–DMF"
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Air drying",
+            "method": "Ambient drying",
+            "conditions": {},
+            "procedure_snippet": "dried in the air"
+          }
+        ],
+        "source_text": "The GCE was coated by casting with a 5 μL suspension of MWCNT–DMF and dried in the air."
+      },
+      {
+        "id": "chem_MWCNT-GCE",
+        "type": "chemical",
+        "name": "MWCNT–GCE",
+        "aliases": [
+          "MWCNT-modified GCE",
+          "modified electrode",
+          "MWCNT film-modified GCE"
+        ],
+        "formula": "",
+        "composition": {},
+        "properties": {
+          "surface concentration of electroactive species": {
+            "value": 2.37e-06,
+            "unit": "mol cm^-2"
+          },
+          "charge transfer rate constant": {
+            "value": 2616,
+            "unit": "s^-1"
+          },
+          "electron transfer coefficient": {
+            "value": 0.9,
+            "unit": ""
+          }
+        },
+        "related_images": [
+          "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "CV Curve c",
+            "properties": {
+              "description": "Higher current curve with sharp rise",
+              "label_position": "multiple points",
+              "extracted_from_image": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+            },
+            "source_image_file": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV Curve d",
+            "properties": {
+              "description": "Highest current density curve with steep rise",
+              "label_position": "top right",
+              "extracted_from_image": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+            },
+            "source_image_file": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_sulphadiazine",
+        "type": "chemical",
+        "name": "sulphadiazine",
+        "aliases": [
+          "SD"
+        ],
+        "formula": "C10H10N4O2S",
+        "related_images": [
+          "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "SD",
+            "properties": {
+              "concentration_unit": "μmol L⁻¹",
+              "extracted_from_image": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+            },
+            "source_image_file": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_GCE_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_GCE",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_GCE",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_GCE",
+        "properties": {
+          "form": "polished and cleaned"
+        }
+      },
+      {
+        "id": "edge_input_chem_MWCNT_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_MWCNT",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "amount": {
+            "value": 4,
+            "unit": "mg"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_DMF_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_DMF",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "volume": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_MWCNT_GCE",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_MWCNT_GCE",
+        "properties": {
+          "form": "suspension"
+        }
+      },
+      {
+        "id": "edge_input_chem_GCE_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_GCE",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_MWCNT_GCE_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_MWCNT_GCE",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "coating precursor",
+          "volume": {
+            "value": 5,
+            "unit": "μL"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_MWCNT_GCE",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_MWCNT_GCE",
+        "properties": {
+          "form": "film-modified electrode"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_MWCNT-GCE",
+      "chem_sulphadiazine"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_MWCNT-GCE",
+        "type": "chemical",
+        "name": "multi-walled carbon nanotube composite film-glassy carbon electrode",
+        "aliases": [
+          "MWCNT–GCE",
+          "MWCNT-modified GCE",
+          "MWCNT film-modified GCE"
+        ],
+        "properties": {
+          "MWCNT_amount": {
+            "value": 4,
+            "unit": "mg/mL"
+          },
+          "MWCNT_volume": {
+            "value": 5,
+            "unit": "μL"
+          },
+          "MWCNT_purity": {
+            "value": 95,
+            "unit": "%"
+          },
+          "MWCNT_diameter": {
+            "value": "10-30",
+            "unit": "nm"
+          },
+          "MWCNT_length": {
+            "value": 5,
+            "unit": "μm"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_MWCNT-GCE",
+        "description": "Cyclic voltammetry for anodic oxidation and determination of sulphadiazine in B-R buffer pH 7",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "anodic oxidation of sulphadiazine",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.04 mol L^-1 Britton-Robinson buffer",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7.0,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "GCE (2 mm diameter) modified with MWCNT film",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (saturated KCl)",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt wire",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 100,
+            "unit": "mV s^-1"
+          },
+          "chronoamperometry_step_potential": {
+            "value": 0.98,
+            "unit": "V"
+          },
+          "chronoamperometry_duration": {
+            "value": 50,
+            "unit": "s"
+          },
+          "deaeration": {
+            "value": "high-purity argon",
+            "unit": "10 min"
+          },
+          "temperature": {
+            "value": "room temperature",
+            "unit": "condition"
+          }
+        },
+        "results_json": {
+          "anodic_peak_potential_MWCNT-GCE": {
+            "value": 0.9,
+            "unit": "V vs Ag/AgCl"
+          },
+          "anodic_peak_potential_bare_GCE": {
+            "value": 1.02,
+            "unit": "V vs Ag/AgCl"
+          },
+          "peak_current_increase": {
+            "value": 6,
+            "unit": "fold (vs bare GCE)"
+          },
+          "potential_shift": {
+            "value": 100,
+            "unit": "mV (negative shift)"
+          },
+          "alpha_n": {
+            "value": 0.9,
+            "unit": "dimensionless"
+          },
+          "charge_transfer_rate_constant_ks": {
+            "value": 2616,
+            "unit": "s^-1"
+          },
+          "surface_concentration_Gamma": {
+            "value": "2.37 × 10^-6",
+            "unit": "mol cm^-2"
+          },
+          "diffusion_coefficient_D": {
+            "value": "4.16 × 10^-5",
+            "unit": "cm^2 s^-1"
+          },
+          "linear_dynamic_range": {
+            "value": "10-2000",
+            "unit": "μmol L^-1"
+          },
+          "limit_of_detection_LOD": {
+            "value": 7.1,
+            "unit": "μmol L^-1"
+          },
+          "reproducibility_RSD": {
+            "value": 1.43,
+            "unit": "% (n=7, 1.0 mmol L^-1 SD)"
+          },
+          "pKa_values": {
+            "value": "1.9, 4.2, 7.2",
+            "unit": "pH units"
+          },
+          "E0pH_slope_acidic": {
+            "value": 66,
+            "unit": "mV pH^-1"
+          }
+        },
+        "source_text": "The anodic oxidation of sulphadiazine (SD) was investigated at a glassy carbon electrode modified by multi-walled carbon nanotube (MWCNT–GCE)... at the MWCNT–GCE, the anodic peak was observed at the less positive potential of 0.90 V... increased peak current (about 6-fold increase)... linear range 10-2000 μmol L^-1... detection limit of 7.1 μmol L^-1... αn = 0.90 and ks = 2616 s^-1... D = 4.16 × 10^-5 cm s^-1... surface concentration... 2.37 × 10^-6 mol cm^-2"
+      },
+      {
+        "id": "chem_sulphadiazine",
+        "type": "chemical",
+        "name": "sulphadiazine",
+        "aliases": [
+          "SD"
+        ],
+        "formula": "C10H10N4O2S"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_MWCNT-GCE_test_1",
+        "type": "tested_in",
+        "source_id": "chem_MWCNT-GCE",
+        "target_id": "test_1",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_MWCNT-GCE",
+        "type": "chemical",
+        "name": "MWCNT–GCE",
+        "aliases": [
+          "MWCNT-modified GCE",
+          "modified electrode",
+          "MWCNT film-modified GCE"
+        ],
+        "formula": "",
+        "composition": {},
+        "properties": {
+          "surface concentration of electroactive species": {
+            "value": 2.37e-06,
+            "unit": "mol cm^-2"
+          },
+          "charge transfer rate constant": {
+            "value": 2616,
+            "unit": "s^-1"
+          },
+          "electron transfer coefficient": {
+            "value": 0.9,
+            "unit": ""
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "Cyclic Voltammetry",
+        "is_reported": true,
+        "characterization_summary": "Anodic peak shifts from 1.02 V at bare GCE to 0.90 V at MWCNT–GCE with ~6-fold peak current increase, indicating efficient electrocatalysis.",
+        "evidence_snippet": "The SD showed only one irreversible oxidation peak at approximately 1.02 V at the bare GCE... at the MWCNT–GCE, the anodic peak was observed at the less positive potential of 0.90 V and clearly showed an increased peak current (about 6-fold increase)",
+        "related_images": [
+          "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry Plot",
+            "properties": {
+              "description": "J vs E plot with multiple curves labeled a, b, c, d",
+              "x_axis": "E (V versus Ag/AgCl)",
+              "y_axis": "J (A)",
+              "x_range": [
+                0.5,
+                1.3
+              ],
+              "y_range": [
+                0,
+                50
+              ],
+              "extracted_from_image": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+            },
+            "source_image_file": "6d9fecdcf194be466f72055b7e97ce8bcd667dcb6156eb81df411a1c72465b82.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "Chronoamperometry",
+        "is_reported": true,
+        "characterization_summary": "Diffusion coefficient of SD determined as average D = 4.16 × 10^-5 cm^2 s^-1 from Cottrell plots at MWCNT–GCE.",
+        "evidence_snippet": "from whose slope an average value of D = 4.16 × 10^-5 cm s^-1 was obtained."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "Cyclic Voltammetry",
+        "is_reported": true,
+        "characterization_summary": "Surface concentration of electroactive species Γ estimated as 2.37 × 10^-6 mol cm^-2 from scan rate dependence.",
+        "evidence_snippet": "from the slope of the linear plot of I versus υ, the surface concentration of the electroactive species can be estimated to be approximately 2.37 × 10^-6 mol cm^-2"
+      },
+      {
+        "id": "graphA",
+        "type": "characterization",
+        "name": "Plot A",
+        "properties": {
+          "type": "line_plot",
+          "x_label": "t(s)",
+          "y_label": "J(WA)",
+          "data": "scatter and line data points from 0-60s, J from 0-30",
+          "extracted_from_image": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+        },
+        "source_image_file": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+      },
+      {
+        "id": "graphB",
+        "type": "characterization",
+        "name": "Plot B",
+        "properties": {
+          "type": "line_plot",
+          "x_label": "r^{-1}(s^{1/2})",
+          "y_label": "J(WA)",
+          "equations": [
+            "y = 18.32x - 3.99",
+            "y = 16.48x - 0.97",
+            "y = 14.53x - 0.86",
+            "y = 8.56x - 0.96"
+          ],
+          "r_values": [
+            0.9985,
+            0.9994,
+            0.9988,
+            0.9985
+          ],
+          "extracted_from_image": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+        },
+        "source_image_file": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+      },
+      {
+        "id": "graphC",
+        "type": "characterization",
+        "name": "Plot C",
+        "properties": {
+          "type": "line_plot",
+          "x_label": "[SD](mmolL^{-1})",
+          "y_label": "Slope",
+          "equation": "y = 2.0175x + 0.954",
+          "r_value": "0.9962",
+          "extracted_from_image": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+        },
+        "source_image_file": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+      },
+      {
+        "id": "sample1",
+        "type": "chemical",
+        "name": "Sample 1",
+        "properties": {
+          "extracted_from_image": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+        },
+        "source_image_file": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+      },
+      {
+        "id": "sample2",
+        "type": "chemical",
+        "name": "Sample 2",
+        "properties": {
+          "extracted_from_image": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+        },
+        "source_image_file": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+      },
+      {
+        "id": "sample3",
+        "type": "chemical",
+        "name": "Sample 3",
+        "properties": {
+          "extracted_from_image": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+        },
+        "source_image_file": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+      },
+      {
+        "id": "sample4",
+        "type": "chemical",
+        "name": "Sample 4",
+        "properties": {
+          "extracted_from_image": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+        },
+        "source_image_file": "11f8ee3f93da8f887111e641a01261c49c60198ffde433fe0da3139f16151476.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry Plot",
+        "properties": {
+          "x_label": "E (V versus Ag/AgCl)",
+          "y_label": "j (μA cm⁻²)",
+          "x_range": [
+            -0.3,
+            1.1
+          ],
+          "y_range": [
+            0,
+            80
+          ],
+          "inset": {
+            "type": "linear plot",
+            "equation": "y = 0.032x + 0.9584",
+            "r_squared": 0.987,
+            "x_range": [
+              0,
+              3000
+            ],
+            "y_range": [
+              0,
+              80
+            ],
+            "x_label": "SD (μmol L⁻¹)",
+            "y_label": "j (μA)"
+          },
+          "extracted_from_image": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+        },
+        "source_image_file": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+      },
+      {
+        "id": "graph2",
+        "type": "characterization",
+        "name": "pH Dependence Graph 2",
+        "properties": {
+          "equation": "y = -0.029x + 1.1838",
+          "R_squared": 0.998,
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        },
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+      },
+      {
+        "id": "graph3",
+        "type": "characterization",
+        "name": "pH Dependence Graph 3",
+        "properties": {
+          "equation": "y = -0.0173x + 1.0276",
+          "R_squared": 0.979,
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        },
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+      },
+      {
+        "id": "graph4",
+        "type": "characterization",
+        "name": "pH Dependence Graph 4",
+        "properties": {
+          "equation": "y = -0.068x + 1.3789",
+          "R_squared": 0.997,
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        },
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+      },
+      {
+        "id": "x_axis",
+        "type": "axis",
+        "name": "pH",
+        "properties": {
+          "range": [
+            0,
+            12
+          ],
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        },
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+      },
+      {
+        "id": "y_axis",
+        "type": "axis",
+        "name": "E (V)",
+        "properties": {
+          "range": [
+            0.7,
+            1.3
+          ],
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        },
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+      },
+      {
+        "id": "dataset1",
+        "type": "dataset",
+        "name": "Dataset 1",
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg",
+        "properties": {
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        }
+      },
+      {
+        "id": "dataset2",
+        "type": "dataset",
+        "name": "Dataset 2",
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg",
+        "properties": {
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        }
+      },
+      {
+        "id": "dataset3",
+        "type": "dataset",
+        "name": "Dataset 3",
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg",
+        "properties": {
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        }
+      },
+      {
+        "id": "dataset4",
+        "type": "dataset",
+        "name": "Dataset 4",
+        "source_image_file": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg",
+        "properties": {
+          "extracted_from_image": "24c0421cae6ef35387d3e4f6e9ce97f9cb9eecc95a611548be12ef9ebeea0f6a.jpg"
+        }
+      },
+      {
+        "id": "sample_urine",
+        "type": "sample",
+        "name": "Urine",
+        "properties": {
+          "added_mg": "-",
+          "found_mg": "0.008",
+          "recovery_percent": "-",
+          "rsd_percent": "-",
+          "n": 3,
+          "extracted_from_image": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+        },
+        "source_image_file": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+      },
+      {
+        "id": "sample_plasma_1",
+        "type": "sample",
+        "name": "Plasma (1)",
+        "properties": {
+          "added_mg": "0.250",
+          "found_mg": "0.243",
+          "recovery_percent": "97",
+          "rsd_percent": "0.82",
+          "n": 3,
+          "extracted_from_image": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+        },
+        "source_image_file": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+      },
+      {
+        "id": "sample_plasma_2",
+        "type": "sample",
+        "name": "Plasma (2)",
+        "properties": {
+          "added_mg": "0.250",
+          "found_mg": "0.247",
+          "recovery_percent": "99",
+          "rsd_percent": "0.40",
+          "n": 3,
+          "extracted_from_image": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+        },
+        "source_image_file": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+      },
+      {
+        "id": "analyte",
+        "type": "chemical",
+        "name": "Unknown Analyte",
+        "properties": {
+          "context": "recovery and precision study in biological matrices",
+          "extracted_from_image": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+        },
+        "source_image_file": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+      },
+      {
+        "id": "table",
+        "type": "characterization",
+        "name": "Recovery and Precision Table",
+        "properties": {
+          "type": "analytical validation data",
+          "columns": [
+            "Sample",
+            "Added (mg)",
+            "Found (mg)",
+            "Recovery (%)",
+            "RSD (%) (n=3)"
+          ],
+          "extracted_from_image": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+        },
+        "source_image_file": "2ed1243e6a47e3fc7a462d11208cc02b62090b1989c3969ce53cb5764ef7014a.jpg"
+      },
+      {
+        "id": "electrode",
+        "type": "electrode",
+        "name": "Working Electrode",
+        "properties": {
+          "current_density_unit": "μA cm⁻²",
+          "extracted_from_image": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+        },
+        "source_image_file": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+      },
+      {
+        "id": "A",
+        "type": "characterization",
+        "name": "CV Curve A",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "x_label": "v (mV/s)",
+          "y_label": "j (mA/cm²)",
+          "range_x": [
+            0,
+            400
+          ],
+          "range_y": [
+            0,
+            170
+          ],
+          "equation": "y = 0.80 v^{0.93}",
+          "R²": 0.93,
+          "extracted_from_image": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+        },
+        "source_image_file": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+      },
+      {
+        "id": "B",
+        "type": "characterization",
+        "name": "CV Curve B",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "x_label": "v (mV/s)",
+          "y_label": "j (mA/cm²)",
+          "range_x": [
+            0,
+            400
+          ],
+          "range_y": [
+            0,
+            80
+          ],
+          "equation": "y = 0.67 v^{0.86}",
+          "R²": 0.67,
+          "extracted_from_image": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+        },
+        "source_image_file": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+      },
+      {
+        "id": "C",
+        "type": "characterization",
+        "name": "CV Curve C",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "x_label": "v (mV/s)",
+          "y_label": "j (mA/cm²)",
+          "range_x": [
+            0,
+            30
+          ],
+          "range_y": [
+            0,
+            110
+          ],
+          "equation": "y = 4.03 v^{0.85}",
+          "R²": 0.89,
+          "extracted_from_image": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+        },
+        "source_image_file": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+      },
+      {
+        "id": "D",
+        "type": "characterization",
+        "name": "CV Curve D",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "x_label": "v (0.5/s)",
+          "y_label": "E (V)",
+          "range_x": [
+            0,
+            0.1
+          ],
+          "range_y": [
+            0.87,
+            0.93
+          ],
+          "equation": "y = 0.737 v + 0.882",
+          "R²": 0.926,
+          "extracted_from_image": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+        },
+        "source_image_file": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+      },
+      {
+        "id": "E",
+        "type": "characterization",
+        "name": "CV Curve E",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "x_label": "log v",
+          "y_label": "E (V)",
+          "range_x": [
+            0,
+            1
+          ],
+          "range_y": [
+            0.88,
+            0.96
+          ],
+          "equation": "y = 0.0594 log v + 0.994",
+          "R²": 0.993,
+          "extracted_from_image": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+        },
+        "source_image_file": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+      },
+      {
+        "id": "main_plot",
+        "type": "characterization",
+        "name": "Main CV Plot",
+        "properties": {
+          "type": "cyclic voltammetry",
+          "x_label": "E (V vs Ag/AgCl)",
+          "y_label": "j (mA/cm²)",
+          "range_x": [
+            -0.1,
+            1.1
+          ],
+          "range_y": [
+            -10,
+            130
+          ],
+          "extracted_from_image": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+        },
+        "source_image_file": "927b40b2935b8921eff5ea83641a6e8d446ba43e69e8a9a499f3c829a9b22eff.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "electrode",
+        "name": "BiFE",
+        "properties": {
+          "full_name": "Bismuth film electrode",
+          "linear_dynamic_range": "62.7-340 μmol/L",
+          "detection_limit": "10.9 μmol/L",
+          "reference": "[3]",
+          "extracted_from_image": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+        },
+        "source_image_file": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "electrode",
+        "name": "Mercury",
+        "properties": {
+          "full_name": "Mercury electrode",
+          "linear_dynamic_range": "12.5-30 μmol/L",
+          "detection_limit": "5.4 μmol/L",
+          "reference": "[4]",
+          "extracted_from_image": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+        },
+        "source_image_file": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "electrode",
+        "name": "MWNT-GCE",
+        "properties": {
+          "full_name": "MWNT-modified glassy carbon electrode",
+          "linear_dynamic_range": "10-2000 μmol/L",
+          "detection_limit": "7.1 μmol/L",
+          "reference": "This work",
+          "extracted_from_image": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+        },
+        "source_image_file": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+      },
+      {
+        "id": "e1",
+        "type": "characterization",
+        "name": "Linear Dynamic Range",
+        "properties": {
+          "extracted_from_image": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+        },
+        "source_image_file": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+      },
+      {
+        "id": "e2",
+        "type": "characterization",
+        "name": "Detection Limit",
+        "properties": {
+          "extracted_from_image": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+        },
+        "source_image_file": "c88356b60b0fa81e79546fa8742da801f1d12257dea0a97432b9dfc545534de5.jpg"
+      },
+      {
+        "id": "inset_linear",
+        "type": "characterization",
+        "name": "Linear Calibration Plot",
+        "properties": {
+          "equation": "y = 0.032x + 0.9584",
+          "r_squared": 0.987,
+          "x_label": "SD (μmol L⁻¹)",
+          "y_label": "j (μA)",
+          "extracted_from_image": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+        },
+        "source_image_file": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+      },
+      {
+        "id": "ag_agcl",
+        "type": "reference_electrode",
+        "name": "Ag/AgCl",
+        "properties": {
+          "extracted_from_image": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+        },
+        "source_image_file": "cae582612bb0d94d8108f67ece76a2035e2ebb2193fdd0eedd0dfee44d8f0897.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_MWCNT-GCE_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_MWCNT-GCE",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_MWCNT-GCE_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_MWCNT-GCE",
+        "target_id": "char_2",
+        "properties": {
+          "step potential": {
+            "value": 0.98,
+            "unit": "V"
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_MWCNT-GCE_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_MWCNT-GCE",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "source_id": "sample1",
+        "target_id": "graphA",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample2",
+        "target_id": "graphA",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample3",
+        "target_id": "graphA",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample4",
+        "target_id": "graphA",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "sample1",
+        "target_id": "graphB",
+        "type": "linear_fit"
+      },
+      {
+        "source_id": "sample2",
+        "target_id": "graphB",
+        "type": "linear_fit"
+      },
+      {
+        "source_id": "sample3",
+        "target_id": "graphB",
+        "type": "linear_fit"
+      },
+      {
+        "source_id": "sample4",
+        "target_id": "graphB",
+        "type": "linear_fit"
+      },
+      {
+        "source_id": "graphB",
+        "target_id": "graphC",
+        "type": "slope_analysis"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "x_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "y_axis",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "dataset1",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph2",
+        "target_id": "x_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "graph2",
+        "target_id": "y_axis",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "graph2",
+        "target_id": "dataset2",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph3",
+        "target_id": "x_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "graph3",
+        "target_id": "y_axis",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "graph3",
+        "target_id": "dataset3",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph4",
+        "target_id": "x_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "graph4",
+        "target_id": "y_axis",
+        "type": "has_y_axis"
+      },
+      {
+        "source_id": "graph4",
+        "target_id": "dataset4",
+        "type": "contains"
+      },
+      {
+        "source_id": "sample_urine",
+        "target_id": "analyte",
+        "type": "contains"
+      },
+      {
+        "source_id": "sample_plasma_1",
+        "target_id": "analyte",
+        "type": "contains"
+      },
+      {
+        "source_id": "sample_plasma_2",
+        "target_id": "analyte",
+        "type": "contains"
+      },
+      {
+        "source_id": "sample_urine",
+        "target_id": "table",
+        "type": "part_of"
+      },
+      {
+        "source_id": "sample_plasma_1",
+        "target_id": "table",
+        "type": "part_of"
+      },
+      {
+        "source_id": "sample_plasma_2",
+        "target_id": "table",
+        "type": "part_of"
+      },
+      {
+        "source_id": "analyte",
+        "target_id": "table",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_GCE",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_MWCNT_GCE",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_MWCNT-GCE",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "chem_MWCNT-GCE",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "electrode",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "A",
+        "target_id": "main_plot",
+        "type": "part_of"
+      },
+      {
+        "source_id": "B",
+        "target_id": "main_plot",
+        "type": "part_of"
+      },
+      {
+        "source_id": "C",
+        "target_id": "main_plot",
+        "type": "part_of"
+      },
+      {
+        "source_id": "D",
+        "target_id": "main_plot",
+        "type": "part_of"
+      },
+      {
+        "source_id": "E",
+        "target_id": "main_plot",
+        "type": "part_of"
+      },
+      {
+        "source_id": "main_plot",
+        "target_id": "electrode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "A",
+        "target_id": "electrode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "B",
+        "target_id": "electrode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "C",
+        "target_id": "electrode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "D",
+        "target_id": "electrode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "E",
+        "target_id": "electrode",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "e1",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "e2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "e1",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "e2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "e1",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "e2",
+        "type": "has_property"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "inset_linear",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "ag_agcl",
+        "type": "uses_reference"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "chem_sulphadiazine",
+        "type": "measures"
+      },
+      {
+        "source_id": "graph1",
+        "target_id": "electrode",
+        "type": "uses"
+      },
+      {
+        "source_id": "inset_linear",
+        "target_id": "chem_sulphadiazine",
+        "type": "calibration_for"
+      }
+    ]
+  }
+}

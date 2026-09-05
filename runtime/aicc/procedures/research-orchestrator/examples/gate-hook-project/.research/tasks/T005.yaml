@@ -1,0 +1,45 @@
+schema_version: 1
+id: T005
+title: Build report after report gate
+role: synthesis-report
+role_contract: procedures/research-orchestrator/references/roles.md#synthesis-report
+skill: report
+status: approved
+depends_on:
+  - T003
+  - T004
+approval: none
+inputs:
+  - artifact_id: scientific-claim
+    min_status: accepted
+  - artifact_id: report-gate
+    min_status: accepted
+can_read:
+  - artifact_id: scientific-claim
+  - artifact_id: report-gate
+can_write:
+  - artifact_type: docx-report
+cannot:
+  - promote unsupported claims
+outputs_expected:
+  - artifact_id: docx-report
+    type: docx-report
+    path: work/report/report.docx
+success_criteria:
+  - pre-report hook passes before report generation
+knowledge_required: []
+required_refs:
+  - procedures/research-orchestrator/references/gate-contract.md
+  - tools/report/references/validation.md
+required_checks:
+  - uv run {repo_root}/procedures/research-orchestrator/scripts/check_pre_report.py {project_root}/.research T005
+release_gates:
+  - report_gate
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions:
+  - Fixture report task is not a real deliverable.
+provenance:
+  - work/reviews/report_gate.yaml
+  - work/claims/claim.md

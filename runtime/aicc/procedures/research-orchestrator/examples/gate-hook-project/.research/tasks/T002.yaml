@@ -1,0 +1,46 @@
+schema_version: 1
+id: T002
+title: Submit engine job after structure gate
+role: engine-runner
+role_contract: procedures/research-orchestrator/references/roles.md#engine-runner
+skill: vasp
+status: approved
+depends_on:
+  - T001
+approval: none
+inputs:
+  - artifact_id: structure-gate
+    min_status: accepted
+  - artifact_id: cluster-guide-read
+    min_status: accepted
+can_read:
+  - artifact_id: structure-gate
+  - artifact_id: cluster-guide-read
+can_write:
+  - artifact_type: parser-result
+cannot:
+  - bypass structure gate
+outputs_expected:
+  - artifact_id: parser-result
+    type: parser-result
+    path: work/run/parser-result.json
+success_criteria:
+  - pre-submit hook passes before submission
+knowledge_required: []
+required_refs:
+  - procedures/research-orchestrator/references/gate-contract.md
+  - tools/hpc-submit/SKILL.md
+  - tools/hpc-submit/references/validation.md
+  - tools/vasp/SKILL.md
+required_checks:
+  - uv run {repo_root}/procedures/research-orchestrator/scripts/check_pre_submit.py {project_root}/.research T002
+release_gates:
+  - structure_gate
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions:
+  - Fixture task is not a real calculation.
+provenance:
+  - work/reviews/structure_gate.yaml
+  - work/cluster-guide-read.md

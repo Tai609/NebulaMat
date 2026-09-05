@@ -1,0 +1,1282 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_nano_tio2",
+        "type": "chemical",
+        "name": "nano-TiO2",
+        "aliases": [
+          "nano-TiO2",
+          "Titanium dioxide nanoparticles",
+          "P25"
+        ],
+        "formula": "TiO2",
+        "properties": {}
+      },
+      {
+        "id": "chem_aptes",
+        "type": "chemical",
+        "name": "3-aminopropyltriethoxysilane",
+        "aliases": [
+          "APTES"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_ethanol",
+        "type": "chemical",
+        "name": "anhydrous ethanol",
+        "aliases": [
+          "anhydrous ethanol"
+        ],
+        "formula": "C2H5OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_di_water",
+        "type": "chemical",
+        "name": "deionized water",
+        "aliases": [
+          "DI water",
+          "deionized water"
+        ],
+        "formula": "H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_hcl",
+        "type": "chemical",
+        "name": "hydrochloric acid",
+        "aliases": [
+          "HCl"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_mnt",
+        "type": "chemical",
+        "name": "modified nano-TiO2",
+        "aliases": [
+          "MNT",
+          "APTES-modified nano-TiO2"
+        ],
+        "properties": {
+          "silicon_content": {
+            "value": 2.6,
+            "unit": "at%"
+          },
+          "aptes_moiety_content": {
+            "value": 2.14,
+            "unit": "wt% mass loss"
+          }
+        }
+      },
+      {
+        "id": "chem_pva",
+        "type": "chemical",
+        "name": "polyvinyl alcohol",
+        "aliases": [
+          "PVA"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_wm44_l70g",
+        "type": "chemical",
+        "name": "WM44-L70G",
+        "aliases": [
+          "water-soluble end-blocked isocyanate",
+          "crosslinker",
+          "WM44-L70"
+        ],
+        "properties": {
+          "solid_content": {
+            "value": 70,
+            "unit": "wt%"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "APTES modification of nano-TiO2",
+        "procedure": "First, 1g of nano-TiO2 was dispersed in 100mL of a mixture of anhydrous ethanol and deionized water (9:1 v/v), and then sonicated for 30min to ensure homogeneous dispersion of the nanoparticles. Subsequently, 2g of APTES was added into the stirring suspension, and the mixture was heated to 70°C. Next, its pH value was adjusted to ≈6 using 2M HCl solution. After reacting at 70°C for 6h, the mixture was centrifugated at 10,000rpm and washed using anhydrous ethanol to remove any unreacted APTES, followed by dispersing in deionized water. The dispersion was finally freeze-dried for 48h to obtain modified nano-TiO2 (MNT).",
+        "method": "Silane coupling modification",
+        "conditions": {
+          "temperature": {
+            "value": 70,
+            "unit": "°C"
+          },
+          "reaction_time": {
+            "value": 6,
+            "unit": "h"
+          },
+          "pH": {
+            "value": 6,
+            "unit": "pH units"
+          },
+          "sonication_time": {
+            "value": 30,
+            "unit": "min"
+          },
+          "centrifugation_speed": {
+            "value": 10000,
+            "unit": "rpm"
+          },
+          "freeze_drying_time": {
+            "value": 48,
+            "unit": "h"
+          }
+        },
+        "source_text": "Modification of Nano-TiO2 with APTES: First, 1g of nano-TiO2 was dispersed in 100mL... freeze-dried for 48h to obtain modified nano-TiO2 (MNT)."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "PVA spinning solution preparation",
+        "procedure": "1.0g of PVA was added into 9mL of deionized water and mechanically stirred at 95°C for 5h to obtain a homogeneous solution. 1.5g of WM44-L70G was added, and the suspension was magnetically stirred at room temperature for 10min to obtain a spinning solution.",
+        "method": "Polymer dissolution",
+        "conditions": {
+          "dissolution_temperature": {
+            "value": 95,
+            "unit": "°C"
+          },
+          "dissolution_time": {
+            "value": 5,
+            "unit": "h"
+          },
+          "mixing_time": {
+            "value": 10,
+            "unit": "min"
+          }
+        },
+        "source_text": "1.0g of PVA was added into 9mL of deionized water and mechanically stirred at 95°C for 5h... magnetically stirred at room temperature for 10min to obtain a spinning solution."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "MNT/PVA electrospinning",
+        "procedure": "MNT at different weight fractions (0.5, 1.0, 1.5, and 2.0wt%) was then added [to PVA solution], and the pH value of the mixture was adjusted to 2 using concentrated HCl, followed by sonicating it for 30min to acquire uniform dispersion of the nanoparticles as a filler. Finally, MNT/PVA composite nanofibrous membrane was fabricated using the spinning solution via electrospinning process under optimal conditions, that is, a spinning voltage of 22kV, a working distance of 15cm, and a feed rate of 0.6mL h^-1. The obtained membrane was heat-treated in a vacuum drying oven at 90°C for 0.5h for use as a nanofibrous separator for LIB.",
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Nanoparticle dispersion",
+            "method": "Ultrasonic dispersion",
+            "conditions": {
+              "pH": {
+                "value": 2,
+                "unit": "pH units"
+              },
+              "sonication_time": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "MNT at different weight fractions... pH value of the mixture was adjusted to 2 using concentrated HCl, followed by sonicating it for 30min"
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Electrospinning",
+            "method": "Needle electrospinning",
+            "conditions": {
+              "voltage": {
+                "value": 22,
+                "unit": "kV"
+              },
+              "working_distance": {
+                "value": 15,
+                "unit": "cm"
+              },
+              "feed_rate": {
+                "value": 0.6,
+                "unit": "mL/h"
+              }
+            },
+            "procedure_snippet": "MNT/PVA composite nanofibrous membrane was fabricated using the spinning solution via electrospinning process under optimal conditions"
+          },
+          {
+            "id": "unit_op_3.3",
+            "name": "Crosslinking heat treatment",
+            "method": "Vacuum oven drying",
+            "conditions": {
+              "temperature": {
+                "value": 90,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 0.5,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "The obtained membrane was heat-treated in a vacuum drying oven at 90°C for 0.5h"
+          }
+        ],
+        "conditions": {
+          "pH": {
+            "value": 2,
+            "unit": "pH units"
+          },
+          "sonication_time": {
+            "value": 30,
+            "unit": "min"
+          },
+          "electrospinning_voltage": {
+            "value": 22,
+            "unit": "kV"
+          },
+          "electrospinning_distance": {
+            "value": 15,
+            "unit": "cm"
+          },
+          "electrospinning_feed_rate": {
+            "value": 0.6,
+            "unit": "mL/h"
+          },
+          "heat_treatment_temperature": {
+            "value": 90,
+            "unit": "°C"
+          },
+          "heat_treatment_time": {
+            "value": 0.5,
+            "unit": "h"
+          }
+        },
+        "source_text": "MNT at different weight fractions (0.5, 1.0, 1.5, and 2.0wt%) was then added... heat-treated in a vacuum drying oven at 90°C for 0.5h"
+      },
+      {
+        "id": "chem_mnt_pva_separator",
+        "type": "chemical",
+        "name": "MNT/PVA composite nanofibrous separator",
+        "aliases": [
+          "MNT/PVA separator",
+          "1.5 wt% MNT/PVA"
+        ],
+        "properties": {
+          "porosity": {
+            "value": 82.5,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 566.1,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 1.54,
+            "unit": "mS cm^{-1}"
+          },
+          "mechanical_property": {
+            "value": 33.2,
+            "unit": "MPa"
+          },
+          "Brunauer-Emmett-Teller surface area": {
+            "value": 10.8,
+            "unit": "m^2 g^{-1}"
+          },
+          "pore_volume": {
+            "value": 0.035,
+            "unit": "mL g^{-1}"
+          },
+          "thickness": {
+            "value": 30,
+            "unit": "μm"
+          },
+          "average_fiber_diameter": {
+            "value": 243,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_n_butanol",
+        "type": "chemical",
+        "name": "n-Butanol",
+        "aliases": [
+          "n-butanol"
+        ],
+        "formula": "C4H9OH",
+        "properties": {}
+      },
+      {
+        "id": "chem_MNT_PVA",
+        "type": "chemical",
+        "name": "MNT/PVA separator",
+        "aliases": [
+          "MNT/PVA composite nanofibrous separator",
+          "MNT/PVA nanofibrous separator"
+        ],
+        "formula": null,
+        "properties": {
+          "mechanical_strength": {
+            "value": 33.2,
+            "unit": "MPa"
+          },
+          "porosity": {
+            "value": 82.5,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 566.1,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 1.54,
+            "unit": "mS cm^{-1}"
+          },
+          "Brunauer-Emmett-Teller_surface_area": {
+            "value": 10.8,
+            "unit": "m^2 g^{-1}"
+          },
+          "pore_volume": {
+            "value": 0.035,
+            "unit": "mL g^{-1}"
+          }
+        }
+      },
+      {
+        "id": "chem_PVA",
+        "type": "chemical",
+        "name": "PVA separator",
+        "aliases": [
+          "PVA nanofibrous separator"
+        ],
+        "formula": null,
+        "properties": {
+          "mechanical_strength": {
+            "value": 25.4,
+            "unit": "MPa"
+          },
+          "porosity": {
+            "value": 67.0,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 452.8,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 0.84,
+            "unit": "mS cm^{-1}"
+          },
+          "Brunauer-Emmett-Teller_surface_area": {
+            "value": 7.5,
+            "unit": "m^2 g^{-1}"
+          },
+          "pore_volume": {
+            "value": 0.018,
+            "unit": "mL g^{-1}"
+          }
+        }
+      },
+      {
+        "id": "chem_nano_TiO2_PVA",
+        "type": "chemical",
+        "name": "nano-TiO2/PVA separator",
+        "aliases": [
+          "nano-TiO2/PVA nanofibrous separator"
+        ],
+        "formula": null,
+        "properties": {
+          "mechanical_strength": {
+            "value": 29.8,
+            "unit": "MPa"
+          },
+          "porosity": {
+            "value": 76.3,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 500.5,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 1.06,
+            "unit": "mS cm^{-1}"
+          },
+          "Brunauer-Emmett-Teller_surface_area": {
+            "value": 10.3,
+            "unit": "m^2 g^{-1}"
+          },
+          "pore_volume": {
+            "value": 0.03,
+            "unit": "mL g^{-1}"
+          }
+        }
+      },
+      {
+        "id": "chem_PP",
+        "type": "chemical",
+        "name": "PP separator",
+        "aliases": [
+          "Celgard-2400",
+          "commercial PP separator"
+        ],
+        "formula": null,
+        "properties": {
+          "porosity": {
+            "value": 39.2,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 231.9,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 0.45,
+            "unit": "mS cm^{-1}"
+          },
+          "resistance": {
+            "value": 2.7,
+            "unit": "Ω"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_nano_tio2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nano_tio2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate",
+          "amount": {
+            "value": 1,
+            "unit": "g"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_aptes_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_aptes",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reagent",
+          "amount": {
+            "value": 2,
+            "unit": "g"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_ethanol_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_ethanol",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "volume_ratio": {
+            "value": 9,
+            "unit": "v/v parts"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_di_water_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_di_water",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "volume_ratio": {
+            "value": 1,
+            "unit": "v/v parts"
+          },
+          "total_volume": {
+            "value": 100,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_hcl_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_hcl",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reagent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_mnt",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_mnt",
+        "properties": {
+          "form": "freeze-dried powder"
+        }
+      },
+      {
+        "id": "edge_input_chem_pva_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_pva",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "polymer",
+          "amount": {
+            "value": 1.0,
+            "unit": "g"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_di_water_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_di_water",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent",
+          "amount": {
+            "value": 9,
+            "unit": "mL"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_wm44_l70g_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_wm44_l70g",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "crosslinker",
+          "amount": {
+            "value": 1.5,
+            "unit": "g"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_pva_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_pva",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "polymer"
+        }
+      },
+      {
+        "id": "edge_input_chem_mnt_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_mnt",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "filler",
+          "concentration": {
+            "value": 1.5,
+            "unit": "wt% (spinning solution)"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_wm44_l70g_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_wm44_l70g",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "crosslinker"
+        }
+      },
+      {
+        "id": "edge_input_chem_hcl_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_hcl",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "pH_adjuster"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_mnt_pva_separator",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_mnt_pva_separator",
+        "properties": {
+          "form": "heat-treated nanofibrous membrane"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_MNT_PVA",
+      "chem_PP",
+      "chem_nano_TiO2_PVA",
+      "chem_PVA"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_MNT_PVA",
+        "type": "chemical",
+        "name": "MNT/PVA separator",
+        "aliases": [
+          "MNT/PVA composite nanofibrous separator",
+          "MNT/PVA nanofibrous separator"
+        ],
+        "formula": null,
+        "properties": {
+          "mechanical_strength": {
+            "value": 33.2,
+            "unit": "MPa"
+          },
+          "porosity": {
+            "value": 82.5,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 566.1,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 1.54,
+            "unit": "mS cm^{-1}"
+          },
+          "Brunauer-Emmett-Teller_surface_area": {
+            "value": 10.8,
+            "unit": "m^2 g^{-1}"
+          },
+          "pore_volume": {
+            "value": 0.035,
+            "unit": "mL g^{-1}"
+          }
+        }
+      },
+      {
+        "id": "chem_PVA",
+        "type": "chemical",
+        "name": "PVA separator",
+        "aliases": [
+          "PVA nanofibrous separator"
+        ],
+        "formula": null,
+        "properties": {
+          "mechanical_strength": {
+            "value": 25.4,
+            "unit": "MPa"
+          },
+          "porosity": {
+            "value": 67.0,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 452.8,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 0.84,
+            "unit": "mS cm^{-1}"
+          },
+          "Brunauer-Emmett-Teller_surface_area": {
+            "value": 7.5,
+            "unit": "m^2 g^{-1}"
+          },
+          "pore_volume": {
+            "value": 0.018,
+            "unit": "mL g^{-1}"
+          }
+        }
+      },
+      {
+        "id": "chem_nano_TiO2_PVA",
+        "type": "chemical",
+        "name": "nano-TiO2/PVA separator",
+        "aliases": [
+          "nano-TiO2/PVA nanofibrous separator"
+        ],
+        "formula": null,
+        "properties": {
+          "mechanical_strength": {
+            "value": 29.8,
+            "unit": "MPa"
+          },
+          "porosity": {
+            "value": 76.3,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 500.5,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 1.06,
+            "unit": "mS cm^{-1}"
+          },
+          "Brunauer-Emmett-Teller_surface_area": {
+            "value": 10.3,
+            "unit": "m^2 g^{-1}"
+          },
+          "pore_volume": {
+            "value": 0.03,
+            "unit": "mL g^{-1}"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_MNT_PVA",
+        "description": "Ionic conductivity measurement in SS | SPE | SS configuration at 25°C",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "SS | SPE | SS",
+            "unit": "setup"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "frequency_range": {
+            "value": "0.01 Hz to 10^5 Hz",
+            "unit": "EIS"
+          },
+          "AC_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "electrolyte": {
+            "value": "1.0 M LiPF6 in EC:DEC (1:1 v/v)",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "resistance": {
+            "value": 0.96,
+            "unit": "Ω"
+          },
+          "ionic_conductivity": {
+            "value": 1.54,
+            "unit": "mS cm^{-1}"
+          }
+        },
+        "source_text": "The ionic conductivity was determined using the electrochemical impedance spectroscopy (EIS) technique, with spacers (PP, PVA, and MNT/PVA) assembled in the configuration of stainless steel sheet | separator | stainless steel plate (SS | SPE | SS). Figure 3d shows that the resistances of the PVA, nano-TiO2/PVA and MNT/PVA separator are 1.9, 1.4, and 0.96Ω, respectively... the ionic conductivity of PP was 0.45mScm^{-1}, while the PVA, nano-TiO2/PVA, and MNT/PVA separator exhibited 0.84, 1.06, and 1.54mScm^{-1}, respectively."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_MNT_PVA",
+        "description": "Cycle performance in Li | SPE | LiFePO4 button cell at 0.5C for 100 cycles",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "Li | SPE | LiFePO4",
+            "unit": "button cell"
+          },
+          "C_rate": {
+            "value": 0.5,
+            "unit": "C"
+          },
+          "voltage_range": {
+            "value": "3.0-4.2 V",
+            "unit": "V"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "cycles": {
+            "value": 100,
+            "unit": "cycles"
+          },
+          "electrolyte": {
+            "value": "1.0 M LiPF6 in EC:DEC (1:1 v/v), 80 μL",
+            "unit": "solution"
+          }
+        },
+        "results_json": {
+          "initial_capacity": {
+            "value": 159.4,
+            "unit": "mAh g^{-1}"
+          },
+          "capacity_retention": {
+            "value": 88.3,
+            "unit": "%"
+          },
+          "capacity_after_100_cycles": {
+            "value": 137.9,
+            "unit": "mAh g^{-1}"
+          },
+          "coulombic_efficiency": {
+            "value": "high",
+            "unit": "qualitative"
+          }
+        },
+        "source_text": "The cells assembled with MNT/PVA separator demonstrated a retention of 88.3% (137.9 mAhg^{-1}) of their initial capacity after 100 cycles at 0.5C... Figure 4f. Cycling performance (left axis) and coulombic efficiency (right axis)"
+      },
+      {
+        "source_text": "The cells assembled with MNT/PVA separator demonstrated a retention of 88.3% (137.9 mAh g^{-1}) of their initial capacity after 100 cycles at 0.5C."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_MNT_PVA",
+        "description": "Rate capability testing in Li | SPE | LiFePO4 cell from 0.2C to 5C",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "Li | SPE | LiFePO4",
+            "unit": "setup"
+          },
+          "C_rates": {
+            "value": "0.2C, 0.5C, 1C, 2C, 5C",
+            "unit": "C"
+          },
+          "voltage_range": {
+            "value": "3.0-4.2 V",
+            "unit": "V"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          }
+        },
+        "results_json": {
+          "discharge_capacity_at_0.2C": {
+            "value": 165.4,
+            "unit": "mAh g^{-1}"
+          },
+          "discharge_capacity_at_2C": {
+            "value": 121.7,
+            "unit": "mAh g^{-1}"
+          },
+          "capacity_retention_at_2C": {
+            "value": 73.8,
+            "unit": "%"
+          }
+        },
+        "source_text": "Even at high current densities of 2C, the cells with MNT/PVA separators maintain a high discharge capacity. Specifically, the MNT/PVA separator-based cells still exhibit a discharge capacity of 121.7 mAh g^{-1} (73.8% of 165.4 mAh g^{-1} at 0.2C)"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_PVA",
+        "description": "Ionic conductivity measurement in SS | SPE | SS configuration at 25°C",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "SS | SPE | SS",
+            "unit": "setup"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          }
+        },
+        "results_json": {
+          "resistance": {
+            "value": 1.9,
+            "unit": "Ω"
+          },
+          "ionic_conductivity": {
+            "value": 0.84
+          }
+        }
+      },
+      {
+        "id": "chem_PP",
+        "type": "chemical",
+        "name": "PP separator",
+        "aliases": [
+          "Celgard-2400",
+          "commercial PP separator"
+        ],
+        "formula": null,
+        "properties": {
+          "porosity": {
+            "value": 39.2,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 231.9,
+            "unit": "%"
+          },
+          "ionic_conductivity": {
+            "value": 0.45,
+            "unit": "mS cm^{-1}"
+          },
+          "resistance": {
+            "value": 2.7,
+            "unit": "Ω"
+          }
+        }
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_PVA",
+        "description": "Cycle performance in Li | SPE | LiFePO4 cell at 0.5C for 100 cycles",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "Li | SPE | LiFePO4",
+            "unit": "setup"
+          },
+          "C_rate": {
+            "value": 0.5,
+            "unit": "C"
+          },
+          "voltage_range": {
+            "value": "3.0-4.2 V",
+            "unit": "V"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "cycles": {
+            "value": 100,
+            "unit": "cycles"
+          }
+        },
+        "results_json": {
+          "initial_capacity": {
+            "value": 149.9,
+            "unit": "mAh g^{-1}"
+          },
+          "capacity_retention": {
+            "value": 81.3,
+            "unit": "%"
+          },
+          "capacity_after_100_cycles": {
+            "value": 120.3,
+            "unit": "mAh g^{-1}"
+          }
+        },
+        "source_text": "The cells with PP (107.5 mAh g^{-1}), PVA (120.3 mAh g^{-1}) and nano-TiO2/PVA (128.2 mAh g^{-1}) separator exhibited 73.7%, 81.3, and 86.4% of their initial capacity, respectively."
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_nano_TiO2_PVA",
+        "description": "Cycle performance in Li | SPE | LiFePO4 cell at 0.5C for 100 cycles",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "Li | SPE | LiFePO4",
+            "unit": "setup"
+          },
+          "C_rate": {
+            "value": 0.5,
+            "unit": "C"
+          },
+          "voltage_range": {
+            "value": "3.0-4.2 V",
+            "unit": "V"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "cycles": {
+            "value": 100,
+            "unit": "cycles"
+          }
+        },
+        "results_json": {
+          "initial_capacity": {
+            "value": 150.2,
+            "unit": "mAh g^{-1}"
+          },
+          "capacity_retention": {
+            "value": 86.4,
+            "unit": "%"
+          },
+          "capacity_after_100_cycles": {
+            "value": 128.2,
+            "unit": "mAh g^{-1}"
+          }
+        },
+        "source_text": "The cells with PP (107.5 mAh g^{-1}), PVA (120.3 mAh g^{-1}) and nano-TiO2/PVA (128.2 mAh g^{-1}) separator exhibited 73.7%, 81.3, and 86.4% of their initial capacity, respectively."
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_PVA",
+        "description": "Ionic conductivity measurement in SS | SPE | SS configuration at 25°C",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "SS | SPE | SS",
+            "unit": "setup"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "frequency_range": {
+            "value": "0.01 Hz to 10^5 Hz",
+            "unit": "EIS"
+          },
+          "AC_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          }
+        },
+        "results_json": {
+          "resistance": {
+            "value": 1.9,
+            "unit": "Ω"
+          },
+          "ionic_conductivity": {
+            "value": 0.84,
+            "unit": "mS cm^{-1}"
+          },
+          "porosity": {
+            "value": 67.0,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 452.8,
+            "unit": "%"
+          }
+        },
+        "source_text": "Figure 3d shows that the resistances of the PVA, nano-TiO2/PVA and MNT/PVA separator are 1.9, 1.4, and 0.96 Ω, respectively... the ionic conductivity of PP was 0.45 mS cm^{-1}, while the PVA... exhibited 0.84... mS cm^{-1}"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_nano_TiO2_PVA",
+        "description": "Ionic conductivity measurement in SS | SPE | SS configuration at 25°C",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "SS | SPE | SS",
+            "unit": "setup"
+          },
+          "temperature": {
+            "value": 25,
+            "unit": "°C"
+          },
+          "frequency_range": {
+            "value": "0.01 Hz to 10^5 Hz",
+            "unit": "EIS"
+          },
+          "AC_amplitude": {
+            "value": 10,
+            "unit": "mV"
+          }
+        },
+        "results_json": {
+          "resistance": {
+            "value": 1.4,
+            "unit": "Ω"
+          },
+          "ionic_conductivity": {
+            "value": 1.06,
+            "unit": "mS cm^{-1}"
+          },
+          "porosity": {
+            "value": 76.3,
+            "unit": "%"
+          },
+          "electrolyte_uptake": {
+            "value": 500.5,
+            "unit": "%"
+          }
+        },
+        "source_text": "Figure 3d shows that the resistances of the PVA, nano-TiO2/PVA and MNT/PVA separator are 1.9, 1.4, and 0.96 Ω, respectively... the ionic conductivity of PP was 0.45 mS cm^{-1}, while the PVA, nano-TiO2/PVA... exhibited 0.84, 1.06... mS cm^{-1}"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_MNT_PVA",
+        "description": "Electrochemical stability window by LSV in Li | SPE | SS cell",
+        "conditions_json": {
+          "cell_configuration": {
+            "value": "Li | SPE | SS",
+            "unit": "setup"
+          },
+          "voltage_range": {
+            "value": "3.0-6.0 V",
+            "unit": "V"
+          },
+          "scan_rate": {
+            "value": 1,
+            "unit": "mV s^{-1}"
+          }
+        },
+        "results_json": {
+          "electrochemical_stability_window": {
+            "value": 5.2,
+            "unit": "V"
+          }
+        },
+        "source_text": "The electrochemical stability windows... were evaluated by measuring the linear scanning voltammograms (LSV)... The nano-TiO2/PVA and MNT/PVA separator exhibit an electrochemical stability window of up to 5.2 V"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_PVA_test_5",
+        "type": "tested_in",
+        "source_id": "chem_PVA",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_nano_TiO2_PVA_test_6",
+        "type": "tested_in",
+        "source_id": "chem_nano_TiO2_PVA",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_PVA_test_7",
+        "type": "tested_in",
+        "source_id": "chem_PVA",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_nano_TiO2_PVA_test_8",
+        "type": "tested_in",
+        "source_id": "chem_nano_TiO2_PVA",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_MNT_PVA_test_9",
+        "type": "tested_in",
+        "source_id": "chem_MNT_PVA",
+        "target_id": "test_9",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_nano_tio2",
+        "type": "chemical",
+        "name": "nano-TiO2",
+        "aliases": [
+          "nano-TiO₂"
+        ],
+        "formula": "TiO2",
+        "properties": {}
+      },
+      {
+        "id": "chem_mnt",
+        "type": "chemical",
+        "name": "MNT",
+        "aliases": [
+          "APTES-modified nano-TiO2",
+          "modified nano-TiO2"
+        ],
+        "composition": {
+          "Si": {
+            "value": 2.6,
+            "unit": "at%"
+          },
+          "APTES": {
+            "value": 2.14,
+            "unit": "wt%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "FTIR",
+        "is_reported": true,
+        "characterization_summary": "FTIR shows broad peak at 3300-3500 cm⁻¹ for surface hydroxyl groups of nano-TiO₂, red-shifted in MNT due to hydroxyl to amino transformation, new peaks at 2923, 2854 cm⁻¹ for CH₂, 1560 cm⁻¹ for NH₂, and 1120 cm⁻¹ for Si-O-Ti confirming APTES grafting.",
+        "evidence_snippet": "Figure 1b. shows the FTIR spectra of the nano-TiO₂ and MNT. In the spectrum of nano-TiO₂, the broad peak within the range of 3300 - 3500 cm⁻¹ is attributed to the stretching vibration of hydroxyl groups on its surface."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "XPS of MNT shows new N 1s and Si 2p peaks; high-resolution Si 2p peak at 102.13 eV confirms APTES attachment (2.6 at% Si); N 1s peaks at 398.05, 399.29, and 401.23 eV attributed to terminal NH₂, hydrogen-bonded NH₂/NH₃⁺.",
+        "evidence_snippet": "The sharp peak at 102.13 eV in the Si 2p spectrum provides definitive evidence of APTES attachment to the nano-TiO₂ surface, and the surface composition analysis reveals that the MNT contains 2.6 at% silicon. Three distinct N 1s peaks were observed at 398.05, 399.29, and 401.23 eV."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "TGA",
+        "is_reported": true,
+        "characterization_summary": "TGA shows nano-TiO₂ has 1.42% mass loss at 300-800°C; MNT shows 3.56% mass loss in same range due to APTES decomposition, estimating 2.14 wt% APTES moiety.",
+        "evidence_snippet": "Figure S2, Supporting Information shows the TGA curves of nano-TiO₂ and MNT. ... MNT shows a mass loss of 3.56% within the same temperature range, which should be caused by the thermal decomposition of APTES moiety on its surface."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "XRD patterns of nano-TiO₂ and MNT show similar diffraction peaks, proving APTES modification did not affect the crystal type of nano-TiO₂.",
+        "evidence_snippet": "Figure S3, Supporting Information presents the XRD patterns of nano-TiO₂ and MNT. Their diffraction peaks are similar, which proves that the modification by APTES did not affect the crystal type of nano-TiO₂."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "Zeta Potential",
+        "is_reported": true,
+        "characterization_summary": "Zeta potential shows isoelectric point of MNT at 8.4 (higher than nano-TiO₂ at 6.8); MNT shows more positive charges below pH 7 enhancing colloidal stability via electrostatic repulsion.",
+        "evidence_snippet": "The zeta potentials of nano-TiO₂ and MNT in the aqueous dispersion of various pH values are given in Figure 1d. It can be seen that the isoelectric point (8.4) of MNT is higher than that (6.8) of nano-TiO₂."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_nano_tio2_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_nano_tio2",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_mnt_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_mnt",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_nano_tio2_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_nano_tio2",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_mnt_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_mnt",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_nano_tio2_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_nano_tio2",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_mnt_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_mnt",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_nano_tio2_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_nano_tio2",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_mnt_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_mnt",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_nano_tio2_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_nano_tio2",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_mnt_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_mnt",
+        "target_id": "char_5",
+        "properties": {}
+      }
+    ]
+  }
+}

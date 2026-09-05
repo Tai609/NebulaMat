@@ -1,0 +1,21 @@
+# Academic Figure Skill — OpenAI Codex Manifest
+# Place this file at: ~/.codex/skills/academic-figure-skill/manifest.yaml
+# Generated: 2026-07-05 13:39 UTC
+
+name: academic-figure-skill
+version: "1.0.0"
+description: >-
+  Publication-grade scientific figure creation for Nature/Cell/Science journals.
+  Handles any figure type with journal-grade typography, color science, and layout.
+
+entrypoint: skill.md
+resources:
+  - instructions.md
+  - assets/figures/
+
+triggers:
+  - keywords: [figure, plot, chart, heatmap, volcano, boxplot, scatter, bar,
+               manuscript, publication, Nature, Cell, Science, 图, 绘图, 作图]
+  - file_patterns: ["*.py", "*.R", "*.r"]
+    content_hints: ["matplotlib", "ggplot2", "seaborn", "ComplexHeatmap",
+                    "plt.plot", "plt.scatter", "ggplot(", "geom_"]

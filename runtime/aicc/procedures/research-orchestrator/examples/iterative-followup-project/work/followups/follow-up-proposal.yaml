@@ -1,0 +1,55 @@
+schema_version: 1
+proposal_id: follow-up-proposal
+source_claim_id: scientific-claim-wave1
+outcome: needs-follow-up
+reason: First-wave evidence is technically valid but lacks the decisive follow-up observable.
+recommended_tasks:
+  - id: T004
+    title: Execute accepted follow-up calculation
+    role: engine-runner
+    skill: vasp
+    status: proposed
+    stage: follow-up
+    wave_id: wave-2
+    iteration: 2
+    approval: none
+    inputs:
+      - artifact_id: follow-up-proposal
+        min_status: accepted
+    outputs_expected:
+      - artifact_id: parser-result-wave2
+        type: parser-result
+        path: work/run-wave2/parser-result.json
+    success_criteria:
+      - follow-up observable is computed and parsed
+    required_refs:
+      - tools/vasp/SKILL.md
+    release_gates:
+      - engine-parser-validation
+  - id: T005
+    title: Re-critique evidence after follow-up
+    role: scientific-critic
+    skill: comp-chem-workflow
+    status: proposed
+    stage: follow-up
+    wave_id: wave-2
+    iteration: 2
+    approval: none
+    depends_on:
+      - T004
+    inputs:
+      - artifact_id: follow-up-proposal
+        min_status: accepted
+      - artifact_id: parser-result-wave2
+        min_status: validated
+    outputs_expected:
+      - artifact_id: scientific-claim-final
+        type: scientific-claim
+        path: work/claims/claim-final.md
+      - artifact_id: result-gate-final
+        type: gate-verdict
+        path: work/reviews/result_gate_final.yaml
+    success_criteria:
+      - follow-up evidence is classified against the registered objective
+    required_refs:
+      - procedures/research-orchestrator/references/critic-contract.md

@@ -1,0 +1,5354 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_nickel_foam",
+        "type": "chemical",
+        "name": "Nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "formula": "Ni",
+        "properties": {
+          "purity": {
+            "value": 99.8,
+            "unit": "%"
+          },
+          "thickness": {
+            "value": 1.5,
+            "unit": "mm"
+          },
+          "aperture_size": {
+            "value": "0.2-0.6",
+            "unit": "mm"
+          }
+        }
+      },
+      {
+        "id": "chem_acetone",
+        "type": "chemical",
+        "name": "acetone",
+        "formula": "C3H6O",
+        "properties": {}
+      },
+      {
+        "id": "chem_hcl",
+        "type": "chemical",
+        "name": "hydrochloric acid",
+        "aliases": [
+          "HCl"
+        ],
+        "formula": "HCl",
+        "properties": {
+          "concentration": {
+            "value": 3,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "chem_thiourea",
+        "type": "chemical",
+        "name": "thiourea",
+        "formula": "CH4N2S",
+        "properties": {}
+      },
+      {
+        "id": "chem_nickel_acetate",
+        "type": "chemical",
+        "name": "nickel acetate",
+        "aliases": [
+          "Ni(CH3COO)2"
+        ],
+        "formula": "Ni(CH3COO)2",
+        "properties": {}
+      },
+      {
+        "id": "chem_ni3s2_nf",
+        "type": "chemical",
+        "name": "Ni3S2/NF",
+        "aliases": [
+          "Ni3S2"
+        ],
+        "formula": "Ni3S2",
+        "properties": {
+          "nanowire_length": {
+            "value": 2,
+            "unit": "um"
+          },
+          "lattice_spacing_202": {
+            "value": 0.203,
+            "unit": "nm"
+          },
+          "water_contact_angle": {
+            "value": "154±0.7",
+            "unit": "°"
+          },
+          "bubble_contact_angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "surface_free_energy": {
+            "value": 1.73,
+            "unit": "mN/m"
+          }
+        }
+      },
+      {
+        "id": "chem_ni3s2_ni_ii_tc",
+        "type": "chemical",
+        "name": "Ni3S2@Ni(II)-TC",
+        "aliases": [
+          "Ni3S2@Ni(II) -TC"
+        ],
+        "formula": "Ni3S2@Ni(thiourea)4Ac2",
+        "properties": {
+          "amorphous_shell_thickness": {
+            "value": 3.0,
+            "unit": "nm"
+          },
+          "lattice_spacing_110": {
+            "value": 0.285,
+            "unit": "nm"
+          },
+          "water_contact_angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "bubble_contact_angle": {
+            "value": "153±1.7",
+            "unit": "°"
+          },
+          "bubble_adhesion_force": {
+            "value": "1.2±0.1",
+            "unit": "μN"
+          },
+          "double-layer_capacitance": {
+            "value": 31.5,
+            "unit": "mF cm^-2"
+          },
+          "surface_free_energy": {
+            "value": 76.0,
+            "unit": "mN/m"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "NF Cleaning",
+        "procedure": "A size of 1 cm × 3 cm NF has purity 99.8% thickness 1.5 mm and aperture size 0.2-0.6 mm, was ultrasonic cleaned with 15 mL of acetone first, then washed with 15 mL of 3 M HCl solution for 10 min, and finally rinsed with water and ethanol several times.",
+        "method": "Ultrasonic Cleaning",
+        "conditions": {
+          "HCl_time": {
+            "value": 10,
+            "unit": "min"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Acetone Cleaning",
+            "method": "Ultrasonic Cleaning",
+            "conditions": {},
+            "procedure_snippet": "ultrasonic cleaned with 15 mL of acetone first"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "HCl Washing",
+            "method": "Acid Washing",
+            "conditions": {
+              "time": {
+                "value": 10,
+                "unit": "min"
+              }
+            },
+            "procedure_snippet": "washed with 15 mL of 3 M HCl solution for 10 min"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Rinsing",
+            "method": "Solvent Rinsing",
+            "conditions": {},
+            "procedure_snippet": "rinsed with water and ethanol several times"
+          }
+        ],
+        "source_text": "NF has purity 99.8% thickness 1.5 mm and aperture size 0.2-0.6 mm. A size of 1 cm × 3 cm, was ultrasonic cleaned with 15 mL of acetone first, then washed with 15 mL of 3 M HCl solution for 10 min, and finally rinsed with water and ethanol several times."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Hydrothermal Ni3S2/NF Synthesis",
+        "procedure": "The cleaned NF was immersed in a 20 mL stainless steel autoclave lined with polytetrafluoroethylene, which was filled with 10 mL of 0.11 g thiourea aqueous solution. Then the autoclave was sealed and keep it at 150°C for 5 h. The obtained product was washed several times with ethanol and then vacuum-dried at room temperature for 12 h to give the Ni3S2/NF.",
+        "method": "Hydrothermal Sulfidation",
+        "conditions": {
+          "temperature": {
+            "value": 150,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 5,
+            "unit": "h"
+          },
+          "drying_time": {
+            "value": 12,
+            "unit": "h"
+          },
+          "autoclave_volume": {
+            "value": 20,
+            "unit": "mL"
+          },
+          "solution_volume": {
+            "value": 10,
+            "unit": "mL"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Hydrothermal Reaction",
+            "method": "Hydrothermal Synthesis",
+            "conditions": {
+              "temperature": {
+                "value": 150,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 5,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "autoclave was sealed and keep it at 150°C for 5 h"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Ethanol Washing",
+            "method": "Solvent Washing",
+            "conditions": {},
+            "procedure_snippet": "washed several times with ethanol"
+          },
+          {
+            "id": "unit_op_2.3",
+            "name": "Vacuum Drying",
+            "method": "Vacuum Drying",
+            "conditions": {
+              "time": {
+                "value": 12,
+                "unit": "h"
+              },
+              "temperature": {
+                "value": "room temperature",
+                "unit": ""
+              }
+            },
+            "procedure_snippet": "vacuum-dried at room temperature for 12 h"
+          }
+        ],
+        "source_text": "2.2. Synthetic Ni3S2/NF electrode ... The cleaned NF was immersed in a 20 mL stainless steel autoclave lined with polytetrafluoroethylene, which was filled with 10 mL of 0.11 g thiourea aqueous solution. Then the autoclave was sealed and keep it at 150°C for 5 h. The obtained product was washed several times with ethanol and then vacuum-dried at room temperature for 12 h to give the Ni3S2/NF."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Hydrothermal Ni3S2@Ni(II)-TC Synthesis",
+        "procedure": "The cleaned NF was immersed in a 20 mL stainless steel autoclave lined with polytetrafluoroethylene, which was filled with 10 mL of 0.11 g thiourea aqueous solution and 0.24 g Ni(CH3COO)2. The autoclave was sealed and maintained at 150°C for 5 h. The obtained product was washed several times with ethanol and then vacuum-dried at room temperature for 12 h to give the Ni3S2@Ni(II)-TC material.",
+        "method": "Hydrothermal Amorphous Coating",
+        "conditions": {
+          "temperature": {
+            "value": 150,
+            "unit": "°C"
+          },
+          "time": {
+            "value": 5,
+            "unit": "h"
+          },
+          "drying_time": {
+            "value": 12,
+            "unit": "h"
+          },
+          "autoclave_volume": {
+            "value": 20,
+            "unit": "mL"
+          },
+          "solution_volume": {
+            "value": 10,
+            "unit": "mL"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_3.1",
+            "name": "Hydrothermal Reaction",
+            "method": "Hydrothermal Synthesis",
+            "conditions": {
+              "temperature": {
+                "value": 150,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 5,
+                "unit": "h"
+              }
+            },
+            "procedure_snippet": "autoclave was sealed and maintained at 150°C for 5 h"
+          },
+          {
+            "id": "unit_op_3.2",
+            "name": "Ethanol Washing",
+            "method": "Solvent Washing",
+            "conditions": {},
+            "procedure_snippet": "washed several times with ethanol"
+          },
+          {
+            "id": "unit_op_3.3",
+            "name": "Vacuum Drying",
+            "method": "Vacuum Drying",
+            "conditions": {
+              "time": {
+                "value": 12,
+                "unit": "h"
+              },
+              "temperature": {
+                "value": "room temperature",
+                "unit": ""
+              }
+            },
+            "procedure_snippet": "vacuum-dried at room temperature for 12 h"
+          }
+        ],
+        "source_text": "2.3. Synthesis of Ni3S2@Ni(II)-TC ... The cleaned NF was immersed in a 20 mL stainless steel autoclave lined with polytetrafluoroethylene, which was filled with 10 mL of 0.11 g thiourea aqueous solution and 0.24 g Ni(CH3COO)2. The autoclave was sealed and maintained at 150°C for 5 h. The obtained product was washed several times with ethanol and then vacuum-dried at room temperature for 12 h to give the Ni3S2@Ni(II)-TC material."
+      },
+      {
+        "id": "chem_Ni3S2_NF",
+        "type": "chemical",
+        "name": "Ni₃S₂/NF",
+        "aliases": [
+          "Ni₃S₂"
+        ],
+        "formula": "Ni₃S₂",
+        "properties": {
+          "nanowire_length": {
+            "value": 2,
+            "unit": "um"
+          },
+          "lattice_spacing": {
+            "value": 0.203,
+            "unit": "nm"
+          },
+          "water_contact_angle": {
+            "value": 154,
+            "unit": "°"
+          },
+          "bubble_contact_angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "bubble_adhesion_force": {
+            "value": 68.2,
+            "unit": "μN"
+          }
+        },
+        "related_images": [
+          "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg",
+          "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg",
+          "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg",
+          "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg",
+          "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg",
+          "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg",
+          "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg",
+          "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg",
+          "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg",
+          "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg",
+          "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg",
+          "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg",
+          "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg",
+          "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg",
+          "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg",
+          "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg",
+          "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg",
+          "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg",
+          "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg",
+          "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂/NF",
+            "properties": {
+              "description": "Nickel sulfide on nickel foam",
+              "extracted_from_image": "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg"
+            },
+            "source_image_file": "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni3S2/NF",
+            "properties": {
+              "description": "Nickel sulfide on nickel foam",
+              "extracted_from_image": "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg"
+            },
+            "source_image_file": "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Top Block",
+            "properties": {
+              "shape": "rectangular",
+              "color": "dark gray",
+              "position": "top",
+              "extracted_from_image": "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg"
+            },
+            "source_image_file": "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂/NF",
+            "properties": {
+              "description": "Nickel sulfide on nickel foam",
+              "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+            },
+            "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Spherical Particle",
+            "properties": {
+              "description": "White spherical object positioned on top hat brim",
+              "extracted_from_image": "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg"
+            },
+            "source_image_file": "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂",
+            "properties": {
+              "formula": "Ni₃S₂",
+              "description": "Electrode material",
+              "extracted_from_image": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+            },
+            "source_image_file": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂ Electrode",
+            "properties": {
+              "description": "Working electrode (black deposit in beaker)",
+              "extracted_from_image": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+            },
+            "source_image_file": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiS₃NF",
+            "properties": {
+              "description": "Nickel sulfide nitrogen fluorine material",
+              "extracted_from_image": "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg"
+            },
+            "source_image_file": "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni(II)-TC",
+            "properties": {
+              "description": "Nickel(II) complex with TC ligand",
+              "extracted_from_image": "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg"
+            },
+            "source_image_file": "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni3S2/NF",
+            "properties": {
+              "description": "Nickel sulfide on nickel foam substrate",
+              "extracted_from_image": "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg"
+            },
+            "source_image_file": "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg"
+          },
+          {
+            "type": "process",
+            "name": "growth",
+            "properties": {
+              "stage": "1",
+              "extracted_from_image": "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg"
+            },
+            "source_image_file": "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Compound 2",
+            "properties": {
+              "label": "2",
+              "extracted_from_image": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+            },
+            "source_image_file": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+          },
+          {
+            "type": "component",
+            "name": "Cathode",
+            "properties": {
+              "description": "Electrode in electrochemical setup",
+              "extracted_from_image": "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg"
+            },
+            "source_image_file": "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Dense Layer",
+            "properties": {
+              "description": "Bottom region showing compact, granular structure",
+              "color": "dark",
+              "extracted_from_image": "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg"
+            },
+            "source_image_file": "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Top Hat Structure",
+            "properties": {
+              "description": "Cylindrical top hat-like structure with black fill",
+              "shape": "cylinder",
+              "color": "black",
+              "extracted_from_image": "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg"
+            },
+            "source_image_file": "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "OER Curve",
+            "properties": {
+              "color": "orange",
+              "symbol": "●",
+              "current_density_range": "-20 to 40 mA/cm²",
+              "stability": "stable plateau",
+              "extracted_from_image": "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg"
+            },
+            "source_image_file": "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image Left",
+            "properties": {
+              "description": "High-magnification SEM showing nanoscale roughness and papillae-like structures",
+              "scale": "nanometer scale",
+              "extracted_from_image": "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg"
+            },
+            "source_image_file": "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni-NTC",
+            "properties": {
+              "description": "Nickel-Nitrogen doped Transition metal Carbide",
+              "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+            },
+            "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+          },
+          {
+            "type": "plane",
+            "name": "(202)",
+            "properties": {
+              "miller_index": "(202)",
+              "extracted_from_image": "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg"
+            },
+            "source_image_file": "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂/NF",
+            "properties": {
+              "description": "Nickel sulfide on nickel foam",
+              "extracted_from_image": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+            },
+            "source_image_file": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂",
+            "properties": {
+              "role": "core",
+              "extracted_from_image": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+            },
+            "source_image_file": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ni3S2_NiII_TC",
+        "type": "chemical",
+        "name": "Ni₃S₂@Ni(II)-TC",
+        "aliases": [
+          "Ni₃S₂@Ni(II) -TC"
+        ],
+        "formula": "Ni₃S₂@Ni(thiourea)₄Ac₂",
+        "properties": {
+          "nanowire_length": {
+            "value": 2,
+            "unit": "um"
+          },
+          "amorphous_shell_thickness": {
+            "value": 3.0,
+            "unit": "nm"
+          },
+          "lattice_spacing": {
+            "value": 0.285,
+            "unit": "nm"
+          },
+          "water_contact_angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "bubble_contact_angle": {
+            "value": 153,
+            "unit": "°"
+          },
+          "bubble_adhesion_force": {
+            "value": 1.2,
+            "unit": "μN"
+          },
+          "surface_free_energy": {
+            "value": 76.0,
+            "unit": "mN/m"
+          }
+        },
+        "related_images": [
+          "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg",
+          "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg",
+          "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg",
+          "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg",
+          "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg",
+          "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg",
+          "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg",
+          "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg",
+          "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg",
+          "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg",
+          "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg",
+          "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg",
+          "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg",
+          "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg",
+          "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg",
+          "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg",
+          "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg",
+          "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg",
+          "c69085d2cd12245efad9042fe8715d8d07ae3a9b54ee5e2a99e36995450639f6.jpg",
+          "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg",
+          "dc86e05a2378908732a0e9549c88574fa1b49d61dffa5d40d593ea37813537ff.jpg",
+          "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg",
+          "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg",
+          "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg",
+          "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂@Ni(OH)₂-TC",
+            "properties": {
+              "description": "Core-shell nickel sulfide hydroxide on TC substrate",
+              "extracted_from_image": "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg"
+            },
+            "source_image_file": "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni3S2@Ni(II)-TC",
+            "properties": {
+              "description": "Nickel sulfide coated with Ni(II)-TC complex",
+              "extracted_from_image": "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg"
+            },
+            "source_image_file": "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Advancancin",
+            "properties": {
+              "description": "Novel chemical entity or compound",
+              "extracted_from_image": "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg"
+            },
+            "source_image_file": "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂@Ni(II)-TC",
+            "properties": {
+              "description": "Ni₃S₂ core-shell with Ni(II)-TC",
+              "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+            },
+            "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Top Hat Structure",
+            "properties": {
+              "description": "Cylindrical top with brim-like base, dark shaded top portion",
+              "extracted_from_image": "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg"
+            },
+            "source_image_file": "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiS₂@Ni(II)-TC",
+            "properties": {
+              "description": "Core-shell nanoparticles on substrate",
+              "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+            },
+            "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂@FeS-CoS₂",
+            "properties": {
+              "description": "Nickel sulfide iron sulfide cobalt sulfide composite",
+              "extracted_from_image": "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg"
+            },
+            "source_image_file": "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂",
+            "properties": {
+              "formula": "Ni₃S₂",
+              "extracted_from_image": "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg"
+            },
+            "source_image_file": "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiS@Ni(II)-TC",
+            "properties": {
+              "description": "Nickel sulfide core-shell material with Ni(II)-TC framework",
+              "extracted_from_image": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+            },
+            "source_image_file": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni3S2@Ni(II)-TC",
+            "properties": {
+              "description": "Nickel sulfide variant with Ni(II)-TC framework",
+              "extracted_from_image": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+            },
+            "source_image_file": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni3S2@Ni(II)-TC",
+            "properties": {
+              "description": "Nickel sulfide core with Ni(II)-TC shell material",
+              "extracted_from_image": "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg"
+            },
+            "source_image_file": "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiS2",
+            "properties": {
+              "formula": "NiS₂",
+              "extracted_from_image": "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg"
+            },
+            "source_image_file": "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Compound 1",
+            "properties": {
+              "label": "1",
+              "extracted_from_image": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+            },
+            "source_image_file": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "O2",
+            "properties": {
+              "formula": "O₂",
+              "description": "Oxygen gas",
+              "extracted_from_image": "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg"
+            },
+            "source_image_file": "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanofibrous Material",
+            "properties": {
+              "description": "Left region showing fibrous, porous nanostructure",
+              "scale": "nanoscale",
+              "extracted_from_image": "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg"
+            },
+            "source_image_file": "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg"
+          },
+          {
+            "type": "figure_label",
+            "name": "g",
+            "properties": {
+              "label": "g",
+              "extracted_from_image": "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg"
+            },
+            "source_image_file": "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Chronopotentiometry Plot",
+            "properties": {
+              "label": "h",
+              "description": "Long-term stability test showing current density vs time",
+              "extracted_from_image": "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg"
+            },
+            "source_image_file": "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni3S2@Ni(II)-TC",
+            "properties": {
+              "description": "Ni3S2 coated with Ni(II)-TC complex",
+              "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+            },
+            "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Superhydrophobic Surface",
+            "properties": {
+              "description": "Rough nanostructured surface with hierarchical texture",
+              "extracted_from_image": "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg"
+            },
+            "source_image_file": "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni",
+            "properties": {
+              "description": "Nickel element or nickel-based material",
+              "symbol": "Ni",
+              "extracted_from_image": "c69085d2cd12245efad9042fe8715d8d07ae3a9b54ee5e2a99e36995450639f6.jpg"
+            },
+            "source_image_file": "c69085d2cd12245efad9042fe8715d8d07ae3a9b54ee5e2a99e36995450639f6.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni3S2",
+            "properties": {
+              "formula": "Ni₃S₂",
+              "description": "Nickel sulfide material studied in the experiment",
+              "extracted_from_image": "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg"
+            },
+            "source_image_file": "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni3S2@Ni(II)-TC",
+            "properties": {
+              "description": "Nickel sulfide core with Ni(II)-TC shell material",
+              "extracted_from_image": "dc86e05a2378908732a0e9549c88574fa1b49d61dffa5d40d593ea37813537ff.jpg"
+            },
+            "source_image_file": "dc86e05a2378908732a0e9549c88574fa1b49d61dffa5d40d593ea37813537ff.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiS₂",
+            "properties": {
+              "formula": "NiS₂",
+              "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+            },
+            "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Crystalline Material",
+            "properties": {
+              "description": "Material exhibiting lattice fringes in HRTEM image",
+              "extracted_from_image": "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg"
+            },
+            "source_image_file": "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂@Ni(OH)₂-TC",
+            "properties": {
+              "description": "Nickel sulfide core with nickel hydroxide shell on TC substrate",
+              "extracted_from_image": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+            },
+            "source_image_file": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni₃S₂@Ni(III)-TC",
+            "properties": {
+              "formula": "Ni₃S₂@Ni(III)-TC",
+              "description": "Core-shell structured material with Ni₃S₂ core and Ni(III)-TC shell",
+              "extracted_from_image": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+            },
+            "source_image_file": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "NF",
+        "aliases": [
+          "nickel foam",
+          "bare NF"
+        ],
+        "formula": "Ni",
+        "related_images": [
+          "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg",
+          "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg",
+          "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg",
+          "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg",
+          "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg",
+          "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg",
+          "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg",
+          "5ecd75d00acda4281e73e6d8b81644e461d2be820a0fdc7b7a00e9bc99483c39.jpg",
+          "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg",
+          "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg",
+          "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg",
+          "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg",
+          "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg",
+          "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg",
+          "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg",
+          "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg",
+          "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg",
+          "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg",
+          "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg",
+          "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "NF",
+            "properties": {
+              "description": "Nickel foam",
+              "extracted_from_image": "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg"
+            },
+            "source_image_file": "07f41b01aacda9bd740a811bae67323f22f521cbe53307749596418abcf1e7c1.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF",
+            "properties": {
+              "description": "Nickel foam",
+              "extracted_from_image": "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg"
+            },
+            "source_image_file": "091158b5135cf4d380b547828e214ac0507ff1e24c64606875b63105788c93e6.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Central Sphere",
+            "properties": {
+              "shape": "spherical",
+              "color": "white/light gray",
+              "position": "center",
+              "extracted_from_image": "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg"
+            },
+            "source_image_file": "09439e7f0342d52d070ec88e9561a2257b62f38d7c9a962f91bd581ecc01f62e.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Sawtooth Substrate",
+            "properties": {
+              "description": "Periodic triangular/prism-shaped surface features on flat substrate",
+              "extracted_from_image": "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg"
+            },
+            "source_image_file": "0eb3e3027bad2f7b48abb5f85965aca34ca08591442a7b5ef13839067cda4bce.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiS-MoS₂",
+            "properties": {
+              "description": "Nickel molybdenum sulfide",
+              "extracted_from_image": "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg"
+            },
+            "source_image_file": "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Ni₃S₂@Ni(II)-TC",
+            "properties": {
+              "description": "Core-shell or composite material",
+              "extracted_from_image": "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg"
+            },
+            "source_image_file": "204a020d8cf91b653636b7bf15d432b3c4ff40969b6cfa040b7cdede1f69f1ca.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF",
+            "properties": {
+              "description": "Nickel foam substrate",
+              "extracted_from_image": "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg"
+            },
+            "source_image_file": "46e6db070015adf2d0ca9ecf5c56fa2edc2a8a36341a7e0a4780a33b8d492de4.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF",
+            "properties": {
+              "description": "Nickel foam reference",
+              "extracted_from_image": "5ecd75d00acda4281e73e6d8b81644e461d2be820a0fdc7b7a00e9bc99483c39.jpg"
+            },
+            "source_image_file": "5ecd75d00acda4281e73e6d8b81644e461d2be820a0fdc7b7a00e9bc99483c39.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "NiS2 with spines",
+            "properties": {
+              "description": "small droplet with spines",
+              "extracted_from_image": "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg"
+            },
+            "source_image_file": "64c54e779ce1108f5a061ed61539ca8cc6c12412f8ef71627adb47f977fa0f4e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Compound 3",
+            "properties": {
+              "label": "3",
+              "extracted_from_image": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+            },
+            "source_image_file": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+          },
+          {
+            "type": "phenomenon",
+            "name": "Gas Bubbles",
+            "properties": {
+              "description": "Visible gas evolution from electrode surface",
+              "extracted_from_image": "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg"
+            },
+            "source_image_file": "91ff8e8400f00c72ea6f2d8ced9618feb92aa2ca20eb762c8b3627a6b24d8cc7.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Thin Film",
+            "properties": {
+              "description": "Central cyan-colored layer between nanofiber and dense layer",
+              "color": "cyan",
+              "extracted_from_image": "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg"
+            },
+            "source_image_file": "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg"
+          },
+          {
+            "type": "structure",
+            "name": "Bulb Structure",
+            "properties": {
+              "description": "Ovoid bulb shape with white fill, resembling an incandescent light bulb",
+              "shape": "ovoid",
+              "color": "white",
+              "extracted_from_image": "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg"
+            },
+            "source_image_file": "9df4181bd2e1c2eb5ffde31f5e3fe0790221d61a96f261b9fc08c6fe75258e8b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "HER Curve",
+            "properties": {
+              "color": "purple",
+              "symbol": "●",
+              "current_density_range": "-40 to 0 mA/cm²",
+              "stability": "stable negative current",
+              "extracted_from_image": "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg"
+            },
+            "source_image_file": "a4e4f714af93a5b973dea51295f8e44ab6847626ecf4ab7ed8f21f3ccfd6efbf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF",
+            "properties": {
+              "description": "Nanoflake support",
+              "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+            },
+            "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image Bottom",
+            "properties": {
+              "description": "Lower-magnification SEM showing larger-scale surface texture and morphology",
+              "scale": "microscale",
+              "extracted_from_image": "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg"
+            },
+            "source_image_file": "c2d93635aea2c0bec3c48806e084cf7fe4bfce5b67c5c360c5bce1199ef4d444.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NiS₂@Ni-NTC",
+            "properties": {
+              "description": "Composite material",
+              "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+            },
+            "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "HRTEM Image",
+            "properties": {
+              "type": "High-Resolution Transmission Electron Microscopy",
+              "features": "lattice fringes with yellow arrows",
+              "extracted_from_image": "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg"
+            },
+            "source_image_file": "e0df1a5961014d8e0dbd9f9604ed1bd169473e17d3ab0de1dddf3bbf99d154ab.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "NF",
+            "properties": {
+              "description": "Nickel foam",
+              "extracted_from_image": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+            },
+            "source_image_file": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni(III)-TC",
+            "properties": {
+              "role": "shell",
+              "oxidation_state": "Ni(III)",
+              "extracted_from_image": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+            },
+            "source_image_file": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support",
+          "size": "1 cm × 3 cm"
+        }
+      },
+      {
+        "id": "edge_input_chem_acetone_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_acetone",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent",
+          "volume": "15 mL"
+        }
+      },
+      {
+        "id": "edge_input_chem_hcl_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_hcl",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "etchant",
+          "volume": "15 mL"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_nickel_foam",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_nickel_foam",
+        "properties": {
+          "form": "cleaned"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support",
+          "state": "cleaned"
+        }
+      },
+      {
+        "id": "edge_input_chem_thiourea_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_thiourea",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "sulfur_source",
+          "mass": 0.11,
+          "unit": "g",
+          "volume": "10 mL",
+          "state": "aqueous solution"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_ni3s2_nf",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_ni3s2_nf",
+        "properties": {
+          "form": "nanowire arrays"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "support",
+          "state": "cleaned"
+        }
+      },
+      {
+        "id": "edge_input_chem_thiourea_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_thiourea",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "complexing_agent",
+          "mass": 0.11,
+          "unit": "g",
+          "volume": "10 mL",
+          "state": "aqueous solution"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_acetate_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_acetate",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "Ni2+_source",
+          "mass": 0.24,
+          "unit": "g"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_ni3s2_ni_ii_tc",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_ni3s2_ni_ii_tc",
+        "properties": {
+          "form": "nanowire arrays with amorphous coating"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Ni3S2_NiII_TC",
+      "chem_Ni3S2_NF",
+      "chem_NF"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Ni3S2_NF",
+        "type": "chemical",
+        "name": "Ni₃S₂/NF",
+        "aliases": [
+          "Ni₃S₂",
+          "Ni₃S₂/NF electrode"
+        ],
+        "formula": "Ni₃S₂"
+      },
+      {
+        "id": "chem_Ni3S2_NiII_TC",
+        "type": "chemical",
+        "name": "Ni₃S₂@Ni(II)-TC",
+        "aliases": [
+          "Ni₃S₂@Ni(II)-TC electrode",
+          "superwettable Ni₃S₂@Ni(II)-TC"
+        ],
+        "formula": "Ni₃S₂@Ni(II)-TC"
+      },
+      {
+        "id": "chem_NF",
+        "type": "chemical",
+        "name": "NF",
+        "aliases": [
+          "nickel foam",
+          "bare NF"
+        ],
+        "formula": "Ni"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NiII_TC",
+        "description": "OER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 186,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 55,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "Ni₃S₂@Ni(II)-TC showed the lowest overpotential of 186 mV at a current density of 10 mA cm⁻² ... Tafel slopes of Ni₃S₂@Ni(II)-TC ... were 55 mV dec⁻¹"
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NiII_TC",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 166,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 130,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "Ni₃S₂@Ni(II)-TC only needed an overpotential of 166 mV to achieve 10 mA cm⁻² ... The Tafel slope of the Ni₃S₂@Ni(II)-TC was approximately 130 mV dec⁻¹"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NiII_TC",
+        "description": "Overall water splitting Ni₃S₂@Ni(II)-TC||Ni₃S₂@Ni(II)-TC",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "anode": {
+            "value": "Ni₃S₂@Ni(II)-TC",
+            "unit": "electrode"
+          },
+          "cathode": {
+            "value": "Ni₃S₂@Ni(II)-TC",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_10_mA_cm²": {
+            "value": 1.53,
+            "unit": "V"
+          },
+          "stability": {
+            "value": "20 h without obvious decay",
+            "unit": "chronoamperometry at 10 mA/cm²"
+          }
+        },
+        "source_text": "Ni₃S₂@Ni(II)-TC||Ni₃S₂@Ni(II)-TC need the cell voltage of only 1.53 V to driving of 10 mA cm⁻², whereas 1.69 V and 1.98 V were required for Ni₃S₂/NF||Ni₃S₂/NF and NF||NF, respectively ... exhibited good stability over 20 h at 10 mA·cm⁻²"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NiII_TC",
+        "description": "Electrochemical impedance spectroscopy for charge transfer resistance",
+        "conditions_json": {
+          "technique": {
+            "value": "EIS",
+            "unit": "method"
+          },
+          "frequency_range": {
+            "value": "0.01-1000000",
+            "unit": "Hz"
+          },
+          "applied_potential": {
+            "value": "overpotential at 10 mA/cm²",
+            "unit": "V"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance_Rct": {
+            "value": 3.26,
+            "unit": "Ω"
+          },
+          "series_resistance_Rs": {
+            "value": 1.58,
+            "unit": "Ω"
+          }
+        },
+        "source_text": "Ni₃S₂@Ni(II)-TC displays a R_ct of 3.26 Ω ... small Rs of 1.58 Ω"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NiII_TC",
+        "description": "HER and OER stability testing at 10 mA/cm²",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER and OER stability",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "current_density": {
+            "value": 10,
+            "unit": "mA/cm²"
+          },
+          "duration": {
+            "value": ">24",
+            "unit": "h"
+          }
+        },
+        "results_json": {
+          "stability": {
+            "value": "nearly constant",
+            "unit": ">24 h at 10 mA/cm²"
+          }
+        },
+        "source_text": "The HER and OER at 10 mA cm⁻² current density of Ni₃S₂@Ni(II)-TC remained nearly constant after over 24 h tests"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NF",
+        "description": "OER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 267,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 122,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "Ni₃S₂/NF (267 mV) ... Tafel slopes of Ni₃S₂/NF ... were 122 mV dec⁻¹"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NF",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 262,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 166,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "Ni₃S₂/NF (262 mV) ... Tafel slope of the Ni₃S₂/NF (166 mV dec⁻¹)"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_NF",
+        "description": "OER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 399,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 117,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "bare NF (399 mV) ... Tafel slopes of ... NF electrode were 117 mV dec⁻¹"
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_NF",
+        "description": "HER performance in 1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "graphite rod",
+            "unit": "electrode"
+          },
+          "working_electrode_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA_cm²": {
+            "value": 288,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 218,
+            "unit": "mV/dec"
+          }
+        },
+        "source_text": "NF (288 mV) ... NF (218 mV dec⁻¹)"
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_Ni3S2_NF",
+        "description": "Overall water splitting in two-electrode configuration",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "anode": {
+            "value": "Ni₃S₂/NF",
+            "unit": "electrode"
+          },
+          "cathode": {
+            "value": "Ni₃S₂/NF",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_10_mA_cm²": {
+            "value": 1.69,
+            "unit": "V"
+          }
+        },
+        "source_text": "1.69 V ... were required for Ni₃S₂/NF||Ni₃S₂/NF"
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_NF",
+        "description": "Overall water splitting in two-electrode configuration",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "overall water splitting",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "two-electrode",
+            "unit": "setup"
+          },
+          "anode": {
+            "value": "NF",
+            "unit": "electrode"
+          },
+          "cathode": {
+            "value": "NF",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "cell_voltage_at_10_mA_cm²": {
+            "value": 1.98,
+            "unit": "V"
+          }
+        },
+        "source_text": "1.98 V were required for NF||NF"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Ni3S2_NiII_TC_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni3S2_NiII_TC_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni3S2_NiII_TC_test_3",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni3S2_NiII_TC_test_4",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni3S2_NF_test_6",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni3S2_NF_test_7",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_test_8",
+        "type": "tested_in",
+        "source_id": "chem_NF",
+        "target_id": "test_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_test_9",
+        "type": "tested_in",
+        "source_id": "chem_NF",
+        "target_id": "test_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni3S2_NF_test_10",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "test_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NF_test_11",
+        "type": "tested_in",
+        "source_id": "chem_NF",
+        "target_id": "test_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni3S2_NiII_TC_test_5",
+        "type": "tested_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "test_5",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Ni3S2_NF",
+        "type": "chemical",
+        "name": "Ni₃S₂/NF",
+        "aliases": [
+          "Ni₃S₂"
+        ],
+        "formula": "Ni₃S₂",
+        "properties": {
+          "nanowire_length": {
+            "value": 2,
+            "unit": "um"
+          },
+          "lattice_spacing": {
+            "value": 0.203,
+            "unit": "nm"
+          },
+          "water_contact_angle": {
+            "value": 154,
+            "unit": "°"
+          },
+          "bubble_contact_angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "bubble_adhesion_force": {
+            "value": 68.2,
+            "unit": "μN"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni3S2_NiII_TC",
+        "type": "chemical",
+        "name": "Ni₃S₂@Ni(II)-TC",
+        "aliases": [
+          "Ni₃S₂@Ni(II) -TC"
+        ],
+        "formula": "Ni₃S₂@Ni(thiourea)₄Ac₂",
+        "properties": {
+          "nanowire_length": {
+            "value": 2,
+            "unit": "um"
+          },
+          "amorphous_shell_thickness": {
+            "value": 3.0,
+            "unit": "nm"
+          },
+          "lattice_spacing": {
+            "value": 0.285,
+            "unit": "nm"
+          },
+          "water_contact_angle": {
+            "value": 0,
+            "unit": "°"
+          },
+          "bubble_contact_angle": {
+            "value": 153,
+            "unit": "°"
+          },
+          "bubble_adhesion_force": {
+            "value": 1.2,
+            "unit": "μN"
+          },
+          "surface_free_energy": {
+            "value": 76.0,
+            "unit": "mN/m"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "data_reported": true,
+        "characterization_summary": "Ni₃S₂/NF shows nanowire arrays with length of about 2 μm. Ni₃S₂@Ni(II)-TC maintains nanowire structure unchanged.",
+        "evidence_snippet": "The as-prepared electrodes were nanowire arrays with the length of about 2 um (Fig. 1b and Fig. S2) ... still maintaining the nanowire structure unchanged (Fig. 1f)."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "data_reported": true,
+        "characterization_summary": "Ni₃S₂/NF shows lattice fringes with spacing of 0.203 nm indexing to (202) plane. Ni₃S₂@Ni(II)-TC shows 0.285 nm spacing corresponding to (110) plane of Ni₃S₂ with ~3.0 nm amorphous shell.",
+        "evidence_snippet": "which displayed highly ordered fringe with lattice spacing of 0.203 nm, indexing into (202) plane of Ni₃S₂ ... A thin amorphous shell with thickness of ∼3.0 nm grew on the surface of crystalline Ni₃S₂ (Fig. S7), which had clear lattice fringes in spacing of 0.285 nm, corresponding to (110) plane of Ni₃S₂ (Fig. 1g)."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "WCA",
+        "data_reported": true,
+        "characterization_summary": "Ni₃S₂/NF water contact angle 154±0.7° (superhydrophobic), bubble contact angle 0° (underwater superaerophilic). Ni₃S₂@Ni(II)-TC water contact angle 0° (superhydrophilic), bubble contact angle 153±1.7° (underwater superaerophobic).",
+        "evidence_snippet": "The contact angle (CA) for water on the surface of the Ni₃S₂ in the air was 154±0.7° (Fig. 1d displays as superhydrophobicity), whereas the bubble CA (BCA) on Ni₃S₂ nanowire array underwater was 0° (Fig. 1e means supraerophilicity) ... the Ni₃S₂@Ni(II)-TC possessed a superhydrophilic/ under-water supraeraphobic surface (CA: 0° and BCA: 153±1.7° ; Fig. 1h and Fig. 1i).",
+        "related_images": [
+          "3bb8b1d94cb86ee99c306fcb2168033b741a00a6a5cfe22b09360ab99ffcb21b.jpg",
+          "4507b6d2079af96ff8247b0bf5d0315baca2fc3cfb312a991a82411d1898c74a.jpg",
+          "9a017fee95dd2a99d2b5368e643990a4fd7431147a397bb40d5fa80d2f4c13f1.jpg",
+          "ba7bc82370b958138a55fb233ac00580ab20d0dbd0853e5df7640fcc89c6d6ea.jpg",
+          "ca8b02695b20affaf0f1da9485c7b8a3949a674b24c04ad0dbef1fd7414a830c.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Contact Angle Measurement",
+            "properties": {
+              "value": "114.2 ± 1.8°",
+              "unit": "degrees",
+              "interpretation": "Highly hydrophobic surface",
+              "extracted_from_image": "3bb8b1d94cb86ee99c306fcb2168033b741a00a6a5cfe22b09360ab99ffcb21b.jpg"
+            },
+            "source_image_file": "3bb8b1d94cb86ee99c306fcb2168033b741a00a6a5cfe22b09360ab99ffcb21b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Contact Angle = 0°",
+            "properties": {
+              "value": "0 degrees",
+              "measurement": "Contact angle measurement",
+              "interpretation": "Perfect wetting (superhydrophilic)",
+              "extracted_from_image": "4507b6d2079af96ff8247b0bf5d0315baca2fc3cfb312a991a82411d1898c74a.jpg"
+            },
+            "source_image_file": "4507b6d2079af96ff8247b0bf5d0315baca2fc3cfb312a991a82411d1898c74a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Contact Angle Measurement",
+            "properties": {
+              "value": "154 ± 0.7°",
+              "method": "static contact angle",
+              "implication": "superhydrophobic",
+              "extracted_from_image": "9a017fee95dd2a99d2b5368e643990a4fd7431147a397bb40d5fa80d2f4c13f1.jpg"
+            },
+            "source_image_file": "9a017fee95dd2a99d2b5368e643990a4fd7431147a397bb40d5fa80d2f4c13f1.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Contact Angle Measurement",
+            "properties": {
+              "value": "0°",
+              "interpretation": "superhydrophilic",
+              "extracted_from_image": "ba7bc82370b958138a55fb233ac00580ab20d0dbd0853e5df7640fcc89c6d6ea.jpg"
+            },
+            "source_image_file": "ba7bc82370b958138a55fb233ac00580ab20d0dbd0853e5df7640fcc89c6d6ea.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Contact Angle Measurement",
+            "properties": {
+              "value": "110.3 ± 1.6°",
+              "unit": "degrees",
+              "extracted_from_image": "ca8b02695b20affaf0f1da9485c7b8a3949a674b24c04ad0dbef1fd7414a830c.jpg"
+            },
+            "source_image_file": "ca8b02695b20affaf0f1da9485c7b8a3949a674b24c04ad0dbef1fd7414a830c.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "EDS",
+        "data_reported": true,
+        "characterization_summary": "Ni₃S₂@Ni(II)-TC elemental mapping shows Ni and S concentrated in nanowire core, C and N scattered on surface.",
+        "evidence_snippet": "The composition and distribution of the elements could be investigated by EDS mappings, where Ni and S were mainly concentrated in the core of the nanowire, while C and N were scattered on the surface of the nanowire (Fig. 1j)."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "XPS",
+        "data_reported": true,
+        "characterization_summary": "Ni₃S₂/NF: Ni 2p3/2 856.1 eV, Ni 2p1/2 873.5 eV (Ni²⁺); S 2p3/2 161.7 eV, S 2p1/2 163.4 eV (S²⁻). Ni₃S₂@Ni(II)-TC: Ni 2p peaks negatively shifted by 0.5 eV; new S 2p peaks at 161.3/163.8 eV (-C=S).",
+        "evidence_snippet": "For Ni₃S₂/NF, the S 2p3/2 and S 2p1/2 peaks appeared at 161.7 and 163.4 eV ... the Ni 2p3/2 and Ni 2p1/2 spin-orbits of Ni₃S₂@Ni(II)-TC were negatively shifted by 0.5 eV ... The new S 2p3/2 and S 2p1/2 spinor bits were appeared at 161.3 and 163.8 eV, proving the existence of the -C=S group.",
+        "related_images": [
+          "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XPS Ni 2p spectrum (Ni₃S₂/NF)",
+            "properties": {
+              "peaks": [
+                {
+                  "name": "2p₁/₂ Sat.1",
+                  "color": "green"
+                },
+                {
+                  "name": "2p₁/₂ Sat.2",
+                  "color": "orange"
+                },
+                {
+                  "name": "2p₃/₂ Sat.1",
+                  "color": "purple"
+                },
+                {
+                  "name": "2p₃/₂ Sat.2",
+                  "color": "pink"
+                },
+                {
+                  "name": "0+",
+                  "color": "cyan"
+                }
+              ],
+              "binding_energy_range": "850-885 eV",
+              "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+            },
+            "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Ni 2p spectrum (Ni₃S₂@Ni(II)-TC)",
+            "properties": {
+              "peaks": [
+                {
+                  "name": "2p₁/₂ Sat.1",
+                  "color": "green"
+                },
+                {
+                  "name": "2p₁/₂ Sat.2",
+                  "color": "yellow"
+                },
+                {
+                  "name": "2p₃/₂ Sat.1",
+                  "color": "purple"
+                },
+                {
+                  "name": "2p₃/₂ Sat.2",
+                  "color": "pink"
+                },
+                {
+                  "name": "0+",
+                  "color": "cyan"
+                }
+              ],
+              "binding_energy_range": "850-885 eV",
+              "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+            },
+            "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "bubble_adhesion_force",
+        "data_reported": true,
+        "characterization_summary": "Ni₃S₂/NF shows bubble adhesion force of 68.2±1.2 μN during receding process. Ni₃S₂@Ni(II)-TC shows 1.2±0.1 μN.",
+        "evidence_snippet": "In the case of Ni₃S₂/NF, high-speed camera captured an image of adsorption phenomenon with a large stretch force of 68.2±1.2 μN (Fig. 2c) ... an extremely small stretch force of 1.2±0.1 μN on the Ni₃S₂@Ni(II)-TC electrode (Fig. 2d and Video S2)."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "XRD",
+        "data_reported": true,
+        "characterization_summary": "Ni₃S₂ shows standard peaks (PDF#44-1418) with Ni(0) peaks (PDF#04-0450). Ni₃S₂@Ni(II)-TC shows no diffraction peaks for Ni²⁺-thiourea complex, indicating amorphous coating.",
+        "evidence_snippet": "In the XRD pattern (Fig. S3), except for the three peaks of metal Ni(0) (PDF#04-0450) and the standard peak of Ni₃S₂ (PDF#44-1418), the diffraction peak of the complex formed by Ni²⁺ and thiocarbamide was not found, which reflected the amorphous properties of the complexes."
+      },
+      {
+        "id": "c1",
+        "type": "circuit",
+        "name": "Equivalent Circuit",
+        "properties": {
+          "components": [
+            "Rs",
+            "Rct",
+            "Cdl"
+          ],
+          "extracted_from_image": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+        },
+        "source_image_file": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+      },
+      {
+        "id": "p1",
+        "type": "property",
+        "name": "3.2 Ω",
+        "properties": {
+          "description": "Charge transfer resistance for Ni₃S₂@Ni(OH)₂-TC",
+          "value": "3.2",
+          "unit": "Ω",
+          "extracted_from_image": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+        },
+        "source_image_file": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+      },
+      {
+        "id": "p2",
+        "type": "property",
+        "name": "9.44 Ω",
+        "properties": {
+          "description": "Charge transfer resistance for Ni₃S₂/NF",
+          "value": "9.44",
+          "unit": "Ω",
+          "extracted_from_image": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+        },
+        "source_image_file": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+      },
+      {
+        "id": "p3",
+        "type": "property",
+        "name": "28.28 Ω",
+        "properties": {
+          "description": "Charge transfer resistance for NF",
+          "value": "28.28",
+          "unit": "Ω",
+          "extracted_from_image": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+        },
+        "source_image_file": "fa585ad2d95b8bbcc81c45ce92d5776655cbc325f97cdb118848f5cc8ad504cf.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "characterization",
+        "name": "Advancing Adhesion Force",
+        "properties": {
+          "measurement": "force (μN)",
+          "behavior": "peaks at ~ -250 μN",
+          "extracted_from_image": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+        },
+        "source_image_file": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "characterization",
+        "name": "Receding Adhesion Force",
+        "properties": {
+          "measurement": "force (μN)",
+          "behavior": "peaks at ~ -150 μN",
+          "extracted_from_image": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+        },
+        "source_image_file": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "characterization",
+        "name": "Contact Angle Hysteresis Plot",
+        "properties": {
+          "x_axis": "Distance (mm), 0-2.0",
+          "y_axis": "Force (μN), -300 to 200",
+          "extracted_from_image": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+        },
+        "source_image_file": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+      },
+      {
+        "id": "peak_2p1_2_sat1_m1",
+        "type": "peak",
+        "name": "2p₁/₂ Sat.1 (Ni₃S₂/NF)",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+        },
+        "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+      },
+      {
+        "id": "peak_2p3_2_sat2_m1",
+        "type": "peak",
+        "name": "2p₃/₂ Sat.2 (Ni₃S₂/NF)",
+        "properties": {
+          "color": "pink",
+          "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+        },
+        "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+      },
+      {
+        "id": "peak_0plus_m1",
+        "type": "peak",
+        "name": "0+ (Ni₃S₂/NF)",
+        "properties": {
+          "color": "cyan",
+          "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+        },
+        "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+      },
+      {
+        "id": "peak_2p1_2_sat1_m2",
+        "type": "peak",
+        "name": "2p₁/₂ Sat.1 (Ni₃S₂@Ni(II)-TC)",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+        },
+        "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+      },
+      {
+        "id": "peak_2p3_2_sat2_m2",
+        "type": "peak",
+        "name": "2p₃/₂ Sat.2 (Ni₃S₂@Ni(II)-TC)",
+        "properties": {
+          "color": "pink",
+          "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+        },
+        "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+      },
+      {
+        "id": "peak_0plus_m2",
+        "type": "peak",
+        "name": "0+ (Ni₃S₂@Ni(II)-TC)",
+        "properties": {
+          "color": "cyan",
+          "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+        },
+        "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+      },
+      {
+        "id": "binding_energy_axis",
+        "type": "axis",
+        "name": "Binding Energy (eV)",
+        "properties": {
+          "range": [
+            850,
+            855,
+            860,
+            865,
+            870,
+            875,
+            880,
+            885
+          ],
+          "extracted_from_image": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+        },
+        "source_image_file": "0df0ebe9538e7428c0280f24cf64afefdeea208f679ae8b9617d578bef013043.jpg"
+      },
+      {
+        "id": "Ni3S2",
+        "type": "chemical",
+        "name": "Ni3S2",
+        "properties": {
+          "formula": "Ni₃S₂",
+          "description": "Nickel sulfide material",
+          "extracted_from_image": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+        },
+        "source_image_file": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+      },
+      {
+        "id": "Water",
+        "type": "chemical",
+        "name": "Water",
+        "properties": {
+          "description": "Liquid medium",
+          "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+        },
+        "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+      },
+      {
+        "id": "Nanoparticles",
+        "type": "structure",
+        "name": "NiS₂@Ni(II)-TC Nanoparticles",
+        "properties": {
+          "shape": "spherical",
+          "arrangement": "on sawtooth substrate",
+          "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+        },
+        "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+      },
+      {
+        "id": "SawtoothSubstrate",
+        "type": "structure",
+        "name": "Sawtooth Ni₃S₂ Substrate",
+        "properties": {
+          "pattern": "periodic triangular waves",
+          "material": "Ni₃S₂",
+          "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+        },
+        "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+      },
+      {
+        "id": "Bubble",
+        "type": "structure",
+        "name": "Bubble",
+        "properties": {
+          "location": "on Ni₃S₂ substrate",
+          "context": "detachment study",
+          "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+        },
+        "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+      },
+      {
+        "id": "Fa",
+        "type": "force",
+        "name": "F_a",
+        "properties": {
+          "description": "Attachment force (upward)",
+          "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+        },
+        "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+      },
+      {
+        "id": "Fb",
+        "type": "force",
+        "name": "F_b",
+        "properties": {
+          "description": "Buoyancy force (downward)",
+          "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+        },
+        "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+      },
+      {
+        "id": "Alpha",
+        "type": "angle",
+        "name": "α",
+        "properties": {
+          "description": "Contact angle",
+          "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+        },
+        "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+      },
+      {
+        "id": "Theta",
+        "type": "angle",
+        "name": "θ",
+        "properties": {
+          "description": "Angle in force diagram",
+          "extracted_from_image": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+        },
+        "source_image_file": "18c61d95c6d49bd90ee443ef558439477ea65c2a48a9977b4f7674075766e2d0.jpg"
+      },
+      {
+        "id": "koh",
+        "type": "chemical",
+        "name": "1.0 M KOH",
+        "properties": {
+          "formula": "KOH",
+          "concentration": "1.0 M",
+          "description": "Electrolyte solution",
+          "extracted_from_image": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+        },
+        "source_image_file": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+      },
+      {
+        "id": "electrode2",
+        "type": "chemical",
+        "name": "Counter Electrode",
+        "properties": {
+          "description": "White electrode in beaker",
+          "extracted_from_image": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+        },
+        "source_image_file": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+      },
+      {
+        "id": "setup",
+        "type": "characterization",
+        "name": "Electrochemical Setup",
+        "properties": {
+          "type": "Three-electrode system",
+          "components": [
+            "working electrode",
+            "counter electrode",
+            "reference electrode (implied)"
+          ],
+          "voltage": "1.9 V",
+          "current": "0.19 A",
+          "extracted_from_image": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+        },
+        "source_image_file": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+      },
+      {
+        "id": "power_supply",
+        "type": "instrument",
+        "name": "DC Power Supply",
+        "properties": {
+          "display": "1.9V, 0.19A",
+          "connections": "Two electrodes",
+          "extracted_from_image": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+        },
+        "source_image_file": "1d078bcb6f58b0b7bf2d24b793cc2d4c8516722e02ec1f57f3fb7ce3c02cd6a0.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "visualization",
+        "name": "Droplet Illustration",
+        "properties": {
+          "description": "Schematic droplet on surface showing advancing and receding contact angles",
+          "extracted_from_image": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+        },
+        "source_image_file": "ff567f0168059ba7ad9dd80fa00eb6fcf21ff5eec718d83d9accc41b8536d52f.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "process",
+        "name": "OER",
+        "properties": {
+          "description": "Oxygen Evolution Reaction",
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "property",
+        "name": "Superhydrophobicity",
+        "properties": {
+          "context": "HER electrode",
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "property",
+        "name": "Superhydrophilicity",
+        "properties": {
+          "context": "OER electrode",
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "property",
+        "name": "Rapid Gas Desorption",
+        "properties": {
+          "context": "HER",
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "property",
+        "name": "Rapid Proton Adsorption",
+        "properties": {
+          "context": "OER",
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "structure",
+        "name": "Ultrathin Amorphous Nanosheets",
+        "properties": {
+          "description": "NiS₂@Ni-NTC morphology",
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "component",
+        "name": "HER Electrode",
+        "properties": {
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "component",
+        "name": "OER Electrode",
+        "properties": {
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "environment",
+        "name": "Bubble Water",
+        "properties": {
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "environment",
+        "name": "Air",
+        "properties": {
+          "extracted_from_image": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+        },
+        "source_image_file": "dea4c50f8818a6389b3ee22bb15f83653d3edddcc7723e01ab7010abfa342e9b.jpg"
+      },
+      {
+        "id": "n18",
+        "type": "label",
+        "name": "This work",
+        "properties": {
+          "highlight": true,
+          "extracted_from_image": "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg"
+        },
+        "source_image_file": "1d7c21d2de1a5fa8dd60663eb463739591fea44e56987b53300db293114b413c.jpg"
+      },
+      {
+        "id": "216a2d99076672c4d3f4f5f995f6cfb9e59c7ba8f1725d2c658b64bfce2351e9_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "description": "Dark porous material structure",
+          "extracted_from_image": "216a2d99076672c4d3f4f5f995f6cfb9e59c7ba8f1725d2c658b64bfce2351e9.jpg"
+        },
+        "source_image_file": "216a2d99076672c4d3f4f5f995f6cfb9e59c7ba8f1725d2c658b64bfce2351e9.jpg"
+      },
+      {
+        "id": "h2",
+        "type": "chemical",
+        "name": "H₂",
+        "properties": {
+          "formula": "H₂",
+          "description": "Hydrogen gas produced",
+          "extracted_from_image": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73.jpg"
+        },
+        "source_image_file": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73.jpg"
+      },
+      {
+        "id": "gas_bubbles",
+        "type": "observation",
+        "name": "Gas Bubbles",
+        "properties": {
+          "description": "Bubbles indicated by arrows, likely H₂ gas evolution",
+          "extracted_from_image": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73.jpg"
+        },
+        "source_image_file": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73.jpg"
+      },
+      {
+        "id": "bubble_radius",
+        "type": "measurement",
+        "name": "R = 0.64 mm",
+        "properties": {
+          "value": "0.64 mm",
+          "unit": "mm",
+          "description": "Radius of gas bubble",
+          "extracted_from_image": "216a2d99076672c4d3f4f5f995f6cfb9e59c7ba8f1725d2c658b64bfce2351e9.jpg"
+        },
+        "source_image_file": "216a2d99076672c4d3f4f5f995f6cfb9e59c7ba8f1725d2c658b64bfce2351e9.jpg"
+      },
+      {
+        "id": "surface",
+        "type": "structure",
+        "name": "Superhydrophobic Surface",
+        "properties": {
+          "features": "Micro/nano-structured with sharp protrusions",
+          "extracted_from_image": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+        },
+        "source_image_file": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+      },
+      {
+        "id": "bubble",
+        "type": "structure",
+        "name": "Air Bubble",
+        "properties": {
+          "extracted_from_image": "4f1c93cd47d66963da7b4c6e8dee93920a5d2df9a21f5066424707b0a59f0417.jpg"
+        },
+        "source_image_file": "4f1c93cd47d66963da7b4c6e8dee93920a5d2df9a21f5066424707b0a59f0417.jpg"
+      },
+      {
+        "id": "water",
+        "type": "chemical",
+        "name": "Water",
+        "properties": {
+          "formula": "H₂O",
+          "state": "droplet",
+          "extracted_from_image": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+        },
+        "source_image_file": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+      },
+      {
+        "id": "ca_0",
+        "type": "measurement",
+        "name": "Contact Angle",
+        "properties": {
+          "value": "0°",
+          "description": "Contact angle measurement indicated as perfectly wetting",
+          "extracted_from_image": "2f6d821065c4f1e85201acdd3ac1a7d7f8446062deaf3bcf6bf644167f6c0653.jpg"
+        },
+        "source_image_file": "2f6d821065c4f1e85201acdd3ac1a7d7f8446062deaf3bcf6bf644167f6c0653.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "HRTEM Image",
+        "properties": {
+          "description": "High-resolution transmission electron microscopy image showing amorphous and crystalline regions",
+          "extracted_from_image": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+        },
+        "source_image_file": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+      },
+      {
+        "id": "particle_distribution",
+        "type": "characterization",
+        "name": "Particle Size Distribution",
+        "properties": {
+          "type": "histogram",
+          "x_axis": "Diameter (μm)",
+          "y_axis": "Percentage (%)",
+          "range": "0-1600 μm",
+          "extracted_from_image": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+        },
+        "source_image_file": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+      },
+      {
+        "id": "peak_1",
+        "type": "data_point",
+        "name": "Main Peak",
+        "properties": {
+          "position": "around 145 μm",
+          "height": "80%",
+          "extracted_from_image": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+        },
+        "source_image_file": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+      },
+      {
+        "id": "peak_2",
+        "type": "data_point",
+        "name": "Secondary Peak",
+        "properties": {
+          "position": "low diameter",
+          "height": "20%",
+          "extracted_from_image": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+        },
+        "source_image_file": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+      },
+      {
+        "id": "visualization",
+        "type": "image",
+        "name": "Schematic Structure",
+        "properties": {
+          "description": "3D rendering showing porous gold-colored square substrate with spherical particles and bubbles, labeled 145 μm",
+          "extracted_from_image": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+        },
+        "source_image_file": "32e0db78924056ceaf454c69c9d5e8711b6fd67d5d58d2d72c13580d60e19419.jpg"
+      },
+      {
+        "id": "droplet",
+        "type": "physical_entity",
+        "name": "Water Droplet",
+        "properties": {
+          "description": "Spherical droplet on surface",
+          "extracted_from_image": "ca8b02695b20affaf0f1da9485c7b8a3949a674b24c04ad0dbef1fd7414a830c.jpg"
+        },
+        "source_image_file": "ca8b02695b20affaf0f1da9485c7b8a3949a674b24c04ad0dbef1fd7414a830c.jpg"
+      },
+      {
+        "id": "LSV_plot",
+        "type": "characterization",
+        "name": "Linear Sweep Voltammetry Plot",
+        "properties": {
+          "type": "electrochemical plot",
+          "x_axis": "Time (h)",
+          "y_axis": "j (mA cm⁻²)",
+          "range_x": "0 to 20 h",
+          "range_y": "-20 to 40 mA cm⁻²",
+          "extracted_from_image": "dc86e05a2378908732a0e9549c88574fa1b49d61dffa5d40d593ea37813537ff.jpg"
+        },
+        "source_image_file": "dc86e05a2378908732a0e9549c88574fa1b49d61dffa5d40d593ea37813537ff.jpg"
+      },
+      {
+        "id": "CA",
+        "type": "chemical",
+        "name": "CA",
+        "properties": {
+          "description": "Chemical entity or compound labeled CA",
+          "extracted_from_image": "7ac68eab7c621fc63fabb341bca5ea2026b148df7d985ba7b0983a8ea69d208b.jpg"
+        },
+        "source_image_file": "7ac68eab7c621fc63fabb341bca5ea2026b148df7d985ba7b0983a8ea69d208b.jpg"
+      },
+      {
+        "id": "water1",
+        "type": "chemical",
+        "name": "Water",
+        "properties": {
+          "extracted_from_image": "4f1c93cd47d66963da7b4c6e8dee93920a5d2df9a21f5066424707b0a59f0417.jpg"
+        },
+        "source_image_file": "4f1c93cd47d66963da7b4c6e8dee93920a5d2df9a21f5066424707b0a59f0417.jpg"
+      },
+      {
+        "id": "water2",
+        "type": "chemical",
+        "name": "Water",
+        "properties": {
+          "extracted_from_image": "4f1c93cd47d66963da7b4c6e8dee93920a5d2df9a21f5066424707b0a59f0417.jpg"
+        },
+        "source_image_file": "4f1c93cd47d66963da7b4c6e8dee93920a5d2df9a21f5066424707b0a59f0417.jpg"
+      },
+      {
+        "id": "Ni(OH)2-TC",
+        "type": "chemical",
+        "name": "Ni(OH)₂-TC",
+        "properties": {
+          "formula": "Ni(OH)₂-TC",
+          "description": "Nickel hydroxide thin carbon (TC)",
+          "extracted_from_image": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+        },
+        "source_image_file": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+      },
+      {
+        "id": "Ni3S2@Ni(OH)2-TC",
+        "type": "chemical",
+        "name": "Ni₃S₂@Ni(OH)₂-TC",
+        "properties": {
+          "formula": "Ni₃S₂@Ni(OH)₂-TC",
+          "description": "Core-shell material: Ni₃S₂ core with Ni(OH)₂-TC shell",
+          "extracted_from_image": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+        },
+        "source_image_file": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+      },
+      {
+        "id": "KOH",
+        "type": "chemical",
+        "name": "KOH",
+        "properties": {
+          "formula": "KOH",
+          "concentration": "1.0 M",
+          "description": "Potassium hydroxide electrolyte",
+          "extracted_from_image": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+        },
+        "source_image_file": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+      },
+      {
+        "id": "battery",
+        "type": "equipment",
+        "name": "1.5 V Battery",
+        "properties": {
+          "voltage": "1.5 V",
+          "extracted_from_image": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+        },
+        "source_image_file": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+      },
+      {
+        "id": "working_electrode",
+        "type": "electrode",
+        "name": "Working Electrode",
+        "properties": {
+          "material": "Ni₃S₂@Ni(OH)₂-TC coated",
+          "extracted_from_image": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+        },
+        "source_image_file": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+      },
+      {
+        "id": "counter_electrode",
+        "type": "electrode",
+        "name": "Counter Electrode",
+        "properties": {
+          "extracted_from_image": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+        },
+        "source_image_file": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+      },
+      {
+        "id": "electrochemical_cell",
+        "type": "setup",
+        "name": "Electrochemical Cell",
+        "properties": {
+          "electrolyte": "1.0 M KOH",
+          "extracted_from_image": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+        },
+        "source_image_file": "517ec006d685477e555ca2383eb67c8cba3601df544241005e1108ab771d89b6.jpg"
+      },
+      {
+        "id": "air",
+        "type": "chemical",
+        "name": "Air",
+        "properties": {
+          "description": "Cassie-Baxter state pockets",
+          "extracted_from_image": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+        },
+        "source_image_file": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+      },
+      {
+        "id": "ca",
+        "type": "characterization",
+        "name": "Contact Angle",
+        "properties": {
+          "value": "0°",
+          "interpretation": "superhydrophilic",
+          "extracted_from_image": "52832294b33749dfd44bd39eed75a5c445b15b1313ae508ac2e78b0747edb1dd.jpg"
+        },
+        "source_image_file": "52832294b33749dfd44bd39eed75a5c445b15b1313ae508ac2e78b0747edb1dd.jpg"
+      },
+      {
+        "id": "NiS2@Ni(111)-TC",
+        "type": "chemical",
+        "name": "NiS2@Ni(111)-TC",
+        "properties": {
+          "description": "Nickel disulfide on Ni(111) single crystal with TC treatment",
+          "extracted_from_image": "5ecd75d00acda4281e73e6d8b81644e461d2be820a0fdc7b7a00e9bc99483c39.jpg"
+        },
+        "source_image_file": "5ecd75d00acda4281e73e6d8b81644e461d2be820a0fdc7b7a00e9bc99483c39.jpg"
+      },
+      {
+        "id": "NiS2@Ni(111)",
+        "type": "chemical",
+        "name": "NiS2@Ni(111)",
+        "properties": {
+          "description": "Nickel disulfide on Ni(111) single crystal",
+          "extracted_from_image": "5ecd75d00acda4281e73e6d8b81644e461d2be820a0fdc7b7a00e9bc99483c39.jpg"
+        },
+        "source_image_file": "5ecd75d00acda4281e73e6d8b81644e461d2be820a0fdc7b7a00e9bc99483c39.jpg"
+      },
+      {
+        "id": "NiS2",
+        "type": "chemical",
+        "name": "NiS2",
+        "properties": {
+          "label": "NiS2",
+          "color": "light blue",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "droplet_initial",
+        "type": "characterization",
+        "name": "Advancing Droplet",
+        "properties": {
+          "description": "Water droplet in spread/advancing state on surface",
+          "state": "spread",
+          "extracted_from_image": "696776e83dffc123e5b9fd572a4e5d6c4b2805d6ba3243473aa218bd4b0dff4d.jpg"
+        },
+        "source_image_file": "696776e83dffc123e5b9fd572a4e5d6c4b2805d6ba3243473aa218bd4b0dff4d.jpg"
+      },
+      {
+        "id": "droplet_receding",
+        "type": "characterization",
+        "name": "Receding Droplet",
+        "properties": {
+          "description": "Water droplet in contracted/receding state on surface",
+          "state": "beaded",
+          "extracted_from_image": "696776e83dffc123e5b9fd572a4e5d6c4b2805d6ba3243473aa218bd4b0dff4d.jpg"
+        },
+        "source_image_file": "696776e83dffc123e5b9fd572a4e5d6c4b2805d6ba3243473aa218bd4b0dff4d.jpg"
+      },
+      {
+        "id": "arrow",
+        "type": "annotation",
+        "name": "Transition Arrow",
+        "properties": {
+          "description": "Indicates change from advancing to receding contact angle measurement",
+          "extracted_from_image": "696776e83dffc123e5b9fd572a4e5d6c4b2805d6ba3243473aa218bd4b0dff4d.jpg"
+        },
+        "source_image_file": "696776e83dffc123e5b9fd572a4e5d6c4b2805d6ba3243473aa218bd4b0dff4d.jpg"
+      },
+      {
+        "id": "white_sphere",
+        "type": "chemical",
+        "name": "White Sphere",
+        "properties": {
+          "description": "Spherical particle or bead, likely a chemical entity such as a nanoparticle, microsphere, or colloid",
+          "extracted_from_image": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+        },
+        "source_image_file": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+      },
+      {
+        "id": "black_cylinder",
+        "type": "chemical",
+        "name": "Black Cylinder",
+        "properties": {
+          "description": "Cylindrical structure on top of the sphere, possibly a catalyst, electrode, or protective cap",
+          "extracted_from_image": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+        },
+        "source_image_file": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+      },
+      {
+        "id": "gray_base",
+        "type": "chemical",
+        "name": "Gray Substrate",
+        "properties": {
+          "description": "Flat substrate or support layer at the bottom",
+          "extracted_from_image": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+        },
+        "source_image_file": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+      },
+      {
+        "id": "flame",
+        "type": "characterization",
+        "name": "Flame",
+        "properties": {
+          "description": "Red flame-like indicators suggesting heating or annealing process",
+          "extracted_from_image": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+        },
+        "source_image_file": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+      },
+      {
+        "id": "image_g",
+        "type": "figure",
+        "name": "Figure g",
+        "properties": {
+          "description": "Schematic diagram labeled 'g' from scientific paper",
+          "extracted_from_image": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+        },
+        "source_image_file": "6da7c47a3b5c7abfb9ff9a81a9d72e2a3152c6ad3d0aea6216f48d824044519b.jpg"
+      },
+      {
+        "id": "img",
+        "type": "characterization",
+        "name": "Fluorescence Micrograph",
+        "properties": {
+          "description": "Multicolor fluorescence image showing labeled areas",
+          "scale": "50 μm",
+          "extracted_from_image": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+        },
+        "source_image_file": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+      },
+      {
+        "id": "area5",
+        "type": "region",
+        "name": "Area 5",
+        "properties": {
+          "label": "Area 5",
+          "extracted_from_image": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+        },
+        "source_image_file": "79a26527da21ac60fdce7aaec8a17ad3c77c116fed6a08e1dc6f69cc732082c8.jpg"
+      },
+      {
+        "id": "angle_measurement",
+        "type": "characterization",
+        "name": "Contact Angle",
+        "properties": {
+          "value": "111.5 ± 3.1°",
+          "unit": "degrees",
+          "extracted_from_image": "7ac68eab7c621fc63fabb341bca5ea2026b148df7d985ba7b0983a8ea69d208b.jpg"
+        },
+        "source_image_file": "7ac68eab7c621fc63fabb341bca5ea2026b148df7d985ba7b0983a8ea69d208b.jpg"
+      },
+      {
+        "id": "image_structure",
+        "type": "characterization",
+        "name": "Drop Image",
+        "properties": {
+          "description": "Visual representation of a liquid drop on surface with measurement annotation",
+          "extracted_from_image": "7ac68eab7c621fc63fabb341bca5ea2026b148df7d985ba7b0983a8ea69d208b.jpg"
+        },
+        "source_image_file": "7ac68eab7c621fc63fabb341bca5ea2026b148df7d985ba7b0983a8ea69d208b.jpg"
+      },
+      {
+        "id": "cathode",
+        "type": "electrode",
+        "name": "Cathode",
+        "properties": {
+          "description": "White cylindrical cathode component",
+          "extracted_from_image": "8342d69856bd22d9e69b5a304061ebdb7af1b4e5cf094126ea99e2801c3c33b1.jpg"
+        },
+        "source_image_file": "8342d69856bd22d9e69b5a304061ebdb7af1b4e5cf094126ea99e2801c3c33b1.jpg"
+      },
+      {
+        "id": "o2",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "formula": "O₂",
+          "state": "gas",
+          "extracted_from_image": "8342d69856bd22d9e69b5a304061ebdb7af1b4e5cf094126ea99e2801c3c33b1.jpg"
+        },
+        "source_image_file": "8342d69856bd22d9e69b5a304061ebdb7af1b4e5cf094126ea99e2801c3c33b1.jpg"
+      },
+      {
+        "id": "electrode_surface",
+        "type": "material",
+        "name": "Electrode Surface",
+        "properties": {
+          "description": "Black porous textured surface with green tint",
+          "extracted_from_image": "8342d69856bd22d9e69b5a304061ebdb7af1b4e5cf094126ea99e2801c3c33b1.jpg"
+        },
+        "source_image_file": "8342d69856bd22d9e69b5a304061ebdb7af1b4e5cf094126ea99e2801c3c33b1.jpg"
+      },
+      {
+        "id": "contact_line",
+        "type": "phenomenon",
+        "name": "Receding Contact Line",
+        "properties": {
+          "description": "The three-phase contact line of the droplet contracting/shrinking",
+          "extracted_from_image": "8ac828366024547e4221a780f1da9daabb8bdc0f0778ab5d1f576717a807b92c.jpg"
+        },
+        "source_image_file": "8ac828366024547e4221a780f1da9daabb8bdc0f0778ab5d1f576717a807b92c.jpg"
+      },
+      {
+        "id": "motion",
+        "type": "phenomenon",
+        "name": "Receding Motion",
+        "properties": {
+          "description": "Droplet contracting on superhydrophobic surface indicated by red arrow",
+          "extracted_from_image": "8ac828366024547e4221a780f1da9daabb8bdc0f0778ab5d1f576717a807b92c.jpg"
+        },
+        "source_image_file": "8ac828366024547e4221a780f1da9daabb8bdc0f0778ab5d1f576717a807b92c.jpg"
+      },
+      {
+        "id": "e1",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "technique": "Scanning Electron Microscopy",
+          "scale_bar": "Present (white)",
+          "extracted_from_image": "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg"
+        },
+        "source_image_file": "9d33d15de664a6a8b75e21d446e4fd0f7eb00a08cfc7400692ca2746876755f6.jpg"
+      },
+      {
+        "id": "NiS",
+        "type": "chemical",
+        "name": "NiS",
+        "properties": {
+          "label": "NiS",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "particle_size_distribution",
+        "type": "characterization",
+        "name": "Particle Size Distribution",
+        "properties": {
+          "type": "histogram and curves",
+          "x_axis": "Diameter (μm)",
+          "y_axis": "Percentage (%)",
+          "range": "0-1600 μm",
+          "extracted_from_image": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+        },
+        "source_image_file": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+      },
+      {
+        "id": "NiS_curve",
+        "type": "data",
+        "name": "NiS Distribution Curve",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+        },
+        "source_image_file": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+      },
+      {
+        "id": "Ni3S2_curve",
+        "type": "data",
+        "name": "Ni3S2 Distribution Curve",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+        },
+        "source_image_file": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+      },
+      {
+        "id": "NiS_histogram",
+        "type": "data",
+        "name": "NiS Histogram",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+        },
+        "source_image_file": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+      },
+      {
+        "id": "Ni3S2_histogram",
+        "type": "data",
+        "name": "Ni3S2 Histogram",
+        "properties": {
+          "color": "orange",
+          "extracted_from_image": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+        },
+        "source_image_file": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+      },
+      {
+        "id": "peak_343um",
+        "type": "data",
+        "name": "Peak at 343 μm",
+        "properties": {
+          "size": "343 μm",
+          "associated_with": "Ni3S2",
+          "extracted_from_image": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+        },
+        "source_image_file": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+      },
+      {
+        "id": "SEM_image",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "description": "Microsphere structure on substrate",
+          "extracted_from_image": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+        },
+        "source_image_file": "ac298a7d0216a41b84bf0daeecd5278172d191974ab6683097dca5c32503d850.jpg"
+      },
+      {
+        "id": "Ni3S2-NF",
+        "type": "chemical",
+        "name": "Ni3S2-NF",
+        "properties": {
+          "description": "Nickel sulfide nanoflake material",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "S=O",
+        "type": "chemical",
+        "name": "S=O",
+        "properties": {
+          "description": "Sulfoxide or sulfate group",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "S2-",
+        "type": "chemical",
+        "name": "S2-",
+        "properties": {
+          "description": "Sulfide ion",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "2p3/2",
+        "type": "chemical",
+        "name": "2p3/2",
+        "properties": {
+          "description": "S 2p3/2 orbital",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "2p1/2",
+        "type": "chemical",
+        "name": "2p1/2",
+        "properties": {
+          "description": "S 2p1/2 orbital",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "Ni(II)",
+        "type": "chemical",
+        "name": "Ni(II)",
+        "properties": {
+          "description": "Nickel(II) ion",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "TC",
+        "type": "chemical",
+        "name": "TC",
+        "properties": {
+          "description": "Likely thiocarbamate ligand",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "Sat.",
+        "type": "chemical",
+        "name": "Sat.",
+        "properties": {
+          "description": "Saturated species",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "C=S",
+        "type": "chemical",
+        "name": "C=S",
+        "properties": {
+          "description": "Thiocarbonyl group",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "xps_top",
+        "type": "characterization",
+        "name": "XPS Spectrum (Top)",
+        "properties": {
+          "technique": "XPS",
+          "element": "S 2p",
+          "binding_energy_range": "160-172 eV",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "xps_bottom",
+        "type": "characterization",
+        "name": "XPS Spectrum (Bottom)",
+        "properties": {
+          "technique": "XPS",
+          "element": "S 2p",
+          "binding_energy_range": "160-172 eV",
+          "extracted_from_image": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+        },
+        "source_image_file": "b179cd110e1721a139f032f00d9fd131b32952141828fdde7480154ded8a1215.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "Advancing Contact Angle Force",
+        "properties": {
+          "description": "Black curve showing advancing force vs distance",
+          "data": "starts low (~0), drops to negative (~-300 units)",
+          "extracted_from_image": "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg"
+        },
+        "source_image_file": "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "Contact Line Images",
+        "properties": {
+          "description": "Schematic droplet images showing advancing and receding contact lines",
+          "positions": [
+            "0.0 mm",
+            "2.0 mm"
+          ],
+          "extracted_from_image": "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg"
+        },
+        "source_image_file": "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg"
+      },
+      {
+        "id": "exp1",
+        "type": "experiment",
+        "name": "Wettability Measurement",
+        "properties": {
+          "type": "Contact angle hysteresis",
+          "x_axis": "Distance (mm)",
+          "y_axis": "Force (units)",
+          "range_x": "0.0 to 2.0 mm",
+          "range_y": "-300 to 200 units",
+          "extracted_from_image": "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg"
+        },
+        "source_image_file": "d6b221c77ee26751bb9d50da216a0eeeac2da0867251ecad6f5598f437ca46d9.jpg"
+      },
+      {
+        "id": "performance_Ni3S2@Ni(II)-TC",
+        "type": "data",
+        "name": "Performance of Ni3S2@Ni(II)-TC",
+        "properties": {
+          "stability": "75.1% decline after test period",
+          "extracted_from_image": "dc86e05a2378908732a0e9549c88574fa1b49d61dffa5d40d593ea37813537ff.jpg"
+        },
+        "source_image_file": "dc86e05a2378908732a0e9549c88574fa1b49d61dffa5d40d593ea37813537ff.jpg"
+      },
+      {
+        "id": "superhydrophobicity",
+        "type": "phenomenon",
+        "name": "Superhydrophobicity",
+        "properties": {
+          "mechanism": "Cassie-Baxter wetting state",
+          "extracted_from_image": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+        },
+        "source_image_file": "e405fc87af508c24da04faea355deff45c7860c74e2d25e468e916ff39899629.jpg"
+      },
+      {
+        "id": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73_anode",
+        "type": "electrode",
+        "name": "Anode",
+        "properties": {
+          "description": "Electrode in electrochemical setup, appears metallic or coated",
+          "extracted_from_image": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73.jpg"
+        },
+        "source_image_file": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "chemical",
+        "name": "Electrolyte",
+        "properties": {
+          "description": "Liquid medium surrounding anode, likely aqueous solution",
+          "extracted_from_image": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73.jpg"
+        },
+        "source_image_file": "e7e97c8acfafe3e490abdb7304b73049460e8240d69adb1312a34a793f04cf73.jpg"
+      },
+      {
+        "id": "HAADF",
+        "type": "characterization",
+        "name": "HAADF",
+        "properties": {
+          "description": "High-Angle Annular Dark-Field imaging",
+          "technique": "STEM imaging mode showing bright contrast for heavy elements",
+          "extracted_from_image": "e8bfacd2f179a0feefbd3fc65c7ef7ac5e9de4a82da22498d353ccd8c729f78d.jpg"
+        },
+        "source_image_file": "e8bfacd2f179a0feefbd3fc65c7ef7ac5e9de4a82da22498d353ccd8c729f78d.jpg"
+      },
+      {
+        "id": "amorphous_region",
+        "type": "region",
+        "name": "Amorphous Region",
+        "properties": {
+          "location": "upper left area of image",
+          "extracted_from_image": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+        },
+        "source_image_file": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+      },
+      {
+        "id": "crystalline_region",
+        "type": "region",
+        "name": "Crystalline Region",
+        "properties": {
+          "location": "lower right area of image",
+          "extracted_from_image": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+        },
+        "source_image_file": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+      },
+      {
+        "id": "d110",
+        "type": "lattice_spacing",
+        "name": "d(110)",
+        "properties": {
+          "value": "0.285 nm",
+          "plane": "(110)",
+          "extracted_from_image": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+        },
+        "source_image_file": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+      },
+      {
+        "id": "material",
+        "type": "material",
+        "name": "Nanocrystalline Material",
+        "properties": {
+          "features": "mixed amorphous-crystalline structure",
+          "extracted_from_image": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+        },
+        "source_image_file": "f181fd9b88dcf92c32570cf0d3b52aa4ccc149cf98bb4fdf059abd91ade00620.jpg"
+      },
+      {
+        "id": "chart1",
+        "type": "characterization",
+        "name": "Overall Water Splitting Voltage Chart",
+        "properties": {
+          "type": "bar chart",
+          "x-axis": "Materials",
+          "y-axis": "Voltage (V)",
+          "y-range": "0 to 1.8 V",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "Mo",
+        "type": "chemical",
+        "name": "Mo",
+        "properties": {
+          "label": "Mo",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "MoS2",
+        "type": "chemical",
+        "name": "MoS2",
+        "properties": {
+          "label": "MoS2",
+          "color": "brown",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "V",
+        "type": "chemical",
+        "name": "V",
+        "properties": {
+          "label": "V",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "VS2",
+        "type": "chemical",
+        "name": "VS2",
+        "properties": {
+          "label": "VS2",
+          "color": "purple",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "Cu",
+        "type": "chemical",
+        "name": "Cu",
+        "properties": {
+          "label": "Cu",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "CuS2",
+        "type": "chemical",
+        "name": "CuS2",
+        "properties": {
+          "label": "CuS2",
+          "color": "dark blue",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "Ni",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "label": "Ni",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "NiS2S3",
+        "type": "chemical",
+        "name": "NiS2S3",
+        "properties": {
+          "label": "NiS2S3",
+          "color": "cyan",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "GQDs",
+        "type": "chemical",
+        "name": "GQDs",
+        "properties": {
+          "label": "GQDs",
+          "full": "Graphene Quantum Dots",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "NiS-GQDs",
+        "type": "chemical",
+        "name": "NiS-GQDs",
+        "properties": {
+          "label": "NiS GQDs",
+          "color": "teal",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "N",
+        "type": "chemical",
+        "name": "N",
+        "properties": {
+          "label": "N-doped",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "NTS",
+        "type": "chemical",
+        "name": "NTS",
+        "properties": {
+          "label": "NTS",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "Ni-NTS",
+        "type": "chemical",
+        "name": "Ni-NTS",
+        "properties": {
+          "label": "Ni NTS",
+          "color": "light green",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "NFTS",
+        "type": "chemical",
+        "name": "NFTS",
+        "properties": {
+          "label": "NFTS",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "Ni-NFTS",
+        "type": "chemical",
+        "name": "Ni-NFTS",
+        "properties": {
+          "label": "Ni NFTS",
+          "color": "green",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "Fe",
+        "type": "chemical",
+        "name": "Fe",
+        "properties": {
+          "label": "Fe",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "FeS2",
+        "type": "chemical",
+        "name": "FeS2",
+        "properties": {
+          "label": "FeS2",
+          "color": "blue",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "NiS-WCoS",
+        "type": "chemical",
+        "name": "NiS-WCoS",
+        "properties": {
+          "label": "NiS WCoS",
+          "color": "dark cyan",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "CoS",
+        "type": "chemical",
+        "name": "CoS",
+        "properties": {
+          "label": "CoS",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "NiS-CoS",
+        "type": "chemical",
+        "name": "NiS-CoS",
+        "properties": {
+          "label": "NiS CoS",
+          "color": "light cyan",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "NiS3",
+        "type": "chemical",
+        "name": "NiS3",
+        "properties": {
+          "label": "NiS3",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      },
+      {
+        "id": "NiS3-NiS2",
+        "type": "chemical",
+        "name": "NiS3-NiS2",
+        "properties": {
+          "label": "NiS3 NiS2",
+          "color": "dark green",
+          "extracted_from_image": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+        },
+        "source_image_file": "fb72df67d87b2b5ca1ad0b8e21297845cb4fa693c1a7b51209e909f01022e9ac.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Ni3S2_NF_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NF_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NF_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NF_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NiII_TC_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NiII_TC_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NiII_TC_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NiII_TC_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NiII_TC_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NiII_TC_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NiII_TC_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni3S2_NF_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "p3",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "p1",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "p2",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "c1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "p1",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "p2",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "p3",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "represents"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "represents"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n4",
+        "type": "represents"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "stacked_on"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n5",
+        "type": "contacts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "layered_on"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "char_5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "peak_2p1_2_sat1_m1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "peak_2p3_2_sat2_m1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "peak_0plus_m1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "peak_2p1_2_sat1_m2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "peak_2p3_2_sat2_m2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "peak_0plus_m2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "binding_energy_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "binding_energy_axis",
+        "type": "has_x_axis"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "supports"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_Ni3S2_NiII_TC",
+        "type": "rests_on"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "above"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "indicates_motion_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chem_Ni3S2_NiII_TC",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chem_NF",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "SawtoothSubstrate",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "Nanoparticles",
+        "type": "same_as"
+      },
+      {
+        "source_id": "Nanoparticles",
+        "target_id": "SawtoothSubstrate",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "SawtoothSubstrate",
+        "target_id": "Ni3S2",
+        "type": "made_from"
+      },
+      {
+        "source_id": "Water",
+        "target_id": "Nanoparticles",
+        "type": "in_contact_with"
+      },
+      {
+        "source_id": "Bubble",
+        "target_id": "Ni3S2",
+        "type": "on_surface"
+      },
+      {
+        "source_id": "Fa",
+        "target_id": "Bubble",
+        "type": "acts_on"
+      },
+      {
+        "source_id": "Fb",
+        "target_id": "Bubble",
+        "type": "acts_on"
+      },
+      {
+        "source_id": "Alpha",
+        "target_id": "Bubble",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "Theta",
+        "target_id": "Bubble",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "material_of"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "setup",
+        "type": "component"
+      },
+      {
+        "source_id": "electrode2",
+        "target_id": "setup",
+        "type": "component"
+      },
+      {
+        "source_id": "koh",
+        "target_id": "setup",
+        "type": "electrolyte"
+      },
+      {
+        "source_id": "power_supply",
+        "target_id": "setup",
+        "type": "powers"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "koh",
+        "type": "tested_in"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n17",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n18",
+        "type": "highlighted_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "component"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "component"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n4",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n5",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "measures"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "measures"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "gas_bubbles",
+        "type": "generates"
+      },
+      {
+        "source_id": "gas_bubbles",
+        "target_id": "h2",
+        "type": "contains"
+      },
+      {
+        "source_id": "gas_bubbles",
+        "target_id": "bubble_radius",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "bubble_radius",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "image",
+        "target_id": "surface",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "bubble",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "water",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "ca_0",
+        "type": "contains_measurement"
+      },
+      {
+        "source_id": "surface",
+        "target_id": "bubble",
+        "type": "contacts"
+      },
+      {
+        "source_id": "surface",
+        "target_id": "water",
+        "type": "interfaces_with"
+      },
+      {
+        "source_id": "bubble",
+        "target_id": "water",
+        "type": "immersed_in"
+      },
+      {
+        "source_id": "surface",
+        "target_id": "ca_0",
+        "type": "has_property"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "particle_distribution",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "particle_distribution",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "peak_1",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "peak_1",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "particle_distribution",
+        "target_id": "peak_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "particle_distribution",
+        "target_id": "peak_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "visualization",
+        "type": "depicts"
+      },
+      {
+        "source_id": "visualization",
+        "target_id": "peak_1",
+        "type": "labels_size"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "droplet",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image",
+        "target_id": "surface",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "droplet",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "droplet",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "CA",
+        "target_id": "bubble",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "CA",
+        "target_id": "water1",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "CA",
+        "target_id": "water2",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "CA",
+        "target_id": "surface",
+        "type": "measured_on"
+      },
+      {
+        "source_id": "bubble",
+        "target_id": "surface",
+        "type": "contacts"
+      },
+      {
+        "source_id": "water1",
+        "target_id": "surface",
+        "type": "contacts"
+      },
+      {
+        "source_id": "water2",
+        "target_id": "surface",
+        "type": "contacts"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "Ni3S2@Ni(OH)2-TC",
+        "type": "core"
+      },
+      {
+        "source_id": "Ni(OH)2-TC",
+        "target_id": "Ni3S2@Ni(OH)2-TC",
+        "type": "shell"
+      },
+      {
+        "source_id": "Ni3S2@Ni(OH)2-TC",
+        "target_id": "working_electrode",
+        "type": "coated_on"
+      },
+      {
+        "source_id": "working_electrode",
+        "target_id": "electrochemical_cell",
+        "type": "part_of"
+      },
+      {
+        "source_id": "counter_electrode",
+        "target_id": "electrochemical_cell",
+        "type": "part_of"
+      },
+      {
+        "source_id": "KOH",
+        "target_id": "electrochemical_cell",
+        "type": "electrolyte_in"
+      },
+      {
+        "source_id": "battery",
+        "target_id": "electrochemical_cell",
+        "type": "powers"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "water",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "air",
+        "type": "in_contact_with"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "ca",
+        "target_id": "droplet",
+        "type": "measures"
+      },
+      {
+        "source_id": "ca",
+        "target_id": "surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "NiS2@Ni(111)-TC",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiS2@Ni(111)",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiS2",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "LSV_plot",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n4",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n8",
+        "type": "characterized by"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "corresponds to"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n10",
+        "type": "contains"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n4",
+        "type": "corresponds to"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n11",
+        "type": "contains"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n6",
+        "type": "corresponds to"
+      },
+      {
+        "source_id": "droplet_initial",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "droplet_receding",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "droplet_initial",
+        "target_id": "arrow",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "arrow",
+        "target_id": "droplet_receding",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "image_g",
+        "target_id": "white_sphere",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_g",
+        "target_id": "black_cylinder",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_g",
+        "target_id": "gray_base",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_g",
+        "target_id": "flame",
+        "type": "depicts"
+      },
+      {
+        "source_id": "black_cylinder",
+        "target_id": "white_sphere",
+        "type": "on_top_of"
+      },
+      {
+        "source_id": "white_sphere",
+        "target_id": "gray_base",
+        "type": "on"
+      },
+      {
+        "source_id": "flame",
+        "target_id": "gray_base",
+        "type": "heating"
+      },
+      {
+        "source_id": "flame",
+        "target_id": "white_sphere",
+        "type": "heating"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "img",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "img",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "img",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "img",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "area5",
+        "target_id": "img",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "CA",
+        "target_id": "angle_measurement",
+        "type": "has_property"
+      },
+      {
+        "source_id": "angle_measurement",
+        "target_id": "image_structure",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "CA",
+        "target_id": "image_structure",
+        "type": "visualized_by"
+      },
+      {
+        "source_id": "o2",
+        "target_id": "cathode",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "gas_bubbles",
+        "target_id": "cathode",
+        "type": "observed_at"
+      },
+      {
+        "source_id": "gas_bubbles",
+        "target_id": "o2",
+        "type": "consists_of"
+      },
+      {
+        "source_id": "electrode_surface",
+        "target_id": "cathode",
+        "type": "part_of"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "contact_line",
+        "type": "has"
+      },
+      {
+        "source_id": "contact_line",
+        "target_id": "motion",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "surface",
+        "target_id": "motion",
+        "type": "induces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Ni3S2_NiII_TC",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_NF",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "consists_of"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "water",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "air",
+        "type": "surrounded_by"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "surface",
+        "type": "rests_on"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "droplet",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "e1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "e1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "e1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "adjacent_to"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "labels"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "stacked_on"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n4",
+        "type": "rests_on"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n6",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n7",
+        "type": "y_axis"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "n4",
+        "type": "represents"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n5",
+        "type": "represents"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Ni3S2_NiII_TC",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chem_Ni3S2_NiII_TC",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiS",
+        "target_id": "NiS_curve",
+        "type": "has_distribution"
+      },
+      {
+        "source_id": "NiS",
+        "target_id": "NiS_histogram",
+        "type": "has_distribution"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "Ni3S2_curve",
+        "type": "has_distribution"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "Ni3S2_histogram",
+        "type": "has_distribution"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "peak_343um",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "particle_size_distribution",
+        "target_id": "NiS_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "particle_size_distribution",
+        "target_id": "Ni3S2_curve",
+        "type": "contains"
+      },
+      {
+        "source_id": "particle_size_distribution",
+        "target_id": "NiS_histogram",
+        "type": "contains"
+      },
+      {
+        "source_id": "particle_size_distribution",
+        "target_id": "Ni3S2_histogram",
+        "type": "contains"
+      },
+      {
+        "source_id": "particle_size_distribution",
+        "target_id": "peak_343um",
+        "type": "contains"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "SEM_image",
+        "type": "visualized_by"
+      },
+      {
+        "source_id": "NiS",
+        "target_id": "particle_size_distribution",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "particle_size_distribution",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ni3S2-NF",
+        "target_id": "xps_top",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ni3S2-NF",
+        "target_id": "NiS2",
+        "type": "contains"
+      },
+      {
+        "source_id": "Ni3S2-NF",
+        "target_id": "chem_NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "Ni3S2-NF",
+        "target_id": "S=O",
+        "type": "contains"
+      },
+      {
+        "source_id": "Ni3S2-NF",
+        "target_id": "S2-",
+        "type": "contains"
+      },
+      {
+        "source_id": "S2-",
+        "target_id": "2p3/2",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "S2-",
+        "target_id": "2p1/2",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "xps_bottom",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "Ni(II)",
+        "type": "coated_with"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "TC",
+        "type": "complexed_with"
+      },
+      {
+        "source_id": "TC",
+        "target_id": "C=S",
+        "type": "contains"
+      },
+      {
+        "source_id": "Sat.",
+        "target_id": "xps_bottom",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "droplet",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n4",
+        "type": "demonstrates_property_via"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "chem_Ni3S2_NiII_TC",
+        "type": "performed_on"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "c1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "droplet",
+        "target_id": "surface",
+        "type": "on"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "droplet",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "surface",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "exp1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "c1",
+        "type": "contains"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "c2",
+        "type": "contains"
+      },
+      {
+        "source_id": "exp1",
+        "target_id": "c3",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "c1",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "c2",
+        "type": "measured_for"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "performance_Ni3S2@Ni(II)-TC",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "chem_Ni3S2_NiII_TC",
+        "type": "core_of"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n7",
+        "type": "promotes"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n8",
+        "type": "promotes"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "chem_Ni3S2_NiII_TC",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "contains"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "chem_NF",
+        "type": "made_of"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "chem_NF",
+        "type": "made_of"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n9",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n11",
+        "type": "enables"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "n10",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "n12",
+        "type": "enables"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n13",
+        "type": "has_morphology"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n16",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "n17",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n4",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "n4",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "surface",
+        "type": "composed_of"
+      },
+      {
+        "source_id": "surface",
+        "target_id": "water",
+        "type": "exhibits_behavior_with"
+      },
+      {
+        "source_id": "surface",
+        "target_id": "air",
+        "type": "traps"
+      },
+      {
+        "source_id": "surface",
+        "target_id": "superhydrophobicity",
+        "type": "demonstrates"
+      },
+      {
+        "source_id": "Ni3S2",
+        "target_id": "superhydrophobicity",
+        "type": "enables"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "h2",
+        "type": "produces"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "gas_bubbles",
+        "type": "generates"
+      },
+      {
+        "source_id": "h2",
+        "target_id": "gas_bubbles",
+        "type": "forms"
+      },
+      {
+        "source_id": "anode",
+        "target_id": "electrolyte",
+        "type": "immersed_in"
+      },
+      {
+        "source_id": "HAADF",
+        "target_id": "image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image",
+        "target_id": "amorphous_region",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "crystalline_region",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "d110",
+        "type": "annotates"
+      },
+      {
+        "source_id": "crystalline_region",
+        "target_id": "d110",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "amorphous_region",
+        "target_id": "material",
+        "type": "part_of"
+      },
+      {
+        "source_id": "crystalline_region",
+        "target_id": "material",
+        "type": "part_of"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "p1",
+        "type": "has_Rct"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "p2",
+        "type": "has_Rct"
+      },
+      {
+        "source_id": "chem_NF",
+        "target_id": "p3",
+        "type": "has_Rct"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c1",
+        "type": "uses_model"
+      },
+      {
+        "source_id": "chem_Ni3S2_NF",
+        "target_id": "chem_NF",
+        "type": "supported_on"
+      },
+      {
+        "source_id": "Mo",
+        "target_id": "MoS2",
+        "type": "compound"
+      },
+      {
+        "source_id": "V",
+        "target_id": "VS2",
+        "type": "compound"
+      },
+      {
+        "source_id": "Cu",
+        "target_id": "CuS2",
+        "type": "compound"
+      },
+      {
+        "source_id": "Ni",
+        "target_id": "NiS2",
+        "type": "compound"
+      },
+      {
+        "source_id": "NiS",
+        "target_id": "NiS2S3",
+        "type": "compound"
+      },
+      {
+        "source_id": "GQDs",
+        "target_id": "NiS-GQDs",
+        "type": "composite"
+      },
+      {
+        "source_id": "NiS",
+        "target_id": "NiS-GQDs",
+        "type": "base"
+      },
+      {
+        "source_id": "N",
+        "target_id": "Ni-NTS",
+        "type": "doping"
+      },
+      {
+        "source_id": "NTS",
+        "target_id": "Ni-NTS",
+        "type": "support"
+      },
+      {
+        "source_id": "Ni",
+        "target_id": "Ni-NTS",
+        "type": "base"
+      },
+      {
+        "source_id": "N",
+        "target_id": "Ni-NFTS",
+        "type": "doping"
+      },
+      {
+        "source_id": "NFTS",
+        "target_id": "Ni-NFTS",
+        "type": "support"
+      },
+      {
+        "source_id": "Ni",
+        "target_id": "Ni-NFTS",
+        "type": "base"
+      },
+      {
+        "source_id": "Fe",
+        "target_id": "FeS2",
+        "type": "compound"
+      },
+      {
+        "source_id": "NiS",
+        "target_id": "NiS-WCoS",
+        "type": "composite"
+      },
+      {
+        "source_id": "CoS",
+        "target_id": "NiS-WCoS",
+        "type": "composite"
+      },
+      {
+        "source_id": "NiS",
+        "target_id": "NiS-CoS",
+        "type": "composite"
+      },
+      {
+        "source_id": "CoS",
+        "target_id": "NiS-CoS",
+        "type": "composite"
+      },
+      {
+        "source_id": "NiS3",
+        "target_id": "NiS3-NiS2",
+        "type": "composite"
+      },
+      {
+        "source_id": "NiS2",
+        "target_id": "NiS3-NiS2",
+        "type": "composite"
+      },
+      {
+        "source_id": "MoS2",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "VS2",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "CuS2",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "NiS2",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "NiS2S3",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "NiS-GQDs",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "Ni-NTS",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "Ni-NFTS",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "FeS2",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "NiS-WCoS",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "NiS-CoS",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "NiS3-NiS2",
+        "target_id": "chart1",
+        "type": "data_point"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_Ni3S2_NF",
+        "type": "core_composition"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "chem_NF",
+        "type": "shell_composition"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n4",
+        "type": "measured_property"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n5",
+        "type": "measured_property"
+      },
+      {
+        "source_id": "chem_Ni3S2_NiII_TC",
+        "target_id": "n6",
+        "type": "characterization_data"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n5",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "contains_visual"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4558 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "nodes": [
+          {
+            "id": "chem_Co(NO3)2_6H2O",
+            "type": "chemical",
+            "name": "Co(NO3)2·6H2O",
+            "aliases": [
+              "Co(NO3)2·6H2O"
+            ],
+            "formula": "Co(NO3)2·6H2O",
+            "properties": {}
+          },
+          {
+            "id": "chem_Co3O4",
+            "type": "chemical",
+            "name": "Co3O4",
+            "aliases": [
+              "Co3O4 precursor",
+              "Co3O4 powder"
+            ],
+            "formula": "Co3O4",
+            "properties": {
+              "particle_size": {
+                "value": 50,
+                "unit": "nm"
+              }
+            }
+          },
+          {
+            "id": "chem_NaH2PO2_H2O",
+            "type": "chemical",
+            "name": "NaH2PO2·H2O",
+            "aliases": [
+              "NaH2PO2·H2O"
+            ],
+            "formula": "NaH2PO2·H2O",
+            "properties": {}
+          },
+          {
+            "id": "chem_Co2P_CoP_350",
+            "type": "chemical",
+            "name": "Co2P/CoP-350",
+            "aliases": [
+              "Co2P/CoP",
+              "Co2P/CoP-350"
+            ],
+            "formula": "Co2P/CoP",
+            "properties": {
+              "Brunauer-Emmett-Teller surface area": {
+                "value": 30.2,
+                "unit": "m²/g"
+              },
+              "Co2P_phase_content": {
+                "value": 44.7,
+                "unit": "wt%"
+              }
+            }
+          },
+          {
+            "id": "chem_sodium_citrate",
+            "type": "chemical",
+            "name": "Sodium citrate monohydrate",
+            "aliases": [
+              "Sodium citrate monohydrate"
+            ],
+            "properties": {}
+          },
+          {
+            "id": "chem_Co(OH)2",
+            "type": "chemical",
+            "name": "Co(OH)2",
+            "aliases": [
+              "Co(OH)2 precursor"
+            ],
+            "formula": "Co(OH)2",
+            "properties": {}
+          },
+          {
+            "id": "chem_CoP",
+            "type": "chemical",
+            "name": "CoP",
+            "aliases": [
+              "pure CoP"
+            ],
+            "formula": "CoP",
+            "properties": {
+              "Brunauer-Emmett-Teller surface area": {
+                "value": 30.2,
+                "unit": "m²/g"
+              }
+            }
+          },
+          {
+            "id": "chem_Co2P",
+            "type": "chemical",
+            "name": "Co2P",
+            "aliases": [
+              "pure Co2P"
+            ],
+            "formula": "Co2P",
+            "properties": {
+              "Brunauer-Emmett-Teller surface area": {
+                "value": 30.3,
+                "unit": "m²/g"
+              },
+              "Co2P_phase_content": {
+                "value": 100,
+                "unit": "wt%"
+              }
+            }
+          },
+          {
+            "id": "synth_step_1",
+            "type": "synthesis",
+            "name": "Nitrate pyrolysis",
+            "procedure": "Amount of Co(NO3)2·6H2O was put into a muffle furnace and heated at 500°C for 2h with a rising rate of 1°C/min under air atmosphere. After being cooled to room temperature, the product was collected and grinded for a while, the final Co3O4 powder was obtained.",
+            "method": "Nitrate pyrolysis",
+            "conditions": {
+              "temperature": {
+                "value": 500,
+                "unit": "°C"
+              },
+              "time": {
+                "value": 2,
+                "unit": "h"
+              },
+              "heating_rate": {
+                "value": 1,
+                "unit": "°C/min"
+              },
+              "atmosphere": {
+                "value": "air",
+                "unit": ""
+              }
+            },
+            "source_text": "The Co3O4 precursor was prepared by a nitrate pyrolysis method. In brief, amount of Co(NO3)2·6H2O was put into a muffle furnace..."
+          },
+          {
+            "id": "synth_step_2",
+            "type": "synthesis",
+            "name": "Phosphorization of Co3O4",
+            "procedure": "The as prepared Co3O4 powders were mixed with NaH2PO2·H2O in a weight ratio of 1:10. Then the mixture was put into a crucible with a cover. The crucible was annealed in a tube furnace at 350°C for 2h with a rising rate of 2°C/min under inert gas atmosphere. After cooling to room temperature, the product was collected by water rinsing several times and vacuum dried at 60°C for 12h.",
+            "unit_operations": [
+              {
+                "id": "unit_op_2.1",
+                "name": "Phosphorization",
+                "method": "Annealing",
+                "conditions": {
+                  "temperature": {
+                    "value": 350,
+                    "unit": "°C"
+                  },
+                  "time": {
+                    "value": 2,
+                    "unit": "h"
+                  },
+                  "heating_rate": {
+                    "value": 2,
+                    "unit": "°C/min"
+                  },
+                  "atmosphere": {
+                    "value": "inert gas",
+                    "unit": ""
+                  }
+                },
+                "procedure_snippet": "The crucible was annealed in a tube furnace at 350°C for 2h with a rising rate of 2°C/min under inert gas atmosphere."
+              },
+              {
+                "id": "unit_op_2.2",
+                "name": "Purification",
+                "method": "Washing and drying",
+                "conditions": {
+                  "drying_temperature": {
+                    "value": 60,
+                    "unit": "°C"
+                  },
+                  "drying_time": {
+                    "value": 12,
+                    "unit": "h"
+                  }
+                },
+                "procedure_snippet": "After cooling to room temperature, the product was collected by water rinsing several times and vacuum dried at 60°C for 12h."
+              }
+            ],
+            "method": "Gas phosphorization",
+            "conditions": {
+              "weight_ratio": {
+                "value": "1:10",
+                "unit": "Co3O4:NaH2PO2"
+              },
+              "annealing_temperature": {
+                "value": 350,
+                "unit": "°C"
+              },
+              "annealing_time": {
+                "value": 2,
+                "unit": "h"
+              },
+              "heating_rate": {
+                "value": 2,
+                "unit": "°C/min"
+              },
+              "drying_temperature": {
+                "value": 60,
+                "unit": "°C"
+              },
+              "drying_time": {
+                "value": 12,
+                "unit": "h"
+              }
+            },
+            "source_text": "The as prepared Co3O4 powders were mixed with NaH2PO2·H2O in a weight ratio of 1:10... The samples annealing at 300, 350, and 400°C were named Co2P/CoP-300..."
+          },
+          {
+            "id": "synth_step_3",
+            "type": "synthesis",
+            "name": "Co(OH)2 precipitation",
+            "procedure": "400 mg of Co(NO3)2·6H2O and 50 mg of Sodium citrate monohydrate were dissolved in 100 mL of deionized (DI) water with a rapid stirring for 4h. Afterward, the precipitation was washed by water for several times and vacuum dried at 60°C for 12h. The Co(OH)2 precursor was obtained after cooling to room temperature.",
+            "method": "Precipitation",
+            "conditions": {
+              "Co(NO3)2·6H2O_amount": {
+                "value": 400,
+                "unit": "mg"
+              },
+              "sodium_citrate_amount": {
+                "value": 50,
+                "unit": "mg"
+              },
+              "DI_water_volume": {
+                "value": 100,
+                "unit": "mL"
+              },
+              "stirring_time": {
+                "value": 4,
+                "unit": "h"
+              },
+              "drying_temperature": {
+                "value": 60,
+                "unit": "°C"
+              },
+              "drying_time": {
+                "value": 12,
+                "unit": "h"
+              }
+            },
+            "source_text": "Firstly, 400 mg of Co(NO3)2·6H2O and 50 mg of Sodium citrate monohydrate were dissolved in 100 mL of deionized (DI) water..."
+          },
+          {
+            "id": "synth_step_4",
+            "type": "synthesis",
+            "name": "CoP phosphorization",
+            "procedure": "100 mg of as-prepared Co(OH)2 and 1 g of NaH2PO2·H2O were mixed and put into a crucible. The gas phosphorization treatment was same to the sample of Co2P/CoP expect the calcination temperature was 350°C.",
+            "method": "Gas phosphorization",
+            "conditions": {
+              "Co(OH)2_amount": {
+                "value": 100,
+                "unit": "mg"
+              },
+              "NaH2PO2_amount": {
+                "value": 1,
+                "unit": "g"
+              },
+              "temperature": {
+                "value": 350,
+                "unit": "°C"
+              }
+            },
+            "source_text": "Then 100 mg of as-prepared Co(OH)2 and 1g of NaH2PO2·H2O were mixed... expect the calcination temperature was 350°C for pure CoP."
+          },
+          {
+            "id": "synth_step_5",
+            "type": "synthesis",
+            "name": "Co2P phosphorization",
+            "procedure": "The pure Co2P sample preparation was same as pure CoP phase expect 100 mg weight of NaH2PO2·H2O.",
+            "method": "Gas phosphorization",
+            "conditions": {
+              "Co(OH)2_amount": {
+                "value": 100,
+                "unit": "mg"
+              },
+              "NaH2PO2_amount": {
+                "value": 100,
+                "unit": "mg"
+              },
+              "temperature": {
+                "value": 350,
+                "unit": "°C"
+              }
+            },
+            "source_text": "The pure Co2P sample preparation was same as pure CoP phase expect 100 mg weight of NaH2PO2·H2O."
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge_input_chem_Co(NO3)2_6H2O_synth_step_1",
+            "type": "synthesis_input",
+            "source_id": "chem_Co(NO3)2_6H2O",
+            "target_id": "synth_step_1",
+            "properties": {
+              "role": "precursor"
+            }
+          },
+          {
+            "id": "edge_output_synth_step_1_chem_Co3O4",
+            "type": "synthesis_output",
+            "source_id": "synth_step_1",
+            "target_id": "chem_Co3O4",
+            "properties": {
+              "form": "powder"
+            }
+          },
+          {
+            "id": "edge_input_chem_Co3O4_synth_step_2",
+            "type": "synthesis_input",
+            "source_id": "chem_Co3O4",
+            "target_id": "synth_step_2",
+            "properties": {
+              "role": "precursor",
+              "weight_ratio": "1:10"
+            }
+          }
+        ],
+        "id": "edge_input_chem_NaH2PO2_H2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_NaH2PO2_H2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "phosphorization_agent",
+          "weight_ratio": "1:10"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Co2P_CoP_350",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Co2P_CoP_350",
+        "properties": {
+          "form": "nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_sodium_citrate_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_sodium_citrate",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "additive",
+          "amount": "50 mg"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_3_chem_Co(OH)2",
+        "type": "synthesis_output",
+        "source_id": "synth_step_3",
+        "target_id": "chem_Co(OH)2",
+        "properties": {
+          "form": "precipitation"
+        }
+      },
+      {
+        "id": "edge_input_chem_NaH2PO2_H2O_synth_step_4",
+        "type": "synthesis_input",
+        "source_id": "chem_NaH2PO2_H2O",
+        "target_id": "synth_step_4",
+        "properties": {
+          "role": "phosphorization_agent",
+          "amount": "1 g"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_4_chem_CoP",
+        "type": "synthesis_output",
+        "source_id": "synth_step_4",
+        "target_id": "chem_CoP",
+        "properties": {
+          "form": "nanoparticles"
+        }
+      },
+      {
+        "id": "edge_input_chem_NaH2PO2_H2O_synth_step_5",
+        "type": "synthesis_input",
+        "source_id": "chem_NaH2PO2_H2O",
+        "target_id": "synth_step_5",
+        "properties": {
+          "role": "phosphorization_agent",
+          "amount": "100 mg"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_5_chem_Co2P",
+        "type": "synthesis_output",
+        "source_id": "synth_step_5",
+        "target_id": "chem_Co2P",
+        "properties": {
+          "form": "nanoparticles"
+        }
+      },
+      {
+        "id": "chem_Co2P_CoP_300",
+        "type": "chemical",
+        "name": "Co₂P/CoP-300",
+        "aliases": [
+          "Co₂P/CoP"
+        ],
+        "formula": "Co₂P/CoP"
+      },
+      {
+        "id": "chem_Co2P_CoP_400",
+        "type": "chemical",
+        "name": "Co₂P/CoP-400",
+        "aliases": [
+          "Co₂P/CoP"
+        ],
+        "formula": "Co₂P/CoP"
+      },
+      {
+        "id": "chem_Co2P_CoP_350",
+        "type": "chemical",
+        "name": "Co₂P/CoP-350",
+        "aliases": [
+          "Co₂P/CoP-350",
+          "Co₂P/CoP"
+        ],
+        "formula": "Co₂P/CoP",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 31.5,
+            "unit": "m²/g"
+          },
+          "double layer capacitance": {
+            "value": 130.4,
+            "unit": "mF/cm²"
+          },
+          "charge transfer resistance": {
+            "value": 0.336,
+            "unit": "Ω"
+          }
+        }
+      },
+      {
+        "id": "chem_CoP",
+        "type": "chemical",
+        "name": "CoP",
+        "aliases": [
+          "pure CoP"
+        ],
+        "formula": "CoP",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 30.2,
+            "unit": "m²/g"
+          }
+        },
+        "related_images": [
+          "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg",
+          "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg",
+          "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg",
+          "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "CoP",
+            "properties": {
+              "miller_index": "(211)",
+              "extracted_from_image": "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg"
+            },
+            "source_image_file": "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoP",
+            "properties": {
+              "description": "Cobalt phosphide nanoparticle cluster",
+              "color": "purple spheres",
+              "extracted_from_image": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+            },
+            "source_image_file": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoP",
+            "properties": {
+              "description": "Cobalt phosphide",
+              "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+            },
+            "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "CoP",
+            "properties": {
+              "description": "Cobalt Phosphide",
+              "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+            },
+            "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Co2P",
+        "type": "chemical",
+        "name": "Co₂P",
+        "aliases": [
+          "pure Co₂P"
+        ],
+        "formula": "Co₂P",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 30.3,
+            "unit": "m²/g"
+          }
+        },
+        "related_images": [
+          "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg",
+          "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg",
+          "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Co2P",
+            "properties": {
+              "miller_index": "(111)",
+              "extracted_from_image": "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg"
+            },
+            "source_image_file": "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co2P",
+            "properties": {
+              "description": "Cobalt diphosphide nanoparticle cluster",
+              "color": "blue spheres",
+              "extracted_from_image": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+            },
+            "source_image_file": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co2P",
+            "properties": {
+              "description": "Dicobalt phosphide",
+              "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+            },
+            "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Co2P_CoP",
+        "type": "chemical",
+        "name": "Co₂P/CoP heterostructures",
+        "aliases": [
+          "Co₂P/CoP catalysts",
+          "Co₂P/CoP nanoparticles",
+          "Co₂P/CoP-300",
+          "Co₂P/CoP-350",
+          "Co₂P/CoP-400"
+        ],
+        "formula": "Co₂P/CoP",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 31.5,
+            "unit": "m²/g"
+          },
+          "average particle size": {
+            "value": 50,
+            "unit": "nm"
+          },
+          "Co₂P phase weight content": {
+            "value": 44.7,
+            "unit": "wt% (at 350°C)"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_output_synth_step_2_chem_Co2P_CoP_300",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Co2P_CoP_300",
+        "properties": {
+          "form": "nanoparticles",
+          "annealing_temperature": 300
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Co2P_CoP_400",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Co2P_CoP_400",
+        "properties": {
+          "form": "nanoparticles",
+          "annealing_temperature": 400
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Co2P",
+      "chem_Co2P_CoP_350",
+      "chem_CoP"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Co2P_CoP_350",
+        "type": "chemical",
+        "name": "Co₂P/CoP-350",
+        "aliases": [
+          "Co₂P/CoP-350",
+          "Co₂P/CoP"
+        ],
+        "formula": "Co₂P/CoP",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 31.5,
+            "unit": "m²/g"
+          },
+          "double layer capacitance": {
+            "value": 130.4,
+            "unit": "mF/cm²"
+          },
+          "charge transfer resistance": {
+            "value": 0.336,
+            "unit": "Ω"
+          }
+        }
+      },
+      {
+        "id": "chem_Co2P_CoP_300",
+        "type": "chemical",
+        "name": "Co₂P/CoP-300",
+        "aliases": [
+          "Co₂P/CoP"
+        ],
+        "formula": "Co₂P/CoP"
+      },
+      {
+        "id": "chem_Co2P_CoP_400",
+        "type": "chemical",
+        "name": "Co₂P/CoP-400",
+        "aliases": [
+          "Co₂P/CoP"
+        ],
+        "formula": "Co₂P/CoP"
+      },
+      {
+        "id": "chem_CoP",
+        "type": "chemical",
+        "name": "CoP",
+        "aliases": [
+          "pure CoP"
+        ],
+        "formula": "CoP",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 30.2,
+            "unit": "m²/g"
+          },
+          "double layer capacitance": {
+            "value": 12.5,
+            "unit": "mF/cm²"
+          },
+          "charge transfer resistance": {
+            "value": 3.117,
+            "unit": "Ω"
+          }
+        }
+      },
+      {
+        "id": "chem_Co2P",
+        "type": "chemical",
+        "name": "Co₂P",
+        "aliases": [
+          "pure Co₂P"
+        ],
+        "formula": "Co₂P",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 30.3,
+            "unit": "m²/g"
+          },
+          "double layer capacitance": {
+            "value": 23.0,
+            "unit": "mF/cm²"
+          },
+          "charge transfer resistance": {
+            "value": 1.864,
+            "unit": "Ω"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Co2P_CoP_350",
+        "description": "HER performance in 1.0 M KOH (without iR compensation)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "carbon paper (0.5 cm × 0.5 cm)",
+            "unit": "substrate"
+          },
+          "catalyst_loading": {
+            "value": 1,
+            "unit": "mg/cm²"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 121,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 84.9,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance": {
+            "value": 130.4,
+            "unit": "mF/cm²"
+          },
+          "charge_transfer_resistance": {
+            "value": 0.336,
+            "unit": "Ω"
+          },
+          "stability": {
+            "value": "continuous stability maintained lowest bias",
+            "unit": "24 h at 10 mA/cm²"
+          }
+        },
+        "source_text": "the Co₂P/CoP-350 sample required -121 mV to deliver a current density of -10 mA/cm²... The Co₂P/CoP-350 sample showed the Tafel slope value as low as 84.9 mV/dec... Co₂P/CoP-350 possesses the largest C_dl (130.4 mF/cm²)... The smallest charge transfer resistance (R_ct) of heterostructure Co₂P/CoP-350 sample (R_ct = 0.336Ω)... all the samples show continuous stability in the 24 h electrocatalysis, while the Co₂P/CoP-350 maintained the lowest bias during the test."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Co2P_CoP_300",
+        "description": "HER performance in 1.0 M KOH (without iR compensation)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "carbon paper (0.5 cm × 0.5 cm)",
+            "unit": "substrate"
+          },
+          "catalyst_loading": {
+            "value": 1,
+            "unit": "mg/cm²"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 168,
+            "unit": "mV"
+          },
+          "double_layer_capacitance": {
+            "value": 48.9,
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "Co₂P/CoP-300 (-168 mV)... Co₂P/CoP-300 (48.9 mF/cm²)"
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_Co2P_CoP_400",
+        "description": "HER performance in 1.0 M KOH (without iR compensation)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "carbon paper (0.5 cm × 0.5 cm)",
+            "unit": "substrate"
+          },
+          "catalyst_loading": {
+            "value": 1,
+            "unit": "mg/cm²"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 161,
+            "unit": "mV"
+          },
+          "double_layer_capacitance": {
+            "value": 49.4,
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "Co₂P/CoP-400 (-161 mV)... Co₂P/CoP-400 (49.4 mF/cm²)"
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_CoP",
+        "description": "HER performance in 1.0 M KOH (without iR compensation)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "carbon paper (0.5 cm × 0.5 cm)",
+            "unit": "substrate"
+          },
+          "catalyst_loading": {
+            "value": 1,
+            "unit": "mg/cm²"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 256,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 118.4,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance": {
+            "value": 12.5,
+            "unit": "mF/cm²"
+          },
+          "charge_transfer_resistance": {
+            "value": 3.117,
+            "unit": "Ω"
+          }
+        },
+        "source_text": "pure CoP (-256 mV)... pure CoP (118.4 mV/dec)... pure CoP (12.5 mF/cm²)... pure phase of CoP (R_ct = 3.117Ω)"
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_Co2P",
+        "description": "HER performance in 1.0 M KOH (without iR compensation)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "working_electrode": {
+            "value": "carbon paper (0.5 cm × 0.5 cm)",
+            "unit": "substrate"
+          },
+          "catalyst_loading": {
+            "value": 1,
+            "unit": "mg/cm²"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon rod",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "applied"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 246,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 129.8,
+            "unit": "mV/dec"
+          },
+          "double_layer_capacitance": {
+            "value": 23.0,
+            "unit": "mF/cm²"
+          },
+          "charge_transfer_resistance": {
+            "value": 1.864,
+            "unit": "Ω"
+          }
+        },
+        "source_text": "pure Co₂P (-246 mV)... pure Co₂P (129.8 mV/dec)... pure Co₂P (23.0 mF/cm²)... pure phase of Co₂P (R_ct = 1.864Ω)"
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_Co2P_CoP_350",
+        "description": "Poison experiment with 0.01 M SCN⁻ in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.01 M SCN⁻",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "effect": {
+            "value": "LSV curves shift extremely",
+            "unit": "Co sites blocked"
+          }
+        },
+        "source_text": "upon the addition of SCN⁻, the LSV curves of Co₂P/CoP, Co₂P, and CoP natively shift extremely, indicating that Co sites play a crucial role"
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_CoP",
+        "description": "Poison experiment with 0.01 M S²⁻ in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.01 M S²⁻",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "effect": {
+            "value": "changed slightly",
+            "unit": "P sites contribution minimal"
+          }
+        },
+        "source_text": "the HER curve of Co₂P/CoP decreased significantly after adding S²⁻ in the electrolyte, while the CoP and Co₂P changed slightly"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_Co2P",
+        "description": "Poison experiment with 0.01 M S²⁻ in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH + 0.01 M S²⁻",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "scan_rate": {
+            "value": 5,
+            "unit": "mV/s"
+          }
+        },
+        "results_json": {
+          "effect": {
+            "value": "changed slightly",
+            "unit": "P sites contribution minimal"
+          }
+        },
+        "source_text": "the HER curve of Co₂P/CoP decreased significantly after adding S²⁻ in the electrolyte, while the CoP and Co₂P changed slightly"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Co2P_CoP_350_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Co2P_CoP_350",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co2P_CoP_300_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Co2P_CoP_300",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co2P_CoP_400_test_3",
+        "type": "tested_in",
+        "source_id": "chem_Co2P_CoP_400",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_CoP_test_4",
+        "type": "tested_in",
+        "source_id": "chem_CoP",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Co2P_test_5",
+        "type": "tested_in",
+        "source_id": "chem_Co2P",
+        "target_id": "test_5",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Co2P_CoP",
+        "type": "chemical",
+        "name": "Co₂P/CoP heterostructures",
+        "aliases": [
+          "Co₂P/CoP catalysts",
+          "Co₂P/CoP nanoparticles",
+          "Co₂P/CoP-300",
+          "Co₂P/CoP-350",
+          "Co₂P/CoP-400"
+        ],
+        "formula": "Co₂P/CoP",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 31.5,
+            "unit": "m²/g"
+          },
+          "average particle size": {
+            "value": 50,
+            "unit": "nm"
+          },
+          "Co₂P phase weight content": {
+            "value": 44.7,
+            "unit": "wt% (at 350°C)"
+          }
+        }
+      },
+      {
+        "id": "chem_CoP",
+        "type": "chemical",
+        "name": "CoP",
+        "aliases": [
+          "pure CoP"
+        ],
+        "formula": "CoP",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 30.2,
+            "unit": "m²/g"
+          }
+        }
+      },
+      {
+        "id": "chem_Co2P",
+        "type": "chemical",
+        "name": "Co₂P",
+        "aliases": [
+          "pure Co₂P"
+        ],
+        "formula": "Co₂P",
+        "properties": {
+          "Brunauer-Emmett-Teller specific surface area": {
+            "value": 30.3,
+            "unit": "m²/g"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "Co₂P/CoP displays biphasic structure with Co₂P (121), (201), (211) planes at 40.7°, 41.0°, 43.3° and CoP (011), (112), (211) planes at 31.6°, 46.2°, 48.1°; weight contents of Co₂P phase are 74.8%, 44.7%, 25.7% at 300, 350, 400°C annealing.",
+        "evidence_snippet": "As shown in Fig. 1(b), a series of peaks at 2θ of 40.7°, 41.0°, and 43.3° appeared in Co₂P/CoP catalysts can be ascribed to Co₂P phase of (121), (201), and (211) planes, while the peaks at 31.6°, 46.2°, and 48.1° belong to (011), (112), and (211) planes of CoP."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "BET",
+        "is_reported": true,
+        "characterization_summary": "Brunauer-Emmett-Teller specific surface areas are 31.5 m²/g for Co₂P/CoP, 30.2 m²/g for CoP, and 30.3 m²/g for Co₂P.",
+        "evidence_snippet": "Figure 1(c) shows the nitrogen adsorption-desorption isotherms results. The Brunauer-Emmett-Teller (BET) specific surface areas (SSA) are 31.5, 30.2, and 30.3 m²/g for Co₂P/CoP, CoP, and Co₂P, respectively."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "Co₂P/CoP catalysts display interconnected nanoparticle structures with average particle size of ~50 nm and slight agglomeration compared to Co₃O₄ precursor.",
+        "evidence_snippet": "The SEM images of Co₃O₄ precursors and Co₂P/CoP catalysts are shown in Figs. 2(a), 2(b), 2(d), and 2(e), respectively. Specifically, the average particle sizes of the Co₃O₄ and Co₂P/CoP are about 50 nm."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "BF-STEM and EDS mapping show Co and P distributed throughout Co₂P/CoP nanoparticles with higher Co atomic content than P.",
+        "evidence_snippet": "TEM (BF-STEM) of Co₂P/CoP and corresponding energy dispersive X-ray spectroscopy (EDS) mapping indicated the Co and P are distributed in the Co₂P/CoP sample, and the atomic content of Co is higher than P."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "HRTEM",
+        "is_reported": true,
+        "characterization_summary": "Co₂P/CoP shows interplanar lattice spacings of ≈0.231 nm (CoP (201)) and ≈0.271 nm (Co₂P (111)); pure CoP shows 0.189 nm (211), 0.247 nm (111); pure Co₂P shows 0.214 nm (220), 0.285 nm (120).",
+        "evidence_snippet": "After the inverse Fourier transform (IFFT), the interplanar lattice spacings could be obtained as ≈0.231 and ≈0.271 nm, corresponding to the orthorhombic CoP (201) and Co₂P (111) facets, respectively."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "SAED",
+        "is_reported": true,
+        "characterization_summary": "Two sets of circular spots confirm polycrystalline phases of both CoP and Co₂P in heterostructure; single phases confirmed in pure CoP and Co₂P references.",
+        "evidence_snippet": "In Figs. 3(a)–3(g), two sets of circular spots in SAED indicate polycrystalline phases of CoP and Co₂P existing in the heterostructure Co₂P/CoP sample."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "UPS",
+        "is_reported": true,
+        "characterization_summary": "Work functions measured as 3.82 eV for pure CoP and 4.43 eV for pure Co₂P, driving self-driven electron transfer from CoP to Co₂P in heterostructure.",
+        "evidence_snippet": "Ultraviolet photoelectron spectroscopy (UPS) and Xray photoelectron spectroscopy (XPS) revealed the effective promotion of the self-driven transferring of electrons from CoP to Co₂P... As a result, Co₂P has a work function of 4.43 eV, noticeably higher than that of CoP (3.82 eV)."
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "Co 2p Co-P peaks at 778.57, 793.47 eV positively shifted in Co₂P/CoP vs pure phases (Co more positive); P 2p peaks at 129.26, 130.18 eV negatively shifted (P more negative), confirming electron redistribution.",
+        "evidence_snippet": "The peaks at 778.57 and 793.47 eV belong to the Co-P bond... Notably, compared to pure Co₂P and CoP control samples, the binding energies of Co-P bond in Co₂P/CoP are positively shifted."
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "C_dl values: Co₂P/CoP-350 = 130.4 mF/cm² (highest), Co₂P/CoP-300 = 48.9 mF/cm², Co₂P/CoP-400 = 49.4 mF/cm², pure CoP = 12.5 mF/cm², pure Co₂P = 23.0 mF/cm².",
+        "evidence_snippet": "The C_dl results calculated by linear fitting in 1.24 V vs. RHE are shown in Fig. 4(d). Co₂P/CoP-350 possesses the largest C_dl (130.4 mF/cm²)."
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "R_ct = 0.336 Ω for Co₂P/CoP-350 (lowest), 3.117 Ω for CoP, 1.864 Ω for Co₂P; in situ EIS shows Volmer (mid-freq) and Heyrovsky (low-freq) steps.",
+        "evidence_snippet": "The smallest charge transfer resistance (R_ct) of heterostructure Co₂P/CoP-350 sample (R_ct = 0.336 Ω) compared to that of pure phase of CoP (R_ct = 3.117 Ω) and Co₂P (R_ct = 1.864 Ω)."
+      },
+      {
+        "id": "figure_j",
+        "type": "figure",
+        "name": "(j)",
+        "properties": {
+          "label": "Size Distribution Chart",
+          "extracted_from_image": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+        },
+        "source_image_file": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Electrochemical Impedance Spectroscopy (EIS) Nyquist Plot",
+        "properties": {
+          "label": "(b)",
+          "x_axis": "log(Frequency) (Hz)",
+          "y_axis": "Heyrovsky phase angle (?)",
+          "features": [
+            "Semicircles",
+            "Heyrovsky step",
+            "Volmer step"
+          ],
+          "extracted_from_image": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+        },
+        "source_image_file": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+      },
+      {
+        "id": "co_bar",
+        "type": "data_point",
+        "name": "Co Size Distribution",
+        "properties": {
+          "size": "Co",
+          "percent": "~30%",
+          "error_bar": "present",
+          "color": "purple",
+          "extracted_from_image": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+        },
+        "source_image_file": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+      },
+      {
+        "id": "p_bar",
+        "type": "data_point",
+        "name": "P Size Distribution",
+        "properties": {
+          "size": "P",
+          "percent": "~25%",
+          "error_bar": "present",
+          "color": "purple",
+          "extracted_from_image": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+        },
+        "source_image_file": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+      },
+      {
+        "id": "co_element",
+        "type": "chemical",
+        "name": "Cobalt (Co)",
+        "properties": {
+          "symbol": "Co",
+          "context": "nanoparticle size distribution",
+          "extracted_from_image": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+        },
+        "source_image_file": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+      },
+      {
+        "id": "p_element",
+        "type": "chemical",
+        "name": "Phosphorus (P)",
+        "properties": {
+          "symbol": "P",
+          "context": "nanoparticle size distribution",
+          "extracted_from_image": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+        },
+        "source_image_file": "00079baad5caa6598f09b783c47e13c0f6fb87386467a6cff9f2aed9255ca9d2.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "CoP",
+        "properties": {
+          "description": "Cobalt phosphide",
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "Co₂P",
+        "properties": {
+          "description": "Dicobalt phosphide",
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "chemical",
+        "name": "Co₂P/CoP",
+        "properties": {
+          "description": "Mixture of Co₂P and CoP",
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "chemical",
+        "name": "P-O",
+        "properties": {
+          "description": "Phosphorus-oxygen bond",
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "chemical",
+        "name": "P-M",
+        "properties": {
+          "description": "Phosphorus-metal bond",
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "chemical",
+        "name": "P₂p",
+        "properties": {
+          "description": "Phosphorus 2p XPS peak",
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "chemical",
+        "name": "2P₁/₂",
+        "properties": {
+          "description": "P 2p_{1/2} spin-orbit component",
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chemical",
+        "name": "2P₃/₂",
+        "properties": {
+          "description": "P 2p_{3/2} spin-orbit component",
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "type": "X-ray Photoelectron Spectroscopy",
+          "axis_x": "Binding Energy (eV)",
+          "axis_y": "Intensity (a.u.)",
+          "range_x": [
+            125,
+            140
+          ],
+          "extracted_from_image": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+        },
+        "source_image_file": "fc028bf67a0fef5c2833c52922ef98db7e5f96b34bd967c1b08168bf1c6624b0.jpg"
+      },
+      {
+        "id": "s1",
+        "type": "structure",
+        "name": "Nanocrystal",
+        "properties": {
+          "description": "Crystalline nanoparticle observed in TEM",
+          "size": "~few nm",
+          "morphology": "roughly spherical with lattice fringes",
+          "extracted_from_image": "1ff1a86519c7442dc5dda1e7deda6444cc3a92710917aa39b48f689d7dc2951e.jpg"
+        },
+        "source_image_file": "1ff1a86519c7442dc5dda1e7deda6444cc3a92710917aa39b48f689d7dc2951e.jpg"
+      },
+      {
+        "id": "f1",
+        "type": "feature",
+        "name": "Lattice Fringes",
+        "properties": {
+          "description": "Atomic lattice planes visible in HRTEM",
+          "location": "Region II",
+          "scale": "2 nm",
+          "extracted_from_image": "1ff1a86519c7442dc5dda1e7deda6444cc3a92710917aa39b48f689d7dc2951e.jpg"
+        },
+        "source_image_file": "1ff1a86519c7442dc5dda1e7deda6444cc3a92710917aa39b48f689d7dc2951e.jpg"
+      },
+      {
+        "id": "sb1",
+        "type": "annotation",
+        "name": "Scale Bar",
+        "properties": {
+          "description": "2 nm scale indicator",
+          "location": "bottom right",
+          "extracted_from_image": "1ff1a86519c7442dc5dda1e7deda6444cc3a92710917aa39b48f689d7dc2951e.jpg"
+        },
+        "source_image_file": "1ff1a86519c7442dc5dda1e7deda6444cc3a92710917aa39b48f689d7dc2951e.jpg"
+      },
+      {
+        "id": "image",
+        "type": "characterization",
+        "name": "Microscopy Image",
+        "properties": {
+          "label": "(t)",
+          "description": "Striped pattern with diagonal lines, likely TEM image of nanostructure",
+          "extracted_from_image": "79428fd83ff43bb96a012dbc18fade218d76b7aac96f41571eb516eb71331363.jpg"
+        },
+        "source_image_file": "79428fd83ff43bb96a012dbc18fade218d76b7aac96f41571eb516eb71331363.jpg"
+      },
+      {
+        "id": "pattern",
+        "type": "characterization",
+        "name": "Diffraction Pattern",
+        "properties": {
+          "type": "FFT",
+          "peaks": "Multiple peaks visible in cyan and orange",
+          "scale": "Intensity from -30 to 30, distance from 0 to 3.0",
+          "extracted_from_image": "20a40164a24fd12433fb17035ab77a45aef1c17cc47e0ab71ee86c24c26664ac.jpg"
+        },
+        "source_image_file": "20a40164a24fd12433fb17035ab77a45aef1c17cc47e0ab71ee86c24c26664ac.jpg"
+      },
+      {
+        "id": "distance",
+        "type": "measurement",
+        "name": "2.47 nm",
+        "properties": {
+          "value": "2.47 nm",
+          "unit": "nanometers",
+          "description": "Inter-peak distance indicated by double arrow",
+          "extracted_from_image": "20a40164a24fd12433fb17035ab77a45aef1c17cc47e0ab71ee86c24c26664ac.jpg"
+        },
+        "source_image_file": "20a40164a24fd12433fb17035ab77a45aef1c17cc47e0ab71ee86c24c26664ac.jpg"
+      },
+      {
+        "id": "peaks",
+        "type": "feature",
+        "name": "Diffraction Peaks",
+        "properties": {
+          "colors": [
+            "cyan",
+            "orange"
+          ],
+          "intensity_range": [
+            -30,
+            30
+          ],
+          "extracted_from_image": "20a40164a24fd12433fb17035ab77a45aef1c17cc47e0ab71ee86c24c26664ac.jpg"
+        },
+        "source_image_file": "20a40164a24fd12433fb17035ab77a45aef1c17cc47e0ab71ee86c24c26664ac.jpg"
+      },
+      {
+        "id": "material",
+        "type": "chemical",
+        "name": "Nanostructured Material",
+        "properties": {
+          "description": "Fluffy, aggregated nanostructures",
+          "extracted_from_image": "751e819a7e02dc7a87b03890c37437351afff3d1cce9cdbb7988b4ee4701cfff.jpg"
+        },
+        "source_image_file": "751e819a7e02dc7a87b03890c37437351afff3d1cce9cdbb7988b4ee4701cfff.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "state",
+        "name": "I",
+        "properties": {
+          "description": "Initial state",
+          "extracted_from_image": "c5adcced95cfc3cec426c503e347d35a0ae51392653e4f30eec79060e4cbf60a.jpg"
+        },
+        "source_image_file": "c5adcced95cfc3cec426c503e347d35a0ae51392653e4f30eec79060e4cbf60a.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "state",
+        "name": "II",
+        "properties": {
+          "description": "Intermediate state",
+          "extracted_from_image": "c5adcced95cfc3cec426c503e347d35a0ae51392653e4f30eec79060e4cbf60a.jpg"
+        },
+        "source_image_file": "c5adcced95cfc3cec426c503e347d35a0ae51392653e4f30eec79060e4cbf60a.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "label",
+        "name": "qE",
+        "properties": {
+          "description": "charge transfer",
+          "extracted_from_image": "c5adcced95cfc3cec426c503e347d35a0ae51392653e4f30eec79060e4cbf60a.jpg"
+        },
+        "source_image_file": "c5adcced95cfc3cec426c503e347d35a0ae51392653e4f30eec79060e4cbf60a.jpg"
+      },
+      {
+        "id": "cop_211",
+        "type": "crystal_plane",
+        "name": "CoP (211)",
+        "properties": {
+          "d_spacing": "0.231 nm",
+          "extracted_from_image": "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg"
+        },
+        "source_image_file": "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg"
+      },
+      {
+        "id": "cop2_111",
+        "type": "crystal_plane",
+        "name": "Co2P (111)",
+        "properties": {
+          "d_spacing": "0.271 nm",
+          "extracted_from_image": "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg"
+        },
+        "source_image_file": "31e577d0889b2db623bd7ef63f26404c51ae40474509c729d9338bd902bb3532.jpg"
+      },
+      {
+        "id": "scale_bar",
+        "type": "characterization",
+        "name": "Scale Bar",
+        "properties": {
+          "unit": "nm^{-1}",
+          "value": "1 nm^{-1}",
+          "extracted_from_image": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+        },
+        "source_image_file": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+      },
+      {
+        "id": "image_d",
+        "type": "characterization",
+        "name": "SEM image (d)",
+        "properties": {
+          "scale": "1 nm",
+          "description": "High-resolution image with wavy patterns and scale bar",
+          "extracted_from_image": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+        },
+        "source_image_file": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+      },
+      {
+        "id": "sem",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "technique": "Scanning Electron Microscopy",
+          "description": "Porous aggregate structure with fluffy, clustered nanoparticles",
+          "scale": "500 nm",
+          "extracted_from_image": "3a7a590164a07718681851337cae2cd07cc4e5ed85014d4e907892b04bde1896.jpg"
+        },
+        "source_image_file": "3a7a590164a07718681851337cae2cd07cc4e5ed85014d4e907892b04bde1896.jpg"
+      },
+      {
+        "id": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f_node1",
+        "type": "characterization",
+        "name": "XPS Spectrum",
+        "properties": {
+          "technique": "X-ray Photoelectron Spectroscopy",
+          "axis_x": "Binding Energy (eV)",
+          "axis_y": "Intensity (a.u.)",
+          "range_x": "0-1000 eV",
+          "extracted_from_image": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+        },
+        "source_image_file": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+      },
+      {
+        "id": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f_node2",
+        "type": "chemical",
+        "name": "Co 2p",
+        "properties": {
+          "element": "Co",
+          "orbital": "2p",
+          "binding_energy_approx": "780-800 eV",
+          "extracted_from_image": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+        },
+        "source_image_file": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+      },
+      {
+        "id": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f_node3",
+        "type": "chemical",
+        "name": "O 1s",
+        "properties": {
+          "element": "O",
+          "orbital": "1s",
+          "binding_energy_approx": "530 eV",
+          "extracted_from_image": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+        },
+        "source_image_file": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+      },
+      {
+        "id": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f_node4",
+        "type": "chemical",
+        "name": "C 1s",
+        "properties": {
+          "element": "C",
+          "orbital": "1s",
+          "binding_energy_approx": "285 eV",
+          "extracted_from_image": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+        },
+        "source_image_file": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+      },
+      {
+        "id": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f_node5",
+        "type": "chemical",
+        "name": "P 2p",
+        "properties": {
+          "element": "P",
+          "orbital": "2p",
+          "binding_energy_approx": "130-135 eV",
+          "extracted_from_image": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+        },
+        "source_image_file": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+      },
+      {
+        "id": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f_node6",
+        "type": "material",
+        "name": "CoP",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+        },
+        "source_image_file": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+      },
+      {
+        "id": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f_node7",
+        "type": "material",
+        "name": "Co2P",
+        "properties": {
+          "color": "purple",
+          "extracted_from_image": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+        },
+        "source_image_file": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+      },
+      {
+        "id": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f_node8",
+        "type": "material",
+        "name": "Co2P/CoP",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+        },
+        "source_image_file": "3bad38c4e3cf96d08bd66be8bbe6fead9567461e3b131eb7bb435e4923461b3f.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "H2O",
+        "properties": {
+          "description": "Water molecule",
+          "color": "orange with H",
+          "extracted_from_image": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+        },
+        "source_image_file": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+      },
+      {
+        "id": "H2",
+        "type": "chemical",
+        "name": "H2",
+        "properties": {
+          "description": "Hydrogen gas molecule",
+          "extracted_from_image": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+        },
+        "source_image_file": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+      },
+      {
+        "id": "Co",
+        "type": "chemical",
+        "name": "Cobalt",
+        "properties": {
+          "color": "green",
+          "symbol": "Co",
+          "extracted_from_image": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+        },
+        "source_image_file": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+      },
+      {
+        "id": "P",
+        "type": "chemical",
+        "name": "Phosphorus",
+        "properties": {
+          "color": "purple",
+          "symbol": "P",
+          "extracted_from_image": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+        },
+        "source_image_file": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+      },
+      {
+        "id": "O",
+        "type": "chemical",
+        "name": "Oxygen",
+        "properties": {
+          "color": "blue",
+          "symbol": "O",
+          "extracted_from_image": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+        },
+        "source_image_file": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+      },
+      {
+        "id": "H",
+        "type": "chemical",
+        "name": "Hydrogen",
+        "properties": {
+          "color": "orange",
+          "symbol": "H",
+          "extracted_from_image": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+        },
+        "source_image_file": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+      },
+      {
+        "id": "accelerated_kinetics",
+        "type": "process",
+        "name": "Accelerated kinetics",
+        "properties": {
+          "description": "Fast hydrogen evolution reaction with CoP",
+          "extracted_from_image": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+        },
+        "source_image_file": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+      },
+      {
+        "id": "hard_h2_release",
+        "type": "process",
+        "name": "Hard H2 release",
+        "properties": {
+          "description": "Slow/impractical hydrogen release with Co2P (marked with X)",
+          "extracted_from_image": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+        },
+        "source_image_file": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+      },
+      {
+        "id": "e-",
+        "type": "particle",
+        "name": "e-",
+        "properties": {
+          "description": "Electrons",
+          "extracted_from_image": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+        },
+        "source_image_file": "41414ed09fdecd71e2f825d95d1313096c2031e926c252299f04aa9ffba5ac0c.jpg"
+      },
+      {
+        "id": "CoP-300",
+        "type": "chemical",
+        "name": "CoP-300",
+        "properties": {
+          "description": "CoP synthesized or treated at 300°C",
+          "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+        },
+        "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+      },
+      {
+        "id": "CoP-350",
+        "type": "chemical",
+        "name": "CoP-350",
+        "properties": {
+          "description": "CoP synthesized or treated at 350°C",
+          "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+        },
+        "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+      },
+      {
+        "id": "CoP-400",
+        "type": "chemical",
+        "name": "CoP-400",
+        "properties": {
+          "description": "CoP synthesized or treated at 400°C",
+          "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+        },
+        "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+      },
+      {
+        "id": "20%Pt/C",
+        "type": "chemical",
+        "name": "20% Pt/C",
+        "properties": {
+          "description": "20% Platinum on Carbon catalyst",
+          "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+        },
+        "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+      },
+      {
+        "id": "10mAcm2",
+        "type": "condition",
+        "name": "10 mA/cm²",
+        "properties": {
+          "description": "Current density of 10 mA per cm squared",
+          "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+        },
+        "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+      },
+      {
+        "id": "50mAcm2",
+        "type": "condition",
+        "name": "50 mA/cm²",
+        "properties": {
+          "description": "Current density of 50 mA per cm squared",
+          "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+        },
+        "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+      },
+      {
+        "id": "100mAcm2",
+        "type": "condition",
+        "name": "100 mA/cm²",
+        "properties": {
+          "description": "Current density of 100 mA per cm squared",
+          "extracted_from_image": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+        },
+        "source_image_file": "4daded3ef80bfd4cb066137b5be5c26bd697a03b7a65cd6f4b9c1fe902683137.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "performance_metric",
+        "name": "129.8 mV/dec",
+        "properties": {
+          "value": "129.8 mV/dec",
+          "associated_with": "20% Pt/C",
+          "extracted_from_image": "af6c14ad58f78c6cd1bae4b93c1fb49a58fbe1c6ebc93356dc068d383a5c7f25.jpg"
+        },
+        "source_image_file": "af6c14ad58f78c6cd1bae4b93c1fb49a58fbe1c6ebc93356dc068d383a5c7f25.jpg"
+      },
+      {
+        "id": "III",
+        "type": "chemical",
+        "name": "Compound III",
+        "properties": {
+          "label": "III",
+          "description": "Labeled region in microscopy image",
+          "extracted_from_image": "69774cc5381de5fed20484d70959554bf5658905a3fcbca08e45de5483a0f781.jpg"
+        },
+        "source_image_file": "69774cc5381de5fed20484d70959554bf5658905a3fcbca08e45de5483a0f781.jpg"
+      },
+      {
+        "id": "IV",
+        "type": "chemical",
+        "name": "Compound IV",
+        "properties": {
+          "label": "IV",
+          "description": "Labeled region in microscopy image",
+          "extracted_from_image": "69774cc5381de5fed20484d70959554bf5658905a3fcbca08e45de5483a0f781.jpg"
+        },
+        "source_image_file": "69774cc5381de5fed20484d70959554bf5658905a3fcbca08e45de5483a0f781.jpg"
+      },
+      {
+        "id": "scalebar",
+        "type": "characterization",
+        "name": "Scale Bar",
+        "properties": {
+          "length": "200 nm",
+          "description": "Nanoscale scale bar for microscopy image",
+          "extracted_from_image": "69774cc5381de5fed20484d70959554bf5658905a3fcbca08e45de5483a0f781.jpg"
+        },
+        "source_image_file": "69774cc5381de5fed20484d70959554bf5658905a3fcbca08e45de5483a0f781.jpg"
+      },
+      {
+        "id": "image_g",
+        "type": "image",
+        "name": "Figure g",
+        "properties": {
+          "label": "g",
+          "scale_bar": "100 nm",
+          "extracted_from_image": "751e819a7e02dc7a87b03890c37437351afff3d1cce9cdbb7988b4ee4701cfff.jpg"
+        },
+        "source_image_file": "751e819a7e02dc7a87b03890c37437351afff3d1cce9cdbb7988b4ee4701cfff.jpg"
+      },
+      {
+        "id": "char_sem",
+        "type": "characterization",
+        "name": "SEM Image",
+        "properties": {
+          "technique": "Scanning Electron Microscopy",
+          "scale": "100 nm",
+          "features": "irregular, fibrous, aggregated morphology",
+          "extracted_from_image": "751e819a7e02dc7a87b03890c37437351afff3d1cce9cdbb7988b4ee4701cfff.jpg"
+        },
+        "source_image_file": "751e819a7e02dc7a87b03890c37437351afff3d1cce9cdbb7988b4ee4701cfff.jpg"
+      },
+      {
+        "id": "compound_IV",
+        "type": "chemical",
+        "name": "Compound IV",
+        "properties": {
+          "label": "IV",
+          "color": "red",
+          "extracted_from_image": "79428fd83ff43bb96a012dbc18fade218d76b7aac96f41571eb516eb71331363.jpg"
+        },
+        "source_image_file": "79428fd83ff43bb96a012dbc18fade218d76b7aac96f41571eb516eb71331363.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "characterization",
+        "name": "LSV curve (Co(OH)₂-KOH S²⁻)",
+        "properties": {
+          "color": "purple dashed",
+          "x_axis": "Potential (V vs RHE)",
+          "y_axis": "Current density (mA/cm²)",
+          "extracted_from_image": "7efee35a75c36135741bebb603dcfade5ad5c571fbc79fee44d4b0d9ba07d6d9.jpg"
+        },
+        "source_image_file": "7efee35a75c36135741bebb603dcfade5ad5c571fbc79fee44d4b0d9ba07d6d9.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "chart",
+        "name": "Linear Sweep Voltammetry (LSV)",
+        "properties": {
+          "figure_label": "(e)",
+          "x_range": [
+            -0.5,
+            0.0
+          ],
+          "y_range": [
+            0,
+            -150
+          ],
+          "reference": "RHE",
+          "technique": "LSV",
+          "extracted_from_image": "7efee35a75c36135741bebb603dcfade5ad5c571fbc79fee44d4b0d9ba07d6d9.jpg"
+        },
+        "source_image_file": "7efee35a75c36135741bebb603dcfade5ad5c571fbc79fee44d4b0d9ba07d6d9.jpg"
+      },
+      {
+        "id": "single_site_route",
+        "type": "diagram",
+        "name": "Single site HER route",
+        "properties": {
+          "description": "Schematic of single site hydrogen evolution reaction pathway",
+          "extracted_from_image": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+        },
+        "source_image_file": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+      },
+      {
+        "id": "multiple_sites_route",
+        "type": "diagram",
+        "name": "Multiple sites HER route",
+        "properties": {
+          "description": "Schematic of multiple sites hydrogen evolution reaction pathway",
+          "extracted_from_image": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+        },
+        "source_image_file": "ba612f55ae58cd12770454ea23a500ba998eab1c8c9f7460b2eb7eb2a0e9acec.jpg"
+      },
+      {
+        "id": "pure_co",
+        "type": "chemical",
+        "name": "Pure Co",
+        "properties": {
+          "description": "Pure cobalt material",
+          "extracted_from_image": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+        },
+        "source_image_file": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+      },
+      {
+        "id": "pure_co_2p",
+        "type": "chemical",
+        "name": "Pure Co 2p",
+        "properties": {
+          "description": "Pure cobalt 2p XPS peak",
+          "extracted_from_image": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+        },
+        "source_image_file": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+      },
+      {
+        "id": "xps_spectrum_a",
+        "type": "characterization",
+        "name": "XPS Spectrum (a)",
+        "properties": {
+          "type": "XPS",
+          "region": "Co 2p",
+          "x_axis": "Binding Energy (eV)",
+          "y_axis": "Intensity (a.u.)",
+          "extracted_from_image": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+        },
+        "source_image_file": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+      },
+      {
+        "id": "e_cutoff_pure_co",
+        "type": "parameter",
+        "name": "E_cut-off Pure Co",
+        "properties": {
+          "value": "17.18 eV",
+          "description": "Cutoff binding energy for pure Co",
+          "extracted_from_image": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+        },
+        "source_image_file": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+      },
+      {
+        "id": "e_f_pure_co",
+        "type": "parameter",
+        "name": "E_F Pure Co",
+        "properties": {
+          "value": "-0.22 eV",
+          "description": "Fermi energy for pure Co",
+          "extracted_from_image": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+        },
+        "source_image_file": "cd05c291f0a539c526a3e9647c5e14339ee20146e4542fe30d0805238e6742a7.jpg"
+      },
+      {
+        "id": "image_f",
+        "type": "characterization",
+        "name": "SEM image (f)",
+        "properties": {
+          "scale": "1 nm",
+          "description": "High-resolution image with wavy patterns and scale bar",
+          "extracted_from_image": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+        },
+        "source_image_file": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+      },
+      {
+        "id": "scale_bar_d",
+        "type": "annotation",
+        "name": "Scale bar (d)",
+        "properties": {
+          "length": "1 nm",
+          "extracted_from_image": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+        },
+        "source_image_file": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+      },
+      {
+        "id": "scale_bar_f",
+        "type": "annotation",
+        "name": "Scale bar (f)",
+        "properties": {
+          "length": "1 nm",
+          "extracted_from_image": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+        },
+        "source_image_file": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+      },
+      {
+        "id": "material_d",
+        "type": "material",
+        "name": "Nanostructured material (d)",
+        "properties": {
+          "morphology": "wavy layered structure",
+          "scale": "nanometer",
+          "extracted_from_image": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+        },
+        "source_image_file": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+      },
+      {
+        "id": "material_f",
+        "type": "material",
+        "name": "Nanostructured material (f)",
+        "properties": {
+          "morphology": "wavy layered structure",
+          "scale": "nanometer",
+          "extracted_from_image": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+        },
+        "source_image_file": "cf56898f4c7ed6e840cc8400446125ba731ea66abb9e659d5df48b83b5448b5a.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node1",
+        "type": "chemical",
+        "name": "Co_net_site",
+        "properties": {
+          "description": "Cobalt net site",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node2",
+        "type": "chemical",
+        "name": "Co_het_site",
+        "properties": {
+          "description": "Cobalt heterogeneous site",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node3",
+        "type": "chemical",
+        "name": "P_net_site",
+        "properties": {
+          "description": "Phosphorus net site",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node4",
+        "type": "chemical",
+        "name": "P_het_site",
+        "properties": {
+          "description": "Phosphorus heterogeneous site",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node5",
+        "type": "chemical",
+        "name": "H+",
+        "properties": {
+          "description": "Proton",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node6",
+        "type": "chemical",
+        "name": "e-",
+        "properties": {
+          "description": "Electron",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node7",
+        "type": "chemical",
+        "name": "H",
+        "properties": {
+          "description": "Atomic hydrogen",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node8",
+        "type": "chemical",
+        "name": "1/2 H2",
+        "properties": {
+          "description": "Hydrogen molecule half",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node9",
+        "type": "characterization",
+        "name": "ECSA",
+        "properties": {
+          "description": "Electrochemically active surface area",
+          "unit": "m²/g (implied)",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2_node10",
+        "type": "chart",
+        "name": "Volcanoplot",
+        "properties": {
+          "description": "Volcano plot showing ECSA vs reaction coordinate",
+          "x_axis": "H+ + e- to 1/2 H2",
+          "y_axis": "ΔG (ECSA)",
+          "extracted_from_image": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+        },
+        "source_image_file": "dca6561e52e5c9d882f01a6ba197886cd9247173f33e67ad832ff7a902800bb2.jpg"
+      },
+      {
+        "id": "0V",
+        "type": "condition",
+        "name": "0 V",
+        "properties": {
+          "potential": "0 V",
+          "color": "orange",
+          "extracted_from_image": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+        },
+        "source_image_file": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+      },
+      {
+        "id": "-0.1V",
+        "type": "condition",
+        "name": "-0.1 V",
+        "properties": {
+          "potential": "-0.1 V",
+          "color": "green",
+          "extracted_from_image": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+        },
+        "source_image_file": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+      },
+      {
+        "id": "-0.2V",
+        "type": "condition",
+        "name": "-0.2 V",
+        "properties": {
+          "potential": "-0.2 V",
+          "color": "yellow",
+          "extracted_from_image": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+        },
+        "source_image_file": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+      },
+      {
+        "id": "-0.25V",
+        "type": "condition",
+        "name": "-0.25 V",
+        "properties": {
+          "potential": "-0.25 V",
+          "color": "purple",
+          "extracted_from_image": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+        },
+        "source_image_file": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+      },
+      {
+        "id": "-0.3V",
+        "type": "condition",
+        "name": "-0.3 V",
+        "properties": {
+          "potential": "-0.3 V",
+          "color": "cyan",
+          "extracted_from_image": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+        },
+        "source_image_file": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+      },
+      {
+        "id": "heyrovsky_step",
+        "type": "electrochemical_feature",
+        "name": "Heyrovsky step",
+        "properties": {
+          "description": "Characteristic phase angle feature in Nyquist plot",
+          "extracted_from_image": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+        },
+        "source_image_file": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+      },
+      {
+        "id": "volmer_step",
+        "type": "electrochemical_feature",
+        "name": "Volmer step",
+        "properties": {
+          "description": "Low frequency feature in Nyquist plot",
+          "extracted_from_image": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+        },
+        "source_image_file": "e93f71d35020d84b164d2eca4adcb94487573632af44e54be38442c8810c3b5b.jpg"
+      },
+      {
+        "id": "image_p",
+        "type": "image",
+        "name": "Figure (p)",
+        "properties": {
+          "label": "(p)",
+          "scale": "nm^{-1}",
+          "extracted_from_image": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+        },
+        "source_image_file": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+      },
+      {
+        "id": "arc_230",
+        "type": "annotation",
+        "name": "Arc Label 230",
+        "properties": {
+          "label": "(230)",
+          "position": "upper arc",
+          "extracted_from_image": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+        },
+        "source_image_file": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+      },
+      {
+        "id": "arc_146",
+        "type": "annotation",
+        "name": "Arc Label 146",
+        "properties": {
+          "label": "(146)",
+          "position": "lower arc",
+          "extracted_from_image": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+        },
+        "source_image_file": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+      },
+      {
+        "id": "central_structure",
+        "type": "structure",
+        "name": "Central Nanostructure",
+        "properties": {
+          "description": "dark central feature with bright halo",
+          "morphology": "circular/disc-like",
+          "extracted_from_image": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+        },
+        "source_image_file": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+      },
+      {
+        "id": "nanoparticles",
+        "type": "structure",
+        "name": "Surrounding Nanoparticles",
+        "properties": {
+          "description": "bright scattered particles around central structure",
+          "count": "multiple",
+          "extracted_from_image": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+        },
+        "source_image_file": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+      },
+      {
+        "id": "green_arcs",
+        "type": "annotation",
+        "name": "Green Arcs",
+        "properties": {
+          "description": "highlighting specific regions of central structure",
+          "color": "green",
+          "extracted_from_image": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+        },
+        "source_image_file": "f33ba262be4117fd91bfdaaf0417c573b0f7b7cff5624c6547744f7ffbe6d83c.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "Impedance Graph",
+        "properties": {
+          "label": "(e)",
+          "x_axis": "Z' (Ω)",
+          "y_axis": "Z'' (Ω)",
+          "description": "Nyquist plot of electrochemical impedance",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "cpe1",
+        "type": "chemical",
+        "name": "CPE1",
+        "properties": {
+          "description": "Constant Phase Element 1",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "r_ct",
+        "type": "chemical",
+        "name": "R_ct",
+        "properties": {
+          "description": "Charge Transfer Resistance",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "r_e",
+        "type": "chemical",
+        "name": "R_e",
+        "properties": {
+          "description": "Solution Resistance",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "r_p",
+        "type": "chemical",
+        "name": "R_p",
+        "properties": {
+          "description": "Polarization Resistance",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "co",
+        "type": "chemical",
+        "name": "Co",
+        "properties": {
+          "description": "Cobalt material",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "cof",
+        "type": "chemical",
+        "name": "CoF",
+        "properties": {
+          "description": "Cobalt Fluoride fit",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "co_p_co_p",
+        "type": "chemical",
+        "name": "CoP/CoP",
+        "properties": {
+          "description": "Cobalt Phosphide fit",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "co2p",
+        "type": "chemical",
+        "name": "Co2P",
+        "properties": {
+          "description": "Dicobalt Phosphide",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      },
+      {
+        "id": "co2p_fit",
+        "type": "chemical",
+        "name": "Co2P-fit",
+        "properties": {
+          "description": "Co2P fit curve",
+          "extracted_from_image": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+        },
+        "source_image_file": "f855f7dfa2a1f1b184be2d03b302f5567d9ec8036e50e31b18ef8081c76ce086.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoP_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_CoP",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoP_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_CoP",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoP_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_CoP",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoP_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_CoP",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoP_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_CoP",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoP_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_CoP",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_CoP_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P_CoP",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoP_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_CoP",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co2P_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_Co2P",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "source_id": "figure_j",
+        "target_id": "chart",
+        "type": "contains"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "co_bar",
+        "type": "displays"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "p_bar",
+        "type": "displays"
+      },
+      {
+        "source_id": "co_bar",
+        "target_id": "co_element",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "p_bar",
+        "target_id": "p_element",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "indicates"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "indicates"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "uses_unit"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "s1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "s1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "f1",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "sb1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "sb1",
+        "type": "contains"
+      },
+      {
+        "source_id": "s1",
+        "target_id": "f1",
+        "type": "has_feature"
+      },
+      {
+        "source_id": "image",
+        "target_id": "pattern",
+        "type": "contains"
+      },
+      {
+        "source_id": "pattern",
+        "target_id": "peaks",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "pattern",
+        "target_id": "distance",
+        "type": "measures"
+      },
+      {
+        "source_id": "distance",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "peaks",
+        "target_id": "material",
+        "type": "indicates_periodicity"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n10",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n10",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n10",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n10",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "feature_of"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n10",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n1",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n1",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "peak_type"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "labels"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "has_value"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "displayed_as"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "displayed_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "indicates"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n10",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n11",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "image",
+        "target_id": "chem_CoP",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_CoP",
+        "target_id": "cop_211",
+        "type": "has_plane"
+      },
+      {
+        "source_id": "image",
+        "target_id": "chem_Co2P",
+        "type": "shows"
+      },
+      {
+        "source_id": "chem_Co2P",
+        "target_id": "cop2_111",
+        "type": "has_plane"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "sem",
+        "type": "depicts"
+      },
+      {
+        "source_id": "sem",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "material",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "node8",
+        "target_id": "node1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node2",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node5",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node2",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node5",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_CoP",
+        "target_id": "accelerated_kinetics",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "chem_Co2P",
+        "target_id": "hard_h2_release",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "H2O",
+        "target_id": "chem_CoP",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "chem_CoP",
+        "target_id": "H2",
+        "type": "produces"
+      },
+      {
+        "source_id": "H2O",
+        "target_id": "chem_Co2P",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "chem_Co2P",
+        "target_id": "H2",
+        "type": "produces"
+      },
+      {
+        "source_id": "e-",
+        "target_id": "chem_CoP",
+        "type": "transferred_to"
+      },
+      {
+        "source_id": "e-",
+        "target_id": "chem_Co2P",
+        "type": "transferred_to"
+      },
+      {
+        "source_id": "Co",
+        "target_id": "chem_CoP",
+        "type": "constituent"
+      },
+      {
+        "source_id": "P",
+        "target_id": "chem_CoP",
+        "type": "constituent"
+      },
+      {
+        "source_id": "Co",
+        "target_id": "chem_Co2P",
+        "type": "constituent"
+      },
+      {
+        "source_id": "P",
+        "target_id": "chem_Co2P",
+        "type": "constituent"
+      },
+      {
+        "source_id": "O",
+        "target_id": "H2O",
+        "type": "constituent"
+      },
+      {
+        "source_id": "H",
+        "target_id": "H2O",
+        "type": "constituent"
+      },
+      {
+        "source_id": "H",
+        "target_id": "H2",
+        "type": "constituent"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_scale"
+      },
+      {
+        "source_id": "chem_CoP",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "CoP-300",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "CoP-350",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "CoP-400",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "chem_Co2P",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "20%Pt/C",
+        "target_id": "chart",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "10mAcm2",
+        "target_id": "chart",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "50mAcm2",
+        "target_id": "chart",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "100mAcm2",
+        "target_id": "chart",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "chem_CoP",
+        "target_id": "CoP-300",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "chem_CoP",
+        "target_id": "CoP-350",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "chem_CoP",
+        "target_id": "CoP-400",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "interfaces_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n10",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n11",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n12",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n13",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n13",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n13",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n13",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n13",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n13",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "reference_for"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "variant_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "has_energy_level"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "has_energy_level"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "has_energy_level"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "has_energy_level"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "aligned_to"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "aligned_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "in_contact"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "produces"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n10",
+        "type": "emits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "displays"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "measures"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "image",
+        "target_id": "III",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "IV",
+        "type": "contains"
+      },
+      {
+        "source_id": "image",
+        "target_id": "scalebar",
+        "type": "has_scale"
+      },
+      {
+        "source_id": "III",
+        "target_id": "scalebar",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "IV",
+        "target_id": "scalebar",
+        "type": "scaled_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_at_scale"
+      },
+      {
+        "source_id": "image_g",
+        "target_id": "char_sem",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_sem",
+        "target_id": "material",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "image_g",
+        "target_id": "material",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "compound_IV",
+        "target_id": "image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "scale_bar",
+        "target_id": "image",
+        "type": "annotates"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "produces"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "produces"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "uses"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "uses"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "uses"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n10",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n11",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n12",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n13",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n14",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "in_electrolyte"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "in_electrolyte"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "in_electrolyte"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "in_electrolyte"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "in_electrolyte"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "in_electrolyte"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n15",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n15",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n15",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n15",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n15",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n15",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n11",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n12",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n13",
+        "type": "has_performance"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "condition_of"
+      },
+      {
+        "source_id": "Co",
+        "target_id": "single_site_route",
+        "type": "part_of"
+      },
+      {
+        "source_id": "P",
+        "target_id": "single_site_route",
+        "type": "part_of"
+      },
+      {
+        "source_id": "O",
+        "target_id": "single_site_route",
+        "type": "part_of"
+      },
+      {
+        "source_id": "H",
+        "target_id": "single_site_route",
+        "type": "part_of"
+      },
+      {
+        "source_id": "Co",
+        "target_id": "multiple_sites_route",
+        "type": "part_of"
+      },
+      {
+        "source_id": "P",
+        "target_id": "multiple_sites_route",
+        "type": "part_of"
+      },
+      {
+        "source_id": "O",
+        "target_id": "multiple_sites_route",
+        "type": "part_of"
+      },
+      {
+        "source_id": "H",
+        "target_id": "multiple_sites_route",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "calibrates_scale"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "shows"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n11",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n5",
+        "type": "involves"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "adsorbs_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n7",
+        "type": "produces"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "progresses_to"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n6",
+        "type": "progresses_to"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n3",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n6",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n12",
+        "type": "involves"
+      },
+      {
+        "source_id": "pure_co",
+        "target_id": "xps_spectrum_a",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "pure_co_2p",
+        "target_id": "xps_spectrum_a",
+        "type": "depicts"
+      },
+      {
+        "source_id": "pure_co",
+        "target_id": "pure_co_2p",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "pure_co",
+        "target_id": "e_cutoff_pure_co",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "pure_co",
+        "target_id": "e_f_pure_co",
+        "type": "has_parameter"
+      },
+      {
+        "source_id": "e_cutoff_pure_co",
+        "target_id": "xps_spectrum_a",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "e_f_pure_co",
+        "target_id": "xps_spectrum_a",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "covers_range"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "scale_bar_d",
+        "type": "has_annotation"
+      },
+      {
+        "source_id": "image_d",
+        "target_id": "material_d",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "scale_bar_f",
+        "type": "has_annotation"
+      },
+      {
+        "source_id": "image_f",
+        "target_id": "material_f",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "labels"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "labels"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "scale_for"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node10",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node10",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node10",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node10",
+        "type": "featured_in"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node10",
+        "type": "x_axis_reactant"
+      },
+      {
+        "source_id": "node6",
+        "target_id": "node10",
+        "type": "x_axis_reactant"
+      },
+      {
+        "source_id": "node7",
+        "target_id": "node10",
+        "type": "intermediate"
+      },
+      {
+        "source_id": "node8",
+        "target_id": "node10",
+        "type": "x_axis_product"
+      },
+      {
+        "source_id": "node9",
+        "target_id": "node10",
+        "type": "y_axis_metric"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "0V",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "-0.1V",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "-0.2V",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "-0.25V",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "-0.3V",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "heyrovsky_step",
+        "type": "displays_feature"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "volmer_step",
+        "type": "displays_feature"
+      },
+      {
+        "source_id": "0V",
+        "target_id": "heyrovsky_step",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "-0.1V",
+        "target_id": "heyrovsky_step",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "-0.2V",
+        "target_id": "heyrovsky_step",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "-0.25V",
+        "target_id": "heyrovsky_step",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "-0.3V",
+        "target_id": "volmer_step",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "image_p",
+        "target_id": "scale_bar",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_p",
+        "target_id": "central_structure",
+        "type": "depicts"
+      },
+      {
+        "source_id": "image_p",
+        "target_id": "nanoparticles",
+        "type": "depicts"
+      },
+      {
+        "source_id": "central_structure",
+        "target_id": "green_arcs",
+        "type": "annotated_by"
+      },
+      {
+        "source_id": "green_arcs",
+        "target_id": "arc_230",
+        "type": "labels"
+      },
+      {
+        "source_id": "green_arcs",
+        "target_id": "arc_146",
+        "type": "labels"
+      },
+      {
+        "source_id": "central_structure",
+        "target_id": "nanoparticles",
+        "type": "surrounded_by"
+      },
+      {
+        "source_id": "image_p",
+        "target_id": "arc_230",
+        "type": "contains"
+      },
+      {
+        "source_id": "image_p",
+        "target_id": "arc_146",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "cpe1",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "r_ct",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "r_e",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "r_p",
+        "type": "contains"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "co",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "cof",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "co_p_co_p",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "chem_CoP",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "co2p",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "co2p_fit",
+        "type": "shows_data"
+      },
+      {
+        "source_id": "r_e",
+        "target_id": "cpe1",
+        "type": "in_series"
+      },
+      {
+        "source_id": "cpe1",
+        "target_id": "r_ct",
+        "type": "in_parallel"
+      },
+      {
+        "source_id": "r_ct",
+        "target_id": "r_p",
+        "type": "in_series"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n9",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n9",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n9",
+        "type": "peak_label"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n6",
+        "type": "spin_orbit_split"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n6",
+        "type": "spin_orbit_split"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_bond"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains_bond"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "contains_bond"
+      }
+    ]
+  }
+}

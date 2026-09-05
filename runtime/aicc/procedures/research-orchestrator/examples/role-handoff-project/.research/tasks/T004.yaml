@@ -1,0 +1,65 @@
+schema_version: 1
+id: T004
+title: Critique evidence and decide claim status
+role: scientific-critic
+role_contract: procedures/research-orchestrator/references/roles.md#scientific-critic
+skill: comp-chem-workflow
+status: approved
+depends_on:
+  - T002
+  - T003
+approval: none
+inputs:
+  - artifact_id: method-fingerprint
+    min_status: accepted
+  - artifact_id: model-observable-decision
+    min_status: accepted
+  - artifact_id: parser-result
+    min_status: validated
+can_read:
+  - artifact_type: method-fingerprint
+  - artifact_type: model-observable-decision
+  - artifact_type: parser-result
+can_write:
+  - artifact_type: critic-report
+  - artifact_type: scientific-claim
+cannot:
+  - edit upstream method, model, or parser artifacts
+  - submit HPC jobs
+  - write final report artifacts
+evidence_packet:
+  - artifact_id: method-fingerprint
+    min_status: accepted
+    why: fixes the method assumptions
+  - artifact_id: model-observable-decision
+    min_status: accepted
+    why: states the intended observable
+  - artifact_id: parser-result
+    min_status: validated
+    why: carries the computed observable and technical validation
+outputs_expected:
+  - artifact_id: critic-report
+    type: critic-report
+    path: work/critic/critic-report.md
+  - artifact_id: scientific-claim
+    type: scientific-claim
+    path: work/critic/scientific-claim.md
+success_criteria:
+  - outcome is one of addresses, contradicts, inconclusive, or needs-follow-up
+  - claim separates parser values from reportable conclusion
+knowledge_required:
+  - knowledge/electronic-structure.md
+required_refs:
+  - procedures/research-orchestrator/references/critic-contract.md
+  - procedures/research-orchestrator/references/evidence-packets.md
+required_checks: []
+release_gates:
+  - critic-acceptance
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: true
+assumptions: []
+provenance:
+  - work/method-fingerprint.md
+  - work/model-observable-decision.md
+  - work/parser-result.json

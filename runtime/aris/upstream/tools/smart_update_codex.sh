@@ -1,0 +1,419 @@
+#!/usr/bin/env bash
+# smart_update_codex.sh -- update copied ARIS Codex skills safely.
+#
+# Default upstream:
+#   repo/skills/skills-codex
+#
+# Optional overlays:
+#   --overlay claude-review
+#   --overlay gemini-review
+#
+# Default local targets:
+#   global:  ~/.codex/skills
+#   project: <project>/.agents/skills
+#
+# This tool is for copied installs only. If the target is managed by
+# install_aris_codex.sh (manifest + symlinks), it refuses and points to:
+#   git pull + install_aris_codex.sh --reconcile
+#
+# New-skill policy (--apply only; dry-run always just reports):
+#   default (TTY, no policy flag): each new upstream skill is confirmed one by
+#                                  one [y/N]; a decline is remembered in
+#                                  <local>/.aris-declined.txt and never re-asked
+#   --add-new:  install every new skill (does NOT un-decline previously
+#               declined skills)
+#   --skip-new: skip every new skill without recording a decline (same as the
+#               automatic behavior when there is no TTY)
+# shared-references is support content, not a selectable skill: it is always
+# kept in sync and never subject to this confirmation.
+#
+# On successful --apply, writes $HOME/.aris/repo <- this repo's root (helper
+# resolution chain layer 4, #366) so copy-installed skills can find tools/.
+
+set -euo pipefail
+
+APPLY=false
+MODE="global"
+PROJECT_PATH=""
+CUSTOM_UPSTREAM=""
+CUSTOM_LOCAL=""
+HAS_CUSTOM_UPSTREAM=false
+HAS_CUSTOM_LOCAL=false
+OVERLAYS=()
+NEW_POLICY=""   # "" (prompt) | add | skip
+
+usage() { sed -n '2,31p' "$0" | sed 's/^# \?//'; }
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --apply) APPLY=true; shift ;;
+        --add-new) NEW_POLICY="add"; shift ;;
+        --skip-new) NEW_POLICY="skip"; shift ;;
+        --project) MODE="project"; PROJECT_PATH="${2:?--project requires path}"; shift 2 ;;
+        --upstream) MODE="explicit"; HAS_CUSTOM_UPSTREAM=true; CUSTOM_UPSTREAM="${2:?--upstream requires path}"; shift 2 ;;
+        --local) MODE="explicit"; HAS_CUSTOM_LOCAL=true; CUSTOM_LOCAL="${2:?--local requires path}"; shift 2 ;;
+        --overlay) OVERLAYS+=("${2:?--overlay requires claude-review or gemini-review}"); shift 2 ;;
+        -h|--help) usage; exit 0 ;;
+        --*) echo "Unknown option: $1" >&2; exit 2 ;;
+        *) echo "Unexpected positional argument: $1" >&2; exit 2 ;;
+    esac
+done
+
+log() { echo "$@"; }
+die() { echo "error: $*" >&2; exit 1; }
+warn() { echo "warning: $*" >&2; }
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+BASE_UPSTREAM="$REPO_ROOT/skills/skills-codex"
+DEFAULT_GLOBAL_LOCAL="$HOME/.codex/skills"
+
+# bash 3.2 (stock macOS): "${ARR[@]}" on an EMPTY array trips `set -u`; guard every
+# possibly-empty expansion with a length check (repo-wide idiom).
+if [[ ${#OVERLAYS[@]} -gt 0 ]]; then
+    for overlay in "${OVERLAYS[@]}"; do
+        case "$overlay" in
+            claude-review|gemini-review) ;;
+            *) die "--overlay must be claude-review or gemini-review (got: $overlay)" ;;
+        esac
+    done
+fi
+
+case "$MODE" in
+    explicit)
+        $HAS_CUSTOM_LOCAL || die "--local must be provided when using --upstream"
+        if $HAS_CUSTOM_UPSTREAM; then
+            [[ ${#OVERLAYS[@]} -eq 0 ]] || die "--overlay is only supported with repo-default upstream"
+            UPSTREAM_DIR="$CUSTOM_UPSTREAM"
+        else
+            UPSTREAM_DIR="$BASE_UPSTREAM"
+        fi
+        LOCAL_DIR="$CUSTOM_LOCAL"
+        SCOPE="local:$CUSTOM_LOCAL"
+        PROJECT_ROOT=""
+        ;;
+    project)
+        [[ -n "$PROJECT_PATH" ]] || die "--project requires a path"
+        PROJECT_ROOT="$(cd "$PROJECT_PATH" && pwd)"
+        UPSTREAM_DIR="$BASE_UPSTREAM"
+        LOCAL_DIR="$PROJECT_ROOT/.agents/skills"
+        SCOPE="project:$PROJECT_ROOT"
+        ;;
+    *)
+        PROJECT_ROOT=""
+        UPSTREAM_DIR="$BASE_UPSTREAM"
+        LOCAL_DIR="$DEFAULT_GLOBAL_LOCAL"
+        SCOPE="global"
+        ;;
+esac
+
+[[ -d "$UPSTREAM_DIR" ]] || die "upstream directory not found: $UPSTREAM_DIR"
+[[ -d "$LOCAL_DIR" ]] || die "local directory not found: $LOCAL_DIR"
+
+# ─── New-skill confirmation state (declined list + group catalog lookup) ──────
+CATALOG_PATH="$REPO_ROOT/tools/skill-groups.tsv"
+DECLINED_FILE="$LOCAL_DIR/.aris-declined.txt"
+
+is_declined() {  # $1 = skill name
+    [[ -f "$DECLINED_FILE" ]] && grep -qxF "$1" "$DECLINED_FILE"
+}
+
+catalog_group_of() {  # $1 = skill name -> group id, or "?" if unknown
+    local g=""
+    [[ -f "$CATALOG_PATH" ]] && g=$(awk -F'\t' -v s="$1" '$1=="skill" && $2==s {print $3; exit}' "$CATALOG_PATH")
+    echo "${g:-?}"
+}
+
+# Layer-4 helper resolution (#366): a global pointer file lets globally/copy-
+# installed skills find $ARIS_REPO/tools without a per-project install.
+ensure_global_pointer() {
+    local pointer="$HOME/.aris/repo"
+    mkdir -p "$(dirname "$pointer")" 2>/dev/null || return 0
+    local cur=""
+    [[ -f "$pointer" ]] && cur="$(cat "$pointer" 2>/dev/null || true)"
+    [[ "$cur" == "$REPO_ROOT" ]] && return 0
+    printf '%s\n' "$REPO_ROOT" > "$pointer.tmp.$$" && mv -f "$pointer.tmp.$$" "$pointer"
+}
+
+MANAGED_MANIFEST=""
+if [[ -n "$PROJECT_ROOT" ]]; then
+    MANAGED_MANIFEST="$PROJECT_ROOT/.aris/installed-skills-codex.txt"
+fi
+if [[ -n "$MANAGED_MANIFEST" && -f "$MANAGED_MANIFEST" ]]; then
+    die "target project is managed by install_aris_codex.sh. Use: git pull && bash $REPO_ROOT/tools/install_aris_codex.sh \"$PROJECT_ROOT\" --reconcile"
+fi
+if [[ -L "$LOCAL_DIR" ]]; then
+    die "local skill directory is a symlink. Use: git pull && bash $REPO_ROOT/tools/install_aris_codex.sh \"${PROJECT_ROOT:-<project>}\" --reconcile"
+fi
+while IFS= read -r link_entry; do
+    link_name="$(basename "$link_entry")"
+    if [[ "$link_name" == "shared-references" || -d "$UPSTREAM_DIR/$link_name" ]]; then
+        die "local skill directory contains symlink-managed ARIS entry '$link_name'. Use: git pull && bash $REPO_ROOT/tools/install_aris_codex.sh \"${PROJECT_ROOT:-<project>}\" --reconcile"
+    fi
+    if [[ ${#OVERLAYS[@]} -gt 0 ]]; then
+        for overlay in "${OVERLAYS[@]}"; do
+            if [[ -d "$REPO_ROOT/skills/skills-codex-$overlay/$link_name" ]]; then
+                die "local skill directory contains symlink-managed ARIS overlay entry '$link_name'. Use: git pull && bash $REPO_ROOT/tools/install_aris_codex.sh \"${PROJECT_ROOT:-<project>}\" --reconcile"
+            fi
+        done
+    fi
+done < <(find "$LOCAL_DIR" -mindepth 1 -maxdepth 1 -type l)
+
+TMP_ROOT=""
+MERGED_UPSTREAM="$UPSTREAM_DIR"
+cleanup() {
+    if [[ -n "$TMP_ROOT" ]]; then
+        rm -rf "$TMP_ROOT"
+    fi
+    return 0
+}
+trap cleanup EXIT INT TERM
+
+if [[ ${#OVERLAYS[@]} -gt 0 ]]; then
+    TMP_ROOT="$(mktemp -d /tmp/aris-codex-update.XXXXXX)"
+    MERGED_UPSTREAM="$TMP_ROOT/upstream"
+    mkdir -p "$MERGED_UPSTREAM"
+    cp -a "$BASE_UPSTREAM/." "$MERGED_UPSTREAM/"
+    for overlay in "${OVERLAYS[@]}"; do
+        cp -a "$REPO_ROOT/skills/skills-codex-$overlay/." "$MERGED_UPSTREAM/"
+    done
+fi
+
+UPSTREAM_DIR="$MERGED_UPSTREAM"
+
+list_entries() {
+    local root="$1"
+    local entry name
+    for entry in "$root"/*; do
+        [[ -e "$entry" ]] || continue
+        [[ -d "$entry" ]] || continue
+        name="$(basename "$entry")"
+        if [[ "$name" == "shared-references" || -f "$entry/SKILL.md" ]]; then
+            printf "%s\n" "$name"
+        fi
+    done | sort
+}
+
+NEW=0
+IDENTICAL=0
+SAFE_UPDATE=0
+NEEDS_MERGE=0
+LOCAL_ONLY=0
+
+declare -a NEW_SKILLS=()
+declare -a IDENTICAL_SKILLS=()
+declare -a SAFE_SKILLS=()
+declare -a MERGE_SKILLS=()
+declare -a LOCAL_SKILLS=()
+declare -a UPSTREAM_NAMES=()
+declare -a NEW_SHARED_REFERENCES=()
+
+while IFS= read -r name; do
+    [[ -z "$name" ]] && continue
+    UPSTREAM_NAMES+=("$name")
+    upstream_entry="$UPSTREAM_DIR/$name"
+    local_entry="$LOCAL_DIR/$name"
+    if [[ ! -d "$local_entry" ]]; then
+        NEW=$((NEW + 1))
+        NEW_SKILLS+=("$name")
+        continue
+    fi
+    if diff -qr "$upstream_entry" "$local_entry" >/dev/null 2>&1; then
+        IDENTICAL=$((IDENTICAL + 1))
+        IDENTICAL_SKILLS+=("$name")
+        continue
+    fi
+    if [[ ${#OVERLAYS[@]} -gt 0 && -d "$BASE_UPSTREAM/$name" ]] && diff -qr "$BASE_UPSTREAM/$name" "$local_entry" >/dev/null 2>&1; then
+        SAFE_UPDATE=$((SAFE_UPDATE + 1))
+        SAFE_SKILLS+=("$name")
+        continue
+    fi
+    # Unlike managed installs, copied installs have no manifest/baseline telling us
+    # whether a diff is upstream-only or includes local edits. Be conservative:
+    # any non-identical local entry requires manual merge instead of replacement.
+    NEEDS_MERGE=$((NEEDS_MERGE + 1))
+    MERGE_SKILLS+=("$name")
+done < <(list_entries "$UPSTREAM_DIR")
+
+while IFS= read -r name; do
+    [[ -z "$name" ]] && continue
+    found=false
+    if [[ ${#UPSTREAM_NAMES[@]} -gt 0 ]]; then
+        for upstream_name in "${UPSTREAM_NAMES[@]}"; do
+            if [[ "$upstream_name" == "$name" ]]; then
+                found=true
+                break
+            fi
+        done
+    fi
+    if ! $found; then
+        LOCAL_ONLY=$((LOCAL_ONLY + 1))
+        LOCAL_SKILLS+=("$name")
+    fi
+done < <(list_entries "$LOCAL_DIR")
+
+if [[ -d "$UPSTREAM_DIR/shared-references" ]]; then
+    while IFS= read -r ref_file; do
+        rel_ref="${ref_file#"$UPSTREAM_DIR/shared-references/"}"
+        local_ref="$LOCAL_DIR/shared-references/$rel_ref"
+        if [[ ! -e "$local_ref" ]]; then
+            NEW_SHARED_REFERENCES+=("$rel_ref")
+        fi
+    done < <(find "$UPSTREAM_DIR/shared-references" -type f | sort)
+fi
+
+log "ARIS Codex Smart Update"
+log "  Scope:    $SCOPE"
+log "  Upstream: $UPSTREAM_DIR"
+log "  Local:    $LOCAL_DIR"
+if [[ ${#OVERLAYS[@]} -gt 0 ]]; then
+    log "  Overlays: ${OVERLAYS[*]}"
+fi
+log ""
+
+log "Identical: $IDENTICAL"
+for s in "${IDENTICAL_SKILLS[@]:-}"; do [[ -n "$s" ]] && log "  $s"; done
+log ""
+# Pre-declined subset of NEW_SKILLS (informational only — the decision of what
+# to install/skip/prompt is only made inside the --apply block below).
+declare -a NEW_PREDECLINED_SKILLS=()
+for s in "${NEW_SKILLS[@]:-}"; do
+    [[ -n "$s" && "$s" != "shared-references" ]] || continue
+    is_declined "$s" && NEW_PREDECLINED_SKILLS+=("$s")
+done
+
+log "New: $NEW (confirmed one-by-one on --apply, unless --add-new/--skip-new; ${#NEW_PREDECLINED_SKILLS[@]} previously declined)"
+for s in "${NEW_SKILLS[@]:-}"; do
+    [[ -n "$s" ]] || continue
+    if [[ "$s" != "shared-references" ]] && is_declined "$s"; then
+        log "  $s (previously declined — stays skipped unless --add-new)"
+    else
+        log "  $s"
+    fi
+done
+log ""
+log "Safe update: $SAFE_UPDATE"
+for s in "${SAFE_SKILLS[@]:-}"; do [[ -n "$s" ]] && log "  $s"; done
+log ""
+log "Needs merge: $NEEDS_MERGE"
+for s in "${MERGE_SKILLS[@]:-}"; do [[ -n "$s" ]] && log "  $s"; done
+log ""
+log "Local only: $LOCAL_ONLY"
+for s in "${LOCAL_SKILLS[@]:-}"; do [[ -n "$s" ]] && log "  $s"; done
+log ""
+log "New shared references: ${#NEW_SHARED_REFERENCES[@]}"
+for s in "${NEW_SHARED_REFERENCES[@]:-}"; do [[ -n "$s" ]] && log "  shared-references/$s"; done
+log ""
+
+if ! $APPLY; then
+    log "Dry-run only. Re-run with --apply to copy new entries, new shared references, and replace safe-update entries."
+    exit 0
+fi
+
+# ── New-skill three-state policy: interactive confirm / --add-new / --skip-new ──
+# A skill already in .aris-declined.txt is never re-asked and never installed —
+# not even by --add-new (only editing/clearing the declined file restores it).
+# shared-references is support content, not a selectable skill: always synced.
+declare -a TO_INSTALL_NEW=()
+declare -a SKIPPED_NEW=()
+declare -a JUST_DECLINED=()
+
+for name in "${NEW_SKILLS[@]:-}"; do
+    [[ -n "$name" ]] || continue
+    if [[ "$name" == "shared-references" ]]; then
+        TO_INSTALL_NEW+=("$name")
+        continue
+    fi
+    if is_declined "$name"; then
+        continue
+    fi
+    case "$NEW_POLICY" in
+        add)
+            TO_INSTALL_NEW+=("$name")
+            ;;
+        skip)
+            SKIPPED_NEW+=("$name")
+            ;;
+        *)
+            if [[ -t 0 ]]; then
+                grp="$(catalog_group_of "$name")"
+                printf "  install new skill %-30s (group: %s) [y/N] " "$name" "$grp" >&2
+                read -r reply </dev/tty
+                if [[ "$reply" =~ ^[yY] ]]; then
+                    TO_INSTALL_NEW+=("$name")
+                else
+                    JUST_DECLINED+=("$name")
+                fi
+            else
+                SKIPPED_NEW+=("$name")
+            fi
+            ;;
+    esac
+done
+
+if [[ ${#JUST_DECLINED[@]} -gt 0 ]]; then
+    {
+        [[ -f "$DECLINED_FILE" ]] && cat "$DECLINED_FILE"
+        printf '%s\n' "${JUST_DECLINED[@]}"
+    } | sort -u > "$DECLINED_FILE.tmp.$$" && mv -f "$DECLINED_FILE.tmp.$$" "$DECLINED_FILE"
+fi
+
+for name in "${TO_INSTALL_NEW[@]:-}"; do
+    [[ -n "$name" ]] || continue
+    mkdir -p "$LOCAL_DIR"
+    cp -a "$UPSTREAM_DIR/$name" "$LOCAL_DIR/$name"
+    log "  + added $name"
+done
+
+for name in "${SAFE_SKILLS[@]:-}"; do
+    [[ -n "$name" ]] || continue
+    rm -rf "$LOCAL_DIR/$name"
+    cp -a "$UPSTREAM_DIR/$name" "$LOCAL_DIR/$name"
+    log "  ↻ updated $name"
+done
+
+for rel_ref in "${NEW_SHARED_REFERENCES[@]:-}"; do
+    [[ -n "$rel_ref" ]] || continue
+    mkdir -p "$(dirname "$LOCAL_DIR/shared-references/$rel_ref")"
+    cp -a "$UPSTREAM_DIR/shared-references/$rel_ref" "$LOCAL_DIR/shared-references/$rel_ref"
+    log "  + added shared-references/$rel_ref"
+done
+
+validate_shared_references() {
+    local root="$1"
+    local failures=0
+    local name skill_file ref
+    for name in "${UPSTREAM_NAMES[@]:-}"; do
+        [[ -n "$name" && "$name" != "shared-references" ]] || continue
+        skill_file="$root/$name/SKILL.md"
+        [[ -f "$skill_file" ]] || continue
+        while IFS= read -r ref; do
+            [[ -n "$ref" ]] || continue
+            if [[ ! -f "$root/shared-references/$ref" ]]; then
+                warn "missing shared reference: $(basename "$(dirname "$skill_file")") -> shared-references/$ref"
+                failures=$((failures + 1))
+            fi
+        done < <(grep -Eo '\.\./shared-references/[A-Za-z0-9._-]+\.md' "$skill_file" 2>/dev/null | sed 's|../shared-references/||' | sort -u)
+    done
+    return "$failures"
+}
+
+log ""
+log "Apply complete. ${#TO_INSTALL_NEW[@]} new + $SAFE_UPDATE updated."
+if [[ ${#SKIPPED_NEW[@]} -gt 0 ]]; then
+    log "  ${#SKIPPED_NEW[@]} new skill(s) skipped, not declined: ${SKIPPED_NEW[*]}"
+    log "  Re-run with --add-new to install them (or re-run interactively on a TTY)."
+fi
+if [[ ${#JUST_DECLINED[@]} -gt 0 ]]; then
+    log "  Declined just now (recorded in $DECLINED_FILE, won't be asked again): ${JUST_DECLINED[*]}"
+fi
+if [[ ${#NEW_PREDECLINED_SKILLS[@]} -gt 0 ]]; then
+    log "  Previously declined, still skipped: ${#NEW_PREDECLINED_SKILLS[@]} (edit $DECLINED_FILE to reconsider)"
+fi
+if (( NEEDS_MERGE > 0 )); then
+    warn "$NEEDS_MERGE entries still need manual merge"
+fi
+if ! validate_shared_references "$LOCAL_DIR"; then
+    die "copied install has missing shared references after update; merge or copy the reported files before using affected skills"
+fi
+
+ensure_global_pointer

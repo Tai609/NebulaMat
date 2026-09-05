@@ -1,0 +1,62 @@
+schema_version: 1
+id: T003
+title: Audit candidate slab and adsorbate geometry
+role: structure-critic
+role_contract: procedures/research-orchestrator/references/roles.md#structure-critic
+skill: structure-prep
+status: approved
+depends_on:
+  - T001
+  - T002
+approval: none
+inputs:
+  - artifact_id: surface-literature-review
+    min_status: accepted
+  - artifact_id: candidate-structures
+    min_status: validated
+can_read:
+  - artifact_id: surface-literature-review
+  - artifact_id: candidate-structures
+can_write:
+  - artifact_type: structure-audit-report
+  - artifact_type: model-structure-review
+cannot:
+  - edit structure files
+  - generate engine inputs
+  - submit production HPC jobs
+evidence_packet:
+  - artifact_id: surface-literature-review
+    min_status: accepted
+    why: checks facet, termination, slab size, coverage, and adsorption motif precedent
+  - artifact_id: candidate-structures
+    min_status: validated
+    why: carries generated structures and initial geometry evidence
+outputs_expected:
+  - artifact_id: structure-audit-report
+    type: structure-audit-report
+    path: work/critic/structure-audit-report.md
+  - artifact_id: model-structure-review
+    type: model-structure-review
+    path: work/critic/model-structure-review.md
+success_criteria:
+  - Miller index and termination are checked against the literature review
+  - slab a/b size, vacuum, fixed layers, and PBC image distances are reported
+  - adsorbate-surface and closest unintended distances are reported
+  - outcome is approve, request_revision, or block
+knowledge_required:
+  - knowledge/surface-thermodynamics.md
+  - knowledge/periodic-dft-modeling.md
+required_refs:
+  - procedures/research-orchestrator/references/model-structure-review.md
+  - tools/structure-prep/references/validation.md
+required_checks:
+  - uv run {repo_root}/tools/structure-prep/scripts/audit_structure.py work/models/ads00/POSCAR --adsorbate-count 1 --json work/critic/structure-audit.json
+release_gates:
+  - model-structure-review
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: true
+assumptions: []
+provenance:
+  - work/surface-literature-review.md
+  - work/models/ads00/POSCAR

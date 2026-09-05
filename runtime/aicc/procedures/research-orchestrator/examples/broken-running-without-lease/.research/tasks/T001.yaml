@@ -1,0 +1,38 @@
+schema_version: 1
+id: T001
+title: Running fixture calculation without lease
+role: engine-runner
+role_contract: procedures/research-orchestrator/references/roles.md#engine-runner
+skill: vasp
+status: running
+depends_on: []
+approval: none
+inputs: []
+can_read:
+  - artifact_type: model-observable-decision
+can_write:
+  - artifact_type: parser-result
+cannot:
+  - run without active lease
+outputs_expected:
+  - artifact_id: parser-result
+    type: parser-result
+    path: work/run-a/parser-result.json
+success_criteria:
+  - this fixture must fail validation
+knowledge_required: []
+required_refs:
+  - tools/vasp/SKILL.md
+required_checks: []
+release_gates: []
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+  requires_claim: true
+  lease_ttl_minutes: 60
+  heartbeat_interval_minutes: 10
+  owner_dir: work/run-a/
+  exclusive_paths:
+    - work/run-a/
+assumptions: []
+provenance: []

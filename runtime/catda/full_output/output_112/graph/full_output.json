@@ -1,0 +1,1256 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_bimetallic_alloys",
+        "type": "chemical",
+        "name": "Bimetallic alloy surfaces",
+        "aliases": [
+          "intermetallic catalysts",
+          "alloy catalysis data",
+          "bimetallic alloy surfaces"
+        ],
+        "composition": {
+          "elements": {
+            "value": "37 elemental compositions",
+            "unit": "count"
+          },
+          "stoichiometric_ratios": {
+            "value": "0, 25, 50, 75, 100",
+            "unit": "%"
+          }
+        },
+        "properties": {
+          "crystal_structure": {
+            "value": "FCC (L1_0 and L1_2)",
+            "unit": "structure"
+          },
+          "adsorbates_analyzed": {
+            "value": "C, O, N, H, S, CHx, OH, NH, SH",
+            "unit": "species"
+          }
+        }
+      },
+      {
+        "id": "chem_catalysis_hub_data",
+        "type": "chemical",
+        "name": "Catalysis-hub database dataset",
+        "aliases": [],
+        "properties": {
+          "data_points": {
+            "value": 16226,
+            "unit": "count"
+          },
+          "compositional_range": {
+            "value": 37,
+            "unit": "elements"
+          }
+        },
+        "related_images": [
+          "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "dataset",
+            "name": "Dataset of HER and OER",
+            "properties": {
+              "reactions": [
+                "Hydrogen Evolution Reaction (HER)",
+                "Oxygen Evolution Reaction (OER)"
+              ],
+              "extracted_from_image": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+            },
+            "source_image_file": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+          }
+        ]
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Computational Dataset Generation and Feature Engineering",
+        "procedure": "Extraction of 16,226 data points from the Catalysis-hub database followed by compositional feature extraction using the Matminer package. Site-related features were generated through one-hot encoding (20 descriptors) and subsequently reduced using Principal Component Analysis (PCA) to 5 principal components. Pearson correlation analysis was implemented to remove highly correlated features.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Data Extraction",
+            "method": "High-throughput calculation extraction",
+            "conditions": {},
+            "procedure_snippet": "Our research uses a comprehensive dataset extracted from the Catalysis-hub database... The dataset encompasses a total of 16,226 distinct data points"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Compositional Feature Extraction",
+            "method": "Matminer-based analysis",
+            "conditions": {},
+            "procedure_snippet": "Compositional features were systematically extracted using the Matminer package... enabled the transformation of raw chemical composition data into a rich set of numerical descriptors"
+          },
+          {
+            "id": "unit_op_1.3",
+            "name": "Dimensionality Reduction",
+            "method": "Principal Component Analysis (PCA)",
+            "conditions": {
+              "initial_descriptors": {
+                "value": 20,
+                "unit": "count"
+              },
+              "final_components": {
+                "value": 5,
+                "unit": "count"
+              }
+            },
+            "procedure_snippet": "applied Principal Component Analysis (PCA) to reduce dimensionality... effectively reduced the 20 original site features into a more manageable set of 5 principal components"
+          },
+          {
+            "id": "unit_op_1.4",
+            "name": "Feature Screening",
+            "method": "Pearson correlation analysis",
+            "conditions": {},
+            "procedure_snippet": "implemented Pearson correlation analysis. This method identified and removed highly correlated features"
+          }
+        ],
+        "method": "Materials Informatics and PCA",
+        "conditions": {
+          "stoichiometric_ratios": {
+            "value": "0, 25, 50, 75, 100",
+            "unit": "%"
+          }
+        },
+        "source_text": "Our research uses a comprehensive dataset extracted from the Catalysis-hub database... The final feature set represented a carefully selected collection of material descriptors, totaling 80 features for the Hydrogen Evolution Reaction (HER) and 76 features for the Oxygen Evolution Reaction (OER)."
+      },
+      {
+        "id": "chem_refined_descriptors_her",
+        "type": "chemical",
+        "name": "HER Material Descriptors",
+        "aliases": [
+          "HER feature set"
+        ],
+        "properties": {
+          "feature_count": {
+            "value": 80,
+            "unit": "count"
+          }
+        },
+        "related_images": [
+          "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical_property",
+            "name": "Melting Temperature",
+            "properties": {
+              "statistics": [
+                "mean",
+                "maximum",
+                "minimum"
+              ],
+              "source": "MagpieData",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Mendeleev Number",
+            "properties": {
+              "statistics": [
+                "mean",
+                "maximum"
+              ],
+              "source": "MagpieData",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "NdUnfilled",
+            "properties": {
+              "description": "Number of unfilled d-orbitals",
+              "statistics": [
+                "mode"
+              ],
+              "source": "MagpieData",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "NUnfilled",
+            "properties": {
+              "description": "Number of unfilled orbitals",
+              "statistics": [
+                "mode"
+              ],
+              "source": "MagpieData",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Electronegativity",
+            "properties": {
+              "statistics": [
+                "mode",
+                "range"
+              ],
+              "source": "MagpieData",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "GSvolume_pa",
+            "properties": {
+              "description": "Ground state volume per atom",
+              "statistics": [
+                "mode",
+                "mean",
+                "minimum"
+              ],
+              "source": "MagpieData",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "NdValence",
+            "properties": {
+              "description": "Number of d-valence electrons",
+              "statistics": [
+                "mean"
+              ],
+              "source": "MagpieData",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "NValence",
+            "properties": {
+              "description": "Number of valence electrons",
+              "statistics": [
+                "mode",
+                "range"
+              ],
+              "source": "MagpieData",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_refined_descriptors_oer",
+        "type": "chemical",
+        "name": "OER Material Descriptors",
+        "aliases": [
+          "OER feature set"
+        ],
+        "properties": {
+          "feature_count": {
+            "value": 76,
+            "unit": "count"
+          }
+        },
+        "related_images": [
+          "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical_property",
+            "name": "Covalent Radius",
+            "properties": {
+              "source": "MagpieData",
+              "statistics": [
+                "maximum",
+                "mean",
+                "mode"
+              ],
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Number of d-shell Valence Electrons",
+            "properties": {
+              "source": "MagpieData",
+              "statistics": [
+                "mean",
+                "minimum"
+              ],
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Periodic Table Column",
+            "properties": {
+              "source": "MagpieData",
+              "statistics": [
+                "mode",
+                "minimum"
+              ],
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Number of Unfilled Orbitals",
+            "properties": {
+              "source": "MagpieData",
+              "statistics": [
+                "mode",
+                "mean"
+              ],
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Mendeleev Number",
+            "properties": {
+              "source": "MagpieData",
+              "statistics": [
+                "minimum",
+                "mean",
+                "maximum"
+              ],
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Melting Temperature",
+            "properties": {
+              "source": "MagpieData",
+              "statistics": [
+                "mode"
+              ],
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Number of Valence Electrons",
+            "properties": {
+              "source": "MagpieData",
+              "statistics": [
+                "mode"
+              ],
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          },
+          {
+            "type": "chemical_property",
+            "name": "Electronegativity",
+            "properties": {
+              "source": "MagpieData",
+              "statistics": [
+                "mode"
+              ],
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_H_adsorbate",
+        "type": "chemical",
+        "name": "Hydrogen",
+        "formula": "H",
+        "aliases": [
+          "hydrogen adsorbates"
+        ],
+        "properties": {},
+        "related_images": [
+          "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg",
+          "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Hydrogen",
+            "properties": {
+              "symbol": "H",
+              "role": "Adsorbate",
+              "extracted_from_image": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+            },
+            "source_image_file": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "H*",
+            "properties": {
+              "role": "adsorbate",
+              "description": "Adsorbed hydrogen intermediate in the Oxygen Evolution Reaction (OER) context",
+              "extracted_from_image": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+            },
+            "source_image_file": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_O_adsorbate",
+        "type": "chemical",
+        "name": "Oxygen",
+        "formula": "O",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_N_adsorbate",
+        "type": "chemical",
+        "name": "Nitrogen",
+        "formula": "N",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_C_adsorbate",
+        "type": "chemical",
+        "name": "Carbon",
+        "formula": "C",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_S_adsorbate",
+        "type": "chemical",
+        "name": "Sulfur",
+        "formula": "S",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_CHx_adsorbate",
+        "type": "chemical",
+        "name": "Carbonaceous species",
+        "formula": "CHx",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_OH_adsorbate",
+        "type": "chemical",
+        "name": "Hydroxyl",
+        "formula": "OH",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_NH_adsorbate",
+        "type": "chemical",
+        "name": "Amine",
+        "formula": "NH",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_SH_adsorbate",
+        "type": "chemical",
+        "name": "Sulfhydryl",
+        "formula": "SH",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "chem_bimetallic_alloy_surfaces",
+        "type": "chemical",
+        "name": "bimetallic alloy surfaces",
+        "aliases": [
+          "alloy materials",
+          "intermetallic catalysts"
+        ],
+        "properties": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_catalysis_hub_data_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_catalysis_hub_data",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_refined_descriptors_her",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_refined_descriptors_her",
+        "properties": {
+          "form": "digital feature set"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_refined_descriptors_oer",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_refined_descriptors_oer",
+        "properties": {
+          "form": "digital feature set"
+        }
+      },
+      {
+        "id": "edge_input_chem_H_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_H_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_O_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_N_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_N_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_C_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_C_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_S_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_S_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_CHx_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_CHx_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_OH_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_OH_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_NH_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_NH_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_SH_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_SH_adsorbate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "reactant"
+        }
+      },
+      {
+        "id": "edge_input_chem_bimetallic_alloys_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_bimetallic_alloys",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support"
+        }
+      }
+    ],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_bimetallic_alloys",
+        "type": "chemical",
+        "name": "Bimetallic alloy surfaces",
+        "aliases": [
+          "intermetallic catalysts",
+          "alloy catalysis data",
+          "bimetallic alloy surfaces"
+        ],
+        "composition": {
+          "elements": {
+            "value": "37 elemental compositions",
+            "unit": "count"
+          },
+          "stoichiometric_ratios": {
+            "value": "0, 25, 50, 75, 100",
+            "unit": "%"
+          }
+        },
+        "properties": {
+          "crystal_structure": {
+            "value": "FCC (L1_0 and L1_2)",
+            "unit": "structure"
+          },
+          "adsorbates_analyzed": {
+            "value": "C, O, N, H, S, CHx, OH, NH, SH",
+            "unit": "species"
+          }
+        }
+      },
+      {
+        "id": "test_HER_stacking_ensemble",
+        "type": "testing",
+        "catalyst_id": "chem_bimetallic_alloys",
+        "description": "ML-based prediction of HER catalytic performance (Gibbs free energy of adsorption)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Hydrogen Evolution Reaction (HER)",
+            "unit": "reaction"
+          },
+          "dataset_size": {
+            "value": 8856,
+            "unit": "data points"
+          },
+          "model_architecture": {
+            "value": "Stacking (Base: Random Forest, XGBoost; Meta: Support Vector Regression)",
+            "unit": "method"
+          },
+          "feature_engineering": {
+            "value": "Matminer-based compositional features, PCA for adsorption sites",
+            "unit": "method"
+          },
+          "train_test_split": {
+            "value": "90:10",
+            "unit": "ratio"
+          },
+          "number_of_features": {
+            "value": 80,
+            "unit": "count"
+          }
+        },
+        "results_json": {
+          "R_squared": {
+            "value": 0.98,
+            "unit": "dimensionless"
+          },
+          "Mean_Absolute_Error": {
+            "value": 0.251,
+            "unit": "eV"
+          },
+          "top_feature_importance_SHAP": {
+            "value": "MagpieData mean MeltingT, PCA_Site_3, MagpieData mean MendeleevNumber",
+            "unit": "descriptors"
+          }
+        },
+        "source_text": "The machine learning model demonstrated exceptional predictive capabilities, achieving R2 values of 0.98 for HER ... with Mean Absolute Error values of 0.251 ... SHAP analysis revealed critical insights ... MagpieData mean MeltingT stands out as a dominant feature.",
+        "related_images": [
+          "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg",
+          "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Parity Plot",
+            "properties": {
+              "x_axis": "ΔG_H (DFT)",
+              "y_axis": "ΔG_H (ML)",
+              "data_series": [
+                "Train Predictions",
+                "Test Predictions",
+                "Perfect Prediction (y=x)"
+              ],
+              "extracted_from_image": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+            },
+            "source_image_file": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Parity Plot",
+            "properties": {
+              "title": "Stacking Model OER (H*) Results",
+              "x_axis": "ΔGH (DFT)",
+              "y_axis": "ΔGH (ML)",
+              "units": "eV (implied)",
+              "description": "Comparison of Gibbs free energy of hydrogen adsorption calculated via Density Functional Theory versus Machine Learning predictions.",
+              "extracted_from_image": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+            },
+            "source_image_file": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+          }
+        ]
+      },
+      {
+        "id": "test_OER_stacking_ensemble",
+        "type": "testing",
+        "catalyst_id": "chem_bimetallic_alloys",
+        "description": "ML-based prediction of OER catalytic performance (Gibbs free energy of adsorption)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Oxygen Evolution Reaction (OER)",
+            "unit": "reaction"
+          },
+          "dataset_size": {
+            "value": 7370,
+            "unit": "data points"
+          },
+          "model_architecture": {
+            "value": "Stacking (Base: Random Forest, XGBoost; Meta: Support Vector Regression)",
+            "unit": "method"
+          },
+          "train_test_split": {
+            "value": "90:10",
+            "unit": "ratio"
+          },
+          "number_of_features": {
+            "value": 76,
+            "unit": "count"
+          }
+        },
+        "results_json": {
+          "R_squared": {
+            "value": 0.94,
+            "unit": "dimensionless"
+          },
+          "Mean_Absolute_Error": {
+            "value": 0.121,
+            "unit": "eV"
+          },
+          "top_feature_importance_SHAP": {
+            "value": "PCA_Site_3, PCA_Site_2, MagpieData maximum CovalentRadius",
+            "unit": "descriptors"
+          }
+        },
+        "source_text": "The machine learning model demonstrated exceptional predictive capabilities, achieving ... 0.94 for OER, with Mean Absolute Error values of ... 0.121. SHAP analysis reveals key features ... PCA_Site_3 and PCA_Site_2, which demonstrate substantial impact."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_bimetallic_alloys_test_HER_stacking_ensemble",
+        "type": "tested_in",
+        "source_id": "chem_bimetallic_alloys",
+        "target_id": "test_HER_stacking_ensemble",
+        "properties": {
+          "target_variable": "Gibbs free energy of adsorption (ΔG)"
+        }
+      },
+      {
+        "id": "edge_tested_chem_bimetallic_alloys_test_OER_stacking_ensemble",
+        "type": "tested_in",
+        "source_id": "chem_bimetallic_alloys",
+        "target_id": "test_OER_stacking_ensemble",
+        "properties": {
+          "target_variable": "Gibbs free energy of adsorption (ΔG)"
+        }
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_bimetallic_alloy_surfaces",
+        "type": "chemical",
+        "name": "bimetallic alloy surfaces",
+        "aliases": [
+          "alloy materials",
+          "intermetallic catalysts"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "PCA",
+        "is_reported": true,
+        "characterization_summary": "Principal Component Analysis reduced 20 site-specific descriptors into 5 principal components (PCA_Site_1 to 5) to represent adsorption site morphology and geometry.",
+        "evidence_snippet": "The PCA transformation effectively reduced the 20 original site features into a more manageable set of 5 principal components ... reinforcing the significance of adsorption site morphology."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "SHAP",
+        "is_reported": true,
+        "characterization_summary": "SHAP analysis for HER identified Melting Temperature, Mendeleev Number, and unfilled electronic states (NdUnfilled) as primary descriptors. Average R2 of 0.98 and MAE of 0.251 achieved.",
+        "evidence_snippet": "The results of this analysis, depicted in the SHAP summary plot, reveal the critical contributions of several compositional and structural features ... achieving R2 values of 0.98 for HER ... with Mean Absolute Error values of 0.251.",
+        "related_images": [
+          "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SHAP Summary Plot",
+            "properties": {
+              "description": "A plot showing the impact of various chemical and structural features on a machine learning model output.",
+              "x_axis": "SHAP value (impact on model output)",
+              "y_axis": "Features",
+              "color_scale": "Feature value (Low to High)",
+              "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+            },
+            "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "SHAP",
+        "is_reported": true,
+        "characterization_summary": "SHAP analysis for OER identified PCA_Site_3, PCA_Site_2, and Covalent Radius as key features. Model achieved R2 of 0.94 and MAE of 0.121.",
+        "evidence_snippet": "The SHAP analysis reveals key features influencing the predictive model for Oxygen Evolution Reaction (OER) ... achieving R2 values of 0.94 for OER, with Mean Absolute Error values of 0.121.",
+        "related_images": [
+          "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "SHAP Summary Plot",
+            "properties": {
+              "description": "A plot showing the impact of various features on a machine learning model output using SHAP values.",
+              "x_axis": "SHAP value (impact on model output)",
+              "y_axis": "Features",
+              "color_scale": "Feature value (Low to High)",
+              "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+            },
+            "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+          }
+        ]
+      },
+      {
+        "id": "FEAT_09",
+        "type": "structural_feature",
+        "name": "PCA_Site",
+        "properties": {
+          "description": "Principal Component Analysis components related to atomic sites",
+          "components": [
+            "PCA_Site_1",
+            "PCA_Site_2",
+            "PCA_Site_3",
+            "PCA_Site_4",
+            "PCA_Site_5"
+          ],
+          "extracted_from_image": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+        },
+        "source_image_file": "084ef00b0fe3d2e2046922d32c7208d75eecf10e4bbb6191132ce99e30582d57.jpg"
+      },
+      {
+        "id": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5_node_2",
+        "type": "feature_extraction",
+        "name": "Composition-based Features",
+        "properties": {
+          "description": "Features derived from chemical composition",
+          "extracted_from_image": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+        },
+        "source_image_file": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+      },
+      {
+        "id": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5_node_3",
+        "type": "feature_extraction",
+        "name": "Site-based Features (PCA)",
+        "properties": {
+          "method": "Principal Component Analysis (PCA)",
+          "description": "Features derived from active site geometry/properties",
+          "extracted_from_image": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+        },
+        "source_image_file": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+      },
+      {
+        "id": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5_node_4",
+        "type": "process",
+        "name": "Feature Generation (Composition + Site)",
+        "properties": {
+          "description": "Integration of composition and site-based descriptors",
+          "extracted_from_image": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+        },
+        "source_image_file": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+      },
+      {
+        "id": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5_node_5",
+        "type": "machine_learning_model",
+        "name": "Stacking Model (RF, XGBoost)",
+        "properties": {
+          "algorithms": [
+            "Random Forest (RF)",
+            "XGBoost"
+          ],
+          "architecture": "Stacking Ensemble",
+          "extracted_from_image": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+        },
+        "source_image_file": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+      },
+      {
+        "id": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5_node_6",
+        "type": "process",
+        "name": "Training & Testing",
+        "properties": {
+          "description": "Model validation and performance evaluation",
+          "extracted_from_image": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+        },
+        "source_image_file": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+      },
+      {
+        "id": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5_node_7",
+        "type": "analysis",
+        "name": "SHAP Analysis",
+        "properties": {
+          "method": "SHapley Additive exPlanations",
+          "purpose": "Model interpretability and feature importance",
+          "extracted_from_image": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+        },
+        "source_image_file": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+      },
+      {
+        "id": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5_node_8",
+        "type": "application",
+        "name": "New Catalyst Predictions",
+        "properties": {
+          "target": "Discovery of novel electrocatalysts",
+          "extracted_from_image": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+        },
+        "source_image_file": "69a7c521be10dc6738b69f019f54aac387495f03644ea914bbd2e6b71ce9f5c5.jpg"
+      },
+      {
+        "id": "property_01",
+        "type": "thermodynamic_property",
+        "name": "Gibbs Free Energy of Hydrogen Adsorption",
+        "properties": {
+          "symbol": "ΔG_H",
+          "unit": "eV (implied)",
+          "range": "-12.5 to 5.0",
+          "extracted_from_image": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+        },
+        "source_image_file": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+      },
+      {
+        "id": "method_01",
+        "type": "computational_method",
+        "name": "Density Functional Theory",
+        "properties": {
+          "acronym": "DFT",
+          "role": "Ground truth/Reference",
+          "extracted_from_image": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+        },
+        "source_image_file": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+      },
+      {
+        "id": "method_02",
+        "type": "computational_method",
+        "name": "Machine Learning",
+        "properties": {
+          "acronym": "ML",
+          "role": "Prediction model",
+          "extracted_from_image": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+        },
+        "source_image_file": "c1484d01e2a1d51a4353ac3fab0d788ebe2667829277eec57c92bc7b8394b11f.jpg"
+      },
+      {
+        "id": "PCA_Site_3",
+        "type": "feature",
+        "name": "PCA_Site_3",
+        "properties": {
+          "category": "Principal Component Analysis",
+          "rank": 1,
+          "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+        },
+        "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+      },
+      {
+        "id": "PCA_Site_2",
+        "type": "feature",
+        "name": "PCA_Site_2",
+        "properties": {
+          "category": "Principal Component Analysis",
+          "rank": 4,
+          "extracted_from_image": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+        },
+        "source_image_file": "faf3bad80ba5223c62e8d0db0b5885f850ed18ebc16a180434654a5467c488c3.jpg"
+      },
+      {
+        "id": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e_3",
+        "type": "method",
+        "name": "Stacking Model",
+        "properties": {
+          "category": "Machine Learning",
+          "application": "Predicting adsorption energies",
+          "extracted_from_image": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+        },
+        "source_image_file": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+      },
+      {
+        "id": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e_4",
+        "type": "method",
+        "name": "DFT",
+        "properties": {
+          "full_name": "Density Functional Theory",
+          "role": "Ground truth/Reference data",
+          "extracted_from_image": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+        },
+        "source_image_file": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+      },
+      {
+        "id": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e_5",
+        "type": "data_set",
+        "name": "Train Predictions",
+        "properties": {
+          "marker": "blue circle",
+          "extracted_from_image": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+        },
+        "source_image_file": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+      },
+      {
+        "id": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e_6",
+        "type": "data_set",
+        "name": "Test Predictions",
+        "properties": {
+          "marker": "red circle",
+          "extracted_from_image": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+        },
+        "source_image_file": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+      },
+      {
+        "id": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e_7",
+        "type": "reference_line",
+        "name": "Perfect Prediction",
+        "properties": {
+          "style": "green dashed line",
+          "slope": 1.0,
+          "extracted_from_image": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+        },
+        "source_image_file": "ffb9532be9459756bcbf71b8d08c84bba5ce3b0f0aab4a00a25354fce8e8559e.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_bimetallic_alloy_surfaces_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_bimetallic_alloy_surfaces",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_bimetallic_alloy_surfaces_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_bimetallic_alloy_surfaces",
+        "target_id": "char_2",
+        "properties": {
+          "reaction": {
+            "value": "HER",
+            "unit": "text"
+          }
+        }
+      },
+      {
+        "id": "edge_characterized_chem_bimetallic_alloy_surfaces_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_bimetallic_alloy_surfaces",
+        "target_id": "char_3",
+        "properties": {
+          "reaction": {
+            "value": "OER",
+            "unit": "text"
+          }
+        }
+      },
+      {
+        "source_id": "chem_refined_descriptors_her",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_her",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_her",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_her",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_her",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_her",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_her",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_her",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "FEAT_09",
+        "target_id": "char_2",
+        "type": "analyzed_in"
+      },
+      {
+        "source_id": "node_1",
+        "target_id": "node_2",
+        "type": "provides_data_for"
+      },
+      {
+        "source_id": "node_1",
+        "target_id": "node_3",
+        "type": "provides_data_for"
+      },
+      {
+        "source_id": "node_2",
+        "target_id": "node_4",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "node_3",
+        "target_id": "node_4",
+        "type": "contributes_to"
+      },
+      {
+        "source_id": "node_4",
+        "target_id": "node_5",
+        "type": "inputs_to"
+      },
+      {
+        "source_id": "node_5",
+        "target_id": "node_6",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "node_6",
+        "target_id": "node_7",
+        "type": "evaluated_by"
+      },
+      {
+        "source_id": "node_7",
+        "target_id": "node_8",
+        "type": "leads_to"
+      },
+      {
+        "source_id": "property_01",
+        "target_id": "chem_H_adsorbate",
+        "type": "describes_adsorption_of"
+      },
+      {
+        "source_id": "method_01",
+        "target_id": "property_01",
+        "type": "calculates"
+      },
+      {
+        "source_id": "method_02",
+        "target_id": "property_01",
+        "type": "predicts"
+      },
+      {
+        "source_id": "test_HER_stacking_ensemble",
+        "target_id": "method_01",
+        "type": "visualizes_data_from"
+      },
+      {
+        "source_id": "test_HER_stacking_ensemble",
+        "target_id": "method_02",
+        "type": "visualizes_data_from"
+      },
+      {
+        "source_id": "PCA_Site_3",
+        "target_id": "char_3",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_oer",
+        "target_id": "char_3",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_oer",
+        "target_id": "char_3",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_oer",
+        "target_id": "char_3",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "chem_refined_descriptors_oer",
+        "target_id": "char_3",
+        "type": "visualized_in"
+      },
+      {
+        "source_id": "3",
+        "target_id": "1",
+        "type": "generated_plot"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "analyzes_property_of"
+      },
+      {
+        "source_id": "4",
+        "target_id": "1",
+        "type": "provides_x_axis_data"
+      },
+      {
+        "source_id": "3",
+        "target_id": "1",
+        "type": "provides_y_axis_data"
+      },
+      {
+        "source_id": "5",
+        "target_id": "1",
+        "type": "contained_in"
+      },
+      {
+        "source_id": "6",
+        "target_id": "1",
+        "type": "contained_in"
+      },
+      {
+        "source_id": "7",
+        "target_id": "1",
+        "type": "baseline_for"
+      }
+    ]
+  }
+}

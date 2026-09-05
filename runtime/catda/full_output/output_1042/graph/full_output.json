@@ -1,0 +1,3773 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_nickel_foam",
+        "type": "chemical",
+        "name": "Nickel foam",
+        "aliases": [
+          "NF"
+        ],
+        "formula": null,
+        "composition": null,
+        "properties": {
+          "thickness": {
+            "value": 1.0,
+            "unit": "mm"
+          },
+          "exposed_geometric_area": {
+            "value": 1.0,
+            "unit": "cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_nickel_nitrate_hexahydrate",
+        "type": "chemical",
+        "name": "nickel nitrate hexahydrate",
+        "aliases": [
+          "Ni(NO₃)₂·6H₂O",
+          "nickel salt"
+        ],
+        "formula": "Ni(NO₃)₂·6H₂O",
+        "properties": {}
+      },
+      {
+        "id": "chem_iron_nitrate_nonahydrate",
+        "type": "chemical",
+        "name": "iron nitrate nonahydrate",
+        "aliases": [
+          "Fe(NO₃)₃·9H₂O",
+          "iron salt"
+        ],
+        "formula": "Fe(NO₃)₃·9H₂O",
+        "properties": {}
+      },
+      {
+        "id": "chem_chromium_nitrate_nonahydrate",
+        "type": "chemical",
+        "name": "chromium nitrate nonahydrate",
+        "aliases": [
+          "Cr(NO₃)₃·9H₂O",
+          "Cr precursor"
+        ],
+        "formula": "Cr(NO₃)₃·9H₂O",
+        "properties": {}
+      },
+      {
+        "id": "chem_NiFeCr_oxyhydroxide",
+        "type": "chemical",
+        "name": "NiFeCr (oxy)hydroxide",
+        "aliases": [
+          "NiFeCr/NF",
+          "NiFeCr catalyst",
+          "trimetallic NiFeCr (oxy)hydroxide"
+        ],
+        "formula": "",
+        "composition": {
+          "Ni": {
+            "value": 6,
+            "unit": "ratio"
+          },
+          "Fe": {
+            "value": 1,
+            "unit": "ratio"
+          },
+          "Cr": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_NiFe_oxyhydroxide",
+        "type": "chemical",
+        "name": "NiFe (oxy)hydroxide",
+        "aliases": [
+          "NiFe/NF",
+          "NiFe catalyst",
+          "host NiFe (oxy)hydroxide"
+        ],
+        "formula": "",
+        "composition": {
+          "Ni": {
+            "value": 3,
+            "unit": "ratio"
+          },
+          "Fe": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "NiFeCr electrodeposition",
+        "procedure": "Nickel foam (NF, 110 ppi, 1.0 mm thickness, exposed geometric area: 1.0 × 1.0 cm²) was used as the working electrode (coating substrate). The counter and reference electrodes were a graphite plate and Ag/AgCl (1.0 M KCl, CHI-111), respectively. The electrodeposition was carried out at an applied potential of -1.0 V vs. Ag/AgCl for 900 s, in an electrodeposition bath containing 12 mM nickel nitrate hexahydrate (99.5%, Ni(NO₃)₂·6H₂O, Chem Supply), 3 mM iron nitrate nonahydrate (99.5%, Fe(NO₃)₃·9H₂O, Chem Supply) and 6 mM chromium nitrate nonahydrate (99.5%, Cr(NO₃)₃·9H₂O, Jax Chemicals). During the electrodeposition process, locally generated OH⁻ ions via the reduction of nitrate aqueous solution react with Ni²⁺, Fe³⁺ and/or Cr³⁺, and co-precipitate onto the substrate (i.e. NF), forming a light-brown colored coating (denoted as NiFeCr/NF). Thereafter the electrodeposited electrode was thoroughly rinsed with water and air-dried.",
+        "unit_operations": [
+          {
+            "id": "unit_op_1.1",
+            "name": "Electrodeposition",
+            "method": "Cathodic electrodeposition",
+            "conditions": {
+              "potential": {
+                "value": -1.0,
+                "unit": "V vs. Ag/AgCl"
+              },
+              "time": {
+                "value": 900,
+                "unit": "s"
+              }
+            },
+            "procedure_snippet": "The electrodeposition was carried out at an applied potential of -1.0 V vs. Ag/AgCl for 900 s"
+          },
+          {
+            "id": "unit_op_1.2",
+            "name": "Rinsing and drying",
+            "method": "Water rinsing and air drying",
+            "conditions": {},
+            "procedure_snippet": "Thereafter the electrodeposited electrode was thoroughly rinsed with water and air-dried."
+          }
+        ],
+        "method": "Cathodic electrodeposition",
+        "conditions": {
+          "potential": {
+            "value": -1.0,
+            "unit": "V vs. Ag/AgCl"
+          },
+          "time": {
+            "value": 900,
+            "unit": "s"
+          },
+          "Ni_concentration": {
+            "value": 12,
+            "unit": "mM"
+          },
+          "Fe_concentration": {
+            "value": 3,
+            "unit": "mM"
+          },
+          "Cr_concentration": {
+            "value": 6,
+            "unit": "mM"
+          }
+        },
+        "source_text": "The NiFeCr catalyst materials were obtained via electrodeposition in a standard three-electrode configuration... The electrodeposition was carried out at an applied potential of -1.0 V vs. Ag/AgCl for 900 s, in an electrodeposition bath containing 12 mM nickel nitrate hexahydrate... Thereafter the electrodeposited electrode was thoroughly rinsed with water and air-dried."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "NiFe electrodeposition",
+        "procedure": "The NiFe control samples were obtained under the same conditions from the electrodeposition bath without the Cr precursor (nickel salt 12 mM and iron salt 9 mM, denoted as NiFe/NF).",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Electrodeposition",
+            "method": "Cathodic electrodeposition",
+            "conditions": {
+              "potential": {
+                "value": -1.0,
+                "unit": "V vs. Ag/AgCl"
+              },
+              "time": {
+                "value": 900,
+                "unit": "s"
+              }
+            },
+            "procedure_snippet": "obtained under the same conditions from the electrodeposition bath without the Cr precursor"
+          }
+        ],
+        "method": "Cathodic electrodeposition",
+        "conditions": {
+          "potential": {
+            "value": -1.0,
+            "unit": "V vs. Ag/AgCl"
+          },
+          "time": {
+            "value": 900,
+            "unit": "s"
+          },
+          "Ni_concentration": {
+            "value": 12,
+            "unit": "mM"
+          },
+          "Fe_concentration": {
+            "value": 9,
+            "unit": "mM"
+          }
+        },
+        "source_text": "The NiFe control samples were obtained under the same conditions from the electrodeposition bath without the Cr precursor (nickel salt 12 mM and iron salt 9 mM, denoted as NiFe/NF)."
+      },
+      {
+        "id": "chem_KOH_electrolyte",
+        "type": "chemical",
+        "name": "KOH electrolyte",
+        "aliases": [],
+        "formula": null,
+        "properties": {}
+      },
+      {
+        "id": "chem_NiFeCr_NF",
+        "type": "chemical",
+        "name": "NiFeCr/NF",
+        "aliases": [
+          "NiFeCr (oxy)hydroxide",
+          "NiFeCr/NF",
+          "trimetallic NiFeCr (oxy)hydroxide"
+        ],
+        "composition": {
+          "Ni": {
+            "value": 6,
+            "unit": "ratio"
+          },
+          "Fe": {
+            "value": 1,
+            "unit": "ratio"
+          },
+          "Cr": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        },
+        "properties": {
+          "ECSA": {
+            "value": 77.3,
+            "unit": "cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_NiFe_NF",
+        "type": "chemical",
+        "name": "NiFe/NF",
+        "aliases": [
+          "NiFe/NF",
+          "NiFe (oxy)hydroxide",
+          "bimetallic NiFe (oxy)hydroxide"
+        ],
+        "composition": {
+          "Ni": {
+            "value": 3,
+            "unit": "ratio"
+          },
+          "Fe": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        },
+        "properties": {
+          "ECSA": {
+            "value": 53.3,
+            "unit": "cm²"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_nitrate_hexahydrate_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_nitrate_hexahydrate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 12,
+            "unit": "mM"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_iron_nitrate_nonahydrate_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_iron_nitrate_nonahydrate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 3,
+            "unit": "mM"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_chromium_nitrate_nonahydrate_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_chromium_nitrate_nonahydrate",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 6,
+            "unit": "mM"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_NiFeCr_oxyhydroxide",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_NiFeCr_oxyhydroxide",
+        "properties": {
+          "form": "thin film coating"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_foam_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_foam",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_input_chem_nickel_nitrate_hexahydrate_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_nickel_nitrate_hexahydrate",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 12,
+            "unit": "mM"
+          }
+        }
+      },
+      {
+        "id": "edge_input_chem_iron_nitrate_nonahydrate_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_iron_nitrate_nonahydrate",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "concentration": {
+            "value": 9,
+            "unit": "mM"
+          }
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_NiFe_oxyhydroxide",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_NiFe_oxyhydroxide",
+        "properties": {
+          "form": "thin film coating"
+        }
+      },
+      {
+        "id": "edge_input_chem_KOH_electrolyte_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_KOH_electrolyte",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "electrolyte"
+        }
+      },
+      {
+        "id": "edge_input_chem_KOH_electrolyte_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_KOH_electrolyte",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "electrolyte"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_NiFe_NF",
+      "chem_NiFeCr_NF"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_NiFeCr_NF",
+        "type": "chemical",
+        "name": "NiFeCr/NF",
+        "aliases": [
+          "NiFeCr (oxy)hydroxide",
+          "NiFeCr/NF",
+          "trimetallic NiFeCr (oxy)hydroxide"
+        ],
+        "composition": {
+          "Ni": {
+            "value": 6,
+            "unit": "ratio"
+          },
+          "Fe": {
+            "value": 1,
+            "unit": "ratio"
+          },
+          "Cr": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        },
+        "properties": {
+          "ECSA": {
+            "value": 77.3,
+            "unit": "cm²"
+          }
+        }
+      },
+      {
+        "id": "chem_NiFe_NF",
+        "type": "chemical",
+        "name": "NiFe/NF",
+        "aliases": [
+          "NiFe/NF",
+          "NiFe (oxy)hydroxide",
+          "bimetallic NiFe (oxy)hydroxide"
+        ],
+        "composition": {
+          "Ni": {
+            "value": 3,
+            "unit": "ratio"
+          },
+          "Fe": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        },
+        "properties": {
+          "ECSA": {
+            "value": 53.3,
+            "unit": "cm²"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_NiFeCr_NF",
+        "description": "OER LSV performance in 1.0 M KOH (main test)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "counter_electrode": {
+            "value": "graphite plate",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (CHI-111)",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5.0,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "80%",
+            "unit": "iR-compensation"
+          }
+        },
+        "results_json": {
+          "onset_overpotential": {
+            "value": 240,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 36,
+            "unit": "mV/dec"
+          },
+          "overpotentials_at_current_densities": {
+            "value": "20, 50, 100 mA/cm²",
+            "unit": "reported_in_Fig2b"
+          }
+        },
+        "source_text": "LSVs of NiFe/NF and NiFeCr/NF at a scan rate of 5.0 mV s-1 in 1.0 M KOH electrolyte with 80% iR-compensation. Overpotentials (b) at OER current densities of 20, 50 and 100 mA cm-2, respectively. (c) Tafel slopes derived from (a)."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_NiFe_NF",
+        "description": "OER LSV performance in 1.0 M KOH (main test)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "counter_electrode": {
+            "value": "graphite plate",
+            "unit": "electrode"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl (CHI-111)",
+            "unit": "electrode"
+          },
+          "scan_rate": {
+            "value": 5.0,
+            "unit": "mV/s"
+          },
+          "iR_correction": {
+            "value": "80%",
+            "unit": "iR-compensation"
+          }
+        },
+        "results_json": {
+          "onset_overpotential": {
+            "value": 265,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 48,
+            "unit": "mV/dec"
+          },
+          "overpotentials_at_current_densities": {
+            "value": "20, 50, 100 mA/cm²",
+            "unit": "reported_in_Fig2b"
+          }
+        },
+        "source_text": "LSVs of NiFe/NF and NiFeCr/NF at a scan rate of 5.0 mV s-1 in 1.0 M KOH electrolyte with 80% iR-compensation. Overpotentials (b) at OER current densities of 20, 50 and 100 mA cm-2, respectively."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_NiFeCr_NF",
+        "description": "OER chronopotentiometry stability test in 1.0 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 14,
+            "unit": "pH"
+          },
+          "current_density": {
+            "value": 100,
+            "unit": "mA/cm²"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO (LEICI-152)",
+            "unit": "electrode"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "no_compensation"
+          }
+        },
+        "results_json": {
+          "stability_duration": {
+            "value": 24,
+            "unit": "hours"
+          },
+          "performance": {
+            "value": "excellent oxygen evolution output without obvious degradation",
+            "unit": "chronoamperometry"
+          }
+        },
+        "source_text": "Chronopotentiometry (V–t) was applied to assess the long-term durability of the electrode at a current density of 100 mA cm-2... The NiFeCr/NF electrode shows an excellent oxygen evolution output without obvious degradation."
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_NiFeCr_NF",
+        "description": "EIS characterization at 1.55 V vs RHE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "applied_potential": {
+            "value": 1.55,
+            "unit": "V_vs_RHE"
+          },
+          "frequency_range": {
+            "value": "100 kHz to 50 mHz",
+            "unit": "frequency"
+          },
+          "amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "no_compensation"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance": {
+            "value": "smaller R_ct values",
+            "unit": "compared_to_NiFe/NF"
+          }
+        },
+        "source_text": "EIS plots in Fig. 2d and e demonstrate elliptical semicircles... The smaller R_ct values for NiFeCr/NF indicate a faster charge-transfer process."
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_NiFe_NF",
+        "description": "EIS characterization at 1.55 V vs RHE",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "1.0 M KOH",
+            "unit": "solution"
+          },
+          "applied_potential": {
+            "value": 1.55,
+            "unit": "V_vs_RHE"
+          },
+          "frequency_range": {
+            "value": "100 kHz to 50 mHz",
+            "unit": "frequency"
+          },
+          "amplitude": {
+            "value": 10,
+            "unit": "mV"
+          },
+          "iR_correction": {
+            "value": "none",
+            "unit": "no_compensation"
+          }
+        },
+        "results_json": {
+          "charge_transfer_resistance": {
+            "value": "higher R_ct values",
+            "unit": "compared_to_NiFeCr/NF"
+          }
+        },
+        "source_text": "EIS plots in Fig. 2d and e demonstrate elliptical semicircles... The smaller R_ct values for NiFeCr/NF indicate a faster charge-transfer process."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_NiFeCr_NF_test_1",
+        "type": "tested_in",
+        "source_id": "chem_NiFeCr_NF",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFe_NF_test_2",
+        "type": "tested_in",
+        "source_id": "chem_NiFe_NF",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFeCr_NF_test_3",
+        "type": "tested_in",
+        "source_id": "chem_NiFeCr_NF",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFeCr_NF_test_4",
+        "type": "tested_in",
+        "source_id": "chem_NiFeCr_NF",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFe_NF_test_5",
+        "type": "tested_in",
+        "source_id": "chem_NiFe_NF",
+        "target_id": "test_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFeCr_NF_test_6",
+        "type": "tested_in",
+        "source_id": "chem_NiFeCr_NF",
+        "target_id": "test_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFe_NF_test_7",
+        "type": "tested_in",
+        "source_id": "chem_NiFe_NF",
+        "target_id": "test_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFeCr_NF_test_4",
+        "type": "tested_in",
+        "source_id": "chem_NiFeCr_NF",
+        "target_id": "test_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiFe_NF_test_5",
+        "type": "tested_in",
+        "source_id": "chem_NiFe_NF",
+        "target_id": "test_5",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_NiFeCr_oxyhydroxide",
+        "type": "chemical",
+        "name": "NiFeCr (oxy)hydroxide",
+        "aliases": [
+          "NiFeCr/NF",
+          "NiFeCr catalyst",
+          "trimetallic NiFeCr (oxy)hydroxide"
+        ],
+        "formula": "",
+        "composition": {
+          "Ni": {
+            "value": 6,
+            "unit": "ratio"
+          },
+          "Fe": {
+            "value": 1,
+            "unit": "ratio"
+          },
+          "Cr": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_NiFe_oxyhydroxide",
+        "type": "chemical",
+        "name": "NiFe (oxy)hydroxide",
+        "aliases": [
+          "NiFe/NF",
+          "NiFe catalyst",
+          "host NiFe (oxy)hydroxide"
+        ],
+        "formula": "",
+        "composition": {
+          "Ni": {
+            "value": 3,
+            "unit": "ratio"
+          },
+          "Fe": {
+            "value": 2,
+            "unit": "ratio"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XPS",
+        "is_reported": true,
+        "characterization_summary": "NiFeCr/NF shows more M–OH bonds (531.9 eV) than NiFe/NF; Fe3+ and Ni2+ oxidation states in both; Cr3+ in NiFeCr/NF; Ni/Fe peaks shift +0.3 eV in NiFeCr/NF indicating electron transfer.",
+        "evidence_snippet": "In the O1s XPS data (Fig. 1a), one dominant peak can be fitted into three sub-peaks... NiFeCr/NF contains more M–OH bonds for the hydroxide while the NiFe/NF control sample has more M–O bonds.",
+        "related_images": [
+          "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg",
+          "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "O 1s XPS NiFeCr",
+            "properties": {
+              "peaks": [
+                {
+                  "BE": "532 eV",
+                  "assignment": "M-OH",
+                  "color": "red"
+                },
+                {
+                  "BE": "530 eV",
+                  "assignment": "M-O",
+                  "color": "black"
+                }
+              ],
+              "extracted_from_image": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+            },
+            "source_image_file": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "O 1s XPS NiFe",
+            "properties": {
+              "peaks": [
+                {
+                  "BE": "532 eV",
+                  "assignment": "M-OH",
+                  "color": "blue"
+                },
+                {
+                  "BE": "530 eV",
+                  "assignment": "M-O",
+                  "color": "black dashed"
+                }
+              ],
+              "extracted_from_image": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+            },
+            "source_image_file": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS O 1s Spectrum",
+            "properties": {
+              "technique": "XPS",
+              "region": "O 1s",
+              "binding_energy_range": "526-534 eV",
+              "materials": [
+                "NiFeCr",
+                "NiFe"
+              ],
+              "extracted_from_image": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+            },
+            "source_image_file": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XPS Spectrum",
+            "properties": {
+              "technique": "XPS",
+              "region": "Ni 2p",
+              "binding_energy_range": "850-880 eV",
+              "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+            },
+            "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "NiFeCr (oxy)hydroxide shows small clusters of atoms without clear lattice fringes and amorphous nature confirmed by SAED halo pattern.",
+        "evidence_snippet": "Fig. 1e shows that the NiFeCr compound consists of small clusters of atoms without clear lattice fringes, indicating the amorphous nature of the catalysts.",
+        "related_images": [
+          "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "image",
+            "name": "Figure e",
+            "properties": {
+              "label": "e",
+              "scale_bar": "20 nm",
+              "extracted_from_image": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+            },
+            "source_image_file": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "TEM Image",
+            "properties": {
+              "technique": "Transmission Electron Microscopy",
+              "description": "High-resolution TEM showing nanostructure with inset",
+              "extracted_from_image": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+            },
+            "source_image_file": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EDS",
+        "is_reported": true,
+        "characterization_summary": "EDS mapping shows uniform distribution of O, Fe, Ni, and Cr elements in NiFeCr (oxy)hydroxide.",
+        "evidence_snippet": "EDS mapping (Fig. 1f) shows the presence and uniform distribution of O, Fe, Ni and Cr in the compound.",
+        "related_images": [
+          "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "image_panel",
+            "name": "Panel f",
+            "properties": {
+              "description": "Elemental mapping image from scientific paper",
+              "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+            },
+            "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Oxygen elemental map",
+            "properties": {
+              "color": "red",
+              "technique": "EDX mapping or EELS mapping",
+              "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+            },
+            "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Iron elemental map",
+            "properties": {
+              "color": "cyan",
+              "technique": "EDX mapping or EELS mapping",
+              "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+            },
+            "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Nickel elemental map",
+            "properties": {
+              "color": "blue",
+              "technique": "EDX mapping or EELS mapping",
+              "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+            },
+            "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Chromium elemental map",
+            "properties": {
+              "color": "green",
+              "technique": "EDX mapping or EELS mapping",
+              "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+            },
+            "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "ICP-OES",
+        "is_reported": true,
+        "characterization_summary": "Ni:Fe:Cr ratio of 6:1:2 in NiFeCr/NF and Ni:Fe ratio of 3:2 in NiFe/NF.",
+        "evidence_snippet": "Considering the above analysis, a Ni : Fe ratio of 3 : 2 in NiFe/NF and a Ni : Fe : Cr ratio of 6 : 1 : 2 in NiFeCr/NF are obtained, respectively."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "operando Raman",
+        "is_reported": true,
+        "characterization_summary": "NiFe catalyst shows Ni–O doublet peaks shifting to ~475 and ~555 cm⁻¹ indicating β-NiOOH formation; NiFeCr shows stronger ~555 cm⁻¹ peak indicating more β-NiOOH phase.",
+        "evidence_snippet": "When the applied potential reaches 0.5 V or higher, the doublet Ni–O peaks (400–600 cm⁻¹) shift gradually to ~475 and ~555 cm⁻¹, attributed to Ni–O vibrations in the NiOOH intermediate."
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "operando XAS",
+        "is_reported": true,
+        "characterization_summary": "NiFe catalyst transforms to Fe-substituted-β-NiOOH with shorter Fe–O bonds (active site); NiFeCr catalyst shows Cr oxidized to 6+ with Cr–O bond at 1.2 Å (active site) in Cr,Fe-substituted-β-NiOOH.",
+        "evidence_snippet": "At an applied potential of 0.70 V (black curves in Fig. 4f and g), the FT peaks of both Fe and Ni shift in the lower R′ direction, indicating the formation of shorter Fe–O and Ni–O bonds... for the Cr FT in the NiFeCr catalyst (Fig. 4h), the peak of Cr–O in the 1st shell shifts negatively with a dominant peak at 1.2 Å.",
+        "related_images": [
+          "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "figure",
+            "name": "Figure g",
+            "properties": {
+              "description": "EXAFS spectra of Ni K-edge for NiFe and NiFeCr materials",
+              "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+            },
+            "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "ECSA",
+        "is_reported": true,
+        "characterization_summary": "ECSA of NiFeCr/NF is 77.3 cm² and NiFe/NF is 53.3 cm², indicating larger surface area for NiFeCr/NF after OER due to Cr dissolution creating pores.",
+        "evidence_snippet": "The ECSA of NiFeCr/NF and NiFe/NF is calculated to be 77.3 and 53.3 cm², respectively, indicating a larger specific surface area for the OER."
+      },
+      {
+        "id": "ni-oh",
+        "type": "chemical",
+        "name": "Ni-O",
+        "properties": {
+          "description": "Nickel-Oxygen coordination",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "ni-m",
+        "type": "chemical",
+        "name": "Ni-M",
+        "properties": {
+          "description": "Nickel-Metal coordination (M likely Fe or Cr)",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "ni-ft",
+        "type": "chemical",
+        "name": "Ni FT",
+        "properties": {
+          "description": "Fourier Transform of Ni signal",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "nife",
+        "type": "chemical",
+        "name": "NiFe",
+        "properties": {
+          "description": "NiFe material or catalyst",
+          "extracted_from_image": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+        },
+        "source_image_file": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+      },
+      {
+        "id": "nife-0.7v",
+        "type": "chemical",
+        "name": "NiFe at 0.7 V",
+        "properties": {
+          "description": "NiFe after electrochemical treatment at 0.7 V",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "nife-pristine",
+        "type": "chemical",
+        "name": "NiFe Pristine",
+        "properties": {
+          "description": "Pristine NiFe material",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "nifecr",
+        "type": "chemical",
+        "name": "NiFeCr",
+        "properties": {
+          "description": "NiFeCr material or catalyst",
+          "extracted_from_image": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+        },
+        "source_image_file": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+      },
+      {
+        "id": "nifecr-0.7v",
+        "type": "chemical",
+        "name": "NiFeCr at 0.7 V",
+        "properties": {
+          "description": "NiFeCr after electrochemical treatment at 0.7 V",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "nifecr-pristine",
+        "type": "chemical",
+        "name": "NiFeCr Pristine",
+        "properties": {
+          "description": "Pristine NiFeCr material",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "exafs-spectrum-1",
+        "type": "characterization",
+        "name": "EXAFS 1st shell NiFe",
+        "properties": {
+          "description": "EXAFS spectrum showing 1st shell peaks for NiFe at 0.7V and pristine",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "exafs-spectrum-2",
+        "type": "characterization",
+        "name": "EXAFS 2nd shell NiFe",
+        "properties": {
+          "description": "EXAFS spectrum showing 2nd shell peaks for NiFe at 0.7V and pristine",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "exafs-spectrum-3",
+        "type": "characterization",
+        "name": "EXAFS 1st shell NiFeCr",
+        "properties": {
+          "description": "EXAFS spectrum showing 1st shell peaks for NiFeCr at 0.7V and pristine",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "exafs-spectrum-4",
+        "type": "characterization",
+        "name": "EXAFS 2nd shell NiFeCr",
+        "properties": {
+          "description": "EXAFS spectrum showing 2nd shell peaks for NiFeCr at 0.7V and pristine",
+          "extracted_from_image": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+        },
+        "source_image_file": "05505d41bf19ebee5363bda9183ec402d0a2d1c8ea5284761feada9b9c0d8f64.jpg"
+      },
+      {
+        "id": "NiFeCr",
+        "type": "chemical",
+        "name": "NiFeCr",
+        "properties": {
+          "description": "NiFeCr alloy or material",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "NiFe",
+        "type": "chemical",
+        "name": "NiFe",
+        "properties": {
+          "description": "NiFe alloy or material",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "M-OH",
+        "type": "chemical",
+        "name": "M-OH",
+        "properties": {
+          "description": "Metal-Hydroxide species",
+          "extracted_from_image": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+        },
+        "source_image_file": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+      },
+      {
+        "id": "H-O-H",
+        "type": "chemical",
+        "name": "H-O-H",
+        "properties": {
+          "description": "Water or adsorbed H2O",
+          "extracted_from_image": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+        },
+        "source_image_file": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+      },
+      {
+        "id": "M-O",
+        "type": "chemical",
+        "name": "M-O",
+        "properties": {
+          "description": "Metal-Oxide species",
+          "extracted_from_image": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+        },
+        "source_image_file": "19df0717d8249525d4d63dd23e08f1498a9feb45108e9b27a67028c6fde9d955.jpg"
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "NiFe",
+        "properties": {
+          "description": "Nickel-Iron alloy or compound",
+          "extracted_from_image": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+        },
+        "source_image_file": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "characterization",
+        "name": "Raman Spectrum",
+        "properties": {
+          "technique": "Raman spectroscopy",
+          "x_axis": "Raman Shift (cm⁻¹)",
+          "x_range": [
+            400,
+            800
+          ],
+          "y_axis": "Intensity (a.u.)",
+          "extracted_from_image": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+        },
+        "source_image_file": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "spectrum",
+        "name": "OCP Spectrum",
+        "properties": {
+          "label": "ocp",
+          "extracted_from_image": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+        },
+        "source_image_file": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "spectrum",
+        "name": "0.2V Spectrum",
+        "properties": {
+          "potential": "0.2 V",
+          "extracted_from_image": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+        },
+        "source_image_file": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "spectrum",
+        "name": "0.3V Spectrum",
+        "properties": {
+          "potential": "0.3 V",
+          "extracted_from_image": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+        },
+        "source_image_file": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "spectrum",
+        "name": "0.4V Spectrum",
+        "properties": {
+          "potential": "0.4 V",
+          "extracted_from_image": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+        },
+        "source_image_file": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "spectrum",
+        "name": "0.5V Spectrum",
+        "properties": {
+          "potential": "0.5 V",
+          "extracted_from_image": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+        },
+        "source_image_file": "fb4ea57e9f293bd322617e9a53d74448568a0624ee793f3cb0785cc81fa1f8d4.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "characterization",
+        "name": "Cr Oxidation Feature",
+        "properties": {
+          "type": "spectral feature",
+          "description": "Cr oxidation peak in NiFeCrO_x",
+          "extracted_from_image": "dd8398ec3bceb19b4be5176acfc2e2b5b4de253f4fdc65d1d9638e6fc691c040.jpg"
+        },
+        "source_image_file": "dd8398ec3bceb19b4be5176acfc2e2b5b4de253f4fdc65d1d9638e6fc691c040.jpg"
+      },
+      {
+        "id": "graph_e",
+        "type": "characterization",
+        "name": "Plot e",
+        "properties": {
+          "description": "Plot of Z'/Z vs Z/Z",
+          "x_label": "Z/Z",
+          "y_label": "Z'/Z",
+          "black_line": "continuous curve",
+          "red_line": "data points",
+          "extracted_from_image": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+        },
+        "source_image_file": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+      },
+      {
+        "id": "circuit_f",
+        "type": "characterization",
+        "name": "Equivalent Circuit f",
+        "properties": {
+          "description": "Electrical equivalent circuit diagram",
+          "extracted_from_image": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+        },
+        "source_image_file": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+      },
+      {
+        "id": "Rs",
+        "type": "component",
+        "name": "Rs",
+        "properties": {
+          "description": "Series resistance",
+          "extracted_from_image": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+        },
+        "source_image_file": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+      },
+      {
+        "id": "Rct1",
+        "type": "component",
+        "name": "Rct1",
+        "properties": {
+          "description": "Charge transfer resistance 1",
+          "extracted_from_image": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+        },
+        "source_image_file": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+      },
+      {
+        "id": "Q1",
+        "type": "component",
+        "name": "Q1",
+        "properties": {
+          "description": "Constant phase element 1",
+          "extracted_from_image": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+        },
+        "source_image_file": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+      },
+      {
+        "id": "Rct2",
+        "type": "component",
+        "name": "Rct2",
+        "properties": {
+          "description": "Charge transfer resistance 2",
+          "extracted_from_image": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+        },
+        "source_image_file": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+      },
+      {
+        "id": "Q2",
+        "type": "component",
+        "name": "Q2",
+        "properties": {
+          "description": "Constant phase element 2",
+          "extracted_from_image": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+        },
+        "source_image_file": "43bc306bc753a50020e16605e978f4129e6de7464ad28d7793f6d842e4838197.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "data_point",
+        "name": "NiFeCr at 100 mA/cm²",
+        "properties": {
+          "current_density": 100,
+          "overpotential": "~380 mV",
+          "extracted_from_image": "c5fd9a83496ee9aa8e4f078236411f9375037ef45d017b2c8f8dd2996fc067ed.jpg"
+        },
+        "source_image_file": "c5fd9a83496ee9aa8e4f078236411f9375037ef45d017b2c8f8dd2996fc067ed.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "δ-(Fe,Ni)",
+        "properties": {
+          "extracted_from_image": "98b11198cf516e3cf1fdc22e479ffa276e39b2ee1ba2f68eb6f51eac347e0f1e.jpg"
+        },
+        "source_image_file": "98b11198cf516e3cf1fdc22e479ffa276e39b2ee1ba2f68eb6f51eac347e0f1e.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "δ-(Fe,Ni,Cr)",
+        "properties": {
+          "extracted_from_image": "98b11198cf516e3cf1fdc22e479ffa276e39b2ee1ba2f68eb6f51eac347e0f1e.jpg"
+        },
+        "source_image_file": "98b11198cf516e3cf1fdc22e479ffa276e39b2ee1ba2f68eb6f51eac347e0f1e.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chart",
+        "name": "Volcano Plot",
+        "properties": {
+          "x_axis": "ΔE (eV)",
+          "y_axis": "log|j| (A/cm²)",
+          "range_x": [
+            2.0,
+            5.5
+          ],
+          "range_y": [
+            0.2,
+            1.2
+          ],
+          "extracted_from_image": "98b11198cf516e3cf1fdc22e479ffa276e39b2ee1ba2f68eb6f51eac347e0f1e.jpg"
+        },
+        "source_image_file": "98b11198cf516e3cf1fdc22e479ffa276e39b2ee1ba2f68eb6f51eac347e0f1e.jpg"
+      },
+      {
+        "id": "ni_fo",
+        "type": "chemical",
+        "name": "Ni foil",
+        "properties": {
+          "extracted_from_image": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+        },
+        "source_image_file": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+      },
+      {
+        "id": "ni_nife_pristine",
+        "type": "chemical",
+        "name": "Ni in NiFe pristine",
+        "properties": {
+          "extracted_from_image": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+        },
+        "source_image_file": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+      },
+      {
+        "id": "ni_nife_0.55v",
+        "type": "chemical",
+        "name": "Ni in NiFe 0.55 V",
+        "properties": {
+          "extracted_from_image": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+        },
+        "source_image_file": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+      },
+      {
+        "id": "ni_nife_0.70v",
+        "type": "chemical",
+        "name": "Ni in NiFe 0.70 V",
+        "properties": {
+          "extracted_from_image": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+        },
+        "source_image_file": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+      },
+      {
+        "id": "ni_nifecr_pristine",
+        "type": "chemical",
+        "name": "Ni in NiFeCr pristine",
+        "properties": {
+          "extracted_from_image": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+        },
+        "source_image_file": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+      },
+      {
+        "id": "ni_nifecr_0.55v",
+        "type": "chemical",
+        "name": "Ni in NiFeCr 0.55 V",
+        "properties": {
+          "extracted_from_image": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+        },
+        "source_image_file": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+      },
+      {
+        "id": "ni_oxidation",
+        "type": "chemical",
+        "name": "Ni oxidation",
+        "properties": {
+          "extracted_from_image": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+        },
+        "source_image_file": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+      },
+      {
+        "id": "xanes_spectrum",
+        "type": "characterization",
+        "name": "XANES spectrum",
+        "properties": {
+          "edge": "Ni K-edge",
+          "x_axis": "E/eV",
+          "x_range": [
+            8320,
+            8340
+          ],
+          "y_axis": "Normalized Intensity",
+          "extracted_from_image": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+        },
+        "source_image_file": "5f7c9f6a2a2da00e744ddf48b7f0064fab2b32e6c42a2a5876c9cbddbb62f9fb.jpg"
+      },
+      {
+        "id": "fe_o_1shell",
+        "type": "chemical",
+        "name": "Fe-O 1st shell",
+        "properties": {
+          "shell": "1st",
+          "bond": "Fe-O",
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "fe_m_1shell",
+        "type": "chemical",
+        "name": "Fe-M 1st shell",
+        "properties": {
+          "shell": "1st",
+          "bond": "Fe-M",
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "fe_o_2shell",
+        "type": "chemical",
+        "name": "Fe-O 2nd shell",
+        "properties": {
+          "shell": "2nd",
+          "bond": "Fe-O",
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "fe_m_2shell",
+        "type": "chemical",
+        "name": "Fe-M 2nd shell",
+        "properties": {
+          "shell": "2nd",
+          "bond": "Fe-M",
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "fe_ft",
+        "type": "chemical",
+        "name": "Fe FT",
+        "properties": {
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "nife_0v",
+        "type": "material",
+        "name": "NiFe 0.7V",
+        "properties": {
+          "condition": "0.7V",
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "nife_pristine",
+        "type": "material",
+        "name": "NiFe Pristine",
+        "properties": {
+          "condition": "Pristine",
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "nife_cr_0v",
+        "type": "material",
+        "name": "NiFeCr 0.7V",
+        "properties": {
+          "condition": "0.7V",
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "nife_cr_pristine",
+        "type": "material",
+        "name": "NiFeCr Pristine",
+        "properties": {
+          "condition": "Pristine",
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "exafs_spectrum",
+        "type": "characterization",
+        "name": "EXAFS Spectrum",
+        "properties": {
+          "technique": "EXAFS",
+          "x_axis": "R (Å)",
+          "y_axis": "FT",
+          "range": [
+            0,
+            6
+          ],
+          "extracted_from_image": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+        },
+        "source_image_file": "7a00be4686a1c111b82d380caabe08d73c0b30528111f4b64d372e41f866671e.jpg"
+      },
+      {
+        "id": "O",
+        "type": "chemical",
+        "name": "Oxygen",
+        "properties": {
+          "symbol": "O",
+          "atomic_number": 8,
+          "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+        },
+        "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+      },
+      {
+        "id": "Fe",
+        "type": "chemical",
+        "name": "Iron",
+        "properties": {
+          "symbol": "Fe",
+          "atomic_number": 26,
+          "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+        },
+        "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+      },
+      {
+        "id": "Ni",
+        "type": "chemical",
+        "name": "Nickel",
+        "properties": {
+          "symbol": "Ni",
+          "atomic_number": 28,
+          "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+        },
+        "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+      },
+      {
+        "id": "Cr",
+        "type": "chemical",
+        "name": "Chromium",
+        "properties": {
+          "symbol": "Cr",
+          "atomic_number": 24,
+          "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+        },
+        "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+      },
+      {
+        "id": "material",
+        "type": "material",
+        "name": "Multielement nanomaterial",
+        "properties": {
+          "composition": "O, Fe, Ni, Cr containing",
+          "extracted_from_image": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+        },
+        "source_image_file": "8a597bbe2dad64ea1d88bf1631183bea269ceab4ea4cb055c771e24880b84a36.jpg"
+      },
+      {
+        "id": "raman_laser",
+        "type": "instrument",
+        "name": "Raman Laser",
+        "properties": {
+          "description": "Excitation source for Raman spectroscopy",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "feedback_lens",
+        "type": "instrument",
+        "name": "Feedback Lens",
+        "properties": {
+          "description": "Lens for collecting Raman signal",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "koh_droplet",
+        "type": "chemical",
+        "name": "KOH Droplet",
+        "properties": {
+          "formula": "KOH",
+          "state": "droplet",
+          "role": "electrolyte",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "catalyst",
+        "type": "chemical",
+        "name": "Catalysts",
+        "properties": {
+          "description": "Catalytic material under study",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "spe",
+        "type": "electrode",
+        "name": "SPE",
+        "properties": {
+          "description": "Solid Polymer Electrolyte or Screen Printed Electrode",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "ce",
+        "type": "electrode",
+        "name": "CE",
+        "properties": {
+          "material": "Au",
+          "role": "Counter Electrode",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "we",
+        "type": "electrode",
+        "name": "WE",
+        "properties": {
+          "material": "Au",
+          "role": "Working Electrode",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "ref",
+        "type": "electrode",
+        "name": "Ref",
+        "properties": {
+          "material": "Ag",
+          "role": "Reference Electrode",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "setup",
+        "type": "system",
+        "name": "Electrochemical Raman Cell",
+        "properties": {
+          "description": "In-situ Raman spectroelectrochemical setup",
+          "extracted_from_image": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+        },
+        "source_image_file": "8cb008f934ddaf2421d0a7a6b61a91ae98139dbc5c4093387afcbb624b3176a1.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "XPS Spectrum - NiFeCr",
+        "properties": {
+          "color": "red",
+          "description": "Red curve representing NiFeCr sample",
+          "extracted_from_image": "dd56c52037a57941ec87fad7e2e0adcd26b51c5ecb4a34c2e4b698df82711744.jpg"
+        },
+        "source_image_file": "dd56c52037a57941ec87fad7e2e0adcd26b51c5ecb4a34c2e4b698df82711744.jpg"
+      },
+      {
+        "id": "d1",
+        "type": "data",
+        "name": "NiFe measured",
+        "properties": {
+          "color": "black",
+          "style": "filled circles",
+          "type": "experimental",
+          "extracted_from_image": "9b11d561e4e819638161d06db633238e08074e52ef60996f27da92da03b6cee8.jpg"
+        },
+        "source_image_file": "9b11d561e4e819638161d06db633238e08074e52ef60996f27da92da03b6cee8.jpg"
+      },
+      {
+        "id": "d2",
+        "type": "data",
+        "name": "NiFe fitted",
+        "properties": {
+          "color": "black",
+          "style": "solid line",
+          "type": "fitted",
+          "extracted_from_image": "9b11d561e4e819638161d06db633238e08074e52ef60996f27da92da03b6cee8.jpg"
+        },
+        "source_image_file": "9b11d561e4e819638161d06db633238e08074e52ef60996f27da92da03b6cee8.jpg"
+      },
+      {
+        "id": "d3",
+        "type": "data",
+        "name": "NiFeCr measured",
+        "properties": {
+          "color": "red",
+          "style": "filled circles",
+          "type": "experimental",
+          "extracted_from_image": "9b11d561e4e819638161d06db633238e08074e52ef60996f27da92da03b6cee8.jpg"
+        },
+        "source_image_file": "9b11d561e4e819638161d06db633238e08074e52ef60996f27da92da03b6cee8.jpg"
+      },
+      {
+        "id": "d4",
+        "type": "data",
+        "name": "NiFeCr fitted",
+        "properties": {
+          "color": "red",
+          "style": "solid line",
+          "type": "fitted",
+          "extracted_from_image": "9b11d561e4e819638161d06db633238e08074e52ef60996f27da92da03b6cee8.jpg"
+        },
+        "source_image_file": "9b11d561e4e819638161d06db633238e08074e52ef60996f27da92da03b6cee8.jpg"
+      },
+      {
+        "id": "CV_NiFe",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry NiFe",
+        "properties": {
+          "data_type": "CV curve",
+          "color": "black",
+          "x_label": "E/V vs Ag",
+          "y_label": "i_A Im",
+          "x_range": [
+            0.3,
+            0.7
+          ],
+          "extracted_from_image": "b9d7cc0afbbd830d6e3fda749332cd513235ea8d75bf0978798f33d0257496d5.jpg"
+        },
+        "source_image_file": "b9d7cc0afbbd830d6e3fda749332cd513235ea8d75bf0978798f33d0257496d5.jpg"
+      },
+      {
+        "id": "CV_NiFeCr",
+        "type": "characterization",
+        "name": "Cyclic Voltammetry NiFeCr",
+        "properties": {
+          "data_type": "CV curve",
+          "color": "red",
+          "x_label": "E/V vs Ag",
+          "y_label": "i_A Im",
+          "x_range": [
+            0.3,
+            0.7
+          ],
+          "extracted_from_image": "b9d7cc0afbbd830d6e3fda749332cd513235ea8d75bf0978798f33d0257496d5.jpg"
+        },
+        "source_image_file": "b9d7cc0afbbd830d6e3fda749332cd513235ea8d75bf0978798f33d0257496d5.jpg"
+      },
+      {
+        "id": "plot_b",
+        "type": "figure",
+        "name": "Figure b",
+        "properties": {
+          "label": "b",
+          "type": "CV plot",
+          "reference_electrode": "Ag",
+          "current": "i_A Im",
+          "extracted_from_image": "b9d7cc0afbbd830d6e3fda749332cd513235ea8d75bf0978798f33d0257496d5.jpg"
+        },
+        "source_image_file": "b9d7cc0afbbd830d6e3fda749332cd513235ea8d75bf0978798f33d0257496d5.jpg"
+      },
+      {
+        "id": "main_region",
+        "type": "image_region",
+        "name": "Main TEM View",
+        "properties": {
+          "description": "Gray background with diffuse contrast, scale 20 nm",
+          "extracted_from_image": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+        },
+        "source_image_file": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+      },
+      {
+        "id": "inset_region",
+        "type": "image_region",
+        "name": "Inset High-Resolution View",
+        "properties": {
+          "scale": "10 nm / nm",
+          "description": "Dark circular region with bright central spot and dark core",
+          "extracted_from_image": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+        },
+        "source_image_file": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+      },
+      {
+        "id": "nanoparticle",
+        "type": "chemical",
+        "name": "Nanoparticle",
+        "properties": {
+          "size_scale": "20 nm field of view",
+          "morphology": "spherical core-shell structure",
+          "observation": "bright central region with dark core in HR-TEM inset",
+          "extracted_from_image": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+        },
+        "source_image_file": "be7677530dfd0f77cfecdf72eb531fbd6b56fbec2afdef7889b49bad82f64c4b.jpg"
+      },
+      {
+        "id": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3_node1",
+        "type": "characterization",
+        "name": "Cr K-edge FT",
+        "properties": {
+          "description": "Chromium K-edge Fourier Transform spectrum",
+          "extracted_from_image": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+        },
+        "source_image_file": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+      },
+      {
+        "id": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3_node2",
+        "type": "chemical",
+        "name": "Cr-O",
+        "properties": {
+          "bond_type": "first shell",
+          "distance": "1st shell",
+          "extracted_from_image": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+        },
+        "source_image_file": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+      },
+      {
+        "id": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3_node3",
+        "type": "chemical",
+        "name": "Cr-M",
+        "properties": {
+          "bond_type": "second shell",
+          "extracted_from_image": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+        },
+        "source_image_file": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+      },
+      {
+        "id": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3_node4",
+        "type": "material",
+        "name": "NiFeCrO 0.7V",
+        "properties": {
+          "condition": "in NiFeCrO 0.7V",
+          "extracted_from_image": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+        },
+        "source_image_file": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+      },
+      {
+        "id": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3_node5",
+        "type": "material",
+        "name": "NiFeCr Pristine",
+        "properties": {
+          "condition": "pristine",
+          "extracted_from_image": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+        },
+        "source_image_file": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+      },
+      {
+        "id": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3_node6",
+        "type": "structure",
+        "name": "Coordination Structure",
+        "properties": {
+          "description": "Polyhedral representation with Cr center, first shell Cr-O, second shell Cr-M",
+          "extracted_from_image": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+        },
+        "source_image_file": "c55531b789dd9874adeb99ab8a7199f9c62f2a775f9cf4c8b4d362df462f0ea3.jpg"
+      },
+      {
+        "id": "nife_line",
+        "type": "characterization",
+        "name": "NiFe Tafel Plot",
+        "properties": {
+          "equation": "η = 0.50 log(j) + 0.40",
+          "r_squared": 0.99,
+          "slope": 0.5,
+          "intercept": 0.4,
+          "extracted_from_image": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+        },
+        "source_image_file": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+      },
+      {
+        "id": "nifecr_line",
+        "type": "characterization",
+        "name": "NiFeCr Tafel Plot",
+        "properties": {
+          "equation": "η = 0.41 log(j) + 0.35",
+          "r_squared": 0.99,
+          "slope": 0.41,
+          "intercept": 0.35,
+          "extracted_from_image": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+        },
+        "source_image_file": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Tafel Plot",
+        "properties": {
+          "x_axis": "log|j| (A/cm²)",
+          "y_axis": "Overpotential (V)",
+          "x_range": [
+            -2.6,
+            -1.6
+          ],
+          "y_range": [
+            0.26,
+            0.3
+          ],
+          "extracted_from_image": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+        },
+        "source_image_file": "cc1095fa702e8c06680ac0e65773d4a5071da6109b2dd520a7f986357a33fed3.jpg"
+      },
+      {
+        "id": "Ni_2p",
+        "type": "chemical",
+        "name": "Ni 2p",
+        "properties": {
+          "description": "Nickel 2p orbital",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "Ni_satellite",
+        "type": "chemical",
+        "name": "Ni Satellite",
+        "properties": {
+          "description": "Satellite peak of Ni 2p",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "Ni02p12",
+        "type": "chemical",
+        "name": "Ni²⁺ 2p1/2",
+        "properties": {
+          "description": "Ni²⁺ 2p1/2 peak",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "Ni22p12",
+        "type": "chemical",
+        "name": "Ni²⁺ 2p1/2",
+        "properties": {
+          "description": "Ni²⁺ 2p1/2 peak (second)",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "Ni02p32",
+        "type": "chemical",
+        "name": "Ni²⁺ 2p3/2",
+        "properties": {
+          "description": "Ni²⁺ 2p3/2 peak",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "Ni12p32",
+        "type": "chemical",
+        "name": "Ni²⁺ 2p3/2",
+        "properties": {
+          "description": "Ni²⁺ 2p3/2 peak (second)",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "Ni0",
+        "type": "chemical",
+        "name": "Ni⁰",
+        "properties": {
+          "description": "Metallic Ni 0 peak",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "NiFeCr_curve",
+        "type": "characterization",
+        "name": "NiFeCr XPS curve",
+        "properties": {
+          "color": "red",
+          "intensity": "high",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "NiFe_curve",
+        "type": "characterization",
+        "name": "NiFe XPS curve",
+        "properties": {
+          "color": "black",
+          "intensity": "low",
+          "extracted_from_image": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+        },
+        "source_image_file": "d9f6a10168e45c3624909d9e3f72014a3f45111988b37246f85107f3887274e7.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "XPS Spectrum - Reference Cr 2p",
+        "properties": {
+          "color": "blue/purple",
+          "description": "Blue/purple reference spectrum for Cr 2p",
+          "extracted_from_image": "dd56c52037a57941ec87fad7e2e0adcd26b51c5ecb4a34c2e4b698df82711744.jpg"
+        },
+        "source_image_file": "dd56c52037a57941ec87fad7e2e0adcd26b51c5ecb4a34c2e4b698df82711744.jpg"
+      },
+      {
+        "id": "c3",
+        "type": "characterization",
+        "name": "XPS Chart",
+        "properties": {
+          "x_axis": "BE/eV (Binding Energy)",
+          "x_range": [
+            570,
+            595
+          ],
+          "y_axis": "Intensity (arb. U.)",
+          "description": "High-resolution XPS spectrum in Cr 2p region",
+          "extracted_from_image": "dd56c52037a57941ec87fad7e2e0adcd26b51c5ecb4a34c2e4b698df82711744.jpg"
+        },
+        "source_image_file": "dd56c52037a57941ec87fad7e2e0adcd26b51c5ecb4a34c2e4b698df82711744.jpg"
+      },
+      {
+        "id": "s1",
+        "type": "structure",
+        "name": "Crystal Structure View 1",
+        "properties": {
+          "description": "3D framework with Cr, Fe, Ni, O, H atoms",
+          "label": "a (left)",
+          "extracted_from_image": "e0916da976861126ff5bdd924fd995fc29aef72c256dc15936875a1118a6c150.jpg"
+        },
+        "source_image_file": "e0916da976861126ff5bdd924fd995fc29aef72c256dc15936875a1118a6c150.jpg"
+      },
+      {
+        "id": "s2",
+        "type": "structure",
+        "name": "Crystal Structure View 2",
+        "properties": {
+          "description": "Close-up polyhedral coordination with O, H",
+          "label": "a (right)",
+          "extracted_from_image": "e0916da976861126ff5bdd924fd995fc29aef72c256dc15936875a1118a6c150.jpg"
+        },
+        "source_image_file": "e0916da976861126ff5bdd924fd995fc29aef72c256dc15936875a1118a6c150.jpg"
+      },
+      {
+        "id": "img",
+        "type": "image",
+        "name": "Figure a",
+        "properties": {
+          "type": "ball-and-stick model",
+          "legend": "Cr (green), Fe (blue), Ni (purple), O (red), H (white)",
+          "extracted_from_image": "e0916da976861126ff5bdd924fd995fc29aef72c256dc15936875a1118a6c150.jpg"
+        },
+        "source_image_file": "e0916da976861126ff5bdd924fd995fc29aef72c256dc15936875a1118a6c150.jpg"
+      },
+      {
+        "id": "NiFeNF",
+        "type": "chemical",
+        "name": "NiFeNF",
+        "properties": {
+          "description": "Nickel-Iron Nitrogen-doped Framework catalyst",
+          "extracted_from_image": "ee608c065a4a632e074cb5ae5d5b9ef28ca4e81c9044ed258263cd149010e832.jpg"
+        },
+        "source_image_file": "ee608c065a4a632e074cb5ae5d5b9ef28ca4e81c9044ed258263cd149010e832.jpg"
+      },
+      {
+        "id": "NiFeCrNF",
+        "type": "chemical",
+        "name": "NiFeCrNF",
+        "properties": {
+          "description": "Nickel-Iron-Chromium Nitrogen-doped Framework catalyst",
+          "extracted_from_image": "ee608c065a4a632e074cb5ae5d5b9ef28ca4e81c9044ed258263cd149010e832.jpg"
+        },
+        "source_image_file": "ee608c065a4a632e074cb5ae5d5b9ef28ca4e81c9044ed258263cd149010e832.jpg"
+      },
+      {
+        "id": "plot_a",
+        "type": "characterization",
+        "name": "Polarization Curve Plot (a)",
+        "properties": {
+          "type": "LSV",
+          "x_axis": "P/V vs RHE",
+          "y_axis": "Current Density (mA/cm²)",
+          "range_x": [
+            1.2,
+            1.6
+          ],
+          "range_y": [
+            0,
+            100
+          ],
+          "extracted_from_image": "ee608c065a4a632e074cb5ae5d5b9ef28ca4e81c9044ed258263cd149010e832.jpg"
+        },
+        "source_image_file": "ee608c065a4a632e074cb5ae5d5b9ef28ca4e81c9044ed258263cd149010e832.jpg"
+      },
+      {
+        "id": "RHE",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "ee608c065a4a632e074cb5ae5d5b9ef28ca4e81c9044ed258263cd149010e832.jpg"
+        },
+        "source_image_file": "ee608c065a4a632e074cb5ae5d5b9ef28ca4e81c9044ed258263cd149010e832.jpg"
+      },
+      {
+        "id": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315_node1",
+        "type": "chemical",
+        "name": "NiFe",
+        "properties": {
+          "description": "Nickel-Iron alloy or compound",
+          "extracted_from_image": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315.jpg"
+        },
+        "source_image_file": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315.jpg"
+      },
+      {
+        "id": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315_node2",
+        "type": "chemical",
+        "name": "NiFeCr",
+        "properties": {
+          "description": "Nickel-Iron-Chromium alloy or compound",
+          "extracted_from_image": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315.jpg"
+        },
+        "source_image_file": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315.jpg"
+      },
+      {
+        "id": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315_node3",
+        "type": "characterization",
+        "name": "CV Plot",
+        "properties": {
+          "type": "Cyclic Voltammetry",
+          "x_axis": "E/V vs Ag",
+          "y_axis": "A_im",
+          "range_x": [
+            0.2,
+            0.8
+          ],
+          "range_y": [
+            0,
+            6
+          ],
+          "extracted_from_image": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315.jpg"
+        },
+        "source_image_file": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315.jpg"
+      },
+      {
+        "id": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315_node4",
+        "type": "reference_electrode",
+        "name": "Ag",
+        "properties": {
+          "description": "Silver reference electrode (likely Ag/AgCl)",
+          "extracted_from_image": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315.jpg"
+        },
+        "source_image_file": "f403255d619a37daf2d8b5b6b02ad34b72dc616d4b4f01f49bc6ae435d655315.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_NiFeCr_oxyhydroxide_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeCr_oxyhydroxide",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFe_oxyhydroxide_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_NiFe_oxyhydroxide",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFeCr_oxyhydroxide_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeCr_oxyhydroxide",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFeCr_oxyhydroxide_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeCr_oxyhydroxide",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFeCr_oxyhydroxide_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeCr_oxyhydroxide",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFe_oxyhydroxide_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_NiFe_oxyhydroxide",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFeCr_oxyhydroxide_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeCr_oxyhydroxide",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFe_oxyhydroxide_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NiFe_oxyhydroxide",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFeCr_oxyhydroxide_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeCr_oxyhydroxide",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFe_oxyhydroxide_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_NiFe_oxyhydroxide",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFeCr_oxyhydroxide_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeCr_oxyhydroxide",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFe_oxyhydroxide_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_NiFe_oxyhydroxide",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "exafs-spectrum-1",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "exafs-spectrum-2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "exafs-spectrum-3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_6",
+        "target_id": "exafs-spectrum-4",
+        "type": "contains"
+      },
+      {
+        "source_id": "nife-0.7v",
+        "target_id": "exafs-spectrum-1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nife-pristine",
+        "target_id": "exafs-spectrum-1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nife-0.7v",
+        "target_id": "exafs-spectrum-2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nife-pristine",
+        "target_id": "exafs-spectrum-2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nifecr-0.7v",
+        "target_id": "exafs-spectrum-3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nifecr-pristine",
+        "target_id": "exafs-spectrum-3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nifecr-0.7v",
+        "target_id": "exafs-spectrum-4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nifecr-pristine",
+        "target_id": "exafs-spectrum-4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "exafs-spectrum-1",
+        "target_id": "ni-oh",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "exafs-spectrum-1",
+        "target_id": "ni-m",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "exafs-spectrum-2",
+        "target_id": "ni-ft",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "nife",
+        "target_id": "nife-0.7v",
+        "type": "electrochemical_treatment"
+      },
+      {
+        "source_id": "nife",
+        "target_id": "nife-pristine",
+        "type": "pristine_state"
+      },
+      {
+        "source_id": "nifecr",
+        "target_id": "nifecr-0.7v",
+        "type": "electrochemical_treatment"
+      },
+      {
+        "source_id": "nifecr",
+        "target_id": "nifecr-pristine",
+        "type": "pristine_state"
+      },
+      {
+        "source_id": "NiFeCr",
+        "target_id": "char_1",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "NiFe",
+        "target_id": "char_1",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_1",
+        "type": "part_of"
+      },
+      {
+        "source_id": "NiFeCr",
+        "target_id": "M-OH",
+        "type": "contains"
+      },
+      {
+        "source_id": "NiFeCr",
+        "target_id": "M-O",
+        "type": "contains"
+      },
+      {
+        "source_id": "NiFe",
+        "target_id": "M-OH",
+        "type": "contains"
+      },
+      {
+        "source_id": "NiFe",
+        "target_id": "M-O",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "M-OH",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "M-O",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "M-OH",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "M-O",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "NiFeCr",
+        "target_id": "H-O-H",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "has_Fermi_level"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "marks_level"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains_curve"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "indicates_gap"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "exhibits_peak"
+      },
+      {
+        "source_id": "circuit_f",
+        "target_id": "Rs",
+        "type": "contains"
+      },
+      {
+        "source_id": "circuit_f",
+        "target_id": "Rct1",
+        "type": "contains"
+      },
+      {
+        "source_id": "circuit_f",
+        "target_id": "Q1",
+        "type": "contains"
+      },
+      {
+        "source_id": "circuit_f",
+        "target_id": "Rct2",
+        "type": "contains"
+      },
+      {
+        "source_id": "circuit_f",
+        "target_id": "Q2",
+        "type": "contains"
+      },
+      {
+        "source_id": "Rs",
+        "target_id": "Rct1",
+        "type": "in_series"
+      },
+      {
+        "source_id": "Rct1",
+        "target_id": "Q1",
+        "type": "in_parallel"
+      },
+      {
+        "source_id": "Rct2",
+        "target_id": "Q2",
+        "type": "in_parallel"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "attached_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n11",
+        "type": "exposes_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n12",
+        "type": "emits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "is"
+      },
+      {
+        "source_id": "ni_fo",
+        "target_id": "xanes_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "ni_nife_pristine",
+        "target_id": "xanes_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "ni_nife_0.55v",
+        "target_id": "xanes_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "ni_nife_0.70v",
+        "target_id": "xanes_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "ni_nifecr_pristine",
+        "target_id": "xanes_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "ni_nifecr_0.55v",
+        "target_id": "xanes_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "ni_oxidation",
+        "target_id": "xanes_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n1",
+        "type": "at_potential"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n2",
+        "type": "at_potential"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n3",
+        "type": "at_potential"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n6",
+        "type": "shows_potential"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n7",
+        "type": "shows_potential"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n8",
+        "type": "shows_potential"
+      },
+      {
+        "source_id": "nife_0v",
+        "target_id": "exafs_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nife_pristine",
+        "target_id": "exafs_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nife_cr_0v",
+        "target_id": "exafs_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "nife_cr_pristine",
+        "target_id": "exafs_spectrum",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "fe_o_1shell",
+        "target_id": "exafs_spectrum",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "fe_m_1shell",
+        "target_id": "exafs_spectrum",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "fe_o_2shell",
+        "target_id": "exafs_spectrum",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "fe_m_2shell",
+        "target_id": "exafs_spectrum",
+        "type": "peak_in"
+      },
+      {
+        "source_id": "fe_ft",
+        "target_id": "exafs_spectrum",
+        "type": "feature_in"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "O",
+        "type": "maps"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "Fe",
+        "type": "maps"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "Ni",
+        "type": "maps"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "Cr",
+        "type": "maps"
+      },
+      {
+        "source_id": "O",
+        "target_id": "material",
+        "type": "constituent"
+      },
+      {
+        "source_id": "Fe",
+        "target_id": "material",
+        "type": "constituent"
+      },
+      {
+        "source_id": "Ni",
+        "target_id": "material",
+        "type": "constituent"
+      },
+      {
+        "source_id": "Cr",
+        "target_id": "material",
+        "type": "constituent"
+      },
+      {
+        "source_id": "raman_laser",
+        "target_id": "koh_droplet",
+        "type": "excites"
+      },
+      {
+        "source_id": "raman_laser",
+        "target_id": "catalyst",
+        "type": "excites"
+      },
+      {
+        "source_id": "feedback_lens",
+        "target_id": "koh_droplet",
+        "type": "collects_signal_from"
+      },
+      {
+        "source_id": "feedback_lens",
+        "target_id": "catalyst",
+        "type": "collects_signal_from"
+      },
+      {
+        "source_id": "koh_droplet",
+        "target_id": "catalyst",
+        "type": "contains"
+      },
+      {
+        "source_id": "we",
+        "target_id": "catalyst",
+        "type": "supports"
+      },
+      {
+        "source_id": "spe",
+        "target_id": "we",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "spe",
+        "target_id": "ce",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "spe",
+        "target_id": "ref",
+        "type": "connects_to"
+      },
+      {
+        "source_id": "raman_laser",
+        "target_id": "setup",
+        "type": "component_of"
+      },
+      {
+        "source_id": "feedback_lens",
+        "target_id": "setup",
+        "type": "component_of"
+      },
+      {
+        "source_id": "koh_droplet",
+        "target_id": "setup",
+        "type": "component_of"
+      },
+      {
+        "source_id": "catalyst",
+        "target_id": "setup",
+        "type": "component_of"
+      },
+      {
+        "source_id": "spe",
+        "target_id": "setup",
+        "type": "component_of"
+      },
+      {
+        "source_id": "ce",
+        "target_id": "setup",
+        "type": "component_of"
+      },
+      {
+        "source_id": "we",
+        "target_id": "setup",
+        "type": "component_of"
+      },
+      {
+        "source_id": "ref",
+        "target_id": "setup",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n11",
+        "target_id": "n12",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n10",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n10",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n11",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n11",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n11",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "d1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "d2",
+        "type": "fitted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "d3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "d4",
+        "type": "fitted_in"
+      },
+      {
+        "source_id": "d1",
+        "target_id": "c1",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "d2",
+        "target_id": "c1",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "d3",
+        "target_id": "c1",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "d4",
+        "target_id": "c1",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "NiFe",
+        "target_id": "CV_NiFe",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "NiFeCr",
+        "target_id": "CV_NiFeCr",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "CV_NiFe",
+        "target_id": "plot_b",
+        "type": "part_of"
+      },
+      {
+        "source_id": "CV_NiFeCr",
+        "target_id": "plot_b",
+        "type": "part_of"
+      },
+      {
+        "source_id": "NiFe",
+        "target_id": "plot_b",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "NiFeCr",
+        "target_id": "plot_b",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "main_region",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "inset_region",
+        "type": "contains"
+      },
+      {
+        "source_id": "inset_region",
+        "target_id": "nanoparticle",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "main_region",
+        "target_id": "nanoparticle",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "stable_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "stable_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "plotted_at"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "plotted_at"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node2",
+        "type": "features"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "features"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node4",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node5",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node6",
+        "type": "part_of"
+      },
+      {
+        "source_id": "node4",
+        "target_id": "node6",
+        "type": "contains"
+      },
+      {
+        "source_id": "node5",
+        "target_id": "node6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_data_point"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "has_data_point"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "has_data_point"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "has_data_point"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "has_data_point"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "has_data_point"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "nife",
+        "target_id": "nife_line",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "nifecr",
+        "target_id": "nifecr_line",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "nife_line",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "nifecr_line",
+        "target_id": "chart",
+        "type": "part_of"
+      },
+      {
+        "source_id": "NiFeCr",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiFe",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "NiFeCr",
+        "target_id": "NiFeCr_curve",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "NiFe",
+        "target_id": "NiFe_curve",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "NiFeCr_curve",
+        "target_id": "Ni_2p",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "NiFeCr_curve",
+        "target_id": "Ni_satellite",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "NiFeCr_curve",
+        "target_id": "Ni02p12",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "NiFeCr_curve",
+        "target_id": "Ni22p12",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "NiFeCr_curve",
+        "target_id": "Ni02p32",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "NiFeCr_curve",
+        "target_id": "Ni12p32",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "NiFe_curve",
+        "target_id": "Ni0",
+        "type": "shows_peak"
+      },
+      {
+        "source_id": "Ni_2p",
+        "target_id": "Ni_satellite",
+        "type": "has_feature"
+      },
+      {
+        "source_id": "Ni_2p",
+        "target_id": "Ni02p12",
+        "type": "has_subpeak"
+      },
+      {
+        "source_id": "Ni_2p",
+        "target_id": "Ni22p12",
+        "type": "has_subpeak"
+      },
+      {
+        "source_id": "Ni_2p",
+        "target_id": "Ni02p32",
+        "type": "has_subpeak"
+      },
+      {
+        "source_id": "Ni_2p",
+        "target_id": "Ni12p32",
+        "type": "has_subpeak"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "has_spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c2",
+        "type": "reference_spectrum"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "c1",
+        "target_id": "n2",
+        "type": "shows_region"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "n3",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "n4",
+        "type": "peak_assignment"
+      },
+      {
+        "source_id": "c3",
+        "target_id": "n1",
+        "type": "analyzes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "oxidized_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "associated_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "img",
+        "target_id": "s1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "img",
+        "target_id": "s2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "s1",
+        "target_id": "n1",
+        "type": "contains"
+      },
+      {
+        "source_id": "s1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "s1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "s1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "s1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "s2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "s2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "img",
+        "target_id": "n1",
+        "type": "labels"
+      },
+      {
+        "source_id": "img",
+        "target_id": "n2",
+        "type": "labels"
+      },
+      {
+        "source_id": "img",
+        "target_id": "n3",
+        "type": "labels"
+      },
+      {
+        "source_id": "img",
+        "target_id": "n4",
+        "type": "labels"
+      },
+      {
+        "source_id": "img",
+        "target_id": "n5",
+        "type": "labels"
+      },
+      {
+        "source_id": "NiFeNF",
+        "target_id": "plot_a",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "NiFeCrNF",
+        "target_id": "plot_a",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "plot_a",
+        "target_id": "RHE",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "node1",
+        "target_id": "node3",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "node2",
+        "target_id": "node3",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "node3",
+        "target_id": "node4",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n6",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n6",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "measured_at"
+      }
+    ]
+  }
+}

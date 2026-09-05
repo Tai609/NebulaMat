@@ -1,0 +1,31 @@
+{
+  "name": "ai4s-workbench",
+  "version": "1.0.7",
+  "private": true,
+  "description": "NebulaMat - local-first, model-agnostic AI research workbench for macOS, Windows and Linux.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm --filter @ai4s/desktop dev",
+    "build": "pnpm --filter @ai4s/desktop build",
+    "test": "pnpm --filter @ai4s/desktop test",
+    "typecheck": "pnpm --filter @ai4s/desktop typecheck",
+    "lint": "pnpm --filter @ai4s/desktop lint",
+    "aris:sync": "node scripts/dev/fetch-aris.mjs",
+    "aris:check": "node scripts/dev/fetch-aris.mjs --check",
+    "models:sync": "node scripts/release/sync-model-catalog.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "//overrides": {
+    "brace-expansion": "Two separate advisories hit this package, each with its own set of affected ranges per major line, and nothing in the tree depends on it directly — exceljs → archiver → glob@7 → minimatch@3 pulls 1.x into a PRODUCTION install, readdir-glob → minimatch@5 pulls 2.x, minimatch@10 pulls 5.x. GHSA-3jxr-9vmj-r5cp (Dependabot #4): exponential expansion of consecutive empty {} groups, fixed in 1.1.16 / 2.1.2 / 5.0.7. GHSA-mh99-v99m-4gvg (Dependabot #6): unbounded expansion length crashes the process out of memory, fixed in 1.1.17 / 2.1.3 / 3.0.3 / 5.0.8 — a strictly higher floor on every line, which is what the pins below encode. One override per major line so each stays outside both advisories without disturbing the others. Drop these once the dependents ship modern minimatch versions."
+  },
+  "pnpm": {
+    "overrides": {
+      "brace-expansion@1": "^1.1.17",
+      "brace-expansion@2": "^2.1.3",
+      "brace-expansion@5": "^5.0.8"
+    }
+  }
+}

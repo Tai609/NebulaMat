@@ -1,0 +1,2675 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_FeSO4",
+        "type": "chemical",
+        "name": "FeSO4",
+        "aliases": [
+          "FeSO₄"
+        ],
+        "formula": "FeSO4",
+        "properties": {}
+      },
+      {
+        "id": "chem_NiSO4",
+        "type": "chemical",
+        "name": "NiSO4",
+        "aliases": [
+          "NiSO₄"
+        ],
+        "formula": "NiSO4",
+        "properties": {}
+      },
+      {
+        "id": "chem_Au_electrode",
+        "type": "chemical",
+        "name": "Au electrode",
+        "aliases": [
+          "Au layer"
+        ],
+        "properties": {
+          "thickness": {
+            "value": 10,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_Ti_adhesion_layer",
+        "type": "chemical",
+        "name": "Ti adhesion layer",
+        "aliases": [],
+        "properties": {
+          "thickness": {
+            "value": 4,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_SiN_window",
+        "type": "chemical",
+        "name": "silicon nitride window",
+        "aliases": [],
+        "properties": {
+          "thickness": {
+            "value": 1,
+            "unit": "μm"
+          },
+          "area": {
+            "value": 25,
+            "unit": "mm²"
+          }
+        }
+      },
+      {
+        "id": "chem_NiFe_catalyst_electrodeposited",
+        "type": "chemical",
+        "name": "Ni-Fe catalyst (electrodeposited)",
+        "aliases": [
+          "Ni-Fe oxyhydroxide films",
+          "(Ni,Fe) oxyhydroxide catalysts",
+          "electrodeposited (Ni,Fe) oxyhydroxide catalysts"
+        ],
+        "properties": {
+          "thickness": {
+            "value": 1.8,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "chem_NiFe_catalyst_sputtered_oxidized",
+        "type": "chemical",
+        "name": "Ni-Fe catalyst (sputtered+oxidized)",
+        "aliases": [
+          "~2 nm thick metallic film oxidized"
+        ],
+        "properties": {
+          "initial_thickness": {
+            "value": 2,
+            "unit": "nm"
+          },
+          "final_thickness": {
+            "value": 10,
+            "unit": "nm"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Electrodeposition of Ni-Fe catalyst",
+        "procedure": "Catalyst layers, ~1.8 nm thick, were electrodeposited from FeSO4 and NiSO4 solutions using the procedure described previously[23] except with a shorter deposition time of 20 s; this prevented the formation of metallic Ni and Fe byproducts that were detected in thicker films (see Supporting Information S1 for details).",
+        "method": "electrodeposition",
+        "conditions": {
+          "deposition_time": {
+            "value": 20,
+            "unit": "s"
+          }
+        },
+        "source_text": "Catalyst layers, ~1.8 nm thick, were electrodeposited from FeSO4 and NiSO4 solutions... shorter deposition time of 20 s"
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Sputter deposition and electrochemical oxidation",
+        "procedure": "For the complementary EXAFS characterization of the catalyst containing 25% Fe, sputter deposition was used instead of electrodeposition to create ~2 nm thick metallic film, which was subsequently oxidized in 0.1 M KOH by cycling the potential between 0.92 and 1.62 V for ~17 h at a sweep rate of 10 mV/s. After this treatment no metallic Fe or Ni was detected, and the thickness of the oxidized film (~10 nm, estimated using the density of the Ni(II)/Fe(III) layered double hydroxide structure[31] at low potential) was sufficient for conventional EXAFS measurements.",
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Sputter deposition",
+            "method": "Sputter deposition",
+            "conditions": {},
+            "procedure_snippet": "sputter deposition was used instead of electrodeposition, and the resulting ~2 nm thick metallic film"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Electrochemical oxidation",
+            "method": "Potential cycling oxidation",
+            "conditions": {
+              "potential_low": {
+                "value": 0.92,
+                "unit": "V"
+              },
+              "potential_high": {
+                "value": 1.62,
+                "unit": "V"
+              },
+              "time": {
+                "value": 17,
+                "unit": "h"
+              },
+              "sweep_rate": {
+                "value": 10,
+                "unit": "mV/s"
+              },
+              "electrolyte": {
+                "value": "0.1",
+                "unit": "M KOH"
+              }
+            },
+            "procedure_snippet": "subsequently oxidized in 0.1 M KOH by cycling the potential between 0.92 and 1.62 V for ~17 h at a sweep rate of 10 mV/s"
+          }
+        ],
+        "conditions": {
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": ""
+          },
+          "oxidation_time": {
+            "value": 17,
+            "unit": "h"
+          },
+          "potential_range": {
+            "value": "0.92-1.62",
+            "unit": "V"
+          },
+          "sweep_rate": {
+            "value": 10,
+            "unit": "mV/s"
+          }
+        },
+        "source_text": "sputter deposition was used instead of electrodeposition... oxidized in 0.1 M KOH by cycling the potential between 0.92 and 1.62 V for ~17 h"
+      },
+      {
+        "id": "chem_KOH",
+        "type": "chemical",
+        "name": "KOH",
+        "aliases": [
+          "0.1 M KOH"
+        ],
+        "formula": "KOH",
+        "properties": {
+          "concentration": {
+            "value": 0.1,
+            "unit": "M"
+          }
+        }
+      },
+      {
+        "id": "chem_NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "aliases": [
+          "γ-NiOOH",
+          "pure NiOOH"
+        ],
+        "formula": "NiOOH",
+        "properties": {
+          "Ni-O bond length (oxidized)": {
+            "value": 1.88,
+            "unit": "Å"
+          }
+        },
+        "related_images": [
+          "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg",
+          "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg",
+          "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Ni (on-top)",
+            "properties": {
+              "description": "Nickel atom in on-top adsorption site",
+              "extracted_from_image": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg"
+            },
+            "source_image_file": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "γ-NiOOH",
+            "properties": {
+              "description": "Gamma nickel oxyhydroxide structure",
+              "extracted_from_image": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg"
+            },
+            "source_image_file": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "[NiII/IV O6]",
+            "properties": {
+              "description": "compressed structure",
+              "bond_distance": "dM-O ~1.89 Å",
+              "extracted_from_image": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+            },
+            "source_image_file": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "γ-NiOOH",
+            "properties": {
+              "description": "Gamma nickel oxyhydroxide layered structure",
+              "extracted_from_image": "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+            },
+            "source_image_file": "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_FeOOH",
+        "type": "chemical",
+        "name": "FeOOH",
+        "aliases": [
+          "γ-FeOOH",
+          "pure FeOOH"
+        ],
+        "formula": "FeOOH",
+        "properties": {
+          "Fe-O bond length": {
+            "value": 2.01,
+            "unit": "Å"
+          }
+        },
+        "related_images": [
+          "006e12370b85f83c23a24e33afd2d28780e5dd8d1928f46ea2e23d4fe0aeadbd.jpg",
+          "0a88d203c813b2528f30cf8811d56397cb8b777070b337eb86f024f5a1a000af.jpg",
+          "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg",
+          "28aac5b5ed820c8f65240c70a0c2c8136176dab40ee20478837b76117880628a.jpg",
+          "32dadd13fdbf8ae69ff4112bd839d6b215bcc83820e8fd791def6acd2b17cb7a.jpg",
+          "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg",
+          "4a70f4db1e361bc85866dfc9679844597383488e7f4557e7da0f3a5e64c5367a.jpg",
+          "4e157ea24397bfa87d1a53d00ea0ce453207a67e4dd5857e5724222e7e088ffa.jpg",
+          "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg",
+          "885d736a7c5b5b1ebb6e8307b0501bd34506757e4c4a84a893bed63b7f3028ec.jpg",
+          "bcf213f85e02223b8c843e4c4b15dff37dae74c1046d9cba444dccbab27c769a.jpg",
+          "c5ccd5d984d74264c7ab493960427b44de7bf934ceb0834a2f09042d2a3948dd.jpg",
+          "d59c215637ae32b2c5cd5db5e0ff46caf550069cbbc93c85bf73a37a47cf00c7.jpg",
+          "d71287ba3d2087038d5789f931eb6c222b273d235d72928a8774e01066b203a0.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "element",
+            "name": "H",
+            "properties": {
+              "color": "white",
+              "role": "hydrogen atoms in hydroxide",
+              "extracted_from_image": "006e12370b85f83c23a24e33afd2d28780e5dd8d1928f46ea2e23d4fe0aeadbd.jpg"
+            },
+            "source_image_file": "006e12370b85f83c23a24e33afd2d28780e5dd8d1928f46ea2e23d4fe0aeadbd.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "H states",
+            "properties": {
+              "description": "Hydrogen states",
+              "extracted_from_image": "0a88d203c813b2528f30cf8811d56397cb8b777070b337eb86f024f5a1a000af.jpg"
+            },
+            "source_image_file": "0a88d203c813b2528f30cf8811d56397cb8b777070b337eb86f024f5a1a000af.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "[FeII O4]",
+            "properties": {
+              "extracted_from_image": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+            },
+            "source_image_file": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "[FeIII/IV O4]",
+            "properties": {
+              "extracted_from_image": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+            },
+            "source_image_file": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XANES Spectrum 1.92V",
+            "properties": {
+              "voltage": "1.92 V",
+              "color": "red",
+              "extracted_from_image": "28aac5b5ed820c8f65240c70a0c2c8136176dab40ee20478837b76117880628a.jpg"
+            },
+            "source_image_file": "28aac5b5ed820c8f65240c70a0c2c8136176dab40ee20478837b76117880628a.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Absorption Spectrum 5",
+            "properties": {
+              "color": "blue",
+              "peak_start": "7110 eV",
+              "extracted_from_image": "32dadd13fdbf8ae69ff4112bd839d6b215bcc83820e8fd791def6acd2b17cb7a.jpg"
+            },
+            "source_image_file": "32dadd13fdbf8ae69ff4112bd839d6b215bcc83820e8fd791def6acd2b17cb7a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "O*",
+            "properties": {
+              "description": "Oxygen adsorbate",
+              "extracted_from_image": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+            },
+            "source_image_file": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+          },
+          {
+            "type": "parameter",
+            "name": "n = 0.43 V",
+            "properties": {
+              "value": "0.43 V",
+              "description": "likely overpotential or voltage value",
+              "extracted_from_image": "4a70f4db1e361bc85866dfc9679844597383488e7f4557e7da0f3a5e64c5367a.jpg"
+            },
+            "source_image_file": "4a70f4db1e361bc85866dfc9679844597383488e7f4557e7da0f3a5e64c5367a.jpg"
+          },
+          {
+            "type": "property",
+            "name": "η = 0.59 V",
+            "properties": {
+              "value": "0.59 V",
+              "description": "Overpotential or voltage",
+              "extracted_from_image": "4e157ea24397bfa87d1a53d00ea0ce453207a67e4dd5857e5724222e7e088ffa.jpg"
+            },
+            "source_image_file": "4e157ea24397bfa87d1a53d00ea0ce453207a67e4dd5857e5724222e7e088ffa.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe (on top)",
+            "properties": {
+              "description": "Iron atom positioned on top of the structure",
+              "extracted_from_image": "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+            },
+            "source_image_file": "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "XANES spectrum (reference)",
+            "properties": {
+              "color": "black",
+              "extracted_from_image": "885d736a7c5b5b1ebb6e8307b0501bd34506757e4c4a84a893bed63b7f3028ec.jpg"
+            },
+            "source_image_file": "885d736a7c5b5b1ebb6e8307b0501bd34506757e4c4a84a893bed63b7f3028ec.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV_1.72V",
+            "properties": {
+              "type": "cyclic voltammetry",
+              "potential": "1.72 V",
+              "extracted_from_image": "bcf213f85e02223b8c843e4c4b15dff37dae74c1046d9cba444dccbab27c769a.jpg"
+            },
+            "source_image_file": "bcf213f85e02223b8c843e4c4b15dff37dae74c1046d9cba444dccbab27c769a.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "γ-FeOOH",
+            "properties": {
+              "description": "Predominant inactive phase at high Fe content",
+              "extracted_from_image": "c5ccd5d984d74264c7ab493960427b44de7bf934ceb0834a2f09042d2a3948dd.jpg"
+            },
+            "source_image_file": "c5ccd5d984d74264c7ab493960427b44de7bf934ceb0834a2f09042d2a3948dd.jpg"
+          },
+          {
+            "type": "parameter",
+            "name": "Fe content",
+            "properties": {
+              "unit": "%",
+              "range": "0-100",
+              "extracted_from_image": "d59c215637ae32b2c5cd5db5e0ff46caf550069cbbc93c85bf73a37a47cf00c7.jpg"
+            },
+            "source_image_file": "d59c215637ae32b2c5cd5db5e0ff46caf550069cbbc93c85bf73a37a47cf00c7.jpg"
+          },
+          {
+            "type": "spectrum",
+            "name": "Yellow Spectrum",
+            "properties": {
+              "color": "yellow",
+              "extracted_from_image": "d71287ba3d2087038d5789f931eb6c222b273d235d72928a8774e01066b203a0.jpg"
+            },
+            "source_image_file": "d71287ba3d2087038d5789f931eb6c222b273d235d72928a8774e01066b203a0.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ni1_x_Fe_x_OOH_25Fe",
+        "type": "chemical",
+        "name": "(Ni,Fe)OOH",
+        "aliases": [
+          "Ni_{1-x}Fe_xOOH (25% Fe)",
+          "mixed Ni-Fe oxyhydroxide (25% Fe)",
+          "Fe-doped γ-NiOOH (25%)"
+        ],
+        "formula": "Ni_{0.75}Fe_{0.25}OOH",
+        "composition": {
+          "Fe": {
+            "value": 25,
+            "unit": "at%"
+          },
+          "Ni": {
+            "value": 75,
+            "unit": "at%"
+          }
+        },
+        "properties": {
+          "Fe-O_bond_length_1.12V": {
+            "value": 2.01,
+            "unit": "Å"
+          },
+          "Fe-O_bond_length_1.62V": {
+            "value": 1.9,
+            "unit": "Å"
+          },
+          "Ni-O_bond_length_1.12V": {
+            "value": 2.06,
+            "unit": "Å"
+          },
+          "Ni-O_bond_length_1.62V": {
+            "value": 1.89,
+            "unit": "Å"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni_Fe_series",
+        "type": "chemical",
+        "name": "Ni_{1-x}Fe_xOOH series",
+        "aliases": [
+          "mixed (Ni,Fe) oxyhydroxides",
+          "Ni-Fe catalysts across composition range",
+          "Ni_{1-x}Fe_xOOH"
+        ],
+        "formula": "Ni_{1-x}Fe_xOOH"
+      },
+      {
+        "id": "chem_NiFeOOH",
+        "type": "chemical",
+        "name": "(Ni,Fe)OOH",
+        "aliases": [
+          "Ni_{1-x}Fe_xOOH",
+          "γ-Ni_{1-x}Fe_xOOH",
+          "mixed Ni-Fe oxyhydroxides"
+        ],
+        "formula": "Ni_{1-x}Fe_xOOH",
+        "properties": {
+          "Fe-O bond length (1.12 V)": {
+            "value": 2.01,
+            "unit": "Å"
+          },
+          "Fe-O bond length (1.62 V)": {
+            "value": 1.9,
+            "unit": "Å"
+          },
+          "Ni-O bond length (1.12 V)": {
+            "value": 2.06,
+            "unit": "Å"
+          },
+          "Ni-O bond length (1.62 V)": {
+            "value": 1.89,
+            "unit": "Å"
+          }
+        },
+        "related_images": [
+          "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Fe/γ-NiOOH",
+            "properties": {
+              "description": "Iron-modified gamma nickel oxyhydroxide structure",
+              "extracted_from_image": "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+            },
+            "source_image_file": "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_FeSO4_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_FeSO4",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_NiSO4_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_NiSO4",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor"
+        }
+      },
+      {
+        "id": "edge_input_chem_Au_electrode_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Au_electrode",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ti_adhesion_layer_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Ti_adhesion_layer",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "adhesion_layer"
+        }
+      },
+      {
+        "id": "edge_input_chem_SiN_window_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_SiN_window",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_NiFe_catalyst_electrodeposited",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_NiFe_catalyst_electrodeposited",
+        "properties": {
+          "form": "thin film"
+        }
+      },
+      {
+        "id": "edge_input_chem_Au_electrode_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Au_electrode",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_SiN_window_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_SiN_window",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_NiFe_catalyst_sputtered_oxidized",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_NiFe_catalyst_sputtered_oxidized",
+        "properties": {
+          "form": "oxidized thin film"
+        }
+      },
+      {
+        "id": "edge_input_chem_KOH_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_KOH",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "electrolyte"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_NiOOH",
+      "chem_Ni_Fe_series",
+      "chem_FeOOH",
+      "chem_Ni1_x_Fe_x_OOH_25Fe"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "aliases": [
+          "pure NiOOH",
+          "γ-NiOOH",
+          "Ni oxyhydroxide"
+        ],
+        "formula": "NiOOH"
+      },
+      {
+        "id": "chem_FeOOH",
+        "type": "chemical",
+        "name": "FeOOH",
+        "aliases": [
+          "pure FeOOH",
+          "γ-FeOOH",
+          "Fe oxyhydroxide"
+        ],
+        "formula": "FeOOH"
+      },
+      {
+        "id": "chem_Ni1_x_Fe_x_OOH_25Fe",
+        "type": "chemical",
+        "name": "(Ni,Fe)OOH",
+        "aliases": [
+          "Ni_{1-x}Fe_xOOH (25% Fe)",
+          "mixed Ni-Fe oxyhydroxide (25% Fe)",
+          "Fe-doped γ-NiOOH (25%)"
+        ],
+        "formula": "Ni_{0.75}Fe_{0.25}OOH",
+        "composition": {
+          "Fe": {
+            "value": 25,
+            "unit": "at%"
+          },
+          "Ni": {
+            "value": 75,
+            "unit": "at%"
+          }
+        },
+        "properties": {
+          "Fe-O_bond_length_1.12V": {
+            "value": 2.01,
+            "unit": "Å"
+          },
+          "Fe-O_bond_length_1.62V": {
+            "value": 1.9,
+            "unit": "Å"
+          },
+          "Ni-O_bond_length_1.12V": {
+            "value": 2.06,
+            "unit": "Å"
+          },
+          "Ni-O_bond_length_1.62V": {
+            "value": 1.89,
+            "unit": "Å"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Ni1_x_Fe_x_OOH_25Fe",
+        "description": "OER activity measurements of mixed Ni-Fe catalysts as function of Fe content in 0.1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO/1M KOH",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Pt",
+            "unit": "electrode"
+          },
+          "iR_correction": {
+            "value": "95%",
+            "unit": "ohmic drop correction"
+          },
+          "potential_range": {
+            "value": "1.12-1.72 V",
+            "unit": "vs RHE"
+          }
+        },
+        "results_json": {
+          "OER_activity_enhancement": {
+            "value": "500-fold",
+            "unit": "vs pure Ni/Fe"
+          },
+          "activity_peak": {
+            "value": "25% Fe content",
+            "unit": "composition"
+          },
+          "film_thickness": {
+            "value": "1.8",
+            "unit": "nm"
+          }
+        },
+        "source_text": "Figure 1 shows that the addition of Fe to NiOOH results in up to 500-fold higher OER current density compared to pure Ni and Fe oxyhydroxide films (see Supporting Information S6 for details of OER activity measurements). A plateau in activity is reached at ∼25% Fe content."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_NiOOH",
+        "description": "OER activity of pure NiOOH in purified 0.1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH (Fe-purified)",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          }
+        },
+        "results_json": {
+          "OER_activity": {
+            "value": "similar or lower",
+            "unit": "vs pure FeOOH"
+          }
+        },
+        "source_text": "After eliminating these impurities (see Supporting Information S7), pure NiOOH films exhibited similar or lower OER activity than pure FeOOH."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_FeOOH",
+        "description": "OER activity of pure FeOOH in 0.1 M KOH",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "cell_configuration": {
+            "value": "three-electrode",
+            "unit": "setup"
+          }
+        },
+        "results_json": {},
+        "source_text": "pure NiOOH films exhibited similar or lower OER activity than pure FeOOH."
+      },
+      {
+        "id": "chem_Ni_Fe_series",
+        "type": "chemical",
+        "name": "Ni_{1-x}Fe_xOOH series",
+        "aliases": [
+          "mixed (Ni,Fe) oxyhydroxides",
+          "Ni-Fe catalysts across composition range",
+          "Ni_{1-x}Fe_xOOH"
+        ],
+        "formula": "Ni_{1-x}Fe_xOOH"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Ni1_x_Fe_x_OOH_25Fe_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ni1_x_Fe_x_OOH_25Fe",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_NiOOH_test_2",
+        "type": "tested_in",
+        "source_id": "chem_NiOOH",
+        "target_id": "test_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_FeOOH_test_3",
+        "type": "tested_in",
+        "source_id": "chem_FeOOH",
+        "target_id": "test_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Ni_Fe_series_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Ni_Fe_series",
+        "target_id": "test_1",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_NiFeOOH",
+        "type": "chemical",
+        "name": "(Ni,Fe)OOH",
+        "aliases": [
+          "Ni_{1-x}Fe_xOOH",
+          "γ-Ni_{1-x}Fe_xOOH",
+          "mixed Ni-Fe oxyhydroxides"
+        ],
+        "formula": "Ni_{1-x}Fe_xOOH",
+        "properties": {
+          "Fe-O bond length (1.12 V)": {
+            "value": 2.01,
+            "unit": "Å"
+          },
+          "Fe-O bond length (1.62 V)": {
+            "value": 1.9,
+            "unit": "Å"
+          },
+          "Ni-O bond length (1.12 V)": {
+            "value": 2.06,
+            "unit": "Å"
+          },
+          "Ni-O bond length (1.62 V)": {
+            "value": 1.89,
+            "unit": "Å"
+          }
+        }
+      },
+      {
+        "id": "chem_FeOOH",
+        "type": "chemical",
+        "name": "FeOOH",
+        "aliases": [
+          "γ-FeOOH",
+          "pure FeOOH"
+        ],
+        "formula": "FeOOH",
+        "properties": {
+          "Fe-O bond length": {
+            "value": 2.01,
+            "unit": "Å"
+          }
+        }
+      },
+      {
+        "id": "chem_NiOOH",
+        "type": "chemical",
+        "name": "NiOOH",
+        "aliases": [
+          "γ-NiOOH",
+          "pure NiOOH"
+        ],
+        "formula": "NiOOH",
+        "properties": {
+          "Ni-O bond length (oxidized)": {
+            "value": 1.88,
+            "unit": "Å"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "HERFD-XAS",
+        "is_reported": true,
+        "characterization_summary": "Fe^{3+} in Ni_{1-x}Fe_xOOH occupies octahedral sites with unusually short Fe-O bond distances induced by edge-sharing with surrounding [NiO_6] octahedra; pure FeOOH resembles γ-FeOOH structure.",
+        "evidence_snippet": "Operando X-ray absorption spectroscopy (XAS) using high energy resolution fluorescence detection (HERFD) reveals that Fe^{3+} in Ni_{1-x}Fe_xOOH occupies octahedral sites with unusually short Fe-O bond distances, induced by edge-sharing with surrounding [NiO_6] octahedra.",
+        "related_images": [
+          "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg",
+          "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Fe K-edge",
+            "properties": {
+              "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+            },
+            "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Fe K-edge",
+            "properties": {
+              "description": "Iron K-edge X-ray absorption edge",
+              "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+            },
+            "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "EXAFS",
+        "is_reported": true,
+        "characterization_summary": "For 75% Ni/25% Fe catalyst at 1.62 V: Fe-O distance 1.90±0.02 Å (CN 5.4±0.9), Ni-O distance 1.89±0.02 Å (CN 6.1±0.9), confirming bond contraction and edge-sharing structure.",
+        "evidence_snippet": "EXAFS confirms that the Fe-O and Ni-O bond lengths contract from 2.01 and 2.06Å at 1.12V to 1.90 and 1.89Å at 1.92V, respectively (Figure 2c, Table 1).",
+        "related_images": [
+          "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "EXAFS Spectrum",
+            "properties": {
+              "type": "Fourier Transform EXAFS",
+              "x_axis": "R (Å)",
+              "y_axis": "FT(k³χ(k)) (Å⁻¹)",
+              "range": "[1,6] Å",
+              "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+            },
+            "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "HERFD-XAS",
+        "is_reported": true,
+        "characterization_summary": "Ni K-edge shows oxidation from α-Ni(OH)_2 (Ni-O 2.05 Å) at low potentials to γ-NiOOH (Ni-O 1.88 Å, Ni^{3+/4+}) at high potentials with characteristic spectral shifts.",
+        "evidence_snippet": "The Ni K-edge spectra exhibit shifts of the structure-sensitive EXAFS dips and peaks to higher energy, indicating significant bond contraction.",
+        "related_images": [
+          "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg",
+          "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Ni K-edge",
+            "properties": {
+              "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+            },
+            "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ni K-edge",
+            "properties": {
+              "description": "Nickel K-edge X-ray absorption edge",
+              "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+            },
+            "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+          }
+        ]
+      },
+      {
+        "id": "n1",
+        "type": "chemical",
+        "name": "NiOOH",
+        "properties": {
+          "description": "Nickel oxyhydroxide host",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "ni_o_112",
+        "type": "chemical",
+        "name": "Ni-O",
+        "properties": {
+          "voltage": "1.12 V",
+          "CN": "6.5 ± 0.6",
+          "σ² (Å²)": "0.005",
+          "r-range (Å)": "2.0-1.7",
+          "R-factor": "0.05",
+          "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+        },
+        "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+      },
+      {
+        "id": "ni_ni_112",
+        "type": "chemical",
+        "name": "Ni-Ni",
+        "properties": {
+          "voltage": "1.12 V",
+          "CN": "5.5 ± 0.6",
+          "σ² (Å²)": "0.005",
+          "r-range (Å)": "2.0-1.7",
+          "R-factor": "0.034",
+          "Eo (eV)": "-1.05 ± 1.9",
+          "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+        },
+        "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+      },
+      {
+        "id": "fe_o_112",
+        "type": "chemical",
+        "name": "Fe-O",
+        "properties": {
+          "voltage": "1.12 V",
+          "CN": "6.5 ± 0.6",
+          "σ² (Å²)": "0.005",
+          "r-range (Å)": "2.0-1.7",
+          "R-factor": "0.035",
+          "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+        },
+        "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+      },
+      {
+        "id": "fe_ni_112",
+        "type": "chemical",
+        "name": "Fe-Ni",
+        "properties": {
+          "voltage": "1.12 V",
+          "CN": "5.9 ± 0.7",
+          "σ² (Å²)": "0.007",
+          "r-range (Å)": "2.0-1.15",
+          "R-factor": "0.035",
+          "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+        },
+        "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "chemical",
+        "name": "γ-FeOOH",
+        "properties": {
+          "description": "Gamma iron oxyhydroxide host",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "ni_o_162",
+        "type": "chemical",
+        "name": "Ni-O",
+        "properties": {
+          "voltage": "1.62 V",
+          "CN": "6.1 ± 0.9",
+          "σ² (Å²)": "0.005",
+          "r-range (Å)": "2.0-1.7",
+          "R-factor": "0.034",
+          "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+        },
+        "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+      },
+      {
+        "id": "ni_ni_162",
+        "type": "chemical",
+        "name": "Ni-Ni",
+        "properties": {
+          "voltage": "1.62 V",
+          "CN": "5.4 ± 0.7",
+          "σ² (Å²)": "0.005",
+          "r-range (Å)": "2.0-1.7",
+          "R-factor": "0.030",
+          "Eo (eV)": "-2.4 ± 2.4",
+          "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+        },
+        "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+      },
+      {
+        "id": "fe_o_162",
+        "type": "chemical",
+        "name": "Fe-O",
+        "properties": {
+          "voltage": "1.62 V",
+          "CN": "5.4 ± 0.9",
+          "σ² (Å²)": "0.005",
+          "r-range (Å)": "2.0-1.15",
+          "R-factor": "0.028",
+          "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+        },
+        "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+      },
+      {
+        "id": "fe_ni_162",
+        "type": "chemical",
+        "name": "Fe-Ni",
+        "properties": {
+          "voltage": "1.62 V",
+          "CN": "5.2 ± 0.7",
+          "σ² (Å²)": "0.005",
+          "r-range (Å)": "2.0-1.15",
+          "R-factor": "0.030",
+          "Eo (eV)": "-4.8 ± 2.9",
+          "extracted_from_image": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+        },
+        "source_image_file": "005f7cb0bac427c4949c3f623305b2c4e1005e4e12434e82c5d074b98bdbff69.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "chemical",
+        "name": "α-Ni(OH)₂",
+        "properties": {
+          "description": "Alpha nickel hydroxide",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "characterization",
+        "name": "XANES spectrum",
+        "properties": {
+          "technique": "X-ray Absorption Near Edge Structure",
+          "x_axis": "Energy (eV)",
+          "x_range": [
+            7120,
+            7200
+          ],
+          "description": "Multiple spectra showing Fe species evolution",
+          "extracted_from_image": "fa335c3e26af1e908d26904bc542e7f5b7f70c7aeafdb978b7274f78cd5d0cd5.jpg"
+        },
+        "source_image_file": "fa335c3e26af1e908d26904bc542e7f5b7f70c7aeafdb978b7274f78cd5d0cd5.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "process",
+        "name": "OER",
+        "properties": {
+          "full_name": "Oxygen Evolution Reaction",
+          "extracted_from_image": "fa335c3e26af1e908d26904bc542e7f5b7f70c7aeafdb978b7274f78cd5d0cd5.jpg"
+        },
+        "source_image_file": "fa335c3e26af1e908d26904bc542e7f5b7f70c7aeafdb978b7274f78cd5d0cd5.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "region",
+        "name": "Pre-edge Region",
+        "properties": {
+          "description": "Energy region before main absorption edge",
+          "extracted_from_image": "d71287ba3d2087038d5789f931eb6c222b273d235d72928a8774e01066b203a0.jpg"
+        },
+        "source_image_file": "d71287ba3d2087038d5789f931eb6c222b273d235d72928a8774e01066b203a0.jpg"
+      },
+      {
+        "id": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163_3",
+        "type": "parameter",
+        "name": "η",
+        "properties": {
+          "value": "0.96 V",
+          "extracted_from_image": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg"
+        },
+        "source_image_file": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg"
+      },
+      {
+        "id": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163_4",
+        "type": "visual",
+        "name": "Molecular Structure",
+        "properties": {
+          "description": "Ball-and-stick model with green polyhedra (likely NiO6 octahedra), red spheres (oxygen), white (hydrogen)",
+          "extracted_from_image": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg"
+        },
+        "source_image_file": "03ea522d68c6836361599f20abba007ee2c045678aaa206dae372ed8d0bf6163.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chart",
+        "name": "XAS spectrum",
+        "properties": {
+          "type": "X-ray absorption spectroscopy",
+          "reference": "γ-FeOOH",
+          "extracted_from_image": "bcf213f85e02223b8c843e4c4b15dff37dae74c1046d9cba444dccbab27c769a.jpg"
+        },
+        "source_image_file": "bcf213f85e02223b8c843e4c4b15dff37dae74c1046d9cba444dccbab27c769a.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "chemical",
+        "name": "H⁺ + e⁻",
+        "properties": {
+          "description": "Proton and electron (repeated)",
+          "extracted_from_image": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+        },
+        "source_image_file": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "chemical",
+        "name": "[NiII O6]",
+        "properties": {
+          "description": "low potential operating catalyst",
+          "bond_distance": "dM-O ~2.05 Å",
+          "extracted_from_image": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+        },
+        "source_image_file": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+      },
+      {
+        "id": "struct1",
+        "type": "structure",
+        "name": "Low potential structure",
+        "properties": {
+          "label": "(d)",
+          "extracted_from_image": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+        },
+        "source_image_file": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+      },
+      {
+        "id": "struct2",
+        "type": "structure",
+        "name": "Compressed structure",
+        "properties": {
+          "extracted_from_image": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+        },
+        "source_image_file": "0ea2ee1fa727b81d311015964ba0594ea52e21b76e747f37ce3618639a44cc9d.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "H₂O⁺*",
+        "properties": {
+          "description": "Protonated water adsorbate",
+          "extracted_from_image": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+        },
+        "source_image_file": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "O₂ +",
+        "properties": {
+          "description": "Oxygen molecule (activated)",
+          "extracted_from_image": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+        },
+        "source_image_file": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "surface",
+        "name": "Catalyst Surface",
+        "properties": {
+          "description": "Green polyhedral structure representing active sites",
+          "extracted_from_image": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+        },
+        "source_image_file": "46741145c13d1d1ccc159ceb00ecf386b50444db2f619934202d9f44743df816.jpg"
+      },
+      {
+        "id": "graph1",
+        "type": "characterization",
+        "name": "Normalized X-ray Absorption Spectra",
+        "properties": {
+          "label": "(e)",
+          "type": "XAS",
+          "x_label": "Energy (eV)",
+          "x_range": [
+            8330,
+            8340
+          ],
+          "y_label": "Normalized Absorption",
+          "y_scale": "x40",
+          "colors": [
+            "blue",
+            "red",
+            "green",
+            "cyan",
+            "magenta"
+          ],
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "sample1",
+        "type": "sample",
+        "name": "Sample 1",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "sample2",
+        "type": "sample",
+        "name": "Sample 2",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "sample3",
+        "type": "sample",
+        "name": "Sample 3",
+        "properties": {
+          "color": "green",
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "sample4",
+        "type": "sample",
+        "name": "Sample 4",
+        "properties": {
+          "color": "cyan",
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "sample5",
+        "type": "sample",
+        "name": "Sample 5",
+        "properties": {
+          "color": "magenta",
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "edge1",
+        "type": "edge_region",
+        "name": "Pre-edge region",
+        "properties": {
+          "energy_range": [
+            8330,
+            8333
+          ],
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "edge2",
+        "type": "edge_region",
+        "name": "Edge jump region",
+        "properties": {
+          "energy_range": [
+            8333,
+            8335
+          ],
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "edge3",
+        "type": "edge_region",
+        "name": "Post-edge region",
+        "properties": {
+          "energy_range": [
+            8335,
+            8340
+          ],
+          "extracted_from_image": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+        },
+        "source_image_file": "58ca78089f00238ad1a528695b891ff66ad592bb95762a49e6a16af44d9d8817.jpg"
+      },
+      {
+        "id": "eta",
+        "type": "property",
+        "name": "η = 0.43 V",
+        "properties": {
+          "description": "Overpotential or voltage value of 0.43 V",
+          "extracted_from_image": "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+        },
+        "source_image_file": "77d49634220a3122b0e087131b55b391c7f0bf23ef0a3275a4db0eab2c5b1f68.jpg"
+      },
+      {
+        "id": "image",
+        "type": "visualization",
+        "name": "Computational Model",
+        "properties": {
+          "type": "3D structure",
+          "style": "ball-and-stick with polyhedra",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "OH-",
+        "type": "chemical",
+        "name": "OH⁻",
+        "properties": {
+          "formula": "OH⁻",
+          "count": 4,
+          "role": "reactant",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "O2",
+        "type": "chemical",
+        "name": "O₂",
+        "properties": {
+          "formula": "O₂",
+          "role": "product",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "formula": "H₂O",
+          "role": "product",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "MOF",
+        "type": "chemical",
+        "name": "Metal-Organic Framework",
+        "properties": {
+          "description": "Green polyhedra (likely metal nodes), red spheres (oxygen atoms), yellow triangle (organic linker)",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82_metal_node",
+        "type": "chemical",
+        "name": "Metal Node",
+        "properties": {
+          "representation": "Green polyhedra",
+          "likely": "Zr or similar in MOF",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "organic_linker",
+        "type": "chemical",
+        "name": "Organic Linker",
+        "properties": {
+          "representation": "Yellow triangle",
+          "likely": "BTC or similar",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "oxygen_atoms",
+        "type": "chemical",
+        "name": "Oxygen Atoms",
+        "properties": {
+          "representation": "Red spheres",
+          "role": "coordinating atoms",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "water_molecule",
+        "type": "chemical",
+        "name": "H₂O",
+        "properties": {
+          "representation": "Red sphere with two H atoms",
+          "location": "near MOF",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "rxn1",
+        "type": "reaction",
+        "name": "4OH⁻ → O₂ + 2H₂O",
+        "properties": {
+          "type": "oxygen evolution reaction",
+          "catalyst": "MOF",
+          "extracted_from_image": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+        },
+        "source_image_file": "badece0bbf99f24de928aa07603ba4ad2066a217c2e9ae506257121ba2047a82.jpg"
+      },
+      {
+        "id": "mo_mmp",
+        "type": "structural_feature",
+        "name": "M-O",
+        "properties": {
+          "description": "Metal-Oxygen first coordination shell",
+          "position": "1 Å region",
+          "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        },
+        "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+      },
+      {
+        "id": "mmmp",
+        "type": "structural_feature",
+        "name": "M-M'",
+        "properties": {
+          "description": "Metal-Metal' second coordination shell",
+          "position": "2-3 Å region",
+          "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        },
+        "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+      },
+      {
+        "id": "mms",
+        "type": "structural_feature",
+        "name": "M'/MS",
+        "properties": {
+          "description": "M' or Metal-Shell feature",
+          "position": "3-4 Å region",
+          "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        },
+        "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+      },
+      {
+        "id": "peak_1_12v_fe",
+        "type": "spectral_peak",
+        "name": "Fe K-edge 1.12 V Peak",
+        "properties": {
+          "voltage": "1.12 V",
+          "edge": "Fe K-edge",
+          "intensity": "high",
+          "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        },
+        "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+      },
+      {
+        "id": "peak_1_62v_fe",
+        "type": "spectral_peak",
+        "name": "Fe K-edge 1.62 V Peak",
+        "properties": {
+          "voltage": "1.62 V",
+          "edge": "Fe K-edge",
+          "intensity": "very high",
+          "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        },
+        "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+      },
+      {
+        "id": "peak_1_12v_ni",
+        "type": "spectral_peak",
+        "name": "Ni K-edge 1.12 V Peak",
+        "properties": {
+          "voltage": "1.12 V",
+          "edge": "Ni K-edge",
+          "intensity": "high",
+          "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        },
+        "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+      },
+      {
+        "id": "peak_1_62v_ni",
+        "type": "spectral_peak",
+        "name": "Ni K-edge 1.62 V Peak",
+        "properties": {
+          "voltage": "1.62 V",
+          "edge": "Ni K-edge",
+          "intensity": "high",
+          "extracted_from_image": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+        },
+        "source_image_file": "eaa4bf4482eed8eaddd02c34067b23278a3092859026d1911facd60a6b364245.jpg"
+      },
+      {
+        "id": "bond_Ni-O_NiOOH",
+        "type": "bond",
+        "name": "Ni-O in NiOOH host",
+        "properties": {
+          "average_length": "variable",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "bond_Ni-O_γFeOOH",
+        "type": "bond",
+        "name": "Ni-O in γ-FeOOH host",
+        "properties": {
+          "average_length": "variable",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "bond_Fe-O_γFeOOH",
+        "type": "bond",
+        "name": "Fe-O in γ-FeOOH host",
+        "properties": {
+          "average_length": "variable",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "bond_Fe-O_NiOOH",
+        "type": "bond",
+        "name": "Fe-O in NiOOH host",
+        "properties": {
+          "average_length": "variable",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "bond_Ni-O_αNiOH2",
+        "type": "bond",
+        "name": "Ni-O in α-Ni(OH)₂",
+        "properties": {
+          "average_length": "variable",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Bond Length vs Fe Content",
+        "properties": {
+          "x_axis": "Fe content (%)",
+          "y_axis": "Average M-O Bond Length (Å)",
+          "range_x": [
+            0,
+            100
+          ],
+          "range_y": [
+            1.9,
+            2.05
+          ],
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      },
+      {
+        "id": "parameter_Fe_content",
+        "type": "parameter",
+        "name": "Fe content",
+        "properties": {
+          "unit": "%",
+          "range": "0-100%",
+          "extracted_from_image": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+        },
+        "source_image_file": "fc9cbba439e10ae5c0a4b8916a775ca90188d98a94e6c818c980c7adf7ccd756.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_NiFeOOH_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeOOH",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFeOOH_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeOOH",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiFeOOH_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_NiFeOOH",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_FeOOH_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_FeOOH",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiOOH_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_NiOOH",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "source_id": "n1",
+        "target_id": "ni_o_112",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "ni_ni_112",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "fe_o_112",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "fe_ni_112",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "ni_o_112",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "ni_ni_112",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "fe_o_112",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "fe_ni_112",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "ni_o_162",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "ni_ni_162",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "fe_o_162",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "fe_ni_162",
+        "type": "measured_at"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "ni_o_162",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "ni_ni_162",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "fe_o_162",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "fe_ni_162",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "host_composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "dopant"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_FeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "host_composition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "dopant"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_FeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "has_structure"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n3",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n4",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n5",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "chem_FeOOH",
+        "type": "contains_element"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "adsorption_site"
+      },
+      {
+        "source_id": "1",
+        "target_id": "4",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "3",
+        "target_id": "2",
+        "type": "potential"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n3",
+        "type": "shows"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n4",
+        "type": "shows"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n5",
+        "type": "shows"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "chem_FeOOH",
+        "type": "shows"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n3",
+        "type": "shows"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n5",
+        "type": "shows"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "chem_FeOOH",
+        "type": "shows"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n7",
+        "type": "shows"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_FeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c2",
+        "type": "bonds_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chem_FeOOH",
+        "type": "bonds_to"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "struct1",
+        "type": "present_in"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "struct1",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_NiOOH",
+        "target_id": "struct2",
+        "type": "depicts"
+      },
+      {
+        "source_id": "chem_FeOOH",
+        "target_id": "chem_FeOOH",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "chem_NiOOH",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_NiOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_FeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chem_NiOOH",
+        "type": "bonds_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "chem_FeOOH",
+        "type": "bonds_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n4",
+        "type": "annotation_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_FeOOH",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_FeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "produces"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chem_FeOOH",
+        "type": "produces"
+      },
+      {
+        "source_id": "chem_FeOOH",
+        "target_id": "n7",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "produces"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n10",
+        "type": "reacts_to"
+      },
+      {
+        "source_id": "n10",
+        "target_id": "n11",
+        "type": "reacts_with"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n2",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n4",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "chem_FeOOH",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n8",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n10",
+        "type": "adsorbs_on"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "doped_with"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "structural_feature"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "instance_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chem_FeOOH",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "doped_with"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "chem_FeOOH",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "substituted_in"
+      },
+      {
+        "source_id": "sample1",
+        "target_id": "graph1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "sample2",
+        "target_id": "graph1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "sample3",
+        "target_id": "graph1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "sample4",
+        "target_id": "graph1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "sample5",
+        "target_id": "graph1",
+        "type": "spectrum_of"
+      },
+      {
+        "source_id": "edge1",
+        "target_id": "graph1",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "edge2",
+        "target_id": "graph1",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "edge3",
+        "target_id": "graph1",
+        "type": "contains_region"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "has_property"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "visualized_as"
+      },
+      {
+        "source_id": "chem_FeOOH",
+        "target_id": "chem_NiOOH",
+        "type": "positioned_on"
+      },
+      {
+        "source_id": "chem_FeOOH",
+        "target_id": "chem_NiFeOOH",
+        "type": "component"
+      },
+      {
+        "id": "nioooh",
+        "target_id": "chem_NiFeOOH",
+        "type": "component"
+      },
+      {
+        "source_id": "eta",
+        "target_id": "chem_NiFeOOH",
+        "type": "has_property"
+      },
+      {
+        "source_id": "image",
+        "target_id": "chem_NiFeOOH",
+        "type": "visualizes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_FeOOH",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "OH-",
+        "target_id": "rxn1",
+        "type": "reactant"
+      },
+      {
+        "source_id": "rxn1",
+        "target_id": "O2",
+        "type": "produces"
+      },
+      {
+        "source_id": "rxn1",
+        "target_id": "H2O",
+        "type": "produces"
+      },
+      {
+        "source_id": "MOF",
+        "target_id": "rxn1",
+        "type": "catalyzes"
+      },
+      {
+        "source_id": "metal_node",
+        "target_id": "MOF",
+        "type": "component"
+      },
+      {
+        "source_id": "organic_linker",
+        "target_id": "MOF",
+        "type": "component"
+      },
+      {
+        "source_id": "oxygen_atoms",
+        "target_id": "MOF",
+        "type": "component"
+      },
+      {
+        "source_id": "water_molecule",
+        "target_id": "MOF",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "MOF",
+        "target_id": "image",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "reference"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n8",
+        "type": "measured"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n8",
+        "type": "feature"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n8",
+        "type": "spectrum"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n8",
+        "type": "spectrum"
+      },
+      {
+        "source_id": "chem_FeOOH",
+        "target_id": "n8",
+        "type": "spectrum"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "spectrum"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "comparison"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n3",
+        "type": "doped_with"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "mixed_with"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "mixed_with"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "chem_FeOOH",
+        "type": "transitions_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_FeOOH",
+        "target_id": "n7",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "chem_FeOOH",
+        "target_id": "n5",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "chem_FeOOH",
+        "type": "displays"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "property"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "peak_1_12v_fe",
+        "target_id": "char_1",
+        "type": "belongs_to"
+      },
+      {
+        "source_id": "peak_1_62v_fe",
+        "target_id": "char_1",
+        "type": "belongs_to"
+      },
+      {
+        "source_id": "peak_1_12v_ni",
+        "target_id": "char_3",
+        "type": "belongs_to"
+      },
+      {
+        "source_id": "peak_1_62v_ni",
+        "target_id": "char_3",
+        "type": "belongs_to"
+      },
+      {
+        "source_id": "mo_mmp",
+        "target_id": "char_2",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "mmmp",
+        "target_id": "char_2",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "mms",
+        "target_id": "char_2",
+        "type": "appears_in"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "mo_mmp",
+        "type": "probes"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "mmmp",
+        "type": "probes"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "depicted_in"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "during"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "before"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "same_oxidation_state"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "bond_Ni-O_NiOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "bond_Fe-O_NiOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "bond_Ni-O_γFeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "bond_Fe-O_γFeOOH",
+        "type": "contains"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "bond_Ni-O_αNiOH2",
+        "type": "contains"
+      },
+      {
+        "source_id": "bond_Ni-O_NiOOH",
+        "target_id": "chart",
+        "type": "plotted"
+      },
+      {
+        "source_id": "bond_Ni-O_γFeOOH",
+        "target_id": "chart",
+        "type": "plotted"
+      },
+      {
+        "source_id": "bond_Fe-O_γFeOOH",
+        "target_id": "chart",
+        "type": "plotted"
+      },
+      {
+        "source_id": "bond_Fe-O_NiOOH",
+        "target_id": "chart",
+        "type": "plotted"
+      },
+      {
+        "source_id": "bond_Ni-O_αNiOH2",
+        "target_id": "chart",
+        "type": "plotted"
+      },
+      {
+        "source_id": "parameter_Fe_content",
+        "target_id": "chart",
+        "type": "x_axis"
+      }
+    ]
+  }
+}

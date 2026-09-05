@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openscience-materials-mcp"
+version = "0.1.0"
+description = "Unified materials data, validation, workflow, and governed chemistry-memory tools for NebulaMat"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.9,<2",
+  "httpx>=0.27,<1",
+  "pymatgen>=2024.10",
+  "mp-api>=0.45",
+  "ase>=3.23",
+  "numpy>=1.26",
+  "rdkit>=2024.3",
+]
+
+[project.scripts]
+materials-mcp = "materials_mcp.server:main"
+materials-validate = "materials_mcp.validation:main"
+materials-uma-screen = "materials_mcp.uma:main"
+materials-uma-md = "materials_mcp.uma_runtime:main"
+materials-mattersim-screen = "materials_mcp.mattersim_adapter:main"
+materials-dft-human-review = "materials_mcp.human_review:main"
+
+[project.optional-dependencies]
+# Deliberately opt-in: these packages belong in materials-env, never in the
+# ordinary science-MCP environment, and are not needed for database queries or
+# deterministic validation.
+ml = [
+  "torch>=2.2",
+  "matgl>=1.1",
+]
+# fairchem is intentionally opt-in because UMA weights are gated on
+# Hugging Face and require a separate GPU-capable materials environment.
+uma = [
+  "fairchem-core>=2.0,<3",
+]
+# MatterSim v1 is kept opt-in because it brings a separate Torch/PyG stack and
+# the v1.0.0-5M checkpoint should be managed explicitly by the workspace.
+mattersim = [
+  "mattersim==1.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["materials_mcp"]

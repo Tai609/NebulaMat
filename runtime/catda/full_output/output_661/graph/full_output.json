@@ -1,0 +1,3050 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_Pt7Cu",
+        "type": "chemical",
+        "name": "Pt₇Cu",
+        "aliases": [
+          "Pt7Cu"
+        ],
+        "formula": "Pt₇Cu",
+        "properties": {
+          "Pt:Cu ratio": {
+            "value": 7,
+            "unit": "ratio"
+          }
+        },
+        "related_images": [
+          "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg",
+          "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "PtCu",
+            "properties": {
+              "description": "PtCu catalyst or material",
+              "extracted_from_image": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+            },
+            "source_image_file": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "PtCu",
+            "properties": {
+              "description": "PtCu catalyst",
+              "extracted_from_image": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+            },
+            "source_image_file": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_carbon_paper",
+        "type": "chemical",
+        "name": "carbon paper",
+        "aliases": [],
+        "properties": {}
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Solvothermal Synthesis",
+        "procedure": "The Pt₇Cu catalyst was deposited on carbon paper directly by a solvothermal method.",
+        "method": "solvothermal synthesis",
+        "conditions": {},
+        "source_text": "As shown in Figure 4a, the Pt₇Cu catalyst was deposited on carbon paper directly by a solvothermal method (experimental details can be seen in the Supporting Information)."
+      },
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "20% Pt/C",
+        "aliases": [
+          "Pt/C catalyst",
+          "commercial Pt/C"
+        ],
+        "formula": "Pt/C",
+        "related_images": [
+          "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "20% PVC/C",
+            "properties": {
+              "description": "20% PVC on carbon support",
+              "extracted_from_image": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+            },
+            "source_image_file": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "20% PVC",
+            "properties": {
+              "description": "20% PVC catalyst",
+              "extracted_from_image": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+            },
+            "source_image_file": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_carbon_paper_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_carbon_paper",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "support"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Pt7Cu",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Pt7Cu",
+        "properties": {
+          "form": "well-dispersed nanoparticles"
+        }
+      }
+    ],
+    "catalyst_tested_ids": [
+      "chem_Pt_C"
+    ]
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_Pt7Cu",
+        "type": "chemical",
+        "name": "Pt₇Cu",
+        "aliases": [
+          "Pt₇Cu catalyst",
+          "Pt₇Cu nanostructures"
+        ],
+        "formula": "Pt₇Cu"
+      },
+      {
+        "id": "chem_Pt_C",
+        "type": "chemical",
+        "name": "20% Pt/C",
+        "aliases": [
+          "Pt/C catalyst",
+          "commercial Pt/C"
+        ],
+        "formula": "Pt/C"
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_Pt7Cu",
+        "description": "HER performance in 0.5 M H₂SO₄",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H₂SO₄",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 0.2,
+            "unit": "pH"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "equilibrium_potential": {
+            "value": -0.01,
+            "unit": "V"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 56,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 49.8,
+            "unit": "mV/dec"
+          },
+          "exchange_current_density": {
+            "value": 0.74,
+            "unit": "mA/cm²"
+          },
+          "double_layer_capacitance": {
+            "value": 1.1,
+            "unit": "mF/cm²"
+          },
+          "TOF_at_100mV_overpotential": {
+            "value": 6.14,
+            "unit": "s⁻¹"
+          }
+        },
+        "source_text": "HER performance of the Pt₇Cu catalyst was explored carefully in 0.5 M H₂SO₄ solution... the Pt₇Cu catalyst showed a very small overpotential of 56 mV at a current density of 10 mA cm⁻² along with a Tafel slope of only 49.8 mV dec⁻¹. The exchange current density of the Pt₇Cu catalyst was determined to be by 0.74 mA cm⁻² by extrapolating the Tafel plots (Figure 4e). The values C_dl are calculated to be 1.1... for Pt₇Cu... The Pt₇Cu catalyst achieves a TOF value of 6.14 s⁻¹ at an overpotential of 100 mV."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_Pt_C",
+        "description": "HER performance in 0.5 M H₂SO₄ (commercial Pt/C benchmark)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "HER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.5 M H₂SO₄",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 0.2,
+            "unit": "pH"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "equilibrium_potential": {
+            "value": -0.01,
+            "unit": "V"
+          }
+        },
+        "results_json": {
+          "overpotential_at_10_mA/cm²": {
+            "value": 29,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 27,
+            "unit": "mV/dec"
+          },
+          "exchange_current_density": {
+            "value": 0.92,
+            "unit": "mA/cm²"
+          },
+          "double_layer_capacitance": {
+            "value": 17.4,
+            "unit": "mF/cm²"
+          }
+        },
+        "source_text": "The overpotential for the Pt/C catalyst to deliver the same current density is 29 mV with the value of Tafel slope as low as 27 mV dec⁻¹... close to that of the Pt/C catalyst at acidic conditions (0.92 mA cm⁻²)... The values C_dl are calculated to be ... 17.4 mF cm⁻² for Pt/C catalysts, respectively."
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_tested_chem_Pt7Cu_test_1",
+        "type": "tested_in",
+        "source_id": "chem_Pt7Cu",
+        "target_id": "test_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_tested_chem_Pt_C_test_2",
+        "type": "tested_in",
+        "source_id": "chem_Pt_C",
+        "target_id": "test_2",
+        "properties": {}
+      }
+    ]
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_Pt7Cu",
+        "type": "chemical",
+        "name": "Pt₇Cu",
+        "aliases": [
+          "Pt7Cu"
+        ],
+        "formula": "Pt₇Cu",
+        "properties": {
+          "Pt:Cu ratio": {
+            "value": 7,
+            "unit": "ratio"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "SEM",
+        "is_reported": true,
+        "characterization_summary": "SEM images revealed that the obtained products were mainly well-dispersed nanoparticles.",
+        "evidence_snippet": "SEM images shown in Figure 4a revealed that the obtained products were mainly well-dispersed nanoparticles."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "The diffraction pattern of the product is in good agreement with those of a standard calculated fcc Pt₇Cu structure. The absence of XRD reflections at 43.3° and 50.4° for cubic Cu metal and 39.2° and 45.6° for cubic Pt metal signified the successful insertion of Cu in the Pt lattice.",
+        "evidence_snippet": "The phase and crystallinity of the as-prepared Pt₇Cu catalyst were verified by powder X-ray diffraction (XRD) in Figure 4b. The diffraction pattern of the product is in good agreement with those of a standard calculated fcc Pt₇Cu structure ... signified the successful insertion of Cu in the Pt lattice.",
+        "related_images": [
+          "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg",
+          "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg",
+          "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "XRD Pattern",
+            "properties": {
+              "technique": "X-ray Diffraction",
+              "space_group": "Fm-3m",
+              "data_range": "40-80° 2θ",
+              "extracted_from_image": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+            },
+            "source_image_file": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ir",
+            "properties": {
+              "element": "Iridium",
+              "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+            },
+            "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Unknown Material",
+            "properties": {
+              "description": "Material with symmetric band structure, likely 2D or layered crystal",
+              "bandgap": "Direct or indirect gap around Fermi level (0 eV)",
+              "extracted_from_image": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+            },
+            "source_image_file": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EDS",
+        "is_reported": true,
+        "characterization_summary": "EDS analysis suggests a ratio of Pt to Cu closing to 7.",
+        "evidence_snippet": "This is further confirmed by the energy-dispersive spectroscopy (EDS) analysis, which suggests a ratio of Pt to Cu closing to 7 (Figure 4c).",
+        "related_images": [
+          "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg",
+          "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg",
+          "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg",
+          "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg",
+          "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg",
+          "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Pt",
+            "properties": {
+              "description": "Platinum",
+              "extracted_from_image": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+            },
+            "source_image_file": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu",
+            "properties": {
+              "description": "Copper",
+              "extracted_from_image": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+            },
+            "source_image_file": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "SEM Image",
+            "properties": {
+              "description": "Scanning Electron Microscopy image showing nanofiber morphology",
+              "scale_bar_100um": true,
+              "scale_bar_10um": true,
+              "extracted_from_image": "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg"
+            },
+            "source_image_file": "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg"
+          },
+          {
+            "type": "material",
+            "name": "Nanofibers",
+            "properties": {
+              "description": "Interwoven fibrous network structure",
+              "morphology": "nanoscale fibers",
+              "diameter_estimate": "tens of nm to microns",
+              "extracted_from_image": "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg"
+            },
+            "source_image_file": "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "EDX Spectrum",
+            "properties": {
+              "description": "Energy Dispersive X-ray spectrum labeled as figure part (c)",
+              "x_axis": "Energy / keV",
+              "x_range": [
+                0,
+                10
+              ],
+              "y_axis": "Intensity",
+              "extracted_from_image": "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg"
+            },
+            "source_image_file": "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Platinum (Pt)",
+            "properties": {
+              "peak_position": "approx. 9.4 keV",
+              "peak_color": "blue",
+              "description": "Strong Pt Lα peak",
+              "extracted_from_image": "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg"
+            },
+            "source_image_file": "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Ag",
+            "properties": {
+              "element": "Silver",
+              "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+            },
+            "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Cu",
+            "properties": {
+              "element": "Copper",
+              "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+            },
+            "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Band Structure Plot",
+            "properties": {
+              "description": "Electronic band structure along high-symmetry k-points",
+              "x_axis": "High-symmetry points (Γ, X, L, X, Γ)",
+              "y_axis": "Energy (eV)",
+              "range": "-2 to 2 eV",
+              "colors": [
+                "blue",
+                "red"
+              ],
+              "extracted_from_image": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+            },
+            "source_image_file": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Band Structure Upper Panel",
+            "properties": {
+              "description": "Upper subplot showing valence and conduction bands",
+              "peaks": "Symmetric band dispersion around Γ point",
+              "extracted_from_image": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+            },
+            "source_image_file": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Pt-Cu",
+            "properties": {
+              "description": "Platinum-Copper catalyst",
+              "extracted_from_image": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+            },
+            "source_image_file": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "20% Pt/C",
+            "properties": {
+              "description": "20% Platinum on Carbon catalyst",
+              "extracted_from_image": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+            },
+            "source_image_file": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "Double-layer capacitance (Cdl) calculated as 1.1 mF cm⁻², indicating low number of exposed active sites.",
+        "evidence_snippet": "As displayed in Figure 4f, the values Cdl are calculated to be 1.1 and 17.4 mF cm⁻² for Pt₇Cu and Pt/C catalysts, respectively. This suggests that the Pt/C commercial catalysts display more catalytically active sites in comparison to the Pt₇Cu sample.",
+        "related_images": [
+          "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg",
+          "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg",
+          "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg",
+          "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg",
+          "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg",
+          "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg",
+          "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Pt-Cu",
+            "properties": {
+              "description": "Pt-Cu alloy",
+              "extracted_from_image": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+            },
+            "source_image_file": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+          },
+          {
+            "type": "crystal_plane",
+            "name": "(111)",
+            "properties": {
+              "miller_index": "(111)",
+              "extracted_from_image": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+            },
+            "source_image_file": "2ba08cb76086aa0a0a47b12c728d15ea0c2dcd26c84b4bd960527c5aaffe1b24.jpg"
+          },
+          {
+            "type": "scale_bar",
+            "name": "100 μm Scale Bar",
+            "properties": {
+              "length": "100 μm",
+              "extracted_from_image": "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg"
+            },
+            "source_image_file": "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg"
+          },
+          {
+            "type": "scale_bar",
+            "name": "10 μm Scale Bar",
+            "properties": {
+              "length": "10 μm",
+              "extracted_from_image": "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg"
+            },
+            "source_image_file": "47cfc83426eed1240bd31ef27c56182acaa230e50e8ce5491f83f4dd33dd3224.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Copper (Cu)",
+            "properties": {
+              "peak_position": "approx. 8.0 keV",
+              "peak_color": "red",
+              "description": "Cu Kα peak",
+              "extracted_from_image": "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg"
+            },
+            "source_image_file": "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Carbon (C)",
+            "properties": {
+              "peak_position": "low energy region",
+              "peak_color": "red",
+              "description": "C peak at low energy",
+              "extracted_from_image": "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg"
+            },
+            "source_image_file": "59f0a087e2f78172ccb0cecd8098d72e21b41a24e0409538d25889cdf648243e.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Au",
+            "properties": {
+              "element": "Gold",
+              "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+            },
+            "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Pt",
+            "properties": {
+              "element": "Platinum",
+              "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+            },
+            "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Band Structure Lower Panel",
+            "properties": {
+              "description": "Lower subplot showing Exy (possibly xy-component of orbital projection)",
+              "y_axis": "Exy",
+              "range": "-4 to 4",
+              "features": "Peaks at Γ and L points",
+              "extracted_from_image": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+            },
+            "source_image_file": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+          },
+          {
+            "type": "kpoint",
+            "name": "Γ",
+            "properties": {
+              "position": "center of Brillouin zone",
+              "features": "band crossing/peak in upper panel, strong Exy peak in lower panel",
+              "extracted_from_image": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+            },
+            "source_image_file": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry Plot",
+            "properties": {
+              "description": "CV curves showing electrochemical behavior",
+              "x_axis": "Energy (eV)",
+              "y_axis": "Current (A)",
+              "range_x": [
+                -3,
+                2
+              ],
+              "range_y": [
+                -0.1,
+                0.1
+              ],
+              "extracted_from_image": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+            },
+            "source_image_file": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV Plot Pt-Cu",
+            "properties": {
+              "current_density": "17.41 mA/cm²",
+              "scan_rates": [
+                80,
+                120,
+                160,
+                200
+              ],
+              "color": "red",
+              "extracted_from_image": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+            },
+            "source_image_file": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "CV Plot 20% Pt/C",
+            "properties": {
+              "current_density": "1.1 mA/cm²",
+              "scan_rates": [
+                80,
+                120,
+                160,
+                200
+              ],
+              "color": "blue",
+              "extracted_from_image": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+            },
+            "source_image_file": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+          }
+        ]
+      },
+      {
+        "id": "LSV_plot",
+        "type": "characterization",
+        "name": "Linear Sweep Voltammetry Plot",
+        "properties": {
+          "x_axis": "Overpotential (V vs RHE)",
+          "y_axis": "Current Density (mA/cm²)",
+          "figure_label": "d",
+          "extracted_from_image": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+        },
+        "source_image_file": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+      },
+      {
+        "id": "PtCu_curve",
+        "type": "data",
+        "name": "PtCu LSV Curve",
+        "properties": {
+          "color": "red",
+          "extracted_from_image": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+        },
+        "source_image_file": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+      },
+      {
+        "id": "20%PVCC_curve",
+        "type": "data",
+        "name": "20% PVC/C LSV Curve",
+        "properties": {
+          "color": "dark red",
+          "extracted_from_image": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+        },
+        "source_image_file": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+      },
+      {
+        "id": "20%PVC_curve",
+        "type": "data",
+        "name": "20% PVC LSV Curve",
+        "properties": {
+          "color": "blue",
+          "extracted_from_image": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+        },
+        "source_image_file": "01cc5312721308dedd9226a7a04a4be98ded31136c974313c21f7211cabf4c13.jpg"
+      },
+      {
+        "id": "SG-194",
+        "type": "chemical",
+        "name": "SG-194",
+        "properties": {
+          "symbol": "●",
+          "color": "red",
+          "extracted_from_image": "28b987a011ac4b7ab2cdff18a112f5a7fd73530c17151c31db16ea16134db65a.jpg"
+        },
+        "source_image_file": "28b987a011ac4b7ab2cdff18a112f5a7fd73530c17151c31db16ea16134db65a.jpg"
+      },
+      {
+        "id": "SG-225",
+        "type": "chemical",
+        "name": "SG-225",
+        "properties": {
+          "symbol": "○",
+          "color": "blue",
+          "extracted_from_image": "28b987a011ac4b7ab2cdff18a112f5a7fd73530c17151c31db16ea16134db65a.jpg"
+        },
+        "source_image_file": "28b987a011ac4b7ab2cdff18a112f5a7fd73530c17151c31db16ea16134db65a.jpg"
+      },
+      {
+        "id": "SG-229",
+        "type": "chemical",
+        "name": "SG-229",
+        "properties": {
+          "symbol": "◯",
+          "color": "green",
+          "extracted_from_image": "28b987a011ac4b7ab2cdff18a112f5a7fd73530c17151c31db16ea16134db65a.jpg"
+        },
+        "source_image_file": "28b987a011ac4b7ab2cdff18a112f5a7fd73530c17151c31db16ea16134db65a.jpg"
+      },
+      {
+        "id": "Pt",
+        "type": "chemical",
+        "name": "Pt",
+        "properties": {
+          "element": "Platinum",
+          "symbol": "Pt",
+          "position": "middle-right",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Pd",
+        "type": "chemical",
+        "name": "Pd",
+        "properties": {
+          "element": "Palladium",
+          "symbol": "Pd",
+          "position": "middle-right, blue line",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Re",
+        "type": "chemical",
+        "name": "Re",
+        "properties": {
+          "element": "Rhenium",
+          "symbol": "Re",
+          "position": "top-right quadrant",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Rh",
+        "type": "chemical",
+        "name": "Rh",
+        "properties": {
+          "element": "Rhodium",
+          "symbol": "Rh",
+          "position": "middle-right",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Ru",
+        "type": "chemical",
+        "name": "Ru",
+        "properties": {
+          "element": "Ruthenium",
+          "symbol": "Ru",
+          "position": "top-right quadrant",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Au",
+        "type": "chemical",
+        "name": "Au",
+        "properties": {
+          "element": "Gold",
+          "symbol": "Au",
+          "position": "middle region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Ir",
+        "type": "chemical",
+        "name": "Ir",
+        "properties": {
+          "element": "Iridium",
+          "symbol": "Ir",
+          "position": "middle region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Os",
+        "type": "chemical",
+        "name": "Os",
+        "properties": {
+          "element": "Osmium",
+          "symbol": "Os",
+          "position": "top-right quadrant",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Cu",
+        "type": "chemical",
+        "name": "Cu",
+        "properties": {
+          "element": "Copper",
+          "symbol": "Cu",
+          "position": "middle region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "W",
+        "type": "chemical",
+        "name": "Tungsten",
+        "properties": {
+          "symbol": "W",
+          "work_function": "~4.4-4.6 eV",
+          "extracted_from_image": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+        },
+        "source_image_file": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+      },
+      {
+        "id": "Mo",
+        "type": "chemical",
+        "name": "Mo",
+        "properties": {
+          "element": "Molybdenum",
+          "symbol": "Mo",
+          "position": "lower region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Ti",
+        "type": "chemical",
+        "name": "Ti",
+        "properties": {
+          "element": "Titanium",
+          "symbol": "Ti",
+          "position": "upper region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Zn",
+        "type": "chemical",
+        "name": "Zinc",
+        "properties": {
+          "symbol": "Zn",
+          "work_function": "~4.5 eV",
+          "extracted_from_image": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+        },
+        "source_image_file": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+      },
+      {
+        "id": "Ag",
+        "type": "chemical",
+        "name": "Ag",
+        "properties": {
+          "element": "Silver",
+          "symbol": "Ag",
+          "position": "middle region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Nb",
+        "type": "chemical",
+        "name": "Nb",
+        "properties": {
+          "element": "Niobium",
+          "symbol": "Nb",
+          "position": "lower region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Ta",
+        "type": "chemical",
+        "name": "Ta",
+        "properties": {
+          "element": "Tantalum",
+          "symbol": "Ta",
+          "position": "lower region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Cd",
+        "type": "chemical",
+        "name": "Cd",
+        "properties": {
+          "element": "Cadmium",
+          "symbol": "Cd",
+          "position": "upper region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "chart",
+        "type": "characterization",
+        "name": "Hydrogen Evolution Catalysts Prediction Chart",
+        "properties": {
+          "type": "scatter_plot",
+          "x_label": "Y",
+          "y_label": "log(TOF / (10^-2 mA/cm²))",
+          "title": "Hydrogen Evolution Catalysts Prediction",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "experiment",
+        "name": "Cyclic Voltammetry",
+        "properties": {
+          "x_axis": "Scan rate (mV/s)",
+          "y_axis": "j (mA/cm²)",
+          "figure_label": "f",
+          "extracted_from_image": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+        },
+        "source_image_file": "ce62c4b37d84e5ffa2dd05c1b08c39c8ec2ba639617956323f96e36c08636cc1.jpg"
+      },
+      {
+        "id": "n6",
+        "type": "kpoint",
+        "name": "L",
+        "properties": {
+          "position": "L point in Brillouin zone",
+          "features": "strong Exy peak in lower panel",
+          "extracted_from_image": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+        },
+        "source_image_file": "9767b7724c66c4e4e2ec899f3a6eeedd24b4f5d6314c8dd3c84d409b7c2653d3.jpg"
+      },
+      {
+        "id": "graph",
+        "type": "characterization",
+        "name": "Work Function vs y Plot",
+        "properties": {
+          "description": "Plot of work function (eV) versus y parameter",
+          "x_label": "y",
+          "y_label": "Work Function (eV)",
+          "x_range": [
+            0.0,
+            0.1
+          ],
+          "y_range": [
+            4.2,
+            5.0
+          ],
+          "extracted_from_image": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+        },
+        "source_image_file": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+      },
+      {
+        "id": "y_param",
+        "type": "parameter",
+        "name": "y",
+        "properties": {
+          "description": "Composition parameter y (likely in a solid solution or alloy formula)",
+          "extracted_from_image": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+        },
+        "source_image_file": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+      },
+      {
+        "id": "CuO",
+        "type": "chemical",
+        "name": "CuO",
+        "properties": {
+          "formula": "CuO",
+          "work_function": "~4.6 eV",
+          "extracted_from_image": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+        },
+        "source_image_file": "448571719be36a10481b76854063ad3b8ecd0f0816f20f4e2b433bda496e12a5.jpg"
+      },
+      {
+        "id": "TOF",
+        "type": "metric",
+        "name": "Turnover Frequency",
+        "properties": {
+          "unit": "s⁻¹",
+          "description": "Catalytic activity metric (H₂ site / active site)",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "MoS₂",
+        "type": "chemical",
+        "name": "MoS₂",
+        "properties": {
+          "catalyst_type": "2D material",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "Pt/C",
+        "type": "chemical",
+        "name": "Pt/C",
+        "properties": {
+          "catalyst_type": "supported metal",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "Ni₃S₂",
+        "type": "chemical",
+        "name": "Ni₃S₂",
+        "properties": {
+          "catalyst_type": "sulfide",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "PCM",
+        "type": "chemical",
+        "name": "PCM",
+        "properties": {
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "Ni@C",
+        "type": "chemical",
+        "name": "Ni@C",
+        "properties": {
+          "structure": "core-shell",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "PtP₄",
+        "type": "chemical",
+        "name": "PtP₄",
+        "properties": {
+          "catalyst_type": "phosphide",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "PRu",
+        "type": "chemical",
+        "name": "PRu",
+        "properties": {
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "Ru/C",
+        "type": "chemical",
+        "name": "Ru/C",
+        "properties": {
+          "catalyst_type": "supported metal",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "Ru/C3N4",
+        "type": "chemical",
+        "name": "Ru/C3N4",
+        "properties": {
+          "support": "g-C₃N₄",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "Ru@C",
+        "type": "chemical",
+        "name": "Ru@C",
+        "properties": {
+          "structure": "core-shell",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "FCS",
+        "type": "annotation",
+        "name": "FCS",
+        "properties": {
+          "likely": "Fast Charging Sites or similar",
+          "extracted_from_image": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+        },
+        "source_image_file": "4b72a3d7de0ada7918afca0cbac4f4a7c6554a8224f829af2330cd4489930483.jpg"
+      },
+      {
+        "id": "panel_e",
+        "type": "characterization",
+        "name": "Band Structure Plot",
+        "properties": {
+          "label": "e",
+          "y_axis": "Energy (eV)",
+          "y_range": [
+            -2,
+            2
+          ],
+          "features": [
+            "valence bands (red)",
+            "conduction bands (green)",
+            "Fermi level (dashed line)",
+            "le arrow"
+          ],
+          "extracted_from_image": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+        },
+        "source_image_file": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+      },
+      {
+        "id": "valence_bands",
+        "type": "characterization",
+        "name": "Valence Bands",
+        "properties": {
+          "color": "red",
+          "description": "Curved bands below Fermi level in panel e",
+          "extracted_from_image": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+        },
+        "source_image_file": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+      },
+      {
+        "id": "conduction_bands",
+        "type": "characterization",
+        "name": "Conduction Bands",
+        "properties": {
+          "color": "green",
+          "description": "Curved bands above Fermi level in panel e",
+          "extracted_from_image": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+        },
+        "source_image_file": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+      },
+      {
+        "id": "fermi_level",
+        "type": "characterization",
+        "name": "Fermi Level",
+        "properties": {
+          "description": "Horizontal dashed line at 0 eV in panel e",
+          "extracted_from_image": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+        },
+        "source_image_file": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+      },
+      {
+        "id": "le",
+        "type": "characterization",
+        "name": "Le Point",
+        "properties": {
+          "description": "High-symmetry point marked with arrow in panel e",
+          "extracted_from_image": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+        },
+        "source_image_file": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+      },
+      {
+        "id": "panel_f",
+        "type": "characterization",
+        "name": "Fermi Surface Plot",
+        "properties": {
+          "label": "f",
+          "y_axis": "F_xy",
+          "y_range": [
+            -4,
+            4
+          ],
+          "x_axis": "Γ-X-L-X-Γ",
+          "features": [
+            "Fermi surface cross-sections (red/green peaks)"
+          ],
+          "extracted_from_image": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+        },
+        "source_image_file": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+      },
+      {
+        "id": "fermi_surface",
+        "type": "characterization",
+        "name": "Fermi Surface",
+        "properties": {
+          "description": "Peaks indicating Fermi surface slices along high-symmetry path in panel f",
+          "extracted_from_image": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+        },
+        "source_image_file": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+      },
+      {
+        "id": "brillouin_zone_path",
+        "type": "characterization",
+        "name": "Brillouin Zone Path",
+        "properties": {
+          "path": "Γ-X-L-X-Γ",
+          "description": "High-symmetry k-point path in panel f",
+          "extracted_from_image": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+        },
+        "source_image_file": "4c9316596508fad2d799f9e9644a3edf75b628e81e588635240ed2e8f3f92073.jpg"
+      },
+      {
+        "id": "Zn1",
+        "type": "chemical",
+        "name": "Zn",
+        "properties": {
+          "element": "Zinc",
+          "symbol": "Zn",
+          "position": "upper region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "Zn2",
+        "type": "chemical",
+        "name": "Zn",
+        "properties": {
+          "element": "Zinc",
+          "symbol": "Zn",
+          "position": "middle region",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "W1",
+        "type": "chemical",
+        "name": "W",
+        "properties": {
+          "element": "Tungsten",
+          "symbol": "W",
+          "position": "middle region, dashed line",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "W2",
+        "type": "chemical",
+        "name": "W",
+        "properties": {
+          "element": "Tungsten",
+          "symbol": "W",
+          "position": "lower region, green line",
+          "extracted_from_image": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+        },
+        "source_image_file": "57b0abe0d0d606265957e8d58cad1566a3fe49235be89852660297ca72b6cb5a.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "chemical",
+        "name": "Os",
+        "properties": {
+          "element": "Osmium",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "chemical",
+        "name": "Re",
+        "properties": {
+          "element": "Rhenium",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n10",
+        "type": "chemical",
+        "name": "Bi",
+        "properties": {
+          "element": "Bismuth",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n11",
+        "type": "chemical",
+        "name": "In",
+        "properties": {
+          "element": "Indium",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n12",
+        "type": "chemical",
+        "name": "PtCu",
+        "properties": {
+          "alloy": "Pt-Cu",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chemical",
+        "name": "Pt3Cu",
+        "properties": {
+          "alloy": "Pt3Cu",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n14",
+        "type": "chemical",
+        "name": "PtCu3",
+        "properties": {
+          "alloy": "PtCu3",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n15",
+        "type": "chemical",
+        "name": "HoPt2",
+        "properties": {
+          "compound": "HoPt2",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n16",
+        "type": "chemical",
+        "name": "InRe2",
+        "properties": {
+          "compound": "InRe2",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n17",
+        "type": "chemical",
+        "name": "BiOs",
+        "properties": {
+          "compound": "BiOs",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n18",
+        "type": "characterization",
+        "name": "Experimental Data",
+        "properties": {
+          "source": "references",
+          "symbol": "blue square",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n19",
+        "type": "characterization",
+        "name": "Theoretical Data",
+        "properties": {
+          "source": "references",
+          "symbol": "blue circle",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n20",
+        "type": "characterization",
+        "name": "Our Experimental Data",
+        "properties": {
+          "symbol": "red circle",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n21",
+        "type": "characterization",
+        "name": "Our Theoretical Data",
+        "properties": {
+          "symbol": "red square",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "n22",
+        "type": "chart",
+        "name": "Surface Segregation Plot",
+        "properties": {
+          "x_axis": "y (composition)",
+          "y_axis": "log(J) (10^15 atoms/cm²·Å)",
+          "type": "log-log plot",
+          "extracted_from_image": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+        },
+        "source_image_file": "689f838c4d789a5396fff0501cb101bc37e7b6bd87643a52f500170c2999b5ae.jpg"
+      },
+      {
+        "id": "cv_pt",
+        "type": "characterization",
+        "name": "Pt CV Curve",
+        "properties": {
+          "color": "red",
+          "label": "Pt",
+          "extracted_from_image": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+        },
+        "source_image_file": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+      },
+      {
+        "id": "cv_pd",
+        "type": "characterization",
+        "name": "Pd CV Curve",
+        "properties": {
+          "color": "blue",
+          "label": "Pd",
+          "extracted_from_image": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+        },
+        "source_image_file": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+      },
+      {
+        "id": "cv_au",
+        "type": "characterization",
+        "name": "Au CV Curve",
+        "properties": {
+          "color": "green",
+          "label": "Au",
+          "extracted_from_image": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+        },
+        "source_image_file": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+      },
+      {
+        "id": "pt",
+        "type": "chemical",
+        "name": "Pt",
+        "properties": {
+          "position": "high Y, high log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "pd",
+        "type": "chemical",
+        "name": "Pd",
+        "properties": {
+          "position": "high Y, high log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "au",
+        "type": "chemical",
+        "name": "Au",
+        "properties": {
+          "position": "low Y, medium log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "le_minus",
+        "type": "chemical",
+        "name": "Electron",
+        "properties": {
+          "symbol": "e⁻",
+          "charge": -1,
+          "extracted_from_image": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+        },
+        "source_image_file": "b0cf249d34997373426c0032048590d0e03c38e9645a382dbfb08eab8c3477f3.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_1",
+        "type": "concept",
+        "name": "Surface Contribution",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_2",
+        "type": "concept",
+        "name": "Dangling states",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_3",
+        "type": "concept",
+        "name": "Adsorption energy",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_4",
+        "type": "concept",
+        "name": "Electrical conductivity",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_5",
+        "type": "concept",
+        "name": "Bulk Contribution",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_6",
+        "type": "concept",
+        "name": "Fermi surface",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_7",
+        "type": "concept",
+        "name": "H2",
+        "properties": {
+          "chemical": true,
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_8",
+        "type": "concept",
+        "name": "O2",
+        "properties": {
+          "chemical": true,
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_9",
+        "type": "concept",
+        "name": "Vacuum",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_10",
+        "type": "concept",
+        "name": "Ef",
+        "properties": {
+          "description": "Fermi energy",
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_11",
+        "type": "concept",
+        "name": "LUMO",
+        "properties": {
+          "description": "Lowest Unoccupied Molecular Orbital",
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_12",
+        "type": "concept",
+        "name": "HOMO",
+        "properties": {
+          "description": "Highest Occupied Molecular Orbital",
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_13",
+        "type": "concept",
+        "name": "Doping / impurity",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_14",
+        "type": "concept",
+        "name": "Defects",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_15",
+        "type": "concept",
+        "name": "Carrier mobility",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_16",
+        "type": "concept",
+        "name": "Carrier density",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_17",
+        "type": "concept",
+        "name": "Band entanglement",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_18",
+        "type": "concept",
+        "name": "Topological surface states",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_19",
+        "type": "concept",
+        "name": "Ef",
+        "properties": {
+          "description": "Fermi energy (surface)",
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_20",
+        "type": "concept",
+        "name": "d-band center",
+        "properties": {
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_21",
+        "type": "concept",
+        "name": "dband",
+        "properties": {
+          "description": "d-band",
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06_22",
+        "type": "concept",
+        "name": "Φband",
+        "properties": {
+          "description": "Band potential or work function",
+          "extracted_from_image": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+        },
+        "source_image_file": "ceaf6786554e55e40e8c4778ab5d27abc4cf9ac3567e16514bb3821bc6439d06.jpg"
+      },
+      {
+        "id": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e_1",
+        "type": "publication",
+        "name": "ACS Catalysis",
+        "properties": {
+          "journal": "ACS Catalysis",
+          "issue": "May 2021",
+          "extracted_from_image": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+        },
+        "source_image_file": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+      },
+      {
+        "id": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e_2",
+        "type": "image",
+        "name": "Cover Art",
+        "properties": {
+          "description": "Illustration of hockey players on ice rink",
+          "theme": "sports metaphor for catalysis",
+          "extracted_from_image": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+        },
+        "source_image_file": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+      },
+      {
+        "id": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e_3",
+        "type": "entity",
+        "name": "Hockey Players",
+        "properties": {
+          "count": 8,
+          "colors": [
+            "blue",
+            "red"
+          ],
+          "numbers": [
+            "15",
+            "46"
+          ],
+          "extracted_from_image": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+        },
+        "source_image_file": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+      },
+      {
+        "id": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e_4",
+        "type": "entity",
+        "name": "Ice Rink",
+        "properties": {
+          "features": [
+            "boards",
+            "goal",
+            "face-off circle"
+          ],
+          "extracted_from_image": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+        },
+        "source_image_file": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+      },
+      {
+        "id": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e_5",
+        "type": "entity",
+        "name": "Hockey Sticks",
+        "properties": {
+          "count": 8,
+          "extracted_from_image": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+        },
+        "source_image_file": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+      },
+      {
+        "id": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e_6",
+        "type": "entity",
+        "name": "Puck",
+        "properties": {
+          "visible": false,
+          "extracted_from_image": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+        },
+        "source_image_file": "d645571a234aae25f932126eadcd2a04aa0dd929f9f16efa3070979a6601d00e.jpg"
+      },
+      {
+        "id": "20%PtVC",
+        "type": "chemical",
+        "name": "20% Pt/VC",
+        "properties": {
+          "description": "20% Platinum on Vulcan Carbon catalyst",
+          "extracted_from_image": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+        },
+        "source_image_file": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+      },
+      {
+        "id": "RHE",
+        "type": "reference",
+        "name": "RHE",
+        "properties": {
+          "description": "Reversible Hydrogen Electrode",
+          "extracted_from_image": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+        },
+        "source_image_file": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+      },
+      {
+        "id": "HER",
+        "type": "reaction",
+        "name": "HER",
+        "properties": {
+          "description": "Hydrogen Evolution Reaction",
+          "extracted_from_image": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+        },
+        "source_image_file": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+      },
+      {
+        "id": "TafelPtCu",
+        "type": "characterization",
+        "name": "Tafel Slope PtCu",
+        "properties": {
+          "value": "49.8 mV/dec",
+          "description": "Tafel slope for PtCu",
+          "extracted_from_image": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+        },
+        "source_image_file": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+      },
+      {
+        "id": "Tafel20PtVC",
+        "type": "characterization",
+        "name": "Tafel Slope 20%Pt/VC",
+        "properties": {
+          "value": "27 mV/dec",
+          "description": "Tafel slope for 20% Pt/VC",
+          "extracted_from_image": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+        },
+        "source_image_file": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+      },
+      {
+        "id": "LSV_PtCu",
+        "type": "characterization",
+        "name": "LSV PtCu",
+        "properties": {
+          "description": "Linear Sweep Voltammetry curve for PtCu",
+          "data_type": "red_line",
+          "extracted_from_image": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+        },
+        "source_image_file": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+      },
+      {
+        "id": "LSV_20PtVC",
+        "type": "characterization",
+        "name": "LSV 20%Pt/VC",
+        "properties": {
+          "description": "Linear Sweep Voltammetry curve for 20% Pt/VC",
+          "data_type": "blue_line",
+          "extracted_from_image": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+        },
+        "source_image_file": "e59373d3277d8e7e87329730ceb4196726f27f57e8d1780f4713fe2d404775b6.jpg"
+      },
+      {
+        "id": "agcu",
+        "type": "chemical",
+        "name": "AgCu",
+        "properties": {
+          "position": "low Y, low log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "ir",
+        "type": "chemical",
+        "name": "Ir",
+        "properties": {
+          "position": "medium Y, medium log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "rh",
+        "type": "chemical",
+        "name": "Rh",
+        "properties": {
+          "position": "medium Y, high log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "ptcuwpt",
+        "type": "chemical",
+        "name": "PtCu_w-Pt",
+        "properties": {
+          "position": "high Y, very high log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "ptcu-pt",
+        "type": "chemical",
+        "name": "PtCu-Pt",
+        "properties": {
+          "position": "high Y, highest log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "ru",
+        "type": "chemical",
+        "name": "Ru",
+        "properties": {
+          "position": "high Y, high log(TOF)",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "fe",
+        "type": "chemical",
+        "name": "Fe",
+        "properties": {
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "co",
+        "type": "chemical",
+        "name": "Co",
+        "properties": {
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "ni",
+        "type": "chemical",
+        "name": "Ni",
+        "properties": {
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "tof",
+        "type": "property",
+        "name": "TOF",
+        "properties": {
+          "unit": "10^-2 mA/cm²",
+          "scale": "log",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      },
+      {
+        "id": "y_feature",
+        "type": "property",
+        "name": "Y",
+        "properties": {
+          "description": "Prediction feature",
+          "extracted_from_image": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+        },
+        "source_image_file": "ee12ea487e021aa7b79d08b6e3139c3756f25300914d0258942d070ab0c56a6d.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_Pt7Cu_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Pt7Cu",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt7Cu_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Pt7Cu",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt7Cu_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Pt7Cu",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Pt7Cu_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Pt7Cu",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "source_id": "chem_Pt7Cu",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Pt_C",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Pt_C",
+        "target_id": "LSV_plot",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "chem_Pt7Cu",
+        "target_id": "PtCu_curve",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_Pt_C",
+        "target_id": "20%PVCC_curve",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "chem_Pt_C",
+        "target_id": "20%PVC_curve",
+        "type": "has_curve"
+      },
+      {
+        "source_id": "PtCu_curve",
+        "target_id": "LSV_plot",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "20%PVCC_curve",
+        "target_id": "LSV_plot",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "20%PVC_curve",
+        "target_id": "LSV_plot",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "SG-194",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "SG-225",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "SG-229",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Pt",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Pd",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Re",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Rh",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Ru",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Au",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Ir",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Os",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Cu",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "W",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Mo",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Ti",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Zn",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Ag",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Nb",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Ta",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "Cd",
+        "target_id": "chart",
+        "type": "plotted_in"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_2",
+        "type": "FEATURED_IN"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_2",
+        "type": "FEATURED_IN"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_2",
+        "type": "CHARACTERIZED_BY"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_2",
+        "type": "PEAK_AT"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_2",
+        "type": "PEAK_AT"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "char_2",
+        "type": "PEAK_AT"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "COMPONENT_OF"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "COMPONENT_OF"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "y_param",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Ru",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Re",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Os",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Cd",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Ti",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Zn",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Cu",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Pd",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Pt",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Ag",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "CuO",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Au",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Rh",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "W",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Mo",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Nb",
+        "type": "data_point"
+      },
+      {
+        "source_id": "graph",
+        "target_id": "Ta",
+        "type": "data_point"
+      },
+      {
+        "source_id": "y_param",
+        "target_id": "Ru",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "y_param",
+        "target_id": "Re",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n5",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_3",
+        "type": "magnifies"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_3",
+        "type": "calibrates"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_3",
+        "type": "calibrates"
+      },
+      {
+        "source_id": "MoS₂",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "Pt/C",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "Ni₃S₂",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "PCM",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "Ni@C",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "PtP₄",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "PRu",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "Ru/C",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "Ru/C3N4",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "Ru@C",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "Cu",
+        "target_id": "TOF",
+        "type": "has_metric"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "TOF",
+        "type": "displays"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "MoS₂",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Pt/C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni₃S₂",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "PCM",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ni@C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "PtP₄",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "PRu",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ru/C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ru/C3N4",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ru@C",
+        "type": "compares"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Cu",
+        "type": "compares"
+      },
+      {
+        "source_id": "panel_e",
+        "target_id": "valence_bands",
+        "type": "contains"
+      },
+      {
+        "source_id": "panel_e",
+        "target_id": "conduction_bands",
+        "type": "contains"
+      },
+      {
+        "source_id": "panel_e",
+        "target_id": "fermi_level",
+        "type": "contains"
+      },
+      {
+        "source_id": "panel_e",
+        "target_id": "le",
+        "type": "contains"
+      },
+      {
+        "source_id": "panel_f",
+        "target_id": "fermi_surface",
+        "type": "contains"
+      },
+      {
+        "source_id": "panel_f",
+        "target_id": "brillouin_zone_path",
+        "type": "contains"
+      },
+      {
+        "source_id": "panel_e",
+        "target_id": "panel_f",
+        "type": "complementary"
+      },
+      {
+        "source_id": "fermi_level",
+        "target_id": "fermi_surface",
+        "type": "related"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Re",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ru",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Os",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Zn1",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ti",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Cd",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Zn2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Pd",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Pt",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ag",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Cu",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ir",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Au",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "W1",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Rh",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "W2",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Ta",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Mo",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "Nb",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n5",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n5",
+        "type": "component_of"
+      },
+      {
+        "source_id": "n22",
+        "target_id": "n18",
+        "type": "contains"
+      },
+      {
+        "source_id": "n22",
+        "target_id": "n19",
+        "type": "contains"
+      },
+      {
+        "source_id": "n22",
+        "target_id": "n20",
+        "type": "contains"
+      },
+      {
+        "source_id": "n22",
+        "target_id": "n21",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n6",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n12",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n14",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n15",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n16",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "n17",
+        "target_id": "n22",
+        "type": "plotted"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_3",
+        "type": "has_characterization"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_3",
+        "type": "contains_panel"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "contains_panel"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "shows_kpoint"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n5",
+        "type": "shows_kpoint"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n6",
+        "type": "shows_kpoint"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "char_4",
+        "type": "shows_kpoint"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n6",
+        "type": "shows_kpoint"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "path_through"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n5",
+        "type": "path_through"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "n6",
+        "type": "path_through"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "cv_pt",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "cv_pd",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "cv_au",
+        "type": "contains"
+      },
+      {
+        "source_id": "cv_pt",
+        "target_id": "pt",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "cv_pd",
+        "target_id": "pd",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "cv_au",
+        "target_id": "au",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "le_minus",
+        "type": "involves"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_3",
+        "target_id": "char_4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "contains"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "affects"
+      },
+      {
+        "source_id": "1",
+        "target_id": "13",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "14",
+        "type": "contains"
+      },
+      {
+        "source_id": "1",
+        "target_id": "18",
+        "type": "contains"
+      },
+      {
+        "source_id": "5",
+        "target_id": "4",
+        "type": "affects"
+      },
+      {
+        "source_id": "5",
+        "target_id": "6",
+        "type": "contains"
+      },
+      {
+        "source_id": "9",
+        "target_id": "10",
+        "type": "references"
+      },
+      {
+        "source_id": "9",
+        "target_id": "21",
+        "type": "references"
+      },
+      {
+        "source_id": "9",
+        "target_id": "22",
+        "type": "references"
+      },
+      {
+        "source_id": "11",
+        "target_id": "9",
+        "type": "within"
+      },
+      {
+        "source_id": "12",
+        "target_id": "9",
+        "type": "within"
+      },
+      {
+        "source_id": "14",
+        "target_id": "15",
+        "type": "affects"
+      },
+      {
+        "source_id": "15",
+        "target_id": "16",
+        "type": "related_to"
+      },
+      {
+        "source_id": "17",
+        "target_id": "6",
+        "type": "affects"
+      },
+      {
+        "source_id": "18",
+        "target_id": "19",
+        "type": "references"
+      },
+      {
+        "source_id": "19",
+        "target_id": "20",
+        "type": "related_to"
+      },
+      {
+        "source_id": "7",
+        "target_id": "9",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "8",
+        "target_id": "9",
+        "type": "interacts_with"
+      },
+      {
+        "source_id": "1",
+        "target_id": "2",
+        "type": "features"
+      },
+      {
+        "source_id": "2",
+        "target_id": "3",
+        "type": "depicts"
+      },
+      {
+        "source_id": "2",
+        "target_id": "4",
+        "type": "depicts"
+      },
+      {
+        "source_id": "2",
+        "target_id": "5",
+        "type": "depicts"
+      },
+      {
+        "source_id": "3",
+        "target_id": "4",
+        "type": "located_in"
+      },
+      {
+        "source_id": "3",
+        "target_id": "5",
+        "type": "holds"
+      },
+      {
+        "source_id": "chem_Pt7Cu",
+        "target_id": "HER",
+        "type": "characterized_for"
+      },
+      {
+        "source_id": "20%PtVC",
+        "target_id": "HER",
+        "type": "characterized_for"
+      },
+      {
+        "source_id": "chem_Pt7Cu",
+        "target_id": "LSV_PtCu",
+        "type": "has_data"
+      },
+      {
+        "source_id": "20%PtVC",
+        "target_id": "LSV_20PtVC",
+        "type": "has_data"
+      },
+      {
+        "source_id": "chem_Pt7Cu",
+        "target_id": "TafelPtCu",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "20%PtVC",
+        "target_id": "Tafel20PtVC",
+        "type": "has_tafel_slope"
+      },
+      {
+        "source_id": "LSV_PtCu",
+        "target_id": "RHE",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "LSV_20PtVC",
+        "target_id": "RHE",
+        "type": "vs_reference"
+      },
+      {
+        "source_id": "TafelPtCu",
+        "target_id": "LSV_PtCu",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "Tafel20PtVC",
+        "target_id": "LSV_20PtVC",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "agcu",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "au",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ir",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "rh",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "pd",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ptcuwpt",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ptcu-pt",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ru",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "pt",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "fe",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "co",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "ni",
+        "type": "contains_data_point"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "tof",
+        "type": "measures"
+      },
+      {
+        "source_id": "chart",
+        "target_id": "y_feature",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "agcu",
+        "target_id": "tof",
+        "type": "has_property"
+      },
+      {
+        "source_id": "ptcu-pt",
+        "target_id": "tof",
+        "type": "has_property"
+      }
+    ]
+  }
+}

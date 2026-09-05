@@ -1,0 +1,43 @@
+schema_version: 1
+id: T005
+title: Draft report from accepted claim
+role: synthesis-report
+role_contract: procedures/research-orchestrator/references/roles.md#synthesis-report
+skill: report
+status: approved
+depends_on:
+  - T004
+approval: promote_claim_to_report
+inputs:
+  - artifact_id: scientific-claim
+    min_status: accepted
+can_read:
+  - artifact_type: scientific-claim
+can_write:
+  - artifact_type: docx-report
+cannot:
+  - report non-accepted claims as conclusions
+evidence_packet:
+  - artifact_id: scientific-claim
+    min_status: accepted
+    why: accepted critic-gated conclusion for the report
+outputs_expected:
+  - artifact_id: report-docx
+    type: docx-report
+    path: work/report.docx
+success_criteria:
+  - report uses accepted claims only
+  - limitations and contradictions remain visible
+knowledge_required:
+  - knowledge/scientific-visualization.md
+required_refs:
+  - tools/report/SKILL.md
+  - tools/report/references/validation.md
+required_checks: []
+release_gates:
+  - report-readiness
+execution_policy:
+  mode: single_owner
+  allow_parallel_subagents: false
+assumptions: []
+provenance: []

@@ -1,0 +1,1774 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_Ni(NO3)2_6H2O",
+        "type": "chemical",
+        "name": "Ni(NO3)2·6H2O",
+        "aliases": [
+          "Ni(NO3)2·6H2O"
+        ],
+        "formula": "Ni(NO3)2·6H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_FeCl2_4H2O",
+        "type": "chemical",
+        "name": "FeCl2·4H2O",
+        "aliases": [
+          "FeCl2·4H2O"
+        ],
+        "formula": "FeCl2·4H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_H2O",
+        "type": "chemical",
+        "name": "18.2 MΩ cm water",
+        "aliases": [
+          "water",
+          "ultrapure water"
+        ],
+        "formula": "H2O",
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni_film",
+        "type": "chemical",
+        "name": "NiO_xH_y film",
+        "aliases": [
+          "NiO_xH_y",
+          "pure Ni film",
+          "Ni(OH)2 film"
+        ],
+        "properties": {
+          "domain_size": {
+            "value": "~5",
+            "unit": "nm"
+          },
+          "domain_structure": {
+            "value": "16x16x2 unit cells",
+            "unit": "bilayer"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni95Fe5_film",
+        "type": "chemical",
+        "name": "Ni95Fe5O_xH_y film",
+        "aliases": [
+          "5% Fe continuous film"
+        ],
+        "composition": {
+          "Fe": {
+            "value": 8,
+            "unit": "at%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni90Fe10_film",
+        "type": "chemical",
+        "name": "Ni90Fe10O_xH_y film",
+        "aliases": [
+          "10% Fe continuous film"
+        ],
+        "composition": {
+          "Fe": {
+            "value": 16,
+            "unit": "at%"
+          }
+        },
+        "properties": {}
+      },
+      {
+        "id": "chem_Ni85Fe15_film",
+        "type": "chemical",
+        "name": "Ni85Fe15O_xH_y film",
+        "aliases": [
+          "15% Fe film",
+          "Ni85Fe15O_xH_y"
+        ],
+        "composition": {
+          "Fe": {
+            "value": 23,
+            "unit": "at%"
+          }
+        },
+        "properties": {
+          "domain_size": {
+            "value": "~5",
+            "unit": "nm"
+          },
+          "domain_structure": {
+            "value": "11x11x1 unit cells",
+            "unit": "single-sheet"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni_pulsed_film",
+        "type": "chemical",
+        "name": "pulse-deposited NiO_xH_y film",
+        "aliases": [
+          "NiO_xH_y pulse-deposited"
+        ],
+        "properties": {
+          "domain_size": {
+            "value": "~5",
+            "unit": "nm"
+          },
+          "domain_structure": {
+            "value": "16x16x2 unit cells (5 pulses)",
+            "unit": "bilayer"
+          }
+        }
+      },
+      {
+        "id": "synth_step_1",
+        "type": "synthesis",
+        "name": "Continuous cathodic electrodeposition",
+        "procedure": "The films were cathodically deposited from a 0.1 M solution (total metal basis) prepared by mixing Ni(NO3)2·6H2O (Alfa Aesar) and FeCl2·4H2O (Sigma-Aldrich) in a 100:0, 95:5, 90:10, or 85:15 (mol Ni:mol Fe) ratio in 18.2 MΩ cm water. Continuous depositions from the 5, 10, and 15% Fe solutions resulted in 8, 16, and 23% Fe in the films. The deposition solution was sparged with N2 for 20 min prior to film deposition. All films were deposited at a cathodic current density of -25 mA cm^{-2}. Continuously deposited films were subjected to reducing potentials for 10 s.",
+        "method": "Continuous electrodeposition",
+        "conditions": {
+          "current_density": {
+            "value": -25,
+            "unit": "mA/cm^2"
+          },
+          "reducing_time": {
+            "value": 10,
+            "unit": "s"
+          },
+          "total_metal_concentration": {
+            "value": 0.1,
+            "unit": "M"
+          },
+          "N2_sparging": {
+            "value": 20,
+            "unit": "min"
+          }
+        },
+        "source_text": "2.2. Film Deposition... Continuous depositions from the 5, 10, and 15% Fe solutions resulted in 8, 16, and 23% Fe in the films."
+      },
+      {
+        "id": "synth_step_2",
+        "type": "synthesis",
+        "name": "Pulsed cathodic electrodeposition",
+        "procedure": "Pulse-deposited films from 5% Fe solution resulted in 15% Fe in the films. Pulse-deposited films were subjected to sequential 2 s cathodic current pulses at 25 mA cm^{-2}. Following each pulse, the solution was stirred for 10 s to ensure homogeneity of the deposition solution prior to the next pulse. All pulse-deposited films were synthesized using five cycles unless otherwise noted.",
+        "method": "Pulsed electrodeposition",
+        "conditions": {
+          "current_density": {
+            "value": -25,
+            "unit": "mA/cm^2"
+          },
+          "pulse_duration": {
+            "value": 2,
+            "unit": "s"
+          },
+          "stir_duration": {
+            "value": 10,
+            "unit": "s"
+          },
+          "pulse_cycles": {
+            "value": 5,
+            "unit": "cycles"
+          }
+        },
+        "unit_operations": [
+          {
+            "id": "unit_op_2.1",
+            "name": "Cathodic pulse deposition",
+            "method": "Electrodeposition",
+            "conditions": {
+              "current_density": {
+                "value": -25,
+                "unit": "mA/cm^2"
+              },
+              "duration": {
+                "value": 2,
+                "unit": "s"
+              }
+            },
+            "procedure_snippet": "sequential 2 s cathodic current pulses at 25 mA cm^{-2}"
+          },
+          {
+            "id": "unit_op_2.2",
+            "name": "Solution homogenization",
+            "method": "Stirring",
+            "conditions": {
+              "duration": {
+                "value": 10,
+                "unit": "s"
+              }
+            },
+            "procedure_snippet": "the solution was stirred for 10 s to ensure homogeneity"
+          }
+        ],
+        "source_text": "2.2. Film Deposition... Pulse-deposited films from 5% Fe solution resulted in 15% Fe in the films."
+      },
+      {
+        "id": "synth_step_3",
+        "type": "synthesis",
+        "name": "Film rinsing",
+        "procedure": "All films were briefly dipped into ultrapure water to remove residual metal ions prior to electrochemical testing.",
+        "method": "Water rinse",
+        "conditions": {},
+        "source_text": "All films were briefly dipped into ultrapure water to remove residual metal ions prior to electrochemical testing."
+      },
+      {
+        "id": "chem_Au_Ti_electrode",
+        "type": "chemical",
+        "name": "Au/Ti coated glass electrode",
+        "aliases": [
+          "Au/Ti coated glass slides",
+          "conductive Au-coated electrode substrates"
+        ],
+        "properties": {}
+      },
+      {
+        "id": "chem_N2",
+        "type": "chemical",
+        "name": "N2",
+        "aliases": [
+          "N2"
+        ],
+        "formula": "N2",
+        "properties": {}
+      },
+      {
+        "id": "chem_NiOxHy",
+        "type": "chemical",
+        "name": "NiOxHy",
+        "aliases": [
+          "NiO_xH_y",
+          "Ni(OH)_2"
+        ],
+        "formula": "NiO_xH_y",
+        "properties": {
+          "domain_size": {
+            "value": 5,
+            "unit": "nm"
+          },
+          "Ni-O_bond_length_reduced": {
+            "value": 2.1,
+            "unit": "Å"
+          },
+          "Ni-Ni_bond_length_reduced": {
+            "value": 3.1,
+            "unit": "Å"
+          }
+        },
+        "related_images": [
+          "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "chemical",
+            "name": "Layered Material",
+            "properties": {
+              "features": [
+                "unit_cell",
+                "layering",
+                "domains"
+              ],
+              "extracted_from_image": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+            },
+            "source_image_file": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+          }
+        ]
+      },
+      {
+        "id": "chem_Ni85Fe15OxHy",
+        "type": "chemical",
+        "name": "Ni85Fe15OxHy",
+        "aliases": [
+          "Ni_{85}Fe_{15}O_xH_y"
+        ],
+        "formula": "Ni_{0.85}Fe_{0.15}O_xH_y",
+        "composition": {
+          "Fe": {
+            "value": 15,
+            "unit": "at%"
+          }
+        },
+        "properties": {
+          "domain_size": {
+            "value": 5,
+            "unit": "nm"
+          },
+          "domain_dimensions": {
+            "value": "11×11×1",
+            "unit": "unit cells"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni77Fe23OxHy",
+        "type": "chemical",
+        "name": "Ni77Fe23OxHy",
+        "aliases": [
+          "Ni_{77}Fe_{23}O_xH_y"
+        ],
+        "formula": "Ni_{0.77}Fe_{0.23}O_xH_y",
+        "composition": {
+          "Fe": {
+            "value": 23,
+            "unit": "at%"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni84Fe16OxHy",
+        "type": "chemical",
+        "name": "Ni84Fe16OxHy",
+        "aliases": [
+          "Ni_{84}Fe_{16}O_xH_y"
+        ],
+        "formula": "Ni_{0.84}Fe_{0.16}O_xH_y",
+        "composition": {
+          "Fe": {
+            "value": 16,
+            "unit": "at%"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_input_chem_Ni(NO3)2_6H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni(NO3)2_6H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "ratio": "100:0 to 85:15 mol Ni:Fe"
+        }
+      },
+      {
+        "id": "edge_input_chem_FeCl2_4H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_FeCl2_4H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "precursor",
+          "ratio": "0:100 to 15:85 mol Ni:Fe"
+        }
+      },
+      {
+        "id": "edge_input_chem_H2O_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_H2O",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Ni_film",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Ni_film",
+        "properties": {
+          "form": "as-deposited film"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Ni95Fe5_film",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Ni95Fe5_film",
+        "properties": {
+          "form": "as-deposited film"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Ni90Fe10_film",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Ni90Fe10_film",
+        "properties": {
+          "form": "as-deposited film"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_1_chem_Ni85Fe15_film",
+        "type": "synthesis_output",
+        "source_id": "synth_step_1",
+        "target_id": "chem_Ni85Fe15_film",
+        "properties": {
+          "form": "as-deposited film"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni(NO3)2_6H2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni(NO3)2_6H2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "Fe_content": "5 mol%"
+        }
+      },
+      {
+        "id": "edge_input_chem_FeCl2_4H2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_FeCl2_4H2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "precursor",
+          "Fe_content": "5 mol%"
+        }
+      },
+      {
+        "id": "edge_input_chem_H2O_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_H2O",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "solvent"
+        }
+      },
+      {
+        "id": "edge_output_synth_step_2_chem_Ni_pulsed_film",
+        "type": "synthesis_output",
+        "source_id": "synth_step_2",
+        "target_id": "chem_Ni_pulsed_film",
+        "properties": {
+          "form": "pulse-deposited film"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni_film_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni_film",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "product"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni95Fe5_film_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni95Fe5_film",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "product"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni90Fe10_film_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni90Fe10_film",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "product"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni85Fe15_film_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni85Fe15_film",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "product"
+        }
+      },
+      {
+        "id": "edge_input_chem_Ni_pulsed_film_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_Ni_pulsed_film",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "product"
+        }
+      },
+      {
+        "id": "edge_input_chem_H2O_synth_step_3",
+        "type": "synthesis_input",
+        "source_id": "chem_H2O",
+        "target_id": "synth_step_3",
+        "properties": {
+          "role": "rinse"
+        }
+      },
+      {
+        "id": "edge_input_chem_Au_Ti_electrode_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_Au_Ti_electrode",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_Au_Ti_electrode_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_Au_Ti_electrode",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "substrate"
+        }
+      },
+      {
+        "id": "edge_input_chem_N2_synth_step_1",
+        "type": "synthesis_input",
+        "source_id": "chem_N2",
+        "target_id": "synth_step_1",
+        "properties": {
+          "role": "atmosphere",
+          "sparging_time": "20 min"
+        }
+      },
+      {
+        "id": "edge_input_chem_N2_synth_step_2",
+        "type": "synthesis_input",
+        "source_id": "chem_N2",
+        "target_id": "synth_step_2",
+        "properties": {
+          "role": "atmosphere"
+        }
+      }
+    ],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [],
+    "edges": []
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_NiOxHy",
+        "type": "chemical",
+        "name": "NiOxHy",
+        "aliases": [
+          "NiO_xH_y",
+          "Ni(OH)_2"
+        ],
+        "formula": "NiO_xH_y",
+        "properties": {
+          "domain_size": {
+            "value": 5,
+            "unit": "nm"
+          },
+          "Ni-O_bond_length_reduced": {
+            "value": 2.1,
+            "unit": "Å"
+          },
+          "Ni-Ni_bond_length_reduced": {
+            "value": 3.1,
+            "unit": "Å"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni85Fe15OxHy",
+        "type": "chemical",
+        "name": "Ni85Fe15OxHy",
+        "aliases": [
+          "Ni_{85}Fe_{15}O_xH_y"
+        ],
+        "formula": "Ni_{0.85}Fe_{0.15}O_xH_y",
+        "composition": {
+          "Fe": {
+            "value": 15,
+            "unit": "at%"
+          }
+        },
+        "properties": {
+          "domain_size": {
+            "value": 5,
+            "unit": "nm"
+          },
+          "domain_dimensions": {
+            "value": "11×11×1",
+            "unit": "unit cells"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni77Fe23OxHy",
+        "type": "chemical",
+        "name": "Ni77Fe23OxHy",
+        "aliases": [
+          "Ni_{77}Fe_{23}O_xH_y"
+        ],
+        "formula": "Ni_{0.77}Fe_{0.23}O_xH_y",
+        "composition": {
+          "Fe": {
+            "value": 23,
+            "unit": "at%"
+          }
+        }
+      },
+      {
+        "id": "chem_Ni84Fe16OxHy",
+        "type": "chemical",
+        "name": "Ni84Fe16OxHy",
+        "aliases": [
+          "Ni_{84}Fe_{16}O_xH_y"
+        ],
+        "formula": "Ni_{0.84}Fe_{0.16}O_xH_y",
+        "composition": {
+          "Fe": {
+            "value": 16,
+            "unit": "at%"
+          }
+        }
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "PDF",
+        "data_reported": true,
+        "characterization_summary": "PDF patterns best simulated by brucite-like β-Ni(OH)₂ fragments 1-3 layers thick; NiO_xH_y matches bilayer hydroxide domain (16×16×2 unit cells, ~5 nm); Ni₈₅Fe₁₅O_xH_y best represented by single-sheet domain (11×11×1 unit cells).",
+        "evidence_snippet": "The PDF patterns for Ni_{(1-z)}Fe_zO_xH_y films are best simulated by model structures consisting of brucite-like β-Ni(OH)₂ fragments 1 to 3 layers in thickness... The NiO_xH_y film matches well with a bilayer hydroxide domain. The Ni₈₅Fe₁₅O_xH_y film is best represented by a smaller single-sheet domain.",
+        "related_images": [
+          "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg",
+          "3eefc25f36b120d79d066e7842f955c23e8adcc5b9f019e3be962736a1644261.jpg",
+          "65f58a6b4fb134e3dc3057f5954b141e11a9c506c2babfd264917bf8340a9689.jpg",
+          "6d9d2156c3eb0de65d8980951a0cd9ee85add1eaec39f83d0fde498e10138f28.jpg",
+          "732e8a233485fc1a91aba23001deb1b821ede2fcf73f187e605d19a8ec9c9c6f.jpg",
+          "785481dbd85bfbcbef6f46bf5a3552e86a4636f68ce51ef30b37552962e60460.jpg",
+          "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg",
+          "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg",
+          "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "model",
+            "name": "Single Sheet Model",
+            "properties": {
+              "structure": "monolayer",
+              "extracted_from_image": "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg"
+            },
+            "source_image_file": "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Radial Distribution Function Plot",
+            "properties": {
+              "technique": "PDF (Pair Distribution Function)",
+              "x_axis": "r (Å)",
+              "y_axis": "G(r)",
+              "range_x": "[0, 10]",
+              "peaks_observed": "Multiple peaks around 1.5-3.5 Å and beyond",
+              "extracted_from_image": "3eefc25f36b120d79d066e7842f955c23e8adcc5b9f019e3be962736a1644261.jpg"
+            },
+            "source_image_file": "3eefc25f36b120d79d066e7842f955c23e8adcc5b9f019e3be962736a1644261.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "G(r)",
+            "properties": {
+              "description": "Pair distribution function (PDF) from XRD data",
+              "extracted_from_image": "65f58a6b4fb134e3dc3057f5954b141e11a9c506c2babfd264917bf8340a9689.jpg"
+            },
+            "source_image_file": "65f58a6b4fb134e3dc3057f5954b141e11a9c506c2babfd264917bf8340a9689.jpg"
+          },
+          {
+            "type": "technique",
+            "name": "PDF",
+            "properties": {
+              "full_name": "Pair Distribution Function",
+              "description": "X-ray total scattering analysis technique",
+              "extracted_from_image": "6d9d2156c3eb0de65d8980951a0cd9ee85add1eaec39f83d0fde498e10138f28.jpg"
+            },
+            "source_image_file": "6d9d2156c3eb0de65d8980951a0cd9ee85add1eaec39f83d0fde498e10138f28.jpg"
+          },
+          {
+            "type": "state",
+            "name": "Closed",
+            "properties": {
+              "extracted_from_image": "732e8a233485fc1a91aba23001deb1b821ede2fcf73f187e605d19a8ec9c9c6f.jpg"
+            },
+            "source_image_file": "732e8a233485fc1a91aba23001deb1b821ede2fcf73f187e605d19a8ec9c9c6f.jpg"
+          },
+          {
+            "type": "r_w_value",
+            "name": "0.50",
+            "properties": {
+              "value": 0.5,
+              "extracted_from_image": "785481dbd85bfbcbef6f46bf5a3552e86a4636f68ce51ef30b37552962e60460.jpg"
+            },
+            "source_image_file": "785481dbd85bfbcbef6f46bf5a3552e86a4636f68ce51ef30b37552962e60460.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "G(r) Plot",
+            "properties": {
+              "type": "Pair Distribution Function",
+              "x_label": "r (Å)",
+              "x_range": [
+                0,
+                20
+              ],
+              "y_label": "G(r)",
+              "peaks": [
+                5,
+                10,
+                15
+              ],
+              "extracted_from_image": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+            },
+            "source_image_file": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Experimental Data",
+            "properties": {
+              "color": "black",
+              "description": "Wiggly experimental curve",
+              "extracted_from_image": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+            },
+            "source_image_file": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Simulation 1",
+            "properties": {
+              "color": "red",
+              "description": "Red simulation curve labeled 1",
+              "extracted_from_image": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+            },
+            "source_image_file": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Simulation 2",
+            "properties": {
+              "color": "green",
+              "description": "Green simulation curve labeled 2",
+              "extracted_from_image": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+            },
+            "source_image_file": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Simulation 3",
+            "properties": {
+              "color": "blue",
+              "description": "Blue simulation curve labeled 3",
+              "extracted_from_image": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+            },
+            "source_image_file": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+          },
+          {
+            "type": "bond",
+            "name": "Fe-O",
+            "properties": {
+              "length": "2.05 Å",
+              "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+            },
+            "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "PDF",
+        "data_reported": true,
+        "characterization_summary": "Films cycle between as-deposited, oxidized, and reduced states with minimal loss of intrasheet coherence; oxidation state significantly affects intralayer metal-oxygen bond distance (Ni(Fe)-O: 2.1→1.9 Å; Ni(Fe)-Ni(Fe): 3.1→2.9 Å).",
+        "evidence_snippet": "Films can be cycled between as-deposited, oxidized, and reduced states, with minimal loss of intrasheet coherence... the first shell Ni(Fe)-O shortens from 2.1 to 1.9 Å upon oxidation and is accompanied by a corresponding decrease in the di-μ-oxo-linked Ni(Fe)-Ni(Fe) distance from 3.1 to 2.9 Å.",
+        "related_images": [
+          "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg",
+          "732e8a233485fc1a91aba23001deb1b821ede2fcf73f187e605d19a8ec9c9c6f.jpg",
+          "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Reduced Exp",
+            "properties": {
+              "data": "cyan curve inset",
+              "condition": "reduced",
+              "extracted_from_image": "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg"
+            },
+            "source_image_file": "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Single Sheet Model Fit",
+            "properties": {
+              "data": "green curve inset",
+              "model": "single sheet",
+              "extracted_from_image": "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg"
+            },
+            "source_image_file": "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Bilayer Model Fit",
+            "properties": {
+              "data": "green curve main",
+              "model": "bilayer",
+              "extracted_from_image": "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg"
+            },
+            "source_image_file": "3542fbaac649bc0ef1fc09cf828a62e8e752701db92d3341dfeac144f7722b13.jpg"
+          },
+          {
+            "type": "bond",
+            "name": "M-□",
+            "properties": {
+              "description": "Metal-vacancy bond",
+              "extracted_from_image": "732e8a233485fc1a91aba23001deb1b821ede2fcf73f187e605d19a8ec9c9c6f.jpg"
+            },
+            "source_image_file": "732e8a233485fc1a91aba23001deb1b821ede2fcf73f187e605d19a8ec9c9c6f.jpg"
+          },
+          {
+            "type": "state",
+            "name": "Closed",
+            "properties": {
+              "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+            },
+            "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+          },
+          {
+            "type": "element",
+            "name": "Fe",
+            "properties": {
+              "concentration": "% Fe",
+              "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+            },
+            "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+          },
+          {
+            "type": "chart",
+            "name": "Continuous Bond Length vs %Fe",
+            "properties": {
+              "x_axis": "% Fe (0-23)",
+              "y_axis": "Bond Length (Å)",
+              "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+            },
+            "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "PDF",
+        "data_reported": true,
+        "characterization_summary": "M-O bond length decreases with Fe content in reduced state due to Fe^{3+} substitution; oxidized Ni(Fe)OOH shows increasing M-O and M-O-M bond lengths with Fe content.",
+        "evidence_snippet": "The addition of Fe into Ni(OH)_2 decreases the average M-O bond length, consistent with the substitution of Fe^{3+} onto Ni^{2+} sites in the structure."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "PDF",
+        "data_reported": true,
+        "characterization_summary": "NiO_xH_y domain coherence length decreases with increasing deposition pulses: 5-10 pulses fit bilayer structures, 15-25 pulses fit single sheet structures.",
+        "evidence_snippet": "For example, the NiO_xH_y film prepared with five pulses is best described by a 16×16×2 bilayer model, while the film prepared with 25 pulses is best modeled with a 6×6×1 single layer.",
+        "related_images": [
+          "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg",
+          "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "G(r) Plot",
+            "properties": {
+              "type": "radial distribution function",
+              "x_label": "r",
+              "x_units": "",
+              "y_label": "G(r)",
+              "y_units": "arb. units",
+              "x_range": [
+                0,
+                10
+              ],
+              "extracted_from_image": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+            },
+            "source_image_file": "df61e52cd58de7b7e622176af8fc254ecd536eef26aadb15d289c6e95bcbcafc.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "R-factor vs Domain Dimension Plot",
+            "properties": {
+              "description": "Plot of residual R-factor (green axis) and best fit model (dashed line) versus domain dimension in unit cells",
+              "x_axis": "Domain Dimension (unit cells)",
+              "y_axis": "Rω, Residual Function",
+              "x_range": [
+                4,
+                20
+              ],
+              "y_range": [
+                0.3,
+                0.6
+              ],
+              "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+            },
+            "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "PDF",
+        "data_reported": true,
+        "characterization_summary": "NiO_xH_y film with 5 pulses shows domain heterogeneity: optimal fit uses linear combination including ~30% 5×5 domains and mixture of mono-, bi-, and trilayer 16×16 domains.",
+        "evidence_snippet": "The nearly 30% contribution from the 5×5 model in the optimized fit indicates that smaller domains contribute significantly to the overall pattern."
+      },
+      {
+        "id": "n1",
+        "type": "condition",
+        "name": "Continuous",
+        "properties": {
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      },
+      {
+        "id": "n2",
+        "type": "condition",
+        "name": "Pulsed",
+        "properties": {
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      },
+      {
+        "id": "n3",
+        "type": "bond",
+        "name": "M-O",
+        "properties": {
+          "length": "3.10 Å",
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      },
+      {
+        "id": "n4",
+        "type": "bond",
+        "name": "M-O FWHM",
+        "properties": {
+          "length": "3.05 Å",
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      },
+      {
+        "id": "n5",
+        "type": "bond",
+        "name": "M-O",
+        "properties": {
+          "length": "2.10 Å",
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      },
+      {
+        "id": "c1",
+        "type": "characterization",
+        "name": "R_w Factor Plot",
+        "properties": {
+          "x_axis": "Domain Dimension (unit cells)",
+          "y_axis": "Residual R_w Factor",
+          "extracted_from_image": "149359d338a2a605099c9d19407f4b12a7adb3759acb4212d10ef90a3dfe2956.jpg"
+        },
+        "source_image_file": "149359d338a2a605099c9d19407f4b12a7adb3759acb4212d10ef90a3dfe2956.jpg"
+      },
+      {
+        "id": "c2",
+        "type": "characterization",
+        "name": "Best Fit",
+        "properties": {
+          "style": "dashed line",
+          "extracted_from_image": "149359d338a2a605099c9d19407f4b12a7adb3759acb4212d10ef90a3dfe2956.jpg"
+        },
+        "source_image_file": "149359d338a2a605099c9d19407f4b12a7adb3759acb4212d10ef90a3dfe2956.jpg"
+      },
+      {
+        "id": "n7",
+        "type": "state",
+        "name": "Open",
+        "properties": {
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      },
+      {
+        "id": "n8",
+        "type": "state",
+        "name": "Red",
+        "properties": {
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      },
+      {
+        "id": "n9",
+        "type": "state",
+        "name": "As Dep",
+        "properties": {
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      },
+      {
+        "id": "unit_cell",
+        "type": "structure",
+        "name": "Unit Cell",
+        "properties": {
+          "description": "Schematic of unit cell structure",
+          "peak_position": "~5 Å",
+          "extracted_from_image": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+        },
+        "source_image_file": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+      },
+      {
+        "id": "layering",
+        "type": "structure",
+        "name": "Layering",
+        "properties": {
+          "description": "Stacked layers schematic",
+          "peak_position": "~10 Å",
+          "extracted_from_image": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+        },
+        "source_image_file": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+      },
+      {
+        "id": "domain_size",
+        "type": "structure",
+        "name": "Domain Size",
+        "properties": {
+          "description": "Domain boundaries schematic",
+          "peak_position": "~15 Å",
+          "extracted_from_image": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+        },
+        "source_image_file": "b2bb135ed3407fd7083f06a82ec9e6f6f8561c95a65ece0510854818cda27dd4.jpg"
+      },
+      {
+        "id": "best_fit_model",
+        "type": "model",
+        "name": "Best Fit Model",
+        "properties": {
+          "style": "dashed line",
+          "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        },
+        "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+      },
+      {
+        "id": "domain_6x6x1",
+        "type": "domain_size",
+        "name": "6×6×1",
+        "properties": {
+          "position": "x≈6",
+          "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        },
+        "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+      },
+      {
+        "id": "domain_7x7x1",
+        "type": "domain_size",
+        "name": "7×7×1",
+        "properties": {
+          "position": "x≈7",
+          "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        },
+        "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+      },
+      {
+        "id": "domain_25x",
+        "type": "domain_size",
+        "name": "25×",
+        "properties": {
+          "position": "x≈25 (extrapolated)",
+          "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        },
+        "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+      },
+      {
+        "id": "domain_15x",
+        "type": "domain_size",
+        "name": "15×",
+        "properties": {
+          "position": "x≈15",
+          "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        },
+        "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+      },
+      {
+        "id": "domain_10x",
+        "type": "domain_size",
+        "name": "10×",
+        "properties": {
+          "position": "x≈10",
+          "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        },
+        "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+      },
+      {
+        "id": "domain_12x12x2",
+        "type": "domain_size",
+        "name": "12×12×2",
+        "properties": {
+          "position": "x≈12",
+          "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        },
+        "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+      },
+      {
+        "id": "domain_16x16x2",
+        "type": "domain_size",
+        "name": "16×16×2",
+        "properties": {
+          "position": "x≈16",
+          "extracted_from_image": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+        },
+        "source_image_file": "e0f14af96bc3681ecfd77e6ccd64b9f46704f620d1903d16bf767025f4f7684a.jpg"
+      },
+      {
+        "id": "n13",
+        "type": "chart",
+        "name": "Pulsed Bond Length vs %Fe",
+        "properties": {
+          "x_axis": "% Fe (0-15)",
+          "y_axis": "Bond Length (Å)",
+          "extracted_from_image": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+        },
+        "source_image_file": "f21c0de487af73402306247c1028373c1aa228cb555579bb8c456c32730f8718.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_NiOxHy_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_NiOxHy",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni85Fe15OxHy_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ni85Fe15OxHy",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiOxHy_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_NiOxHy",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni77Fe23OxHy_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ni77Fe23OxHy",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni77Fe23OxHy_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ni77Fe23OxHy",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni84Fe16OxHy_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_Ni84Fe16OxHy",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiOxHy_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_NiOxHy",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_NiOxHy_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_NiOxHy",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni77Fe23OxHy_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_Ni77Fe23OxHy",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Ni84Fe16OxHy_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Ni84Fe16OxHy",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "annotated_in"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "c1",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "c1",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "c1",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "c1",
+        "type": "plotted_as"
+      },
+      {
+        "source_id": "c2",
+        "target_id": "c1",
+        "type": "overlay"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n2",
+        "type": "composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "composition"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "composition"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n9",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_2",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "char_2",
+        "type": "fitted_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n8",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "char_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n1",
+        "type": "state_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n2",
+        "type": "state_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n1",
+        "type": "state_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "state_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "state_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n2",
+        "type": "state_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n4",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n4",
+        "type": "numerator"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "denominator"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n2",
+        "type": "contains"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n3",
+        "type": "contains"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "instance_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_1",
+        "type": "instance_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "derived_from"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "char_1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "char_1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "char_1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "char_1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "plotted_vs"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "plotted_vs"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "plotted_vs"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "plotted_vs"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "plotted_vs"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n8",
+        "type": "uses_scale"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n3",
+        "type": "depends_on"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n1",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n4",
+        "type": "affects"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n1",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n1",
+        "type": "condition_for"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "n9",
+        "target_id": "n1",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n1",
+        "type": "related_to"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n8",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n7",
+        "target_id": "n9",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n7",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n5",
+        "target_id": "n7",
+        "type": "metric"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "n7",
+        "type": "metric"
+      },
+      {
+        "source_id": "n8",
+        "target_id": "n9",
+        "type": "compared_to"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n3",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "n4",
+        "target_id": "n5",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "unit_cell",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "layering",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "domain_size",
+        "type": "corresponds_to"
+      },
+      {
+        "source_id": "chem_NiOxHy",
+        "target_id": "unit_cell",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_NiOxHy",
+        "target_id": "layering",
+        "type": "contains"
+      },
+      {
+        "source_id": "chem_NiOxHy",
+        "target_id": "domain_size",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_1",
+        "target_id": "char_4",
+        "type": "part_of"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "best_fit_model",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "domain_6x6x1",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "domain_7x7x1",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "domain_25x",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "domain_15x",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "domain_10x",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "domain_12x12x2",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_4",
+        "target_id": "domain_16x16x2",
+        "type": "plots"
+      },
+      {
+        "source_id": "best_fit_model",
+        "target_id": "domain_6x6x1",
+        "type": "fits"
+      },
+      {
+        "source_id": "best_fit_model",
+        "target_id": "domain_7x7x1",
+        "type": "fits"
+      },
+      {
+        "source_id": "best_fit_model",
+        "target_id": "domain_25x",
+        "type": "fits"
+      },
+      {
+        "source_id": "best_fit_model",
+        "target_id": "domain_15x",
+        "type": "fits"
+      },
+      {
+        "source_id": "best_fit_model",
+        "target_id": "domain_10x",
+        "type": "fits"
+      },
+      {
+        "source_id": "best_fit_model",
+        "target_id": "domain_12x12x2",
+        "type": "fits"
+      },
+      {
+        "source_id": "best_fit_model",
+        "target_id": "domain_16x16x2",
+        "type": "fits"
+      },
+      {
+        "source_id": "n1",
+        "target_id": "char_2",
+        "type": "has_chart"
+      },
+      {
+        "source_id": "n2",
+        "target_id": "n13",
+        "type": "has_chart"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n3",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n4",
+        "type": "plots"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n7",
+        "type": "contains_state"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n8",
+        "type": "contains_state"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "n9",
+        "type": "contains_state"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "n5",
+        "type": "plots"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "char_1",
+        "type": "plots"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "char_2",
+        "type": "contains_state"
+      },
+      {
+        "source_id": "char_2",
+        "target_id": "char_2",
+        "type": "x_axis"
+      },
+      {
+        "source_id": "n13",
+        "target_id": "char_2",
+        "type": "x_axis"
+      }
+    ]
+  }
+}

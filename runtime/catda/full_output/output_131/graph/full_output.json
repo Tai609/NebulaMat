@@ -1,0 +1,3612 @@
+{
+  "synthesis": {
+    "nodes": [
+      {
+        "id": "chem_CoOx",
+        "type": "chemical",
+        "name": "nano-sized CoOx",
+        "aliases": [
+          "CoOx",
+          "cobalt oxide nanoparticles",
+          "commercial nano-size CoOx"
+        ],
+        "formula": "CoOx",
+        "composition": {
+          "Co": {
+            "value": 2.52,
+            "unit": "oxidation state"
+          }
+        },
+        "properties": {
+          "Co-O bond distance": {
+            "value": 1.91,
+            "unit": "Å"
+          },
+          "bulk averaged Co oxidation state": {
+            "value": 2.52,
+            "unit": "oxidation state"
+          }
+        }
+      },
+      {
+        "id": "chem_Co3O4",
+        "type": "chemical",
+        "name": "Co3O4",
+        "aliases": [
+          "spinel Co3O4",
+          "cobalt spinel oxide"
+        ],
+        "formula": "Co3O4",
+        "properties": {
+          "bulk averaged Co oxidation state": {
+            "value": 2.67,
+            "unit": "oxidation state"
+          }
+        }
+      },
+      {
+        "id": "chem_CoO",
+        "type": "chemical",
+        "name": "CoO",
+        "aliases": [
+          "rocksalt CoO",
+          "cobalt(II) oxide"
+        ],
+        "formula": "CoO"
+      }
+    ],
+    "edges": [],
+    "catalyst_tested_ids": []
+  },
+  "testing": {
+    "nodes": [
+      {
+        "id": "chem_CoOx",
+        "type": "chemical",
+        "name": "nano-sized CoOx",
+        "aliases": [
+          "CoOx",
+          "cobalt oxide nanoparticles",
+          "commercial nano-size CoOx"
+        ],
+        "formula": "CoOx",
+        "composition": {
+          "Co": {
+            "value": 2.52,
+            "unit": "oxidation state"
+          }
+        },
+        "properties": {
+          "bulk_averaged_Co_oxidation_state": {
+            "value": 2.52,
+            "unit": "oxidation state"
+          },
+          "Co-O_bond_distance": {
+            "value": 1.91,
+            "unit": "Å"
+          },
+          "branching_ratio_CoL3_CoL2": {
+            "value": 0.58,
+            "unit": "dimensionless"
+          }
+        }
+      },
+      {
+        "id": "test_1",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "OER performance in alkaline electrolyte (0.1 M KOH)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Au mesh",
+            "unit": "electrode"
+          },
+          "catalyst_loading": {
+            "value": 0.1,
+            "unit": "mg/cm²"
+          },
+          "rotating_speed": {
+            "value": 1600,
+            "unit": "rpm"
+          },
+          "scan_rate_CV": {
+            "value": 200,
+            "unit": "mV/s"
+          },
+          "measurement_technique": {
+            "value": "chronoamperometry",
+            "unit": "electrochemical"
+          }
+        },
+        "results_json": {
+          "overpotential_at_20_mA/g": {
+            "value": 376,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 46.2,
+            "unit": "mV/dec"
+          },
+          "formal_potential_CoII/III": {
+            "value": 0.58,
+            "unit": "V vs RHE"
+          },
+          "formal_potential_CoIII/IV": {
+            "value": 1.23,
+            "unit": "V vs RHE"
+          },
+          "flat_band_potential": {
+            "value": 0.58,
+            "unit": "V vs RHE"
+          },
+          "charge_transferred_redox_area": {
+            "value": 1.5,
+            "unit": "relative_to_acidic"
+          }
+        },
+        "source_text": "The overpotentials at a mass current density of 20 A g−1 (η20) are 376, 531 and 500 mV in alkaline, neutral and acidic electrolytes, respectively. Tafel plots were derived from OER polarization curves to show that Tafel slopes increase from 46.2 ± 0.6 to 64.5 ± 1.6 to 67.3 ± 0.8 mV·dec−1 in alkaline, acidic and neutral electrolytes, respectively."
+      },
+      {
+        "id": "test_2",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "OER performance in neutral electrolyte (0.1 M phosphate buffer)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M phosphate buffer",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgSO4",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Au mesh",
+            "unit": "electrode"
+          },
+          "catalyst_loading": {
+            "value": 0.1,
+            "unit": "mg/cm²"
+          },
+          "rotating_speed": {
+            "value": 1600,
+            "unit": "rpm"
+          },
+          "scan_rate_CV": {
+            "value": 200,
+            "unit": "mV/s"
+          },
+          "measurement_technique": {
+            "value": "chronoamperometry",
+            "unit": "electrochemical"
+          }
+        },
+        "results_json": {
+          "overpotential_at_20_mA/g": {
+            "value": 531,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 67.3,
+            "unit": "mV/dec"
+          },
+          "formal_potential_CoII/III": {
+            "value": 0.78,
+            "unit": "V vs RHE"
+          },
+          "formal_potential_CoIII/IV": {
+            "value": 1.38,
+            "unit": "V vs RHE"
+          },
+          "flat_band_potential": {
+            "value": 0.78,
+            "unit": "V vs RHE"
+          },
+          "delta_V2": {
+            "value": 195,
+            "unit": "mV"
+          }
+        },
+        "source_text": "The overpotentials at a mass current density of 20 A g−1 (η20) are 376, 531 and 500 mV in alkaline, neutral and acidic electrolytes, respectively. Tafel slopes increase from 46.2 ± 0.6 to 64.5 ± 1.6 to 67.3 ± 0.8 mV·dec−1 in alkaline, acidic and neutral electrolytes, respectively."
+      },
+      {
+        "id": "test_3",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "OER performance in acidic electrolyte (0.05 M H2SO4)",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 1,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgSO4",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Au mesh",
+            "unit": "electrode"
+          },
+          "catalyst_loading": {
+            "value": 0.1,
+            "unit": "mg/cm²"
+          },
+          "rotating_speed": {
+            "value": 1600,
+            "unit": "rpm"
+          },
+          "scan_rate_CV": {
+            "value": 200,
+            "unit": "mV/s"
+          },
+          "measurement_technique": {
+            "value": "chronoamperometry",
+            "unit": "electrochemical"
+          }
+        },
+        "results_json": {
+          "overpotential_at_20_mA/g": {
+            "value": 500,
+            "unit": "mV"
+          },
+          "Tafel_slope": {
+            "value": 64.5,
+            "unit": "mV/dec"
+          },
+          "formal_potential_CoII/III": {
+            "value": 0.28,
+            "unit": "V vs RHE"
+          },
+          "formal_potential_CoIII/IV": {
+            "value": 1.08,
+            "unit": "V vs RHE"
+          },
+          "flat_band_potential": {
+            "value": 0.28,
+            "unit": "V vs RHE"
+          },
+          "delta_V2": {
+            "value": 115,
+            "unit": "mV"
+          },
+          "stability_number": {
+            "value": 59,
+            "unit": "dimensionless"
+          }
+        },
+        "source_text": "The overpotentials at a mass current density of 20 A g−1 (η20) are 376, 531 and 500 mV in alkaline, neutral and acidic electrolytes, respectively. The stability number is calculated to be ~59 in acidic electrolyte, comparable to those of other Co-based catalysts."
+      },
+      {
+        "id": "test_4",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Operando hXAS characterization during CV measurement in alkaline electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "flow cell",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon black on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "working_electrode": {
+            "value": "nano CoOx sprayed on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "catalyst_mass_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "potential_window": {
+            "value": "1.0 to 1.6",
+            "unit": "V vs RHE"
+          },
+          "CV_cycles": {
+            "value": 3,
+            "unit": "cycles"
+          },
+          "measurement_technique": {
+            "value": "operando hXAS during CV",
+            "unit": "spectroscopic"
+          }
+        },
+        "results_json": {
+          "delta_E_edge_first_cycle_maximum": {
+            "value": 94,
+            "unit": "meV"
+          },
+          "delta_E_edge_first_cycle_minimum": {
+            "value": 52,
+            "unit": "meV"
+          },
+          "irreversible_delta_E_edge": {
+            "value": "increases with CV cycles",
+            "unit": "qualitative"
+          }
+        },
+        "source_text": "The irreversible ΔEedge increases with CV cycles in all pH environments, indicating the reconstructed (hydr)oxide layers become thicker during the operating time. The reconstruction process is clearly pH dependent, since the ΔEedge increases to 94 meV and decreases to 52 meV in the first cycle in the alkaline environment."
+      },
+      {
+        "id": "test_5",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Operando hXAS characterization during CV measurement in neutral electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M phosphate buffer",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "flow cell",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon black on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "working_electrode": {
+            "value": "nano CoOx sprayed on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "catalyst_mass_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "potential_window": {
+            "value": "1.1 to 1.72",
+            "unit": "V vs RHE"
+          },
+          "CV_cycles": {
+            "value": 3,
+            "unit": "cycles"
+          },
+          "measurement_technique": {
+            "value": "operando hXAS during CV",
+            "unit": "spectroscopic"
+          }
+        },
+        "results_json": {
+          "delta_E_edge_first_cycle_maximum": {
+            "value": 50,
+            "unit": "meV"
+          },
+          "delta_E_edge_first_cycle_minimum": {
+            "value": 28,
+            "unit": "meV"
+          },
+          "irreversible_delta_E_edge": {
+            "value": "increases with CV cycles",
+            "unit": "qualitative"
+          }
+        },
+        "source_text": "The reconstruction process is clearly pH dependent, since the ΔEedge increases to 94 meV and decreases to 52 meV in the first cycle in the alkaline environment, while the corresponding extrema are 50 and 28 meV in neutral electrolyte."
+      },
+      {
+        "id": "test_6",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Operando hXAS characterization during CV measurement in acidic electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 1,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "flow cell",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon black on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "working_electrode": {
+            "value": "nano CoOx sprayed on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "catalyst_mass_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "scan_rate": {
+            "value": 2,
+            "unit": "mV/s"
+          },
+          "potential_window": {
+            "value": "1.1 to 1.8",
+            "unit": "V vs RHE"
+          },
+          "CV_cycles": {
+            "value": 3,
+            "unit": "cycles"
+          },
+          "measurement_technique": {
+            "value": "operando hXAS during CV",
+            "unit": "spectroscopic"
+          }
+        },
+        "results_json": {
+          "delta_E_edge_first_cycle_maximum": {
+            "value": 65,
+            "unit": "meV"
+          },
+          "delta_E_edge_first_cycle_minimum": {
+            "value": 60,
+            "unit": "meV"
+          },
+          "irreversible_delta_E_edge": {
+            "value": "increases with CV cycles",
+            "unit": "qualitative"
+          }
+        },
+        "source_text": "The reconstruction process is clearly pH dependent, since the ΔEedge increases to 94 meV and decreases to 52 meV in the first cycle in the alkaline environment, while the corresponding extrema are 50 and 28 meV in neutral electrolyte, and 65 and 60 meV in acidic electrolyte."
+      },
+      {
+        "id": "test_7",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Operando hXAS characterization during chronopotentiometry in alkaline electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "flow cell",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon black on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "working_electrode": {
+            "value": "nano CoOx sprayed on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "catalyst_mass_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "measurement_technique": {
+            "value": "operando hXAS during chronopotentiometry",
+            "unit": "spectroscopic"
+          },
+          "duration_per_current_step": {
+            "value": 60,
+            "unit": "s"
+          }
+        },
+        "results_json": {
+          "delta_E_edge_vs_log_current_slope": {
+            "value": "comparable to acidic",
+            "unit": "qualitative"
+          },
+          "delta_E_edge_before_CoIII/IV_redox": {
+            "value": 60,
+            "unit": "meV"
+          },
+          "delta_E_edge_growth_after_CoIII/IV": {
+            "value": "pseudo-exponential",
+            "unit": "qualitative"
+          }
+        },
+        "source_text": "The"
+      },
+      {
+        "id": "test_8",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Operando hXAS characterization during chronopotentiometry in neutral electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M phosphate buffer",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "flow cell",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon black on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "working_electrode": {
+            "value": "nano CoOx sprayed on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "catalyst_mass_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "measurement_technique": {
+            "value": "operando hXAS during chronopotentiometry",
+            "unit": "spectroscopic"
+          },
+          "duration_per_current_step": {
+            "value": 60,
+            "unit": "s"
+          }
+        },
+        "results_json": {
+          "delta_E_edge_vs_log_current_slope": {
+            "value": "smallest among pH regimes",
+            "unit": "qualitative"
+          },
+          "delta_E_edge_before_CoIII/IV_redox": {
+            "value": 5,
+            "unit": "meV"
+          },
+          "delta_E_edge_growth_after_CoIII/IV": {
+            "value": "linear with slope ~196",
+            "unit": "mV/V"
+          }
+        },
+        "source_text": "The linear fit of the slope (at i ≥ 0.1 mA) yields the change in ΔEedge when the OER current increases by one order of magnitude, which is comparable in alkaline and acidic electrolytes but smaller in the neutral electrolyte. The slowest accumulation of oxidized Co species following CoIII/IV redox, which is a function of OER current or applied potential, represents an important parameter to consider in explaining the lowest OER activity and the largest ΔV2 (195 mV in Fig. 2d) in a neutral environment."
+      },
+      {
+        "id": "test_9",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Operando hXAS characterization during chronopotentiometry in acidic electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 1,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "flow cell",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Ag/AgCl",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "carbon black on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "working_electrode": {
+            "value": "nano CoOx sprayed on Au-coated Kapton",
+            "unit": "electrode"
+          },
+          "catalyst_mass_loading": {
+            "value": 2,
+            "unit": "mg/cm²"
+          },
+          "measurement_technique": {
+            "value": "operando hXAS during chronopotentiometry",
+            "unit": "spectroscopic"
+          },
+          "duration_per_current_step": {
+            "value": 60,
+            "unit": "s"
+          }
+        },
+        "results_json": {
+          "delta_E_edge_vs_log_current_slope": {
+            "value": "comparable to alkaline",
+            "unit": "qualitative"
+          },
+          "delta_E_edge_before_CoIII/IV_redox": {
+            "value": 30,
+            "unit": "meV"
+          },
+          "delta_E_edge_growth_after_CoIII/IV": {
+            "value": "pseudo-exponential with ~80 meV increase per 0.12 V",
+            "unit": "meV/V"
+          }
+        },
+        "source_text": "The linear fit of the slope (at i ≥ 0.1 mA) yields the change in ΔEedge when the OER current increases by one order of magnitude, which is comparable in alkaline and acidic electrolytes but smaller in the neutral electrolyte. Following the CoIII/IV formal potentials, the ΔEedge in alkaline and acidic electrolytes grows pseudo-exponentially, with a comparable increase of ~80 meV in ΔEedge when the applied potential increases by 0.12 V."
+      },
+      {
+        "id": "test_10",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Mott-Schottky characterization in alkaline electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "measurement_technique": {
+            "value": "Staircase Potentio Electrochemical Impedance Spectroscopy",
+            "unit": "electrochemical"
+          },
+          "potential_window": {
+            "value": "0.8 to 1.7",
+            "unit": "V vs RHE"
+          },
+          "frequency_range": {
+            "value": "100 kHz to 1 Hz",
+            "unit": "frequency"
+          }
+        },
+        "results_json": {
+          "flat_band_potential": {
+            "value": 0.58,
+            "unit": "V vs RHE"
+          },
+          "Mott_Schottky_slope": {
+            "value": "negative",
+            "unit": "qualitative"
+          },
+          "semiconductor_type": {
+            "value": "p-type",
+            "unit": "qualitative"
+          },
+          "interfacial_capacitance_increase": {
+            "value": "one order of magnitude",
+            "unit": "after Vfb"
+          }
+        },
+        "source_text": "The Cs−2 value extracted at different frequencies decreases with potential to give a negative Mott–Schottky slope for all interfaces, indicating that the surface-reconstructed catalyst behaves as a p-type semiconductor. The interfacial capacitances extracted by a CV method increase by around one order of magnitude in all the electrolytes after the Vfb."
+      },
+      {
+        "id": "test_11",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Mott-Schottky characterization in neutral electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M phosphate buffer",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "measurement_technique": {
+            "value": "Staircase Potentio Electrochemical Impedance Spectroscopy",
+            "unit": "electrochemical"
+          },
+          "potential_window": {
+            "value": "0.8 to 1.8",
+            "unit": "V vs RHE"
+          },
+          "frequency_range": {
+            "value": "100 kHz to 1 Hz",
+            "unit": "frequency"
+          }
+        },
+        "results_json": {
+          "flat_band_potential": {
+            "value": 0.78,
+            "unit": "V vs RHE"
+          },
+          "Mott_Schottky_slope": {
+            "value": "negative",
+            "unit": "qualitative"
+          },
+          "semiconductor_type": {
+            "value": "p-type",
+            "unit": "qualitative"
+          },
+          "interfacial_capacitance_increase": {
+            "value": "one order of magnitude",
+            "unit": "after Vfb"
+          }
+        },
+        "source_text": "The Cs−2 value extracted at different frequencies decreases with potential to give a negative Mott–Schottky slope for all interfaces, indicating that the surface-reconstructed catalyst behaves as a p-type semiconductor. The interfacial capacitances extracted by a CV method increase by around one order of magnitude in all the electrolytes after the Vfb."
+      },
+      {
+        "id": "test_12",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Mott-Schottky characterization in acidic electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "OER",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 1,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "measurement_technique": {
+            "value": "Staircase Potentio Electrochemical Impedance Spectroscopy",
+            "unit": "electrochemical"
+          },
+          "potential_window": {
+            "value": "0.8 to 1.7",
+            "unit": "V vs RHE"
+          },
+          "frequency_range": {
+            "value": "100 kHz to 1 Hz",
+            "unit": "frequency"
+          }
+        },
+        "results_json": {
+          "flat_band_potential": {
+            "value": 0.28,
+            "unit": "V vs RHE"
+          },
+          "Mott_Schottky_slope": {
+            "value": "negative",
+            "unit": "qualitative"
+          },
+          "semiconductor_type": {
+            "value": "p-type",
+            "unit": "qualitative"
+          },
+          "interfacial_capacitance_increase": {
+            "value": "one order of magnitude",
+            "unit": "after Vfb"
+          }
+        },
+        "source_text": "The Cs−2 value extracted at different frequencies decreases with potential to give a negative Mott–Schottky slope for all interfaces, indicating that the surface-reconstructed catalyst behaves as a p-type semiconductor. The interfacial capacitances extracted by a CV method increase by around one order of magnitude in all the electrolytes after the Vfb."
+      },
+      {
+        "id": "test_13",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Cyclic voltammetry for Co redox dynamics in alkaline electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Co redox characterization",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M KOH",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 13,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgO",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Au mesh",
+            "unit": "electrode"
+          },
+          "catalyst_loading": {
+            "value": 0.1,
+            "unit": "mg/cm²"
+          },
+          "scan_rate_range": {
+            "value": "200 to 10",
+            "unit": "mV/s"
+          },
+          "measurement_technique": {
+            "value": "cyclic voltammetry",
+            "unit": "electrochemical"
+          }
+        },
+        "results_json": {
+          "CoII/III_formal_potential": {
+            "value": 0.58,
+            "unit": "V vs RHE"
+          },
+          "CoIII/IV_formal_potential": {
+            "value": 1.23,
+            "unit": "V vs RHE"
+          },
+          "redox_peak_separation_CoIII/IV": {
+            "value": "smallest",
+            "unit": "qualitative"
+          },
+          "charge_transferred_relative": {
+            "value": 1.5,
+            "unit": "relative_to_acidic"
+          }
+        },
+        "source_text": "Cyclic voltammetry (CV) measurements conducted at different scan rates showcase the Co redox dynamics at different interfaces. The two pairs of redox peaks (anodic and cathodic) appearing from low to high applied potential are assigned to CoII/III (Vpa1 and Vpc1) and CoIII/IV (Vpa2 and Vpc2) transitions. Charge transferred during these two redox processes is reflected in the integrated CV area, which is approximately ×1.5 greater in the alkaline electrolyte than in the acidic and neutral electrolytes."
+      },
+      {
+        "id": "test_14",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Cyclic voltammetry for Co redox dynamics in neutral electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Co redox characterization",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.1 M phosphate buffer",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 7,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgSO4",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Au mesh",
+            "unit": "electrode"
+          },
+          "catalyst_loading": {
+            "value": 0.1,
+            "unit": "mg/cm²"
+          },
+          "scan_rate_range": {
+            "value": "200 to 10",
+            "unit": "mV/s"
+          },
+          "measurement_technique": {
+            "value": "cyclic voltammetry",
+            "unit": "electrochemical"
+          }
+        },
+        "results_json": {
+          "CoII/III_formal_potential": {
+            "value": 0.78,
+            "unit": "V vs RHE"
+          },
+          "CoIII/IV_formal_potential": {
+            "value": 1.38,
+            "unit": "V vs RHE"
+          },
+          "redox_peak_separation_CoIII/IV": {
+            "value": "largest",
+            "unit": "qualitative"
+          },
+          "charge_transferred_relative": {
+            "value": 0.67,
+            "unit": "relative_to_alkaline"
+          }
+        },
+        "source_text": "The separation between the Vpa2 and Vpc2 of CoIII/IV redox is the largest in a neutral electrolyte, indicating that CoIII/IV redox is electrochemically less reversible due to the slow interfacial electron transfer."
+      },
+      {
+        "id": "test_15",
+        "type": "testing",
+        "catalyst_id": "chem_CoOx",
+        "description": "Cyclic voltammetry for Co redox dynamics in acidic electrolyte",
+        "conditions_json": {
+          "reaction_type": {
+            "value": "Co redox characterization",
+            "unit": "electrochemical"
+          },
+          "electrolyte": {
+            "value": "0.05 M H2SO4",
+            "unit": "solution"
+          },
+          "pH": {
+            "value": 1,
+            "unit": "pH"
+          },
+          "cell_configuration": {
+            "value": "rotating disc electrode",
+            "unit": "setup"
+          },
+          "reference_electrode": {
+            "value": "Hg/HgSO4",
+            "unit": "electrode"
+          },
+          "counter_electrode": {
+            "value": "Au mesh",
+            "unit": "electrode"
+          },
+          "catalyst_loading": {
+            "value": 0.1,
+            "unit": "mg/cm²"
+          },
+          "scan_rate_range": {
+            "value": "200 to 10",
+            "unit": "mV/s"
+          },
+          "measurement_technique": {
+            "value": "cyclic voltammetry",
+            "unit": "electrochemical"
+          }
+        },
+        "results_json": {
+          "CoII/III_formal_potential": {
+            "value": 0.28,
+            "unit": "V vs RHE"
+          },
+          "CoIII/IV_formal_potential": {
+            "value": 1.08,
+            "unit": "V vs RHE"
+          },
+          "redox_peak_separation_CoIII/IV": {
+            "value": "intermediate",
+            "unit": "qualitative"
+          },
+          "charge_transferred_relative": {
+            "value": 0.67,
+            "unit": "relative_to_alkaline"
+          }
+        },
+        "source_text": "Cyclic voltammetry (CV) measurements conducted at different scan rates showcase the Co redox dynamics at different interfaces. The two pairs of redox peaks (anodic and cathodic) appearing from low to high applied potential are assigned to CoII/III (Vpa1 and"
+      }
+    ],
+    "edges": []
+  },
+  "characterization": {
+    "nodes": [
+      {
+        "id": "chem_CoOx",
+        "type": "chemical",
+        "name": "nano-sized CoOx",
+        "aliases": [
+          "CoOx",
+          "cobalt oxide nanoparticles",
+          "commercial nano-size CoOx"
+        ],
+        "formula": "CoOx",
+        "composition": {
+          "Co": {
+            "value": 2.52,
+            "unit": "oxidation state"
+          }
+        },
+        "properties": {
+          "Co-O bond distance": {
+            "value": 1.91,
+            "unit": "Å"
+          },
+          "bulk averaged Co oxidation state": {
+            "value": 2.52,
+            "unit": "oxidation state"
+          }
+        }
+      },
+      {
+        "id": "chem_Co3O4",
+        "type": "chemical",
+        "name": "Co3O4",
+        "aliases": [
+          "spinel Co3O4",
+          "cobalt spinel oxide"
+        ],
+        "formula": "Co3O4",
+        "properties": {
+          "bulk averaged Co oxidation state": {
+            "value": 2.67,
+            "unit": "oxidation state"
+          }
+        }
+      },
+      {
+        "id": "chem_CoO",
+        "type": "chemical",
+        "name": "CoO",
+        "aliases": [
+          "rocksalt CoO",
+          "cobalt(II) oxide"
+        ],
+        "formula": "CoO"
+      },
+      {
+        "id": "char_1",
+        "type": "characterization",
+        "method_name": "XRD",
+        "is_reported": true,
+        "characterization_summary": "Nano-sized CoOx is composed primarily of spinel Co3O4 with a minor rocksalt CoO component.",
+        "evidence_snippet": "Nano-sized CoOx is composed primarily of spinel Co3O4 with a minor rocksalt CoO component (Supplementary Figs. 1 and 2)."
+      },
+      {
+        "id": "char_2",
+        "type": "characterization",
+        "method_name": "hXAS",
+        "is_reported": true,
+        "characterization_summary": "Ex situ hard X-ray absorption spectroscopy characterization of nano CoOx shows bulk averaged Co oxidation state of around 2.52+, close to 2.67+ for the Co3O4 reference.",
+        "evidence_snippet": "Ex situ hXAS and soft X-ray absorption spectroscopy (sXAS) characterizations were performed to compare the bulk and surface oxidation states of nano CoOx catalyst to those of commercial Co3O4 and CoO references. The bulk averaged Co oxidation state of nano CoOx is around 2.52+, close to 2.67+ for the Co3O4 reference (Supplementary Fig. 3)."
+      },
+      {
+        "id": "char_3",
+        "type": "characterization",
+        "method_name": "EXAFS",
+        "is_reported": true,
+        "characterization_summary": "Fourier-transformed extended X-ray absorption fine-structure spectrum of nano-sized CoOx shows three representative scattering contributions of the spinel structure, with a Co–O distance of ~1.91 Å.",
+        "evidence_snippet": "The corresponding Fourier-transformed extended X-ray absorption fine-structure (EXAFS) spectrum of nano-sized CoOx shows three representative scattering contributions of the spinel structure, with a Co–O of ~1.91 Å (Supplementary Table 1)."
+      },
+      {
+        "id": "char_4",
+        "type": "characterization",
+        "method_name": "sXAS",
+        "is_reported": true,
+        "characterization_summary": "Surface-sensitive Co L3 spectra show coexistence of CoIII species and CoII species. Branching ratios of Co L3 and Co L2 edges calculated to be 0.58, indicating Co is in low-spin state. O K-edge spectra dominated by low-spin CoIII features.",
+        "evidence_snippet": "Surface-sensitive Co L3 spectra show the coexistence of CoIII species and CoII species (Supplementary Fig. 4). The existence of low-spin CoIII is essential to ensure good OER performance in acidic environments. Accordingly, the branching ratios of Co L3 and Co L2 L2 edges were calculated to be 0.58 (Supplementary Table 2), suggesting that Co is in the low-spin state. The O K-edge spectra of nano-sized CoOx is dominated by the low-spin CoIII features in the region related to the Co 3d band."
+      },
+      {
+        "id": "char_5",
+        "type": "characterization",
+        "method_name": "CV",
+        "is_reported": true,
+        "characterization_summary": "Cyclic voltammetry measurements at different scan rates showcase Co redox dynamics at different interfaces. Two pairs of redox peaks are assigned to CoII/III and CoIII/IV transitions. Charge transferred during these two redox processes is approximately 1.5 times greater in the alkaline electrolyte than in the acidic and neutral electrolytes.",
+        "evidence_snippet": "Cyclic voltammetry (CV) measurements conducted at different scan rates showcase the Co redox dynamics at different interfaces (Fig. 2a and Supplementary Figs. 5 and 6). The two pairs of redox peaks (anodic and cathodic) appearing from low to high applied potential are assigned to CoII/III (Vpa1 and Vpc1) and CoIII/IV (Vpa2 and Vpc2) transitions. Charge transferred during these two redox processes is reflected in the integrated CV area, which is approximately ×1.5 greater in the alkaline electrolyte than in the acidic and neutral electrolytes.",
+        "related_images": [
+          "289c200495df120f2695ae101172ac8c5a53cd9b49418150354bf2fe6f20fe8d.jpg",
+          "43b6adddb584729896f4e82516b3e2061489ae22136942d9bcb28c4e72e28bf7.jpg",
+          "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg",
+          "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Electrochemical Performance Plot",
+            "properties": {
+              "x_axis": "log[i] (mA)",
+              "y_axis": "ΔE_g (mV)",
+              "description": "Tafel-like plot showing electrochemical behavior across different pH conditions",
+              "extracted_from_image": "289c200495df120f2695ae101172ac8c5a53cd9b49418150354bf2fe6f20fe8d.jpg"
+            },
+            "source_image_file": "289c200495df120f2695ae101172ac8c5a53cd9b49418150354bf2fe6f20fe8d.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry - Alkaline",
+            "properties": {
+              "pH_condition": "Alkaline",
+              "scan_rate_range": "200-10 mV s⁻¹",
+              "x_axis": "V - iR versus RHE (V)",
+              "y_axis": "Current density (A g⁻¹)",
+              "voltage_range": "1.0-1.8 V",
+              "extracted_from_image": "43b6adddb584729896f4e82516b3e2061489ae22136942d9bcb28c4e72e28bf7.jpg"
+            },
+            "source_image_file": "43b6adddb584729896f4e82516b3e2061489ae22136942d9bcb28c4e72e28bf7.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry - Neutral",
+            "properties": {
+              "pH_condition": "Neutral",
+              "scan_rate_range": "200-10 mV s⁻¹",
+              "x_axis": "V - iR versus RHE (V)",
+              "y_axis": "Current density (A g⁻¹)",
+              "voltage_range": "1.0-1.8 V",
+              "extracted_from_image": "43b6adddb584729896f4e82516b3e2061489ae22136942d9bcb28c4e72e28bf7.jpg"
+            },
+            "source_image_file": "43b6adddb584729896f4e82516b3e2061489ae22136942d9bcb28c4e72e28bf7.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry - Acidic",
+            "properties": {
+              "pH_condition": "Acidic",
+              "scan_rate_range": "200-10 mV s⁻¹",
+              "x_axis": "V - iR versus RHE (V)",
+              "y_axis": "Current density (A g⁻¹)",
+              "voltage_range": "1.0-1.8 V",
+              "extracted_from_image": "43b6adddb584729896f4e82516b3e2061489ae22136942d9bcb28c4e72e28bf7.jpg"
+            },
+            "source_image_file": "43b6adddb584729896f4e82516b3e2061489ae22136942d9bcb28c4e72e28bf7.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry (CV) Plot",
+            "properties": {
+              "technique": "Electrochemistry",
+              "x_axis": "V - iR versus RHE (V)",
+              "y_axis": "Current density (A g⁻¹)",
+              "x_range": "1.0 - 1.8 V",
+              "y_range": "-40 to 20 A g⁻¹",
+              "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+            },
+            "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Alkaline Condition CV Curve",
+            "properties": {
+              "pH_condition": "Alkaline",
+              "color": "blue",
+              "features": [
+                "Vpa1",
+                "Vpa2",
+                "Vpc1",
+                "Vpc2"
+              ],
+              "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+            },
+            "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Neutral Condition CV Curve",
+            "properties": {
+              "pH_condition": "Neutral",
+              "color": "olive/tan",
+              "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+            },
+            "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Acidic Condition CV Curve",
+            "properties": {
+              "pH_condition": "Acidic",
+              "color": "pink/red",
+              "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+            },
+            "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Cyclic Voltammetry (CV)",
+            "properties": {
+              "measurement_type": "electrochemical",
+              "cycles": 3,
+              "parameter_measured": "ΔE_edge",
+              "extracted_from_image": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+            },
+            "source_image_file": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_6",
+        "type": "characterization",
+        "method_name": "Chronoamperometry",
+        "is_reported": true,
+        "characterization_summary": "OER polarization curves obtained by chronoamperometry show overpotentials at 20 A g−1 (η20) of 376 mV in alkaline, 531 mV in neutral, and 500 mV in acidic electrolytes.",
+        "evidence_snippet": "Chronoamperometry measurements were performed at different potentials to obtain OER polarization curves in different electrolytes (Fig. 2c). The overpotentials at a mass current density of 20 A g−1 (η20) are 376, 531 and 500 mV in alkaline, neutral and acidic electrolytes, respectively."
+      },
+      {
+        "id": "char_7",
+        "type": "characterization",
+        "method_name": "Tafel analysis",
+        "is_reported": true,
+        "characterization_summary": "Tafel plots derived from OER polarization curves show Tafel slopes of 46.2 ± 0.6 mV dec−1 in alkaline, 64.5 ± 1.6 mV dec−1 in acidic, and 67.3 ± 0.8 mV dec−1 in neutral electrolytes.",
+        "evidence_snippet": "Tafel plots were derived from OER polarization curves (Fig. 2e) to show that Tafel slopes increase from 46.2 ± 0.6 to 64.5 ± 1.6 to 67.3 ± 0.8 mV dec−1 in alkaline, acidic and neutral electrolytes, respectively.",
+        "related_images": [
+          "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg",
+          "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Current Density vs Potential Plot",
+            "properties": {
+              "x_axis": "V - iR versus RHE (V)",
+              "y_axis": "Current density (A g⁻¹)",
+              "x_range": [
+                1.4,
+                1.8
+              ],
+              "y_range": [
+                0,
+                70
+              ],
+              "extracted_from_image": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+            },
+            "source_image_file": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Overpotential vs Current Density Plot",
+            "properties": {
+              "x_axis": "log[i (A g⁻¹)]",
+              "y_axis": "Overpotential (V)",
+              "description": "Electrochemical characterization showing overpotential as a function of current density",
+              "extracted_from_image": "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+            },
+            "source_image_file": "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_8",
+        "type": "characterization",
+        "method_name": "EIS",
+        "is_reported": true,
+        "characterization_summary": "In situ electrochemical impedance spectroscopy shows that the surface-reconstructed catalyst behaves as a p-type semiconductor with negative Mott–Schottky slope for all interfaces. The flat band potential increases in lower pH environments.",
+        "evidence_snippet": "In situ electrochemical impedance spectroscopy was performed to understand how the (hydr)oxide/electrolyte interfaces respond to applied potential (Supplementary Fig. 10). The space charge capacitance (Cs) of semiconductor/electrolyte interfaces is related to the charge accumulation and is frequency dispersive. The Cs−2 value extracted at different frequencies decreases with potential to give a negative Mott–Schottky slope for all interfaces, indicating that the surface-reconstructed catalyst behaves as a p-type semiconductor.",
+        "related_images": [
+          "42186545da713ea78bf0c6336b1289fe628980681de848bd2937a0bc0ea75385.jpg",
+          "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg",
+          "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg",
+          "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg",
+          "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "Electrochemical Performance Chart",
+            "properties": {
+              "x_axis": "V versus RHE (V)",
+              "y_axis": "C_s^2 (mF^-2 cm^-1)",
+              "x_range": [
+                0.8,
+                1.8
+              ],
+              "y_range": [
+                0,
+                0.003
+              ],
+              "description": "Double layer capacitance vs potential",
+              "extracted_from_image": "42186545da713ea78bf0c6336b1289fe628980681de848bd2937a0bc0ea75385.jpg"
+            },
+            "source_image_file": "42186545da713ea78bf0c6336b1289fe628980681de848bd2937a0bc0ea75385.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Band Diagram - Hole Depletion",
+            "properties": {
+              "description": "Energy band diagram showing hole depletion at (Hydr)oxide/electrolyte interface",
+              "voltage_condition": "V < V_fb",
+              "features": [
+                "Conduction band",
+                "Valence band",
+                "Fermi level",
+                "Hole depletion region"
+              ],
+              "extracted_from_image": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+            },
+            "source_image_file": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Band Diagram - Hole Accumulation",
+            "properties": {
+              "description": "Energy band diagram showing hole accumulation at (Hydr)oxide/electrolyte interface",
+              "voltage_condition": "V > V_fb",
+              "features": [
+                "Conduction band",
+                "Valence band",
+                "Fermi level",
+                "Hole accumulation region"
+              ],
+              "extracted_from_image": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+            },
+            "source_image_file": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Electrochemical Impedance Spectroscopy (EIS)",
+            "properties": {
+              "measurement_type": "V versus RHE",
+              "x_axis": "Time (s)",
+              "y_axis_left": "ΔEedge (meV)",
+              "y_axis_right": "Current (mA)",
+              "extracted_from_image": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+            },
+            "source_image_file": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Electrochemical Potential vs Time Plot",
+            "properties": {
+              "x_axis": "Time (s)",
+              "y_axis_left": "ΔEedge (meV)",
+              "y_axis_right": "Current (mA)",
+              "time_range": "0-2000 s",
+              "potential_range": "0-100 meV",
+              "current_range": "0-1.2 mA",
+              "measurement_type": "Electrochemical",
+              "extracted_from_image": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+            },
+            "source_image_file": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Electrochemical Potential vs RHE Chart",
+            "properties": {
+              "measurement_type": "Electrochemistry",
+              "y_axis": "V versus RHE (V)",
+              "x_axis": "pH conditions",
+              "data_points": "Multiple measurements with error bars",
+              "extracted_from_image": "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+            },
+            "source_image_file": "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_9",
+        "type": "characterization",
+        "method_name": "Operando hXAS",
+        "is_reported": true,
+        "characterization_summary": "Operando hard X-ray absorption spectroscopy at the Co K edge during CV measurements tracks Co oxidation state changes. The ΔEedge increases with applied potential but changes are not fully reversible on the reverse cathodic scan. Irreversible ΔEedge increases with CV cycles in all pH environments, indicating reconstructed (hydr)oxide layers become thicker.",
+        "evidence_snippet": "To study the interfacial Co oxidation state changes, we carried out operando hXAS characterizations at the Co K edge during CV measurements (Supplementary Figs. 15 and 16). The Co oxidation state change during CV measurement in an alkaline environment is tracked by the shift at the Co K edge (Fig. 4a). The Eedge of the Co K edge increases with applied potential; however, this change is not fully reversible on the reverse cathodic scan.",
+        "related_images": [
+          "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg",
+          "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg",
+          "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg",
+          "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg",
+          "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "experimental_data",
+            "name": "Neutral Current Density Data",
+            "properties": {
+              "potential_range": "1.5-1.8 V",
+              "current_density_range": "0-25 A g⁻¹",
+              "threshold_potential": "~1.58 V",
+              "current_at_1.8V": "~25 A g⁻¹",
+              "extracted_from_image": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+            },
+            "source_image_file": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "Neutral Condition Data",
+            "properties": {
+              "condition": "Neutral pH",
+              "data_points": "Multiple measurements",
+              "potential_peaks": "~60 meV",
+              "current_peaks": "~0.6 mA",
+              "extracted_from_image": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+            },
+            "source_image_file": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "X-ray Absorption Spectroscopy at t1",
+            "properties": {
+              "technique": "XAS",
+              "energy_range": "7.710-7.730 eV",
+              "time_point": "t1",
+              "measurement": "fluorescence",
+              "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+            },
+            "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+          },
+          {
+            "type": "chemical",
+            "name": "Co K edge",
+            "properties": {
+              "element": "Cobalt",
+              "edge_type": "K edge",
+              "oxidation_state": "alkaline",
+              "extracted_from_image": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+            },
+            "source_image_file": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+          },
+          {
+            "type": "characterization",
+            "name": "X-ray Absorption Near Edge Structure (XANES)",
+            "properties": {
+              "technique": "XANES",
+              "element": "Cobalt",
+              "energy_range": "7700-8000 eV",
+              "unit": "eV",
+              "extracted_from_image": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+            },
+            "source_image_file": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+          },
+          {
+            "type": "characterization_data",
+            "name": "ΔE_edge",
+            "properties": {
+              "unit": "meV",
+              "y_axis_range": "0-160",
+              "description": "Edge potential change during CV cycles",
+              "extracted_from_image": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+            },
+            "source_image_file": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_10",
+        "type": "characterization",
+        "method_name": "Operando hXAS",
+        "is_reported": true,
+        "characterization_summary": "Operando hXAS during chronopotentiometry shows quasi-linear relationship between ΔEedge and log(i), indicating OER current is controlled by Co oxidation state at the interface. The slope of ΔEedge versus log(i) is comparable in alkaline and acidic electrolytes but smaller in neutral electrolyte.",
+        "evidence_snippet": "At a low controlled current, positive charging of the interface and oxidation of the Co sites are the dominant processes, rather than the OER. The ΔEedge (calculated by setting the Eedge at 0.01 mA as the initial state) shows a quasi-linear relationship with log(i) (Fig. 5a), indicating the OER current is controlled by the Co oxidation state at the interface.",
+        "related_images": [
+          "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+        ],
+        "visual_evidence": [
+          {
+            "type": "characterization",
+            "name": "X-ray Absorption Spectroscopy at t2",
+            "properties": {
+              "technique": "XAS",
+              "energy_range": "7.710-7.730 eV",
+              "time_point": "t2",
+              "measurement": "fluorescence",
+              "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+            },
+            "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+          }
+        ]
+      },
+      {
+        "id": "char_11",
+        "type": "characterization",
+        "method_name": "ICP-OES",
+        "is_reported": true,
+        "characterization_summary": "Inductively coupled plasma optical emission spectroscopy quantifies Co concentration in different electrolytes after OER. Co dissolution is less stable in acidic electrolyte with a stability number of ~59.",
+        "evidence_snippet": "The Co concentration in the different electrolytes was quantified by inductively coupled plasma optical emission spectroscopy (ICP-OES), which is outlined in Supplementary Table 5. The stability number is calculated to be ~59 in acidic electrolyte, comparable to those of other Co-based catalysts (10^1 to 10^2 Ω) reported in the literature."
+      },
+      {
+        "id": "char_12",
+        "type": "characterization",
+        "method_name": "sXAS",
+        "is_reported": true,
+        "characterization_summary": "Surface-sensitive Co L-edge spectra after OER reveal that Co species remain unchanged in alkaline electrolyte, indicating lack of obvious Co dissolution. In acidic electrolyte, CoIII species are obviously reduced after OER.",
+        "evidence_snippet": "The surface-sensitive Co L-edge spectra (Supplementary Figs. 30 and 31) reveal that the Co species remain unchanged after the OER in alkaline electrolyte, which is consistent with the lack of obvious Co dissolution. By comparison, the CoIII species are obviously reduced after the OER in acidic electrolyte."
+      },
+      {
+        "id": "char_13",
+        "type": "characterization",
+        "method_name": "TEM",
+        "is_reported": true,
+        "characterization_summary": "Transmission electron microscopy imaging of nano-sized CoOx catalyst was performed.",
+        "evidence_snippet": "R.S. performed the transmission electron microscopy imaging."
+      },
+      {
+        "id": "Co",
+        "type": "chemical_element",
+        "name": "Cobalt",
+        "properties": {
+          "symbol": "Co",
+          "atomic_number": 27,
+          "extracted_from_image": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+        },
+        "source_image_file": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+      },
+      {
+        "id": "Co_II_III",
+        "type": "chemical_species",
+        "name": "Co(II/III)",
+        "properties": {
+          "oxidation_states": [
+            2,
+            3
+          ],
+          "description": "Cobalt in mixed oxidation states",
+          "extracted_from_image": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+        },
+        "source_image_file": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+      },
+      {
+        "id": "Co_III_IV",
+        "type": "chemical_species",
+        "name": "Co(III/IV)",
+        "properties": {
+          "oxidation_states": [
+            3,
+            4
+          ],
+          "description": "Cobalt in higher oxidation states",
+          "extracted_from_image": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+        },
+        "source_image_file": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+      },
+      {
+        "id": "OER",
+        "type": "electrochemical_process",
+        "name": "Oxygen Evolution Reaction",
+        "properties": {
+          "abbreviation": "OER",
+          "description": "Electrochemical oxidation process",
+          "extracted_from_image": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+        },
+        "source_image_file": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+      },
+      {
+        "id": "Co_oxidation",
+        "type": "electrochemical_process",
+        "name": "Co oxidation",
+        "properties": {
+          "description": "Oxidation of cobalt species",
+          "extracted_from_image": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+        },
+        "source_image_file": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+      },
+      {
+        "id": "formal_potential",
+        "type": "characterization",
+        "name": "Co(III/IV) formal potential",
+        "properties": {
+          "unit": "V versus RHE",
+          "range": "1.45-1.60",
+          "quality_assessment": [
+            "Good",
+            "Bad"
+          ],
+          "extracted_from_image": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+        },
+        "source_image_file": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+      },
+      {
+        "id": "oxidation_potential",
+        "type": "characterization",
+        "name": "Co oxidation potential after Co(III/IV)",
+        "properties": {
+          "unit": "meV dec⁻¹",
+          "range": "1.0-1.5",
+          "quality_assessment": [
+            "Good",
+            "Bad"
+          ],
+          "extracted_from_image": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+        },
+        "source_image_file": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+      },
+      {
+        "id": "overpotential",
+        "type": "characterization",
+        "name": "Overpotential (ΔEegg)",
+        "properties": {
+          "unit": "meV",
+          "range": "0-100",
+          "description": "Electrochemical overpotential measurement",
+          "extracted_from_image": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+        },
+        "source_image_file": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+      },
+      {
+        "id": "radar_chart",
+        "type": "characterization_data",
+        "name": "Performance radar chart",
+        "properties": {
+          "chart_type": "radar/spider plot",
+          "parameters": [
+            "Co(III/IV) formal potential",
+            "Co oxidation prior to Co(III/IV)",
+            "Co oxidation after Co(III/IV)"
+          ],
+          "pH_dependent": true,
+          "extracted_from_image": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+        },
+        "source_image_file": "164d46ec4de013a63fee60d3f36c884bf14a5358b388bd4563fb830334081ff0.jpg"
+      },
+      {
+        "id": "alkaline_condition",
+        "type": "chemical_condition",
+        "name": "Alkaline",
+        "properties": {
+          "pH_type": "basic",
+          "color_code": "blue",
+          "marker_type": "diamond",
+          "extracted_from_image": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+        },
+        "source_image_file": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+      },
+      {
+        "id": "neutral_condition",
+        "type": "chemical_condition",
+        "name": "Neutral",
+        "properties": {
+          "pH_type": "neutral",
+          "color_code": "brown/tan",
+          "marker_type": "diamond",
+          "extracted_from_image": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+        },
+        "source_image_file": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+      },
+      {
+        "id": "acidic_condition",
+        "type": "chemical_condition",
+        "name": "Acidic",
+        "properties": {
+          "pH_type": "acidic",
+          "color_code": "pink/red",
+          "marker_type": "diamond",
+          "extracted_from_image": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+        },
+        "source_image_file": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+      },
+      {
+        "id": "inset_histogram",
+        "type": "characterization",
+        "name": "Slope Comparison Histogram",
+        "properties": {
+          "x_axis": "pH Conditions",
+          "y_axis": "Slope (mV/dec)",
+          "categories": [
+            "Alkaline",
+            "Neutral",
+            "Acidic"
+          ],
+          "description": "Bar chart comparing electrochemical slopes across pH conditions",
+          "extracted_from_image": "289c200495df120f2695ae101172ac8c5a53cd9b49418150354bf2fe6f20fe8d.jpg"
+        },
+        "source_image_file": "289c200495df120f2695ae101172ac8c5a53cd9b49418150354bf2fe6f20fe8d.jpg"
+      },
+      {
+        "id": "condition_alkaline",
+        "type": "chemical_condition",
+        "name": "Alkaline Condition",
+        "properties": {
+          "pH_type": "alkaline",
+          "marker_color": "blue",
+          "marker_shape": "diamond",
+          "extracted_from_image": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+        },
+        "source_image_file": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+      },
+      {
+        "id": "condition_neutral",
+        "type": "chemical_condition",
+        "name": "Neutral Condition",
+        "properties": {
+          "pH_type": "neutral",
+          "marker_color": "olive/brown",
+          "marker_shape": "diamond",
+          "extracted_from_image": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+        },
+        "source_image_file": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+      },
+      {
+        "id": "condition_acidic",
+        "type": "chemical_condition",
+        "name": "Acidic Condition",
+        "properties": {
+          "pH_type": "acidic",
+          "marker_color": "pink/red",
+          "marker_shape": "diamond",
+          "extracted_from_image": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+        },
+        "source_image_file": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+      },
+      {
+        "id": "data_alkaline",
+        "type": "experimental_data",
+        "name": "Alkaline Current Density Data",
+        "properties": {
+          "potential_range": "1.4-1.65 V",
+          "current_density_range": "0-35 A g⁻¹",
+          "threshold_potential": "~1.55 V",
+          "current_at_1.6V": "~18 A g⁻¹",
+          "extracted_from_image": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+        },
+        "source_image_file": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+      },
+      {
+        "id": "data_acidic",
+        "type": "experimental_data",
+        "name": "Acidic Current Density Data",
+        "properties": {
+          "potential_range": "1.55-1.8 V",
+          "current_density_range": "0-45 A g⁻¹",
+          "threshold_potential": "~1.60 V",
+          "current_at_1.8V": "~42 A g⁻¹",
+          "extracted_from_image": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+        },
+        "source_image_file": "2da2871bf7e995fb41995602cd7807a0cebf9c5ab8fd6b12be9590b27e4e6d92.jpg"
+      },
+      {
+        "id": "double_layer_capacitance",
+        "type": "characterization",
+        "name": "Double Layer Capacitance (C_s^2)",
+        "properties": {
+          "unit": "mF^-2 cm^-1",
+          "measurement_type": "electrochemical impedance spectroscopy",
+          "description": "Surface capacitance normalized by surface area",
+          "extracted_from_image": "42186545da713ea78bf0c6336b1289fe628980681de848bd2937a0bc0ea75385.jpg"
+        },
+        "source_image_file": "42186545da713ea78bf0c6336b1289fe628980681de848bd2937a0bc0ea75385.jpg"
+      },
+      {
+        "id": "potential_rhe",
+        "type": "characterization",
+        "name": "Potential vs RHE",
+        "properties": {
+          "unit": "V",
+          "reference": "Reversible Hydrogen Electrode",
+          "range": [
+            0.8,
+            1.8
+          ],
+          "extracted_from_image": "42186545da713ea78bf0c6336b1289fe628980681de848bd2937a0bc0ea75385.jpg"
+        },
+        "source_image_file": "42186545da713ea78bf0c6336b1289fe628980681de848bd2937a0bc0ea75385.jpg"
+      },
+      {
+        "id": "Vpa1",
+        "type": "characterization",
+        "name": "Anodic Peak 1",
+        "properties": {
+          "peak_type": "oxidation",
+          "voltage_range": "~1.2 V",
+          "condition": "Alkaline",
+          "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+        },
+        "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+      },
+      {
+        "id": "Vpa2",
+        "type": "characterization",
+        "name": "Anodic Peak 2",
+        "properties": {
+          "peak_type": "oxidation",
+          "voltage_range": "~1.55 V",
+          "condition": "Alkaline",
+          "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+        },
+        "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+      },
+      {
+        "id": "Vpc1",
+        "type": "characterization",
+        "name": "Cathodic Peak 1",
+        "properties": {
+          "peak_type": "reduction",
+          "voltage_range": "~1.2 V",
+          "condition": "Alkaline",
+          "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+        },
+        "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+      },
+      {
+        "id": "Vpc2",
+        "type": "characterization",
+        "name": "Cathodic Peak 2",
+        "properties": {
+          "peak_type": "reduction",
+          "voltage_range": "~1.4 V",
+          "condition": "Alkaline",
+          "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+        },
+        "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+      },
+      {
+        "id": "Co3+",
+        "type": "chemical",
+        "name": "Cobalt(III)",
+        "properties": {
+          "oxidation_state": "+3",
+          "element": "Co",
+          "extracted_from_image": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+        },
+        "source_image_file": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+      },
+      {
+        "id": "Co2+",
+        "type": "chemical",
+        "name": "Cobalt(II)",
+        "properties": {
+          "oxidation_state": "+2",
+          "element": "Co",
+          "extracted_from_image": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+        },
+        "source_image_file": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+      },
+      {
+        "id": "H2O",
+        "type": "chemical",
+        "name": "Water",
+        "properties": {
+          "formula": "H2O",
+          "role": "solvent/ligand",
+          "extracted_from_image": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+        },
+        "source_image_file": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+      },
+      {
+        "id": "redox_potential_equation1",
+        "type": "characterization",
+        "name": "Redox Potential Equation 1",
+        "properties": {
+          "equation": "ΔV₁ = V°(Co³⁺/²⁺) - 1.23 V",
+          "description": "Potential difference relative to water oxidation",
+          "extracted_from_image": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+        },
+        "source_image_file": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+      },
+      {
+        "id": "redox_potential_equation2",
+        "type": "characterization",
+        "name": "Redox Potential Equation 2",
+        "properties": {
+          "equation": "ΔV₂ = η₂₀ - V°(Co³⁺/²⁺)",
+          "description": "Overpotential relative to Co redox potential",
+          "extracted_from_image": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+        },
+        "source_image_file": "4f29f4cd1a15864506b7caa8267b36a0a2876782795b243af060d8ffd9c4ff7b.jpg"
+      },
+      {
+        "id": "tafel_slope_alkaline",
+        "type": "characterization",
+        "name": "Tafel Slope - Alkaline",
+        "properties": {
+          "value": "46.2 ± 0.6",
+          "unit": "mV dec⁻¹",
+          "condition": "alkaline",
+          "extracted_from_image": "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+        },
+        "source_image_file": "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+      },
+      {
+        "id": "tafel_slope_neutral",
+        "type": "characterization",
+        "name": "Tafel Slope - Neutral",
+        "properties": {
+          "value": "67.3 ± 0.8",
+          "unit": "mV dec⁻¹",
+          "condition": "neutral",
+          "extracted_from_image": "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+        },
+        "source_image_file": "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+      },
+      {
+        "id": "tafel_slope_acidic",
+        "type": "characterization",
+        "name": "Tafel Slope - Acidic",
+        "properties": {
+          "value": "64.5 ± 1.6",
+          "unit": "mV dec⁻¹",
+          "condition": "acidic",
+          "extracted_from_image": "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+        },
+        "source_image_file": "598e9476fbcedf53d171642f9a669bb94a5d9cb51296b7571099c4c156799fa8.jpg"
+      },
+      {
+        "id": "cobalt_II",
+        "type": "chemical",
+        "name": "Cobalt(II)",
+        "properties": {
+          "oxidation_state": "+2",
+          "symbol": "Co²⁺",
+          "coordination": "octahedral",
+          "ligand": "hydroxide/oxide",
+          "extracted_from_image": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+        },
+        "source_image_file": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+      },
+      {
+        "id": "cobalt_III",
+        "type": "chemical",
+        "name": "Cobalt(III)",
+        "properties": {
+          "oxidation_state": "+3",
+          "symbol": "Co³⁺",
+          "coordination": "octahedral",
+          "ligand": "hydroxide/oxide",
+          "extracted_from_image": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+        },
+        "source_image_file": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+      },
+      {
+        "id": "redox_couple",
+        "type": "chemical",
+        "name": "Co(II)/Co(III) Redox Couple",
+        "properties": {
+          "reaction": "Co²⁺ ⇌ Co³⁺ + e⁻",
+          "proton_involvement": "H⁺ exchange",
+          "potential_expression": "V = V_fb = V°(Co(III)/Co(II))",
+          "extracted_from_image": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+        },
+        "source_image_file": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+      },
+      {
+        "id": "potential_scale",
+        "type": "characterization",
+        "name": "Potential vs RHE Scale",
+        "properties": {
+          "range": "1.1 - 1.5 V",
+          "reference": "RHE (Reversible Hydrogen Electrode)",
+          "optimal_pH": "1.3 - 1.4 V",
+          "unit": "Volts",
+          "extracted_from_image": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+        },
+        "source_image_file": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+      },
+      {
+        "id": "hydroxide_electrolyte",
+        "type": "chemical",
+        "name": "(Hydr)oxide/Electrolyte Interface",
+        "properties": {
+          "type": "interface",
+          "components": [
+            "hydroxide",
+            "electrolyte"
+          ],
+          "role": "charge transfer medium",
+          "extracted_from_image": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+        },
+        "source_image_file": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+      },
+      {
+        "id": "fermi_level",
+        "type": "characterization",
+        "name": "Fermi Level",
+        "properties": {
+          "description": "Electrochemical potential at equilibrium",
+          "notation": "E_F",
+          "role": "reference for band alignment",
+          "extracted_from_image": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+        },
+        "source_image_file": "5d120d7dc5334bd752c5d786c8b1b6fa88bc76e5fd5983fc7b394cb159f8df15.jpg"
+      },
+      {
+        "id": "N1",
+        "type": "chemical",
+        "name": "Acidic electrolyte",
+        "properties": {
+          "condition": "Acidic",
+          "phase": "electrolyte",
+          "extracted_from_image": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+        },
+        "source_image_file": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+      },
+      {
+        "id": "N3",
+        "type": "characterization",
+        "name": "Voltage peaks",
+        "properties": {
+          "peak_1": {
+            "time": "~500 s",
+            "voltage": "~80 meV",
+            "label": "1.1"
+          },
+          "peak_2": {
+            "time": "~1000 s",
+            "voltage": "~75 meV",
+            "label": "1.72"
+          },
+          "peak_3": {
+            "time": "~1500 s",
+            "voltage": "~50 meV",
+            "label": "1.1"
+          },
+          "extracted_from_image": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+        },
+        "source_image_file": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+      },
+      {
+        "id": "N4",
+        "type": "characterization",
+        "name": "Current response",
+        "properties": {
+          "measurement": "Current (mA)",
+          "range": "0 to 1.0 mA",
+          "pattern": "Correlated with voltage peaks",
+          "extracted_from_image": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+        },
+        "source_image_file": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+      },
+      {
+        "id": "N5",
+        "type": "characterization",
+        "name": "Time-dependent behavior",
+        "properties": {
+          "total_duration": "2000 s",
+          "observation": "Multiple voltage and current cycles",
+          "baseline": "Decreasing trend over time",
+          "extracted_from_image": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+        },
+        "source_image_file": "5f39ff631d1dbab6b828290821247893cad2b8b09152afa3371566ff78120848.jpg"
+      },
+      {
+        "id": "measurement_1",
+        "type": "characterization",
+        "name": "Electrochemical Potential Measurement",
+        "properties": {
+          "technique": "Electrochemistry",
+          "reference": "RHE (Reversible Hydrogen Electrode)",
+          "error_bars": "Present",
+          "data_points_per_condition": "Multiple replicates",
+          "extracted_from_image": "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+        },
+        "source_image_file": "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+      },
+      {
+        "id": "peak_1",
+        "type": "characterization",
+        "name": "First Potential Peak",
+        "properties": {
+          "time_position": "~400-600 s",
+          "potential_height": "~60 meV",
+          "current_height": "~0.6 mA",
+          "extracted_from_image": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+        },
+        "source_image_file": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+      },
+      {
+        "id": "peak_2",
+        "type": "characterization",
+        "name": "Second Potential Peak",
+        "properties": {
+          "time_position": "~1000-1200 s",
+          "potential_height": "~35 meV",
+          "current_height": "~0.4 mA",
+          "extracted_from_image": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+        },
+        "source_image_file": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+      },
+      {
+        "id": "peak_3",
+        "type": "characterization",
+        "name": "Third Potential Peak",
+        "properties": {
+          "time_position": "~1500-1700 s",
+          "potential_height": "~60 meV",
+          "current_height": "~0.6 mA",
+          "extracted_from_image": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+        },
+        "source_image_file": "78a20946ce0aaf8574925e682214613b9e6c094729e2ef4a24113841ebd27745.jpg"
+      },
+      {
+        "id": "CoO",
+        "type": "chemical",
+        "name": "Cobalt(II) Oxide",
+        "properties": {
+          "formula": "CoO",
+          "state": "solid",
+          "role": "initial_material",
+          "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+        },
+        "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+      },
+      {
+        "id": "CoOOH_CoOx",
+        "type": "chemical",
+        "name": "Cobalt Oxyhydroxide/Cobalt Oxide",
+        "properties": {
+          "formula": "CoOOH/CoOx",
+          "state": "solid",
+          "role": "oxidized_product",
+          "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+        },
+        "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+      },
+      {
+        "id": "Au_layer",
+        "type": "chemical",
+        "name": "Gold Layer",
+        "properties": {
+          "formula": "Au",
+          "state": "solid",
+          "role": "electrode_material",
+          "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+        },
+        "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+      },
+      {
+        "id": "electrolyte",
+        "type": "chemical",
+        "name": "Electrolyte",
+        "properties": {
+          "role": "reaction_medium",
+          "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+        },
+        "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+      },
+      {
+        "id": "edge_shift",
+        "type": "characterization",
+        "name": "Edge Energy Shift Analysis",
+        "properties": {
+          "parameter": "ΔE_edge",
+          "description": "Energy difference between edge positions",
+          "relationship_voltage": "ΔE_edge = f(V)",
+          "relationship_current": "ΔE_edge = f(log(i))",
+          "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+        },
+        "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+      },
+      {
+        "id": "oxidation_process",
+        "type": "process",
+        "name": "Co Oxidation and Charge Accumulation",
+        "properties": {
+          "description": "Oxidation of cobalt species with concurrent charge accumulation",
+          "time_evolution": "t1 to t2",
+          "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+        },
+        "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+      },
+      {
+        "id": "reconstruction",
+        "type": "process",
+        "name": "Surface Reconstruction",
+        "properties": {
+          "description": "Structural rearrangement during oxidation",
+          "extracted_from_image": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+        },
+        "source_image_file": "82262b9dc9b3a82a7aad41d78cdf35f48187f136656582b8bf964c7526687988.jpg"
+      },
+      {
+        "id": "alkaline_electrolyte",
+        "type": "chemical",
+        "name": "Alkaline Electrolyte",
+        "properties": {
+          "description": "Electrolyte system used in electrochemical measurements",
+          "extracted_from_image": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+        },
+        "source_image_file": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+      },
+      {
+        "id": "electrode_potential",
+        "type": "characterization",
+        "name": "Electrode Potential (V vs RHE)",
+        "properties": {
+          "unit": "V",
+          "reference": "RHE (Reversible Hydrogen Electrode)",
+          "description": "Voltage measurement against standard hydrogen electrode",
+          "extracted_from_image": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+        },
+        "source_image_file": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+      },
+      {
+        "id": "current_density",
+        "type": "characterization",
+        "name": "Current Density",
+        "properties": {
+          "unit": "mA",
+          "range": "0-1.2",
+          "description": "Faradaic current density during electrochemical cycling",
+          "extracted_from_image": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+        },
+        "source_image_file": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+      },
+      {
+        "id": "electrochemical_cycling",
+        "type": "characterization",
+        "name": "Electrochemical Cycling Test",
+        "properties": {
+          "duration": "2000 seconds",
+          "cycles": "3 complete cycles",
+          "description": "Time-dependent electrochemical performance measurement",
+          "extracted_from_image": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+        },
+        "source_image_file": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+      },
+      {
+        "id": "cycle_1",
+        "type": "characterization",
+        "name": "Cycle 1",
+        "properties": {
+          "potential_range": "1.0 V",
+          "time_range": "0-500 s",
+          "extracted_from_image": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+        },
+        "source_image_file": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+      },
+      {
+        "id": "cycle_2",
+        "type": "characterization",
+        "name": "Cycle 2",
+        "properties": {
+          "potential_range": "1.6 V",
+          "time_range": "500-1000 s",
+          "extracted_from_image": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+        },
+        "source_image_file": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+      },
+      {
+        "id": "cycle_3",
+        "type": "characterization",
+        "name": "Cycle 3",
+        "properties": {
+          "potential_range": "1.0 V",
+          "time_range": "1000-1500 s",
+          "extracted_from_image": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+        },
+        "source_image_file": "989b7f29d7b067bd5ca4d0480d78c38adb06f058b346abebc1f799490dce1a68.jpg"
+      },
+      {
+        "id": "fig_b",
+        "type": "characterization",
+        "name": "Electrochemical Performance Chart",
+        "properties": {
+          "chart_type": "scatter plot with error bars",
+          "x_axis": "V - iR versus RHE (V)",
+          "y_axis": "ΔE_edge (mV)",
+          "x_range": [
+            1.0,
+            2.0
+          ],
+          "y_range": [
+            0,
+            150
+          ],
+          "extracted_from_image": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+        },
+        "source_image_file": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+      },
+      {
+        "id": "alkaline_data",
+        "type": "characterization",
+        "name": "Alkaline Electrolyte Performance",
+        "properties": {
+          "electrolyte_type": "alkaline",
+          "color": "blue",
+          "marker": "diamond",
+          "voltage_range": "1.4-1.5 V",
+          "edge_potential_range": "50-150 mV",
+          "note": "Larger ΔE_edge in alkaline electrolyte before V⁰(Co^(III/IV))",
+          "extracted_from_image": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+        },
+        "source_image_file": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+      },
+      {
+        "id": "neutral_data",
+        "type": "characterization",
+        "name": "Neutral Electrolyte Performance",
+        "properties": {
+          "electrolyte_type": "neutral",
+          "color": "brown/tan",
+          "marker": "circle",
+          "voltage_range": "1.3-2.0 V",
+          "edge_potential_range": "0-70 mV",
+          "slope": "-196 mV V⁻¹",
+          "extracted_from_image": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+        },
+        "source_image_file": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+      },
+      {
+        "id": "acidic_data",
+        "type": "characterization",
+        "name": "Acidic Electrolyte Performance",
+        "properties": {
+          "electrolyte_type": "acidic",
+          "color": "pink/red",
+          "marker": "diamond",
+          "voltage_range": "1.5-1.8 V",
+          "edge_potential_range": "20-100 mV",
+          "extracted_from_image": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+        },
+        "source_image_file": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+      },
+      {
+        "id": "Co_redox",
+        "type": "chemical",
+        "name": "Cobalt Redox Couple",
+        "properties": {
+          "formula": "Co^(III/IV)",
+          "role": "reference potential",
+          "notation": "V⁰(Co^(III/IV))",
+          "extracted_from_image": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+        },
+        "source_image_file": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+      },
+      {
+        "id": "error_analysis",
+        "type": "characterization",
+        "name": "Error Bars",
+        "properties": {
+          "representation": "uncertainty in measurements",
+          "visible_on": [
+            "alkaline_data",
+            "neutral_data",
+            "acidic_data"
+          ],
+          "extracted_from_image": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+        },
+        "source_image_file": "a66bc477dfe0dbb1be34de6264cf0a969314cfaba719fdcb0d40848f7757a804.jpg"
+      },
+      {
+        "id": "CoO_initial",
+        "type": "chemical",
+        "name": "Cobalt Oxide (CoO)",
+        "properties": {
+          "description": "Initial catalyst material",
+          "state": "solid",
+          "extracted_from_image": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+        },
+        "source_image_file": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+      },
+      {
+        "id": "CoOOH_CoO",
+        "type": "chemical",
+        "name": "Cobalt Oxyhydroxide/Cobalt Oxide (CoOOH/CoO)",
+        "properties": {
+          "description": "Oxidized layer formed during OER",
+          "state": "solid",
+          "extracted_from_image": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+        },
+        "source_image_file": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+      },
+      {
+        "id": "OER_process",
+        "type": "characterization",
+        "name": "Oxygen Evolution Reaction (OER)",
+        "properties": {
+          "description": "Electrochemical process",
+          "type": "electrochemistry",
+          "extracted_from_image": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+        },
+        "source_image_file": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+      },
+      {
+        "id": "oxidized_layer",
+        "type": "characterization",
+        "name": "Oxidized Layer",
+        "properties": {
+          "description": "Surface layer formed during OER cycles",
+          "dynamic": true,
+          "extracted_from_image": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+        },
+        "source_image_file": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+      },
+      {
+        "id": "OER_dynamic_layer",
+        "type": "characterization",
+        "name": "OER-dynamic Layer",
+        "properties": {
+          "description": "Dynamic surface layer that changes with cycling",
+          "cycles": 3,
+          "extracted_from_image": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+        },
+        "source_image_file": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+      },
+      {
+        "id": "first_cycle",
+        "type": "characterization",
+        "name": "First Cycle",
+        "properties": {
+          "thickness_parameter": "d₁",
+          "blue_region": "bulk",
+          "orange_region": "oxidized_layer",
+          "extracted_from_image": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+        },
+        "source_image_file": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+      },
+      {
+        "id": "second_cycle",
+        "type": "characterization",
+        "name": "Second Cycle",
+        "properties": {
+          "thickness_parameter": "d₂",
+          "relationship": "d₁ < d₂",
+          "blue_region": "bulk",
+          "orange_region": "oxidized_layer",
+          "extracted_from_image": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+        },
+        "source_image_file": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+      },
+      {
+        "id": "third_cycle",
+        "type": "characterization",
+        "name": "Third Cycle",
+        "properties": {
+          "thickness_parameter": "d₃",
+          "relationship": "d₂ < d₃",
+          "blue_region": "bulk",
+          "orange_region": "oxidized_layer",
+          "extracted_from_image": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+        },
+        "source_image_file": "b4b76256766db623d8d556ef9ca99b176d86e437668c90569e23253167c35403.jpg"
+      },
+      {
+        "id": "species_1",
+        "type": "chemical",
+        "name": "V_fb",
+        "properties": {
+          "description": "Flat band potential",
+          "context": "Vanadium-based species",
+          "extracted_from_image": "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+        },
+        "source_image_file": "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+      },
+      {
+        "id": "species_2",
+        "type": "chemical",
+        "name": "V*(Co^III/II)",
+        "properties": {
+          "description": "Vanadium species with cobalt redox couple",
+          "oxidation_states": [
+            "Co(III)",
+            "Co(II)"
+          ],
+          "context": "Electrochemical active species",
+          "extracted_from_image": "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+        },
+        "source_image_file": "b6d1ab9457f8cc3e7d9d65fcd16378426ee8e6ce873eb27ce87cf3cc52d82fc9.jpg"
+      },
+      {
+        "id": "condition_1",
+        "type": "experimental_condition",
+        "name": "Applied Potential 1.0 V",
+        "properties": {
+          "potential": "1.0 V",
+          "reference": "RHE",
+          "color": "blue",
+          "extracted_from_image": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+        },
+        "source_image_file": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+      },
+      {
+        "id": "condition_2",
+        "type": "experimental_condition",
+        "name": "Applied Potential 1.6 V",
+        "properties": {
+          "potential": "1.6 V",
+          "reference": "RHE",
+          "color": "red",
+          "extracted_from_image": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+        },
+        "source_image_file": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+      },
+      {
+        "id": "condition_3",
+        "type": "experimental_condition",
+        "name": "Applied Potential 1.0 V (return)",
+        "properties": {
+          "potential": "1.0 V",
+          "reference": "RHE",
+          "note": "return condition",
+          "color": "light red",
+          "extracted_from_image": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+        },
+        "source_image_file": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+      },
+      {
+        "id": "CoIII_IV",
+        "type": "chemical",
+        "name": "Cobalt Redox Couple",
+        "properties": {
+          "oxidation_states": [
+            "Co(III/IV)",
+            "Co(II/III)"
+          ],
+          "notation": "V⁰(Co(III/IV)) and V⁰(Co(II/III))",
+          "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+        },
+        "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+      },
+      {
+        "id": "CoIII_IV_range",
+        "type": "characterization",
+        "name": "Co(III/IV) Redox Potential Range",
+        "properties": {
+          "voltage_range": "~1.4-1.6 V",
+          "color": "olive/tan bar",
+          "condition": "Neutral",
+          "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+        },
+        "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+      },
+      {
+        "id": "CoII_III_range",
+        "type": "characterization",
+        "name": "Co(II/III) Redox Potential Range",
+        "properties": {
+          "voltage_range": "~1.3-1.5 V",
+          "color": "blue bar",
+          "condition": "Alkaline",
+          "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+        },
+        "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+      },
+      {
+        "id": "CoIII_IV_acidic",
+        "type": "characterization",
+        "name": "Co(III/IV) Redox Potential (Acidic)",
+        "properties": {
+          "voltage_range": "~1.5-1.7 V",
+          "color": "pink/red bar",
+          "condition": "Acidic",
+          "extracted_from_image": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+        },
+        "source_image_file": "c2a68bb42fd301fdc2d3763bd0d2d9a6d0076bb3d9a8c6d6721eb3de8292369f.jpg"
+      },
+      {
+        "id": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913_node_1",
+        "type": "chemical",
+        "name": "Co(III/II)",
+        "properties": {
+          "description": "Cobalt in mixed oxidation states III and II",
+          "element": "Co",
+          "extracted_from_image": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+        },
+        "source_image_file": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+      },
+      {
+        "id": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913_node_2",
+        "type": "chemical",
+        "name": "H+",
+        "properties": {
+          "description": "Proton",
+          "charge": "+1",
+          "extracted_from_image": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+        },
+        "source_image_file": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+      },
+      {
+        "id": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913_node_3",
+        "type": "chemical",
+        "name": "OH-",
+        "properties": {
+          "description": "Hydroxide ion",
+          "charge": "-1",
+          "extracted_from_image": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+        },
+        "source_image_file": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+      },
+      {
+        "id": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913_node_4",
+        "type": "characterization",
+        "name": "Flat band potential",
+        "properties": {
+          "description": "Electrochemical potential measurement",
+          "parameter": "Co(III/II) formal potential",
+          "extracted_from_image": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+        },
+        "source_image_file": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+      },
+      {
+        "id": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913_node_5",
+        "type": "characterization",
+        "name": "pH-directed interface",
+        "properties": {
+          "description": "Interface controlled by pH gradient",
+          "type": "electrochemical interface",
+          "extracted_from_image": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+        },
+        "source_image_file": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+      },
+      {
+        "id": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913_node_6",
+        "type": "chemical",
+        "name": "Electrode surface",
+        "properties": {
+          "description": "Solid electrode material with spherical morphology",
+          "morphology": "spherical particles",
+          "extracted_from_image": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+        },
+        "source_image_file": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+      },
+      {
+        "id": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913_node_7",
+        "type": "characterization",
+        "name": "pH gradient",
+        "properties": {
+          "description": "Variation of pH across the interface",
+          "direction": "left to right",
+          "extracted_from_image": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+        },
+        "source_image_file": "d6eb513039f0f4275f03ba48e75bc877a579da0f2ebe03f029938036a6359913.jpg"
+      },
+      {
+        "id": "data_1",
+        "type": "spectroscopic_data",
+        "name": "Normalized Intensity vs Energy",
+        "properties": {
+          "x_axis": "Energy (eV)",
+          "y_axis": "Normalized Intensity (a.u.)",
+          "energy_range": "7700-8000 eV",
+          "peak_position": "7720 eV",
+          "extracted_from_image": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+        },
+        "source_image_file": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+      },
+      {
+        "id": "data_2",
+        "type": "spectroscopic_data",
+        "name": "Fine Structure Detail (Inset)",
+        "properties": {
+          "energy_range": "7719.9-7720.0 eV",
+          "description": "Expanded view showing potential-dependent shifts",
+          "conditions_shown": 3,
+          "extracted_from_image": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+        },
+        "source_image_file": "d9cc49be93d939e42600ea91626eb843d76a6a3ed3041ada5b3805dc3e791a94.jpg"
+      },
+      {
+        "id": "reversibility",
+        "type": "characterization_data",
+        "name": "ΔE_reversible",
+        "properties": {
+          "unit": "meV",
+          "y_axis_range": "0-160",
+          "description": "Reversible potential window",
+          "color_code": "light blue",
+          "extracted_from_image": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+        },
+        "source_image_file": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+      },
+      {
+        "id": "time_parameter",
+        "type": "measurement_parameter",
+        "name": "Time",
+        "properties": {
+          "unit": "seconds",
+          "range": "0-2000",
+          "extracted_from_image": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+        },
+        "source_image_file": "ee7a77035e4d1726f7b12dde9236d1e0eae5ca3bad6a969b03fa71f326802983.jpg"
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_characterized_chem_CoOx_char_1",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_1",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_3",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_3",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_5",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_5",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_6",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_6",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_7",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_7",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_8",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_8",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_9",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_9",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_10",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_10",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_11",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_11",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_12",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_12",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_Co3O4_char_4",
+        "type": "characterized_in",
+        "source_id": "chem_Co3O4",
+        "target_id": "char_4",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoO_char_2",
+        "type": "characterized_in",
+        "source_id": "chem_CoO",
+        "target_id": "char_2",
+        "properties": {}
+      },
+      {
+        "id": "edge_characterized_chem_CoOx_char_13",
+        "type": "characterized_in",
+        "source_id": "chem_CoOx",
+        "target_id": "char_13",
+        "properties": {}
+      },
+      {
+        "source_id": "Co",
+        "target_id": "Co_II_III",
+        "type": "oxidation_state"
+      },
+      {
+        "source_id": "Co",
+        "target_id": "Co_III_IV",
+        "type": "oxidation_state"
+      },
+      {
+        "source_id": "Co_III_IV",
+        "target_id": "OER",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "Co_III_IV",
+        "target_id": "Co_oxidation",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "Co_III_IV",
+        "target_id": "formal_potential",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Co_oxidation",
+        "target_id": "oxidation_potential",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "Co_II_III",
+        "target_id": "overpotential",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "radar_chart",
+        "target_id": "formal_potential",
+        "type": "displays"
+      },
+      {
+        "source_id": "radar_chart",
+        "target_id": "overpotential",
+        "type": "displays"
+      },
+      {
+        "source_id": "radar_chart",
+        "target_id": "oxidation_potential",
+        "type": "displays"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "alkaline_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "neutral_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "acidic_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "inset_histogram",
+        "type": "includes_summary"
+      },
+      {
+        "source_id": "inset_histogram",
+        "target_id": "alkaline_condition",
+        "type": "summarizes"
+      },
+      {
+        "source_id": "inset_histogram",
+        "target_id": "neutral_condition",
+        "type": "summarizes"
+      },
+      {
+        "source_id": "inset_histogram",
+        "target_id": "acidic_condition",
+        "type": "summarizes"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "condition_alkaline",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "condition_neutral",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "condition_acidic",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "condition_alkaline",
+        "target_id": "data_alkaline",
+        "type": "generates"
+      },
+      {
+        "source_id": "condition_neutral",
+        "target_id": "char_9",
+        "type": "generates"
+      },
+      {
+        "source_id": "condition_acidic",
+        "target_id": "data_acidic",
+        "type": "generates"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "alkaline_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "neutral_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "acidic_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "double_layer_capacitance",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "potential_rhe",
+        "type": "measures"
+      },
+      {
+        "source_id": "alkaline_condition",
+        "target_id": "double_layer_capacitance",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "neutral_condition",
+        "target_id": "double_layer_capacitance",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "acidic_condition",
+        "target_id": "double_layer_capacitance",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpa1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpa2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpc1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpc2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpa1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpa2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpc1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpc2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpa1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpa2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpc1",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpc2",
+        "type": "contains_peak"
+      },
+      {
+        "source_id": "Co3+",
+        "target_id": "Co2+",
+        "type": "redox_couple"
+      },
+      {
+        "source_id": "Co3+",
+        "target_id": "H2O",
+        "type": "coordination"
+      },
+      {
+        "source_id": "Co2+",
+        "target_id": "H2O",
+        "type": "coordination"
+      },
+      {
+        "source_id": "alkaline_condition",
+        "target_id": "redox_potential_equation1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "neutral_condition",
+        "target_id": "redox_potential_equation1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "acidic_condition",
+        "target_id": "redox_potential_equation1",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "alkaline_condition",
+        "target_id": "redox_potential_equation2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "neutral_condition",
+        "target_id": "redox_potential_equation2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "acidic_condition",
+        "target_id": "redox_potential_equation2",
+        "type": "measured_by"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "alkaline_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "neutral_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "char_7",
+        "target_id": "acidic_condition",
+        "type": "contains_data"
+      },
+      {
+        "source_id": "alkaline_condition",
+        "target_id": "tafel_slope_alkaline",
+        "type": "has_property"
+      },
+      {
+        "source_id": "neutral_condition",
+        "target_id": "tafel_slope_neutral",
+        "type": "has_property"
+      },
+      {
+        "source_id": "acidic_condition",
+        "target_id": "tafel_slope_acidic",
+        "type": "has_property"
+      },
+      {
+        "source_id": "cobalt_II",
+        "target_id": "redox_couple",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "cobalt_III",
+        "target_id": "redox_couple",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "redox_couple",
+        "target_id": "potential_scale",
+        "type": "determines"
+      },
+      {
+        "source_id": "hydroxide_electrolyte",
+        "target_id": "char_8",
+        "type": "interface_with"
+      },
+      {
+        "source_id": "hydroxide_electrolyte",
+        "target_id": "char_8",
+        "type": "interface_with"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "fermi_level",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "fermi_level",
+        "type": "contains"
+      },
+      {
+        "source_id": "potential_scale",
+        "target_id": "char_8",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "potential_scale",
+        "target_id": "char_8",
+        "type": "applies_to"
+      },
+      {
+        "source_id": "N1",
+        "target_id": "char_8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "N3",
+        "type": "produces"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "N4",
+        "type": "produces"
+      },
+      {
+        "source_id": "N3",
+        "target_id": "N5",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "N4",
+        "target_id": "N5",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "char_9",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_8",
+        "target_id": "measurement_1",
+        "type": "displays"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "peak_1",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "peak_2",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "peak_3",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "measurement_1",
+        "target_id": "peak_1",
+        "type": "correlates_with"
+      },
+      {
+        "source_id": "measurement_1",
+        "target_id": "peak_2",
+        "type": "correlates_with"
+      },
+      {
+        "source_id": "measurement_1",
+        "target_id": "peak_3",
+        "type": "correlates_with"
+      },
+      {
+        "source_id": "CoO",
+        "target_id": "CoOOH_CoOx",
+        "type": "transforms_to"
+      },
+      {
+        "source_id": "CoO",
+        "target_id": "oxidation_process",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "CoOOH_CoOx",
+        "target_id": "oxidation_process",
+        "type": "product_of"
+      },
+      {
+        "source_id": "Au_layer",
+        "target_id": "electrolyte",
+        "type": "interface_with"
+      },
+      {
+        "source_id": "CoO",
+        "target_id": "Au_layer",
+        "type": "deposited_on"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "CoO",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "char_10",
+        "target_id": "CoOOH_CoOx",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "edge_shift",
+        "target_id": "oxidation_process",
+        "type": "measures"
+      },
+      {
+        "source_id": "oxidation_process",
+        "target_id": "reconstruction",
+        "type": "accompanied_by"
+      },
+      {
+        "source_id": "alkaline_electrolyte",
+        "target_id": "electrochemical_cycling",
+        "type": "used_in"
+      },
+      {
+        "source_id": "electrochemical_cycling",
+        "target_id": "electrode_potential",
+        "type": "measures"
+      },
+      {
+        "source_id": "electrochemical_cycling",
+        "target_id": "overpotential",
+        "type": "measures"
+      },
+      {
+        "source_id": "electrochemical_cycling",
+        "target_id": "current_density",
+        "type": "measures"
+      },
+      {
+        "source_id": "electrochemical_cycling",
+        "target_id": "cycle_1",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cycling",
+        "target_id": "cycle_2",
+        "type": "contains"
+      },
+      {
+        "source_id": "electrochemical_cycling",
+        "target_id": "cycle_3",
+        "type": "contains"
+      },
+      {
+        "source_id": "fig_b",
+        "target_id": "alkaline_data",
+        "type": "contains"
+      },
+      {
+        "source_id": "fig_b",
+        "target_id": "neutral_data",
+        "type": "contains"
+      },
+      {
+        "source_id": "fig_b",
+        "target_id": "acidic_data",
+        "type": "contains"
+      },
+      {
+        "source_id": "alkaline_data",
+        "target_id": "Co_redox",
+        "type": "references"
+      },
+      {
+        "source_id": "fig_b",
+        "target_id": "error_analysis",
+        "type": "includes"
+      },
+      {
+        "source_id": "CoO_initial",
+        "target_id": "OER_process",
+        "type": "undergoes"
+      },
+      {
+        "source_id": "OER_process",
+        "target_id": "CoOOH_CoO",
+        "type": "produces"
+      },
+      {
+        "source_id": "CoOOH_CoO",
+        "target_id": "oxidized_layer",
+        "type": "forms"
+      },
+      {
+        "source_id": "oxidized_layer",
+        "target_id": "OER_dynamic_layer",
+        "type": "is_part_of"
+      },
+      {
+        "source_id": "OER_dynamic_layer",
+        "target_id": "first_cycle",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "OER_dynamic_layer",
+        "target_id": "second_cycle",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "OER_dynamic_layer",
+        "target_id": "third_cycle",
+        "type": "observed_in"
+      },
+      {
+        "source_id": "first_cycle",
+        "target_id": "second_cycle",
+        "type": "precedes"
+      },
+      {
+        "source_id": "second_cycle",
+        "target_id": "third_cycle",
+        "type": "precedes"
+      },
+      {
+        "source_id": "species_1",
+        "target_id": "char_8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "species_2",
+        "target_id": "char_8",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "condition_1",
+        "target_id": "char_8",
+        "type": "experimental_condition"
+      },
+      {
+        "source_id": "condition_2",
+        "target_id": "char_8",
+        "type": "experimental_condition"
+      },
+      {
+        "source_id": "condition_3",
+        "target_id": "char_8",
+        "type": "experimental_condition"
+      },
+      {
+        "source_id": "measurement_1",
+        "target_id": "char_8",
+        "type": "characterization_method"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_5",
+        "type": "contains"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpa1",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpa2",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpc1",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "Vpc2",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "CoIII_IV",
+        "target_id": "CoIII_IV_range",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "CoIII_IV",
+        "target_id": "CoII_III_range",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "CoIII_IV",
+        "target_id": "CoIII_IV_acidic",
+        "type": "measured_in"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "CoIII_IV",
+        "type": "characterizes"
+      },
+      {
+        "source_id": "node_7",
+        "target_id": "node_5",
+        "type": "controls"
+      },
+      {
+        "source_id": "node_5",
+        "target_id": "node_6",
+        "type": "occurs_at"
+      },
+      {
+        "source_id": "node_1",
+        "target_id": "node_4",
+        "type": "exhibits"
+      },
+      {
+        "source_id": "node_2",
+        "target_id": "node_5",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "node_3",
+        "target_id": "node_5",
+        "type": "participates_in"
+      },
+      {
+        "source_id": "node_1",
+        "target_id": "node_6",
+        "type": "component_of"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "char_9",
+        "type": "characterized_by"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "data_1",
+        "type": "produces"
+      },
+      {
+        "source_id": "condition_1",
+        "target_id": "data_1",
+        "type": "applied_during"
+      },
+      {
+        "source_id": "condition_2",
+        "target_id": "data_1",
+        "type": "applied_during"
+      },
+      {
+        "source_id": "condition_3",
+        "target_id": "data_1",
+        "type": "applied_during"
+      },
+      {
+        "source_id": "data_1",
+        "target_id": "data_2",
+        "type": "detailed_view"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "alkaline_condition",
+        "type": "tested_under"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "neutral_condition",
+        "type": "tested_under"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "acidic_condition",
+        "type": "tested_under"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "char_9",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_5",
+        "target_id": "reversibility",
+        "type": "measures"
+      },
+      {
+        "source_id": "char_9",
+        "target_id": "time_parameter",
+        "type": "plotted_against"
+      },
+      {
+        "source_id": "alkaline_condition",
+        "target_id": "char_9",
+        "type": "shows_highest_values"
+      },
+      {
+        "source_id": "neutral_condition",
+        "target_id": "char_9",
+        "type": "shows_intermediate_values"
+      },
+      {
+        "source_id": "acidic_condition",
+        "target_id": "char_9",
+        "type": "shows_lowest_values"
+      }
+    ]
+  }
+}

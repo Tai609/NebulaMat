@@ -1,0 +1,15 @@
+schema_version: 1
+project_id: gate-hook-example
+title: Gate hook example
+mode: semi-automatic
+created_at: "2026-06-25T00:00:00+08:00"
+objective: Demonstrate generic plan/structure/result/report gate hooks.
+success_criteria:
+  - structure gate blocks engine submission unless accepted and passing
+  - result gate blocks unsupported claim acceptance
+  - report gate blocks report generation from unsupported claims
+default_policy:
+  approval_required_for:
+    - scientific_model_choice
+    - expensive_hpc_submission
+    - promote_claim_to_report

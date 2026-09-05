@@ -1,0 +1,159 @@
+name: finalize macOS notarization
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17,47 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: finalize-macos-notarization
+  cancel-in-progress: false
+
+jobs:
+  finalize:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    env:
+      APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+      APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+      APPLE_ID: ${{ secrets.APPLE_ID }}
+      APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MACOS_NOTARIZATION_TIMEOUT_SECONDS: 60
+      MACOS_NOTARIZATION_POLL_SECONDS: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate release credentials
+        shell: bash
+        run: |
+          missing=()
+          for name in APPLE_CERTIFICATE APPLE_CERTIFICATE_PASSWORD APPLE_ID APPLE_PASSWORD APPLE_TEAM_ID APPLE_SIGNING_IDENTITY; do
+            if [ -z "${!name:-}" ]; then
+              missing+=("$name")
+            fi
+          done
+          if [ "${#missing[@]}" -ne 0 ]; then
+            echo "::error::Missing release secrets: ${missing[*]}"
+            exit 1
+          fi
+
+      - name: Advance macOS notarization queues
+        id: finalize
+        shell: bash
+        run: |
+          queue=$(gh api --method GET "repos/$GITHUB_REPOSITORY/releases?per_page=100" --jq '
+            [.[] | select(.draft) | . as $release | .assets[]
+              | select(
+                  (.name | endswith(".submitted.app.zip"))
+                  or (.name | endswith(".submitted.dmg"))
+                )
+              | {
+                  tag: $release.tag_name,
+                  release_id: $release.id,
+                  asset_id: .id,
+                  asset_name: .name,
+                  stage: (
+                    if (.name | endswith(".submitted.app.zip"))
+                    then "app"
+                    else "dmg"
+                    end
+                  ),
+                  final_name: (
+                    .name
+                    | sub("\\.submitted\\.app\\.zip$"; ".dmg")
+                    | sub("\\.submitted\\.dmg$"; ".dmg")
+                  )
+                }
+            ]')
+
+          if [ "$(jq length <<<"$queue")" -eq 0 ]; then
+            echo "No macOS notarization work is waiting in draft releases."
+            echo "produced=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          output_dir="$RUNNER_TEMP/finalized-macos"
+          mkdir -p "$output_dir"
+          produced=false
+
+          while IFS= read -r item; do
+            tag=$(jq -r '.tag' <<<"$item")
+            release_id=$(jq -r '.release_id' <<<"$item")
+            asset_id=$(jq -r '.asset_id' <<<"$item")
+            asset_name=$(jq -r '.asset_name' <<<"$item")
+            stage=$(jq -r '.stage' <<<"$item")
+            final_name=$(jq -r '.final_name' <<<"$item")
+
+            existing=$(gh api "repos/$GITHUB_REPOSITORY/releases/$release_id" \
+              --jq ".assets[] | select(.name == \"$final_name\") | .id")
+            if [ -n "$existing" ]; then
+              echo "Final DMG already exists for $asset_name; removing the queue asset."
+              gh api --method DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$asset_id"
+              continue
+            fi
+
+            item_dir="$RUNNER_TEMP/notarization-$asset_id"
+            queued_path="$item_dir/$asset_name"
+            mkdir -p "$item_dir"
+
+            gh api \
+              -H "Accept: application/octet-stream" \
+              "repos/$GITHUB_REPOSITORY/releases/assets/$asset_id" \
+              > "$queued_path"
+
+            if [ "$stage" = "app" ]; then
+              extract_dir="$item_dir/app"
+              mkdir -p "$extract_dir"
+              ditto -x -k "$queued_path" "$extract_dir"
+              app_path=$(find "$extract_dir" -maxdepth 1 -type d -name '*.app' -print -quit)
+              if [ -z "$app_path" ]; then
+                echo "::error::No app bundle found in $asset_name"
+                exit 1
+              fi
+              if ! xcrun stapler staple "$app_path"; then
+                echo "::notice::Apple is still processing $asset_name; a later scheduled run will retry."
+                continue
+              fi
+
+              submitted_dmg_name=${asset_name%.submitted.app.zip}.submitted.dmg
+              submitted_dmg_path="$item_dir/$submitted_dmg_name"
+              MACOS_DMG_NOTARIZATION_MODE=submit \
+                bash scripts/release/finalize-macos-notarization.sh "$app_path" "$submitted_dmg_path"
+              gh release upload "$tag" "$submitted_dmg_path" --clobber
+              gh api --method DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$asset_id"
+              continue
+            fi
+
+            if ! xcrun stapler staple "$queued_path"; then
+              echo "::notice::Apple is still processing $asset_name; a later scheduled run will retry."
+              continue
+            fi
+            xcrun stapler validate "$queued_path"
+            /usr/sbin/spctl --assess \
+              --type open \
+              --context context:primary-signature \
+              --verbose=2 \
+              "$queued_path"
+
+            final_path="$output_dir/$final_name"
+            ditto "$queued_path" "$final_path"
+            gh release upload "$tag" "$final_path" --clobber
+            gh api --method DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$asset_id"
+            produced=true
+          done < <(jq -c '.[]' <<<"$queue")
+
+          echo "produced=$produced" >> "$GITHUB_OUTPUT"
+
+      - name: Upload finalized macOS installers
+        if: steps.finalize.outputs.produced == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: finalized-macos-${{ github.run_id }}
+          path: ${{ runner.temp }}/finalized-macos/*.dmg
+          if-no-files-found: error
