@@ -363,7 +363,7 @@ flowchart TB
         supervisor["DSH and sidecar supervisor"]
         workspaceSvc["Workspace, projects and Git snapshots"]
         durableSvc["Runs, provenance and research store"]
-        knowledgeSvc["CATDA knowledge-base service"]
+        knowledgeSvc["MAGE-Graph knowledge-base service"]
         executionSvc["Jupyter, browser and remote compute"]
     end
 
@@ -388,7 +388,7 @@ flowchart TB
     subgraph storage["Local durable state"]
         workspace[(Workspace files and session folders)]
         researchStore[(CEBRO graphs, Runs and provenance)]
-        knowledgeStore[(CATDA corpus and SQLite FTS5 graph index)]
+        knowledgeStore[(MAGE-Graph corpus and SQLite FTS5 graph index)]
         privateState[(App-private DSH_HOME, settings and credentials)]
         checkpoints[(Scientific models and checkpoints)]
     end
@@ -526,7 +526,7 @@ Large scientific dependencies are deliberately separated from ordinary source co
   and verified separately.
 - UMA and MatterSim checkpoints are not ordinary Git objects and should be distributed
   through a model or release-asset workflow.
-- A full CATDA knowledge corpus may be packaged as a release resource or imported by
+- A full MAGE-Graph knowledge corpus may be packaged as a release resource or imported by
   the user; it is not required to understand or build the application source.
 - VASP, cluster credentials, API keys, and private research data are never included.
 

@@ -473,7 +473,7 @@ flowchart TB
 
 - MatterGen 源码可以随应用提供，但模型 checkpoint 需要单独安装和校验。
 - UMA 与 MatterSim checkpoint 不应作为普通 Git 对象提交，应通过模型安装或 Release Asset 分发。
-- 完整 MAGE 知识语料可以作为发布资源打包或由用户导入；理解和构建应用源码并不依赖完整语料。
+- 完整 MAGE-Graph 知识语料可以作为发布资源打包或由用户导入；理解和构建应用源码并不依赖完整语料。
 - VASP、集群凭据、API key 和私人科研数据绝不包含在仓库中。
 
 ## 从源码构建
