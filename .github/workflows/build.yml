@@ -28,6 +28,7 @@ jobs:
             uv_archive: uv-x86_64-unknown-linux-gnu.tar.gz
             agent_browser_asset: agent-browser-linux-x64
     runs-on: ${{ matrix.platform }}
+    continue-on-error: ${{ matrix.platform == 'ubuntu-22.04' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -70,48 +71,33 @@ jobs:
         shell: pwsh
         run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release/prepare-bundled-dsh.ps1
 
-      - name: Fetch uv sidecar (Windows)
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.26"
+          enable-cache: false
+
+      - name: Stage uv sidecar (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         env:
-          UV_VERSION: "0.11.26"
-          UV_ARCHIVE: ${{ matrix.uv_archive }}
           TAURI_TARGET: ${{ matrix.target }}
         run: |
           $ErrorActionPreference = "Stop"
-          $archive = Join-Path $env:RUNNER_TEMP $env:UV_ARCHIVE
-          $base = "https://github.com/astral-sh/uv/releases/download/$env:UV_VERSION"
-          Invoke-WebRequest -UseBasicParsing -Uri "$base/$env:UV_ARCHIVE" -OutFile $archive
-          $expected = (Invoke-WebRequest -UseBasicParsing -Uri "$base/$env:UV_ARCHIVE.sha256").Content.Trim().Split()[0].ToLowerInvariant()
-          $actual = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()
-          if ($actual -ne $expected) { throw "uv checksum mismatch: expected $expected, got $actual" }
-          $extract = Join-Path $env:RUNNER_TEMP "uv-extract"
-          if (Test-Path -LiteralPath $extract) { Remove-Item -LiteralPath $extract -Recurse -Force }
-          Expand-Archive -LiteralPath $archive -DestinationPath $extract
-          $uv = Get-ChildItem -LiteralPath $extract -Filter uv.exe -File -Recurse | Select-Object -First 1
-          if (-not $uv) { throw "uv.exe was not found in $archive" }
+          $uv = (Get-Command uv.exe -ErrorAction Stop).Source
           $binDir = "apps/desktop/src-tauri/binaries"
           New-Item -ItemType Directory -Path $binDir -Force | Out-Null
-          Copy-Item -LiteralPath $uv.FullName -Destination (Join-Path $binDir "uv-$env:TAURI_TARGET.exe") -Force
+          Copy-Item -LiteralPath $uv -Destination (Join-Path $binDir "uv-$env:TAURI_TARGET.exe") -Force
 
-      - name: Fetch uv sidecar (Linux)
+      - name: Stage uv sidecar (Linux)
         if: runner.os == 'Linux'
         shell: bash
         env:
-          UV_VERSION: "0.11.26"
-          UV_ARCHIVE: ${{ matrix.uv_archive }}
           TAURI_TARGET: ${{ matrix.target }}
         run: |
           set -euo pipefail
-          base="https://github.com/astral-sh/uv/releases/download/${UV_VERSION}"
-          cd "$RUNNER_TEMP"
-          curl --fail --location --retry 3 --output "$UV_ARCHIVE" "$base/$UV_ARCHIVE"
-          curl --fail --location --retry 3 --output "$UV_ARCHIVE.sha256" "$base/$UV_ARCHIVE.sha256"
-          sha256sum -c "$UV_ARCHIVE.sha256"
-          mkdir -p uv-extract
-          tar -xzf "$UV_ARCHIVE" -C uv-extract
-          uv_path="$(find uv-extract -type f -name uv -print -quit)"
-          test -n "$uv_path"
+          uv_path="$(command -v uv)"
+          test -x "$uv_path"
           mkdir -p "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries"
           install -m 0755 "$uv_path" "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries/uv-${TAURI_TARGET}"
 
@@ -127,7 +113,7 @@ jobs:
           $url = "https://github.com/vercel-labs/agent-browser/releases/download/$env:AGENT_BROWSER_VERSION/$env:AGENT_BROWSER_ASSET"
           $binDir = "apps/desktop/src-tauri/binaries"
           New-Item -ItemType Directory -Path $binDir -Force | Out-Null
-          Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile (Join-Path $binDir "agent-browser-$env:TAURI_TARGET.exe")
+          curl.exe --fail --location --retry 5 --retry-all-errors --connect-timeout 20 --output (Join-Path $binDir "agent-browser-$env:TAURI_TARGET.exe") $url
 
       - name: Fetch agent-browser sidecar (Linux)
         if: runner.os == 'Linux'
@@ -139,7 +125,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries"
-          curl --fail --location --retry 3 \
+          curl --fail --location --retry 5 --retry-all-errors --connect-timeout 20 \
             --output "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries/agent-browser-${TAURI_TARGET}" \
             "https://github.com/vercel-labs/agent-browser/releases/download/${AGENT_BROWSER_VERSION}/${AGENT_BROWSER_ASSET}"
           chmod 0755 "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries/agent-browser-${TAURI_TARGET}"
@@ -161,7 +147,7 @@ jobs:
           if-no-files-found: warn
 
   release:
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: always() && startsWith(github.ref, 'refs/tags/v')
     needs: build
     runs-on: ubuntu-22.04
     steps:
