@@ -132,11 +132,11 @@ jobs:
 
       - name: Build Windows installer
         if: runner.os == 'Windows'
-        run: pnpm --filter @ai4s/desktop tauri build -- --target ${{ matrix.target }} --bundles nsis
+        run: pnpm --filter @ai4s/desktop tauri build --target ${{ matrix.target }} --bundles nsis
 
       - name: Build Linux installers
         if: runner.os == 'Linux'
-        run: pnpm --filter @ai4s/desktop tauri build -- --target ${{ matrix.target }} --bundles deb,rpm
+        run: pnpm --filter @ai4s/desktop tauri build --target ${{ matrix.target }} --bundles deb,rpm
 
       - name: Upload installers
         if: always()
@@ -158,13 +158,14 @@ jobs:
           merge-multiple: true
 
       - name: Publish GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ github.ref_name }}
           name: NebulaMat ${{ github.ref_name }}
           draft: false
           prerelease: false
           generate_release_notes: true
+          overwrite_files: true
           body: |
             ## Install & first launch
 
