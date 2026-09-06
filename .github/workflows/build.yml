@@ -1,16 +1,14 @@
 name: build
 
-# Builds Windows (NSIS .exe / .msi) and Linux (.deb/.rpm/.AppImage)
-# installers. Each platform's installer can only be produced on its own
-# runner — hence the matrix. On a `v*` tag push the installers are also
-# attached to a draft GitHub Release.
+# Build the platform installers on their native GitHub-hosted runners. A tag
+# push produces a published GitHub Release with the generated installers
+# attached; workflow_dispatch is useful for build-only verification.
 
 on:
   push:
     tags: ["v*"]
   workflow_dispatch:
 
-# tauri-action needs to create the draft release and upload assets.
 permissions:
   contents: write
 
@@ -23,14 +21,18 @@ jobs:
         include:
           - platform: windows-latest
             target: x86_64-pc-windows-msvc
+            uv_archive: uv-x86_64-pc-windows-msvc.zip
+            agent_browser_asset: agent-browser-win32-x64.exe
           - platform: ubuntu-22.04
             target: x86_64-unknown-linux-gnu
+            uv_archive: uv-x86_64-unknown-linux-gnu.tar.gz
+            agent_browser_asset: agent-browser-linux-x64
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Install Linux system dependencies
-        if: startsWith(matrix.platform, 'ubuntu')
+        if: runner.os == 'Linux'
         run: |
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.1-dev build-essential curl \
@@ -38,7 +40,7 @@ jobs:
             librsvg2-dev
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4   # version comes from package.json "packageManager"
+        uses: pnpm/action-setup@v4
 
       - name: Install Node
         uses: actions/setup-node@v4
@@ -59,67 +61,131 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Fetch bundled OpenCode sidecar
-        shell: bash
-        run: bash scripts/dev/fetch-opencode.sh ${{ matrix.target }}
+      # The old workflow called scripts/dev/fetch-opencode.sh and several
+      # other scripts that were removed when the app moved to the checked-in
+      # DSH runtime. Keep the release job aligned with the current packaging
+      # layout instead of failing before Tauri is invoked.
+      - name: Prepare bundled DSH runtime (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/release/prepare-bundled-dsh.ps1
 
-      - name: Fetch bundled ai4s-skills pack
-        shell: bash
-        run: bash scripts/dev/fetch-skills.sh
-
-      - name: Fetch bundled uv sidecar
-        shell: bash
-        run: bash scripts/dev/fetch-uv.sh ${{ matrix.target }}
-
-      - name: Fetch bundled agent-browser sidecar
-        shell: bash
-        run: bash scripts/dev/fetch-agent-browser.sh ${{ matrix.target }}
-
-      - name: Fetch bundled goal plugin
-        shell: bash
-        run: bash scripts/dev/fetch-goal-plugin.sh
-
-      - name: Build the app (Tauri)
-        id: tauri_build
-        uses: tauri-apps/tauri-action@v0
+      - name: Fetch uv sidecar (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          projectPath: apps/desktop
-          # Linux: deb+rpm only. AppImage is off because linuxdeploy runs ldd
-          # on every bundled ELF and ldd exits 1 on the Bun-built opencode
-          # sidecar, aborting the whole bundle (tauri-apps/tauri#8929).
-          args: --target ${{ matrix.target }} ${{ startsWith(matrix.platform, 'ubuntu') && '--bundles deb,rpm' || '' }}
-          # On a v* tag push, attach installers to a draft GitHub Release.
-          # Empty tagName (workflow_dispatch) skips release creation.
-          tagName: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
-          releaseName: ${{ github.ref_type == 'tag' && format('Open Science Desktop {0}', github.ref_name) || '' }}
-          releaseDraft: true
-          # Standing install/first-launch notes. Windows remains unsigned for now.
-          releaseBody: |
-            ## Install & first launch
+          UV_VERSION: "0.11.26"
+          UV_ARCHIVE: ${{ matrix.uv_archive }}
+          TAURI_TARGET: ${{ matrix.target }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $archive = Join-Path $env:RUNNER_TEMP $env:UV_ARCHIVE
+          $base = "https://github.com/astral-sh/uv/releases/download/$env:UV_VERSION"
+          Invoke-WebRequest -UseBasicParsing -Uri "$base/$env:UV_ARCHIVE" -OutFile $archive
+          $expected = (Invoke-WebRequest -UseBasicParsing -Uri "$base/$env:UV_ARCHIVE.sha256").Content.Trim().Split()[0].ToLowerInvariant()
+          $actual = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($actual -ne $expected) { throw "uv checksum mismatch: expected $expected, got $actual" }
+          $extract = Join-Path $env:RUNNER_TEMP "uv-extract"
+          if (Test-Path -LiteralPath $extract) { Remove-Item -LiteralPath $extract -Recurse -Force }
+          Expand-Archive -LiteralPath $archive -DestinationPath $extract
+          $uv = Get-ChildItem -LiteralPath $extract -Filter uv.exe -File -Recurse | Select-Object -First 1
+          if (-not $uv) { throw "uv.exe was not found in $archive" }
+          $binDir = "apps/desktop/src-tauri/binaries"
+          New-Item -ItemType Directory -Path $binDir -Force | Out-Null
+          Copy-Item -LiteralPath $uv.FullName -Destination (Join-Path $binDir "uv-$env:TAURI_TARGET.exe") -Force
 
-            **Windows** — `…_x64-setup.exe` or `…_x64_en-US.msi`
-            - SmartScreen shows *"Windows protected your PC"* → **More info** → **Run anyway**.
+      - name: Fetch uv sidecar (Linux)
+        if: runner.os == 'Linux'
+        shell: bash
+        env:
+          UV_VERSION: "0.11.26"
+          UV_ARCHIVE: ${{ matrix.uv_archive }}
+          TAURI_TARGET: ${{ matrix.target }}
+        run: |
+          set -euo pipefail
+          base="https://github.com/astral-sh/uv/releases/download/${UV_VERSION}"
+          cd "$RUNNER_TEMP"
+          curl --fail --location --retry 3 --output "$UV_ARCHIVE" "$base/$UV_ARCHIVE"
+          curl --fail --location --retry 3 --output "$UV_ARCHIVE.sha256" "$base/$UV_ARCHIVE.sha256"
+          sha256sum -c "$UV_ARCHIVE.sha256"
+          mkdir -p uv-extract
+          tar -xzf "$UV_ARCHIVE" -C uv-extract
+          uv_path="$(find uv-extract -type f -name uv -print -quit)"
+          test -n "$uv_path"
+          mkdir -p "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries"
+          install -m 0755 "$uv_path" "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries/uv-${TAURI_TARGET}"
 
-            **Linux** — `.deb` / `.rpm`
-            - `sudo apt install ./…_amd64.deb`  or  `sudo rpm -i …x86_64.rpm`
+      - name: Fetch agent-browser sidecar (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          AGENT_BROWSER_VERSION: "v0.32.1"
+          AGENT_BROWSER_ASSET: ${{ matrix.agent_browser_asset }}
+          TAURI_TARGET: ${{ matrix.target }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $url = "https://github.com/vercel-labs/agent-browser/releases/download/$env:AGENT_BROWSER_VERSION/$env:AGENT_BROWSER_ASSET"
+          $binDir = "apps/desktop/src-tauri/binaries"
+          New-Item -ItemType Directory -Path $binDir -Force | Out-Null
+          Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile (Join-Path $binDir "agent-browser-$env:TAURI_TARGET.exe")
 
-            > **No in-app auto-update** — download new versions from this Releases page. (The `.app.tar.gz` assets are build artifacts, not an update channel.)
+      - name: Fetch agent-browser sidecar (Linux)
+        if: runner.os == 'Linux'
+        shell: bash
+        env:
+          AGENT_BROWSER_VERSION: "v0.32.1"
+          AGENT_BROWSER_ASSET: ${{ matrix.agent_browser_asset }}
+          TAURI_TARGET: ${{ matrix.target }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries"
+          curl --fail --location --retry 3 \
+            --output "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries/agent-browser-${TAURI_TARGET}" \
+            "https://github.com/vercel-labs/agent-browser/releases/download/${AGENT_BROWSER_VERSION}/${AGENT_BROWSER_ASSET}"
+          chmod 0755 "$GITHUB_WORKSPACE/apps/desktop/src-tauri/binaries/agent-browser-${TAURI_TARGET}"
 
-            ---
+      - name: Build Windows installer
+        if: runner.os == 'Windows'
+        run: pnpm --filter @ai4s/desktop tauri build -- --target ${{ matrix.target }} --bundles nsis
 
-            <!-- Prepend this release's changelog above this line before publishing. -->
+      - name: Build Linux installers
+        if: runner.os == 'Linux'
+        run: pnpm --filter @ai4s/desktop tauri build -- --target ${{ matrix.target }} --bundles deb,rpm
 
       - name: Upload installers
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ai4s-workbench-${{ matrix.target }}
-          path: |
-            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.exe
-            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.msi
-            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.deb
-            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.rpm
-            apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**/*.AppImage
+          name: NebulaMat-${{ matrix.target }}
+          path: apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**
           if-no-files-found: warn
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Download platform installers
+        uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: NebulaMat ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          body: |
+            ## Install & first launch
+
+            **Windows** — download `NebulaMat_*_x64-setup.exe`.
+            SmartScreen may show *“Windows protected your PC”*; choose **More info → Run anyway**.
+
+            **Linux** — install the `.deb` or `.rpm` package for x86_64.
+
+            This release is unsigned and has no in-app auto-update channel.
+          files: release-assets/**/*
