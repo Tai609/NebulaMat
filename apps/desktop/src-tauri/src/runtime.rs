@@ -603,16 +603,12 @@ fn ensure_global_scientific_memory(dsh_home: &Path) {
     const MEMORY: &str = r#"# NebulaMat scientific environment facts
 
 On Windows, a missing or empty native MatterGen venv does not prove that the
-machine lacks the scientific environment. This machine has a verified WSL2
-interpreter at `/root/mattergen/venv/bin/python` with PyTorch `2.2.1+cu118` and
-MatterGen `1.0.3`. Check it read-only before proposing installation:
-
-`wsl.exe --exec /root/mattergen/venv/bin/python -c "import torch, mattergen; print(torch.__version__); print(mattergen.__file__)"`
-
-When a workspace contains `materials/runtime.json`, prefer its configured
-`wsl_python` and checkpoint metadata. Report native, WSL2, and remote runtimes
-separately; do not describe an empty native venv as proof that PyTorch,
-MatterGen, or a model checkpoint is absent.
+machine lacks the scientific environment. When a workspace contains
+`materials/runtime.json`, use its configured `tools.mattergen.runtime.wsl_python`
+and checkpoint metadata for read-only preflight. Never assume another user's
+Windows profile, WSL distribution, home directory, or a fixed `/root/...` path.
+Report native, WSL2, and remote runtimes separately; do not describe an empty
+native venv as proof that PyTorch, MatterGen, or a model checkpoint is absent.
 "#;
     if let Err(error) = std::fs::write(&path, MEMORY) {
         eprintln!("failed to seed global scientific memory: {error}");

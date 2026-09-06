@@ -83,6 +83,64 @@ describe("Deep Research runtime state machine", () => {
     }))).toMatchObject({ governedRetrieval: true, providerFamilies: [] });
   });
 
+  it("recognizes provider families from bundled paper-search MCP routes", () => {
+    const routes = [
+      ["mcp__paper-search__search_arxiv", "arxiv"],
+      ["mcp__paper-search__search_openalex", "openalex"],
+      ["mcp__paper-search__search_semantic", "semantic-scholar"],
+      ["mcp__paper-search__search_crossref", "crossref"],
+      ["mcp__paper-search__search_pubmed", "pubmed"],
+      ["mcp__paper-search__search_europepmc", "europe-pmc"],
+      ["mcp__paper-search__search_google_scholar", "google-scholar"],
+      ["mcp__paper_search__get_crossref_paper_by_doi", "crossref"],
+    ] as const;
+
+    routes.forEach(([toolName, provider], index) => {
+      expect(classifyDeepResearchToolReceipt(tool({
+        callId: `paper-search-${index}`,
+        tool: toolName,
+        output: "search completed",
+      }))).toMatchObject({
+        governedRetrieval: true,
+        providerFamilies: [provider],
+      });
+    });
+  });
+
+  it("counts successful paper-search routes as independent provider families", () => {
+    startDeepResearchRun({
+      sessionId: "session-1",
+      query: "test query",
+      researchId: "research-1",
+      graphHash: "hash-1",
+      knowledge,
+    });
+    recordDeepResearchToolEvent("session-1", tool({
+      callId: "paper-openalex",
+      tool: "mcp__paper-search__search_openalex",
+      output: "DOI 10.1000/openalex",
+    }));
+    recordDeepResearchToolEvent("session-1", tool({
+      callId: "paper-pubmed",
+      tool: "mcp__paper-search__search_pubmed",
+      output: "PMID: 12345678",
+    }));
+
+    const run = getDeepResearchRun("session-1")!;
+    expect(run.providerFamilies).toEqual(["openalex", "pubmed"]);
+    expect(deepResearchBlockers(run)).toEqual([]);
+  });
+
+  it("does not treat aggregate paper-search routes as an independent provider", () => {
+    const receipt = classifyDeepResearchToolReceipt(tool({
+      callId: "paper-search-aggregate",
+      tool: "mcp__paper-search__search_papers",
+      output: "search completed",
+    }));
+
+    expect(receipt).toMatchObject({ governedRetrieval: true, providerFamilies: [] });
+  });
+
   it("blocks synthesis until a governed skill/tool and two provider families succeed", () => {
     let run = startDeepResearchRun({
       sessionId: "session-1",

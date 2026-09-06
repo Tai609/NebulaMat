@@ -61,11 +61,31 @@ const PROVIDER_PATTERNS: ReadonlyArray<[string, RegExp]> = [
   ["semantic-scholar", /\b(?:semantic[\s_-]?scholar|semanticscholar|s2)\b/i],
   ["crossref", /\bcross[\s_-]?ref\b/i],
   ["europe-pmc", /\beurope[\s_-]?pmc\b/i],
+  ["google-scholar", /\bgoogle[\s_-]?scholar\b/i],
   ["scopus", /\bscopus\b/i],
   ["science-direct", /\bscience[\s_-]?direct\b/i],
   ["web-of-science", /\bweb[\s_-]?of[\s_-]?science\b/i],
   ["cnki", /\bcnki\b|中国知网/i],
 ];
+
+/**
+ * The DSH MCP adapter exposes a bundled paper-search server with names such
+ * as `mcp__paper-search__search_openalex`.  Keep these mappings scoped to the
+ * exact server/tool routes: a provider name in arbitrary model prose is not
+ * enough to establish a provider receipt.
+ */
+const PAPER_SEARCH_TOOL_PROVIDERS: Readonly<Record<string, string>> = {
+  "mcp__paper_search__search_pubmed": "pubmed",
+  "mcp__paper_search__search_arxiv": "arxiv",
+  "mcp__paper_search__search_openalex": "openalex",
+  "mcp__paper_search__search_semantic": "semantic-scholar",
+  "mcp__paper_search__search_semantic_scholar": "semantic-scholar",
+  "mcp__paper_search__search_crossref": "crossref",
+  "mcp__paper_search__get_crossref_paper_by_doi": "crossref",
+  "mcp__paper_search__search_europepmc": "europe-pmc",
+  "mcp__paper_search__search_europe_pmc": "europe-pmc",
+  "mcp__paper_search__search_google_scholar": "google-scholar",
+};
 
 const GOVERNED_RETRIEVAL = /(?:^|[\s_:/.-])(?:skill|mcp|literature|academic|citation|paper|retriev|search|openalex|arxiv|pubmed|crossref|semantic[\s_-]?scholar)(?:$|[\s_:/.-])/i;
 const UNGOVERNED_SHELL = /^(?:bash|shell|exec|execute|run|run_command)$/i;
@@ -109,15 +129,31 @@ function structuredOutputProviderText(output: string | undefined): string {
   }
 }
 
+function normalizedProviderMetadata(value: string): string {
+  // `\b` treats `_` as a word character. Replace connector naming
+  // separators before applying the provider patterns so names such as
+  // `mcp__paper-search__search_openalex` are tokenized as expected.
+  return value.replace(/[_-]+/g, " ");
+}
+
+function paperSearchProvider(tool: string): string | undefined {
+  const normalized = tool.trim().toLowerCase().replace(/-/g, "_");
+  return PAPER_SEARCH_TOOL_PROVIDERS[normalized];
+}
+
 export function classifyDeepResearchToolReceipt(
   event: Extract<RuntimeMessageEvent, { type: "tool.updated" }>,
   at = now(),
 ): DeepResearchToolReceipt | null {
   if (event.status !== "success" && event.status !== "failed") return null;
   const metadata = [event.tool, event.title ?? "", structuredInputText(event.input), structuredOutputProviderText(event.output)].join(" ");
-  const providerFamilies = PROVIDER_PATTERNS
-    .filter(([, pattern]) => pattern.test(metadata))
-    .map(([provider]) => provider);
+  const directProvider = paperSearchProvider(event.tool);
+  const providerFamilies = [...new Set([
+    ...PROVIDER_PATTERNS
+      .filter(([, pattern]) => pattern.test(normalizedProviderMetadata(metadata)))
+      .map(([provider]) => provider),
+    ...(directProvider ? [directProvider] : []),
+  ])];
   const curatedSkill = DEEP_RESEARCH_SKILLS.some((name) => metadata.toLowerCase().includes(name.toLowerCase()));
   const governedRetrieval = !UNGOVERNED_SHELL.test(event.tool) && (
     curatedSkill

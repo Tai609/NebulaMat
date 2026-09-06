@@ -694,8 +694,8 @@ describe("per-session workspace folders", () => {
     expect(useRuntimeStore.getState().deepResearchSessions[DRAFT_KEY]).toBeUndefined();
     expect(JSON.parse(window.localStorage.getItem("ai4s.session.deep-research.v1") ?? "{}"))
       .toEqual({ ses_new: true });
-    mocks.fireEvent({ type: "tool.updated", sessionId: "ses_new", callId: "openalex", tool: "mcp__literature__search", status: "success", input: { provider: "OpenAlex" }, output: "DOI 10.1000/test" });
-    mocks.fireEvent({ type: "tool.updated", sessionId: "ses_new", callId: "pubmed", tool: "skill", status: "success", input: { name: "aris-research-lit", database: "PubMed" }, output: "PMID: 12345678" });
+    mocks.fireEvent({ type: "tool.updated", sessionId: "ses_new", callId: "openalex", tool: "mcp__paper-search__search_openalex", status: "success", output: "DOI 10.1000/test" });
+    mocks.fireEvent({ type: "tool.updated", sessionId: "ses_new", callId: "scholar", tool: "mcp__paper-search__search_google_scholar", status: "success", output: "DOI 10.1000/other" });
     mocks.fireEvent({ type: "text.updated", sessionId: "ses_new", partId: "answer", text: "Qualified synthesis" });
     expect(useRuntimeStore.getState().threads["ses_new"].blocks).not.toContainEqual(
       expect.objectContaining({ kind: "agent", markdown: "Qualified synthesis" }),
@@ -2195,6 +2195,40 @@ describe("model switch failure state", () => {
 });
 
 describe("plan agent mode", () => {
+  it("does not misroute GitHub DFT capability discovery or fail when materials-run is absent", async () => {
+    await useRuntimeStore.getState().sendPrompt("GitHub中有没有能够通过AI来辅助进行DFT计算的技能或者智能体");
+
+    expect(mocks.runCommand).not.toHaveBeenCalled();
+    expect(mocks.sendPromptSpy).toHaveBeenLastCalledWith(
+      "ses_new",
+      "GitHub中有没有能够通过AI来辅助进行DFT计算的技能或者智能体",
+      undefined,
+    );
+    const blocks = useRuntimeStore.getState().threads["ses_new"].blocks;
+    expect(blocks[blocks.length - 1]).toEqual({
+      kind: "user",
+      text: "GitHub中有没有能够通过AI来辅助进行DFT计算的技能或者智能体",
+    });
+  });
+
+  it("uses materials-run only when the runtime advertises that command", async () => {
+    useRuntimeStore.setState({ commands: [{ name: "materials-run", description: "", source: "command" }] });
+
+    await useRuntimeStore.getState().sendPrompt("给我一个 Ni3Pt 在碱性 HER 中的 DFT 任务");
+
+    expect(mocks.runCommand).toHaveBeenLastCalledWith(
+      "ses_new",
+      "materials-run",
+      "给我一个 Ni3Pt 在碱性 HER 中的 DFT 任务",
+      "en",
+    );
+    expect(mocks.sendPromptSpy).not.toHaveBeenCalledWith(
+      "ses_new",
+      expect.stringContaining("Ni3Pt"),
+      expect.anything(),
+    );
+  });
+
   it("uses knowledge-universe RAG for ordinary questions while keeping the visible echo unchanged", async () => {
     mocks.knowledgeSearchResults = [{
       sourceId: "output_42",
@@ -2343,6 +2377,10 @@ describe("skill install", () => {
 
     // Aimed at a project folder, as if the user were working in one.
     useRuntimeStore.setState({ draftWorkspaces: { [DRAFT_KEY]: "/ws/proj" }, workspace: "/ws/proj" });
+    // Workspace refreshes reconcile panes against the runtime's authoritative
+    // session list; keep the existing pane listed while the install opens its
+    // separate session.
+    mocks.sessionList = [{ id: "ses_busy", title: "Busy", directory: "/ws/proj" }];
 
     await useRuntimeStore.getState().installSkill("找到 dbs 这个 skills，安装");
     await new Promise((r) => setTimeout(r, 0));
