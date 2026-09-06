@@ -756,6 +756,9 @@ const deepResearchTextBuffers = new Map<string, Map<string, Extract<RuntimeMessa
 const deepResearchReleaseSessions = new Set<string>();
 const deepResearchIdlePassThrough = new Set<string>();
 const deepResearchFinalizingSessions = new Set<string>();
+/** A second idle can arrive while an evidence gate is still finalizing (most
+ * commonly around the corrective prompt). Do not lose that terminal event. */
+const deepResearchPendingIdle = new Set<string>();
 
 // ---- Auto-review (#72) ----
 // All four live outside the store on purpose: they change on tool events, and
@@ -1892,6 +1895,12 @@ async function finalizeDeepResearchIdle(sessionId: string, get: StoreGet): Promi
   const blockers = deepResearchBlockers(run, buffered.some((event) => event.text.trim().length > 0));
   if (blockers.length && run.attempt < run.maxAttempts) {
     const retry = retryDeepResearchRun(run, blockers);
+    // Idle frames delivered immediately after the first turn belong to that
+    // turn, not the corrective one. Let the current stack yield before posting
+    // the correction, then discard only those already queued duplicates.
+    deepResearchPendingIdle.delete(sessionId);
+    await Promise.resolve();
+    deepResearchPendingIdle.delete(sessionId);
     deepResearchTextBuffers.delete(sessionId);
     const runtime = clientForSession(get, sessionId);
     if (!runtime) {
@@ -2634,6 +2643,7 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
       // `.delete`); it is cleared when the next turn starts (see `turn → sid`).
       if (event.type === "session.idle" && interruptedSessions.has(sid)) {
         deepResearchTextBuffers.delete(sid);
+        deepResearchPendingIdle.delete(sid);
         removeDeepResearchRun(sid);
         set((s) => {
           const runningSessions = { ...s.runningSessions };
@@ -2715,7 +2725,10 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
         && deepResearchRun
         && (deepResearchRun.status === "running" || deepResearchRun.status === "retrying")
       ) {
-        if (deepResearchFinalizingSessions.has(sid)) return;
+        if (deepResearchFinalizingSessions.has(sid)) {
+          deepResearchPendingIdle.add(sid);
+          return;
+        }
         deepResearchFinalizingSessions.add(sid);
         void finalizeDeepResearchIdle(sid, get)
           .catch((error) => {
@@ -2724,7 +2737,22 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
               `Deep Research finalization failed: ${error instanceof Error ? error.message : String(error)}`,
             ]);
           })
-          .finally(() => deepResearchFinalizingSessions.delete(sid));
+          .finally(() => {
+            deepResearchFinalizingSessions.delete(sid);
+            if (!deepResearchPendingIdle.delete(sid)) return;
+            // Re-enter through the normal event path after the current
+            // finalizer has fully released its guard and state.
+            queueMicrotask(() => {
+              const current = getDeepResearchRun(sid);
+              if (
+                !deepResearchFinalizingSessions.has(sid)
+                && current
+                && (current.status === "running" || current.status === "retrying")
+              ) {
+                sharedEventHandler?.({ type: "session.idle", sessionId: sid });
+              }
+            });
+          });
         return;
       }
       const applyFold = (ev: typeof event) =>
@@ -3091,6 +3119,7 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
     deepResearchReleaseSessions.clear();
     deepResearchIdlePassThrough.clear();
     deepResearchFinalizingSessions.clear();
+    deepResearchPendingIdle.clear();
     set({ status: "offline", modelSwitchError: null, sessionRedirects: {} });
   },
 
@@ -3599,9 +3628,12 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
     // This pane's own model + effort (falling back to the global default),
     // captured now so a draft's later graft still sends the pane's choice.
     const { model, variant } = modelForSession(s, key);
-    // Plain-language DFT requests must enter the governed Materials workflow.
-    // The slash command selects materials-supervisor and creates the DFT DAG.
-    if (shouldRouteToMaterialsWorkflow(text)) {
+    // Plain-language DFT requests enter the governed Materials workflow only
+    // when this runtime advertises the command. Older/custom DSH profiles may
+    // not mount it; a normal model turn is still useful and avoids a rejected
+    // command making an otherwise valid request look unsendable.
+    const materialsCommandAvailable = s.commands.some((command) => command.name === "materials-run");
+    if (materialsCommandAvailable && shouldRouteToMaterialsWorkflow(text)) {
       return performTurn(
         set,
         get,
@@ -3641,6 +3673,7 @@ export const useRuntimeStore = create<RuntimeState>((set, get) => ({
             throw new Error("Deep Research could not create its Knowledge Universe and CEBRO receipts.");
           }
           deepResearchTextBuffers.delete(sid);
+          deepResearchPendingIdle.delete(sid);
           startDeepResearchRun({
             sessionId: sid,
             query: text,

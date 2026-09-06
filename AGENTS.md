@@ -6,8 +6,9 @@ application and MCP modules above that runtime boundary.
 
 ## Workspace and startup
 
-- For NebulaMat source maintenance, work from the registered repository root,
-  normally `C:\Users\泰\Desktop\Open Science - 2\open-science-source`.
+- For NebulaMat source maintenance, work from the registered repository root
+  (the directory reported by `git rev-parse --show-toplevel`); do not assume a
+  particular Windows profile or checkout location.
   For a scientific conversation, the DSH-provided current directory is the
   authoritative session workspace (normally `sessions/<date-time>`). Keep all
   generated structures, figures, scripts, reports, notebooks, and run state
@@ -145,13 +146,20 @@ missing adsorption, scaling, BEP, or reactor data must remain evidence gaps.
 
 On Windows, the app-managed native MatterGen venv and the WSL2 scientific
 runtime are separate. A native venv that has not been provisioned is not proof
-that the machine lacks PyTorch or MatterGen. Before installing anything, check
-the registered WSL interpreter:
+that the machine lacks PyTorch or MatterGen. Resolve the current interpreter
+from `materials/runtime.json` (or the generated
+`.openscience/materials-runtime.status.json`) before proposing installation;
+never assume a Windows username, WSL distribution, home directory, or a fixed
+`/root/...` path. Run the configured WSL interpreter read-only, for example:
 
-`wsl.exe --exec /root/mattergen/venv/bin/python -c "import torch, mattergen; print(torch.__version__); print(mattergen.__file__)"`
+```powershell
+$config = Get-Content materials/runtime.json | ConvertFrom-Json
+$python = $config.tools.mattergen.runtime.wsl_python
+if ($python) {
+  wsl.exe --exec $python -c "import torch, mattergen; print(torch.__version__); print(mattergen.__file__)"
+}
+```
 
-This machine's verified WSL baseline is PyTorch `2.2.1+cu118` and MatterGen
-`1.0.3`; the default `chemical_system` checkpoint is under
-`C:\Users\泰\Desktop\NebulaMat\mattergen\models\chemical_system`. Report
-native, WSL2, and remote environments separately and never propose reinstalling
-an already verified environment without evidence.
+Resolve the `chemical_system` checkpoint from the same runtime configuration or
+status receipt. Report native, WSL2, and remote environments separately and
+never propose reinstalling an already verified environment without evidence.

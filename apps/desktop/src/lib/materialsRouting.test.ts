@@ -15,6 +15,19 @@ describe("DFT Materials workflow routing", () => {
       .toBe(false);
   });
 
+  it.each([
+    "GitHub中有没有能够通过AI来辅助进行DFT计算的技能或者智能体",
+    "Search GitHub for an agent that helps with DFT calculations",
+    "GitHub 上有没有能运行 VASP 的 agent",
+  ])("keeps GitHub capability discovery in the normal research lane: %s", (text) => {
+    expect(classifyMaterialsRequest(text)).toBe("discussion");
+    expect(shouldRouteToMaterialsWorkflow(text)).toBe(false);
+  });
+
+  it("keeps an explicit materials operation routed even when it starts with discovery", () => {
+    expect(classifyMaterialsRequest("在 GitHub 找到 VASP 工具后运行 DFT 计算")).toBe("dft-execution");
+  });
+
   it("keeps preparation and execution as distinct gate inputs", () => {
     expect(classifyMaterialsRequest("整理 INCAR/POSCAR 并做模型审计")).toBe("dft-preparation");
     expect(classifyMaterialsRequest("提交 VASP 到 HPC")).toBe("dft-execution");

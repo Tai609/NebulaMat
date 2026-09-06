@@ -83,21 +83,12 @@ fields. Never replace this gate with an ad hoc direct single-point UMA script.
 
 ### Windows and WSL2 environment truth
 
-On this machine, the native app-managed MatterGen venv may exist but be empty.
-Do not conclude that PyTorch or MatterGen is absent from the machine until the
-registered WSL2 runtime has been checked. The verified WSL interpreter is:
-
-`/root/mattergen/venv/bin/python`
-
-Use this read-only preflight from Windows before proposing installation:
-
-```powershell
-wsl.exe --exec /root/mattergen/venv/bin/python -c "import torch, mattergen; print(torch.__version__); print(mattergen.__file__)"
-```
-
-The verified baseline is PyTorch `2.2.1+cu118` and MatterGen `1.0.3`. The
-default `chemical_system` checkpoint is available on the Windows side under
-`C:\Users\泰\Desktop\NebulaMat\mattergen\models\chemical_system` and is
-accessible from WSL through `/mnt/c/Users/泰/Desktop/NebulaMat/mattergen/models`.
-The desktop environment detector labels these results `WSL2`; do not describe
-the empty native venv as proof that the WSL runtime or checkpoint is missing.
+The native app-managed MatterGen venv and the WSL2 scientific runtime are
+separate. A missing or empty native venv is not proof that PyTorch or MatterGen
+is absent. Resolve `tools.mattergen.runtime.wsl_python` from the active
+workspace's `materials/runtime.json` (or its
+`.openscience/materials-runtime.status.json`) before proposing installation;
+never assume another user's Windows profile, WSL distribution, home directory,
+or a fixed `/root/...` path. Use that configured interpreter for a read-only
+module probe and resolve the `chemical_system` checkpoint from the same config
+or status receipt. Report native, WSL2, and remote environments separately.
