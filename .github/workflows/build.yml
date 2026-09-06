@@ -138,13 +138,43 @@ jobs:
         if: runner.os == 'Linux'
         run: pnpm --filter @ai4s/desktop tauri build --target ${{ matrix.target }} --bundles deb,rpm
 
+      - name: Collect Windows installer
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          TAURI_TARGET: ${{ matrix.target }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $version = $env:GITHUB_REF_NAME.TrimStart('v')
+          $source = "apps/desktop/src-tauri/target/$env:TAURI_TARGET/release/bundle/nsis/NebulaMat_${version}_x64-setup.exe"
+          if (-not (Test-Path -LiteralPath $source -PathType Leaf)) {
+            throw "Expected Windows installer was not found: $source"
+          }
+          New-Item -ItemType Directory -Path release-assets -Force | Out-Null
+          Copy-Item -LiteralPath $source -Destination release-assets -Force
+
+      - name: Collect Linux installers
+        if: runner.os == 'Linux'
+        shell: bash
+        env:
+          TAURI_TARGET: ${{ matrix.target }}
+        run: |
+          set -euo pipefail
+          version="${GITHUB_REF_NAME#v}"
+          deb="apps/desktop/src-tauri/target/${TAURI_TARGET}/release/bundle/deb/NebulaMat_${version}_amd64.deb"
+          rpm="apps/desktop/src-tauri/target/${TAURI_TARGET}/release/bundle/rpm/NebulaMat-${version}-1.x86_64.rpm"
+          test -f "$deb"
+          test -f "$rpm"
+          mkdir -p release-assets
+          cp "$deb" "$rpm" release-assets/
+
       - name: Upload installers
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: NebulaMat-${{ matrix.target }}
-          path: apps/desktop/src-tauri/target/${{ matrix.target }}/release/bundle/**
-          if-no-files-found: warn
+          path: release-assets/*
+          if-no-files-found: error
 
   release:
     if: always() && startsWith(github.ref, 'refs/tags/v')
@@ -175,4 +205,4 @@ jobs:
             **Linux** — install the `.deb` or `.rpm` package for x86_64.
 
             This release is unsigned and has no in-app auto-update channel.
-          files: release-assets/**/*
+          files: release-assets/*
